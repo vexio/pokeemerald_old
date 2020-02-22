@@ -49,9 +49,7 @@
 
 #define ITEM5_FRIENDSHIP_ALL    (ITEM5_FRIENDSHIP_LOW | ITEM5_FRIENDSHIP_MID | ITEM5_FRIENDSHIP_HIGH)
 
-// fields 6 - 9 are item-specific arguments
-
-#define ITEM10_IS_VITAMIN       0x1
+// fields 6 and onwards are item-specific arguments
 
 // Used for GetItemEffectType.
 #define ITEM_EFFECT_X_ITEM 0

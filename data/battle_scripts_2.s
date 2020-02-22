@@ -26,21 +26,6 @@ gBattlescriptsForBallThrow:: @ 82DBD08
 	.4byte BattleScript_BallThrow
 	.4byte BattleScript_BallThrow
 	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
-	.4byte BattleScript_BallThrow
 
 	.align 2
 gBattlescriptsForUsingItem:: @ 82DBD3C
