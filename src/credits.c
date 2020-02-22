@@ -9,7 +9,6 @@
 #include "menu.h"
 #include "international_string_util.h"
 #include "constants/songs.h"
-#include "constants/species.h"
 #include "gpu_regs.h"
 #include "m4a.h"
 #include "constants/rgb.h"

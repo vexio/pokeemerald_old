@@ -2551,7 +2551,7 @@ static void sub_802C9D4(struct PokemonJump2 *arg0, struct PokemonJump1_MonInfo *
     if (buffer && unusedBuffer)
     {
         HandleLoadSpecialPokePic(
-            &gMonFrontPicTable[jumpMon->species],
+            &gMonStillFrontPicTable[jumpMon->species],
             buffer,
             jumpMon->species,
             jumpMon->personality);
