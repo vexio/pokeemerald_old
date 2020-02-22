@@ -9,7 +9,6 @@
 #define BSS_DATA   __attribute__((section(".bss")))
 #define IWRAM_DATA __attribute__((section("iwram_data")))
 #define EWRAM_DATA __attribute__((section("ewram_data")))
-#define UNUSED __attribute__((unused))
 
 #if MODERN
 #define NOINLINE __attribute__((noinline))
