@@ -214,6 +214,7 @@ include songs.mk
 %.gbapal: %.png ; $(GFX) $< $@
 %.lz: % ; $(GFX) $< $@
 %.rl: % ; $(GFX) $< $@
+sound/direct_sound_samples/cry_not_%.bin: sound/direct_sound_samples/cry_not_%.aif ; $(AIF) $< $@
 sound/direct_sound_samples/cry_%.bin: sound/direct_sound_samples/cry_%.aif ; $(AIF) $< $@ --compress
 sound/%.bin: sound/%.aif ; $(AIF) $< $@
 
@@ -231,6 +232,10 @@ $(C_BUILDDIR)/agb_flash_mx.o: CFLAGS := -O -mthumb-interwork
 $(C_BUILDDIR)/m4a.o: CC1 := tools/agbcc/bin/old_agbcc
 
 $(C_BUILDDIR)/record_mixing.o: CFLAGS += -ffreestanding
+$(C_BUILDDIR)/librfu_intr.o: CC1 := tools/agbcc/bin/agbcc_arm
+$(C_BUILDDIR)/librfu_intr.o: CFLAGS := -O2 -mthumb-interwork -quiet
+else
+$(C_BUILDDIR)/librfu_intr.o: CFLAGS := -mthumb-interwork -O2 -mabi=apcs-gnu -mtune=arm7tdmi -march=armv4t -fno-toplevel-reorder -fno-aggressive-loop-optimizations -Wno-pointer-to-int-cast
 endif
 
 ifeq ($(NODEP),1)
