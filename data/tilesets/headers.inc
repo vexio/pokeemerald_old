@@ -830,3 +830,58 @@ gTileset_UnionRoom:: @ 83DFDFC
 	.4byte gMetatiles_UnionRoom
 	.4byte gMetatileAttributes_UnionRoom
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_CanvasTown::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_CanvasTown
+	.4byte gTilesetPalettes_CanvasTown
+	.4byte gMetatiles_CanvasTown
+	.4byte gMetatileAttributes_CanvasTown
+	.4byte NULL
+
+	.align 2
+gTileset_AlnerwickCity::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_AlnerwickCity
+	.4byte gTilesetPalettes_AlnerwickCity
+	.4byte gMetatiles_AlnerwickCity
+	.4byte gMetatileAttributes_AlnerwickCity
+	.4byte NULL
+
+	.align 2
+gTileset_Lab_2::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Lab_2
+	.4byte gTilesetPalettes_Lab_2
+	.4byte gMetatiles_Lab_2
+	.4byte gMetatileAttributes_Lab_2
+	.4byte NULL
+
+	.align 2
+gTileset_Pineridge::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Pineridge
+	.4byte gTilesetPalettes_Pineridge
+	.4byte gMetatiles_Pineridge
+	.4byte gMetatileAttributes_Pineridge
+	.4byte NULL
+
+	.align 2
+gTileset_Library::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Library
+	.4byte gTilesetPalettes_Library
+	.4byte gMetatiles_Library
+	.4byte gMetatileAttributes_Library
+	.4byte NULL

@@ -1729,3 +1729,103 @@ gTilesetPalettes_UnionRoom:: @ 8395678
 	.align 2
 gTilesetTiles_UnionRoom:: @ 8395878
 	.incbin "data/tilesets/secondary/union_room/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_CanvasTown::
+	.incbin "data/tilesets/secondary/canvastown/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/canvastown/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_CanvasTown::
+	.incbin "data/tilesets/secondary/canvastown/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_AlnerwickCity::
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/alnerwickcity/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_AlnerwickCity::
+	.incbin "data/tilesets/secondary/alnerwickcity/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Lab_2::
+	.incbin "data/tilesets/secondary/lab_2/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/lab_2/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Lab_2::
+	.incbin "data/tilesets/secondary/lab_2/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Pineridge::
+	.incbin "data/tilesets/secondary/pineridge/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/pineridge/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Pineridge::
+	.incbin "data/tilesets/secondary/pineridge/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Library::
+	.incbin "data/tilesets/secondary/library/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/library/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Library::
+	.incbin "data/tilesets/secondary/library/tiles.4bpp.lz"

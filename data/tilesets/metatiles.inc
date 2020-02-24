@@ -557,3 +557,39 @@ gMetatiles_UnionRoom:: @ 83DF392
 	.align 1
 gMetatileAttributes_UnionRoom:: @ 83DF6A2
 	.incbin "data/tilesets/secondary/union_room/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_CanvasTown::
+	.incbin "data/tilesets/secondary/canvastown/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_CanvasTown::
+	.incbin "data/tilesets/secondary/canvastown/metatile_attributes.bin"
+	.align 1
+gMetatiles_AlnerwickCity::
+	.incbin "data/tilesets/secondary/alnerwickcity/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_AlnerwickCity::
+	.incbin "data/tilesets/secondary/alnerwickcity/metatile_attributes.bin"
+	.align 1
+gMetatiles_Lab_2::
+	.incbin "data/tilesets/secondary/lab_2/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Lab_2::
+	.incbin "data/tilesets/secondary/lab_2/metatile_attributes.bin"
+	.align 1
+gMetatiles_Pineridge::
+	.incbin "data/tilesets/secondary/pineridge/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Pineridge::
+	.incbin "data/tilesets/secondary/pineridge/metatile_attributes.bin"
+	.align 1
+gMetatiles_Library::
+	.incbin "data/tilesets/secondary/library/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Library::
+	.incbin "data/tilesets/secondary/library/metatile_attributes.bin"
