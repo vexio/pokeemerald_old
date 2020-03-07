@@ -593,3 +593,10 @@ gMetatiles_Library::
 	.align 1
 gMetatileAttributes_Library::
 	.incbin "data/tilesets/secondary/library/metatile_attributes.bin"
+	.align 1
+gMetatiles_Gatehouse::
+	.incbin "data/tilesets/secondary/gatehouse/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Gatehouse::
+	.incbin "data/tilesets/secondary/gatehouse/metatile_attributes.bin"

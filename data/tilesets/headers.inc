@@ -885,3 +885,14 @@ gTileset_Library::
 	.4byte gMetatiles_Library
 	.4byte gMetatileAttributes_Library
 	.4byte NULL
+
+	.align 2
+gTileset_Gatehouse::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Gatehouse
+	.4byte gTilesetPalettes_Gatehouse
+	.4byte gMetatiles_Gatehouse
+	.4byte gMetatileAttributes_Gatehouse
+	.4byte NULL

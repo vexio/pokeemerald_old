@@ -1829,3 +1829,23 @@ gTilesetPalettes_Library::
 	.align 2
 gTilesetTiles_Library::
 	.incbin "data/tilesets/secondary/library/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Gatehouse::
+	.incbin "data/tilesets/secondary/gatehouse/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/gatehouse/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Gatehouse::
+	.incbin "data/tilesets/secondary/gatehouse/tiles.4bpp.lz"
