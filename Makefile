@@ -1,5 +1,6 @@
 TOOLCHAIN := $(DEVKITARM)
 COMPARE ?= 0
+SCRIPT := tools/poryscript$(EXE)
 
 ifeq ($(CC),)
 HOSTCC := gcc
@@ -182,6 +183,7 @@ mostlyclean: tidy
 	rm -f $(DATA_ASM_SUBDIR)/maps/connections.inc $(DATA_ASM_SUBDIR)/maps/events.inc $(DATA_ASM_SUBDIR)/maps/groups.inc $(DATA_ASM_SUBDIR)/maps/headers.inc
 	find $(DATA_ASM_SUBDIR)/maps \( -iname 'connections.inc' -o -iname 'events.inc' -o -iname 'header.inc' \) -exec rm {} +
 	rm -f $(AUTO_GEN_TARGETS)
+	rm -f $(patsubst %.pory,%.inc,$(shell find data/ -type f -name '*.pory'))
 	@$(MAKE) clean -C berry_fix
 	@$(MAKE) clean -C libagbsyscall
 
@@ -206,6 +208,7 @@ include songs.mk
 %.png: ;
 %.pal: ;
 %.aif: ;
+&.pory: ;
 
 %.1bpp: %.png  ; $(GFX) $< $@
 %.4bpp: %.png  ; $(GFX) $< $@
@@ -217,6 +220,7 @@ include songs.mk
 sound/direct_sound_samples/cry_not_%.bin: sound/direct_sound_samples/cry_not_%.aif ; $(AIF) $< $@
 sound/direct_sound_samples/cry_%.bin: sound/direct_sound_samples/cry_%.aif ; $(AIF) $< $@ --compress
 sound/%.bin: sound/%.aif ; $(AIF) $< $@
+data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@ -fw tools/font_widths.json
 
 
 ifeq ($(MODERN),0)
