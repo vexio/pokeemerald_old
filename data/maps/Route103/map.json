@@ -26,6 +26,11 @@
             "direction": "left",
             "map": "MAP_OLDALE_TOWN",
             "offset": 4
+        },
+        {
+            "direction": "right",
+            "map": "MAP_DEWFORD_TOWN",
+            "offset": -4
         }
     ],
     "coord_events": [

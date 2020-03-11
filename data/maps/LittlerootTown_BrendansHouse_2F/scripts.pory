@@ -1,3 +1,4 @@
+raw `
 LittlerootTown_BrendansHouse_2F_MapScripts:: @ 81F83E3
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_2F_OnTransition
     map_script MAP_SCRIPT_ON_FRAME_TABLE, PlayersHouse_Mapscript2_Init
@@ -315,51 +316,40 @@ PlayersHouse_2F_Text_ItsAGameCube: @ 81F884F
 	.string "It's a Nintendo GameCube.\p"
 	.string "A Game Boy Advance is connected to\n"
 	.string "serve as the Controller.$"
-
+`
+raw `
 PlayersHouse_Mapscript2_Init::
 	map_script_2 VAR_PLAYERSHOUSE_DADENTERSROOM, 0, PlayersHouse_Mapscript_DadEnterRoom
 	.2byte 0
+`
 
-PlayersHouse_Mapscript_DadEnterRoom::
-	compare VAR_PLAYERSHOUSE_DADENTERSROOM, 0
-	goto_if_eq PlayersHouse_Mapscript_DadEnterRoom_1
-	return
+script PlayersHouse_Mapscript_DadEnterRoom {
+    if (var(VAR_PLAYERSHOUSE_DADENTERSROOM) == 0) {
+        playse(SE_KAIDAN)
+        applymovement(1, PlayersHouse_DadEnterRoom_Movement_0)
+        waitmovement(0)
+        playse(SE_PIN)
+        delay(10)
+        msgbox(format("Dad: {COLOR BLUE}Hey {PLAYER}!\pToday is your big day!\nYou're finally old enough to begin your Pokémon journey!\p{COLOR DARK_GREY}Dad: {COLOR BLUE}Susie -- er... Your Mother is flying into town soon, so you better be downstairs here when she shows up!"))
+        closemessage
+        delay(10)
+        applymovement(1, PlayersHouse_DadEnterRoom_Movement_1)
+        waitmovement(0)
+        playse(SE_KAIDAN)
+        removeobject(1)
+        setflag(FLAG_PLAYERSHOUSE_DADENTERSROOM)
+        setvar(VAR_PLAYERSHOUSE_DADENTERSROOM, 1)
+        release
+        end
+    }
+}
 
-PlayersHouse_Mapscript_DadEnterRoom_1:
-	playse SE_KAIDAN
-	applymovement 1, PlayersHouse_DadEnterRoom_Movement_0
-	waitmovement 0
-	playse SE_PIN
-	delay 10
-	msgbox PlayersHouse_Mapscript_DadEnterRoom_Text_0
-	closemessage
-	delay 10
-	applymovement 1, PlayersHouse_DadEnterRoom_Movement_1
-	waitmovement 0
-	playse SE_KAIDAN
-	removeobject 1
-	setflag FLAG_PLAYERSHOUSE_DADENTERSROOM
-	setvar VAR_PLAYERSHOUSE_DADENTERSROOM, 1
-	release
-	end
-
-
-PlayersHouse_DadEnterRoom_Movement_0:
-	walk_right
-	walk_in_place_left
-	delay_8
-	emote_exclamation_mark
-	step_end
-
-PlayersHouse_DadEnterRoom_Movement_1:
-	walk_in_place_slow_left
-	step_end
-
-PlayersHouse_Mapscript_DadEnterRoom_Text_0:
-	.string "Dad: {COLOR BLUE}Hey {PLAYER}!\p"
-	.string "Today is your big day!\n"
-	.string "You're finally old enough to begin your\l"
-	.string "Pokémon journey!\p"
-	.string "{COLOR DARK_GREY}Dad: {COLOR BLUE}Susie -- er... Your Mother is flying\n"
-	.string "into town soon, so you better be\l"
-	.string "downstairs here when she shows up!$"
+movement PlayersHouse_DadEnterRoom_Movement_0 {
+    walk_right
+    walk_in_place_left
+    delay_8
+    emote_exclamation_mark
+}
+movement PlayersHouse_DadEnterRoom_Movement_1 {
+    walk_in_place_slow_left
+}

@@ -1,6 +1,6 @@
 TOOLCHAIN := $(DEVKITARM)
 COMPARE ?= 0
-SCRIPT := tools/poryscript$(EXE)
+SCRIPT := tools/poryscript/poryscript$(EXE)
 
 ifeq ($(CC),)
 HOSTCC := gcc
@@ -96,7 +96,7 @@ FIX := tools/gbafix/gbafix$(EXE)
 MAPJSON := tools/mapjson/mapjson$(EXE)
 JSONPROC := tools/jsonproc/jsonproc$(EXE)
 
-TOOLDIRS := $(filter-out tools/agbcc tools/binutils,$(wildcard tools/*))
+TOOLDIRS := $(filter-out tools/agbcc tools/binutils tools/poryscript,$(wildcard tools/*))
 TOOLBASE = $(TOOLDIRS:tools/%=%)
 TOOLS = $(foreach tool,$(TOOLBASE),tools/$(tool)/$(tool)$(EXE))
 
@@ -220,7 +220,7 @@ include songs.mk
 sound/direct_sound_samples/cry_not_%.bin: sound/direct_sound_samples/cry_not_%.aif ; $(AIF) $< $@
 sound/direct_sound_samples/cry_%.bin: sound/direct_sound_samples/cry_%.aif ; $(AIF) $< $@ --compress
 sound/%.bin: sound/%.aif ; $(AIF) $< $@
-data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@ -fw tools/font_widths.json
+data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@ -fw tools/poryscript/font_widths.json
 
 
 ifeq ($(MODERN),0)
