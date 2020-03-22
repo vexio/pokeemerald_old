@@ -73,7 +73,7 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+            "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
             "movement_range_x": 2,
             "movement_range_y": 1,
             "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
@@ -82,6 +82,32 @@
             "trainer_type": "0",
             "x": 23,
             "y": 16
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_CANVASTOWN_MOM",
+            "graphics_id": "OBJ_EVENT_GFX_NORMAN",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+            "script": "NULL",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 24,
+            "y": 11
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_CANVASTOWN_MOM",
+            "graphics_id": "OBJ_EVENT_GFX_MOM",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "script": "NULL",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 16,
+            "y": 11
         }
     ],
     "region_map_section": "MAPSEC_LITTLEROOT_TOWN",

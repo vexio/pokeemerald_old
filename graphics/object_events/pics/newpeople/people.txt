@@ -1,0 +1,25 @@
+CHARACTER NAME -- GAME NAME
+---------------------------
+Youngster -- Youngster
+Picnicker -- Picnicker
+Camper -- Camper
+Mart Employee -- Mart_Employee
+Bird Tamer -- Man_3
+Lass -- Lass
+Kindler -- Man_5
+Hiker -- Hiker
+Beauty 1 -- Girl_3
+Beauty 2 -- Girl_2
+Girl -- Girl_1
+Ruin Maniac -- Gentleman
+Fat Man --  fat_man
+Expert M -- expert_m
+Expert F -- expert_f
+Engineer -- magma_member_m
+Rival -- brandon
+Rich Boy -- rich_boy
+Black Belt -- black_belt
+Artist F -- artist
+Maniac -- maniac
+Wally -- wally
+Artist M -- tucker

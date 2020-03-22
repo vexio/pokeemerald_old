@@ -1,6 +1,7 @@
 LittlerootTown_MapScripts:: @ 81E7DCB
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_OnFrame
+	@map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_OnFrame
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, CanvasTown_Mapscript2_Init
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_OnWarp
 	.byte 0
 
@@ -1064,3 +1065,121 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab: @ 81E8DA2
 	.string "I gave you?\p"
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
+
+CanvasTown_Mapscript2_Init::
+	map_script_2 VAR_CANVASTOWN_MOMARRIVES, 0, CanvasTown_Mapscript_MomArrives
+	.2byte 0
+
+CanvasTown_Mapscript_MomArrives::
+	compare VAR_CANVASTOWN_MOMARRIVES, 0
+	goto_if_eq CanvasTown_Mapscript_MomArrives_1
+	return
+
+CanvasTown_Mapscript_MomArrives_1:
+	lockall
+	applymovement 4, CanvasTown_MomArrives_Movement_0
+	waitmovement 0
+	msgbox CanvasTown_Mapscript_MomArrives_Text_0
+	applymovement 4, CanvasTown_MomArrives_Movement_1
+	waitmovement 0
+	msgbox CanvasTown_Mapscript_MomArrives_Text_1
+	closemessage
+	applymovement 4, CanvasTown_MomArrives_Movement_5
+	applymovement OBJ_EVENT_ID_PLAYER, CanvasTown_MomArrives_Movement_2
+	waitmovement 0
+	delay 10
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 5
+	setobjectxy 5, 22, 11
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+	delay 5
+	applymovement 5, CanvasTown_MomArrives_Movement_3
+	waitmovement 0
+	msgbox CanvasTown_Mapscript_MomArrives_Text_2
+	closemessage
+	applymovement 4, CanvasTown_MomArrives_Movement_4
+	applymovement OBJ_EVENT_ID_PLAYER, CanvasTown_MomArrives_Movement_7
+	waitmovement 0
+	msgbox CanvasTown_Mapscript_MomArrives_Text_3
+	closemessage
+	applymovement 4, CanvasTown_MomArrives_Movement_5
+	applymovement OBJ_EVENT_ID_PLAYER, CanvasTown_MomArrives_Movement_5
+	waitmovement 0
+	delay 5
+	applymovement 5, CanvasTown_MomArrives_Movement_6
+	waitmovement 0
+	msgbox CanvasTown_Mapscript_MomArrives_Text_4
+	closemessage
+	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 255, 5, 6
+	waitmovement 0
+	setvar VAR_CANVASTOWN_MOMARRIVES, 1
+	setflag FLAG_CANVASTOWN_MOM
+	clearflag FLAG_CANVASTOWN_GETPOKEMON
+	releaseall
+	end
+
+
+CanvasTown_MomArrives_Movement_0:
+	walk_in_place_right
+	delay_8
+	emote_exclamation_mark
+	step_end
+
+CanvasTown_MomArrives_Movement_1:
+	walk_in_place_left
+	delay_16
+	jump_in_place_left
+	delay_2
+	walk_in_place_right
+	step_end
+
+CanvasTown_MomArrives_Movement_2:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	step_end
+
+CanvasTown_MomArrives_Movement_3:
+	walk_in_place_right
+	delay_4
+	emote_exclamation_mark
+	step_end
+
+CanvasTown_MomArrives_Movement_4:
+	walk_in_place_down
+	step_end
+
+CanvasTown_MomArrives_Movement_5:
+	walk_in_place_left
+	step_end
+
+CanvasTown_MomArrives_Movement_6:
+	walk_in_place_right
+	step_end
+
+CanvasTown_MomArrives_Movement_7:
+	walk_in_place_up
+	step_end
+
+CanvasTown_Mapscript_MomArrives_Text_0:
+	.string "Dad:{COLOR BLUE} {PLAYER}!$"
+
+CanvasTown_Mapscript_MomArrives_Text_1:
+	.string "Dad:{COLOR BLUE} She's flying in right now!\p"
+	.string "Quick, come here!$"
+
+CanvasTown_Mapscript_MomArrives_Text_2:
+	.string "Mom: {COLOR RED}Hey you two!\p"
+	.string "{COLOR DARK_GREY}Mom: {COLOR RED}I'm here for your big day,\n"
+	.string "{PLAYER}!\p"
+	.string "I'm so excited for you!$"
+
+CanvasTown_Mapscript_MomArrives_Text_3:
+	.string "Dad: {COLOR BLUE}Your Mother came all the way in\n"
+	.string "from {COLOR GREEN}Myst City{COLOR BLUE}!\p"
+	.string "{COLOR DARK_GREY}Dad: {COLOR BLUE}That's where your Mother's\n"
+	.string "Labortory is.$"
+
+CanvasTown_Mapscript_MomArrives_Text_4:
+	.string "Mom: {COLOR RED}Now, let's go inside.$"

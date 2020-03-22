@@ -432,6 +432,27 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_33 0x1122
 #define OBJ_EVENT_PAL_TAG_34 0x1123
 #define OBJ_EVENT_PAL_YOUNGSTER 0x1124 // MODIFIED
+#define OBJ_EVENT_PAL_BRENDAN 0x1125 // MODIFIED
+#define OBJ_EVENT_PAL_GIRL1 0x1126 // MODIFIED
+#define OBJ_EVENT_PAL_GIRL2 0x1127 //MODIFIED
+#define OBJ_EVENT_PAL_GIRL3 0x1128 // MODIFIED
+#define OBJ_EVENT_PAL_RICH_BOY 0x1129 // MODIFIED
+#define OBJ_EVENT_PAL_FAT_MAN 0x112A // MODIFIED
+#define OBJ_EVENT_PAL_EXPERT_F_M 0x112B // MODIFIED
+#define OBJ_EVENT_PAL_PICNICKER_CAMPER 0x112C // MODIFIED
+#define OBJ_EVENT_PAL_MAN_3 0x112D // MODIFIED
+#define OBJ_EVENT_PAL_MANIAC 0x112E // MODIFIED
+#define OBJ_EVENT_PAL_BLACK_BELT 0x112F // MODIFIED
+#define OBJ_EVENT_PAL_LASS 0x1130 // MODIFIED
+#define OBJ_EVENT_PAL_GENTLEMAN 0x1131 // MODIFIED
+#define OBJ_EVENT_PAL_HIKER 0x1132 // MODIFIED
+#define OBJ_EVENT_PAL_MAN_5 0x1133 // MODIFIED
+#define OBJ_EVENT_PAL_MART_EMPLOYEE 0x1134 // MODIFIED
+#define OBJ_EVENT_PAL_ARTIST 0x1135 // MODIFIED
+#define OBJ_EVENT_PAL_MAGMA_MEMBER_M 0x1136 // MODIFIED
+#define OBJ_EVENT_PAL_WALLY 0x1137 // MODIFIED
+#define OBJ_EVENT_PAL_TUCKER 0x1138 // MODIFIED
+#define OBJ_EVENT_PAL_BRANDON 0x1139 // MODIFIED
 #define OBJ_EVENT_PAL_TAG_NONE 0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -479,6 +500,27 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette33, OBJ_EVENT_PAL_TAG_33},
     {gObjectEventPalette34, OBJ_EVENT_PAL_TAG_34},
     {gObjectEventPalette_Youngster, OBJ_EVENT_PAL_YOUNGSTER},
+    {gObjectEventPalette_Brendan, OBJ_EVENT_PAL_BRENDAN},
+    {gObjectEventPalette_Girl1, OBJ_EVENT_PAL_GIRL1},
+    {gObjectEventPalette_Girl2, OBJ_EVENT_PAL_GIRL2},
+    {gObjectEventPalette_Girl3, OBJ_EVENT_PAL_GIRL3},
+    {gObjectEventPalette_RichBoy, OBJ_EVENT_PAL_RICH_BOY},
+    {gObjectEventPalette_FatMan, OBJ_EVENT_PAL_FAT_MAN},
+    {gObjectEventPalette_Expert, OBJ_EVENT_PAL_EXPERT_F_M},
+    {gObjectEventPalette_Picnicker_Camper, OBJ_EVENT_PAL_PICNICKER_CAMPER},
+    {gObjectEventPalette_Man3, OBJ_EVENT_PAL_MAN_3},
+    {gObjectEventPalette_Maniac, OBJ_EVENT_PAL_MANIAC},
+    {gObjectEventPalette_BlackBelt, OBJ_EVENT_PAL_BLACK_BELT},
+    {gObjectEventPalette_Lass, OBJ_EVENT_PAL_LASS},
+    {gObjectEventPalette_Gentleman, OBJ_EVENT_PAL_GENTLEMAN},
+    {gObjectEventPalette_Hiker, OBJ_EVENT_PAL_HIKER},
+    {gObjectEventPalette_Man5, OBJ_EVENT_PAL_MAN_5},
+    {gObjectEventPalette_MartEmployee, OBJ_EVENT_PAL_MART_EMPLOYEE},
+    {gObjectEventPalette_Artist, OBJ_EVENT_PAL_ARTIST},
+    {gObjectEventPalette_MagmaMemberM, OBJ_EVENT_PAL_MAGMA_MEMBER_M},
+    {gObjectEventPalette_Wally, OBJ_EVENT_PAL_WALLY},
+    {gObjectEventPalette_Tucker, OBJ_EVENT_PAL_TUCKER},
+    {gObjectEventPalette_Brandon, OBJ_EVENT_PAL_BRANDON},
     {NULL,                  0x0000},
 };
 

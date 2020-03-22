@@ -600,3 +600,10 @@ gMetatiles_Gatehouse::
 	.align 1
 gMetatileAttributes_Gatehouse::
 	.incbin "data/tilesets/secondary/gatehouse/metatile_attributes.bin"
+	.align 1
+gMetatiles_DavnridgeMines::
+	.incbin "data/tilesets/secondary/davnridgemines/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_DavnridgeMines::
+	.incbin "data/tilesets/secondary/davnridgemines/metatile_attributes.bin"

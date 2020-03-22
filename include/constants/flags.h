@@ -651,8 +651,8 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_3             (FLAG_HIDDEN_ITEMS_START + 0x5E)
 
 #define FLAG_PLAYERSHOUSE_DADENTERSROOM  0x264 // PlayersHouse_Mapscript_DadEnterRoom
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
+#define FLAG_CANVASTOWN_MOM  0x265 // CanvasTown_Mapscript_MomArrives
+#define FLAG_CANVASTOWN_GETPOKEMON  0x266 // CanvasTown_Mapscript_MomArrives, CanvasTown_Mapscripts_GetPokemon
 #define FLAG_UNUSED_0x267  0x267 // Unused Flag
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag

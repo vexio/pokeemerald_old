@@ -1849,3 +1849,23 @@ gTilesetPalettes_Gatehouse::
 	.align 2
 gTilesetTiles_Gatehouse::
 	.incbin "data/tilesets/secondary/gatehouse/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_DavnridgeMines::
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/davnridgemines/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_DavnridgeMines::
+	.incbin "data/tilesets/secondary/davnridgemines/tiles.4bpp.lz"

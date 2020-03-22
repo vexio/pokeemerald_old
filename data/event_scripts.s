@@ -1063,3 +1063,7 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/Route103_/scripts.inc"
 
 	.include "data/maps/Route103_Gatehouse/scripts.inc"
+
+	.include "data/maps/Davnridge_Mines/scripts.inc"
+
+	.include "data/maps/OverworldSprite_Test/scripts.inc"

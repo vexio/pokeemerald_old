@@ -163,7 +163,7 @@
         {
             "blockdata_filepath": "data/layouts/Route101/map.bin",
             "border_filepath": "data/layouts/Route101/border.bin",
-            "height": 30,
+            "height": 32,
             "id": "LAYOUT_ROUTE101",
             "name": "Route101_Layout",
             "primary_tileset": "gTileset_General",
@@ -4429,6 +4429,26 @@
             "primary_tileset": "gTileset_Building",
             "secondary_tileset": "gTileset_Gatehouse",
             "width": 12
+        },
+        {
+            "blockdata_filepath": "data/layouts/Davnridge_Mines/map.bin",
+            "border_filepath": "data/layouts/Davnridge_Mines/border.bin",
+            "height": 38,
+            "id": "LAYOUT_DAVNRIDGE_MINES",
+            "name": "Davnridge_Mines_Layout",
+            "primary_tileset": "gTileset_Building",
+            "secondary_tileset": "gTileset_DavnridgeMines",
+            "width": 38
+        },
+        {
+            "blockdata_filepath": "data/layouts/OverworldSprite_Test/map.bin",
+            "border_filepath": "data/layouts/OverworldSprite_Test/border.bin",
+            "height": 24,
+            "id": "LAYOUT_OVERWORLD_SPRITE_TEST",
+            "name": "OverworldSprite_Test_Layout",
+            "primary_tileset": "gTileset_General",
+            "secondary_tileset": "gTileset_Petalburg",
+            "width": 24
         }
     ],
     "layouts_table_label": "gMapLayouts"

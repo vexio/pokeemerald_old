@@ -896,3 +896,14 @@ gTileset_Gatehouse::
 	.4byte gMetatiles_Gatehouse
 	.4byte gMetatileAttributes_Gatehouse
 	.4byte NULL
+
+	.align 2
+gTileset_DavnridgeMines::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_DavnridgeMines
+	.4byte gTilesetPalettes_DavnridgeMines
+	.4byte gMetatiles_DavnridgeMines
+	.4byte gMetatileAttributes_DavnridgeMines
+	.4byte NULL

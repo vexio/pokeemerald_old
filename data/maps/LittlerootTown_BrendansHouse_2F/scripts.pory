@@ -325,6 +325,7 @@ PlayersHouse_Mapscript2_Init::
 
 script PlayersHouse_Mapscript_DadEnterRoom {
     if (var(VAR_PLAYERSHOUSE_DADENTERSROOM) == 0) {
+		lockall
         playse(SE_KAIDAN)
         applymovement(1, PlayersHouse_DadEnterRoom_Movement_0)
         waitmovement(0)
@@ -339,7 +340,8 @@ script PlayersHouse_Mapscript_DadEnterRoom {
         removeobject(1)
         setflag(FLAG_PLAYERSHOUSE_DADENTERSROOM)
         setvar(VAR_PLAYERSHOUSE_DADENTERSROOM, 1)
-        release
+		setflag(FLAG_CANVASTOWN_GETPOKEMON)
+        releaseall
         end
     }
 }

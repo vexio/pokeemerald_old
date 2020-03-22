@@ -58,7 +58,9 @@
         "Underwater6",
         "Underwater7",
         "Route103_",
-        "Route103_Gatehouse"
+        "Route103_Gatehouse",
+        "Davnridge_Mines",
+        "OverworldSprite_Test"
     ],
     "gMapGroup1": [
         "LittlerootTown_BrendansHouse_1F",

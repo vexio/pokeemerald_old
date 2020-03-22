@@ -326,6 +326,7 @@ PlayersHouse_Mapscript_DadEnterRoom::
 	return
 
 PlayersHouse_Mapscript_DadEnterRoom_1:
+	lockall
 	playse SE_KAIDAN
 	applymovement 1, PlayersHouse_DadEnterRoom_Movement_0
 	waitmovement 0
@@ -340,7 +341,8 @@ PlayersHouse_Mapscript_DadEnterRoom_1:
 	removeobject 1
 	setflag FLAG_PLAYERSHOUSE_DADENTERSROOM
 	setvar VAR_PLAYERSHOUSE_DADENTERSROOM, 1
-	release
+	setflag FLAG_CANVASTOWN_GETPOKEMON
+	releaseall
 	end
 
 

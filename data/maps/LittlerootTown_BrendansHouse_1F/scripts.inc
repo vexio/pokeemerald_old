@@ -1,7 +1,7 @@
 LittlerootTown_BrendansHouse_1F_MapScripts:: @ 81F7755
 	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_BrendansHouse_1F_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_1F_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_BrendansHouse_1F_OnFrame
+@	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_BrendansHouse_1F_OnFrame
 	.byte 0
 
 LittlerootTown_BrendansHouse_1F_OnLoad: @ 81F7765
@@ -11,8 +11,8 @@ LittlerootTown_BrendansHouse_1F_OnLoad: @ 81F7765
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_SetMovingBoxes:: @ 81F777A
-	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, 1
-	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, 1
+@	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, 1
+@	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, 1
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_CheckShowShoesManual:: @ 81F778D
