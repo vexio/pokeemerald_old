@@ -1322,8 +1322,8 @@ CableClub_EventScript_AdapterNotConnected:: @ 8277BB4
 	end
 
 CableClub_EventScript_OpenUnionRoomBarrier:: @ 8277BBE
-	setmetatile 5, 2, METATILE_PokemonCenter_Floor_ShadowTop_Alt, 0
-	setmetatile 5, 3, METATILE_PokemonCenter_Floor_Plain_Alt, 0
+	//setmetatile 5, 2, METATILE_PokemonCenter_Floor_ShadowTop_Alt, 0
+	//setmetatile 5, 3, METATILE_PokemonCenter_Floor_Plain_Alt, 0
 	return
 
 CableClub_EventScript_CloseUnionRoomBarrier:: @ 8277BD1
@@ -1332,8 +1332,8 @@ CableClub_EventScript_CloseUnionRoomBarrier:: @ 8277BD1
 	return
 
 CableClub_EventScript_OpenDirectCornerBarrier:: @ 8277BE4
-	setmetatile 9, 2, METATILE_PokemonCenter_Floor_ShadowTop_Alt, 0
-	setmetatile 9, 3, METATILE_PokemonCenter_Floor_Plain_Alt, 0
+	//setmetatile 9, 2, METATILE_PokemonCenter_Floor_ShadowTop_Alt, 0
+	//setmetatile 9, 3, METATILE_PokemonCenter_Floor_Plain_Alt, 0
 	return
 
 CableClub_EventScript_CloseDirectCornerBarrier:: @ 8277BF7

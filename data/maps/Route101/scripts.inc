@@ -298,4 +298,3 @@ Route101_Text_WildPokemonInTallGrass: @ 81EC04A
 Route101_Text_RouteSign: @ 81EC0C8
 	.string "ROUTE 101\n"
 	.string "{UP_ARROW} OLDALE TOWN$"
-

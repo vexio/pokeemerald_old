@@ -453,6 +453,18 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_WALLY 0x1137 // MODIFIED
 #define OBJ_EVENT_PAL_TUCKER 0x1138 // MODIFIED
 #define OBJ_EVENT_PAL_BRANDON 0x1139 // MODIFIED
+#define OBJ_EVENT_PAL_BUG_CATCHER 0x113A // MODIFIED
+#define OBJ_EVENT_PAL_FISHERMAN 0x113B // MODIFIED
+#define OBJ_EVENT_PAL_MAGMA_MEMBER_F 0x113C // MODIFIED
+#define OBJ_EVENT_PAL_MAN_4 0x113D // MODIFIED
+#define OBJ_EVENT_PAL_PSYCHIC 0x113E // MODIFIED
+#define OBJ_EVENT_PAL_OLD_MAN 0x113F // MODIFIED
+#define OBJ_EVENT_PAL_OLD_WOMAN 0x1140 // MODIFIED
+#define OBJ_EVENT_PAL_WOMAN_1 0x1141 // MODIFIED
+#define OBJ_EVENT_PAL_POKEFAN 0x1142 // MODIFIED
+#define OBJ_EVENT_PAL_NURSE 0x1143 // MODIFIED
+#define OBJ_EVENT_PAL_HEX_MANIAC 0x1144 // MODIFIED
+#define OBJ_EVENT_PAL_REPORTER 0x1145 // MODIFIED
 #define OBJ_EVENT_PAL_TAG_NONE 0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -521,6 +533,18 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Wally, OBJ_EVENT_PAL_WALLY},
     {gObjectEventPalette_Tucker, OBJ_EVENT_PAL_TUCKER},
     {gObjectEventPalette_Brandon, OBJ_EVENT_PAL_BRANDON},
+    {gObjectEventPalette_BugCatcher, OBJ_EVENT_PAL_BUG_CATCHER},
+    {gObjectEventPalette_Fisherman, OBJ_EVENT_PAL_FISHERMAN},
+    {gObjectEventPalette_MagmaMemberF, OBJ_EVENT_PAL_MAGMA_MEMBER_F},
+    {gObjectEventPalette_Man4, OBJ_EVENT_PAL_MAN_4},
+    {gObjectEventPalette_Psychic, OBJ_EVENT_PAL_PSYCHIC},
+    {gObjectEventPalette_OldMan, OBJ_EVENT_PAL_OLD_MAN},
+    {gObjectEventPalette_OldWoman, OBJ_EVENT_PAL_OLD_WOMAN},
+    {gObjectEventPalette_Woman1, OBJ_EVENT_PAL_WOMAN_1},
+    {gObjectEventPalette_Pokefan, OBJ_EVENT_PAL_POKEFAN},
+    {gObjectEventPalette_Nurse, OBJ_EVENT_PAL_NURSE},
+    {gObjectEventPalette_HexManiac, OBJ_EVENT_PAL_HEX_MANIAC},
+    {gObjectEventPalette_Reporter, OBJ_EVENT_PAL_REPORTER},
     {NULL,                  0x0000},
 };
 
