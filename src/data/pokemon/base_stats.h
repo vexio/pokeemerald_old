@@ -2,8 +2,6 @@
 // 255 (MON_GENDERLESS) is reserved for genderless Pokémon.
 #define PERCENT_FEMALE(percent) min(254, ((percent * 255) / 100))
 
-<<<<<<< HEAD
-=======
 #define OLD_UNOWN_BASE_STATS                        \
     {                                               \
         .baseHP = 50,                               \
@@ -36,7 +34,6 @@
         .noFlip = FALSE,                            \
     }
 
->>>>>>> 08a5ba0db2f7e8110c21b875b604e91411a2d4a8
 const struct BaseStats gBaseStats[] =
 {
     [SPECIES_NONE] = {0},
@@ -5773,13 +5770,8 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_FLYING,
         .eggGroup2 = EGG_GROUP_FLYING,
-<<<<<<< HEAD
-        .abilities = {ABILITY_KEEN_EYE, ABILITY_STURDY},
-        .abilityHidden = ABILITY_WEAK_ARMOR,
-=======
         .abilities = {ABILITY_STURDY, ABILITY_KEEN_EYE},
         .safariZoneFleeRate = 0,
->>>>>>> 08a5ba0db2f7e8110c21b875b604e91411a2d4a8
         .bodyColor = BODY_COLOR_GRAY,
     },
 
