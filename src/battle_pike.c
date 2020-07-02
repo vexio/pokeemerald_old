@@ -17,6 +17,7 @@
 #include "constants/battle_frontier.h"
 #include "constants/frontier_util.h"
 #include "constants/abilities.h"
+#include "constants/battle_config.h"
 #include "constants/easy_chat.h"
 #include "constants/layouts.h"
 #include "constants/rgb.h"
@@ -856,8 +857,9 @@ static bool8 DoesTypePreventStatus(u16 species, u32 status)
             ret = TRUE;
         break;
     case STATUS1_PARALYSIS:
-        if (gBaseStats[species].type1 == TYPE_GROUND || gBaseStats[species].type1 == TYPE_ELECTRIC
-            || gBaseStats[species].type2 == TYPE_GROUND || gBaseStats[species].type2 == TYPE_ELECTRIC)
+        if (gBaseStats[species].type1 == TYPE_GROUND || gBaseStats[species].type2 == TYPE_GROUND
+            || (B_PARALYZE_ELECTRIC >= GEN_6 &&
+                (gBaseStats[species].type1 == TYPE_ELECTRIC || gBaseStats[species].type2 == TYPE_ELECTRIC)))
             ret = TRUE;
         break;
     case STATUS1_BURN:
@@ -874,20 +876,20 @@ static bool8 TryInflictRandomStatus(void)
 {
     u8 j, i;
     u8 count;
-    u8 indices[3];
+    u8 indices[FRONTIER_PARTY_SIZE];
     u32 status;
     u16 species;
     bool8 statusChosen;
     struct Pokemon *mon;
 
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
         indices[i] = i;
     for (j = 0; j < 10; j++)
     {
         u8 temp, id;
 
-        i = Random() % 3;
-        id = Random() % 3;
+        i = Random() % FRONTIER_PARTY_SIZE;
+        id = Random() % FRONTIER_PARTY_SIZE;
         SWAP(indices[i], indices[id], temp);
     }
 
@@ -921,7 +923,7 @@ static bool8 TryInflictRandomStatus(void)
         {
             status = sStatusFlags;
             j = 0;
-            for (i = 0; i < 3; i++)
+            for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
             {
                 mon = &gPlayerParty[indices[i]];
                 if (GetAilmentFromStatus(GetMonData(mon, MON_DATA_STATUS)) == AILMENT_NONE
@@ -963,7 +965,7 @@ static bool8 TryInflictRandomStatus(void)
     }
 
     j = 0;
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
     {
         mon = &gPlayerParty[indices[i]];
         if (GetAilmentFromStatus(GetMonData(mon, MON_DATA_STATUS)) == AILMENT_NONE
@@ -995,7 +997,7 @@ static bool8 AtLeastOneHealthyMon(void)
         count = 3;
 
     healthyMonsCount = 0;
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
     {
         struct Pokemon *mon = &gPlayerParty[i];
         if (GetAilmentFromStatus(GetMonData(mon, MON_DATA_STATUS)) == AILMENT_NONE
@@ -1262,23 +1264,23 @@ static void Task_DoStatusInflictionScreenFlash(u8 taskId)
 static void TryHealMons(u8 healCount)
 {
     u8 j, i, k;
-    u8 indices[3];
+    u8 indices[FRONTIER_PARTY_SIZE];
 
     if (healCount == 0)
         return;
 
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
         indices[i] = i;
     for (k = 0; k < 10; k++)
     {
         u8 temp;
 
-        i = Random() % 3;
-        j = Random() % 3;
+        i = Random() % FRONTIER_PARTY_SIZE;
+        j = Random() % FRONTIER_PARTY_SIZE;
         SWAP(indices[i], indices[j], temp);
     }
 
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
     {
         bool32 canBeHealed = FALSE;
         struct Pokemon *mon = &gPlayerParty[indices[i]];
@@ -1483,7 +1485,7 @@ static bool8 AtLeastTwoAliveMons(void)
 
     mon = &gPlayerParty[0];
     countDead = 0;
-    for (i = 0; i < 3; i++, mon++)
+    for (i = 0; i < FRONTIER_PARTY_SIZE; i++, mon++)
     {
         if (GetMonData(mon, MON_DATA_HP) == 0)
             countDead++;

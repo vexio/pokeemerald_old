@@ -11,8 +11,8 @@
 #define sB_ANIM_ARG2 gBattleScripting + 0x11
 #define sTRIPLE_KICK_POWER gBattleScripting + 0x12
 #define sMOVEEND_STATE gBattleScripting + 0x14
-#define sUNUSED_15 gBattleScripting + 0x15
-#define sUNUSED_16 gBattleScripting + 0x16
+#define sSAVED_STAT_CHANGER gBattleScripting + 0x15
+#define sSHIFT_SWITCHED gBattleScripting + 0x16
 #define sBATTLER gBattleScripting + 0x17
 #define sB_ANIM_TURN gBattleScripting + 0x18
 #define sB_ANIM_TARGETS_HIT gBattleScripting + 0x19
@@ -34,6 +34,7 @@
 #define sSAVED_MOVE_EFFECT gBattleScripting + 0x2C
 #define sMOVE_EFFECT gBattleScripting + 0x2E
 #define sMULTIHIT_EFFECT gBattleScripting + 0x30
+#define sILLUSION_NICK_HACK gBattleScripting + 0x32
 
 #define cMULTISTRING_CHOOSER gBattleCommunication + 5
 
@@ -115,7 +116,7 @@
 #define VARIOUS_TRY_LAST_RESORT                 52
 #define VARIOUS_ARGUMENT_STATUS_EFFECT          53
 #define VARIOUS_TRY_HIT_SWITCH_TARGET           54
-#define VARIOUS_TRY_AUTONOMIZE                  55
+#define VARIOUS_TRY_AUTOTOMIZE                  55
 #define VARIOUS_TRY_COPYCAT                     56
 #define VARIOUS_ABILITY_POPUP                   57
 #define VARIOUS_DEFOG                           58
@@ -146,14 +147,32 @@
 #define VARIOUS_TRY_ILLUSION_OFF                83
 #define VARIOUS_SET_SPRITEIGNORE0HP             84
 #define VARIOUS_HANDLE_FORM_CHANGE              85
+#define VARIOUS_GET_STAT_VALUE                  86
+#define VARIOUS_JUMP_IF_FULL_HP                 87
+#define VARIOUS_LOSE_TYPE                       88
+#define VARIOUS_TRY_ACTIVATE_SOULHEART          89
+#define VARIOUS_TRY_ACTIVATE_RECEIVER           90
+#define VARIOUS_TRY_ACTIVATE_BEAST_BOOST        91
+#define VARIOUS_TRY_FRISK                       92
+#define VARIOUS_JUMP_IF_SHIELDS_DOWN_PROTECTED  93
+#define VARIOUS_TRY_FAIRY_LOCK                  94
+#define VARIOUS_JUMP_IF_NO_ALLY                 95
+#define VARIOUS_POISON_TYPE_IMMUNITY            96
+#define VARIOUS_JUMP_IF_NO_HOLD_EFFECT          97
+#define VARIOUS_INFATUATE_WITH_BATTLER          98
+#define VARIOUS_SET_LAST_USED_ITEM              99
+#define VARIOUS_PARALYZE_TYPE_IMMUNITY          100
+#define VARIOUS_JUMP_IF_ABSENT                  101
 
-// Cmd_manipulatedmg
+// Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
 #define DMG_RECOIL_FROM_MISS       1
 #define DMG_DOUBLED                2
 #define DMG_1_8_TARGET_HP          3
 #define DMG_FULL_ATTACKER_HP       4
 #define DMG_CURR_ATTACKER_HP       5
+#define DMG_BIG_ROOT               6
+#define DMG_1_2_ATTACKER_HP        7
 
 // Cmd_jumpifcantswitch
 #define SWITCH_IGNORE_ESCAPE_PREVENTION   0x80
@@ -174,24 +193,26 @@
 #define MOVEEND_DEFROST 2
 #define MOVEEND_SYNCHRONIZE_TARGET 3
 #define MOVEEND_ABILITIES 4
-#define MOVEEND_STATUS_IMMUNITY_ABILITIES 5
-#define MOVEEND_SYNCHRONIZE_ATTACKER 6
-#define MOVEEND_CHOICE_MOVE 7
-#define MOVEEND_CHANGED_ITEMS 8
-#define MOVEEND_ATTACKER_INVISIBLE 9
-#define MOVEEND_ATTACKER_VISIBLE 10
-#define MOVEEND_TARGET_VISIBLE 11
-#define MOVEEND_ITEM_EFFECTS_TARGET 12
-#define MOVEEND_ITEM_EFFECTS_ALL 13
-#define MOVEEND_KINGSROCK_SHELLBELL 14
-#define MOVEEND_SUBSTITUTE 15
-#define MOVEEND_UPDATE_LAST_MOVES 16
-#define MOVEEND_MIRROR_MOVE 17
-#define MOVEEND_NEXT_TARGET 18
-#define MOVEEND_LIFE_ORB 19
-#define MOVEEND_DANCER 20
-#define MOVEEND_CLEAR_BITS 21
-#define MOVEEND_COUNT 22
+#define MOVEEND_ABILITIES_ATTACKER 5
+#define MOVEEND_STATUS_IMMUNITY_ABILITIES 6
+#define MOVEEND_SYNCHRONIZE_ATTACKER 7
+#define MOVEEND_CHOICE_MOVE 8
+#define MOVEEND_CHANGED_ITEMS 9
+#define MOVEEND_ATTACKER_INVISIBLE 10
+#define MOVEEND_ATTACKER_VISIBLE 11
+#define MOVEEND_TARGET_VISIBLE 12
+#define MOVEEND_ITEM_EFFECTS_TARGET 13
+#define MOVEEND_MOVE_EFFECTS2 14
+#define MOVEEND_ITEM_EFFECTS_ALL 15
+#define MOVEEND_KINGSROCK_SHELLBELL 16
+#define MOVEEND_SUBSTITUTE 17
+#define MOVEEND_UPDATE_LAST_MOVES 18
+#define MOVEEND_MIRROR_MOVE 19
+#define MOVEEND_NEXT_TARGET 20
+#define MOVEEND_LIFE_ORB 21
+#define MOVEEND_DANCER 22
+#define MOVEEND_CLEAR_BITS 23
+#define MOVEEND_COUNT 24
 
 // stat flags for Cmd_playstatchangeanimation
 #define BIT_HP                      0x1

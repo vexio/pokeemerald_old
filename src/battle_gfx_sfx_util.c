@@ -411,7 +411,10 @@ bool8 TryHandleLaunchBattleTableAnimation(u8 activeBattler, u8 atkBattler, u8 de
     }
 
     if (tableId == B_ANIM_ILLUSION_OFF)
-        ClearIllusionMon(activeBattler);
+    {
+        gBattleStruct->illusion[activeBattler].broken = 1;
+        gBattleStruct->illusion[activeBattler].on = 0;
+    }
 
     gBattleAnimAttacker = atkBattler;
     gBattleAnimTarget = defBattler;
@@ -481,7 +484,7 @@ static void Task_ClearBitWhenSpecialAnimDone(u8 taskId)
 // Great function to include newly added moves that don't have animation yet.
 bool8 IsMoveWithoutAnimation(u16 moveId, u8 animationTurn)
 {
-    if (moveId >= (MOVES_COUNT_GEN6 - 1))
+    if (moveId >= (MOVES_COUNT - 1))
         return TRUE;
     else
         return FALSE;
@@ -1158,11 +1161,6 @@ void ClearTemporarySpeciesSpriteData(u8 battlerId, bool8 dontClearSubstitute)
     gBattleMonForms[battlerId] = 0;
     if (!dontClearSubstitute)
         ClearBehindSubstituteBit(battlerId);
-
-    if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)
-        SetIllusionMon(&gPlayerParty[gBattlerPartyIndexes[battlerId]], battlerId);
-    else
-        SetIllusionMon(&gEnemyParty[gBattlerPartyIndexes[battlerId]], battlerId);
 }
 
 void AllocateMonSpritesGfx(void)
@@ -1195,8 +1193,8 @@ void FreeMonSpritesGfx(void)
     if (gMonSpritesGfxPtr == NULL)
         return;
 
-    if (gMonSpritesGfxPtr->field_17C != NULL)
-        FREE_AND_SET_NULL(gMonSpritesGfxPtr->field_17C);
+    if (gMonSpritesGfxPtr->buffer != NULL)
+        FREE_AND_SET_NULL(gMonSpritesGfxPtr->buffer);
     if (gMonSpritesGfxPtr->field_178 != NULL)
         FREE_AND_SET_NULL(gMonSpritesGfxPtr->field_178);
 

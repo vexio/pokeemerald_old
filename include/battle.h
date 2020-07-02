@@ -107,7 +107,7 @@ struct DisableStruct
     u8 truantSwitchInHack:1;
     u8 mimickedMoves:4;
     u8 rechargeTimer;
-    u8 autonomizeCount;
+    u8 autotomizeCount;
     u8 slowStartTimer;
     u8 embargoTimer;
     u8 magnetRiseTimer;
@@ -221,6 +221,7 @@ struct FieldTimer
     u8 psychicTerrainTimer;
     u8 echoVoiceCounter;
     u8 gravityTimer;
+    u8 fairyLockTimer;
 };
 
 struct WishFutureKnock
@@ -424,14 +425,14 @@ struct MegaEvolutionData
     u8 battlerId;
     bool8 playerSelect;
     u8 triggerSpriteId;
-    u8 indicatorSpriteIds[MAX_BATTLERS_COUNT];
 };
 
 struct Illusion
 {
-    u8 on:1;
-    u8 broken:1;
-    u8 partyId:3;
+    u8 on;
+    u8 set;
+    u8 broken;
+    u8 partyId;
     struct Pokemon *mon;
 };
 
@@ -539,8 +540,15 @@ struct BattleStruct
     u8 lastMoveTarget[MAX_BATTLERS_COUNT]; // The last target on which each mon used a move, for the sake of Instruct
     u8 debugHoldEffects[MAX_BATTLERS_COUNT]; // These override actual items' hold effects.
     u8 tracedAbility[MAX_BATTLERS_COUNT];
+    u16 hpBefore[MAX_BATTLERS_COUNT]; // Hp of battlers before using a move. For Berserk
     bool8 spriteIgnore0Hp;
     struct Illusion illusion[MAX_BATTLERS_COUNT];
+    s8 aiFinalScore[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT][MAX_MON_MOVES]; // AI, target, moves to make debugging easier
+    u8 soulheartBattlerId;
+    u8 friskedBattler; // Frisk needs to identify 2 battlers in double battles.
+    bool8 friskedAbility; // If identifies two mons, show the ability pop-up only once.
+    u8 sameMoveTurns[MAX_BATTLERS_COUNT]; // For Metronome, number of times the same moves has been SUCCESFULLY used.
+    u16 moveEffect2; // For Knock Off
 };
 
 #define GET_MOVE_TYPE(move, typeArg)                        \
@@ -573,6 +581,7 @@ struct BattleStruct
 #define SET_STAT_BUFF_VALUE(n)((((n) << 3) & 0xF8))
 
 #define SET_STATCHANGER(statId, stage, goesDown)(gBattleScripting.statChanger = (statId) + ((stage) << 3) + (goesDown << 7))
+#define SET_STATCHANGER2(dst, statId, stage, goesDown)(dst = (statId) + ((stage) << 3) + (goesDown << 7))
 
 struct BattleScripting
 {
@@ -585,8 +594,8 @@ struct BattleScripting
     u8 animArg2;
     u16 tripleKickPower;
     u8 moveendState;
-    u8 unused_15;
-    u8 unused_16;
+    u8 savedStatChanger; // For further use, if attempting to change stat two times(ex. Moody)
+    u8 shiftSwitched; // When the game tells you the next enemy's pokemon and you switch. Option for noobs but oh well.
     u8 battler;
     u8 animTurn;
     u8 animTargetsHit;
@@ -608,6 +617,7 @@ struct BattleScripting
     u16 savedMoveEffect; // For moves hitting multiple targets.
     u16 moveEffect;
     u16 multihitMoveEffect;
+    u8 illusionNickHack; // To properly display nick in STRINGID_ENEMYABOUTTOSWITCHPKMN.
 };
 
 // rom_80A5C6C
@@ -701,7 +711,7 @@ struct MonSpritesGfx
     u8 field_F4[0x80];
     u8 *barFontGfx;
     void *field_178;
-    u16 *field_17C;
+    u16 *buffer;
 };
 
 // All battle variables are declared in battle_main.c

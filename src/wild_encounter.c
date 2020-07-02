@@ -18,11 +18,13 @@
 #include "battle_pike.h"
 #include "battle_pyramid.h"
 #include "constants/abilities.h"
+#include "constants/battle_config.h"
 #include "constants/game_stat.h"
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/maps.h"
 #include "constants/species.h"
+#include "constants/weather.h"
 
 extern const u8 EventScript_RepelWoreOff[];
 
@@ -129,12 +131,9 @@ static bool8 CheckFeebas(void)
     return FALSE;
 }
 
-// The number 1103515245 comes from the example implementation of rand and srand
-// in the ISO C standard.
-
 static u16 FeebasRandom(void)
 {
-    sFeebasRngValue = (1103515245 * sFeebasRngValue) + 12345;
+    sFeebasRngValue = ISO_RANDOMIZE2(sFeebasRngValue);
     return sFeebasRngValue >> 16;
 }
 
@@ -339,7 +338,7 @@ static u8 PickWildMonNature(void)
     // check synchronize for a pokemon with the same ability
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG)
         && GetMonAbility(&gPlayerParty[0]) == ABILITY_SYNCHRONIZE
-        && Random() % 2 == 0)
+        && ((B_SYNCHRONIZE_NATURE >= GEN_8) || Random() % 2 == 0))
     {
         return GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY) % 25;
     }
@@ -409,11 +408,29 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
             break;
         if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex))
             break;
+        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_LIGHTNING_ROD, &wildMonIndex))
+            break;
+        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_FIRE, ABILITY_FLASH_FIRE, &wildMonIndex))
+            break;
+        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_GRASS, ABILITY_HARVEST, &wildMonIndex))
+            break;
+        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_WATER, ABILITY_STORM_DRAIN, &wildMonIndex))
+            break;
 
         wildMonIndex = ChooseWildMonIndex_Land();
         break;
     case WILD_AREA_WATER:
+        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex))
+            break;
         if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex))
+            break;
+        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_LIGHTNING_ROD, &wildMonIndex))
+            break;
+        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_FIRE, ABILITY_FLASH_FIRE, &wildMonIndex))
+            break;
+        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_GRASS, ABILITY_HARVEST, &wildMonIndex))
+            break;
+        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_WATER, ABILITY_STORM_DRAIN, &wildMonIndex))
             break;
 
         wildMonIndex = ChooseWildMonIndex_WaterRock();
@@ -497,8 +514,16 @@ static bool8 DoWildEncounterRateTest(u32 encounterRate, bool8 ignoreAbility)
             encounterRate /= 2;
         else if (ability == ABILITY_ARENA_TRAP)
             encounterRate *= 2;
-        else if (ability == ABILITY_SAND_VEIL && gSaveBlock1Ptr->weather == 8)
+        else if (ability == ABILITY_SAND_VEIL && gSaveBlock1Ptr->weather == WEATHER_SANDSTORM)
             encounterRate /= 2;
+        else if (ability == ABILITY_SNOW_CLOAK && gSaveBlock1Ptr->weather == WEATHER_SNOW)
+            encounterRate /= 2;
+        else if (ability == ABILITY_QUICK_FEET)
+            encounterRate /= 2;
+        else if (ability == ABILITY_INFILTRATOR)
+            encounterRate /= 2;
+        else if (ability == ABILITY_NO_GUARD)
+            encounterRate = encounterRate * 3 / 2;
     }
     if (encounterRate > 2880)
         encounterRate = 2880;
