@@ -2170,11 +2170,11 @@ static void FreeWindowAndBgBuffers(void)
 
 static void CreatePokedexList(u8 dexMode, u8 order)
 {
-    u16 vars[3]; //I have no idea why three regular variables are stored in an array, but whatever.
+    u32 vars[3]; //I have no idea why three regular variables are stored in an array, but whatever.
 #define temp_dexCount   vars[0]
 #define temp_isHoennDex vars[1]
 #define temp_dexNum     vars[2]
-    s16 i;
+    s32 i;
 
     sPokedexView->pokemonListCount = 0;
 
@@ -2271,11 +2271,11 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         {
             temp_dexNum = gPokedexOrder_Weight[i];
 
-<<<<<<< HEAD
-            if (NationalToHoennOrder(temp_dexNum) <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
-=======
             if ((!temp_isHoennDex || NationalToHoennOrder(temp_dexNum) != 0) && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
+            {
+                sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
+                sPokedexView->pokedexList[sPokedexView->pokemonListCount].owned = TRUE;
                 sPokedexView->pokemonListCount++;
             }
         }
@@ -2285,11 +2285,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         {
             temp_dexNum = gPokedexOrder_Height[i];
 
-<<<<<<< HEAD
-            if (NationalToHoennOrder(temp_dexNum) <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
-=======
             if ((!temp_isHoennDex || NationalToHoennOrder(temp_dexNum) != 0) && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
->>>>>>> 0dc4db67eccb700890a582fbd8ddb6d926e31006
             {
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -2303,11 +2299,7 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         {
             temp_dexNum = gPokedexOrder_Height[i];
 
-<<<<<<< HEAD
-            if (NationalToHoennOrder(temp_dexNum) <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
-=======
             if ((!temp_isHoennDex || NationalToHoennOrder(temp_dexNum) != 0) && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
->>>>>>> 0dc4db67eccb700890a582fbd8ddb6d926e31006
             {
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                 sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -4261,16 +4253,14 @@ u16 GetPokedexHeightWeight(u16 dexNum, u8 data)
 
 s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
 {
-    u8 index;
-    u8 bit;
-    u8 mask;
-    s8 retVal;
+    u32 index, bit, mask;
+    s8 retVal = 0;
 
     nationalDexNo--;
     index = nationalDexNo / 8;
     bit = nationalDexNo % 8;
     mask = 1 << bit;
-    retVal = 0;
+
     switch (caseID)
     {
     case FLAG_GET_SEEN:
@@ -4286,6 +4276,7 @@ s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
         gSaveBlock1Ptr->dexCaught[index] |= mask;
         break;
     }
+
     return retVal;
 }
 
@@ -4546,22 +4537,23 @@ static void UnusedPrintDecimalNum(u8 windowId, u16 b, u8 left, u8 top)
 
 static void PrintFootprint(u8 windowId, u16 dexNum)
 {
-    u8 image[32 * 4];
+    u8 image[32 * 4] = {0};
     const u8 * r12 = gMonFootprintTable[NationalPokedexNumToSpecies(dexNum)];
-    u16 r5 = 0;
-    u16 i;
-    u16 j;
+    u32 i, j, r5 = 0;
 
-    for (i = 0; i < 32; i++)
+    if (r12 != NULL)
     {
-        u8 r3 = r12[i];
-        for (j = 0; j < 4; j++)
+        for (i = 0; i < 32; i++)
         {
-            u8 value = ((r3 >> (2 * j)) & 1 ? 2 : 0);
-            if ((2 << (2 * j)) & r3)
-                value |= 0x20;
-            image[r5] = value;
-            r5++;
+            u8 r3 = r12[i];
+            for (j = 0; j < 4; j++)
+            {
+                u8 value = ((r3 >> (2 * j)) & 1 ? 2 : 0);
+                if ((2 << (2 * j)) & r3)
+                    value |= 0x20;
+                image[r5] = value;
+                r5++;
+            }
         }
     }
     CopyToWindowPixelBuffer(windowId, image, sizeof(image), 0);
