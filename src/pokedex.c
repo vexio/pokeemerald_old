@@ -2170,11 +2170,11 @@ static void FreeWindowAndBgBuffers(void)
 
 static void CreatePokedexList(u8 dexMode, u8 order)
 {
-    u32 vars[3]; //I have no idea why three regular variables are stored in an array, but whatever.
+    u16 vars[3]; //I have no idea why three regular variables are stored in an array, but whatever.
 #define temp_dexCount   vars[0]
 #define temp_isHoennDex vars[1]
 #define temp_dexNum     vars[2]
-    s32 i;
+    s16 i;
 
     sPokedexView->pokemonListCount = 0;
 
@@ -2299,12 +2299,15 @@ static void CreatePokedexList(u8 dexMode, u8 order)
         {
             temp_dexNum = gPokedexOrder_Height[i];
 
-<<<<<<< HEAD
-                if ((!temp_isHoennDex || NationalToHoennOrder(temp_dexNum) != 0) && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
-                {
-                    sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
-                    sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
-                    sPokedexView->pokedexList[sPokedexView->pokemonListCount].owned = TRUE;
+            if (NationalToHoennOrder(temp_dexNum) <= temp_dexCount && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
+            {
+                sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
+                sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
+                sPokedexView->pokedexList[sPokedexView->pokemonListCount].owned = TRUE;
+                sPokedexView->pokemonListCount++;
+            }
+        }
+        break;
     }
 
     for (i = sPokedexView->pokemonListCount; i < NATIONAL_DEX_COUNT; i++)
@@ -2320,6 +2323,7 @@ static void PrintMonDexNumAndName(u8 windowId, u8 fontId, const u8* str, u8 left
     u8 color[3];
 
     color[0] = TEXT_COLOR_TRANSPARENT;
+    color[1] = TEXT_DYNAMIC_COLOR_6;
     color[2] = TEXT_COLOR_LIGHT_GREY;
     AddTextPrinterParameterized4(windowId, fontId, left * 8, (top * 8) + 1, 0, 0, color, -1, str);
 }
@@ -4080,13 +4084,8 @@ static void SpriteCB_SlideCaughtMonToCenter(struct Sprite *sprite)
 // u32 value is re-used, but passed as a bool that's TRUE if national dex is enabled
 static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
 {
-<<<<<<< HEAD
-    u8 str[0x10];
-    u8 str2[0x30];
-=======
     u8 str[16];
     u8 str2[32];
->>>>>>> 08a5ba0db2f7e8110c21b875b604e91411a2d4a8
     u16 natNum;
     const u8 *name;
     const u8 *category;
@@ -4254,14 +4253,16 @@ u16 GetPokedexHeightWeight(u16 dexNum, u8 data)
 
 s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
 {
-    u32 index, bit, mask;
-    s8 retVal = 0;
+    u8 index;
+    u8 bit;
+    u8 mask;
+    s8 retVal;
 
     nationalDexNo--;
     index = nationalDexNo / 8;
     bit = nationalDexNo % 8;
     mask = 1 << bit;
-
+    retVal = 0;
     switch (caseID)
     {
     case FLAG_GET_SEEN:
@@ -4277,7 +4278,6 @@ s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
         gSaveBlock1Ptr->dexCaught[index] |= mask;
         break;
     }
-
     return retVal;
 }
 
@@ -4538,23 +4538,22 @@ static void UnusedPrintDecimalNum(u8 windowId, u16 b, u8 left, u8 top)
 
 static void PrintFootprint(u8 windowId, u16 dexNum)
 {
-    u8 image[32 * 4] = {0};
+    u8 image[32 * 4];
     const u8 * r12 = gMonFootprintTable[NationalPokedexNumToSpecies(dexNum)];
-    u32 i, j, r5 = 0;
+    u16 r5 = 0;
+    u16 i;
+    u16 j;
 
-    if (r12 != NULL)
+    for (i = 0; i < 32; i++)
     {
-        for (i = 0; i < 32; i++)
+        u8 r3 = r12[i];
+        for (j = 0; j < 4; j++)
         {
-            u8 r3 = r12[i];
-            for (j = 0; j < 4; j++)
-            {
-                u8 value = ((r3 >> (2 * j)) & 1 ? 2 : 0);
-                if ((2 << (2 * j)) & r3)
-                    value |= 0x20;
-                image[r5] = value;
-                r5++;
-            }
+            u8 value = ((r3 >> (2 * j)) & 1 ? 2 : 0);
+            if ((2 << (2 * j)) & r3)
+                value |= 0x20;
+            image[r5] = value;
+            r5++;
         }
     }
     CopyToWindowPixelBuffer(windowId, image, sizeof(image), 0);
