@@ -4195,7 +4195,7 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_MEGA_DIANCIE] =
     {
         .size = 0,
-        .y_offset = 0,
+        .y_offset = 0x06,
     },
     [SPECIES_MEGA_AUDINO] =
     {
@@ -4481,17 +4481,17 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_ALOLAN_MEOWTH] =
     {
         .size = 0x65,
-        .y_offset = 0x6,
+        .y_offset = 0x7,
     },
     [SPECIES_ALOLAN_PERSIAN] =
     {
         .size = 0x87,
-        .y_offset = 0x7,
+        .y_offset = 0x8,
     },
     [SPECIES_ALOLAN_GEODUDE] =
     {
         .size = 0x66,
-        .y_offset = 0xb,
+        .y_offset = 0xd,
     },
     [SPECIES_ALOLAN_GRAVELER] =
     {
@@ -4501,12 +4501,12 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_ALOLAN_GOLEM] =
     {
         .size = 0x84,
-        .y_offset = 0xb,
+        .y_offset = 0xd,
     },
     [SPECIES_ALOLAN_GRIMER] =
     {
         .size = 0x75,
-        .y_offset = 0xd,
+        .y_offset = 0xe,
     },
     [SPECIES_ALOLAN_MUK] =
     {
@@ -4524,6 +4524,16 @@ const struct MonCoords gMonBackPicCoords[] =
         .y_offset = 0x8,
     },
     // Forms
+    [SPECIES_PRIMAL_KYOGRE] =
+    {
+        .size = 0x84,
+        .y_offset = 0x12
+    },
+    [SPECIES_PRIMAL_GROUDON] =
+    {
+        .size = 0x86,
+        .y_offset = 0x8
+    },
     [SPECIES_SHAYMIN_SKY] =
     {
         .size = 0x65,
