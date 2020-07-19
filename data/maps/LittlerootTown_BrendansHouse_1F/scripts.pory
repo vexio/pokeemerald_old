@@ -448,3 +448,115 @@ PlayersHouse_1F_Text_StillUnknownPokemon: @ 81F83A1
 	.string "MOM: Well, isn't that something!\n"
 	.string "There are still unknown POKéMON.$"
 `
+raw `
+PlayersHouse_1F_Mapscript2_Init::
+	map_script_2 VAR_PLAYERSHOUSE_GETPOKEMON, 0, PlayersHouse_Mapscript_GetPokemon
+	.2byte 0
+`
+const MOM_ID = 2
+const DAD_ID = 1
+const SKIP_ID = 3
+const PLAYER_ID = OBJ_EVENT_ID_PLAYER
+
+script PlayersHouse_Mapscript_GetPokemon {
+    if (var(VAR_PLAYERSHOUSE_GETPOKEMON) == 0) {
+        lockall
+        delay(20)
+        applymovement(MOM_ID, Common_Movement_WalkInPlaceRight)
+		waitmovement(0)
+		msgbox(format("Mom: {COLOR RED}Now, it's time for you two to make the biggest decision of your Pokémon journey!\pChoosing your starter Pokémon!"), MSGBOX_AUTOCLOSE)
+		waitmessage
+		applymovement(SKIP_ID, Common_Movement_ExclamationMark)
+		applymovement(SKIP_ID, Common_Movement_JumpInPlaceLeft)
+		applymovement(SKIP_ID, Common_Movement_WalkInPlaceUp)
+		waitmovement(0)
+		delay(10)
+		msgbox(format("Skip: {COLOR GREEN}{PLAYER}{COLOR BLUE}!\pI'm so excited to pick our Starter Pokémon!\pBut!\pI'm going to be a gentleman, and let you choose your's first."))
+		waitmessage
+		applymovement(SKIP_ID, Common_Movement_WalkInPlaceLeft)
+		waitmovement(0)
+		delay(5)
+		applymovement(MOM_ID, Common_Movement_WalkInPlaceRight)
+		waitmovement(0)
+		msgbox(format("Mom: {COLOR RED}Now go ahead {COLOR GREEN}{PLAYER}{COLOR RED}, choose your starter!"))
+		waitmessage
+		closemessage
+		delay(10)
+		special(ChooseStarter)
+		waitstate
+		delay(5)
+		msgbox(format("Mom: {COLOR RED}Good choice!\pNow, {COLOR GREEN}Skip{COLOR RED}, go ahead and choose yours."))
+		closemessage
+		msgbox(format("Skip: {COLOR BLUE}Hmmmm..."))
+		waitmessage
+		delay(40)
+		closemessage
+		applymovement(SKIP_ID, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		msgbox(format("Skip: {COLOR BLUE}I know who I'm going to choose!"))
+		closemessage
+		applymovement(SKIP_ID, Common_Movement_WalkInPlaceLeft)
+		waitmovement(0)
+		delay(20)
+		if (var(VAR_STARTER_MON) == 0) { //player chose rowlet, rival is chimchar
+			playse(MUS_FANFA4)
+			msgbox(format("Skip recieved a {COLOR GREEN}Chimchar"))
+			waitse
+			closemessage
+		} elif (var(VAR_STARTER_MON) == 1) { //player chose chimchar, rival is froakie
+			playse(MUS_FANFA4)
+			msgbox(format("Skip recieved a {COLOR GREEN}Froakie"))
+			waitse
+			closemessage
+		} elif (var(VAR_STARTER_MON) == 2) { //player chose froakie, rival is rowlet
+			playse(MUS_FANFA4)
+			msgbox(format("Skip recieved a {COLOR GREEN}Rowlet"))
+			waitse
+			closemessage
+		}
+		applymovement(SKIP_ID, Common_Movement_JumpInPlaceLeft)
+		waitmovement(0)
+		applymovement(SKIP_ID, Common_Movement_WalkInPlaceUp)
+		waitmovement(0)
+		msgbox(format("Skip: {COLOR BLUE}I can't believe we have our first Pokémon finally!\pI'm gonna go tell my Mom!"))
+		closemessage
+		delay(10)
+		applymovement(SKIP_ID, PlayersHouse_GetPokemon_Movement_0)
+		waitmovement(0)
+		playse(SE_KAIDAN)
+		removeobject(SKIP_ID)
+		delay(10)
+		applymovement(MOM_ID, Common_Movement_WalkInPlaceRight)
+		removeobject(4)
+		waitmovement(0)
+		msgbox(format("Mom: {COLOR RED}Well then, you should go catch up with {COLOR GREEN}Skip{COLOR RED}.\pI must get going, I have some more research I need to catch up on."))
+		closemessage
+		delay(5)
+		applymovement(MOM_ID, PlayersHouse_GetPokemon_Movement_1)
+		waitmovement(0)
+		removeobject(MOM_ID)
+		delay(10)
+		applymovement(DAD_ID, Common_Movement_WalkInPlaceLeft)
+		waitmovement(0)
+		msgbox(format("Dad: {COLOR BLUE}Now then!\pGet moving!\pIf you ever need anything from me, just let me know -- I'll be right here."))
+		setflag(FLAG_CANVASTOWN_GETPOKEMON)
+		releaseall
+		end
+    }
+}
+movement PlayersHouse_GetPokemon_Movement_0 {
+	walk_fast_down
+	walk_fast_right * 4
+	walk_fast_down
+	delay_8
+	walk_in_place_down
+}
+movement PlayersHouse_GetPokemon_Movement_1 {
+	walk_up
+	walk_right * 4
+	walk_down * 3
+	walk_right * 3
+	walk_down
+	delay_8
+	walk_in_place_down
+}

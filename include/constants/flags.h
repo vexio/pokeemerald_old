@@ -653,7 +653,7 @@
 #define FLAG_PLAYERSHOUSE_DADENTERSROOM  0x264 // PlayersHouse_Mapscript_DadEnterRoom
 #define FLAG_CANVASTOWN_MOM  0x265 // CanvasTown_Mapscript_MomArrives
 #define FLAG_CANVASTOWN_GETPOKEMON  0x266 // CanvasTown_Mapscript_MomArrives, CanvasTown_Mapscripts_GetPokemon
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
+#define FLAG_CANVASTOWN_DAD  0x267 // PlayersHouse_1F
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag

@@ -56,6 +56,10 @@ Common_Movement_FaceUp: @ 82725B2
 	face_up
 	step_end
 
+Common_Movement_WalkInPlaceUp:
+	walk_in_place_up
+	step_end
+
 Common_Movement_WalkInPlaceDown: @ 82725B4
 	walk_in_place_down
 	step_end
@@ -91,6 +95,10 @@ Common_Movement_Delay32: @ 82725C6
 
 Common_Movement_WalkUp: @ 82725C9
 	walk_up
+	step_end
+
+Common_Movement_JumpInPlaceLeft:
+	jump_in_place_left
 	step_end
 
 @ Unused

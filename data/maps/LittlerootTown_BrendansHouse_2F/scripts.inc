@@ -327,6 +327,8 @@ PlayersHouse_Mapscript_DadEnterRoom::
 
 PlayersHouse_Mapscript_DadEnterRoom_1:
 	lockall
+	delay 40
+	setobjectxy 1, 7, 3
 	playse SE_KAIDAN
 	applymovement 1, PlayersHouse_DadEnterRoom_Movement_0
 	waitmovement 0
@@ -341,13 +343,16 @@ PlayersHouse_Mapscript_DadEnterRoom_1:
 	removeobject 1
 	setflag FLAG_PLAYERSHOUSE_DADENTERSROOM
 	setvar VAR_PLAYERSHOUSE_DADENTERSROOM, 1
+	setvar VAR_PLAYERSHOUSE_GETPOKEMON, 1
 	setflag FLAG_CANVASTOWN_GETPOKEMON
+	setflag FLAG_CANVASTOWN_DAD
 	releaseall
 	end
 
 
 PlayersHouse_DadEnterRoom_Movement_0:
-	walk_right
+	walk_in_place_slow_right
+	delay_16
 	walk_in_place_left
 	delay_8
 	emote_exclamation_mark
@@ -357,11 +362,99 @@ PlayersHouse_DadEnterRoom_Movement_1:
 	walk_in_place_slow_left
 	step_end
 
+PlayersHouse_Trigger_HasPlayerEmailed::
+	compare VAR_PLAYERSHOUSE_HASPLAYEREMAILED, 0
+	goto_if_eq PlayersHouse_Trigger_HasPlayerEmailed_1
+	return
+
+PlayersHouse_Trigger_HasPlayerEmailed_1:
+	lockall
+	delay 5
+	msgbox PlayersHouse_Trigger_HasPlayerEmailed_Text_0
+	closemessage
+	delay 5
+	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_HasPlayerEmailed_Movement_0
+	waitmovement 0
+	releaseall
+	end
+
+
+PlayersHouse_HasPlayerEmailed_Movement_0:
+	walk_down
+	step_end
+
+PlayersHouse_Script_PlayerEmail::
+	lockall
+	msgbox PlayersHouse_Script_PlayerEmail_Text_0, MSGBOX_AUTOCLOSE
+	delay 10
+	playse SE_PC_ON
+	msgbox PlayersHouse_Script_PlayerEmail_Text_1, MSGBOX_AUTOCLOSE
+	compare VAR_PLAYERSHOUSE_HASPLAYEREMAILED, 0
+	goto_if_eq PlayersHouse_Script_PlayerEmail_1
+	msgbox PlayersHouse_Script_PlayerEmail_Text_5
+	closemessage
+	msgbox PlayersHouse_Script_PlayerEmail_Text_3, MSGBOX_AUTOCLOSE
+	delay 10
+	closemessage
+	playse SE_PC_OFF
+	releaseall
+	end
+
+PlayersHouse_Script_PlayerEmail_1:
+	msgbox PlayersHouse_Script_PlayerEmail_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq PlayersHouse_Script_PlayerEmail_4
+	msgbox PlayersHouse_Script_PlayerEmail_Text_4, MSGBOX_AUTOCLOSE
+	setvar VAR_PLAYERSHOUSE_HASPLAYEREMAILED, 1
+	delay 5
+	closemessage
+	msgbox PlayersHouse_Script_PlayerEmail_Text_5
+	closemessage
+	msgbox PlayersHouse_Script_PlayerEmail_Text_3, MSGBOX_AUTOCLOSE
+	delay 10
+	closemessage
+	playse SE_PC_OFF
+	releaseall
+	end
+
+PlayersHouse_Script_PlayerEmail_4:
+	msgbox PlayersHouse_Script_PlayerEmail_Text_3, MSGBOX_AUTOCLOSE
+	delay 10
+	closemessage
+	playse SE_PC_OFF
+	releaseall
+	end
+
+
 PlayersHouse_Mapscript_DadEnterRoom_Text_0:
-	.string "Dad: {COLOR BLUE}Hey {PLAYER}!\p"
-	.string "Today is your big day!\n"
-	.string "You're finally old enough to begin your\l"
-	.string "Pokémon journey!\p"
-	.string "{COLOR DARK_GREY}Dad: {COLOR BLUE}Susie -- er... Your Mother is flying\n"
-	.string "into town soon, so you better be\l"
-	.string "downstairs here when she shows up!$"
+	.string "Dad: {COLOR BLUE}Good morning {PLAYER}!\p"
+	.string "{COLOR DARK_GREY}Dad: {COLOR BLUE}Today is the big day!\n"
+	.string "Today is the day that the {COLOR GREEN}Ryoko\l"
+	.string "Pokémon League{COLOR BLUE} is open for trainers!\p"
+	.string "{COLOR DARK_GREY}Dad: {COLOR BLUE}And... I have a surprise for you and\n"
+	.string "your friend, {COLOR GREEN}Skip{COLOR BLUE}!\p"
+	.string "Send him a little message on your\n"
+	.string "computer and come outside!$"
+
+PlayersHouse_Trigger_HasPlayerEmailed_Text_0:
+	.string "Dad: {COLOR BLUE}Have you emailed your friend, {COLOR GREEN}Skip{COLOR BLUE},\n"
+	.string "yet?$"
+
+PlayersHouse_Script_PlayerEmail_Text_0:
+	.string "BOOTING UP PERSONAL COMPUTER...$"
+
+PlayersHouse_Script_PlayerEmail_Text_1:
+	.string "WELCOME {PLAYER}!$"
+
+PlayersHouse_Script_PlayerEmail_Text_2:
+	.string "EMAIL {COLOR GREEN}SKIP{COLOR DARK_GREY}?$"
+
+PlayersHouse_Script_PlayerEmail_Text_3:
+	.string "SHUTTING DOWN PERSONAL COMPUTER.\n"
+	.string "GOODBYE.$"
+
+PlayersHouse_Script_PlayerEmail_Text_4:
+	.string "SENDING EMAIL TO {COLOR GREEN}SKIP{COLOR DARK_GREY}.$"
+
+PlayersHouse_Script_PlayerEmail_Text_5:
+	.string "NO OTHER TASKS LEFT.$"

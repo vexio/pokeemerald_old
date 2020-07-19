@@ -49,7 +49,7 @@
 #define VAR_RECYCLE_GOODS                    0x4020
 #define VAR_REPEL_STEP_COUNT                 0x4021
 #define VAR_ICE_STEP_COUNT                   0x4022
-#define VAR_STARTER_MON                      0x4023 // 0=Treecko, 1=Torchic, 2=Mudkip
+#define VAR_STARTER_MON                      0x4023 // 0=Rowlet, 1=Chimchar, 2=Froakie
 #define VAR_MIRAGE_RND_H                     0x4024
 #define VAR_MIRAGE_RND_L                     0x4025
 #define VAR_SECRET_BASE_MAP                  0x4026
@@ -102,10 +102,10 @@
 #define VAR_LAVARIDGE_TOWN_STATE             0x4053
 #define VAR_CURRENT_SECRET_BASE              0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
 #define VAR_INTRO_CUTSCENE                   0x4055 // Intro Cutscene Variable
-#define VAR_PACIFIDLOG_TOWN_STATE            0x4056 // Unused Var
+#define VAR_PLAYERSHOUSE_HASPLAYEREMAILED    0x4056 // PlayersHouse_Script_HasPlayerEmailed
 #define VAR_PETALBURG_CITY_STATE             0x4057
 #define VAR_SLATEPORT_CITY_STATE             0x4058
-#define VAR_MAUVILLE_CITY_STATE              0x4059 // Unused Var
+#define VAR_PLAYERSHOUSE_GETPOKEMON          0x4059 // PlayersHouse_Mapscript_GetPokemon
 #define VAR_RUSTBORO_CITY_STATE              0x405A
 #define VAR_FORTREE_CITY_STATE               0x405B // Unused Var
 #define VAR_LILYCOVE_CITY_STATE              0x405C // Unused Var

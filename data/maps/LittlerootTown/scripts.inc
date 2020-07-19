@@ -1089,7 +1089,7 @@ CanvasTown_Mapscript_MomArrives_1:
 	waitmovement 0
 	delay 10
 	dofieldeffect FLDEFF_NPCFLY_OUT
-	delay 5
+	delay 8
 	setobjectxy 5, 22, 11
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	delay 5
@@ -1110,11 +1110,26 @@ CanvasTown_Mapscript_MomArrives_1:
 	waitmovement 0
 	msgbox CanvasTown_Mapscript_MomArrives_Text_4
 	closemessage
-	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 255, 5, 6
+	delay 5
+	applymovement 6, CanvasTown_MomArrives_Movement_8
+	delay 10
+	msgbox CanvasTown_Mapscript_MomArrives_Text_5
+	waitmessage
 	waitmovement 0
+	delay 10
+	closemessage
+	applymovement 6, CanvasTown_MomArrives_Movement_5
+	msgbox CanvasTown_Mapscript_MomArrives_Text_6
+	closemessage
+	applymovement 5, CanvasTown_MomArrives_Movement_6
+	delay 5
+	msgbox CanvasTown_Mapscript_MomArrives_Text_7
+	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 255, 5, 6
 	setvar VAR_CANVASTOWN_MOMARRIVES, 1
+	setvar VAR_PLAYERSHOUSE_GETPOKEMON, 0
 	setflag FLAG_CANVASTOWN_MOM
 	clearflag FLAG_CANVASTOWN_GETPOKEMON
+	clearflag FLAG_CANVASTOWN_DAD
 	releaseall
 	end
 
@@ -1162,6 +1177,21 @@ CanvasTown_MomArrives_Movement_7:
 	walk_in_place_up
 	step_end
 
+CanvasTown_MomArrives_Movement_8:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
 CanvasTown_Mapscript_MomArrives_Text_0:
 	.string "Dad:{COLOR BLUE} {PLAYER}!$"
 
@@ -1170,10 +1200,12 @@ CanvasTown_Mapscript_MomArrives_Text_1:
 	.string "Quick, come here!$"
 
 CanvasTown_Mapscript_MomArrives_Text_2:
-	.string "Mom: {COLOR RED}Hey you two!\p"
-	.string "{COLOR DARK_GREY}Mom: {COLOR RED}I'm here for your big day,\n"
-	.string "{PLAYER}!\p"
-	.string "I'm so excited for you!$"
+	.string "Mom: {COLOR RED}Hey!\n"
+	.string "It's your favorite Professor and\l"
+	.string "Mother!\p"
+	.string "{COLOR DARK_GREY}Mom: {COLOR RED} Today is the big day!\n"
+	.string "Today is the day that you are able to\l"
+	.string "compete in the {COLOR GREEN}Ryoko Pokémon League{COLOR RED}!$"
 
 CanvasTown_Mapscript_MomArrives_Text_3:
 	.string "Dad: {COLOR BLUE}Your Mother came all the way in\n"
@@ -1182,4 +1214,17 @@ CanvasTown_Mapscript_MomArrives_Text_3:
 	.string "Labortory is.$"
 
 CanvasTown_Mapscript_MomArrives_Text_4:
-	.string "Mom: {COLOR RED}Now, let's go inside.$"
+	.string "Mom: {COLOR RED}Now, {COLOR GREEN}{PLAYER}{COLOR RED}, did you tell {COLOR GREEN}Skip{COLOR RED}\n"
+	.string "to come over?$"
+
+CanvasTown_Mapscript_MomArrives_Text_5:
+	.string "Skip: {COLOR BLUE}Hey {COLOR GREEN}{PLAYER}{COLOR BLUE}!\n"
+	.string "I got here as soon as I read your email!$"
+
+CanvasTown_Mapscript_MomArrives_Text_6:
+	.string "Skip: {COLOR BLUE}Mrs -- or should I say {COLOR GREEN}Prof.\n"
+	.string "Cypress{COLOR BLUE} -- it's nice to see you again!$"
+
+CanvasTown_Mapscript_MomArrives_Text_7:
+	.string "Mom: {COLOR RED}Nice to see you too, {COLOR GREEN}Skip{COLOR RED}!\p"
+	.string "Now, let's go inside!$"

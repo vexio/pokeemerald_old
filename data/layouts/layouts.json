@@ -104,7 +104,7 @@
     {
       "id": "LAYOUT_OLDALE_TOWN",
       "name": "OldaleTown_Layout",
-      "width": 36,
+      "width": 38,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
@@ -124,8 +124,8 @@
     {
       "id": "LAYOUT_LAVARIDGE_TOWN",
       "name": "LavaridgeTown_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/LavaridgeTown/border.bin",
@@ -194,10 +194,10 @@
     {
       "id": "LAYOUT_ROUTE104",
       "name": "Route104_Layout",
-      "width": 40,
-      "height": 80,
+      "width": 28,
+      "height": 26,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Route104/border.bin",
       "blockdata_filepath": "data/layouts/Route104/map.bin"
     },
@@ -4434,9 +4434,9 @@
     {
       "id": "LAYOUT_DAVNRIDGE_MINES",
       "name": "Davnridge_Mines_Layout",
-      "width": 38,
-      "height": 38,
-      "primary_tileset": "gTileset_Building",
+      "width": 54,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_DavnridgeMines",
       "border_filepath": "data/layouts/Davnridge_Mines/border.bin",
       "blockdata_filepath": "data/layouts/Davnridge_Mines/map.bin"
@@ -4450,6 +4450,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/OverworldSprite_Test/border.bin",
       "blockdata_filepath": "data/layouts/OverworldSprite_Test/map.bin"
+    },
+    {
+      "id": "LAYOUT_ALNERWICK_LIBRARY",
+      "name": "Alnerwick_Library_Layout",
+      "width": 13,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Library",
+      "border_filepath": "data/layouts/Alnerwick_Library/border.bin",
+      "blockdata_filepath": "data/layouts/Alnerwick_Library/map.bin"
     }
   ]
 }
