@@ -345,6 +345,7 @@ script PlayersHouse_Mapscript_DadEnterRoom {
 		setvar(VAR_PLAYERSHOUSE_GETPOKEMON, 1)
 		setflag(FLAG_CANVASTOWN_GETPOKEMON)
 		setflag(FLAG_CANVASTOWN_DAD)
+		setflag(FLAG_HIDE_MAP_NAME_POPUP)
         releaseall
         end
     }
@@ -381,10 +382,11 @@ movement PlayersHouse_HasPlayerEmailed_Movement_0 {
 
 script PlayersHouse_Script_PlayerEmail {
 	lockall
-	msgbox(format("BOOTING UP PERSONAL COMPUTER..."), MSGBOX_AUTOCLOSE)
+	msgbox(format("BOOTING UP PERSONAL COMPUTER..."))
 	delay(10)
 	playse(SE_PC_ON)
-	msgbox(format("WELCOME {PLAYER}!"), MSGBOX_AUTOCLOSE)
+	setmetatile(0, 2, 639, 1)
+	msgbox(format("WELCOME {PLAYER}!"))
 	if (var(VAR_PLAYERSHOUSE_HASPLAYEREMAILED) == 0) {
 		msgbox(format("EMAIL {COLOR GREEN}SKIP{COLOR DARK_GREY}?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == 0) {
@@ -393,30 +395,29 @@ script PlayersHouse_Script_PlayerEmail {
 			delay(10)
 			closemessage
 			playse(SE_PC_OFF)
+			setmetatile(0, 2, 602, 1)
 			releaseall
 			end
 		} else{
 			//player answers yes
-			msgbox(format("SENDING EMAIL TO {COLOR GREEN}SKIP{COLOR DARK_GREY}."), MSGBOX_AUTOCLOSE)
+			closemessage
+			delay(10)
+			playse(SE_SEIKAI)
+			delay(5)
+			msgbox(format("SENT EMAIL TO {COLOR GREEN}SKIP{COLOR DARK_GREY}."))
 			setvar(VAR_PLAYERSHOUSE_HASPLAYEREMAILED, 1)
 			delay(5)
-			closemessage
-			msgbox(format("NO OTHER TASKS LEFT."))
-			closemessage
-			msgbox(format("SHUTTING DOWN PERSONAL COMPUTER.\nGOODBYE."), MSGBOX_AUTOCLOSE)
+			msgbox(format("NO OTHER TASKS LEFT.\pSHUTTING DOWN PERSONAL COMPUTER.\nGOODBYE."), MSGBOX_AUTOCLOSE)
 			delay(10)
 			closemessage
 			playse(SE_PC_OFF)
+			setmetatile(0, 2, 602, 1)
 			releaseall
 			end
 		}
 	} else {
-		msgbox(format("NO OTHER TASKS LEFT."))
-		closemessage
-		msgbox(format("SHUTTING DOWN PERSONAL COMPUTER.\nGOODBYE."), MSGBOX_AUTOCLOSE)
-		delay(10)
-		closemessage
-		playse(SE_PC_OFF)
+		special(BedroomPC)
+	    waitstate
 		releaseall
 		end
 	}

@@ -20,36 +20,36 @@
     },
     {
       "direction": "down",
-      "offset": 2,
+      "offset": 6,
       "map": "MAP_LITTLEROOT_TOWN"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 9,
+      "x": 11,
       "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "5",
-      "script": "Route101_EventScript_Youngster",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "CanvasPath_Trainer_Youngster",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
-      "x": 11,
-      "y": 7,
+      "x": 26,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 2,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route101_EventScript_Boy",
-      "flag": "FLAG_HIDE_ROUTE_101_BOY"
+      "script": "CanvasPath_Boy_1",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -65,7 +65,23 @@
       "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Route101_EventScript_RouteSign"
+      "script": "CanvasPath_RouteSign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 5,
+      "y": 6,
+      "elevation": 3,
+      "item": "ITEM_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_CANVASPATH_1_POTION  "
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CanvasPath_RouteSign"
     }
   ],
   "allow_bike": "",

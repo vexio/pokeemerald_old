@@ -1,1 +1,149 @@
 mapscripts Alnerwick_Library_MapScripts {}
+
+script AlnerwickLibrary_Object_Boy {
+    msgbox(format("{COLOR BLUE}The {COLOR GREEN}Alnerwick Library{COLOR BLUE} is full of lots of information!\pSome of the books here go back over 200 years!"), MSGBOX_NPC)
+    end
+}
+script AlnerwickLibrary_Object_Girl {
+    lock
+    msgbox(format("{COLOR RED}Hmmm..."), MSGBOX_AUTOCLOSE)
+    faceplayer
+    delay(5)
+    msgbox(format("{COLOR RED}I can't seem to find {COLOR GREEN}The Great Pokémon War{COLOR RED} book...\pI think someone checked it out before me..."), MSGBOX_AUTOCLOSE)
+    applymovement(6, Common_Movement_WalkInPlaceUp)
+    waitmovement(0)
+    release
+    end
+}
+script AlnerwickLibrary_Object_FatMan {
+    lock
+    faceplayer
+    msgbox(format("{COLOR BLUE}To be quite honest, I've never checked out a book from here.\pTheir return policies are really bad, so I usually read the title and consider that to be reading."), MSGBOX_AUTOCLOSE)
+    applymovement(6, Common_Movement_WalkInPlaceUp)
+    waitmovement(0)
+    release
+    end
+}
+script AlnerwickLibrary_Object_Artist {
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}I would personally consider books to be art as well.\pArt is just telling a story through different mediums."), MSGBOX_AUTOCLOSE)
+    applymovement(6, Common_Movement_WalkInPlaceUp)
+    waitmovement(0)
+    release
+    end
+}
+
+// trigger
+
+const GRUNT_ID = 1
+const WOMAN_ID = 2
+const PLAYER_ID = OBJ_EVENT_ID_PLAYER
+
+script AlnerwickLibrary_Trigger_Thief {
+    if (var(VAR_ALNERWICKLIBRARY_THIEF) == 0) {
+        lockall
+        applymovement(GRUNT_ID, Common_Movement_WalkInPlaceDown)
+        waitmovement(0)
+        msgbox(format("???: {COLOR BLUE}Wha' do ya mean I can't take this ol' dusty book?"), MSGBOX_AUTOCLOSE)
+        delay(10)
+        applymovement(WOMAN_ID, Common_Movement_WalkInPlaceUp)
+        waitmovement(0)
+        msgbox(format("Librarian: {COLOR RED}I'm sorry sir, but this book isn't able to be checked out."), MSGBOX_AUTOCLOSE)
+        delay(10)
+        applymovement(GRUNT_ID, AlnerwickLibrary_Thief_Movement_1)
+        waitmovement(0)
+        msgbox(format("???: {COLOR BLUE}Checked out!\pBahaha!\pI'm not checkin' this out!"), MSGBOX_AUTOCLOSE)
+        applymovement(GRUNT_ID, AlnerwickLibrary_Thief_Movement_0)
+        waitmovement(0)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_1) == 6) {
+            msgbox(format("???: {COLOR BLUE}Move it kid!"), MSGBOX_AUTOCLOSE)
+            applymovement(PLAYER_ID, AlnerwickLibrary_Thief_Movement_4)
+            waitmovement(0)
+            applymovement(GRUNT_ID, AlnerwickLibrary_Thief_Movement_0_1)
+            waitmovement(0)
+        } else {
+            applymovement(GRUNT_ID, AlnerwickLibrary_Thief_Movement_0_1)
+            waitmovement(0)
+        }
+        applymovement(WOMAN_ID, AlnerwickLibrary_Thief_Movement_2)
+        waitmovement(0)
+        playse(SE_KAIDAN)
+        removeobject(GRUNT_ID)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_1) == 5) {
+            applymovement(WOMAN_ID, AlnerwickLibrary_Thief_Movement_3_0)
+            waitmovement(0)
+        } elif (var(VAR_TEMP_1) == 6) {
+            applymovement(WOMAN_ID, AlnerwickLibrary_Thief_Movement_3_1)
+            waitmovement(0)
+        } elif (var(VAR_TEMP_1) == 7) {
+            applymovement(WOMAN_ID, AlnerwickLibrary_Thief_Movement_3_2)
+            waitmovement(0)
+        }
+        delay(5)
+        msgbox(format("Librarian: {COLOR RED}I'm sorry, about that ruckus. That man just stole one of the oldest books in this library here.\pThat book is an ancient tome that describes the Legendary Pokémon {COLOR GREEN}Darkrai{COLOR RED}.\p{COLOR DARK_GREY}Librarian: {COLOR GREEN}Darkrai{COLOR RED} is an ancient Pokémon who haunts people's dreams, but the tome lacks a full translation.\pI don't think that thug has any sort of chance at translating that tome.\p{COLOR DARK_GREY}Librarian:{COLOR RED} That thug is probably long gone at this point, and that tome is a loss cause.\pDon't worry, he'll be fined when I get that book back."), MSGBOX_AUTOCLOSE)
+        getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+        if (var(VAR_TEMP_1) == 5) {
+            applymovement(WOMAN_ID, AlnerwickLibrary_Thief_Movement_5_0)
+            waitmovement(0)
+        } elif (var(VAR_TEMP_1) == 6) {
+            applymovement(WOMAN_ID, AlnerwickLibrary_Thief_Movement_5_1)
+            waitmovement(0)
+        } elif (var(VAR_TEMP_1) == 7) {
+            applymovement(WOMAN_ID, AlnerwickLibrary_Thief_Movement_5_2)
+            waitmovement(0)
+        }
+        setflag(FLAG_ALNERWICKLIBRARY_THIEF)
+        setvar(VAR_ALNERWICKLIBRARY_THIEF, 1)
+        release
+        end
+    }
+}
+movement AlnerwickLibrary_Thief_Movement_0 {
+    walk_fast_right
+    walk_fast_down * 2
+    walk_fast_right
+}
+movement AlnerwickLibrary_Thief_Movement_0_1 {
+    walk_fast_right * 4
+    walk_fast_up * 3
+    walk_in_place_left
+}
+movement AlnerwickLibrary_Thief_Movement_1 {
+    emote_exclamation_mark
+    delay_16
+    walk_in_place_down
+}
+movement AlnerwickLibrary_Thief_Movement_2 {
+    walk_in_place_right
+    emote_exclamation_mark
+}
+movement AlnerwickLibrary_Thief_Movement_3_0 {
+    walk_right * 2
+}
+movement AlnerwickLibrary_Thief_Movement_3_1 {
+    walk_down
+    walk_right * 2
+}
+movement AlnerwickLibrary_Thief_Movement_3_2 {
+    walk_down * 2
+    walk_right * 2
+}
+movement AlnerwickLibrary_Thief_Movement_4 {
+    walk_fastest_down
+    walk_in_place_fast_up
+}
+movement AlnerwickLibrary_Thief_Movement_5_0 {
+    walk_left * 2
+    walk_up * 2
+}
+movement AlnerwickLibrary_Thief_Movement_5_1 {
+    walk_left * 2
+    walk_up * 3
+}
+movement AlnerwickLibrary_Thief_Movement_5_2 {
+    walk_left * 2
+    walk_up * 4
+}

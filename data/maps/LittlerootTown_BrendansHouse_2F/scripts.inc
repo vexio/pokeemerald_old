@@ -346,6 +346,7 @@ PlayersHouse_Mapscript_DadEnterRoom_1:
 	setvar VAR_PLAYERSHOUSE_GETPOKEMON, 1
 	setflag FLAG_CANVASTOWN_GETPOKEMON
 	setflag FLAG_CANVASTOWN_DAD
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
 
@@ -385,18 +386,15 @@ PlayersHouse_HasPlayerEmailed_Movement_0:
 
 PlayersHouse_Script_PlayerEmail::
 	lockall
-	msgbox PlayersHouse_Script_PlayerEmail_Text_0, MSGBOX_AUTOCLOSE
+	msgbox PlayersHouse_Script_PlayerEmail_Text_0
 	delay 10
 	playse SE_PC_ON
-	msgbox PlayersHouse_Script_PlayerEmail_Text_1, MSGBOX_AUTOCLOSE
+	setmetatile 0, 2, 639, 1
+	msgbox PlayersHouse_Script_PlayerEmail_Text_1
 	compare VAR_PLAYERSHOUSE_HASPLAYEREMAILED, 0
 	goto_if_eq PlayersHouse_Script_PlayerEmail_1
-	msgbox PlayersHouse_Script_PlayerEmail_Text_5
-	closemessage
-	msgbox PlayersHouse_Script_PlayerEmail_Text_3, MSGBOX_AUTOCLOSE
-	delay 10
-	closemessage
-	playse SE_PC_OFF
+	special BedroomPC
+	waitstate
 	releaseall
 	end
 
@@ -404,16 +402,18 @@ PlayersHouse_Script_PlayerEmail_1:
 	msgbox PlayersHouse_Script_PlayerEmail_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq PlayersHouse_Script_PlayerEmail_4
-	msgbox PlayersHouse_Script_PlayerEmail_Text_4, MSGBOX_AUTOCLOSE
+	closemessage
+	delay 10
+	playse SE_SEIKAI
+	delay 5
+	msgbox PlayersHouse_Script_PlayerEmail_Text_4
 	setvar VAR_PLAYERSHOUSE_HASPLAYEREMAILED, 1
 	delay 5
-	closemessage
-	msgbox PlayersHouse_Script_PlayerEmail_Text_5
-	closemessage
-	msgbox PlayersHouse_Script_PlayerEmail_Text_3, MSGBOX_AUTOCLOSE
+	msgbox PlayersHouse_Script_PlayerEmail_Text_5, MSGBOX_AUTOCLOSE
 	delay 10
 	closemessage
 	playse SE_PC_OFF
+	setmetatile 0, 2, 602, 1
 	releaseall
 	end
 
@@ -422,6 +422,7 @@ PlayersHouse_Script_PlayerEmail_4:
 	delay 10
 	closemessage
 	playse SE_PC_OFF
+	setmetatile 0, 2, 602, 1
 	releaseall
 	end
 
@@ -454,7 +455,9 @@ PlayersHouse_Script_PlayerEmail_Text_3:
 	.string "GOODBYE.$"
 
 PlayersHouse_Script_PlayerEmail_Text_4:
-	.string "SENDING EMAIL TO {COLOR GREEN}SKIP{COLOR DARK_GREY}.$"
+	.string "SENT EMAIL TO {COLOR GREEN}SKIP{COLOR DARK_GREY}.$"
 
 PlayersHouse_Script_PlayerEmail_Text_5:
-	.string "NO OTHER TASKS LEFT.$"
+	.string "NO OTHER TASKS LEFT.\p"
+	.string "SHUTTING DOWN PERSONAL COMPUTER.\n"
+	.string "GOODBYE.$"

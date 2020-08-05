@@ -12,7 +12,7 @@ Route101_OnFrame: @ 81EBCCB
 	.2byte 0
 
 Route101_EventScript_HideMapNamePopup:: @ 81EBCD5
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+	//setflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_ROUTE101_STATE, 1
 	end
 
@@ -298,3 +298,44 @@ Route101_Text_WildPokemonInTallGrass: @ 81EC04A
 Route101_Text_RouteSign: @ 81EC0C8
 	.string "ROUTE 101\n"
 	.string "{UP_ARROW} OLDALE TOWN$"
+
+CanvasPath_Boy_1::
+	msgbox CanvasPath_Boy_1_Text_0, MSGBOX_NPC
+	end
+
+
+CanvasPath_RouteSign::
+	msgbox CanvasPath_RouteSign_Text_0, MSGBOX_SIGN
+	end
+
+
+CanvasPath_Trainer_Youngster::
+	trainerbattle_single TRAINER_CODY_1, CanvasPath_Trainer_Youngster_Text_0, CanvasPath_Trainer_Youngster_Text_1
+	msgbox CanvasPath_Trainer_Youngster_Text_2, MSGBOX_NPC
+	end
+
+
+CanvasPath_Boy_1_Text_0:
+	.string "{COLOR BLUE}Whenever you walk in the wild grass,\n"
+	.string "there is a chance you will encounter a\l"
+	.string "wild Pokémon.\p"
+	.string "If you run while in wild grass, it\n"
+	.string "increases your chance of encountering\l"
+	.string "a wild Pokémon!$"
+
+CanvasPath_RouteSign_Text_0:
+	.string "{UP_ARROW}Alnerwick City\n"
+	.string "{DOWN_ARROW}Canvas Town$"
+
+CanvasPath_Trainer_Youngster_Text_0:
+	.string "{COLOR BLUE}We've made eye contact, which means we\n"
+	.string "have to battle!$"
+
+CanvasPath_Trainer_Youngster_Text_1:
+	.string "Wow, you're a strong trainer!$"
+
+CanvasPath_Trainer_Youngster_Text_2:
+	.string "{COLOR BLUE}If another trainer makes eye contact\n"
+	.string "with you, you're in for a battle!\p"
+	.string "There's no running from a trainer\n"
+	.string "battle!$"

@@ -1805,11 +1805,43 @@ static void sub_8038538(struct Sprite *sprite)
 
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
+
     u32 nameHash = 0;
     u32 personalityValue;
     u8 fixedIV;
     s32 i, j;
     u8 monsCount;
+
+    /*
+    Dynamic values are always in range (1,100)
+    They will only be used if the normal level of opponent's mons is less than the average user level.
+    Opponents who have both custom moves AND held items will have dynamic range (5,100)
+    otherwise the opponents will have dynamic range (1,96)
+    */
+
+    u16 dynamicLevel = 0;
+    
+    // Change stuff like this to get the levels you want
+    static const u8 minDynamicLevel = 3;
+    static const u8 maxDynamicLevel = 98;
+    static const u8 levelDifference = 2;
+
+    // Calculates Average of your party's levels
+    for(i = 0; i < PARTY_SIZE; i++)
+    {
+        if(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE)
+        {
+            if(i != 0) dynamicLevel /= i;
+            break;
+        }
+        dynamicLevel += GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
+    }
+    if(i == PARTY_SIZE) dynamicLevel /= i;
+
+    //Handling values to be always be in the range,
+    // ( minDynamiclevel-levelDifference , maxDynamiclevel+levelDifference )
+    if(dynamicLevel < minDynamicLevel) dynamicLevel = minDynamicLevel;
+    else if(dynamicLevel > maxDynamicLevel) dynamicLevel = maxDynamicLevel;
 
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
@@ -1857,7 +1889,10 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                if (partyData[i].lvl >= dynamicLevel)
+                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                else
+                    CreateMon(&party[i], partyData[i].species, dynamicLevel - levelDifference, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 break;
             }
             case F_TRAINER_PARTY_CUSTOM_MOVESET:
@@ -1869,7 +1904,10 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                if (partyData[i].lvl >= dynamicLevel)
+                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                else
+                    CreateMon(&party[i], partyData[i].species, dynamicLevel - levelDifference, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
@@ -1887,7 +1925,10 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                if (partyData[i].lvl >= dynamicLevel)
+                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                else
+                    CreateMon(&party[i], partyData[i].species, dynamicLevel - levelDifference, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 break;
@@ -1901,7 +1942,10 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                if (partyData[i].lvl >= dynamicLevel)
+                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                else
+                    CreateMon(&party[i], partyData[i].species, dynamicLevel - levelDifference, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
@@ -4253,14 +4297,6 @@ u32 GetBattlerTotalSpeedStat(u8 battlerId)
     // stat stages
     speed *= gStatStageRatios[gBattleMons[battlerId].statStages[STAT_SPEED]][0];
     speed /= gStatStageRatios[gBattleMons[battlerId].statStages[STAT_SPEED]][1];
-
-    // player's badge boost
-    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_x2000000 | BATTLE_TYPE_FRONTIER))
-        && FlagGet(FLAG_BADGE03_GET)
-        && GetBattlerSide(battlerId) == B_SIDE_PLAYER)
-    {
-        speed = (speed * 110) / 100;
-    }
 
     // item effects
     if (GetBattlerHoldEffect(battlerId, FALSE) == HOLD_EFFECT_MACHO_BRACE || GetBattlerHoldEffect(battlerId, FALSE) == HOLD_EFFECT_EV_BOOST)

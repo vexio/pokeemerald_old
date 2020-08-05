@@ -2,6 +2,7 @@ raw `
 LittlerootTown_BrendansHouse_1F_MapScripts:: @ 81F7755
 	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_BrendansHouse_1F_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_1F_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, PlayersHouse_1F_Mapscript2_Init
 @	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_BrendansHouse_1F_OnFrame
 	.byte 0
 
@@ -461,13 +462,17 @@ const PLAYER_ID = OBJ_EVENT_ID_PLAYER
 script PlayersHouse_Mapscript_GetPokemon {
     if (var(VAR_PLAYERSHOUSE_GETPOKEMON) == 0) {
         lockall
+		setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
+		applymovement(PLAYER_ID, Common_Movement_WalkInPlaceLeft)
         delay(20)
         applymovement(MOM_ID, Common_Movement_WalkInPlaceRight)
 		waitmovement(0)
 		msgbox(format("Mom: {COLOR RED}Now, it's time for you two to make the biggest decision of your Pokémon journey!\pChoosing your starter Pokémon!"), MSGBOX_AUTOCLOSE)
 		waitmessage
 		applymovement(SKIP_ID, Common_Movement_ExclamationMark)
+		waitmovement(0)
 		applymovement(SKIP_ID, Common_Movement_JumpInPlaceLeft)
+		waitmovement(0)
 		applymovement(SKIP_ID, Common_Movement_WalkInPlaceUp)
 		waitmovement(0)
 		delay(10)
@@ -484,10 +489,10 @@ script PlayersHouse_Mapscript_GetPokemon {
 		delay(10)
 		special(ChooseStarter)
 		waitstate
+		fadeoutbgm(0)
+		playbgm(MUS_MISHIRO, 0)
 		delay(5)
-		msgbox(format("Mom: {COLOR RED}Good choice!\pNow, {COLOR GREEN}Skip{COLOR RED}, go ahead and choose yours."))
-		closemessage
-		msgbox(format("Skip: {COLOR BLUE}Hmmmm..."))
+		msgbox(format("Mom: {COLOR RED}Good choice!\pNow, {COLOR GREEN}Skip{COLOR RED}, go ahead and choose yours.\p{COLOR DARK_GREY}Skip: {COLOR BLUE}Hmmmm..."))
 		waitmessage
 		delay(40)
 		closemessage
@@ -499,18 +504,21 @@ script PlayersHouse_Mapscript_GetPokemon {
 		waitmovement(0)
 		delay(20)
 		if (var(VAR_STARTER_MON) == 0) { //player chose rowlet, rival is chimchar
+			setvar(VAR_STARTER_MON, 0)
 			playse(MUS_FANFA4)
-			msgbox(format("Skip recieved a {COLOR GREEN}Chimchar"))
+			msgbox(format("Skip received a {COLOR GREEN}Chimchar"))
 			waitse
 			closemessage
 		} elif (var(VAR_STARTER_MON) == 1) { //player chose chimchar, rival is froakie
+			setvar(VAR_STARTER_MON, 1)
 			playse(MUS_FANFA4)
-			msgbox(format("Skip recieved a {COLOR GREEN}Froakie"))
+			msgbox(format("Skip received a {COLOR GREEN}Froakie"))
 			waitse
 			closemessage
 		} elif (var(VAR_STARTER_MON) == 2) { //player chose froakie, rival is rowlet
+			setvar(VAR_STARTER_MON, 3)
 			playse(MUS_FANFA4)
-			msgbox(format("Skip recieved a {COLOR GREEN}Rowlet"))
+			msgbox(format("Skip received a {COLOR GREEN}Rowlet"))
 			waitse
 			closemessage
 		}
@@ -527,27 +535,56 @@ script PlayersHouse_Mapscript_GetPokemon {
 		removeobject(SKIP_ID)
 		delay(10)
 		applymovement(MOM_ID, Common_Movement_WalkInPlaceRight)
-		removeobject(4)
 		waitmovement(0)
-		msgbox(format("Mom: {COLOR RED}Well then, you should go catch up with {COLOR GREEN}Skip{COLOR RED}.\pI must get going, I have some more research I need to catch up on."))
+		delay(10)
+		removeobject(4)
+		msgbox(format("Mom: {COLOR RED}Well {COLOR GREEN}Skip{COLOR RED} left in a hurry!\p{PLAYER}, will you do me a favor and give him these?"))
 		closemessage
+		delay(5)
+		playfanfare(MUS_FANFA4)
+		msgbox(format("{PLAYER} received the Pokédex!"))
+		waitfanfare
+		setflag(FLAG_SYS_POKEDEX_GET)
+		setflag(FLAG_SYS_POKEMON_GET)
+		special(SetUnlockedPokedexFlags)
+		playfanfare(MUS_FANFA4)
+		msgbox(format("{PLAYER} received the Trainer Card!"))
+		waitfanfare
+		delay(10)
+		msgbox(format("Dad: {COLOR BLUE}You should probably try to catch up to him."), MSGBOX_AUTOCLOSE)
+		applymovement(DAD_ID, Common_Movement_ExclamationMark)
+		playse(SE_PIN)
+		waitmovement(0)
+		delay(10)
+		msgbox(format("Dad: {COLOR BLUE}I think these might help you catch up to him!"), MSGBOX_AUTOCLOSE)
+		delay(5)
+		applymovement(DAD_ID, Common_Movement_WalkInPlaceRight)
+		waitmovement(0)
+		playfanfare(MUS_FANFA4)
+		msgbox(format("{PLAYER} received the Running Shoes!"))
+		waitfanfare
+		setflag(FLAG_SYS_B_DASH)
+		setflag(FLAG_RECEIVED_RUNNING_SHOES)
+		msgbox(format("Mom: {COLOR RED}Now, I must get going.\p{PLAYER}, please feel free to visit my Lab when you're in {COLOR GREEN}Myst City{COLOR RED}!"), MSGBOX_AUTOCLOSE)
 		delay(5)
 		applymovement(MOM_ID, PlayersHouse_GetPokemon_Movement_1)
 		waitmovement(0)
 		removeobject(MOM_ID)
 		delay(10)
-		applymovement(DAD_ID, Common_Movement_WalkInPlaceLeft)
+		applymovement(DAD_ID, Common_Movement_WalkInPlaceRight)
 		waitmovement(0)
 		msgbox(format("Dad: {COLOR BLUE}Now then!\pGet moving!\pIf you ever need anything from me, just let me know -- I'll be right here."))
 		setflag(FLAG_CANVASTOWN_GETPOKEMON)
+		setvar(VAR_PLAYERSHOUSE_GETPOKEMON, 1)
+		clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 		releaseall
 		end
-    }
+	}
 }
 movement PlayersHouse_GetPokemon_Movement_0 {
-	walk_fast_down
-	walk_fast_right * 4
-	walk_fast_down
+	walk_fastest_down
+	walk_fastest_right * 4
+	walk_fastest_down
 	delay_8
 	walk_in_place_down
 }

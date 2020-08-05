@@ -494,7 +494,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_KINDLER",
       "x": 66,
       "y": 16,
       "elevation": 3,
@@ -507,7 +507,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_KINDLER",
       "x": 66,
       "y": 19,
       "elevation": 3,

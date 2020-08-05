@@ -336,7 +336,7 @@ static const struct PikeRoomNPC sNPCTable[] =
         .speechId3 = 36
     },
     {
-        .graphicsId = OBJ_EVENT_GFX_MAN_5,
+        .graphicsId = OBJ_EVENT_GFX_KINDLER,
         .speechId1 = 28,
         .speechId2 = 34,
         .speechId3 = 25
@@ -396,7 +396,7 @@ static const struct PikeRoomNPC sNPCTable[] =
         .speechId3 = 13
     },
     {
-        .graphicsId = OBJ_EVENT_GFX_GENTLEMAN,
+        .graphicsId = OBJ_EVENT_GFX_RUIN_MANIAC,
         .speechId1 = 10,
         .speechId2 = 7,
         .speechId3 = 9
@@ -579,7 +579,7 @@ static void SetupRoomObjectEvents(void)
         objGfx1 = (u8)(GetNPCRoomGraphicsId());
         break;
     case PIKE_ROOM_STATUS:
-        objGfx1 = OBJ_EVENT_GFX_GENTLEMAN;
+        objGfx1 = OBJ_EVENT_GFX_RUIN_MANIAC;
         if (sStatusMon == PIKE_STATUSMON_DUSCLOPS)
             objGfx2 = OBJ_EVENT_GFX_DUSCLOPS;
         else
@@ -587,7 +587,7 @@ static void SetupRoomObjectEvents(void)
         setObjGfx2 = TRUE;
         break;
     case PIKE_ROOM_HEAL_PART:
-        objGfx1 = OBJ_EVENT_GFX_GENTLEMAN;
+        objGfx1 = OBJ_EVENT_GFX_RUIN_MANIAC;
         break;
     case PIKE_ROOM_WILD_MONS:
         setObjGfx1 = FALSE;

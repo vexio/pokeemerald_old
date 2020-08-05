@@ -5,37 +5,42 @@
   "music": "MUS_MISHIRO",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY",
+  "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_TOWN",
-  "allow_cycling": false,
+  "allow_cycling": true,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
       "direction": "up",
-      "offset": -2,
+      "offset": -6,
       "map": "MAP_ROUTE101"
+    },
+    {
+      "direction": "down",
+      "offset": 0,
+      "map": "MAP_ROUTE102"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 16,
-      "y": 4,
+      "x": 9,
+      "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 2,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_EventScript_Twin",
+      "script": "CanvasTown_Object_LittleGirl",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 16,
+      "x": 12,
       "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -43,12 +48,12 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_EventScript_FatMan",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN"
+      "script": "CanvasTown_Object_FatMan",
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 23,
+      "x": 19,
       "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -56,12 +61,12 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_EventScript_Boy",
+      "script": "CanvasTown_Object_Boy",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NORMAN",
-      "x": 24,
+      "x": 20,
       "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -74,7 +79,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MOM",
-      "x": 16,
+      "x": 12,
       "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -87,7 +92,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BRANDON",
-      "x": 16,
+      "x": 12,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -97,31 +102,70 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_CANVASTOWN_MOM"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BRANDON",
+      "x": -2,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 9,
+      "x": 5,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "dest_warp_id": 1
     },
     {
-      "x": 26,
+      "x": 22,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "dest_warp_id": 1
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_CANVASTOWN_RIVALBATTLE",
+      "var_value": "0",
+      "script": "CanvasTown_Trigger_RivalBattle"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_CANVASTOWN_RIVALBATTLE",
+      "var_value": "0",
+      "script": "CanvasTown_Trigger_RivalBattle"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_CANVASTOWN_RIVALBATTLE",
+      "var_value": "0",
+      "script": "CanvasTown_Trigger_RivalBattle"
+    }
   ],
   "bg_events": [
     {
       "type": "sign",
-      "x": 14,
+      "x": 10,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -129,7 +173,7 @@
     },
     {
       "type": "sign",
-      "x": 24,
+      "x": 20,
       "y": 9,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -137,7 +181,7 @@
     },
     {
       "type": "sign",
-      "x": 11,
+      "x": 7,
       "y": 5,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",

@@ -13,7 +13,7 @@ Route101_OnFrame: @ 81EBCCB
 	.2byte 0
 
 Route101_EventScript_HideMapNamePopup:: @ 81EBCD5
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+	//setflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_ROUTE101_STATE, 1
 	end
 
@@ -300,3 +300,20 @@ Route101_Text_RouteSign: @ 81EC0C8
 	.string "ROUTE 101\n"
 	.string "{UP_ARROW} OLDALE TOWN$"
 `
+
+script CanvasPath_Boy_1 {
+	msgbox(format("{COLOR BLUE}Whenever you walk in the wild grass, there is a chance you will encounter a wild Pokémon.\pIf you run while in wild grass, it increases your chance of encountering a wild Pokémon!"), MSGBOX_NPC)
+	end
+}
+
+script CanvasPath_RouteSign {
+	msgbox(format("{UP_ARROW}Alnerwick City\n{DOWN_ARROW}Canvas Town"), MSGBOX_SIGN)
+	end
+}
+
+// trainerbattles
+script CanvasPath_Trainer_Youngster {
+	trainerbattle_single(TRAINER_CODY_1, format("{COLOR BLUE}We've made eye contact, which means we have to battle!"), format("Wow, you're a strong trainer!"))
+	msgbox(format("{COLOR BLUE}If another trainer makes eye contact with you, you're in for a battle!\pThere's no running from a trainer battle!"), MSGBOX_NPC)
+	end
+}

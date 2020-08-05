@@ -1122,7 +1122,15 @@ static void PCTurnOnEffect_1(s16 isPcTurnedOn, s8 dx, s8 dy)
             tileId = METATILE_ID(BrendansMaysHouse, MayPC_On);
         }
     }
-    MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + 7, gSaveBlock1Ptr->pos.y + dy + 7, tileId | METATILE_COLLISION_MASK);
+    if (gSpecialVar_0x8004 == PC_LOCATION_OTHER)
+    {
+        MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + 7, gSaveBlock1Ptr->pos.y - 1 + dy + 7, tileId | METATILE_COLLISION_MASK);
+    }
+    else
+    {
+        MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + 7, gSaveBlock1Ptr->pos.y + dy + 7, tileId | METATILE_COLLISION_MASK);
+    }
+    
 }
 
 void DoPCTurnOffEffect(void)
@@ -1163,7 +1171,15 @@ static void PCTurnOffEffect(void)
     {
         tileId = METATILE_ID(BrendansMaysHouse, MayPC_Off);
     }
-    MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + 7, gSaveBlock1Ptr->pos.y + dy + 7, tileId | METATILE_COLLISION_MASK);
+    if (gSpecialVar_0x8004 == 0)
+    {
+        MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + 7, gSaveBlock1Ptr->pos.y - 1 + dy + 7, tileId | METATILE_COLLISION_MASK);
+    }
+    else
+    {
+        MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + 7, gSaveBlock1Ptr->pos.y + dy + 7, tileId | METATILE_COLLISION_MASK);
+    }
+    
     DrawWholeMapView();
 }
 
@@ -1224,7 +1240,7 @@ void EndLotteryCornerComputerEffect(void)
 void SetTrickHouseNuggetFlag(void)
 {
     u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
+    u16 flag = FLAG_HIDDEN_ITEM_CANVASPATH_1_POTION;
     *specVar = flag;
     FlagSet(flag);
 }
@@ -1232,7 +1248,7 @@ void SetTrickHouseNuggetFlag(void)
 void ResetTrickHouseNuggetFlag(void)
 {
     u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
+    u16 flag = FLAG_HIDDEN_ITEM_CANVASPATH_1_POTION;
     *specVar = flag;
     FlagClear(flag);
 }

@@ -148,7 +148,6 @@ static const u8 gBedroomPC_OptionOrder[] =
 {
     PLAYERPC_MENU_ITEMSTORAGE,
     PLAYERPC_MENU_MAILBOX,
-    PLAYERPC_MENU_DECORATION,
     PLAYERPC_MENU_TURNOFF
 };
 
@@ -314,7 +313,7 @@ void NewGameInitPCItems(void)
 void BedroomPC(void)
 {
     gPcItemMenuOptionOrder = gBedroomPC_OptionOrder;
-    gPcItemMenuOptionsNum = 4;
+    gPcItemMenuOptionsNum = 3;
     DisplayItemMessageOnField(CreateTask(TaskDummy, 0), gText_WhatWouldYouLike, InitPlayerPCMenu);
 }
 

@@ -62,7 +62,7 @@ LittlerootTown_EventScript_LeftLabAfterDexUpgrade:: @ 81E7E45
 	return
 
 LittlerootTown_EventScript_HideMapNamePopup:: @ 81E7E4B
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+	//setflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
 LittlerootTown_EventScript_SetRivalLeftForRoute103:: @ 81E7E4F
@@ -86,13 +86,13 @@ LittlerootTown_EventScript_MoveMomToMaysDoor:: @ 81E7E67
 LittlerootTown_EventScript_SetTwinPos:: @ 81E7E6F
 	compare VAR_LITTLEROOT_TOWN_STATE, 0
 	goto_if_eq LittlerootTown_EventScript_SetTwinGuardingRoutePos
-	setobjectxyperm 1, 10, 1
-	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
+	//setobjectxyperm 1, 10, 1
+	//setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_EventScript_SetTwinGuardingRoutePos:: @ 81E7E86
-	setobjectxyperm 1, 7, 2
-	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_DOWN
+	//setobjectxyperm 1, 7, 2
+	//setobjectmovementtype 1, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos:: @ 81E7E92
@@ -245,13 +245,13 @@ LittlerootTown_EventScript_SetRivalBirchPosForDexUpgrade:: @ 81E7FEC
 	end
 
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeMale:: @ 81E8004
-	setobjectxy 7, 6, 10
-	setobjectxy 8, 5, 10
+	//setobjectxy 7, 6, 10
+	//setobjectxy 8, 5, 10
 	end
 
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeFemale:: @ 81E8013
-	setobjectxy 7, 13, 10
-	setobjectxy 8, 14, 10
+	//setobjectxy 7, 13, 10
+	//setobjectxy 8, 14, 10
 	end
 
 LittlerootTown_EventScript_FatMan:: @ 81E8022
@@ -448,14 +448,14 @@ LittlerootTown_EventScript_PlayersHouseSignFemale:: @ 81E81B2
 LittlerootTown_EventScript_GiveRunningShoesTrigger0:: @ 81E81BB
 	lockall
 	setvar VAR_0x8008, 0
-	setobjectxy 4, 10, 9
+	//setobjectxy 4, 10, 9
 	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 	end
 
 LittlerootTown_EventScript_GiveRunningShoesTrigger1:: @ 81E81CE
 	lockall
 	setvar VAR_0x8008, 1
-	setobjectxy 4, 11, 9
+	//setobjectxy 4, 11, 9
 	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 	end
 
@@ -1070,6 +1070,21 @@ CanvasTown_Mapscript2_Init::
 	map_script_2 VAR_CANVASTOWN_MOMARRIVES, 0, CanvasTown_Mapscript_MomArrives
 	.2byte 0
 
+CanvasTown_Object_LittleGirl::
+	msgbox CanvasTown_Object_LittleGirl_Text_0, MSGBOX_NPC
+	end
+
+
+CanvasTown_Object_Boy::
+	msgbox CanvasTown_Object_Boy_Text_0, MSGBOX_NPC
+	end
+
+
+CanvasTown_Object_FatMan::
+	msgbox CanvasTown_Object_FatMan_Text_0, MSGBOX_NPC
+	end
+
+
 CanvasTown_Mapscript_MomArrives::
 	compare VAR_CANVASTOWN_MOMARRIVES, 0
 	goto_if_eq CanvasTown_Mapscript_MomArrives_1
@@ -1077,10 +1092,14 @@ CanvasTown_Mapscript_MomArrives::
 
 CanvasTown_Mapscript_MomArrives_1:
 	lockall
+	setvar VAR_PLAYERSHOUSE_GETPOKEMON, 0
 	applymovement 4, CanvasTown_MomArrives_Movement_0
 	waitmovement 0
+	playse SE_PIN
 	msgbox CanvasTown_Mapscript_MomArrives_Text_0
 	applymovement 4, CanvasTown_MomArrives_Movement_1
+	delay 10
+	playse SE_JITE_PYOKO
 	waitmovement 0
 	msgbox CanvasTown_Mapscript_MomArrives_Text_1
 	closemessage
@@ -1090,11 +1109,12 @@ CanvasTown_Mapscript_MomArrives_1:
 	delay 10
 	dofieldeffect FLDEFF_NPCFLY_OUT
 	delay 8
-	setobjectxy 5, 22, 11
+	setobjectxy 5, 18, 11
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	delay 5
 	applymovement 5, CanvasTown_MomArrives_Movement_3
 	waitmovement 0
+	playse SE_PIN
 	msgbox CanvasTown_Mapscript_MomArrives_Text_2
 	closemessage
 	applymovement 4, CanvasTown_MomArrives_Movement_4
@@ -1123,10 +1143,10 @@ CanvasTown_Mapscript_MomArrives_1:
 	closemessage
 	applymovement 5, CanvasTown_MomArrives_Movement_6
 	delay 5
-	msgbox CanvasTown_Mapscript_MomArrives_Text_7
+	msgbox CanvasTown_Mapscript_MomArrives_Text_7, MSGBOX_AUTOCLOSE
+	delay 20
 	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 255, 5, 6
 	setvar VAR_CANVASTOWN_MOMARRIVES, 1
-	setvar VAR_PLAYERSHOUSE_GETPOKEMON, 0
 	setflag FLAG_CANVASTOWN_MOM
 	clearflag FLAG_CANVASTOWN_GETPOKEMON
 	clearflag FLAG_CANVASTOWN_DAD
@@ -1192,6 +1212,190 @@ CanvasTown_MomArrives_Movement_8:
 	walk_fast_right
 	step_end
 
+CanvasTown_Trigger_RivalBattle::
+	compare VAR_CANVASTOWN_RIVALBATTLE, 0
+	goto_if_eq CanvasTown_Trigger_RivalBattle_1
+	return
+
+CanvasTown_Trigger_RivalBattle_1:
+	lock
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
+	setobjectxy 7, 6, 7
+	playbgm MUS_RG_RIVAL1, 0
+	msgbox CanvasTown_Trigger_RivalBattle_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 13
+	goto_if_eq CanvasTown_Trigger_RivalBattle_4
+	compare VAR_TEMP_0, 14
+	goto_if_eq CanvasTown_Trigger_RivalBattle_5
+	compare VAR_TEMP_0, 15
+	goto_if_eq CanvasTown_Trigger_RivalBattle_6
+CanvasTown_Trigger_RivalBattle_3:
+	closemessage
+	msgbox CanvasTown_Trigger_RivalBattle_Text_1, MSGBOX_AUTOCLOSE
+	compare VAR_STARTER_MON, 0
+	goto_if_eq CanvasTown_Trigger_RivalBattle_11
+	compare VAR_STARTER_MON, 1
+	goto_if_eq CanvasTown_Trigger_RivalBattle_12
+	compare VAR_STARTER_MON, 2
+	goto_if_eq CanvasTown_Trigger_RivalBattle_13
+CanvasTown_Trigger_RivalBattle_10:
+	playbgm MUS_RG_RIVAL2, 0
+	delay 10
+	msgbox CanvasTown_Trigger_RivalBattle_Text_3
+	waitmessage
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 13
+	goto_if_eq CanvasTown_Trigger_RivalBattle_18
+	compare VAR_TEMP_0, 14
+	goto_if_eq CanvasTown_Trigger_RivalBattle_19
+	compare VAR_TEMP_0, 15
+	goto_if_eq CanvasTown_Trigger_RivalBattle_20
+CanvasTown_Trigger_RivalBattle_17:
+	removeobject 7
+	fadenewbgm MUS_MISHIRO
+	setvar VAR_CANVASTOWN_RIVALBATTLE, 1
+	return
+
+CanvasTown_Trigger_RivalBattle_4:
+	applymovement 7, CanvasTown_RivalBattle_Movement_0
+	waitmovement 0
+	goto CanvasTown_Trigger_RivalBattle_3
+
+CanvasTown_Trigger_RivalBattle_5:
+	applymovement 7, CanvasTown_RivalBattle_Movement_1
+	waitmovement 0
+	goto CanvasTown_Trigger_RivalBattle_3
+
+CanvasTown_Trigger_RivalBattle_6:
+	applymovement 7, CanvasTown_RivalBattle_Movement_2
+	waitmovement 0
+	goto CanvasTown_Trigger_RivalBattle_3
+
+CanvasTown_Trigger_RivalBattle_11:
+	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_2, CanvasTown_Trigger_RivalBattle_Text_2
+	goto CanvasTown_Trigger_RivalBattle_10
+
+CanvasTown_Trigger_RivalBattle_12:
+	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_3, CanvasTown_Trigger_RivalBattle_Text_2
+	goto CanvasTown_Trigger_RivalBattle_10
+
+CanvasTown_Trigger_RivalBattle_13:
+	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_1, CanvasTown_Trigger_RivalBattle_Text_2
+	goto CanvasTown_Trigger_RivalBattle_10
+
+CanvasTown_Trigger_RivalBattle_18:
+	applymovement 7, CanvasTown_RivalBattle_Movement_3
+	waitmovement 0
+	goto CanvasTown_Trigger_RivalBattle_17
+
+CanvasTown_Trigger_RivalBattle_19:
+	applymovement 7, CanvasTown_RivalBattle_Movement_4
+	waitmovement 0
+	goto CanvasTown_Trigger_RivalBattle_17
+
+CanvasTown_Trigger_RivalBattle_20:
+	applymovement 7, CanvasTown_RivalBattle_Movement_5
+	waitmovement 0
+	goto CanvasTown_Trigger_RivalBattle_17
+
+
+CanvasTown_RivalBattle_Movement_0:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+CanvasTown_RivalBattle_Movement_1:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+CanvasTown_RivalBattle_Movement_2:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+CanvasTown_RivalBattle_Movement_3:
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+CanvasTown_RivalBattle_Movement_4:
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+CanvasTown_RivalBattle_Movement_5:
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+CanvasTown_Object_LittleGirl_Text_0:
+	.string "{COLOR RED}Um, um, um, um...\p"
+	.string "It's unsafe to go into wild grass\n"
+	.string "without a Pokémon!$"
+
+CanvasTown_Object_Boy_Text_0:
+	.string "{COLOR BLUE}These crops here are suppose to grow\n"
+	.string "into wheat within a matter of a few\l"
+	.string "weeks!$"
+
+CanvasTown_Object_FatMan_Text_0:
+	.string "{COLOR BLUE}Technology is incredible!\p"
+	.string "With the PokéNav, now you can access\n"
+	.string "people you've met along your journey!$"
+
 CanvasTown_Mapscript_MomArrives_Text_0:
 	.string "Dad:{COLOR BLUE} {PLAYER}!$"
 
@@ -1228,3 +1432,26 @@ CanvasTown_Mapscript_MomArrives_Text_6:
 CanvasTown_Mapscript_MomArrives_Text_7:
 	.string "Mom: {COLOR RED}Nice to see you too, {COLOR GREEN}Skip{COLOR RED}!\p"
 	.string "Now, let's go inside!$"
+
+CanvasTown_Trigger_RivalBattle_Text_0:
+	.string "Skip: {COLOR GREEN}{PLAYER}{COLOR BLUE}!\n"
+	.string "Where do you think you're goin'?$"
+
+CanvasTown_Trigger_RivalBattle_Text_1:
+	.string "Skip: {COLOR BLUE}Trying to get ahead of me?\p"
+	.string "Since we're both new trainers, and\n"
+	.string "essentially rivals, why don't we see who\l"
+	.string "the stronger trainer is?$"
+
+CanvasTown_Trigger_RivalBattle_Text_2:
+	.string "Hmph...$"
+
+CanvasTown_Trigger_RivalBattle_Text_3:
+	.string "Skip: {COLOR BLUE}I'm not taking that battle to\n"
+	.string "heart, since we're just getting to know\l"
+	.string "our Pokémon.\p"
+	.string "{COLOR DARK_GREY}Skip: {COLOR BLUE}But don't let this victory go to\n"
+	.string "your head!\p"
+	.string "I'm still going to obliterate next time\n"
+	.string "we catch up!\p"
+	.string "Peace out, buddy!$"

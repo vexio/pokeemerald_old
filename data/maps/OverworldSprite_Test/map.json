@@ -17,7 +17,7 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+            "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
             "movement_range_x": 0,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_NONE",
@@ -69,7 +69,7 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+            "graphics_id": "OBJ_EVENT_GFX_ARTIST_F",
             "movement_range_x": 0,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_NONE",
@@ -394,7 +394,7 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+            "graphics_id": "OBJ_EVENT_GFX_RUIN_MANIAC",
             "movement_range_x": 0,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_NONE",
@@ -615,7 +615,7 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
+            "graphics_id": "OBJ_EVENT_GFX_OFFICER",
             "movement_range_x": 0,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_NONE",
@@ -628,7 +628,7 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+            "graphics_id": "OBJ_EVENT_GFX_ENGINEER",
             "movement_range_x": 0,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_NONE",
@@ -706,7 +706,7 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+            "graphics_id": "OBJ_EVENT_GFX_KINDLER",
             "movement_range_x": 0,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_NONE",
@@ -940,7 +940,7 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
+            "graphics_id": "OBJ_EVENT_GFX_ACE_TRAINER_F",
             "movement_range_x": 0,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_NONE",
@@ -953,7 +953,7 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "OBJ_EVENT_GFX_REPORTER_M",
+            "graphics_id": "OBJ_EVENT_GFX_ACE_TRAINER_M",
             "movement_range_x": 0,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_NONE",
@@ -1187,7 +1187,7 @@
         {
             "elevation": 3,
             "flag": "0",
-            "graphics_id": "OBJ_EVENT_GFX_TUCKER",
+            "graphics_id": "OBJ_EVENT_GFX_ARTIST_M",
             "movement_range_x": 0,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_NONE",

@@ -286,7 +286,9 @@ enum
     COLLISION_HORIZONTAL_RAIL,
     //sideways_stairs
     COLLISION_SIDEWAYS_STAIRS_TO_RIGHT,
-    COLLISION_SIDEWAYS_STAIRS_TO_LEFT
+    COLLISION_SIDEWAYS_STAIRS_TO_LEFT,
+    //stair warp
+    COLLISION_STAIR_WARP
 };
 
 // player running states

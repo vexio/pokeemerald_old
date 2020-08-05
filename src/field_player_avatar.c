@@ -31,6 +31,7 @@
 #include "constants/songs.h"
 #include "constants/species.h"
 #include "constants/trainer_types.h"
+#include "field_screen_effect.h"
 
 static EWRAM_DATA u8 gUnknown_0203734C = 0;
 EWRAM_DATA struct ObjectEvent gObjectEvents[OBJECT_EVENTS_COUNT] = {};
@@ -630,6 +631,10 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerNotOnBikeCollideWithFarawayIslandMew(direction);
             return;
         }
+        else if (collision == COLLISION_STAIR_WARP)
+        {
+            PlayerFaceDirection(direction);
+        }
         else
         {
             u8 adjustedCollision = collision - COLLISION_STOP_SURFING;
@@ -666,6 +671,9 @@ static u8 CheckForPlayerAvatarCollision(u8 direction)
 
     x = playerObjEvent->currentCoords.x;
     y = playerObjEvent->currentCoords.y;
+    
+    if (IsDirectionalStairWarpMetatileBehavior(MapGridGetMetatileBehaviorAt(x, y), direction))
+        return COLLISION_STAIR_WARP;
     
     MoveCoords(direction, &x, &y);
     return CheckForObjectEventCollision(playerObjEvent, x, y, direction, MapGridGetMetatileBehaviorAt(x, y));

@@ -537,7 +537,8 @@
 
 // Hidden Items -- sorted by location
 #define FLAG_HIDDEN_ITEMS_START                                                         0x1F4
-#define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
+// -- CANVAS PATH (ROUTE 1)
+#define FLAG_HIDDEN_ITEM_CANVASPATH_1_POTION                 (FLAG_HIDDEN_ITEMS_START + 0x01)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_1_CARBOS                 (FLAG_HIDDEN_ITEMS_START + 0x08)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_1_GREEN_SHARD            (FLAG_HIDDEN_ITEMS_START + 0x09)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_1_PEARL                  (FLAG_HIDDEN_ITEMS_START + 0x0A)
@@ -654,7 +655,7 @@
 #define FLAG_CANVASTOWN_MOM  0x265 // CanvasTown_Mapscript_MomArrives
 #define FLAG_CANVASTOWN_GETPOKEMON  0x266 // CanvasTown_Mapscript_MomArrives, CanvasTown_Mapscripts_GetPokemon
 #define FLAG_CANVASTOWN_DAD  0x267 // PlayersHouse_1F
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
+#define FLAG_ALNERWICKLIBRARY_THIEF  0x268 // AlnerwickLibrary_Trigger_Thief
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag

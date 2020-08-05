@@ -2,7 +2,7 @@
   "id": "MAP_ALNERWICK_LIBRARY",
   "name": "Alnerwick_Library",
   "layout": "LAYOUT_ALNERWICK_LIBRARY",
-  "music": "MUS_AJITO",
+  "music": "MUS_BIJYUTU",
   "region_map_section": "MAPSEC_OLDALE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -10,7 +10,7 @@
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": true,
-  "show_map_name": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
@@ -50,11 +50,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "AlnerwickLibrary_Object_FatMan",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST_F",
       "x": 9,
       "y": 6,
       "elevation": 3,
@@ -63,33 +63,33 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "AlnerwickLibrary_Object_Artist",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
       "x": 7,
-      "y": 17,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "AlnerwickLibrary_Object_Boy",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 9,
-      "y": 14,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "AlnerwickLibrary_Object_Girl",
       "flag": "0"
     }
   ],
@@ -103,21 +103,47 @@
     },
     {
       "x": 0,
-      "y": 14,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_ALNERWICK_LIBRARY",
       "dest_warp_id": 0
     },
     {
       "x": 5,
-      "y": 18,
+      "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_ALNERWICK_LIBRARY",
-      "dest_warp_id": 0
+      "dest_map": "MAP_OLDALE_TOWN",
+      "dest_warp_id": 3
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_ALNERWICKLIBRARY_THIEF",
+      "var_value": "0",
+      "script": "AlnerwickLibrary_Trigger_Thief"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_ALNERWICKLIBRARY_THIEF",
+      "var_value": "0",
+      "script": "AlnerwickLibrary_Trigger_Thief"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_ALNERWICKLIBRARY_THIEF",
+      "var_value": "0",
+      "script": "AlnerwickLibrary_Trigger_Thief"
+    }
   ],
   "bg_events": [
 

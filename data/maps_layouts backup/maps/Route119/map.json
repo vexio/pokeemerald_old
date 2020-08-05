@@ -195,7 +195,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_KINDLER",
       "x": 10,
       "y": 50,
       "elevation": 4,
@@ -208,7 +208,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_KINDLER",
       "x": 8,
       "y": 63,
       "elevation": 3,
@@ -520,7 +520,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_KINDLER",
       "x": 16,
       "y": 52,
       "elevation": 3,
@@ -533,7 +533,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_KINDLER",
       "x": 32,
       "y": 15,
       "elevation": 3,
