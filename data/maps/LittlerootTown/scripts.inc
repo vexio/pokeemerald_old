@@ -237,7 +237,7 @@ LittlerootTown_OnWarp: @ 81E7FE2
 
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgrade:: @ 81E7FEC
 	addobject 8
-	addobject 7
+	//addobject 7
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeMale
@@ -1043,17 +1043,17 @@ LittlerootTown_Text_GoodLuckCatchingPokemon: @ 81E8D07
 	.string "Good luck!$"
 
 LittlerootTown_Text_TownSign: @ 81E8D32
-	.string "LITTLEROOT TOWN\n"
-	.string "“A town that can't be shaded any hue.”$"
+	.string "{COLOR GREEN}Canvas Town{COLOR DARK_GREY}\n"
+	.string "“A town of many colors.”$"
 
 LittlerootTown_Text_ProfBirchsLab: @ 81E8D69
 	.string "PROF. BIRCH'S POKéMON LAB$"
 
 LittlerootTown_Text_PlayersHouse: @ 81E8D83
-	.string "{PLAYER}'s HOUSE$"
+	.string "{COLOR GREEN}{PLAYER}{COLOR DARK_GREY}'s House$"
 
 LittlerootTown_Text_ProfBirchsHouse: @ 81E8D8E
-	.string "PROF. BIRCH'S HOUSE$"
+	.string "{COLOR GREEN}Skip{COLOR DARK_GREY}'s House$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab: @ 81E8DA2
 	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
@@ -1220,9 +1220,10 @@ CanvasTown_Trigger_RivalBattle::
 CanvasTown_Trigger_RivalBattle_1:
 	lock
 	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
-	setobjectxy 7, 6, 7
 	playbgm MUS_RG_RIVAL1, 0
 	msgbox CanvasTown_Trigger_RivalBattle_Text_0
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, CanvasTown_RivalBattle_CMovement_0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -1233,6 +1234,9 @@ CanvasTown_Trigger_RivalBattle_1:
 	compare VAR_TEMP_0, 15
 	goto_if_eq CanvasTown_Trigger_RivalBattle_6
 CanvasTown_Trigger_RivalBattle_3:
+	applymovement OBJ_EVENT_ID_CAMERA, CanvasTown_RivalBattle_CMovement_1
+	waitmovement 0
+	special RemoveCameraObject
 	closemessage
 	msgbox CanvasTown_Trigger_RivalBattle_Text_1, MSGBOX_AUTOCLOSE
 	compare VAR_STARTER_MON, 0
@@ -1261,17 +1265,20 @@ CanvasTown_Trigger_RivalBattle_17:
 	return
 
 CanvasTown_Trigger_RivalBattle_4:
-	applymovement 7, CanvasTown_RivalBattle_Movement_0
+	setobjectxy 7, 5, 7
+	applymovement 7, CanvasTown_RivalBattle_Movement_1
 	waitmovement 0
 	goto CanvasTown_Trigger_RivalBattle_3
 
 CanvasTown_Trigger_RivalBattle_5:
+	setobjectxy 7, 6, 7
 	applymovement 7, CanvasTown_RivalBattle_Movement_1
 	waitmovement 0
 	goto CanvasTown_Trigger_RivalBattle_3
 
 CanvasTown_Trigger_RivalBattle_6:
-	applymovement 7, CanvasTown_RivalBattle_Movement_2
+	setobjectxy 7, 7, 7
+	applymovement 7, CanvasTown_RivalBattle_Movement_1
 	waitmovement 0
 	goto CanvasTown_Trigger_RivalBattle_3
 
@@ -1311,7 +1318,6 @@ CanvasTown_RivalBattle_Movement_0:
 	walk_right
 	walk_right
 	walk_right
-	walk_right
 	walk_up
 	walk_up
 	step_end
@@ -1325,13 +1331,11 @@ CanvasTown_RivalBattle_Movement_1:
 	walk_right
 	walk_right
 	walk_right
-	walk_right
 	walk_up
 	walk_up
 	step_end
 
 CanvasTown_RivalBattle_Movement_2:
-	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -1377,6 +1381,16 @@ CanvasTown_RivalBattle_Movement_5:
 	walk_up
 	walk_up
 	walk_up
+	walk_up
+	walk_up
+	step_end
+
+CanvasTown_RivalBattle_CMovement_0:
+	walk_down
+	walk_down
+	step_end
+
+CanvasTown_RivalBattle_CMovement_1:
 	walk_up
 	walk_up
 	step_end

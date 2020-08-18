@@ -45,6 +45,8 @@ static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
 static void QueueAnimTiles_General_Red_Flower(u16);
 static void QueueAnimTiles_General_Blue_Flower(u16);
+static void QueueAnimTiles_General_Red_Flower_2(u16);
+static void QueueAnimTiles_General_Blue_Flower_2(u16);
 static void QueueAnimTiles_General_Spikey_Grass_1(u16);
 static void QueueAnimTiles_General_Spikey_Grass_2(u16);
 static void QueueAnimTiles_General_Flower(u16);
@@ -90,6 +92,18 @@ const u16 *const gTilesetAnims_General_Red_Flower[] = {
     gTilesetAnims_General_Red_Flower_Frame2
 };
 
+// red flower 2 anim
+const u16 gTilesetAnims_General_Red_Flower_2_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/red_flower_2/0.4bpp");
+const u16 gTilesetAnims_General_Red_Flower_2_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/red_flower_2/1.4bpp");
+const u16 gTilesetAnims_General_Red_Flower_2_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/red_flower_2/2.4bpp");
+
+const u16 *const gTilesetAnims_General_Red_Flower_2[] = {
+    gTilesetAnims_General_Red_Flower_2_Frame0,
+    gTilesetAnims_General_Red_Flower_2_Frame2,
+    gTilesetAnims_General_Red_Flower_2_Frame0,
+    gTilesetAnims_General_Red_Flower_2_Frame1
+};
+
 // blue flower anim
 const u16 gTilesetAnims_General_Blue_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/blue_flower/blue_flower_anim_0.4bpp");
 const u16 gTilesetAnims_General_Blue_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/blue_flower/blue_flower_anim_1.4bpp");
@@ -97,9 +111,21 @@ const u16 gTilesetAnims_General_Blue_Flower_Frame2[] = INCBIN_U16("data/tilesets
 
 const u16 *const gTilesetAnims_General_Blue_Flower[] = {
     gTilesetAnims_General_Blue_Flower_Frame0,
-    gTilesetAnims_General_Blue_Flower_Frame1,
+    gTilesetAnims_General_Blue_Flower_Frame2,
     gTilesetAnims_General_Blue_Flower_Frame0,
-    gTilesetAnims_General_Blue_Flower_Frame2
+    gTilesetAnims_General_Blue_Flower_Frame1
+};
+
+// blue flower 2 anim
+const u16 gTilesetAnims_General_blue_Flower_2_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/blue_flower_2/0.4bpp");
+const u16 gTilesetAnims_General_blue_Flower_2_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/blue_flower_2/1.4bpp");
+const u16 gTilesetAnims_General_blue_Flower_2_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/blue_flower_2/2.4bpp");
+
+const u16 *const gTilesetAnims_General_Blue_Flower_2[] = {
+    gTilesetAnims_General_blue_Flower_2_Frame0,
+    gTilesetAnims_General_blue_Flower_2_Frame1,
+    gTilesetAnims_General_blue_Flower_2_Frame0,
+    gTilesetAnims_General_blue_Flower_2_Frame2
 };
 
 // spikey grass 1 anim
@@ -692,18 +718,22 @@ static void TilesetAnim_General(u16 timer)
     if (timer % 16 == 0)
         QueueAnimTiles_General_Red_Flower(timer >> 4);
     if (timer % 16 == 1)
-        QueueAnimTiles_General_Blue_Flower(timer >> 4);
+        QueueAnimTiles_General_Red_Flower_2(timer >> 4);
     if (timer % 16 == 2)
-        QueueAnimTiles_General_Water(timer >> 4);
+        QueueAnimTiles_General_Blue_Flower(timer >> 4);
     if (timer % 16 == 3)
-        QueueAnimTiles_General_SandWaterEdge(timer >> 4);
+        QueueAnimTiles_General_Blue_Flower_2(timer >> 4);
     if (timer % 16 == 4)
-        QueueAnimTiles_General_Waterfall(timer >> 4);
+        QueueAnimTiles_General_Water(timer >> 4);
     if (timer % 16 == 5)
-        QueueAnimTiles_General_LandWaterEdge(timer >> 4);
+        QueueAnimTiles_General_SandWaterEdge(timer >> 4);
     if (timer % 16 == 6)
-        QueueAnimTiles_General_Spikey_Grass_1(timer >> 4);
+        QueueAnimTiles_General_Waterfall(timer >> 4);
     if (timer % 16 == 7)
+        QueueAnimTiles_General_LandWaterEdge(timer >> 4);
+    if (timer % 16 == 8)
+        QueueAnimTiles_General_Spikey_Grass_1(timer >> 4);
+    if (timer % 16 == 9)
         QueueAnimTiles_General_Spikey_Grass_2(timer >> 4);
 }
 
@@ -719,11 +749,24 @@ static void QueueAnimTiles_General_Red_Flower(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Red_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(52)), 0x80);
 }
 
+static void QueueAnimTiles_General_Red_Flower_2(u16 timer)
+{
+    u16 i = timer % 4; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_General_Red_Flower_2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(507)), 0x80);
+}
+
 static void QueueAnimTiles_General_Blue_Flower(u16 timer)
 {
     u16 i = timer % 4; 
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Blue_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(68)), 0x80);
 }
+
+static void QueueAnimTiles_General_Blue_Flower_2(u16 timer)
+{
+    u16 i = timer % 4; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_General_Blue_Flower_2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(491)), 0x80);
+}
+
 
 static void QueueAnimTiles_General_Spikey_Grass_1(u16 timer)
 {

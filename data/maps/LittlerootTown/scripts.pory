@@ -238,7 +238,7 @@ LittlerootTown_OnWarp: @ 81E7FE2
 
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgrade:: @ 81E7FEC
 	addobject 8
-	addobject 7
+	//addobject 7
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeMale
@@ -1200,22 +1200,29 @@ script CanvasTown_Trigger_RivalBattle {
 	if (var(VAR_CANVASTOWN_RIVALBATTLE) == 0) {
 		lock
 		setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
-		setobjectxy(7, 6, 7)
 		playbgm(MUS_RG_RIVAL1, 0)
 		msgbox(format("Skip: {COLOR GREEN}{PLAYER}{COLOR BLUE}!\nWhere do you think you're goin'?"))
+		special(SpawnCameraObject)
+		applymovement(OBJ_EVENT_ID_CAMERA, CanvasTown_RivalBattle_CMovement_0)
 		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
 		waitmovement(0)
 		getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 		if (var(VAR_TEMP_0) == 13) {
-			applymovement(7, CanvasTown_RivalBattle_Movement_0)
+			setobjectxy(7, 5, 7)
+			applymovement(7, CanvasTown_RivalBattle_Movement_1)
 			waitmovement(0)
 		} elif (var(VAR_TEMP_0) == 14) {
+			setobjectxy(7, 6, 7)
 			applymovement(7, CanvasTown_RivalBattle_Movement_1)
 			waitmovement(0)
 		} elif (var(VAR_TEMP_0) == 15) {
-			applymovement(7, CanvasTown_RivalBattle_Movement_2)
+			setobjectxy(7, 7, 7)
+			applymovement(7, CanvasTown_RivalBattle_Movement_1)
 			waitmovement(0)
 		}
+		applymovement(OBJ_EVENT_ID_CAMERA, CanvasTown_RivalBattle_CMovement_1)
+		waitmovement(0)
+		special(RemoveCameraObject)
 		closemessage
 		msgbox(format("Skip: {COLOR BLUE}Trying to get ahead of me?\pSince we're both new trainers, and essentially rivals, why don't we see who the stronger trainer is?"), MSGBOX_AUTOCLOSE)
 		if (var(VAR_STARTER_MON) == 0) { // player choose rowlet as starter
@@ -1248,15 +1255,15 @@ script CanvasTown_Trigger_RivalBattle {
 }
 
 movement CanvasTown_RivalBattle_Movement_0 {
-	walk_right * 8
+	walk_right * 7
 	walk_up * 2
 }
 movement CanvasTown_RivalBattle_Movement_1 {
-	walk_right * 9
+	walk_right * 8
 	walk_up * 2
 }
 movement CanvasTown_RivalBattle_Movement_2 {
-	walk_right * 10
+	walk_right * 9
 	walk_up * 2
 }
 movement CanvasTown_RivalBattle_Movement_3 {
@@ -1270,4 +1277,10 @@ movement CanvasTown_RivalBattle_Movement_4 {
 movement CanvasTown_RivalBattle_Movement_5 {
 	walk_left
 	walk_up * 8
+}
+movement CanvasTown_RivalBattle_CMovement_0 {
+	walk_down * 2
+}
+movement CanvasTown_RivalBattle_CMovement_1 {
+	walk_up * 2
 }
