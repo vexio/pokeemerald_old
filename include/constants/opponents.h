@@ -3,15 +3,15 @@
 
 #define TRAINER_NONE                          0
 #define TRAINER_CODY_1                      1
-#define TRAINER_GRUNT_AQUA_HIDEOUT_1          2
-#define TRAINER_GRUNT_AQUA_HIDEOUT_2          3
-#define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
+#define TRAINER_SKIP_GRASS_1          2
+#define TRAINER_SKIP_FIRE_1          3
+#define TRAINER_SKIP_WATER_1          4
 #define TRAINER_GRUNT_AQUA_HIDEOUT_4          5
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_1       6
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
-#define TRAINER_GABRIELLE_1                   9
-#define TRAINER_GRUNT_PETALBURG_WOODS        10
+#define TRAINER_LASS_MAYA       6
+#define TRAINER_BATTLEGIRL_KAIYA       7
+#define TRAINER_BIRDKEEP_PHILLIP       8
+#define TRAINER_BLACKBELT_BEN                   9
+#define TRAINER_HIKER_RANDY        10
 #define TRAINER_MARCEL                       11
 #define TRAINER_ALBERTO                      12
 #define TRAINER_ED                           13

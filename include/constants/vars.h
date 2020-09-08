@@ -108,10 +108,10 @@
 #define VAR_PLAYERSHOUSE_GETPOKEMON          0x4059 // PlayersHouse_Mapscript_GetPokemon
 #define VAR_RUSTBORO_CITY_STATE              0x405A
 #define VAR_CANVASTOWN_RIVALBATTLE           0x405B // CanvasTown_Trigger_RivalBattle
-#define VAR_ALNERWICKLIBRARY_THIEF           0x405C // AlnerwickLibrary_Trigger_Thief
+#define VAR_ALNERWICKLIBRARY_THIEF           0x405C // AlnerwickLibrary_Trigger_Thief - 1 = entered town, 2 = talked to theif
 #define VAR_MOSSDEEP_CITY_STATE              0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE            0x405E
-#define VAR_EVER_GRANDE_CITY_STATE           0x405F // Unused Var
+#define VAR_DAVNRIDGEMINES_STATE             0x405F // 1 = Talked to Lilith, 2 = Lilith has been beaten
 #define VAR_ROUTE101_STATE                   0x4060
 #define VAR_ROUTE102_STATE                   0x4061 // Unused Var
 #define VAR_ROUTE103_STATE                   0x4062 // Unused Var

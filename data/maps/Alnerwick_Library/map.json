@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_ALNERWICKLIBRARY_THIEF"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
@@ -123,7 +123,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_ALNERWICKLIBRARY_THIEF",
-      "var_value": "0",
+      "var_value": "1",
       "script": "AlnerwickLibrary_Trigger_Thief"
     },
     {
@@ -132,7 +132,7 @@
       "y": 6,
       "elevation": 0,
       "var": "VAR_ALNERWICKLIBRARY_THIEF",
-      "var_value": "0",
+      "var_value": "1",
       "script": "AlnerwickLibrary_Trigger_Thief"
     },
     {
@@ -141,7 +141,7 @@
       "y": 7,
       "elevation": 0,
       "var": "VAR_ALNERWICKLIBRARY_THIEF",
-      "var_value": "0",
+      "var_value": "1",
       "script": "AlnerwickLibrary_Trigger_Thief"
     }
   ],

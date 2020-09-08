@@ -907,3 +907,25 @@ gTileset_DavnridgeMines::
 	.4byte gMetatiles_DavnridgeMines
 	.4byte gMetatileAttributes_DavnridgeMines
 	.4byte NULL
+
+	.align 2
+gTileset_HiddenGrotto::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_HiddenGrotto
+	.4byte gTilesetPalettes_HiddenGrotto
+	.4byte gMetatiles_HiddenGrotto
+	.4byte gMetatileAttributes_HiddenGrotto
+	.4byte NULL
+
+	.align 2
+gTileset_DavnridgeGym::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_DavnridgeGym
+	.4byte gTilesetPalettes_DavnridgeGym
+	.4byte gMetatiles_DavnridgeGym
+	.4byte gMetatileAttributes_DavnridgeGym
+	.4byte NULL

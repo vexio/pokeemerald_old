@@ -1073,6 +1073,21 @@ CanvasTown_Mapscript2_Init::
 	.2byte 0
 `
 //scripts
+script CanvasTown_Sign_TownSign {
+	msgbox(format("{COLOR LIGHT_GREEN}Canvas Town\p{COLOR DARK_GREY}“A town of many colors.”"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+	end
+}
+
+script CanvasTown_Sign_PlayersHouse {
+	msgbox(format("{PLAYER}'s House"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+	end
+}
+
+script CanvasTown_Sign_RivalsHouse {
+	msgbox(format("Skip's House"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+	end
+}
+
 script CanvasTown_Object_LittleGirl {
 	msgbox(format("{COLOR RED}Um, um, um, um...\pIt's unsafe to go into wild grass without a Pokémon!"), MSGBOX_NPC)
 	end
@@ -1132,6 +1147,7 @@ script CanvasTown_Mapscript_MomArrives {
 		msgbox(format("Mom: {COLOR RED}Now, {COLOR GREEN}{PLAYER}{COLOR RED}, did you tell {COLOR GREEN}Skip{COLOR RED} to come over?"))
 		closemessage
 		delay(5)
+		playbgm(MUS_RG_RIVAL1, 0)
 		applymovement(6, CanvasTown_MomArrives_Movement_8)
 		delay(10)
 		msgbox(format("Skip: {COLOR BLUE}Hey {COLOR GREEN}{PLAYER}{COLOR BLUE}!\nI got here as soon as I read your email!"))
@@ -1143,6 +1159,7 @@ script CanvasTown_Mapscript_MomArrives {
 		msgbox(format("Skip: {COLOR BLUE}Mrs -- or should I say {COLOR GREEN}Prof. Cypress{COLOR BLUE} -- it's nice to see you again!"))
 		closemessage
 		applymovement(5, CanvasTown_MomArrives_Movement_6)
+		fadenewbgm(MUS_MISHIRO)
 		delay(5)
 		msgbox(format("Mom: {COLOR RED}Nice to see you too, {COLOR GREEN}Skip{COLOR RED}!\pNow, let's go inside!"), MSGBOX_AUTOCLOSE)
 		delay(20)
@@ -1226,17 +1243,23 @@ script CanvasTown_Trigger_RivalBattle {
 		closemessage
 		msgbox(format("Skip: {COLOR BLUE}Trying to get ahead of me?\pSince we're both new trainers, and essentially rivals, why don't we see who the stronger trainer is?"), MSGBOX_AUTOCLOSE)
 		if (var(VAR_STARTER_MON) == 0) { // player choose rowlet as starter
-			trainerbattle_no_intro(TRAINER_GRUNT_AQUA_HIDEOUT_2, format("Hmph..."))
+			trainerbattle_no_intro(TRAINER_SKIP_FIRE_1, format("Hmph..."))
 		} elif (var(VAR_STARTER_MON) == 1) { // player choose chimchar as starter
-			trainerbattle_no_intro(TRAINER_GRUNT_AQUA_HIDEOUT_3, format("Hmph..."))
+			trainerbattle_no_intro(TRAINER_SKIP_WATER_1, format("Hmph..."))
 		} elif (var(VAR_STARTER_MON) == 2) { // player choose froakie as starter
-			trainerbattle_no_intro(TRAINER_GRUNT_AQUA_HIDEOUT_1, format("Hmph..."))
+			trainerbattle_no_intro(TRAINER_SKIP_GRASS_1, format("Hmph..."))
 		}
 		playbgm(MUS_RG_RIVAL2, 0)
 		delay(10)
-		msgbox(format("Skip: {COLOR BLUE}I'm not taking that battle to heart, since we're just getting to know our Pokémon.\p{COLOR DARK_GREY}Skip: {COLOR BLUE}But don't let this victory go to your head!\pI'm still going to obliterate next time we catch up!\pPeace out, buddy!"))
+		msgbox(format("Skip: {COLOR BLUE}I'm not taking that battle to heart, since we're just getting to know our Pokémon.\p{COLOR DARK_GREY}Skip: {COLOR BLUE}But don't let this victory go to your head!\pI'm still going to destroy you next time we catch up!"))
 		waitmessage
 		closemessage
+		applymovement(7, Common_Movement_QuestionMark)
+		waitmovement(0)
+		msgbox(format("Skip: {COLOR BLUE}Is that an extra {COLOR GREEN}Pokédex{COLOR BLUE}?\pI think I'll be needing one of those!"))
+		msgbox(format("{COLOR GREEN}Skip{COLOR DARK_GREY} snatches a {COLOR GREEN}Pokédex{COLOR DARK_GREY} from {COLOR GREEN}{PLAYER}"))
+		msgbox(format("Skip: {COLOR BLUE}See ya later!"), MSGBOX_AUTOCLOSE)
+		delay(5)
 		getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 		if (var(VAR_TEMP_0) == 13) {
 			applymovement(7, CanvasTown_RivalBattle_Movement_3)

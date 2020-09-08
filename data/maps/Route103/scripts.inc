@@ -356,3 +356,96 @@ Route103_Text_RouteSign: @ 81ECC1A
 	.string "ROUTE 103\n"
 	.string "{DOWN_ARROW} OLDALE TOWN$"
 
+AlnerwickLowlands_Sign_RouteSign::
+	msgbox AlnerwickLowlands_Sign_RouteSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
+AlnerwickLowlands_Trainer_Lass::
+	trainerbattle_single TRAINER_LASS_MAYA, AlnerwickLowlands_Trainer_Lass_Text_0, AlnerwickLowlands_Trainer_Lass_Text_1
+	msgbox AlnerwickLowlands_Trainer_Lass_Text_2, MSGBOX_NPC
+	end
+
+
+AlnerwickLowlands_Trainer_Battle_Girl::
+	trainerbattle_single TRAINER_BATTLEGIRL_KAIYA, AlnerwickLowlands_Trainer_Battle_Girl_Text_0, AlnerwickLowlands_Trainer_Battle_Girl_Text_1
+	msgbox AlnerwickLowlands_Trainer_Battle_Girl_Text_2, MSGBOX_NPC
+	end
+
+
+AlnerwickLowlands_Trainer_Bird_Keeper::
+	trainerbattle_single TRAINER_BIRDKEEP_PHILLIP, AlnerwickLowlands_Trainer_Bird_Keeper_Text_0, AlnerwickLowlands_Trainer_Bird_Keeper_Text_1
+	msgbox AlnerwickLowlands_Trainer_Bird_Keeper_Text_2, MSGBOX_NPC
+	end
+
+
+AlnerwickLowlands_Trainer_Black_Belt::
+	trainerbattle_single TRAINER_BLACKBELT_BEN, AlnerwickLowlands_Trainer_Black_Belt_Text_0, AlnerwickLowlands_Trainer_Black_Belt_Text_1
+	msgbox AlnerwickLowlands_Trainer_Black_Belt_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickLowlands_Trainer_Hiker::
+	trainerbattle_single TRAINER_HIKER_RANDY, AlnerwickLowlands_Trainer_Hiker_Text_0, AlnerwickLowlands_Trainer_Hiker_Text_1
+	msgbox AlnerwickLowlands_Trainer_Hiker_Text_2, MSGBOX_NPC
+	end
+
+
+AlnerwickLowlands_Sign_RouteSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Alnerwick Lowlands\p"
+	.string "{COLOR DARK_GREY}{LEFT_ARROW} {COLOR LIGHT_GREEN}Alnerwick City\n"
+	.string "{COLOR DARK_GREY}{RIGHT_ARROW} {COLOR LIGHT_GREEN}Davnridge Town$"
+
+AlnerwickLowlands_Trainer_Lass_Text_0:
+	.string "{COLOR RED}The flowers on this route are\n"
+	.string "beautiful!$"
+
+AlnerwickLowlands_Trainer_Lass_Text_1:
+	.string "Gah!\n"
+	.string "You messed with my flower-picking\l"
+	.string "session!$"
+
+AlnerwickLowlands_Trainer_Lass_Text_2:
+	.string "{COLOR RED}I love the flowers on this route!\p"
+	.string "Oh... yeah...\n"
+	.string "and I guess the rare Pokémon here...$"
+
+AlnerwickLowlands_Trainer_Battle_Girl_Text_0:
+	.string "{COLOR RED}I'm here to train!\n"
+	.string "You'll be my training partner!$"
+
+AlnerwickLowlands_Trainer_Battle_Girl_Text_1:
+	.string "Good training!$"
+
+AlnerwickLowlands_Trainer_Battle_Girl_Text_2:
+	.string "{COLOR RED}I'm here to train!\n"
+	.string "Don't get in my way!$"
+
+AlnerwickLowlands_Trainer_Bird_Keeper_Text_0:
+	.string "{COLOR BLUE}Flying type Pokémon are the best!$"
+
+AlnerwickLowlands_Trainer_Bird_Keeper_Text_1:
+	.string "No!\n"
+	.string "My precious birds!$"
+
+AlnerwickLowlands_Trainer_Bird_Keeper_Text_2:
+	.string "{COLOR BLUE}Flying type Pokémon are the best\n"
+	.string "because they have the best type\l"
+	.string "match-ups!$"
+
+AlnerwickLowlands_Trainer_Black_Belt_Text_0:
+	.string "{COLOR BLUE}Get out of my way!$"
+
+AlnerwickLowlands_Trainer_Black_Belt_Text_1:
+	.string "You got in the way of my routine!$"
+
+AlnerwickLowlands_Trainer_Hiker_Text_0:
+	.string "{COLOR BLUE}The beautiful outdoors!$"
+
+AlnerwickLowlands_Trainer_Hiker_Text_1:
+	.string "Ahh...\n"
+	.string "A breath of fresh air!$"
+
+AlnerwickLowlands_Trainer_Hiker_Text_2:
+	.string "{COLOR BLUE}I'm scouting out this area for me and my\n"
+	.string "hiking buddies.$"

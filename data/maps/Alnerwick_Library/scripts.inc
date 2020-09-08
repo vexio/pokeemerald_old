@@ -1,6 +1,10 @@
 Alnerwick_Library_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, AlnerwickLibrary_OnTransition
 	.byte 0
 
+AlnerwickLibrary_OnTransition:
+    call_if_set FLAG_ALNERWICKLIBRARY_THIEF, AlnerwickLibrary_Mapscript_Librarian
+    end
 
 AlnerwickLibrary_Object_Boy::
 	msgbox AlnerwickLibrary_Object_Boy_Text_0, MSGBOX_NPC
@@ -23,7 +27,7 @@ AlnerwickLibrary_Object_FatMan::
 	lock
 	faceplayer
 	msgbox AlnerwickLibrary_Object_FatMan_Text_0, MSGBOX_AUTOCLOSE
-	applymovement 6, Common_Movement_WalkInPlaceUp
+	applymovement 3, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	release
 	end
@@ -33,19 +37,35 @@ AlnerwickLibrary_Object_Artist::
 	lock
 	faceplayer
 	msgbox AlnerwickLibrary_Object_Artist_Text_0, MSGBOX_AUTOCLOSE
-	applymovement 6, Common_Movement_WalkInPlaceUp
+	applymovement 4, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	release
 	end
 
 
+AlnerwickLibrary_Mapscript_Librarian::
+	setobjectxyperm 2, 1, 3
+	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_UP
+	return
+
+
 AlnerwickLibrary_Trigger_Thief::
-	compare VAR_ALNERWICKLIBRARY_THIEF, 0
+	compare VAR_ALNERWICKLIBRARY_THIEF, 1
 	goto_if_eq AlnerwickLibrary_Trigger_Thief_1
 	return
 
 AlnerwickLibrary_Trigger_Thief_1:
 	lockall
+	special SpawnCameraObject
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_1, 5
+	goto_if_eq AlnerwickLibrary_Trigger_Thief_4
+	compare VAR_TEMP_1, 6
+	goto_if_eq AlnerwickLibrary_Trigger_Thief_5
+	compare VAR_TEMP_1, 7
+	goto_if_eq AlnerwickLibrary_Trigger_Thief_6
+AlnerwickLibrary_Trigger_Thief_3:
+	delay 5
 	applymovement 1, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox AlnerwickLibrary_Trigger_Thief_Text_0, MSGBOX_AUTOCLOSE
@@ -58,28 +78,15 @@ AlnerwickLibrary_Trigger_Thief_1:
 	waitmovement 0
 	msgbox AlnerwickLibrary_Trigger_Thief_Text_2, MSGBOX_AUTOCLOSE
 	applymovement 1, AlnerwickLibrary_Thief_Movement_0
+	applymovement OBJ_EVENT_ID_CAMERA, AlnerwickLibrary_Thief_CMovement_3
 	waitmovement 0
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_1, 6
-	goto_if_eq AlnerwickLibrary_Trigger_Thief_4
+	goto_if_eq AlnerwickLibrary_Trigger_Thief_11
 	applymovement 1, AlnerwickLibrary_Thief_Movement_0_1
 	waitmovement 0
-AlnerwickLibrary_Trigger_Thief_3:
-	applymovement 2, AlnerwickLibrary_Thief_Movement_2
-	waitmovement 0
-	playse SE_KAIDAN
 	removeobject 1
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	compare VAR_TEMP_1, 5
-	goto_if_eq AlnerwickLibrary_Trigger_Thief_8
-	compare VAR_TEMP_1, 6
-	goto_if_eq AlnerwickLibrary_Trigger_Thief_9
-	compare VAR_TEMP_1, 7
-	goto_if_eq AlnerwickLibrary_Trigger_Thief_10
-AlnerwickLibrary_Trigger_Thief_7:
-	delay 5
-	msgbox AlnerwickLibrary_Trigger_Thief_Text_4, MSGBOX_AUTOCLOSE
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	playse SE_KAIDAN
+AlnerwickLibrary_Trigger_Thief_10:
 	compare VAR_TEMP_1, 5
 	goto_if_eq AlnerwickLibrary_Trigger_Thief_15
 	compare VAR_TEMP_1, 6
@@ -87,48 +94,103 @@ AlnerwickLibrary_Trigger_Thief_7:
 	compare VAR_TEMP_1, 7
 	goto_if_eq AlnerwickLibrary_Trigger_Thief_17
 AlnerwickLibrary_Trigger_Thief_14:
+	applymovement 2, AlnerwickLibrary_Thief_Movement_2
+	playse SE_PIN
+	waitmovement 0
+	special RemoveCameraObject
+	delay 15
+	compare VAR_TEMP_1, 5
+	goto_if_eq AlnerwickLibrary_Trigger_Thief_22
+	compare VAR_TEMP_1, 6
+	goto_if_eq AlnerwickLibrary_Trigger_Thief_23
+	compare VAR_TEMP_1, 7
+	goto_if_eq AlnerwickLibrary_Trigger_Thief_24
+AlnerwickLibrary_Trigger_Thief_21:
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	delay 10
+	msgbox AlnerwickLibrary_Trigger_Thief_Text_4, MSGBOX_AUTOCLOSE
+	compare VAR_TEMP_1, 5
+	goto_if_eq AlnerwickLibrary_Trigger_Thief_29
+	compare VAR_TEMP_1, 6
+	goto_if_eq AlnerwickLibrary_Trigger_Thief_30
+	compare VAR_TEMP_1, 7
+	goto_if_eq AlnerwickLibrary_Trigger_Thief_31
+AlnerwickLibrary_Trigger_Thief_28:
 	setflag FLAG_ALNERWICKLIBRARY_THIEF
-	setvar VAR_ALNERWICKLIBRARY_THIEF, 1
+	setvar VAR_ALNERWICKLIBRARY_THIEF, 2
 	release
 	end
 
 AlnerwickLibrary_Trigger_Thief_4:
+	applymovement OBJ_EVENT_ID_CAMERA, AlnerwickLibrary_Thief_CMovement_0
+	waitmovement 0
+	goto AlnerwickLibrary_Trigger_Thief_3
+
+AlnerwickLibrary_Trigger_Thief_5:
+	applymovement OBJ_EVENT_ID_CAMERA, AlnerwickLibrary_Thief_CMovement_1
+	waitmovement 0
+	goto AlnerwickLibrary_Trigger_Thief_3
+
+AlnerwickLibrary_Trigger_Thief_6:
+	applymovement OBJ_EVENT_ID_CAMERA, AlnerwickLibrary_Thief_CMovement_2
+	waitmovement 0
+	goto AlnerwickLibrary_Trigger_Thief_3
+
+AlnerwickLibrary_Trigger_Thief_11:
 	msgbox AlnerwickLibrary_Trigger_Thief_Text_3, MSGBOX_AUTOCLOSE
 	applymovement OBJ_EVENT_ID_PLAYER, AlnerwickLibrary_Thief_Movement_4
 	waitmovement 0
 	applymovement 1, AlnerwickLibrary_Thief_Movement_0_1
 	waitmovement 0
-	goto AlnerwickLibrary_Trigger_Thief_3
-
-AlnerwickLibrary_Trigger_Thief_8:
-	applymovement 2, AlnerwickLibrary_Thief_Movement_3_0
-	waitmovement 0
-	goto AlnerwickLibrary_Trigger_Thief_7
-
-AlnerwickLibrary_Trigger_Thief_9:
-	applymovement 2, AlnerwickLibrary_Thief_Movement_3_1
-	waitmovement 0
-	goto AlnerwickLibrary_Trigger_Thief_7
-
-AlnerwickLibrary_Trigger_Thief_10:
-	applymovement 2, AlnerwickLibrary_Thief_Movement_3_2
-	waitmovement 0
-	goto AlnerwickLibrary_Trigger_Thief_7
+	removeobject 1
+	playse SE_KAIDAN
+	goto AlnerwickLibrary_Trigger_Thief_10
 
 AlnerwickLibrary_Trigger_Thief_15:
-	applymovement 2, AlnerwickLibrary_Thief_Movement_5_0
+	applymovement OBJ_EVENT_ID_CAMERA, AlnerwickLibrary_Thief_CMovement_4
 	waitmovement 0
 	goto AlnerwickLibrary_Trigger_Thief_14
 
 AlnerwickLibrary_Trigger_Thief_16:
-	applymovement 2, AlnerwickLibrary_Thief_Movement_5_1
+	applymovement OBJ_EVENT_ID_CAMERA, AlnerwickLibrary_Thief_CMovement_5
 	waitmovement 0
 	goto AlnerwickLibrary_Trigger_Thief_14
 
 AlnerwickLibrary_Trigger_Thief_17:
-	applymovement 2, AlnerwickLibrary_Thief_Movement_5_2
+	applymovement OBJ_EVENT_ID_CAMERA, AlnerwickLibrary_Thief_CMovement_5
 	waitmovement 0
 	goto AlnerwickLibrary_Trigger_Thief_14
+
+AlnerwickLibrary_Trigger_Thief_22:
+	applymovement 2, AlnerwickLibrary_Thief_Movement_3_0
+	waitmovement 0
+	goto AlnerwickLibrary_Trigger_Thief_21
+
+AlnerwickLibrary_Trigger_Thief_23:
+	applymovement 2, AlnerwickLibrary_Thief_Movement_3_2
+	waitmovement 0
+	goto AlnerwickLibrary_Trigger_Thief_21
+
+AlnerwickLibrary_Trigger_Thief_24:
+	applymovement 2, AlnerwickLibrary_Thief_Movement_3_2
+	waitmovement 0
+	goto AlnerwickLibrary_Trigger_Thief_21
+
+AlnerwickLibrary_Trigger_Thief_29:
+	applymovement 2, AlnerwickLibrary_Thief_Movement_5_0
+	waitmovement 0
+	goto AlnerwickLibrary_Trigger_Thief_28
+
+AlnerwickLibrary_Trigger_Thief_30:
+	applymovement 2, AlnerwickLibrary_Thief_Movement_5_2
+	waitmovement 0
+	goto AlnerwickLibrary_Trigger_Thief_28
+
+AlnerwickLibrary_Trigger_Thief_31:
+	applymovement 2, AlnerwickLibrary_Thief_Movement_5_2
+	waitmovement 0
+	goto AlnerwickLibrary_Trigger_Thief_28
 
 
 AlnerwickLibrary_Thief_Movement_0:
@@ -179,7 +241,7 @@ AlnerwickLibrary_Thief_Movement_3_2:
 	step_end
 
 AlnerwickLibrary_Thief_Movement_4:
-	walk_fastest_down
+	walk_fast_down
 	walk_in_place_fast_up
 	step_end
 
@@ -205,6 +267,46 @@ AlnerwickLibrary_Thief_Movement_5_2:
 	walk_up
 	walk_up
 	walk_up
+	step_end
+
+AlnerwickLibrary_Thief_CMovement_0:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+AlnerwickLibrary_Thief_CMovement_1:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	step_end
+
+AlnerwickLibrary_Thief_CMovement_2:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+AlnerwickLibrary_Thief_CMovement_3:
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+AlnerwickLibrary_Thief_CMovement_4:
+	walk_up
+	step_end
+
+AlnerwickLibrary_Thief_CMovement_5:
+	walk_down
 	step_end
 
 AlnerwickLibrary_Object_Boy_Text_0:

@@ -5,9 +5,11 @@ OldaleTown_MapScripts:: @ 81E8EA2
 OldaleTown_OnTransition: @ 81E8EA8
 	call Common_EventScript_SetupRivalGfxId
 	setflag FLAG_VISITED_OLDALE_TOWN
-	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
-	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
-	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
+	call AlnerwickCity_Mapscript_OfficerLocations
+	//call_if_set FLAG_ALNERWICKCITY_OFFICER_1, AlnerwickCity_Mapscript_OfficerLocations
+	//call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
+	//call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
+	//call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
 	end
 
 @ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
@@ -401,3 +403,193 @@ OldaleTown_Text_CitySign: @ 81E94DA
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 
+AlnerwickCity_Mapscript_OfficerLocations::
+	compare VAR_ALNERWICKLIBRARY_THIEF, 1
+	goto_if_ge AlnerwickCity_Mapscript_OfficerLocations_1
+	return
+
+AlnerwickCity_Mapscript_OfficerLocations_1:
+	setobjectxyperm 6, 9, 23
+	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
+
+AlnerwickCity_Object_Officer_1::
+	msgbox AlnerwickCity_Object_Officer_1_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_Object_Officer_2::
+	msgbox AlnerwickCity_Object_Officer_2_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_Sign_TownSign::
+	msgbox AlnerwickCity_Sign_TownSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+AlnerwickCity_Sign_Library::
+	msgbox AlnerwickCity_Sign_Library_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
+AlnerwickCity_Object_Youngster::
+	msgbox AlnerwickCity_Object_Youngster_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_Object_Maniac::
+	msgbox AlnerwickCity_Object_Maniac_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_Object_Girl_1::
+	msgbox AlnerwickCity_Object_Girl_1_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_Object_Girl_2::
+	msgbox AlnerwickCity_Object_Girl_2_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_Trigger_PoliceOfficer::
+	compare VAR_ALNERWICKLIBRARY_THIEF, 0
+	goto_if_eq AlnerwickCity_Trigger_PoliceOfficer_1
+	return
+
+AlnerwickCity_Trigger_PoliceOfficer_1:
+	lockall
+	applymovement 6, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	applymovement 6, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox AlnerwickCity_Trigger_PoliceOfficer_Text_0, MSGBOX_AUTOCLOSE
+	delay 10
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 10
+	goto_if_eq AlnerwickCity_Trigger_PoliceOfficer_4
+	compare VAR_TEMP_0, 11
+	goto_if_eq AlnerwickCity_Trigger_PoliceOfficer_5
+	compare VAR_TEMP_0, 12
+	goto_if_eq AlnerwickCity_Trigger_PoliceOfficer_6
+AlnerwickCity_Trigger_PoliceOfficer_3:
+	msgbox AlnerwickCity_Trigger_PoliceOfficer_Text_1, MSGBOX_AUTOCLOSE
+	compare VAR_TEMP_0, 10
+	goto_if_eq AlnerwickCity_Trigger_PoliceOfficer_11
+	compare VAR_TEMP_0, 11
+	goto_if_eq AlnerwickCity_Trigger_PoliceOfficer_12
+	compare VAR_TEMP_0, 12
+	goto_if_eq AlnerwickCity_Trigger_PoliceOfficer_13
+AlnerwickCity_Trigger_PoliceOfficer_10:
+	setvar VAR_ALNERWICKLIBRARY_THIEF, 1
+	releaseall
+	end
+
+AlnerwickCity_Trigger_PoliceOfficer_4:
+	applymovement 6, AlnerwickCity_PoliceOfficer_Movement_0
+	waitmovement 0
+	goto AlnerwickCity_Trigger_PoliceOfficer_3
+
+AlnerwickCity_Trigger_PoliceOfficer_5:
+	applymovement 6, AlnerwickCity_PoliceOfficer_Movement_1
+	waitmovement 0
+	goto AlnerwickCity_Trigger_PoliceOfficer_3
+
+AlnerwickCity_Trigger_PoliceOfficer_6:
+	applymovement 6, AlnerwickCity_PoliceOfficer_Movement_2
+	waitmovement 0
+	goto AlnerwickCity_Trigger_PoliceOfficer_3
+
+AlnerwickCity_Trigger_PoliceOfficer_11:
+	applymovement 6, AlnerwickCity_PoliceOfficer_Movement_0_0
+	waitmovement 0
+	goto AlnerwickCity_Trigger_PoliceOfficer_10
+
+AlnerwickCity_Trigger_PoliceOfficer_12:
+	applymovement 6, AlnerwickCity_PoliceOfficer_Movement_1_0
+	waitmovement 0
+	goto AlnerwickCity_Trigger_PoliceOfficer_10
+
+AlnerwickCity_Trigger_PoliceOfficer_13:
+	applymovement 6, AlnerwickCity_PoliceOfficer_Movement_0_0
+	waitmovement 0
+	goto AlnerwickCity_Trigger_PoliceOfficer_10
+
+
+AlnerwickCity_PoliceOfficer_Movement_0:
+	walk_down
+	walk_down
+	walk_in_place_left
+	step_end
+
+AlnerwickCity_PoliceOfficer_Movement_1:
+	walk_down
+	step_end
+
+AlnerwickCity_PoliceOfficer_Movement_2:
+	walk_down
+	walk_down
+	walk_in_place_right
+	step_end
+
+AlnerwickCity_PoliceOfficer_Movement_0_0:
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_in_place_right
+	step_end
+
+AlnerwickCity_PoliceOfficer_Movement_1_0:
+	walk_up
+	walk_left
+	walk_left
+	walk_in_place_right
+	step_end
+
+AlnerwickCity_Object_Officer_1_Text_0:
+	.string "Officer: {COLOR BLUE}If you see anything\n"
+	.string "suspicious, please inform an Officer.$"
+
+AlnerwickCity_Object_Officer_2_Text_0:
+	.string "Officer: {COLOR BLUE}There's been reports of a\n"
+	.string "suspicious man in the city here.\p"
+	.string "No one is leaving here until he's been\n"
+	.string "reported to an Officer.$"
+
+AlnerwickCity_Sign_TownSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Alnerwick City\p"
+	.string "{COLOR DARK_GREY}“A City of History”$"
+
+AlnerwickCity_Sign_Library_Text_0:
+	.string "Alnerwick Library$"
+
+AlnerwickCity_Object_Youngster_Text_0:
+	.string "{COLOR BLUE}When your Pokémon is low on health, it's\n"
+	.string "always good to come to a Pokémon\l"
+	.string "Center to heal up your partners.$"
+
+AlnerwickCity_Object_Maniac_Text_0:
+	.string "{COLOR BLUE}There are people inside this house...\p"
+	.string "But I don't see an enterance...$"
+
+AlnerwickCity_Object_Girl_1_Text_0:
+	.string "{COLOR RED}The library in this city is full of\n"
+	.string "history!\p"
+	.string "You should definitely check it out!$"
+
+AlnerwickCity_Object_Girl_2_Text_0:
+	.string "{COLOR GREEN}Ryoko{COLOR RED} is such a beautiful region!\p"
+	.string "The biome diversity is immense!$"
+
+AlnerwickCity_Trigger_PoliceOfficer_Text_0:
+	.string "Officer: {COLOR BLUE}Hey!$"
+
+AlnerwickCity_Trigger_PoliceOfficer_Text_1:
+	.string "Officer: {COLOR BLUE}We've been told that there's\n"
+	.string "been some suspicious people around\l"
+	.string "town.\p"
+	.string "If you see anyone, please tell us\n"
+	.string "immediately.$"

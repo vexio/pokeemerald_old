@@ -1070,6 +1070,21 @@ CanvasTown_Mapscript2_Init::
 	map_script_2 VAR_CANVASTOWN_MOMARRIVES, 0, CanvasTown_Mapscript_MomArrives
 	.2byte 0
 
+CanvasTown_Sign_TownSign::
+	msgbox CanvasTown_Sign_TownSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+CanvasTown_Sign_PlayersHouse::
+	msgbox CanvasTown_Sign_PlayersHouse_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+CanvasTown_Sign_RivalsHouse::
+	msgbox CanvasTown_Sign_RivalsHouse_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
 CanvasTown_Object_LittleGirl::
 	msgbox CanvasTown_Object_LittleGirl_Text_0, MSGBOX_NPC
 	end
@@ -1131,6 +1146,7 @@ CanvasTown_Mapscript_MomArrives_1:
 	msgbox CanvasTown_Mapscript_MomArrives_Text_4
 	closemessage
 	delay 5
+	playbgm MUS_RG_RIVAL1, 0
 	applymovement 6, CanvasTown_MomArrives_Movement_8
 	delay 10
 	msgbox CanvasTown_Mapscript_MomArrives_Text_5
@@ -1142,6 +1158,7 @@ CanvasTown_Mapscript_MomArrives_1:
 	msgbox CanvasTown_Mapscript_MomArrives_Text_6
 	closemessage
 	applymovement 5, CanvasTown_MomArrives_Movement_6
+	fadenewbgm MUS_MISHIRO
 	delay 5
 	msgbox CanvasTown_Mapscript_MomArrives_Text_7, MSGBOX_AUTOCLOSE
 	delay 20
@@ -1251,6 +1268,12 @@ CanvasTown_Trigger_RivalBattle_10:
 	msgbox CanvasTown_Trigger_RivalBattle_Text_3
 	waitmessage
 	closemessage
+	applymovement 7, Common_Movement_QuestionMark
+	waitmovement 0
+	msgbox CanvasTown_Trigger_RivalBattle_Text_4
+	msgbox CanvasTown_Trigger_RivalBattle_Text_5
+	msgbox CanvasTown_Trigger_RivalBattle_Text_6, MSGBOX_AUTOCLOSE
+	delay 5
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_0, 13
 	goto_if_eq CanvasTown_Trigger_RivalBattle_18
@@ -1283,15 +1306,15 @@ CanvasTown_Trigger_RivalBattle_6:
 	goto CanvasTown_Trigger_RivalBattle_3
 
 CanvasTown_Trigger_RivalBattle_11:
-	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_2, CanvasTown_Trigger_RivalBattle_Text_2
+	trainerbattle_no_intro TRAINER_SKIP_FIRE_1, CanvasTown_Trigger_RivalBattle_Text_2
 	goto CanvasTown_Trigger_RivalBattle_10
 
 CanvasTown_Trigger_RivalBattle_12:
-	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_3, CanvasTown_Trigger_RivalBattle_Text_2
+	trainerbattle_no_intro TRAINER_SKIP_WATER_1, CanvasTown_Trigger_RivalBattle_Text_2
 	goto CanvasTown_Trigger_RivalBattle_10
 
 CanvasTown_Trigger_RivalBattle_13:
-	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_1, CanvasTown_Trigger_RivalBattle_Text_2
+	trainerbattle_no_intro TRAINER_SKIP_GRASS_1, CanvasTown_Trigger_RivalBattle_Text_2
 	goto CanvasTown_Trigger_RivalBattle_10
 
 CanvasTown_Trigger_RivalBattle_18:
@@ -1395,6 +1418,16 @@ CanvasTown_RivalBattle_CMovement_1:
 	walk_up
 	step_end
 
+CanvasTown_Sign_TownSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Canvas Town\p"
+	.string "{COLOR DARK_GREY}“A town of many colors.”$"
+
+CanvasTown_Sign_PlayersHouse_Text_0:
+	.string "{PLAYER}'s House$"
+
+CanvasTown_Sign_RivalsHouse_Text_0:
+	.string "Skip's House$"
+
 CanvasTown_Object_LittleGirl_Text_0:
 	.string "{COLOR RED}Um, um, um, um...\p"
 	.string "It's unsafe to go into wild grass\n"
@@ -1466,6 +1499,16 @@ CanvasTown_Trigger_RivalBattle_Text_3:
 	.string "our Pokémon.\p"
 	.string "{COLOR DARK_GREY}Skip: {COLOR BLUE}But don't let this victory go to\n"
 	.string "your head!\p"
-	.string "I'm still going to obliterate next time\n"
-	.string "we catch up!\p"
-	.string "Peace out, buddy!$"
+	.string "I'm still going to destroy you next time\n"
+	.string "we catch up!$"
+
+CanvasTown_Trigger_RivalBattle_Text_4:
+	.string "Skip: {COLOR BLUE}Is that an extra {COLOR GREEN}Pokédex{COLOR BLUE}?\p"
+	.string "I think I'll be needing one of those!$"
+
+CanvasTown_Trigger_RivalBattle_Text_5:
+	.string "{COLOR GREEN}Skip{COLOR DARK_GREY} snatches a {COLOR GREEN}Pokédex{COLOR DARK_GREY} from\n"
+	.string "{COLOR GREEN}{PLAYER}$"
+
+CanvasTown_Trigger_RivalBattle_Text_6:
+	.string "Skip: {COLOR BLUE}See ya later!$"

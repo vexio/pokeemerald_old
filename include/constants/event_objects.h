@@ -17,7 +17,7 @@
 #define OBJ_EVENT_GFX_BOY_3                       13
 #define OBJ_EVENT_GFX_GIRL_3                      14
 #define OBJ_EVENT_GFX_RICH_BOY                    15
-#define OBJ_EVENT_GFX_WOMAN_1                     16
+#define OBJ_EVENT_GFX_BATTLE_GIRL                     16
 #define OBJ_EVENT_GFX_FAT_MAN                     17
 #define OBJ_EVENT_GFX_POKEFAN_F                   18
 #define OBJ_EVENT_GFX_MAN_1                       19

@@ -1,7 +1,8 @@
 Std_MsgboxNPC: @ 8271315
 	lock
 	faceplayer
-	message 0x0
+	setmessagebox 0x1 0x2
+    message 0x0
 	waitmessage
 	waitbuttonpress
 	release
@@ -9,26 +10,30 @@ Std_MsgboxNPC: @ 8271315
 
 Std_MsgboxSign: @ 8271320
 	lockall
-	message 0x0
+	setmessagebox 0x1 0x2
+    message 0x0
 	waitmessage
 	waitbuttonpress
 	releaseall
 	return
 
 Std_MsgboxDefault: @ 827132A
-	message 0x0
+	setmessagebox 0x1 0x2
+    message 0x0
 	waitmessage
 	waitbuttonpress
 	return
 
 Std_MsgboxYesNo: @ 8271332
-	message 0x0
+	setmessagebox 0x1 0x2
+    message 0x0
 	waitmessage
 	yesnobox 20, 8
 	return
 
 Std_MsgboxGetPoints: @ 827133C
-	message 0x0
+	setmessagebox 0x1 0x2
+    message 0x0
 	playfanfare MUS_ME_POINTGET
 	waitfanfare
 	waitmessage

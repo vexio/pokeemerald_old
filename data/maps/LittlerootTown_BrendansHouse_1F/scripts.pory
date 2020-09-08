@@ -463,7 +463,7 @@ script PlayersHouse_Mapscript_GetPokemon {
     if (var(VAR_PLAYERSHOUSE_GETPOKEMON) == 0) {
         lockall
 		setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
-		applymovement(PLAYER_ID, Common_Movement_WalkInPlaceLeft)
+		applymovement(PLAYER_ID, Common_Movement_WalkInPlaceFastestLeft)
         delay(20)
         applymovement(MOM_ID, Common_Movement_WalkInPlaceRight)
 		waitmovement(0)
@@ -551,12 +551,11 @@ script PlayersHouse_Mapscript_GetPokemon {
 		msgbox(format("{PLAYER} received the Trainer Card!"))
 		waitfanfare
 		delay(10)
-		msgbox(format("Dad: {COLOR BLUE}You should probably try to catch up to him."), MSGBOX_AUTOCLOSE)
-		applymovement(DAD_ID, Common_Movement_ExclamationMark)
-		playse(SE_PIN)
-		waitmovement(0)
+		msgbox(format("Mom: {COLOR RED}The {COLOR GREEN}Trainer Card{COLOR RED} is your official identification for the {COLOR GREEN}Ryoko Pokémon League{COLOR RED}."), MSGBOX_AUTOCLOSE)
 		delay(10)
-		msgbox(format("Dad: {COLOR BLUE}I think these might help you catch up to him!"), MSGBOX_AUTOCLOSE)
+		applymovement(DAD_ID, Common_Movement_WalkInPlaceRight)
+		waitmovement(0)
+		msgbox(format("Dad: {COLOR BLUE}These shoes will also help you get around from place to place faster."), MSGBOX_AUTOCLOSE)
 		delay(5)
 		applymovement(DAD_ID, Common_Movement_WalkInPlaceRight)
 		waitmovement(0)
@@ -565,7 +564,13 @@ script PlayersHouse_Mapscript_GetPokemon {
 		waitfanfare
 		setflag(FLAG_SYS_B_DASH)
 		setflag(FLAG_RECEIVED_RUNNING_SHOES)
-		msgbox(format("Mom: {COLOR RED}Now, I must get going.\p{PLAYER}, please feel free to visit my Lab when you're in {COLOR GREEN}Myst City{COLOR RED}!"), MSGBOX_AUTOCLOSE)
+		applymovement(MOM_ID, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		applymovement(MOM_ID, Common_Movement_WalkInPlaceRight)
+		waitmovement(0)
+		playse(SE_PIN)
+		delay(15)
+		msgbox(format("Mom: {COLOR RED}Oh!\nI must get going!\p{COLOR GREEN}{PLAYER}{COLOR RED}, please feel free to visit my Pokémon Lab in {COLOR GREEN}Myst City{COLOR RED}!"), MSGBOX_AUTOCLOSE)
 		delay(5)
 		applymovement(MOM_ID, PlayersHouse_GetPokemon_Movement_1)
 		waitmovement(0)
@@ -573,7 +578,7 @@ script PlayersHouse_Mapscript_GetPokemon {
 		delay(10)
 		applymovement(DAD_ID, Common_Movement_WalkInPlaceRight)
 		waitmovement(0)
-		msgbox(format("Dad: {COLOR BLUE}Now then!\pGet moving!\pIf you ever need anything from me, just let me know -- I'll be right here."))
+		msgbox(format("Dad: {COLOR BLUE}Now then!\pStart your Pokémon journey!\pIf you and your Pokémon need some resting, please feel free to come talk to me!"), MSGBOX_AUTOCLOSE)
 		setflag(FLAG_CANVASTOWN_GETPOKEMON)
 		setvar(VAR_PLAYERSHOUSE_GETPOKEMON, 1)
 		clearflag(FLAG_HIDE_MAP_NAME_POPUP)
@@ -582,9 +587,9 @@ script PlayersHouse_Mapscript_GetPokemon {
 	}
 }
 movement PlayersHouse_GetPokemon_Movement_0 {
-	walk_fastest_down
-	walk_fastest_right * 4
-	walk_fastest_down
+	walk_fast_down
+	walk_fast_right * 4
+	walk_fast_down
 	delay_8
 	walk_in_place_down
 }

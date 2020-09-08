@@ -7,9 +7,9 @@
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
-  "allow_cycling": false,
+  "allow_cycling": true,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
@@ -30,11 +30,11 @@
       "x": 55,
       "y": 19,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route103_EventScript_Daisy",
       "flag": "0"
     },
@@ -53,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 55,
+      "x": 57,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -65,74 +65,61 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 39,
+      "graphics_id": "OBJ_EVENT_GFX_BATTLE_GIRL",
+      "x": 40,
       "y": 15,
       "elevation": 4,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "Route103_EventScript_Andrew",
+      "script": "AlnerwickLowlands_Trainer_Battle_Girl",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 29,
       "y": 22,
-      "elevation": 4,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
-      "script": "Route103_EventScript_Miguel",
+      "script": "AlnerwickLowlands_Trainer_Bird_Keeper",
       "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 30,
-      "y": 25,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_CutTree",
-      "flag": "FLAG_TEMP_12"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 47,
-      "y": 15,
+      "y": 20,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route103_EventScript_Rhett",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "AlnerwickLowlands_Trainer_Hiker",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 34,
-      "y": 16,
+      "x": 36,
+      "y": 18,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
+      "movement_range_x": 4,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route103_EventScript_Marcos",
+      "script": "AlnerwickLowlands_Trainer_Black_Belt",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 34,
-      "y": 26,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -143,7 +130,7 @@
       "flag": "FLAG_ITEM_ROUTE_103_PP_UP"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 21,
       "y": 6,
       "elevation": 3,
@@ -151,13 +138,26 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
-      "script": "NULL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "AlnerwickLowlands_Trainer_Lass",
       "flag": "0"
     }
   ],
   "warp_events": [
-
+    {
+      "x": 4,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE103_GATEHOUSE",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 16,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ALNERWICK_LOWLANDS_GROTTO",
+      "dest_warp_id": 0
+    }
   ],
   "coord_events": [
 
@@ -166,18 +166,18 @@
     {
       "type": "sign",
       "x": 15,
-      "y": 13,
+      "y": 12,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Route103_EventScript_RouteSign"
+      "script": "AlnerwickLowlands_Sign_RouteSign"
     },
     {
       "type": "sign",
       "x": 16,
-      "y": 13,
+      "y": 12,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AlnerwickLowlands_Sign_RouteSign"
     }
   ],
   "allow_bike": "",

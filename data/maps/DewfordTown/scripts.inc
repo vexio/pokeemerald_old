@@ -798,3 +798,82 @@ DewfordTown_Text_YeahDefinitionOfInRightNow: @ 81EA491
 	.string "Yeah, absolutely right!\p"
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
+
+DavnridgeTown_Object_Black_Belt::
+	msgbox DavnridgeTown_Object_Black_Belt_Text_0, MSGBOX_NPC
+	end
+
+
+DavnridgeTown_Object_Bird_Keeper::
+	msgbox DavnridgeTown_Object_Bird_Keeper_Text_0, MSGBOX_NPC
+	end
+
+
+DavnridgeTown_Object_Girl::
+	msgbox DavnridgeTown_Object_Girl_Text_0, MSGBOX_NPC
+	end
+
+
+DavnridgeTown_Object_Engineer_1::
+	msgbox DavnridgeTown_Object_Engineer_1_Text_0, MSGBOX_NPC
+	end
+
+
+DavnridgeTown_Object_Engineer_2::
+	msgbox DavnridgeTown_Object_Engineer_2_Text_0, MSGBOX_NPC
+	end
+
+
+DavnridgeTown_Sign_TownSign::
+	msgbox DavnridgeTown_Sign_TownSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+DavnridgeTown_Sign_GymSign::
+	msgbox DavnridgeTown_Sign_GymSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+DavnridgeTown_Sign_Mines::
+	msgbox DavnridgeTown_Sign_Mines_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
+DavnridgeTown_Object_Black_Belt_Text_0:
+	.string "{COLOR BLUE}I'm trying to train my partner's and I\n"
+	.string "for the Gym Leader, {COLOR GREEN}Lilith{COLOR BLUE}!$"
+
+DavnridgeTown_Object_Bird_Keeper_Text_0:
+	.string "{COLOR BLUE}My flying Pokémon are not very strong\n"
+	.string "against Rock Pokémon, which is what\l"
+	.string "the town's Gym Leader's type is.$"
+
+DavnridgeTown_Object_Girl_Text_0:
+	.string "{COLOR RED}This town use to just be a mine, but\n"
+	.string "after the need for outhouses and a\l"
+	.string "Pokémon Center, it kind of just turned\l"
+	.string "into a town.$"
+
+DavnridgeTown_Object_Engineer_1_Text_0:
+	.string "{COLOR BLUE}I saw {COLOR GREEN}Lilith{COLOR BLUE} go into the mines up there.\p"
+	.string "She is probably training her Pokémon, as\n"
+	.string "the Ryoko League just opened up for\l"
+	.string "this year.$"
+
+DavnridgeTown_Object_Engineer_2_Text_0:
+	.string "{COLOR BLUE}Sorry bub.\n"
+	.string "{COLOR GREEN}Lilith{COLOR BLUE} is up north in the Mines.\p"
+	.string "You should talk to her if you want to\n"
+	.string "battle her in the Gym.$"
+
+DavnridgeTown_Sign_TownSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Davnridge Town\p"
+	.string "{COLOR DARK_GREY}“The Resource Capital of Ryoko”$"
+
+DavnridgeTown_Sign_GymSign_Text_0:
+	.string "{COLOR RED}Davnridge Gym\p"
+	.string "{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Lilith\n"
+	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Rock Type$"
+
+DavnridgeTown_Sign_Mines_Text_0:
+	.string "{COLOR LIGHT_GREEN}Davnridge Mines$"

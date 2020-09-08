@@ -26,56 +26,56 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_ENGINEER",
-      "x": 14,
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
+      "x": 10,
       "y": 27,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
-      "movement_range_x": 1,
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_range_x": 2,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DewfordTown_EventScript_Woman",
+      "script": "DavnridgeTown_Object_Black_Belt",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ENGINEER",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 18,
       "y": 20,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
       "movement_range_x": 0,
-      "movement_range_y": 1,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "DewfordTown_EventScript_Briney",
-      "flag": "FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN"
+      "script": "DavnridgeTown_Object_Bird_Keeper",
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ENGINEER",
       "x": 20,
       "y": 10,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DewfordTown_EventScript_OldRodFisherman",
+      "script": "DavnridgeTown_Object_Engineer_1",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ENGINEER",
       "x": 23,
-      "y": 32,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DewfordTown_EventScript_TrendyPhraseBoy",
-      "flag": "0"
+      "script": "DavnridgeTown_Object_Engineer_2",
+      "flag": "FLAG_DAVNRIDGEMINES_LILITH"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
@@ -87,7 +87,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "DavnridgeTown_Object_Girl",
       "flag": "0"
     }
   ],
@@ -103,7 +103,7 @@
       "x": 24,
       "y": 22,
       "elevation": 0,
-      "dest_map": "MAP_DEWFORD_TOWN_GYM",
+      "dest_map": "MAP_DAVNRIDGE_TOWN_GYM",
       "dest_warp_id": 0
     },
     {
@@ -138,7 +138,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "DewfordTown_EventScript_TownSign"
+      "script": "DavnridgeTown_Sign_TownSign"
     },
     {
       "type": "sign",
@@ -146,7 +146,7 @@
       "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "DewfordTown_EventScript_GymSign"
+      "script": "DavnridgeTown_Sign_GymSign"
     },
     {
       "type": "sign",
@@ -154,7 +154,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "NULL"
+      "script": "DavnridgeTown_Sign_Mines"
     }
   ],
   "allow_bike": "",

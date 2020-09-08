@@ -120,7 +120,8 @@
     "DewfordTown_PokemonCenter_2F",
     "DewfordTown_Gym",
     "DewfordTown_Hall",
-    "DewfordTown_House2"
+    "DewfordTown_House2",
+    "DavnridgeTown_Gym"
   ],
   "gMapGroup4": [
     "LavaridgeTown_HerbShop",
@@ -625,6 +626,7 @@
     "Route119_House"
   ],
   "gMapGroup33": [
-    "Route124_DivingTreasureHuntersHouse"
+    "Route124_DivingTreasureHuntersHouse",
+    "AlnerwickLowlands_Grotto"
   ]
 }

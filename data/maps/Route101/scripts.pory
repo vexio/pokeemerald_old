@@ -306,8 +306,8 @@ script CanvasPath_Boy_1 {
 	end
 }
 
-script CanvasPath_RouteSign {
-	msgbox(format("{UP_ARROW}Alnerwick City\n{DOWN_ARROW}Canvas Town"), MSGBOX_SIGN)
+script CanvasPath_Sign_RouteSign {
+	msgbox(format("{COLOR LIGHT_GREEN}Canvas Path\p{COLOR DARK_GREY}{UP_ARROW} {COLOR LIGHT_GREEN}Alnerwick City{COLOR DARK_GREY}\n{DOWN_ARROW} {COLOR LIGHT_GREEN}Canvas Town{COLOR DARK_GREY}"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
 	end
 }
 

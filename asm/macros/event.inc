@@ -1413,7 +1413,7 @@
 	.endm
 
 	@ After using this command, all standard message boxes will use the signpost frame.
-	.macro signmsg
+	.macro setmessagebox type:req, subtype:req
 	.byte 0xca
 	.endm
 
@@ -1688,10 +1688,17 @@
 	YES = 1
 	NO  = 0
 
-	.macro msgbox text:req, type=MSGBOX_DEFAULT
-	loadword 0, \text
-	callstd \type
-	.endm
+	MSGBOX_SUB_DEFAULT = 0
+	MSGBOX_SUB_WOOD = 1
+	MSGBOX_SUB_METAL = 7
+
+	@ Message box example: msgbox <text>, <text box type>, <text box subtype>
+	.macro msgbox text:req, type=MSGBOX_DEFAULT, subtype=MSGBOX_SUB_DEFAULT
+    loadword 0, \text
+    loadbyte 1, \type
+    loadbyte 2, \subtype
+    callstd \type
+    .endm
 
 	.macro giveitem item:req, amount=1
 	setorcopyvar VAR_0x8000, \item

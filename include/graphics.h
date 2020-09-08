@@ -4,6 +4,10 @@
 // overworld
 extern const u32 gMessageBox_Gfx[];
 extern const u16 gMessageBox_Pal[];
+extern const u32 gMessageBoxWood_Gfx[];
+extern const u16 gMessageBoxWood_Pal[];
+extern const u32 gMessageBoxMetal_Gfx[];
+extern const u16 gMessageBoxMetal_Pal[];
 extern const u32 gSignBox_Gfx[];
 extern const u16 gSignBox_Pal[];
 
@@ -5271,6 +5275,8 @@ extern const u8 gTrainerBackPic_RubySapphireMay[];
 extern const u8 gTrainerBackPic_Wally[];
 extern const u8 gTrainerBackPic_Steven[];
 
+extern const u32 gTrainerBackPicPalette_Brendan[]; // Backsprite
+extern const u32 gTrainerBackPicPalette_May[]; // Backsprite
 extern const u32 gTrainerBackPicPalette_Red[];
 extern const u32 gTrainerBackPicPalette_Leaf[];
 

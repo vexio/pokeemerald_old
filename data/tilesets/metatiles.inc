@@ -607,3 +607,17 @@ gMetatiles_DavnridgeMines::
 	.align 1
 gMetatileAttributes_DavnridgeMines::
 	.incbin "data/tilesets/secondary/davnridgemines/metatile_attributes.bin"
+	.align 1
+gMetatiles_HiddenGrotto::
+	.incbin "data/tilesets/secondary/hiddengrotto/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_HiddenGrotto::
+	.incbin "data/tilesets/secondary/hiddengrotto/metatile_attributes.bin"
+	.align 1
+gMetatiles_DavnridgeGym::
+	.incbin "data/tilesets/secondary/davnridgegym/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_DavnridgeGym::
+	.incbin "data/tilesets/secondary/davnridgegym/metatile_attributes.bin"

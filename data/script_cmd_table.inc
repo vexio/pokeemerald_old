@@ -198,14 +198,14 @@ gScriptCmdTable:: @ 81DB67C
 	.4byte ScrCmd_incrementgamestat
 	.4byte ScrCmd_setescapewarp
 	.4byte ScrCmd_waitmoncry
-	.4byte ScrCmd_bufferboxname
-	.4byte ScrCmd_nop1
-	.4byte ScrCmd_nop1
-	.4byte ScrCmd_nop1
-	.4byte ScrCmd_nop1
-	.4byte ScrCmd_nop1
-	.4byte ScrCmd_nop1
-	.4byte ScrCmd_setmonobedient
+    .4byte ScrCmd_bufferboxname
+    .4byte ScrCmd_nop1
+    .4byte ScrCmd_nop1
+    .4byte ScrCmd_nop1
+    .4byte ScrCmd_setmessagebox
+    .4byte ScrCmd_nop1
+    .4byte ScrCmd_nop1
+    .4byte ScrCmd_setmonobedient
 	.4byte ScrCmd_checkmonobedience
 	.4byte ScrCmd_gotoram
 	.4byte ScrCmd_nop1

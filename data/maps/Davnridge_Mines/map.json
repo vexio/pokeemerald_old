@@ -5,65 +5,39 @@
   "music": "MUS_DAN02",
   "region_map_section": "MAPSEC_DEWFORD_TOWN",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY",
+  "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": false,
-  "allow_escaping": false,
-  "allow_running": false,
-  "show_map_name": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ENGINEER",
-      "x": 6,
-      "y": 30,
+      "x": 17,
+      "y": 25,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "NULL",
+      "script": "DavnridgeMines_Trainer_Miner_2",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ENGINEER",
-      "x": 12,
-      "y": 24,
+      "x": 5,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_RUIN_MANIAC",
-      "x": 22,
-      "y": 37,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 12,
-      "y": 32,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "NULL",
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DavnridgeMines_Object_Miner_3",
       "flag": "0"
     },
     {
@@ -76,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "NULL",
+      "script": "DavnridgeMines_Trainer_Hiker",
       "flag": "0"
     },
     {
@@ -89,11 +63,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
-      "script": "NULL",
+      "script": "DavnridgeMines_Trainer_Miner_1",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RUIN_MANIAC",
+      "graphics_id": "OBJ_EVENT_GFX_ENGINEER",
       "x": 44,
       "y": 27,
       "elevation": 3,
@@ -102,7 +76,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "DavnridgeMines_Object_Miner_NoPassage",
       "flag": "0"
     },
     {
@@ -155,7 +129,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_DAVNRIDGEMINES_LILITH"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -189,7 +163,7 @@
       "x": 39,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_DAVNRIDGE_MINES",
+      "dest_map": "MAP_ROUTE104",
       "dest_warp_id": 0
     },
     {
@@ -198,13 +172,163 @@
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_TOWN",
       "dest_warp_id": 4
+    },
+    {
+      "x": 27,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_DAVNRIDGE_MINES",
+      "dest_warp_id": 4
+    },
+    {
+      "x": 28,
+      "y": 35,
+      "elevation": 0,
+      "dest_map": "MAP_DAVNRIDGE_MINES",
+      "dest_warp_id": 5
+    },
+    {
+      "x": 41,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_DAVNRIDGE_MINES",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 42,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_DAVNRIDGE_MINES",
+      "dest_warp_id": 3
+    },
+    {
+      "x": 50,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_DAVNRIDGE_MINES",
+      "dest_warp_id": 8
+    },
+    {
+      "x": 12,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_DAVNRIDGE_MINES",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_DAVNRIDGE_MINES",
+      "dest_warp_id": 6
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_DAVNRIDGEMINES_STATE",
+      "var_value": "0",
+      "script": "DavnridgeMines_Trigger_NoPassage"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_DAVNRIDGEMINES_STATE",
+      "var_value": "0",
+      "script": "DavnridgeMines_Trigger_NoPassage"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_DAVNRIDGEMINES_STATE",
+      "var_value": "0",
+      "script": "DavnridgeMines_Trigger_Lilith"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_DAVNRIDGEMINES_STATE",
+      "var_value": "0",
+      "script": "DavnridgeMines_Trigger_Lilith"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_DAVNRIDGEMINES_STATE",
+      "var_value": "0",
+      "script": "DavnridgeMines_Trigger_Lilith"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_DAVNRIDGEMINES_STATE",
+      "var_value": "1",
+      "script": "DavnridgeMines_Trigger_NoPassage"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_DAVNRIDGEMINES_STATE",
+      "var_value": "1",
+      "script": "DavnridgeMines_Trigger_NoPassage"
+    }
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 26,
+      "y": 2,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 4,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 20,
+      "y": 16,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 43,
+      "y": 37,
+      "elevation": 3,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 33,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "DavnridgeMines_Sign_LocationName"
+    }
   ],
   "allow_bike": "",
   "allow_escape_rope": "",

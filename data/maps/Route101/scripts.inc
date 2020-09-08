@@ -304,8 +304,8 @@ CanvasPath_Boy_1::
 	end
 
 
-CanvasPath_RouteSign::
-	msgbox CanvasPath_RouteSign_Text_0, MSGBOX_SIGN
+CanvasPath_Sign_RouteSign::
+	msgbox CanvasPath_Sign_RouteSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
 	end
 
 
@@ -323,9 +323,10 @@ CanvasPath_Boy_1_Text_0:
 	.string "increases your chance of encountering\l"
 	.string "a wild Pokémon!$"
 
-CanvasPath_RouteSign_Text_0:
-	.string "{UP_ARROW}Alnerwick City\n"
-	.string "{DOWN_ARROW}Canvas Town$"
+CanvasPath_Sign_RouteSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Canvas Path\p"
+	.string "{COLOR DARK_GREY}{UP_ARROW} {COLOR LIGHT_GREEN}Alnerwick City{COLOR DARK_GREY}\n"
+	.string "{DOWN_ARROW} {COLOR LIGHT_GREEN}Canvas Town{COLOR DARK_GREY}$"
 
 CanvasPath_Trainer_Youngster_Text_0:
 	.string "{COLOR BLUE}We've made eye contact, which means we\n"

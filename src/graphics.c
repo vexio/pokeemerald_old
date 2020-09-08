@@ -2016,6 +2016,10 @@ const u16 gTradeMenuMonBox_Tilemap[] = INCBIN_U16("graphics/trade/menu_mon_box.b
 
 const u16 gMessageBox_Pal[] = INCBIN_U16("graphics/text_window/message_box.gbapal");
 const u8 gMessageBox_Gfx[] = INCBIN_U8("graphics/text_window/message_box.4bpp");
+const u16 gMessageBoxWood_Pal[] = INCBIN_U16("graphics/text_window/message_box_wood.gbapal");
+const u8 gMessageBoxWood_Gfx[] = INCBIN_U8("graphics/text_window/message_box_wood.4bpp");
+const u16 gMessageBoxMetal_Pal[] = INCBIN_U16("graphics/text_window/message_box_metal.gbapal");
+const u8 gMessageBoxMetal_Gfx[] = INCBIN_U8("graphics/text_window/message_box_metal.4bpp");
 const u16 gSignBox_Pal[] = INCBIN_U16("graphics/text_window/sign_box.gbapal");
 const u8 gSignBox_Gfx[] = INCBIN_U8("graphics/text_window/sign_box.4bpp");
 
@@ -2049,9 +2053,9 @@ const u32 gUnknown_08DDE12C[] = INCBIN_U32("graphics/pokenav/ribbons.bin.lz");
 
 const u16 gMonIconPalettes[][16] =
 {
-    INCBIN_U16("graphics/pokemon/icon_palettes/icon_palette_0.gbapal"),
-    INCBIN_U16("graphics/pokemon/icon_palettes/icon_palette_1.gbapal"),
-    INCBIN_U16("graphics/pokemon/icon_palettes/icon_palette_2.gbapal"),
+    INCBIN_U16("graphics/pokemon/icon_palettes/pal0.gbapal"),
+    INCBIN_U16("graphics/pokemon/icon_palettes/pal1.gbapal"),
+    INCBIN_U16("graphics/pokemon/icon_palettes/pal2.gbapal"),
 };
 
 const u16 gTitleScreenBgPalettes[] = INCBIN_U16("graphics/title_screen/pokemon_logo.gbapal",

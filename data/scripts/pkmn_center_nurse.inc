@@ -14,6 +14,8 @@ Common_EventScript_PkmnCenterNurse:: @ 827191E
 
 EventScript_PkmnCenterNurse_Goodbye:: @ 8271954
     message gText_WeHopeToSeeYouAgain
+    @applymovement OBJ_EVENT_ID_PLAYER, EventScript_PlayerTurnAround
+    @waitmovement 0
     return
 
 @ VAR_0x8004 is 1 when player has Gold Card; jumps are identical
@@ -68,6 +70,8 @@ EventScript_PkmnCenterNurse_ReturnPkmn:: @ 82719E2
     applymovement VAR_0x800B, EventScript_PkmnCenterNurse_Bow
     waitmovement 0
     message gText_WeHopeToSeeYouAgain
+    @applymovement OBJ_EVENT_ID_PLAYER, EventScript_PlayerTurnAround
+    @waitmovement 0
     return
 
 EventScript_PkmnCenterNurse_ReturnPkmn2:: @ 8271A03
@@ -76,6 +80,8 @@ EventScript_PkmnCenterNurse_ReturnPkmn2:: @ 8271A03
     applymovement VAR_0x800B, EventScript_PkmnCenterNurse_Bow
     waitmovement 0
     message gText_WeHopeToSeeYouAgain2
+    @applymovement OBJ_EVENT_ID_PLAYER, EventScript_PlayerTurnAround
+    @waitmovement 0
     return
 
 EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom:: @ 8271A19
@@ -87,6 +93,8 @@ EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom:: @ 8271A19
     applymovement VAR_0x800B, EventScript_PkmnCenterNurse_Bow
     waitmovement 0
     message gText_WeHopeToSeeYouAgain
+    @applymovement OBJ_EVENT_ID_PLAYER, EventScript_PlayerTurnAround
+    @waitmovement 0
     return
 
 EventScript_PkmnCenterNurse_CheckPokerus:: @ 8271A43
@@ -115,6 +123,8 @@ EventScript_PkmnCenterNurse_GoldCard:: @ 8271A68
     compare VAR_RESULT, YES
     goto_if_eq EventScript_PkmnCenterNurse_GoldCardHealPkmn
     message gText_WeHopeToSeeYouAgain2
+    @applymovement OBJ_EVENT_ID_PLAYER, EventScript_PlayerTurnAround
+    @waitmovement 0
     return
 
 EventScript_PkmnCenterNurse_AskForUsual:: @ 8271AAC
@@ -122,6 +132,8 @@ EventScript_PkmnCenterNurse_AskForUsual:: @ 8271AAC
     compare VAR_RESULT, YES
     goto_if_eq EventScript_PkmnCenterNurse_GoldCardHealPkmn
     message gText_WeHopeToSeeYouAgain2
+    @applymovement OBJ_EVENT_ID_PLAYER, EventScript_PlayerTurnAround
+    @waitmovement 0
     return
 
 EventScript_PkmnCenterNurse_GoldCardHealPkmn:: @ 8271AC5
@@ -132,4 +144,8 @@ EventScript_PkmnCenterNurse_GoldCardHealPkmn:: @ 8271AC5
 EventScript_PkmnCenterNurse_Bow: @ 8271AD0
     nurse_joy_bow
     delay_4
+    step_end
+
+EventScript_PlayerTurnAround:
+    walk_in_place_down
     step_end

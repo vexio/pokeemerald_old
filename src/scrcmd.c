@@ -2299,3 +2299,12 @@ bool8 ScrCmd_warpsootopolislegend(struct ScriptContext *ctx)
     ResetInitialPlayerAvatarState();
     return TRUE;
 }
+
+bool8 ScrCmd_setmessagebox(struct ScriptContext * ctx)
+{
+    u8 type = ctx->data[1];
+    u8 subtype = ctx->data[2];
+    
+    SetMsgBox(type, subtype);
+    return FALSE;
+}

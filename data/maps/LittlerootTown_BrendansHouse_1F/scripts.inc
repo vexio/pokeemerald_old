@@ -460,7 +460,7 @@ PlayersHouse_Mapscript_GetPokemon::
 PlayersHouse_Mapscript_GetPokemon_1:
 	lockall
 	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	delay 20
 	applymovement 2, Common_Movement_WalkInPlaceRight
 	waitmovement 0
@@ -537,10 +537,9 @@ PlayersHouse_Mapscript_GetPokemon_3:
 	waitfanfare
 	delay 10
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_12, MSGBOX_AUTOCLOSE
-	applymovement 1, Common_Movement_ExclamationMark
-	playse SE_PIN
-	waitmovement 0
 	delay 10
+	applymovement 1, Common_Movement_WalkInPlaceRight
+	waitmovement 0
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_13, MSGBOX_AUTOCLOSE
 	delay 5
 	applymovement 1, Common_Movement_WalkInPlaceRight
@@ -550,6 +549,12 @@ PlayersHouse_Mapscript_GetPokemon_3:
 	waitfanfare
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_RECEIVED_RUNNING_SHOES
+	applymovement 2, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 2, Common_Movement_WalkInPlaceRight
+	waitmovement 0
+	playse SE_PIN
+	delay 15
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_15, MSGBOX_AUTOCLOSE
 	delay 5
 	applymovement 2, PlayersHouse_GetPokemon_Movement_1
@@ -558,7 +563,7 @@ PlayersHouse_Mapscript_GetPokemon_3:
 	delay 10
 	applymovement 1, Common_Movement_WalkInPlaceRight
 	waitmovement 0
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_16
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_16, MSGBOX_AUTOCLOSE
 	setflag FLAG_CANVASTOWN_GETPOKEMON
 	setvar VAR_PLAYERSHOUSE_GETPOKEMON, 1
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
@@ -591,12 +596,12 @@ PlayersHouse_Mapscript_GetPokemon_6:
 
 
 PlayersHouse_GetPokemon_Movement_0:
-	walk_fastest_down
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
 	delay_8
 	walk_in_place_down
 	step_end
@@ -670,23 +675,26 @@ PlayersHouse_Mapscript_GetPokemon_Text_11:
 	.string "{PLAYER} received the Trainer Card!$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_12:
-	.string "Dad: {COLOR BLUE}You should probably try to catch\n"
-	.string "up to him.$"
+	.string "Mom: {COLOR RED}The {COLOR GREEN}Trainer Card{COLOR RED} is your official\n"
+	.string "identification for the {COLOR GREEN}Ryoko Pokémon\l"
+	.string "League{COLOR RED}.$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_13:
-	.string "Dad: {COLOR BLUE}I think these might help you catch\n"
-	.string "up to him!$"
+	.string "Dad: {COLOR BLUE}These shoes will also help you get\n"
+	.string "around from place to place faster.$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_14:
 	.string "{PLAYER} received the Running Shoes!$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_15:
-	.string "Mom: {COLOR RED}Now, I must get going.\p"
-	.string "{PLAYER}, please feel free to visit my\n"
-	.string "Lab when you're in {COLOR GREEN}Myst City{COLOR RED}!$"
+	.string "Mom: {COLOR RED}Oh!\n"
+	.string "I must get going!\p"
+	.string "{COLOR GREEN}{PLAYER}{COLOR RED}, please feel free to visit my\n"
+	.string "Pokémon Lab in {COLOR GREEN}Myst City{COLOR RED}!$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_16:
 	.string "Dad: {COLOR BLUE}Now then!\p"
-	.string "Get moving!\p"
-	.string "If you ever need anything from me, just\n"
-	.string "let me know -- I'll be right here.$"
+	.string "Start your Pokémon journey!\p"
+	.string "If you and your Pokémon need some\n"
+	.string "resting, please feel free to come talk\l"
+	.string "to me!$"

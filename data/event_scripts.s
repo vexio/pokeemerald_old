@@ -1069,3 +1069,7 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/OverworldSprite_Test/scripts.inc"
 
 	.include "data/maps/Alnerwick_Library/scripts.inc"
+
+	.include "data/maps/AlnerwickLowlands_Grotto/scripts.inc"
+
+	.include "data/maps/DavnridgeTown_Gym/scripts.inc"

@@ -1869,3 +1869,43 @@ gTilesetPalettes_DavnridgeMines::
 	.align 2
 gTilesetTiles_DavnridgeMines::
 	.incbin "data/tilesets/secondary/davnridgemines/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_HiddenGrotto::
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/hiddengrotto/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_HiddenGrotto::
+	.incbin "data/tilesets/secondary/hiddengrotto/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_DavnridgeGym::
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/davnridgegym/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_DavnridgeGym::
+	.incbin "data/tilesets/secondary/davnridgegym/tiles.4bpp.lz"

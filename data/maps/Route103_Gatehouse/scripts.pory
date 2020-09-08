@@ -1,0 +1,14 @@
+raw `
+Route103_Gatehouse_MapScripts::
+	//map_script MAP_SCRIPT_ON_TRANSITION, AlnerwickLibrary_OnTransition
+	.byte 0
+`
+
+script Route103_GH_Object_Officer {
+    msgbox(format("{COLOR GREEN}Alnerwick Lowlands{COLOR BLUE} is a route connecting {COLOR GREEN}Alnerwick City{COLOR BLUE} and {COLOR GREEN}Davnridge Town{COLOR BLUE}.\pThe route ahead has some diverse terrain with a lot of trainers and some unique Pokémon."), MSGBOX_NPC)
+    end
+}
+script Route103_GH_Object_Girl {
+    msgbox(format("{COLOR RED}I love picking the flowers from the lowlands outside of Alnerwick."), MSGBOX_NPC)
+    end
+}
