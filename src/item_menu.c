@@ -817,7 +817,7 @@ void BagMenu_MoveCursorCallback(s32 a, bool8 b, struct ListMenu *unused)
 {
     if (b != 1)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BAG_CURSOR);
         ShakeBagVisual();
     }
     if (gBagMenu->unk81A == 0xFF)
@@ -1154,12 +1154,12 @@ u8 GetSwitchBagPocketDirection(void)
     LRKeys = GetLRKeysPressed();
     if ((gMain.newKeys & DPAD_LEFT) || LRKeys == MENU_L_PRESSED)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BAG_POCKET);
         return 1;
     }
     if ((gMain.newKeys & DPAD_RIGHT) || LRKeys == MENU_R_PRESSED)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BAG_POCKET);
         return 2;
     }
     return 0;
