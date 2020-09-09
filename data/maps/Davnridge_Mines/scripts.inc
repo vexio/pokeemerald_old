@@ -23,7 +23,7 @@ DavnridgeMines_Trigger_NoPassage_1:
 	delay 5
 	applymovement OBJ_EVENT_ID_PLAYER, DavnridgeMines_Movement_NoPassage_1
 	waitmovement 0
-	compare VAR_TEMP_0, 29
+	compare VAR_TEMP_1, 29
 	goto_if_eq DavnridgeMines_Trigger_NoPassage_5
 DavnridgeMines_Trigger_NoPassage_4:
 	release
@@ -217,19 +217,19 @@ DavnridgeMines_Lilith_Movement_4:
 	step_end
 
 DavnridgeMines_Trainer_Miner_1::
-	trainerbattle_single TRAINER_MARCEL, DavnridgeMines_Trainer_Miner_1_Text_0, DavnridgeMines_Trainer_Miner_1_Text_1
+	trainerbattle_single TRAINER_MINER_CLARK, DavnridgeMines_Trainer_Miner_1_Text_0, DavnridgeMines_Trainer_Miner_1_Text_1
 	msgbox DavnridgeMines_Trainer_Miner_1_Text_2, MSGBOX_NPC
 	end
 
 
 DavnridgeMines_Trainer_Miner_2::
-	trainerbattle_single TRAINER_ALBERTO, DavnridgeMines_Trainer_Miner_2_Text_0, DavnridgeMines_Trainer_Miner_2_Text_1
+	trainerbattle_single TRAINER_MINER_LUIS, DavnridgeMines_Trainer_Miner_2_Text_0, DavnridgeMines_Trainer_Miner_2_Text_1
 	msgbox DavnridgeMines_Trainer_Miner_2_Text_2, MSGBOX_NPC
 	end
 
 
 DavnridgeMines_Trainer_Hiker::
-	trainerbattle_single TRAINER_ED, DavnridgeMines_Trainer_Hiker_Text_0, DavnridgeMines_Trainer_Hiker_Text_1
+	trainerbattle_single TRAINER_HIKER_ED, DavnridgeMines_Trainer_Hiker_Text_0, DavnridgeMines_Trainer_Hiker_Text_1
 	msgbox DavnridgeMines_Trainer_Hiker_Text_2, MSGBOX_NPC
 	end
 

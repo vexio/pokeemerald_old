@@ -2,7 +2,7 @@ RustboroCity_Gym_MapScripts:: @ 8212F30
 	.byte 0
 
 RustboroCity_Gym_EventScript_Roxanne:: @ 8212F31
-	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_GYM_LEADER_LILITH, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq RustboroCity_Gym_EventScript_RoxanneRematch
@@ -37,7 +37,7 @@ RustboroCity_Gym_EventScript_GiveRockTomb:: @ 8212FA4
 	end
 
 RustboroCity_Gym_EventScript_RoxanneRematch:: @ 8212FC8
-	trainerbattle_rematch_double TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
+	trainerbattle_rematch_double TRAINER_GYM_LEADER_LILITH, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
 	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
 	end
 

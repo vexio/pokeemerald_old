@@ -31,7 +31,7 @@ script DavnridgeMines_Trigger_NoPassage {
     delay(5)
     applymovement(PLAYER, DavnridgeMines_Movement_NoPassage_1)
     waitmovement(0)
-    if (var(VAR_TEMP_0) == 29) {
+    if (var(VAR_TEMP_1) == 29) {
         applymovement(GUARD, DavnridgeMines_Movement_NoPassage_2)
         waitmovement(0)
     }
@@ -157,17 +157,17 @@ movement DavnridgeMines_Lilith_Movement_4 {
 
 // trainers
 script DavnridgeMines_Trainer_Miner_1 {
-    trainerbattle_single(TRAINER_MARCEL, format("{COLOR BLUE}Wha' brings you to th' mines?"), format("Wowza!\nYou got some stron' Pokémon ther'!"))
+    trainerbattle_single(TRAINER_MINER_CLARK, format("{COLOR BLUE}Wha' brings you to th' mines?"), format("Wowza!\nYou got some stron' Pokémon ther'!"))
     msgbox(format("{COLOR BLUE}I bet you'd be lookin' for ol' {COLOR GREEN}Lilith{COLOR BLUE}...\pI saw her go up those stairs ther'."), MSGBOX_NPC)
     end
 }
 script DavnridgeMines_Trainer_Miner_2 {
-    trainerbattle_single(TRAINER_ALBERTO, format("{COLOR BLUE}I'm on my 15 minute break.\pLet's make this battle quick!"), format("Looks like my break is over..."))
+    trainerbattle_single(TRAINER_MINER_LUIS, format("{COLOR BLUE}I'm on my 15 minute break.\pLet's make this battle quick!"), format("Looks like my break is over..."))
     msgbox(format("{COLOR BLUE}Looks like my 15 minute break is over..."), MSGBOX_NPC)
     end
 }
 script DavnridgeMines_Trainer_Hiker {
-    trainerbattle_single(TRAINER_ED, format("{COLOR BLUE}That guy over there won't let me through the caves!"), format("Only if I was able to get through the reset of the caves..."))
+    trainerbattle_single(TRAINER_HIKER_ED, format("{COLOR BLUE}That guy over there won't let me through the caves!"), format("Only if I was able to get through the reset of the caves..."))
     msgbox(format("{COLOR BLUE}The rest of the caves are on the east passage in this tunnel here.\pThat passage will take you outside the caves and towards {COLOR GREEN}Enclava Town{COLOR BLUE}."), MSGBOX_NPC)
     end
 }

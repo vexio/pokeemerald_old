@@ -165,7 +165,7 @@ Route110_EventScript_PlayerRidingAcroBike:: @ 81EF3E8
 	end
 
 Route110_EventScript_Edward:: @ 81EF3F2
-	trainerbattle_single TRAINER_EDWARD, Route110_Text_EdwardIntro, Route110_Text_EdwardDefeated
+	trainerbattle_single TRAINER_HIKER_EDWARD, Route110_Text_EdwardIntro, Route110_Text_EdwardDefeated
 	msgbox Route110_Text_EdwardPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -175,7 +175,7 @@ Route110_EventScript_Jaclyn:: @ 81EF409
 	end
 
 Route110_EventScript_Edwin:: @ 81EF420
-	trainerbattle_single TRAINER_EDWIN_1, Route110_Text_EdwinIntro, Route110_Text_EdwinDefeated, Route110_EventScript_EdwinRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_HIKER_EDWIN_1, Route110_Text_EdwinIntro, Route110_Text_EdwinDefeated, Route110_EventScript_EdwinRegisterMatchCallAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route110_EventScript_EdwinRematch
@@ -187,12 +187,12 @@ Route110_EventScript_EdwinRegisterMatchCallAfterBattle:: @ 81EF44C
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route110_Text_EdwinRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_EDWIN_1
+	register_matchcall TRAINER_HIKER_EDWIN_1
 	release
 	end
 
 Route110_EventScript_EdwinRematch:: @ 81EF46B
-	trainerbattle_rematch TRAINER_EDWIN_1, Route110_Text_EdwinRematchIntro, Route110_Text_EdwinRematchDefeated
+	trainerbattle_rematch TRAINER_HIKER_EDWIN_1, Route110_Text_EdwinRematchIntro, Route110_Text_EdwinRematchDefeated
 	msgbox Route110_Text_EdwinRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 

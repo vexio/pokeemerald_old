@@ -76,7 +76,7 @@ FortreeCity_Gym_EventScript_Jared:: @ 82166A8
 	end
 
 FortreeCity_Gym_EventScript_Edwardo:: @ 82166BF
-	trainerbattle_single TRAINER_EDWARDO, FortreeCity_Gym_Text_EdwardoIntro, FortreeCity_Gym_Text_EdwardoDefeat
+	trainerbattle_single TRAINER_HIKER_EDWARDO, FortreeCity_Gym_Text_EdwardoIntro, FortreeCity_Gym_Text_EdwardoDefeat
 	msgbox FortreeCity_Gym_Text_EdwardoPostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -149,3 +149,13 @@ EventScript_PkmnCenterNurse_Bow: @ 8271AD0
 EventScript_PlayerTurnAround:
     walk_in_place_down
     step_end
+
+EventScript_PkmnCenterMart::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart 0
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end

@@ -29,7 +29,7 @@ Route110_TrickHousePuzzle1_EventScript_Sally:: @ 826B948
 	end
 
 Route110_TrickHousePuzzle1_EventScript_Eddie:: @ 826B95F
-	trainerbattle_single TRAINER_EDDIE, Route110_TrickHousePuzzle1_Text_EddieIntro, Route110_TrickHousePuzzle1_Text_EddieDefeat
+	trainerbattle_single TRAINER_HIKER_EDDIE, Route110_TrickHousePuzzle1_Text_EddieIntro, Route110_TrickHousePuzzle1_Text_EddieDefeat
 	msgbox Route110_TrickHousePuzzle1_Text_EddiePostBattle, MSGBOX_AUTOCLOSE
 	end
 

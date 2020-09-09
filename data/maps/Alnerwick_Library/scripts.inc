@@ -109,7 +109,7 @@ AlnerwickLibrary_Trigger_Thief_21:
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 10
-	msgbox AlnerwickLibrary_Trigger_Thief_Text_4, MSGBOX_AUTOCLOSE
+	msgbox AlnerwickLibrary_Trigger_Thief_Text_4
 	compare VAR_TEMP_1, 5
 	goto_if_eq AlnerwickLibrary_Trigger_Thief_29
 	compare VAR_TEMP_1, 6
@@ -363,8 +363,6 @@ AlnerwickLibrary_Trigger_Thief_Text_4:
 	.string "{COLOR DARK_GREY}Librarian: {COLOR GREEN}Darkrai{COLOR RED} is an ancient Pokémon\n"
 	.string "who haunts people's dreams, but the\l"
 	.string "tome lacks a full translation.\p"
-	.string "I don't think that thug has any sort of\n"
-	.string "chance at translating that tome.\p"
 	.string "{COLOR DARK_GREY}Librarian:{COLOR RED} That thug is probably long\n"
 	.string "gone at this point, and that tome is a\l"
 	.string "loss cause.\p"

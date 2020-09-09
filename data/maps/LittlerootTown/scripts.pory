@@ -1243,17 +1243,18 @@ script CanvasTown_Trigger_RivalBattle {
 		closemessage
 		msgbox(format("Skip: {COLOR BLUE}Trying to get ahead of me?\pSince we're both new trainers, and essentially rivals, why don't we see who the stronger trainer is?"), MSGBOX_AUTOCLOSE)
 		if (var(VAR_STARTER_MON) == 0) { // player choose rowlet as starter
-			trainerbattle_no_intro(TRAINER_SKIP_FIRE_1, format("Hmph..."))
+			trainerbattle_no_intro(TRAINER_SKIP_FIRE_1, format("Hmph…"))
 		} elif (var(VAR_STARTER_MON) == 1) { // player choose chimchar as starter
-			trainerbattle_no_intro(TRAINER_SKIP_WATER_1, format("Hmph..."))
+			trainerbattle_no_intro(TRAINER_SKIP_WATER_1, format("Hmph…"))
 		} elif (var(VAR_STARTER_MON) == 2) { // player choose froakie as starter
-			trainerbattle_no_intro(TRAINER_SKIP_GRASS_1, format("Hmph..."))
+			trainerbattle_no_intro(TRAINER_SKIP_GRASS_1, format("Hmph…"))
 		}
 		playbgm(MUS_RG_RIVAL2, 0)
 		delay(10)
 		msgbox(format("Skip: {COLOR BLUE}I'm not taking that battle to heart, since we're just getting to know our Pokémon.\p{COLOR DARK_GREY}Skip: {COLOR BLUE}But don't let this victory go to your head!\pI'm still going to destroy you next time we catch up!"))
 		waitmessage
 		closemessage
+		delay(10)
 		applymovement(7, Common_Movement_QuestionMark)
 		waitmovement(0)
 		msgbox(format("Skip: {COLOR BLUE}Is that an extra {COLOR GREEN}Pokédex{COLOR BLUE}?\pI think I'll be needing one of those!"))
@@ -1273,7 +1274,11 @@ script CanvasTown_Trigger_RivalBattle {
 		}
 		removeobject(7)
 		fadenewbgm(MUS_MISHIRO)
+		msgbox(format("{COLOR GREEN}Skip{COLOR DARK_GREY} seems to have dropped something…"), MSGBOX_AUTOCLOSE)
+		giveitem(ITEM_POKE_BALL, 10)
 		setvar(VAR_CANVASTOWN_RIVALBATTLE, 1)
+		release
+		end
 	}
 }
 

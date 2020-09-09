@@ -1504,7 +1504,7 @@ const struct BattleFrontierTrainer gBattleFrontierTrainers[FRONTIER_TRAINERS_COU
         .speechLose = {EC_WORD_I, EC_WORD_WANT, EC_WORD_MY, EC_WORD_MOTHER, EC_WORD_EXCL, 0xFFFF},
         .monSet = gBattleFrontierTrainerMons_Jesse
     },
-    [FRONTIER_TRAINER_EDUARDO] = {
+    [FRONTIER_TRAINER_HIKER_EDUARDO] = {
         .facilityClass = FACILITY_CLASS_GUITARIST,
         .trainerName = _("EDUARDO"),
         .speechBefore = {EC_WORD_OUR, EC_WORD_MUSIC, EC_WORD_WILL, EC_WORD_PLAY, EC_WORD_ALL, EC_WORD_NIGHT},

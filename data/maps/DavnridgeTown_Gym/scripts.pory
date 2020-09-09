@@ -1,1 +1,39 @@
 mapscripts DavnridgeTown_Gym_MapScripts {}
+
+script DavnridgeGym_Sign_GymSign {
+    if (flag(FLAG_BADGE01_GET) == true) {
+        msgbox(format("{COLOR RED}Davnridge Pokémon Gym\p{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Rock\n{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Lilith\p{COLOR DARK_GREY}Winning Trainers: {COLOR LIGHT_GREEN}Skip, {PLAYER}"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    } else {
+        msgbox(format("{COLOR RED}Davnridge Pokémon Gym\p{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Rock\n{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Lilith\p{COLOR DARK_GREY}Winning Trainers: {COLOR LIGHT_GREEN}Skip"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    }
+    end
+}
+script DavnridgeGym_Trainer_Hiker {
+    trainerbattle_single(TRAINER_GYM_HIKER_TYSON, format("{COLOR BLUE}Wrong way!"), format("You'll never beat Lilith!"))
+    msgbox(format("{COLOR BLUE}Lilith perfers to use Rock Type Pokémon, she's really strong!"), MSGBOX_NPC)
+    end
+}
+script DavnridgeGym_Trainer_Miner {
+    trainerbattle_single(TRAINER_GYM_MINER_HEATH, format("{COLOR BLUE}You're not getting past me!"), format("Wow!\nYou're strong!"))
+    msgbox(format("{COLOR BLUE}Lilith is much stronger than I am!"), MSGBOX_NPC)
+    end
+}
+script DavnridgeGym_Trainer_Lilith {
+    lockall
+    playse(SE_MU_PACHI)
+	animateflash(2)
+    msgbox(format("Lilith: {COLOR RED}Nice to see you here!\pI will be your first official {COLOR GREEN}Ryoko Pokémon League{COLOR RED} Gym battle!\pDon't think I'm going to be going easy on you!"), MSGBOX_AUTOCLOSE)
+    trainerbattle_no_intro(TRAINER_GYM_LEADER_LILITH, format("Well played!\p{PLAYER}...\nI can tell you're a strong trainer!\pTake this badge!"))
+    delay(10)
+    msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Plain Badge"))
+    call(Common_EventScript_PlayGymBadgeFanfare)
+    msgbox(format("Lilith: {COLOR RED}The {COLOR GREEN}Plain Badge{COLOR RED} is your official certification of beating me.\pTake this as well!"))
+    giveitem(ITEM_TM39_ROCK_TOMB, 1)
+    msgbox(format("Lilith: {COLOR RED}Your next challenge will be in {COLOR GREEN}Enclava Town{COLOR RED}, which can be access through the {COLOR GREEN}Davnridge Mines{COLOR RED}.\pI wish you the best of luck on your journey!"), MSGBOX_AUTOCLOSE)
+    setflag(FLAG_BADGE01_GET)
+    settrainerflag(TRAINER_GYM_HIKER_TYSON)
+    settrainerflag(TRAINER_GYM_MINER_HEATH)
+    setvar(VAR_DAVNRIDGEMINES_STATE, 2)
+    releaseall
+    end
+}

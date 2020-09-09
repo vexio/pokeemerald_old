@@ -1268,6 +1268,7 @@ CanvasTown_Trigger_RivalBattle_10:
 	msgbox CanvasTown_Trigger_RivalBattle_Text_3
 	waitmessage
 	closemessage
+	delay 10
 	applymovement 7, Common_Movement_QuestionMark
 	waitmovement 0
 	msgbox CanvasTown_Trigger_RivalBattle_Text_4
@@ -1284,8 +1285,11 @@ CanvasTown_Trigger_RivalBattle_10:
 CanvasTown_Trigger_RivalBattle_17:
 	removeobject 7
 	fadenewbgm MUS_MISHIRO
+	msgbox CanvasTown_Trigger_RivalBattle_Text_7, MSGBOX_AUTOCLOSE
+	giveitem ITEM_POKE_BALL, 10
 	setvar VAR_CANVASTOWN_RIVALBATTLE, 1
-	return
+	release
+	end
 
 CanvasTown_Trigger_RivalBattle_4:
 	setobjectxy 7, 5, 7
@@ -1491,7 +1495,7 @@ CanvasTown_Trigger_RivalBattle_Text_1:
 	.string "the stronger trainer is?$"
 
 CanvasTown_Trigger_RivalBattle_Text_2:
-	.string "Hmph...$"
+	.string "Hmph…$"
 
 CanvasTown_Trigger_RivalBattle_Text_3:
 	.string "Skip: {COLOR BLUE}I'm not taking that battle to\n"
@@ -1512,3 +1516,6 @@ CanvasTown_Trigger_RivalBattle_Text_5:
 
 CanvasTown_Trigger_RivalBattle_Text_6:
 	.string "Skip: {COLOR BLUE}See ya later!$"
+
+CanvasTown_Trigger_RivalBattle_Text_7:
+	.string "{COLOR GREEN}Skip{COLOR DARK_GREY} seems to have dropped something…$"

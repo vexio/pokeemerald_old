@@ -1124,7 +1124,7 @@ static void PCTurnOnEffect_1(s16 isPcTurnedOn, s8 dx, s8 dy)
     }
     if (gSpecialVar_0x8004 == PC_LOCATION_OTHER)
     {
-        MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + 7, gSaveBlock1Ptr->pos.y - 1 + dy + 7, tileId | METATILE_COLLISION_MASK);
+        MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + 7, gSaveBlock1Ptr->pos.y + dy + 7, tileId | METATILE_COLLISION_MASK);
     }
     else
     {
@@ -1173,7 +1173,7 @@ static void PCTurnOffEffect(void)
     }
     if (gSpecialVar_0x8004 == 0)
     {
-        MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + 7, gSaveBlock1Ptr->pos.y - 1 + dy + 7, tileId | METATILE_COLLISION_MASK);
+        MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + 7, gSaveBlock1Ptr->pos.y + dy + 7, tileId | METATILE_COLLISION_MASK);
     }
     else
     {
