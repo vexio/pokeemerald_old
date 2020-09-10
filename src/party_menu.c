@@ -4384,7 +4384,7 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
         GetMonNickname(mon, gStringVar1);
         GetMedicineItemEffectMessage(item);
         DisplayPartyMenuMessage(gStringVar4, TRUE);
-        ScheduleBgCopyTilemapToVram(2);
+        schedule_bg_copy_tilemap_to_vram(2);
         if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(item, 1))
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         else
