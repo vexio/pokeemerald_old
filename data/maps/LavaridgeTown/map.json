@@ -17,12 +17,17 @@
       "direction": "left",
       "offset": 8,
       "map": "MAP_ROUTE104"
+    },
+    {
+      "direction": "right",
+      "offset": 12,
+      "map": "MAP_ROUTE105"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 21,
+      "x": 25,
       "y": 25,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -30,12 +35,12 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LavaridgeTown_EventScript_ExpertF",
+      "script": "EnclavaTown_Object_OldWoman_2",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 19,
+      "x": 23,
       "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -43,25 +48,25 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LavaridgeTown_EventScript_ExpertM",
-      "flag": "0"
+      "script": "EnclavaTown_Object_TowerMan",
+      "flag": "FLAG_ENCLAVATOWN_TOWERMAN"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
-      "x": 25,
-      "y": 8,
+      "x": 29,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LavaridgeTown_EventScript_OldMan",
+      "script": "EnclavaTown_Object_OldMan",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 8,
+      "x": 12,
       "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -69,77 +74,90 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LavaridgeTown_EventScript_Twin",
+      "script": "EnclavaTown_Object_LittleGirl",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
-      "x": 24,
-      "y": 18,
-      "elevation": 3,
+      "x": 28,
+      "y": 17,
+      "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LavaridgeTown_EventScript_EggWoman",
+      "script": "EnclavaTown_Object_OldWoman_1",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 31,
+      "x": 35,
       "y": 26,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_RIGHT_DOWN",
       "movement_range_x": 3,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "EnclavaTown_Object_BlackBelt",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 7,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EnclavaTown_Object_Hiker",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 24,
+      "x": 28,
       "y": 23,
       "elevation": 0,
       "dest_map": "MAP_LAVARIDGE_TOWN_HERB_SHOP",
       "dest_warp_id": 0
     },
     {
-      "x": 31,
-      "y": 8,
+      "x": 35,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_LAVARIDGE_TOWN_GYM_1F",
       "dest_warp_id": 0
     },
     {
-      "x": 14,
+      "x": 18,
       "y": 26,
       "elevation": 0,
       "dest_map": "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F",
       "dest_warp_id": 0
     },
     {
-      "x": 8,
-      "y": 15,
+      "x": 12,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_LAVARIDGE_TOWN_HOUSE",
       "dest_warp_id": 0
     },
     {
-      "x": 19,
+      "x": 23,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_LAVARIDGE_TOWN",
       "dest_warp_id": 0
     },
     {
-      "x": 27,
+      "x": 31,
       "y": 17,
       "elevation": 0,
-      "dest_map": "MAP_LAVARIDGE_TOWN",
+      "dest_map": "MAP_ENCLAVA_TOWN_HOUSE_2",
       "dest_warp_id": 0
     }
   ],
@@ -149,35 +167,43 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 22,
-      "y": 23,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LavaridgeTown_EventScript_HerbShopSign"
-    },
-    {
-      "type": "sign",
-      "x": 35,
-      "y": 8,
+      "x": 39,
+      "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "LavaridgeTown_EventScript_GymSign"
+      "script": "EnclavaTown_Sign_GymSign"
     },
     {
       "type": "sign",
-      "x": 11,
+      "x": 15,
       "y": 26,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LavaridgeTown_EventScript_TownSign"
+      "script": "EnclavaTown_Sign_TownSign"
     },
     {
       "type": "hidden_item",
-      "x": 25,
-      "y": 29,
+      "x": 17,
+      "y": 14,
       "elevation": 3,
       "item": "ITEM_SUPER_POTION",
       "flag": "FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "EnclavaTown_Sign_EnclavaTower"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "EnclavaTown_Sign_Rock"
     }
   ],
   "allow_bike": "",

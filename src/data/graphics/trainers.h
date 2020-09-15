@@ -1,6 +1,24 @@
 const u32 gTrainerFrontPic_Hiker[] = INCBIN_U32("graphics/trainers/front_pics/hiker_front_pic.4bpp.lz");
 const u32 gTrainerPalette_Hiker[] = INCBIN_U32("graphics/trainers/palettes/hiker.gbapal.lz");
 
+const u32 gTrainerFrontPic_Engineer[] = INCBIN_U32("graphics/trainers/front_pics/engineer_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Engineer[] = INCBIN_U32("graphics/trainers/palettes/engineer.gbapal.lz");
+
+const u32 gTrainerFrontPic_Scientist[] = INCBIN_U32("graphics/trainers/front_pics/scientist_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Scientist[] = INCBIN_U32("graphics/trainers/palettes/scientist.gbapal.lz");
+
+const u32 gTrainerFrontPic_ProtoAdminCeres[] = INCBIN_U32("graphics/trainers/front_pics/proto_admin_ceres_front_pic.4bpp.lz");
+const u32 gTrainerPalette_ProtoAdminCeres[] = INCBIN_U32("graphics/trainers/palettes/proto_admin_ceres.gbapal.lz");
+
+const u32 gTrainerFrontPic_ProtoAdminEris[] = INCBIN_U32("graphics/trainers/front_pics/proto_admin_eris_front_pic.4bpp.lz");
+const u32 gTrainerPalette_ProtoAdminEris[] = INCBIN_U32("graphics/trainers/palettes/proto_admin_eris.gbapal.lz");
+
+const u32 gTrainerFrontPic_ProtoAdminHaumea[] = INCBIN_U32("graphics/trainers/front_pics/proto_admin_haumea_front_pic.4bpp.lz");
+const u32 gTrainerPalette_ProtoAdminHaumea[] = INCBIN_U32("graphics/trainers/palettes/proto_admin_haumea.gbapal.lz");
+
+const u32 gTrainerFrontPic_ProtoLeaderApollo[] = INCBIN_U32("graphics/trainers/front_pics/proto_leader_apollo_front_pic.4bpp.lz");
+const u32 gTrainerPalette_ProtoLeaderApollo[] = INCBIN_U32("graphics/trainers/palettes/proto_leader_apollo.gbapal.lz");
+
 const u32 gTrainerFrontPic_AquaGruntM[] = INCBIN_U32("graphics/trainers/front_pics/aqua_grunt_m_front_pic.4bpp.lz");
 const u32 gTrainerPalette_AquaGruntM[] = INCBIN_U32("graphics/trainers/palettes/aqua_grunt_m.gbapal.lz");
 

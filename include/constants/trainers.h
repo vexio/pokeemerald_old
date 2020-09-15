@@ -110,6 +110,12 @@
 #define TRAINER_PIC_LEAF                  90
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
+#define TRAINER_PIC_ENGINEER              94
+#define TRAINER_PIC_SCIENTIST             95
+#define TRAINER_PIC_PROTO_ADMIN_HAUMEA    96
+#define TRAINER_PIC_PROTO_ADMIN_ERIS      97
+#define TRAINER_PIC_PROTO_ADMIN_CERES     98
+#define TRAINER_PIC_PROTO_LEADER_APOLLO   99
 
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1
@@ -353,6 +359,8 @@
 #define TRAINER_CLASS_RS_PROTAG      0x41
 #define TRAINER_CLASS_ELECTRICIAN    0x42
 #define TRAINER_CLASS_MINER          0x43
+#define TRAINER_CLASS_ENGINEER       0x44
+#define TRAINER_CLASS_SCIENTIST      0x45
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

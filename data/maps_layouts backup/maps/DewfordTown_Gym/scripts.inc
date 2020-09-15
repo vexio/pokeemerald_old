@@ -7,7 +7,7 @@ DewfordTown_Gym_OnTransition: @ 81FC642
 	end
 
 DewfordTown_Gym_EventScript_1FC648:: @ 81FC648
-	checktrainerflag TRAINER_BRAWLY_1
+	checktrainerflag TRAINER_GYM_LEADER_BRUCE
 	goto_if_eq DewfordTown_Gym_EventScript_1FC6A2
 	call DewfordTown_Gym_EventScript_1FC768
 	copyvar VAR_0x8001, VAR_0x8000
@@ -156,7 +156,7 @@ DewfordTown_Gym_EventScript_1FC7C1:: @ 81FC7C1
 	return
 
 DewfordTown_Gym_EventScript_1FC7C2:: @ 81FC7C2
-	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_1FCF44, DewfordTown_Gym_Text_1FD008, DewfordTown_Gym_EventScript_1FC7F7, NO_MUSIC
+	trainerbattle_single TRAINER_GYM_LEADER_BRUCE, DewfordTown_Gym_Text_1FCF44, DewfordTown_Gym_Text_1FD008, DewfordTown_Gym_EventScript_1FC7F7, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, 1
 	goto_if_eq DewfordTown_Gym_EventScript_1FC89C
@@ -210,7 +210,7 @@ DewfordTown_Gym_EventScript_1FC878:: @ 81FC878
 	end
 
 DewfordTown_Gym_EventScript_1FC89C:: @ 81FC89C
-	trainerbattle_rematch_double TRAINER_BRAWLY_1, DewfordTown_Gym_Text_1FD2C4, DewfordTown_Gym_Text_1FD367, DewfordTown_Gym_Text_1FD3DE
+	trainerbattle_rematch_double TRAINER_GYM_LEADER_BRUCE, DewfordTown_Gym_Text_1FD2C4, DewfordTown_Gym_Text_1FD367, DewfordTown_Gym_Text_1FD3DE
 	msgbox DewfordTown_Gym_Text_1FD37B, MSGBOX_AUTOCLOSE
 	end
 

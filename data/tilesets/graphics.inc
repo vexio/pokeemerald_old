@@ -1909,3 +1909,23 @@ gTilesetPalettes_DavnridgeGym::
 	.align 2
 gTilesetTiles_DavnridgeGym::
 	.incbin "data/tilesets/secondary/davnridgegym/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_EnclavaGym::
+	.incbin "data/tilesets/secondary/enclavagym/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/enclavagym/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_EnclavaGym::
+	.incbin "data/tilesets/secondary/enclavagym/tiles.4bpp.lz"

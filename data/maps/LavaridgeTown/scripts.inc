@@ -420,3 +420,149 @@ LavaridgeTown_Text_HerbShopSign: @ 81EB1CB
 	.string "POKéMON HERB SHOP\n"
 	.string "“Bitter taste--better cure!”$"
 
+EnclavaTown_Sign_TownSign::
+	msgbox EnclavaTown_Sign_TownSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+EnclavaTown_Sign_EnclavaTower::
+	msgbox EnclavaTown_Sign_EnclavaTower_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
+EnclavaTown_Sign_GymSign::
+	msgbox EnclavaTown_Sign_GymSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+EnclavaTown_Sign_Rock::
+	msgbox EnclavaTown_Sign_Rock_Text_0, MSGBOX_SIGN
+	end
+
+
+EnclavaTown_Object_TowerMan::
+	lock
+	msgbox EnclavaTown_Object_TowerMan_Text_0
+	goto_if_set FLAG_BADGE02_GET, EnclavaTown_Object_TowerMan_2
+	msgbox EnclavaTown_Object_TowerMan_Text_2, MSGBOX_AUTOCLOSE
+EnclavaTown_Object_TowerMan_1:
+	release
+	end
+
+EnclavaTown_Object_TowerMan_2:
+	applymovement 2, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 15
+	msgbox EnclavaTown_Object_TowerMan_Text_1, MSGBOX_AUTOCLOSE
+	delay 5
+	applymovement 2, EnclavaTown_TowerMan_Movement_0
+	waitmovement 0
+	removeobject 2
+	playse SE_DOOR
+	setflag FLAG_ENCLAVATOWN_TOWERMAN
+	goto EnclavaTown_Object_TowerMan_1
+
+
+EnclavaTown_TowerMan_Movement_0:
+	walk_up
+	step_end
+
+EnclavaTown_Object_OldWoman_1::
+	msgbox EnclavaTown_Object_OldWoman_1_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaTown_Object_OldWoman_2::
+	msgbox EnclavaTown_Object_OldWoman_2_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaTown_Object_Hiker::
+	msgbox EnclavaTown_Object_Hiker_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaTown_Object_LittleGirl::
+	msgbox EnclavaTown_Object_LittleGirl_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaTown_Object_BlackBelt::
+	msgbox EnclavaTown_Object_BlackBelt_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaTown_Object_OldMan::
+	msgbox EnclavaTown_Object_OldMan_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaTown_Sign_TownSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Enclava Town\p"
+	.string "{COLOR DARK_GREY}“A Town of History”$"
+
+EnclavaTown_Sign_EnclavaTower_Text_0:
+	.string "{COLOR LIGHT_GREEN}Enclava Tower$"
+
+EnclavaTown_Sign_GymSign_Text_0:
+	.string "{COLOR RED}Enclava Pokémon Gym\p"
+	.string "{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bruce\n"
+	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Normal$"
+
+EnclavaTown_Sign_Rock_Text_0:
+	.string "It's a rock.$"
+
+EnclavaTown_Object_TowerMan_Text_0:
+	.string "{COLOR GREEN}Enclava Tower{COLOR BLUE} is a tower only for\n"
+	.string "skilled trainers.$"
+
+EnclavaTown_Object_TowerMan_Text_1:
+	.string "{COLOR BLUE}Is that the {COLOR GREEN}Plain Badge{COLOR BLUE}?\p"
+	.string "My apologizes, please feel free to\n"
+	.string "enter.$"
+
+EnclavaTown_Object_TowerMan_Text_2:
+	.string "{COLOR BLUE}I can sense you are not yet strong\n"
+	.string "enough to enter this tower.$"
+
+EnclavaTown_Object_OldWoman_1_Text_0:
+	.string "{COLOR GREEN}Enclava Tower{COLOR RED} is an ancient tower that\n"
+	.string "has existed in {COLOR GREEN}Ryoko{COLOR RED} for centuries.\p"
+	.string "It's main use nowadays is to store\n"
+	.string "historical books, art and technology\l"
+	.string "from centuries past.$"
+
+EnclavaTown_Object_OldWoman_2_Text_0:
+	.string "{COLOR RED}Back in my day, we use to have seperate\n"
+	.string "buildings for the Pokémon Center.\p"
+	.string "It use to just be the Pokémon Center,\n"
+	.string "and usually nearby there would be a\l"
+	.string "building called a Pokémart.\p"
+	.string "But the region officials ordered the\n"
+	.string "two buildings to be combined for ease\l"
+	.string "of access.$"
+
+EnclavaTown_Object_Hiker_Text_0:
+	.string "{COLOR BLUE}Did you know that {COLOR GREEN}Davnridge Mines{COLOR BLUE}\n"
+	.string "connects up with {COLOR GREEN}Victory Canyon{COLOR BLUE}?\p"
+	.string "The old route to the {COLOR GREEN}Ryoko League{COLOR BLUE} use\n"
+	.string "to go over {COLOR GREEN}Mt. Hood{COLOR BLUE}, but they\l"
+	.string "discovered a cave that goes right\l"
+	.string "through!$"
+
+EnclavaTown_Object_LittleGirl_Text_0:
+	.string "{COLOR RED}This rock is special to this town.\p"
+	.string "I'm not quite sure why...$"
+
+EnclavaTown_Object_BlackBelt_Text_0:
+	.string "{COLOR BLUE}I've been training for the the Gym\n"
+	.string "Leader {COLOR GREEN}Bruce{COLOR BLUE}.\p"
+	.string "He specializes in Normal type Pokémon,\n"
+	.string "so it should be an easy win for me!$"
+
+EnclavaTown_Object_OldMan_Text_0:
+	.string "{COLOR BLUE}Me and {COLOR GREEN}Bruce{COLOR BLUE}, the local Gym Leader, use\n"
+	.string "to be training buddies.\p"
+	.string "I stopped about 5 years ago, but {COLOR GREEN}Bruce{COLOR BLUE}\n"
+	.string "kept on training, and now he's the Gym\l"
+	.string "Leader here!$"

@@ -621,3 +621,10 @@ gMetatiles_DavnridgeGym::
 	.align 1
 gMetatileAttributes_DavnridgeGym::
 	.incbin "data/tilesets/secondary/davnridgegym/metatile_attributes.bin"
+	.align 1
+gMetatiles_EnclavaGym::
+	.incbin "data/tilesets/secondary/enclavagym/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_EnclavaGym::
+	.incbin "data/tilesets/secondary/enclavagym/metatile_attributes.bin"

@@ -5,6 +5,7 @@ LavaridgeTown_Gym_1F_MapScripts:: @ 81FE6F4
 LavaridgeTown_Gym_1F_OnTransition: @ 81FE6FA
 	call LavaridgeTown_Gym_1F_EventScript_SetTrainerTempVars
 	call LavaridgeTown_Gym_1F_EventScript_CheckHideTrainers
+    call EnclavaGym_Mapscript_CheckBlockade
 	end
 
 @ Unclear where/if these temp vars are getting checked
@@ -402,3 +403,161 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons: @ 81FF75E
 	.string "that can battle?\p"
 	.string "I hate to say this, but when you come\n"
 	.string "see me, bring at least two POKéMON.$"
+
+EnclavaGym_Mapscript_CheckBlockade::
+	setvar VAR_TEMP_B, 0
+	checktrainerflag TRAINER_GYM_GUITARIST_COOPER
+	goto_if 1, EnclavaGym_Mapscript_CheckBlockade_2
+EnclavaGym_Mapscript_CheckBlockade_1:
+	checktrainerflag TRAINER_GYM_COLLECTOR_JAXON
+	goto_if 1, EnclavaGym_Mapscript_CheckBlockade_5
+EnclavaGym_Mapscript_CheckBlockade_4:
+	checktrainerflag TRAINER_GYM_LASS_BAILEY
+	goto_if 1, EnclavaGym_Mapscript_CheckBlockade_8
+EnclavaGym_Mapscript_CheckBlockade_7:
+	checktrainerflag TRAINER_GYM_POKEFAN_EMERY
+	goto_if 1, EnclavaGym_Mapscript_CheckBlockade_11
+EnclavaGym_Mapscript_CheckBlockade_10:
+	compare VAR_TEMP_B, 4
+	goto_if_eq EnclavaGym_Mapscript_CheckBlockade_14
+EnclavaGym_Mapscript_CheckBlockade_13:
+	end
+
+EnclavaGym_Mapscript_CheckBlockade_2:
+	addvar VAR_TEMP_B, 1
+	goto EnclavaGym_Mapscript_CheckBlockade_1
+
+EnclavaGym_Mapscript_CheckBlockade_5:
+	addvar VAR_TEMP_B, 1
+	goto EnclavaGym_Mapscript_CheckBlockade_4
+
+EnclavaGym_Mapscript_CheckBlockade_8:
+	addvar VAR_TEMP_B, 1
+	goto EnclavaGym_Mapscript_CheckBlockade_7
+
+EnclavaGym_Mapscript_CheckBlockade_11:
+	addvar VAR_TEMP_B, 1
+	goto EnclavaGym_Mapscript_CheckBlockade_10
+
+EnclavaGym_Mapscript_CheckBlockade_14:
+	setmetatile 7, 5, METATILE_EnclavaGym_Floor_Unshaded, 0
+	goto EnclavaGym_Mapscript_CheckBlockade_13
+
+
+EnclavaGym_Sign_GymSign::
+	goto_if_set FLAG_BADGE02_GET, EnclavaGym_Sign_GymSign_2
+	msgbox EnclavaGym_Sign_GymSign_Text_1, MSGBOX_SIGN, MSGBOX_SUB_METAL
+EnclavaGym_Sign_GymSign_1:
+	end
+
+EnclavaGym_Sign_GymSign_2:
+	msgbox EnclavaGym_Sign_GymSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	goto EnclavaGym_Sign_GymSign_1
+
+
+EnclavaGym_Object_Man::
+	msgbox EnclavaGym_Object_Man_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaGym_Trainer_Guitarist::
+	trainerbattle_single TRAINER_GYM_GUITARIST_COOPER, EnclavaGym_Trainer_Guitarist_Text_0, EnclavaGym_Trainer_Guitarist_Text_1
+	msgbox EnclavaGym_Trainer_Guitarist_Text_2, MSGBOX_NPC
+	end
+
+
+EnclavaGym_Trainer_Collector::
+	trainerbattle_single TRAINER_GYM_COLLECTOR_JAXON, EnclavaGym_Trainer_Collector_Text_0, EnclavaGym_Trainer_Collector_Text_1
+	msgbox EnclavaGym_Trainer_Collector_Text_2, MSGBOX_NPC
+	end
+
+
+EnclavaGym_Trainer_Lass::
+	trainerbattle_single TRAINER_GYM_LASS_BAILEY, EnclavaGym_Trainer_Lass_Text_0, EnclavaGym_Trainer_Lass_Text_1
+	msgbox EnclavaGym_Trainer_Lass_Text_2, MSGBOX_NPC
+	end
+
+
+EnclavaGym_Trainer_Pokefan::
+	trainerbattle_single TRAINER_GYM_POKEFAN_EMERY, EnclavaGym_Trainer_Pokefan_Text_0, EnclavaGym_Trainer_Pokefan_Text_1
+	msgbox EnclavaGym_Trainer_Pokefan_Text_2, MSGBOX_NPC
+	end
+
+
+EnclavaGym_Trainer_Leader_Bruce::
+	msgbox EnclavaGym_Trainer_Leader_Bruce_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaGym_Sign_GymSign_Text_0:
+	.string "{COLOR RED}Enclava Pokémon Gym\p"
+	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Normal\n"
+	.string "{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bruce\p"
+	.string "{COLOR DARK_GREY}Winning Trainers: {COLOR LIGHT_GREEN}Skip, {PLAYER}$"
+
+EnclavaGym_Sign_GymSign_Text_1:
+	.string "{COLOR RED}Enclava Pokémon Gym\p"
+	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Normal\n"
+	.string "{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bruce\p"
+	.string "{COLOR DARK_GREY}Winning Trainers: {COLOR LIGHT_GREEN}Skip$"
+
+EnclavaGym_Object_Man_Text_0:
+	.string "{COLOR BLUE}Hey there champ!\p"
+	.string "This Gym's challenge isn't anything too\n"
+	.string "difficult.\p"
+	.string "All you need to do is find and defeat all\n"
+	.string "four trainers around the maze.\p"
+	.string "Once you defeat all the trainers, the\n"
+	.string "blockade near the Gym Leader will open!\p"
+	.string "I wish you luck!$"
+
+EnclavaGym_Trainer_Guitarist_Text_0:
+	.string "{COLOR BLUE}Normal type Pokémon are the best!$"
+
+EnclavaGym_Trainer_Guitarist_Text_1:
+	.string "Bruce is the master of Normal type\n"
+	.string "Pokémon!$"
+
+EnclavaGym_Trainer_Guitarist_Text_2:
+	.string "{COLOR BLUE}Bruce is the master of Normal type\n"
+	.string "Pokémon!$"
+
+EnclavaGym_Trainer_Collector_Text_0:
+	.string "{COLOR BLUE}Normal type Pokémon are the most well\n"
+	.string "rounded in battle!$"
+
+EnclavaGym_Trainer_Collector_Text_1:
+	.string "They may be well rounded, but their\n"
+	.string "weakness is super effective against\l"
+	.string "them!$"
+
+EnclavaGym_Trainer_Collector_Text_2:
+	.string "{COLOR BLUE}Normal type Pokémon may be well\n"
+	.string "rounded, but their weakness is super\l"
+	.string "effective against them!$"
+
+EnclavaGym_Trainer_Lass_Text_0:
+	.string "{COLOR RED}I see you!$"
+
+EnclavaGym_Trainer_Lass_Text_1:
+	.string "Ouch!$"
+
+EnclavaGym_Trainer_Lass_Text_2:
+	.string "{COLOR RED}I'm the new hire for this Gym...\p"
+	.string "I'm not use to using Normal typed\n"
+	.string "Pokémon...$"
+
+EnclavaGym_Trainer_Pokefan_Text_0:
+	.string "{COLOR BLUE}Beat me and I'll tell you how to get rid\n"
+	.string "of that blockade!$"
+
+EnclavaGym_Trainer_Pokefan_Text_1:
+	.string "I guess I need to tell you...$"
+
+EnclavaGym_Trainer_Pokefan_Text_2:
+	.string "{COLOR BLUE}To remove the blockade, you need to\n"
+	.string "find and defeat all of the trainers in\l"
+	.string "this maze.$"
+
+EnclavaGym_Trainer_Leader_Bruce_Text_0:
+	.string "no$"

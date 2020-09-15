@@ -1186,3 +1186,19 @@ Route104_Text_BrendanPostBattle: @ 81EE120
 	.string "making POKéMON battle.\p"
 	.string "Like MR. BRINEY, it's important to\n"
 	.string "become friends with your POKéMON.$"
+
+DavnridgeAlcove_Sign_CaveSign::
+	msgbox DavnridgeAlcove_Sign_CaveSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
+DavnridgeAlcove_iObject_CuttableTree::
+	msgbox DavnridgeAlcove_iObject_CuttableTree_Text_0, MSGBOX_NPC
+	end
+
+
+DavnridgeAlcove_Sign_CaveSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Davnridge Mines$"
+
+DavnridgeAlcove_iObject_CuttableTree_Text_0:
+	.string "This tree looks like it can be cut down!$"

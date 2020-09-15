@@ -171,6 +171,21 @@ script DavnridgeMines_Trainer_Hiker {
     msgbox(format("{COLOR BLUE}The rest of the caves are on the east passage in this tunnel here.\pThat passage will take you outside the caves and towards {COLOR GREEN}Enclava Town{COLOR BLUE}."), MSGBOX_NPC)
     end
 }
+script DavnridgeMines_Trainer_Fisherman {
+    trainerbattle_single(TRAINER_FISHERMAN_JAMARCUS, format("{COLOR BLUE}This is a great fishing spot!"), format("Agh!\nYou scared the fish away!"))
+    msgbox(format("{COLOR BLUE}This is my secret fishing spot!\pMy buddies always ask me how I get such big Magikarp!"), MSGBOX_NPC)
+    end
+}
+script DavnridgeMines_Trainer_Maniac {
+    trainerbattle_single(TRAINER_MANIAC_IAN, format("{COLOR BLUE}I found a rare Pokémon!\nWant to see it?"), format("No!\nMy rare Pokémon!"))
+    msgbox(format("{COLOR BLUE}There is a very rare chance to find a Gligar in these mines.\pSurprisingly, there aren't any Zubats..."), MSGBOX_NPC)
+    end
+}
+script DavnridgeMines_Trainer_BlackBelt {
+    trainerbattle_single(TRAINER_BLACKBELT_ALVARO, format("{COLOR BLUE}Hai-ya!"), format("Fwah!"))
+    msgbox(format("{COLOR BLUE}Hwah!"), MSGBOX_NPC)
+    end
+}
 
 // npcs
 script DavnridgeMines_Object_Miner_3 {

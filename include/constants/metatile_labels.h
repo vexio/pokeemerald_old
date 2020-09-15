@@ -145,6 +145,9 @@
 #define METATILE_EliteFour_OpenDoor_Opening          0x345
 #define METATILE_EliteFour_RightSpotlightOff         0x2DE
 
+// gTileset_EnclavaGym
+#define METATILE_EnclavaGym_Floor_Unshaded  0x203
+
 // gTileset_EverGrande
 #define METATILE_EverGrande_Door_PokemonLeague  0x21D
 

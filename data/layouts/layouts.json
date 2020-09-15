@@ -124,7 +124,7 @@
     {
       "id": "LAYOUT_LAVARIDGE_TOWN",
       "name": "LavaridgeTown_Layout",
-      "width": 40,
+      "width": 44,
       "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
@@ -194,7 +194,7 @@
     {
       "id": "LAYOUT_ROUTE104",
       "name": "Route104_Layout",
-      "width": 28,
+      "width": 26,
       "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
@@ -204,10 +204,10 @@
     {
       "id": "LAYOUT_ROUTE105",
       "name": "Route105_Layout",
-      "width": 40,
-      "height": 80,
+      "width": 24,
+      "height": 24,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Dewford",
+      "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/Route105/border.bin",
       "blockdata_filepath": "data/layouts/Route105/map.bin"
     },
@@ -675,7 +675,7 @@
       "id": "LAYOUT_LAVARIDGE_TOWN_HERB_SHOP",
       "name": "LavaridgeTown_HerbShop_Layout",
       "width": 11,
-      "height": 8,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/LavaridgeTown_HerbShop/border.bin",
@@ -684,10 +684,10 @@
     {
       "id": "LAYOUT_LAVARIDGE_TOWN_GYM_1F",
       "name": "LavaridgeTown_Gym_1F_Layout",
-      "width": 17,
+      "width": 15,
       "height": 19,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_LavaridgeGym",
+      "secondary_tileset": "gTileset_EnclavaGym",
       "border_filepath": "data/layouts/LavaridgeTown_Gym_1F/border.bin",
       "blockdata_filepath": "data/layouts/LavaridgeTown_Gym_1F/map.bin"
     },
@@ -4475,11 +4475,21 @@
       "id": "LAYOUT_DAVNRIDGE_TOWN_GYM",
       "name": "DavnridgeTown_Gym_Layout",
       "width": 15,
-      "height": 20,
+      "height": 21,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_DavnridgeGym",
       "border_filepath": "data/layouts/DavnridgeTown_Gym/border.bin",
       "blockdata_filepath": "data/layouts/DavnridgeTown_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_ENCLAVA_TOWN_HOUSE_2",
+      "name": "EnclavaTown_House_2_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/EnclavaTown_House_2/border.bin",
+      "blockdata_filepath": "data/layouts/EnclavaTown_House_2/map.bin"
     }
   ]
 }

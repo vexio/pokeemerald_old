@@ -929,3 +929,14 @@ gTileset_DavnridgeGym::
 	.4byte gMetatiles_DavnridgeGym
 	.4byte gMetatileAttributes_DavnridgeGym
 	.4byte NULL
+
+	.align 2
+gTileset_EnclavaGym::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_EnclavaGym
+	.4byte gTilesetPalettes_EnclavaGym
+	.4byte gMetatiles_EnclavaGym
+	.4byte gMetatileAttributes_EnclavaGym
+	.4byte NULL

@@ -1073,3 +1073,5 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/AlnerwickLowlands_Grotto/scripts.inc"
 
 	.include "data/maps/DavnridgeTown_Gym/scripts.inc"
+
+	.include "data/maps/EnclavaTown_House_2/scripts.inc"

@@ -234,6 +234,24 @@ DavnridgeMines_Trainer_Hiker::
 	end
 
 
+DavnridgeMines_Trainer_Fisherman::
+	trainerbattle_single TRAINER_FISHERMAN_JAMARCUS, DavnridgeMines_Trainer_Fisherman_Text_0, DavnridgeMines_Trainer_Fisherman_Text_1
+	msgbox DavnridgeMines_Trainer_Fisherman_Text_2, MSGBOX_NPC
+	end
+
+
+DavnridgeMines_Trainer_Maniac::
+	trainerbattle_single TRAINER_MANIAC_IAN, DavnridgeMines_Trainer_Maniac_Text_0, DavnridgeMines_Trainer_Maniac_Text_1
+	msgbox DavnridgeMines_Trainer_Maniac_Text_2, MSGBOX_NPC
+	end
+
+
+DavnridgeMines_Trainer_BlackBelt::
+	trainerbattle_single TRAINER_BLACKBELT_ALVARO, DavnridgeMines_Trainer_BlackBelt_Text_0, DavnridgeMines_Trainer_BlackBelt_Text_1
+	msgbox DavnridgeMines_Trainer_BlackBelt_Text_2, MSGBOX_NPC
+	end
+
+
 DavnridgeMines_Object_Miner_3::
 	msgbox DavnridgeMines_Object_Miner_3_Text_0, MSGBOX_NPC
 	end
@@ -307,6 +325,40 @@ DavnridgeMines_Trainer_Hiker_Text_2:
 	.string "passage in this tunnel here.\p"
 	.string "That passage will take you outside the\n"
 	.string "caves and towards {COLOR GREEN}Enclava Town{COLOR BLUE}.$"
+
+DavnridgeMines_Trainer_Fisherman_Text_0:
+	.string "{COLOR BLUE}This is a great fishing spot!$"
+
+DavnridgeMines_Trainer_Fisherman_Text_1:
+	.string "Agh!\n"
+	.string "You scared the fish away!$"
+
+DavnridgeMines_Trainer_Fisherman_Text_2:
+	.string "{COLOR BLUE}This is my secret fishing spot!\p"
+	.string "My buddies always ask me how I get such\n"
+	.string "big Magikarp!$"
+
+DavnridgeMines_Trainer_Maniac_Text_0:
+	.string "{COLOR BLUE}I found a rare Pokémon!\n"
+	.string "Want to see it?$"
+
+DavnridgeMines_Trainer_Maniac_Text_1:
+	.string "No!\n"
+	.string "My rare Pokémon!$"
+
+DavnridgeMines_Trainer_Maniac_Text_2:
+	.string "{COLOR BLUE}There is a very rare chance to find a\n"
+	.string "Gligar in these mines.\p"
+	.string "Surprisingly, there aren't any Zubats...$"
+
+DavnridgeMines_Trainer_BlackBelt_Text_0:
+	.string "{COLOR BLUE}Hai-ya!$"
+
+DavnridgeMines_Trainer_BlackBelt_Text_1:
+	.string "Fwah!$"
+
+DavnridgeMines_Trainer_BlackBelt_Text_2:
+	.string "{COLOR BLUE}Hwah!$"
 
 DavnridgeMines_Object_Miner_3_Text_0:
 	.string "{COLOR BLUE}Oh you want to battle?\p"

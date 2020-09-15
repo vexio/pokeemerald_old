@@ -18,22 +18,33 @@ script DavnridgeGym_Trainer_Miner {
     msgbox(format("{COLOR BLUE}Lilith is much stronger than I am!"), MSGBOX_NPC)
     end
 }
+
+script DavnridgeGym_Object_Man {
+    msgbox(format("{COLOR BLUE}Hey there champ!\pI take it that this is your first Gym Challenge, yes?\pThis Gym's puzzel is a simple maze, but your vision is very limited!\pFind your way to to the top to battle {COLOR GREEN}Lilith{COLOR BLUE}!"), MSGBOX_NPC)
+    end
+}
+
 script DavnridgeGym_Trainer_Lilith {
     lockall
-    playse(SE_MU_PACHI)
-	animateflash(2)
-    msgbox(format("Lilith: {COLOR RED}Nice to see you here!\pI will be your first official {COLOR GREEN}Ryoko Pokémon League{COLOR RED} Gym battle!\pDon't think I'm going to be going easy on you!"), MSGBOX_AUTOCLOSE)
-    trainerbattle_no_intro(TRAINER_GYM_LEADER_LILITH, format("Well played!\p{PLAYER}...\nI can tell you're a strong trainer!\pTake this badge!"))
-    delay(10)
-    msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Plain Badge"))
-    call(Common_EventScript_PlayGymBadgeFanfare)
-    msgbox(format("Lilith: {COLOR RED}The {COLOR GREEN}Plain Badge{COLOR RED} is your official certification of beating me.\pTake this as well!"))
-    giveitem(ITEM_TM39_ROCK_TOMB, 1)
+    if (flag(FLAG_BADGE01_GET) == false) {
+        playse(SE_MU_PACHI)
+	    animateflash(2)
+        delay(10)
+        msgbox(format("Lilith: {COLOR RED}Glad you made it from the Mines!\pI will be your first official {COLOR GREEN}Ryoko Pokémon League{COLOR RED} Gym battle!\pDon't think I'm going to be going easy on you!"), MSGBOX_AUTOCLOSE)
+        trainerbattle_no_intro(TRAINER_GYM_LEADER_LILITH, format("Well played!\p{PLAYER}...\nI can tell you're a strong trainer!\pTake this badge!"))
+        setflashradius(2)
+        setflag(FLAG_BADGE01_GET)
+        settrainerflag(TRAINER_GYM_HIKER_TYSON)
+        settrainerflag(TRAINER_GYM_MINER_HEATH)
+        setvar(VAR_DAVNRIDGEMINES_STATE, 2)
+        delay(5)
+        playfanfare(MUS_ME_BACHI)
+        msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Gem Badge"))
+        waitfanfare
+        msgbox(format("Lilith: {COLOR RED}The {COLOR GREEN}Gem Badge{COLOR RED} is your official certification of beating me.\pTake this as well!"))
+        giveitem(ITEM_TM39_ROCK_TOMB, 1)
+    }
     msgbox(format("Lilith: {COLOR RED}Your next challenge will be in {COLOR GREEN}Enclava Town{COLOR RED}, which can be access through the {COLOR GREEN}Davnridge Mines{COLOR RED}.\pI wish you the best of luck on your journey!"), MSGBOX_AUTOCLOSE)
-    setflag(FLAG_BADGE01_GET)
-    settrainerflag(TRAINER_GYM_HIKER_TYSON)
-    settrainerflag(TRAINER_GYM_MINER_HEATH)
-    setvar(VAR_DAVNRIDGEMINES_STATE, 2)
     releaseall
     end
 }

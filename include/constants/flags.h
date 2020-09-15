@@ -658,7 +658,7 @@
 #define FLAG_ALNERWICKLIBRARY_THIEF  0x268 // AlnerwickLibrary_Trigger_Thief
 #define FLAG_ALNERWICKCITY_OFFICER_1  0x269 // AlnerwickCity_Trigger_PoliceOfficer
 #define FLAG_DAVNRIDGEMINES_LILITH  0x26A // DavnridgeMines_Trigger_Lilith
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
+#define FLAG_ENCLAVATOWN_TOWERMAN  0x26B // EnclavaTower Tower man
 #define FLAG_UNUSED_0x26C  0x26C // Unused Flag
 #define FLAG_UNUSED_0x26D  0x26D // Unused Flag
 #define FLAG_UNUSED_0x26E  0x26E // Unused Flag

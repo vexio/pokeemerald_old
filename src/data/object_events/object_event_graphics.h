@@ -136,8 +136,8 @@ const u32 gObjectEventPic_Artist[] = INCBIN_U32("graphics/object_events/pics/new
 const u32 gObjectEventPic_Cameraman[] = INCBIN_U32("graphics/object_events/pics/people/cameraman.4bpp");
 const u32 gObjectEventPic_Scientist2[] = INCBIN_U32("graphics/object_events/pics/people/scientist_2.4bpp");
 const u32 gObjectEventPic_DevonEmployee[] = INCBIN_U32("graphics/object_events/pics/people/devon_employee.4bpp");
-const u32 gObjectEventPic_AquaMemberM[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/aqua_member_m.4bpp");
-const u32 gObjectEventPic_AquaMemberF[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/aqua_member_f.4bpp");
+const u32 gObjectEventPic_AquaMemberM[] = INCBIN_U32("graphics/object_events/pics/newpeople/team_aqua/aqua_member_m.4bpp"); // 
+const u32 gObjectEventPic_AquaMemberF[] = INCBIN_U32("graphics/object_events/pics/newpeople/team_aqua/aqua_member_f.4bpp"); // 
 const u32 gObjectEventPic_MagmaMemberM[] = INCBIN_U32("graphics/object_events/pics/newpeople/magma_member_m.4bpp");
 const u32 gObjectEventPic_MagmaMemberF[] = INCBIN_U32("graphics/object_events/pics/newpeople/magma_member_f.4bpp");
 const u32 gObjectEventPic_Sidney[] = INCBIN_U32("graphics/object_events/pics/people/elite_four/sidney.4bpp");
@@ -379,4 +379,5 @@ const u16 gObjectEventPalette_Wally[] = INCBIN_U16("graphics/object_events/pics/
 const u16 gObjectEventPalette_Brandon[] = INCBIN_U16("graphics/object_events/pics/newpeople/brandon.gbapal");
 const u16 gObjectEventPalette_Mom[] = INCBIN_U16("graphics/object_events/pics/newpeople/mom.gbapal");
 const u16 gObjectEventPalette_Steven[] = INCBIN_U16("graphics/object_events/pics/newpeople/steven.gbapal");
+const u16 gObjectEventPalette_AquaMember[] = INCBIN_U16("graphics/object_events/pics/newpeople/team_aqua/aqua_member.gbapal");
 

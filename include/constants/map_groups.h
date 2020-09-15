@@ -64,6 +64,7 @@
 #define MAP_DAVNRIDGE_MINES       (59 | (0 << 8))
 #define MAP_OVERWORLD_SPRITE_TEST (60 | (0 << 8))
 #define MAP_ALNERWICK_LIBRARY     (61 | (0 << 8))
+#define MAP_ENCLAVA_TOWN_HOUSE_2  (62 | (0 << 8))
 
 // Map Group 1
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
