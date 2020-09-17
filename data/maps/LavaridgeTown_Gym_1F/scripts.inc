@@ -1,11 +1,12 @@
 LavaridgeTown_Gym_1F_MapScripts:: @ 81FE6F4
 	map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_Gym_1F_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, EnclavaGym_Mapscript_CheckBlockade
+	map_script MAP_SCRIPT_ON_RESUME, EnclavaGym_Mapscript_CheckBlockade
 	.byte 0
 
 LavaridgeTown_Gym_1F_OnTransition: @ 81FE6FA
 	call LavaridgeTown_Gym_1F_EventScript_SetTrainerTempVars
 	call LavaridgeTown_Gym_1F_EventScript_CheckHideTrainers
-    call EnclavaGym_Mapscript_CheckBlockade
 	end
 
 @ Unclear where/if these temp vars are getting checked
@@ -485,8 +486,24 @@ EnclavaGym_Trainer_Pokefan::
 
 
 EnclavaGym_Trainer_Leader_Bruce::
-	msgbox EnclavaGym_Trainer_Leader_Bruce_Text_0, MSGBOX_NPC
+	lockall
+	goto_if_unset FLAG_BADGE02_GET, EnclavaGym_Trainer_Leader_Bruce_2
+EnclavaGym_Trainer_Leader_Bruce_1:
+	msgbox EnclavaGym_Trainer_Leader_Bruce_Text_4, MSGBOX_AUTOCLOSE
+	releaseall
 	end
+
+EnclavaGym_Trainer_Leader_Bruce_2:
+	msgbox EnclavaGym_Trainer_Leader_Bruce_Text_0, MSGBOX_AUTOCLOSE
+	trainerbattle_no_intro TRAINER_GYM_LEADER_BRUCE, EnclavaGym_Trainer_Leader_Bruce_Text_1
+	setflag FLAG_BADGE02_GET
+	setvar VAR_ENCLAVATOWER_STATE, 1
+	playfanfare MUS_ME_BACHI
+	msgbox EnclavaGym_Trainer_Leader_Bruce_Text_2
+	waitfanfare
+	msgbox EnclavaGym_Trainer_Leader_Bruce_Text_3
+	giveitem ITEM_TM10_HIDDEN_POWER, 1
+	goto EnclavaGym_Trainer_Leader_Bruce_1
 
 
 EnclavaGym_Sign_GymSign_Text_0:
@@ -560,4 +577,31 @@ EnclavaGym_Trainer_Pokefan_Text_2:
 	.string "this maze.$"
 
 EnclavaGym_Trainer_Leader_Bruce_Text_0:
-	.string "no$"
+	.string "Bruce: {COLOR BLUE}Hello challenger.\p"
+	.string "My name is Bruce, and I am the master of\n"
+	.string "the Normal typed Pokémon.\p"
+	.string "You may have defeated my adversaries,\n"
+	.string "but you don't stand a chance against\l"
+	.string "me!$"
+
+EnclavaGym_Trainer_Leader_Bruce_Text_1:
+	.string "Well done.\n"
+	.string "You are indeed a talented trainer.$"
+
+EnclavaGym_Trainer_Leader_Bruce_Text_2:
+	.string "{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Plain Badge$"
+
+EnclavaGym_Trainer_Leader_Bruce_Text_3:
+	.string "Bruce: {COLOR BLUE}This badge will prove your\n"
+	.string "strength, and allow you to enter\l"
+	.string "{COLOR GREEN}Enclava Tower{COLOR BLUE}.\p"
+	.string "As well, this TM.$"
+
+EnclavaGym_Trainer_Leader_Bruce_Text_4:
+	.string "Bruce: {COLOR BLUE}That TM is a special one.\p"
+	.string "It's power relies on the environment\n"
+	.string "you are battling in, and can be\l"
+	.string "extremely powerful if used correctly!\p"
+	.string "Your next Gym Challenge will be in\n"
+	.string "{COLOR GREEN}Pinefrost City{COLOR BLUE}, which is north from the\l"
+	.string "{COLOR GREEN}Triad Gorge{COLOR BLUE}.$"

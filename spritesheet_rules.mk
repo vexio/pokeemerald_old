@@ -140,9 +140,21 @@ $(OBJEVENTGFXDIR)/newpeople/team_aqua/aqua_member_f.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/newpeople/team_aqua/aqua_member_m.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/team_aqua/archie.4bpp: %.4bpp: %.png
+# team proto stuff
+
+$(OBJEVENTGFXDIR)/newpeople/team_proto/apollo.4bpp: %.4bpp: %.png #
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/newpeople/team_proto/ceres.4bpp: %.4bpp: %.png #
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/newpeople/team_proto/eris.4bpp: %.4bpp: %.png #
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/newpeople/team_proto/haumea.4bpp: %.4bpp: %.png #
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+# end of proto
 
 $(OBJEVENTGFXDIR)/people/team_magma/magma_member_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4

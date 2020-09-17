@@ -1671,6 +1671,7 @@ const u8 * const gRefereeStringsTable[] =
     sText_RefCommenceBattle,
 };
 
+// mid battle messages
 static const u8 sText_QuestionForfeitMatch[] = _("Would you like to forfeit the match\nand quit now?");
 static const u8 sText_ForfeitedMatch[] = _("{B_PLAYER_NAME} forfeited the match!");
 static const u8 sText_Trainer1WinText[] = _("{B_TRAINER1_WIN_TEXT}");
@@ -1686,9 +1687,18 @@ static const u8 sText_Your1[] = _("Your");
 static const u8 sText_Opposing1[] = _("The opposing");
 static const u8 sText_Your2[] = _("your");
 static const u8 sText_Opposing2[] = _("the opposing");
+
 static const u8 sText_Skip_B1_LastLowHp[] = _("Don't think this battle is over yet!");
-//static const u8 sText_Skip_B1_LastSwitchIn[] = _("This should be an easy win.");
-//static const u8 sText_Skip_B1_FirstDown[] = _("Hmph. I'm surprised you pulled\nthat off...");
+
+static const u8 sText_Lilith_LastLowHp[] = _("Stay sturdy...");
+static const u8 sText_Lilith_LastSwitchIn[] = _("This is my last Pokémon!\nShow 'em what you got!");
+
+static const u8 sText_Bruce_LastLowHp[] = _("You are quite the strong trainer...");
+static const u8 sText_Bruce_LastSwitchIn[] = _("There's still more fight in me!");
+
+//static const u8 sText_NAME_LastLowHp[] = _("");
+//static const u8 sText_NAME_LastSwitchIn[] = _("");
+//static const u8 sText_NAME_FirstDown[] = _("");
 
 // This is four lists of moves which use a different attack string in Japanese
 // to the default. See the documentation for ChooseTypeOfMoveUsedString for more detail.
@@ -3624,6 +3634,8 @@ static const struct TrainerSlide sTrainerSlides[] =
     {TRAINER_SKIP_FIRE_1, NULL, sText_Skip_B1_LastLowHp, NULL},
     {TRAINER_SKIP_WATER_1, NULL, sText_Skip_B1_LastLowHp, NULL},
     {TRAINER_SKIP_GRASS_1, NULL, sText_Skip_B1_LastLowHp, NULL},
+    {TRAINER_GYM_LEADER_LILITH, sText_Lilith_LastSwitchIn, sText_Lilith_LastLowHp, NULL},
+    {TRAINER_GYM_LEADER_BRUCE, sText_Bruce_LastSwitchIn, sText_Bruce_LastLowHp, NULL},
 };
 
 static u32 GetEnemyMonCount(bool32 onlyAlive)

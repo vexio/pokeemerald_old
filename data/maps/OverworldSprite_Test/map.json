@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
+      "graphics_id": "OBJ_EVENT_GFX_LEADER_APOLLO",
       "x": 7,
       "y": 4,
       "elevation": 3,
@@ -470,7 +470,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GRETA",
+      "graphics_id": "OBJ_EVENT_GFX_ADMIN_CERES",
       "x": 5,
       "y": 8,
       "elevation": 3,
@@ -600,7 +600,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LUCY",
+      "graphics_id": "OBJ_EVENT_GFX_ADMIN_HAUMEA",
       "x": 14,
       "y": 8,
       "elevation": 3,
@@ -782,7 +782,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_NOLAND",
+      "graphics_id": "OBJ_EVENT_GFX_ADMIN_NOLAND",
       "x": 12,
       "y": 10,
       "elevation": 3,

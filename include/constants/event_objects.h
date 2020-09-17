@@ -73,10 +73,10 @@
 #define OBJ_EVENT_GFX_BARD                        69
 #define OBJ_EVENT_GFX_PSYCHIC_F                   70
 #define OBJ_EVENT_GFX_ARTIST_M                    71
-#define OBJ_EVENT_GFX_GRETA                       72
+#define OBJ_EVENT_GFX_ADMIN_CERES                       72
 #define OBJ_EVENT_GFX_SPENSER                     73
-#define OBJ_EVENT_GFX_NOLAND                      74
-#define OBJ_EVENT_GFX_LUCY                        75
+#define OBJ_EVENT_GFX_ADMIN_NOLAND                      74
+#define OBJ_EVENT_GFX_ADMIN_HAUMEA                        75
 #define OBJ_EVENT_GFX_UNUSED_NATU_DOLL            76
 #define OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL       77
 #define OBJ_EVENT_GFX_UNUSED_SQUIRTLE_DOLL        78
@@ -196,7 +196,7 @@
 #define OBJ_EVENT_GFX_MAY_WATERING                192
 #define OBJ_EVENT_GFX_BRENDAN_DECORATING          193
 #define OBJ_EVENT_GFX_MAY_DECORATING              194
-#define OBJ_EVENT_GFX_ARCHIE                      195
+#define OBJ_EVENT_GFX_LEADER_APOLLO                      195
 #define OBJ_EVENT_GFX_MAXIE                       196
 #define OBJ_EVENT_GFX_KYOGRE_1                    197
 #define OBJ_EVENT_GFX_GROUDON_1                   198

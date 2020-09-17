@@ -1928,7 +1928,7 @@ const struct SpriteFrameImage gObjectEventPicTable_BrendanDecorating[] = {
 const struct SpriteFrameImage gObjectEventPicTable_MayDecorating[] = {
     obj_frame_tiles(gObjectEventPic_MayDecorating),
 };
-
+//team proto
 const struct SpriteFrameImage gObjectEventPicTable_Archie[] = {
     overworld_frame(gObjectEventPic_Archie, 2, 4, 0),
     overworld_frame(gObjectEventPic_Archie, 2, 4, 1),
@@ -1940,7 +1940,6 @@ const struct SpriteFrameImage gObjectEventPicTable_Archie[] = {
     overworld_frame(gObjectEventPic_Archie, 2, 4, 7),
     overworld_frame(gObjectEventPic_Archie, 2, 4, 8),
 };
-
 const struct SpriteFrameImage gObjectEventPicTable_Maxie[] = {
     overworld_frame(gObjectEventPic_Maxie, 2, 4, 0),
     overworld_frame(gObjectEventPic_Maxie, 2, 4, 1),

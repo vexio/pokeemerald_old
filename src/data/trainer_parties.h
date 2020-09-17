@@ -157,19 +157,19 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GruntWeatherInst2[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntWeatherInst3[] = {
     {
     .iv = 0,
-    .lvl = 16,
+    .lvl = 15,
     .species = SPECIES_MUNCHLAX,
     },
     {
     .iv = 0,
-    .lvl = 17,
+    .lvl = 16,
     .species = SPECIES_SENTRET,
     }
 };
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntMuseum1[] = {
     {
     .iv = 0,
-    .lvl = 17,
+    .lvl = 16,
     .species = SPECIES_AIPOM,
     }
 };
@@ -181,14 +181,14 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GruntMuseum2[] = {
     },
     {
     .iv = 0,
-    .lvl = 17,
+    .lvl = 15,
     .species = SPECIES_BIDOOF,
     }
 };
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntSpaceCenter1[] = {
     {
     .iv = 0,
-    .lvl = 17,
+    .lvl = 15,
     .species = SPECIES_BUNEARY,
     },
     {
@@ -3330,15 +3330,15 @@ static const struct TrainerMonItemCustomMoves sParty_Roxanne1[] = {
 static const struct TrainerMonNoItemCustomMoves sParty_Brawly1[] = {
     {
     .iv = 100,
-    .lvl = 18,
+    .lvl = 16,
     .species = SPECIES_LOUDRED,
-    .moves = {MOVE_STOMP, MOVE_ECHOED_VOICE, MOVE_UPROAR, MOVE_SUPERSONIC}
+    .moves = {MOVE_HIDDEN_POWER, MOVE_ECHOED_VOICE, MOVE_UPROAR, MOVE_SUPERSONIC}
     },
     {
     .iv = 100,
-    .lvl = 20,
+    .lvl = 18,
     .species = SPECIES_URSARING,
-    .moves = {MOVE_HAMMER_ARM, MOVE_SLASH, MOVE_REST, MOVE_FAKE_TEARS}
+    .moves = {MOVE_STOMP, MOVE_CUT, MOVE_REST, MOVE_FAKE_TEARS}
     }
 };
 static const struct TrainerMonItemCustomMoves sParty_Wattson1[] = {
@@ -12349,6 +12349,20 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

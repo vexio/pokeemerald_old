@@ -473,6 +473,10 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_STEVEN         0x1149
 #define OBJ_EVENT_PAL_TAG_CLARA          0x114A
 #define OBJ_EVENT_PAL_TAG_AQUA_MEMBERS   0x114B
+#define OBJ_EVENT_PAL_TAG_APOLLO         0x114C 
+#define OBJ_EVENT_PAL_TAG_CERES          0x114D
+#define OBJ_EVENT_PAL_TAG_ERIS           0x114E
+#define OBJ_EVENT_PAL_TAG_HAUMEA         0x114F
 #define OBJ_EVENT_PAL_TAG_NONE           0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -557,6 +561,10 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Mom, OBJ_EVENT_PAL_TAG_MOM},
     {gObjectEventPalette_Steven, OBJ_EVENT_PAL_TAG_STEVEN},
     {gObjectEventPalette_AquaMember, OBJ_EVENT_PAL_TAG_AQUA_MEMBERS},
+    {gObjectEventPalette_Archie, OBJ_EVENT_PAL_TAG_APOLLO},
+    {gObjectEventPalette_Greta, OBJ_EVENT_PAL_TAG_CERES},
+    {gObjectEventPalette_Noland, OBJ_EVENT_PAL_TAG_ERIS},
+    {gObjectEventPalette_Lucy, OBJ_EVENT_PAL_TAG_HAUMEA},
     {NULL,                                 0x0000},
 };
 

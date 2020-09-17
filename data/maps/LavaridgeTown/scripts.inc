@@ -5,6 +5,7 @@ LavaridgeTown_MapScripts:: @ 81EA4D3
 
 LavaridgeTown_OnTransition: @ 81EA4DE
 	setflag FLAG_VISITED_LAVARIDGE_TOWN
+	call EnclavaTown_Mapscripts_LarsLocation
 	call_if_set FLAG_WHITEOUT_TO_LAVARIDGE, LavaridgeTown_EventScript_ClearLavaridgeWhiteOut
 	call_if_set FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, LavaridgeTown_EventScript_ShowMtChimneyTrainers
 	call Common_EventScript_SetupRivalGfxId
@@ -42,6 +43,7 @@ LavaridgeTown_EventScript_HideMapNamePopup:: @ 81EA543
 
 LavaridgeTown_OnFrame: @ 81EA547
 	map_script_2 VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_RivalGiveGoGoggles
+	map_script_2 VAR_ENCLAVATOWER_STATE, 1, EnclavaTown_Mapscript_Lars
 	.2byte 0
 
 LavaridgeTown_EventScript_RivalGiveGoGoggles:: @ 81EA551
@@ -420,6 +422,95 @@ LavaridgeTown_Text_HerbShopSign: @ 81EB1CB
 	.string "POKéMON HERB SHOP\n"
 	.string "“Bitter taste--better cure!”$"
 
+EnclavaTown_Mapscripts_LarsLocation::
+	compare VAR_ENCLAVATOWER_STATE, 1
+	goto_if_eq EnclavaTown_Mapscripts_LarsLocation_1
+	return
+
+EnclavaTown_Mapscripts_LarsLocation_1:
+	setobjectxyperm 8, 38, 10
+	return
+
+
+EnclavaTown_Mapscript_Lars::
+	lockall
+	applymovement 8, EnclavaTown_Lars_Movement_0
+	waitmovement 0
+	playse SE_PIN
+	delay 15
+	applymovement 8, EnclavaTown_Lars_Movement_1
+	waitmovement 0
+	delay 5
+	msgbox EnclavaTown_Mapscript_Lars_Text_0
+	closemessage
+	delay 20
+	applymovement 8, Common_Movement_QuestionMark
+	playse SE_PIN
+	waitmovement 0
+	delay 15
+	msgbox EnclavaTown_Mapscript_Lars_Text_1
+	closemessage
+	applymovement 8, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	delay 10
+	applymovement 8, Common_Movement_ExclamationMark
+	playse SE_PIN
+	waitmovement 0
+	delay 15
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq EnclavaTown_Mapscript_Lars_2
+	compare VAR_RESULT, FEMALE
+	goto_if_eq EnclavaTown_Mapscript_Lars_3
+EnclavaTown_Mapscript_Lars_1:
+	msgbox EnclavaTown_Mapscript_Lars_Text_4, MSGBOX_YESNO
+EnclavaTown_Mapscript_Lars_7:
+	compare VAR_RESULT, 1
+	goto_if_ne EnclavaTown_Mapscript_Lars_8
+	msgbox EnclavaTown_Mapscript_Lars_Text_6, MSGBOX_AUTOCLOSE
+	delay 5
+	applymovement 8, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	delay 15
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 10
+	removeobject 8
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+	delay 5
+	setvar VAR_ENCLAVATOWER_STATE, 2
+	releaseall
+	end
+
+EnclavaTown_Mapscript_Lars_2:
+	msgbox EnclavaTown_Mapscript_Lars_Text_2
+	goto EnclavaTown_Mapscript_Lars_1
+
+EnclavaTown_Mapscript_Lars_3:
+	msgbox EnclavaTown_Mapscript_Lars_Text_3
+	goto EnclavaTown_Mapscript_Lars_1
+
+EnclavaTown_Mapscript_Lars_8:
+	msgbox EnclavaTown_Mapscript_Lars_Text_5, MSGBOX_YESNO
+	goto EnclavaTown_Mapscript_Lars_7
+
+
+EnclavaTown_Lars_Movement_0:
+	walk_in_place_down
+	delay_16
+	walk_in_place_right
+	delay_16
+	walk_in_place_up
+	delay_4
+	emote_exclamation_mark
+	step_end
+
+EnclavaTown_Lars_Movement_1:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
 EnclavaTown_Sign_TownSign::
 	msgbox EnclavaTown_Sign_TownSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
 	end
@@ -496,6 +587,45 @@ EnclavaTown_Object_OldMan::
 	msgbox EnclavaTown_Object_OldMan_Text_0, MSGBOX_NPC
 	end
 
+
+EnclavaTown_Mapscript_Lars_Text_0:
+	.string "???: {COLOR BLUE}Hey there champ!\n"
+	.string "You look like a freshie!\p"
+	.string "{COLOR DARK_GREY}Lars: {COLOR BLUE}Name's {COLOR GREEN}Lars{COLOR BLUE}.\n"
+	.string "What's yours?$"
+
+EnclavaTown_Mapscript_Lars_Text_1:
+	.string "Lars: {COLOR BLUE}Alright... not much of a talker I\n"
+	.string "see...\p"
+	.string "Lemme see your Trainer Card!$"
+
+EnclavaTown_Mapscript_Lars_Text_2:
+	.string "Lars: {COLOR BLUE}Whoa!\n"
+	.string "You're {COLOR GREEN}Prof. Cypress'{COLOR BLUE} son!\p"
+	.string "That's perfect!$"
+
+EnclavaTown_Mapscript_Lars_Text_3:
+	.string "Lars: {COLOR BLUE}Whoa!\n"
+	.string "You're {COLOR GREEN}Prof. Cypress'{COLOR BLUE} daughter!\p"
+	.string "That's perfect!$"
+
+EnclavaTown_Mapscript_Lars_Text_4:
+	.string "Lars: {COLOR BLUE}There's this fancy book that\n"
+	.string "{COLOR GREEN}Cypress{COLOR BLUE} told me to get at the top of\l"
+	.string "{COLOR GREEN}Enclava Tower{COLOR BLUE} and bring it back to her.\p"
+	.string "Do you think you could do that for me?$"
+
+EnclavaTown_Mapscript_Lars_Text_5:
+	.string "{COLOR BLUE}Ah com'on... I'm really busy...$"
+
+EnclavaTown_Mapscript_Lars_Text_6:
+	.string "Lars: {COLOR BLUE}Alright sweet!\p"
+	.string "All you need to do is get to the top of\n"
+	.string "the tower and tell {COLOR GREEN}Mr. Fijo{COLOR BLUE} that\l"
+	.string "{COLOR GREEN}Cypress{COLOR BLUE} sent you.\p"
+	.string "Sound good?\n"
+	.string "Sweet!\p"
+	.string "I'll see you on the flip side!$"
 
 EnclavaTown_Sign_TownSign_Text_0:
 	.string "{COLOR LIGHT_GREEN}Enclava Town\p"

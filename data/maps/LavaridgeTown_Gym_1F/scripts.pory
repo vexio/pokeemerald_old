@@ -1,12 +1,13 @@
 raw `
 LavaridgeTown_Gym_1F_MapScripts:: @ 81FE6F4
 	map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_Gym_1F_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, EnclavaGym_Mapscript_CheckBlockade
+	map_script MAP_SCRIPT_ON_RESUME, EnclavaGym_Mapscript_CheckBlockade
 	.byte 0
 
 LavaridgeTown_Gym_1F_OnTransition: @ 81FE6FA
 	call LavaridgeTown_Gym_1F_EventScript_SetTrainerTempVars
 	call LavaridgeTown_Gym_1F_EventScript_CheckHideTrainers
-    call EnclavaGym_Mapscript_CheckBlockade
 	end
 
 @ Unclear where/if these temp vars are getting checked
@@ -463,6 +464,19 @@ script EnclavaGym_Trainer_Pokefan {
 }
 
 script EnclavaGym_Trainer_Leader_Bruce {
-    msgbox("no", MSGBOX_NPC)
-    end
+    lockall
+	if (flag(FLAG_BADGE02_GET) == false) {
+		msgbox(format("Bruce: {COLOR BLUE}Hello challenger.\pMy name is Bruce, and I am the master of the Normal typed Pokémon.\pYou may have defeated my adversaries, but you don't stand a chance against me!"), MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_GYM_LEADER_BRUCE, format("Well done.\nYou are indeed a talented trainer."))
+		setflag(FLAG_BADGE02_GET)
+		setvar(VAR_ENCLAVATOWER_STATE, 1)
+		playfanfare(MUS_ME_BACHI)
+		msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Plain Badge"))
+        waitfanfare
+		msgbox(format("Bruce: {COLOR BLUE}This badge will prove your strength, and allow you to enter {COLOR GREEN}Enclava Tower{COLOR BLUE}.\pAs well, this TM."))
+		giveitem(ITEM_TM10_HIDDEN_POWER, 1)
+	}
+	msgbox(format("Bruce: {COLOR BLUE}That TM is a special one.\pIt's power relies on the environment you are battling in, and can be extremely powerful if used correctly!\pYour next Gym Challenge will be in {COLOR GREEN}Pinefrost City{COLOR BLUE}, which is north from the {COLOR GREEN}Triad Gorge{COLOR BLUE}."), MSGBOX_AUTOCLOSE)
+	releaseall
+	end
 }

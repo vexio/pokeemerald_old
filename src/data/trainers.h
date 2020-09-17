@@ -12153,3 +12153,17 @@ const struct Trainer gTrainers[] = {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
