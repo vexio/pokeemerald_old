@@ -1953,9 +1953,8 @@ static const u8 sPowderJarDesc[] = _(
     "a BERRY CRUSHER.");
 
 static const u8 sRubyDesc[] = _(
-    "An exquisite, red-\n"
-    "glowing gem that\n"
-    "symbolizes passion.");
+    "An ancient book\n"
+    "about Cresselia.");
 
 static const u8 sSapphireDesc[] = _(
     "A brilliant blue gem\n"

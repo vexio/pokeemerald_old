@@ -478,6 +478,7 @@ EnclavaTown_Mapscript_Lars_7:
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	delay 5
 	setvar VAR_ENCLAVATOWER_STATE, 2
+	setobjectxyperm 8, 35, 5
 	releaseall
 	end
 
@@ -588,11 +589,38 @@ EnclavaTown_Object_OldMan::
 	end
 
 
+EnclavaTown_Trigger_EnclavaTower::
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_eq EnclavaTown_Trigger_EnclavaTower_2
+	release
+	end
+
+EnclavaTown_Trigger_EnclavaTower_2:
+	lock
+	special SpawnCameraObject
+	delay 5
+	applymovement OBJ_EVENT_ID_CAMERA, EnclavaTown_EnclavaTower_Movement_0
+	waitmovement 0
+	delay 20
+	special RemoveCameraObject
+	warp MAP_ENCLAVA_TOWER, 0, 8, 16
+	return
+
+
+EnclavaTown_EnclavaTower_Movement_0:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
 EnclavaTown_Mapscript_Lars_Text_0:
 	.string "???: {COLOR BLUE}Hey there champ!\n"
 	.string "You look like a freshie!\p"
 	.string "{COLOR DARK_GREY}Lars: {COLOR BLUE}Name's {COLOR GREEN}Lars{COLOR BLUE}.\n"
-	.string "What's yours?$"
+	.string "What's your's?$"
 
 EnclavaTown_Mapscript_Lars_Text_1:
 	.string "Lars: {COLOR BLUE}Alright... not much of a talker I\n"
@@ -621,7 +649,7 @@ EnclavaTown_Mapscript_Lars_Text_5:
 EnclavaTown_Mapscript_Lars_Text_6:
 	.string "Lars: {COLOR BLUE}Alright sweet!\p"
 	.string "All you need to do is get to the top of\n"
-	.string "the tower and tell {COLOR GREEN}Mr. Fijo{COLOR BLUE} that\l"
+	.string "the tower and tell {COLOR GREEN}Master Fijo{COLOR BLUE} that\l"
 	.string "{COLOR GREEN}Cypress{COLOR BLUE} sent you.\p"
 	.string "Sound good?\n"
 	.string "Sweet!\p"
@@ -691,8 +719,8 @@ EnclavaTown_Object_BlackBelt_Text_0:
 	.string "so it should be an easy win for me!$"
 
 EnclavaTown_Object_OldMan_Text_0:
-	.string "{COLOR BLUE}Me and {COLOR GREEN}Bruce{COLOR BLUE}, the local Gym Leader, use\n"
-	.string "to be training buddies.\p"
+	.string "{COLOR BLUE}Myself and {COLOR GREEN}Bruce{COLOR BLUE}, the local Gym Leader,\n"
+	.string "use to be training buddies.\p"
 	.string "I stopped about 5 years ago, but {COLOR GREEN}Bruce{COLOR BLUE}\n"
 	.string "kept on training, and now he's the Gym\l"
 	.string "Leader here!$"

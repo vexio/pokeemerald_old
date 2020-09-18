@@ -940,3 +940,14 @@ gTileset_EnclavaGym::
 	.4byte gMetatiles_EnclavaGym
 	.4byte gMetatileAttributes_EnclavaGym
 	.4byte NULL
+
+	.align 2
+gTileset_EnclavaTower::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_EnclavaTower
+	.4byte gTilesetPalettes_EnclavaTower
+	.4byte gMetatiles_EnclavaTower
+	.4byte gMetatileAttributes_EnclavaTower
+	.4byte NULL

@@ -833,3 +833,19 @@ script DavnridgeTown_Sign_Mines {
     msgbox(format("{COLOR LIGHT_GREEN}Davnridge Mines"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
     end
 }
+
+script DavnridgeTown_Trainer_Test1 {
+	trainerbattle_single(TRAINER_GRUNT_WEATHER_INST_4, format("intro"), format("lose"))
+	msgbox(format("fuck!"), MSGBOX_NPC)
+	end
+}
+script DavnridgeTown_Trainer_Test2 {
+	trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_5, format("intro"), format("lose"))
+	msgbox(format("fuck!"), MSGBOX_NPC)
+	end
+}
+script DavnridgeTown_Trainer_Test3 {
+	trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_6, format("intro"), format("lose"))
+	msgbox(format("fuck!"), MSGBOX_NPC)
+	end
+}

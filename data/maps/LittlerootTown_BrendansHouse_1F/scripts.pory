@@ -545,7 +545,8 @@ script PlayersHouse_Mapscript_GetPokemon {
 		msgbox(format("{PLAYER} received the Pokédex!"))
 		waitfanfare
 		setflag(FLAG_SYS_POKEDEX_GET)
-		setflag(FLAG_SYS_POKEMON_GET)
+		setflag(FLAG_SYS_NATIONAL_DEX)
+		special(EnableNationalPokedex)
 		special(SetUnlockedPokedexFlags)
 		playfanfare(MUS_FANFA4)
 		msgbox(format("{PLAYER} received the Trainer Card!"))
@@ -581,7 +582,11 @@ script PlayersHouse_Mapscript_GetPokemon {
 		msgbox(format("Dad: {COLOR BLUE}Now then!\pStart your Pokémon journey!\pIf you and your Pokémon need some resting, please feel free to come talk to me!"), MSGBOX_AUTOCLOSE)
 		setflag(FLAG_CANVASTOWN_GETPOKEMON)
 		setvar(VAR_PLAYERSHOUSE_GETPOKEMON, 1)
+		setflag(FLAG_SYS_POKEMON_GET)
 		clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+		cleartrainerflag(TRAINER_SKIP_GRASS_1)
+		cleartrainerflag(TRAINER_SKIP_FIRE_1)
+		cleartrainerflag(TRAINER_SKIP_WATER_1)
 		releaseall
 		end
 	}
@@ -601,4 +606,14 @@ movement PlayersHouse_GetPokemon_Movement_1 {
 	walk_down
 	delay_8
 	walk_in_place_down
+}
+
+script PlayersHouse_Object_Dad {
+	lock
+	faceplayer
+	msgbox(format("Dad: {COLOR BLUE}Hey {PLAYER}!\pYou look tired.\nLet's get you some rest..."))
+	call(Common_EventScript_OutOfCenterPartyHeal)
+	msgbox(format("Dad: {COLOR BLUE}There, now you and your Pokémon are all rested up!"), MSGBOX_AUTOCLOSE)
+	release
+	end
 }

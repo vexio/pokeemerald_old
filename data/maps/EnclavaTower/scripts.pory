@@ -1,0 +1,11 @@
+mapscripts EnclavaTower_MapScripts {}
+
+script EnclavaTower_1F_Object_OldWoman {
+    msgbox(format("{COLOR RED}This tower has been haunted for years now by Ghost-type Pokémon.\pBe careful!\nThese ghosts can harm your Pokémon!"), MSGBOX_NPC)
+    end
+}
+
+script EnclavaTower_1F_Object_OldMan {
+    msgbox(format("{COLOR BLUE}Ghosts?\nI don't believe in those ghosts!\pThose ghost stories you hear are all shams!"), MSGBOX_NPC)
+    end
+}

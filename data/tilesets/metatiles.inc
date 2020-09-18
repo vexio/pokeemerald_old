@@ -628,3 +628,10 @@ gMetatiles_EnclavaGym::
 	.align 1
 gMetatileAttributes_EnclavaGym::
 	.incbin "data/tilesets/secondary/enclavagym/metatile_attributes.bin"
+	.align 1
+gMetatiles_EnclavaTower::
+	.incbin "data/tilesets/secondary/enclavatower/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_EnclavaTower::
+	.incbin "data/tilesets/secondary/enclavatower/metatile_attributes.bin"

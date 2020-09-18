@@ -65,6 +65,7 @@
 #define MAP_OVERWORLD_SPRITE_TEST (60 | (0 << 8))
 #define MAP_ALNERWICK_LIBRARY     (61 | (0 << 8))
 #define MAP_ENCLAVA_TOWN_HOUSE_2  (62 | (0 << 8))
+#define MAP_ENCLAVA_TOWER_3F      (63 | (0 << 8))
 
 // Map Group 1
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -403,6 +404,8 @@
 #define MAP_TERRA_CAVE_END                           (105 | (24 << 8))
 #define MAP_ALTERING_CAVE                            (106 | (24 << 8))
 #define MAP_METEOR_FALLS_STEVENS_CAVE                (107 | (24 << 8))
+#define MAP_ENCLAVA_TOWER                            (108 | (24 << 8))
+#define MAP_ENCLAVA_TOWER_2F                         (109 | (24 << 8))
 
 // Map Group 25
 #define MAP_SECRET_BASE_RED_CAVE1           (0 | (25 << 8))

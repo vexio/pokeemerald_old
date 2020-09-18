@@ -163,7 +163,7 @@
       "x": 23,
       "y": 16,
       "elevation": 0,
-      "dest_map": "MAP_LAVARIDGE_TOWN",
+      "dest_map": "MAP_ENCLAVA_TOWER",
       "dest_warp_id": 0
     },
     {
@@ -175,7 +175,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_ENCLAVATOWER_STATE",
+      "var_value": "2",
+      "script": "EnclavaTown_Trigger_EnclavaTower"
+    }
   ],
   "bg_events": [
     {
@@ -197,7 +205,7 @@
     {
       "type": "sign",
       "x": 25,
-      "y": 18,
+      "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EnclavaTown_Sign_EnclavaTower"

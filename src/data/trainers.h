@@ -158,7 +158,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_MINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_ENGINEER,
+        .trainerPic = TRAINER_PIC_HIKER,
         .trainerName = _("Clark"),
         .items = {},
         .doubleBattle = FALSE,
@@ -172,11 +172,11 @@ const struct Trainer gTrainers[] = {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_MINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_ENGINEER,
+        .trainerPic = TRAINER_PIC_HIKER,
         .trainerName = _("Luis"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = ARRAY_COUNT(sParty_Alberto),
         .party = {.NoItemDefaultMoves = sParty_Alberto},
     },
@@ -321,44 +321,44 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_GruntSpaceCenter1},
     },
 
-    [TRAINER_GRUNT_MT_PYRE_1] =
+    [TRAINER_EXPERT_TOBIAS] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_EXPERT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_EXPERT_M,
+        .trainerName = _("Tobias"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = ARRAY_COUNT(sParty_GruntMtPyre1),
         .party = {.NoItemDefaultMoves = sParty_GruntMtPyre1},
     },
 
-    [TRAINER_GRUNT_MT_PYRE_2] =
+    [TRAINER_EXPERT_YASMIN] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_EXPERT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_EXPERT_F,
+        .trainerName = _("Yasmin"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = ARRAY_COUNT(sParty_GruntMtPyre2),
         .party = {.NoItemDefaultMoves = sParty_GruntMtPyre2},
     },
 
-    [TRAINER_GRUNT_MT_PYRE_3] =
+    [TRAINER_HEXMANIAC_DEJA] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_HEX_MANIAC,
+        .trainerName = _("Deja"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = ARRAY_COUNT(sParty_GruntMtPyre3),
         .party = {.NoItemDefaultMoves = sParty_GruntMtPyre3},
     },
@@ -366,13 +366,13 @@ const struct Trainer gTrainers[] = {
     [TRAINER_GRUNT_WEATHER_INST_4] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PROTO_ADMIN_CERES,
+        .trainerName = _("Test"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = ARRAY_COUNT(sParty_GruntWeatherInst4),
         .party = {.NoItemDefaultMoves = sParty_GruntWeatherInst4},
     },
@@ -380,13 +380,13 @@ const struct Trainer gTrainers[] = {
     [TRAINER_GRUNT_AQUA_HIDEOUT_5] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PROTO_ADMIN_ERIS,
+        .trainerName = _("Test"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = ARRAY_COUNT(sParty_GruntAquaHideout5),
         .party = {.NoItemDefaultMoves = sParty_GruntAquaHideout5},
     },
@@ -394,13 +394,13 @@ const struct Trainer gTrainers[] = {
     [TRAINER_GRUNT_AQUA_HIDEOUT_6] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_PROTO_ADMIN_HAUMEA,
+        .trainerName = _("Test"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = ARRAY_COUNT(sParty_GruntAquaHideout6),
         .party = {.NoItemDefaultMoves = sParty_GruntAquaHideout6},
     },
@@ -11970,6 +11970,37 @@ const struct Trainer gTrainers[] = {
     },
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

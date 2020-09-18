@@ -99,7 +99,8 @@
     "Davnridge_Mines",
     "OverworldSprite_Test",
     "Alnerwick_Library",
-    "EnclavaTown_House_2"
+    "EnclavaTown_House_2",
+    "EnclavaTower_3F"
   ],
   "gMapGroup1": [
     "LittlerootTown_BrendansHouse_1F",
@@ -437,7 +438,9 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "EnclavaTower",
+    "EnclavaTower_2F"
   ],
   "gMapGroup25": [
     "SecretBase_RedCave1",

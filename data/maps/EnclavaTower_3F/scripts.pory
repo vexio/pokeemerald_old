@@ -1,0 +1,108 @@
+mapscripts EnclavaTower_3F_MapScripts {}
+
+const FIJO = 1
+
+script EnclavaTower_3F_Object_Fijo {
+    if (var(VAR_ENCLAVATOWER_STATE) == 2) {
+        lock
+        faceplayer
+        msgbox(format("Fijo: {COLOR BLUE}Hello child.\nWhat brings you here?"), MSGBOX_AUTOCLOSE)
+        delay(20)
+        applymovement(FIJO, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        playse(SE_PIN)
+        delay(16)
+        msgbox(format("Fijo: {COLOR BLUE}Ah, you're the trainer that {COLOR GREEN}Prof. Cypress{COLOR BLUE} sent to get {COLOR GREEN}The Dorimubkku{COLOR BLUE}...\lI see...\pI'll get that for you."), MSGBOX_AUTOCLOSE)
+        delay(10)
+        specialvar(VAR_RESULT, GetPlayerFacingDirection)
+        if (var(VAR_RESULT) == DIR_NORTH) {
+            applymovement(FIJO, EnclavaTower_3F_Fijo_Movement_0)
+            waitmovement(0)
+        } elif (var(VAR_RESULT) == DIR_EAST) {
+            applymovement(FIJO, EnclavaTower_3F_Fijo_Movement_0)
+            waitmovement(0)
+        } elif (var(VAR_RESULT) == DIR_SOUTH) {
+            applymovement(FIJO, EnclavaTower_3F_Fijo_Movement_0)
+            waitmovement(0)
+        } elif (var(VAR_RESULT) == DIR_WEST) {
+            applymovement(FIJO, EnclavaTower_3F_Fijo_Movement_1)
+            waitmovement(0)
+        }
+        delay(10)
+        applymovement(FIJO, Common_Movement_WalkInPlaceUp)
+        waitmovement(0)
+        delay(8)
+        applymovement(FIJO, Common_Movement_WalkInPlaceUp)
+        waitmovement(0)
+        delay(12)
+        applymovement(FIJO, EnclavaTower_3F_Fijo_Movement_2)
+        waitmovement(0)
+        delay(6)
+        applymovement(FIJO, Common_Movement_WalkInPlaceUp)
+        waitmovement(0)
+        delay(10)
+        applymovement(FIJO, Common_Movement_WalkInPlaceUp)
+        waitmovement(0)
+        delay(8)
+        applymovement(FIJO, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        delay(16)
+        if (var(VAR_RESULT) == DIR_SOUTH) {
+            applymovement(FIJO, EnclavaTower_3F_Fijo_Movement_4)
+            waitmovement(0)
+        } else {
+            applymovement(FIJO, EnclavaTower_3F_Fijo_Movement_3)
+            waitmovement(0)
+        }
+        faceplayer
+        delay(5)
+        msgbox(format("Fijo: {COLOR BLUE}This book, {COLOR GREEN}The Dorimubukku{COLOR BLUE}, is an ancient tome from 100 years ago.\pIt contains many scriptures describing the legendary Pokémon {COLOR GREEN}Cresselia{COLOR BLUE}.\pThe author of this book claims that {COLOR GREEN}Cresselia{COLOR BLUE} has psychic-powers that can put anyone to sleep instantly, and bring them happy dreams.\pThese dreams bring the slumbered recovery and good health.\p{COLOR GREEN}Cresselia{COLOR BLUE}, however, has never been discovered or recorded using modern technology, so she remains a myth.\pI don't know what {COLOR GREEN}Prof. Cypress{COLOR BLUE} wants to do with this book, but I respect her needs."), MSGBOX_AUTOCLOSE)
+        giveitem(ITEM_RUBY, 1)
+        msgbox(format("Fijo: {COLOR BLUE}Please be careful with that book.\pThat book contains a lot of secret techniques that only wise individuals know how to utilize.\pMake good choices until you deliver that book to {COLOR GREEN}Prof. Cypress{COLOR BLUE} in {COLOR GREEN}Myst City{COLOR BLUE}."), MSGBOX_AUTOCLOSE)
+        setvar(VAR_ENCLAVATOWER_STATE, 3)
+        release
+        end  
+    } else {
+        msgbox(format("Fijo: {COLOR BLUE}Please be careful with that book.\pThat book contains a lot of secret techniques that only wise individuals know how to utilize.\pMake good choices until you deliver that book to {COLOR GREEN}Prof. Cypress{COLOR BLUE} in {COLOR GREEN}Myst City{COLOR BLUE}."), MSGBOX_NPC)
+        end
+    }
+}
+movement EnclavaTower_3F_Fijo_Movement_0 {
+    walk_right
+    walk_up * 3
+}
+movement EnclavaTower_3F_Fijo_Movement_1 {
+    walk_up * 2
+    walk_right
+    walk_up
+}
+movement EnclavaTower_3F_Fijo_Movement_2 {
+    walk_right
+    walk_in_place_up
+}
+movement EnclavaTower_3F_Fijo_Movement_3 {
+    walk_down
+    walk_left * 2
+    walk_down * 2
+}
+movement EnclavaTower_3F_Fijo_Movement_4 {
+    walk_down * 3
+    walk_left * 2
+}
+
+script EnclavaTower_3F_Object_Man1 {
+    msgbox(format("{COLOR BLUE}I come here to study the art of Fighting-type Pokémon."), MSGBOX_NPC)
+    end
+}
+script EnclavaTower_3F_Object_Man2 {
+    msgbox(format("{COLOR BLUE}I practice karate with {COLOR GREEN}Master Fijo{COLOR BLUE} to help my team's synergy.\pHe's a really great trainer!"), MSGBOX_NPC)
+    end
+}
+script EnclavaTower_3F_Object_Woman1 {
+    msgbox(format("{COLOR RED}I've been trying to find this book forever now..."), MSGBOX_NPC)
+    end
+}
+script EnclavaTower_3F_Object_Woman2 {
+    msgbox(format("{COLOR GREEN}Enclava Tower{COLOR RED} is a great place to train your team, although not the best if you're training your Fighting-typed Pokémon."), MSGBOX_NPC)
+    end
+}

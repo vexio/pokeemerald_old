@@ -530,7 +530,8 @@ PlayersHouse_Mapscript_GetPokemon_3:
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_10
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
-	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
 	special SetUnlockedPokedexFlags
 	playfanfare MUS_FANFA4
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_11
@@ -566,7 +567,11 @@ PlayersHouse_Mapscript_GetPokemon_3:
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_16, MSGBOX_AUTOCLOSE
 	setflag FLAG_CANVASTOWN_GETPOKEMON
 	setvar VAR_PLAYERSHOUSE_GETPOKEMON, 1
+	setflag FLAG_SYS_POKEMON_GET
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	cleartrainerflag TRAINER_SKIP_GRASS_1
+	cleartrainerflag TRAINER_SKIP_FIRE_1
+	cleartrainerflag TRAINER_SKIP_WATER_1
 	releaseall
 	end
 
@@ -622,6 +627,16 @@ PlayersHouse_GetPokemon_Movement_1:
 	delay_8
 	walk_in_place_down
 	step_end
+
+PlayersHouse_Object_Dad::
+	lock
+	faceplayer
+	msgbox PlayersHouse_Object_Dad_Text_0
+	call Common_EventScript_OutOfCenterPartyHeal
+	msgbox PlayersHouse_Object_Dad_Text_1, MSGBOX_AUTOCLOSE
+	release
+	end
+
 
 PlayersHouse_Mapscript_GetPokemon_Text_0:
 	.string "Mom: {COLOR RED}Now, it's time for you two to make\n"
@@ -698,3 +713,12 @@ PlayersHouse_Mapscript_GetPokemon_Text_16:
 	.string "If you and your Pokémon need some\n"
 	.string "resting, please feel free to come talk\l"
 	.string "to me!$"
+
+PlayersHouse_Object_Dad_Text_0:
+	.string "Dad: {COLOR BLUE}Hey {PLAYER}!\p"
+	.string "You look tired.\n"
+	.string "Let's get you some rest...$"
+
+PlayersHouse_Object_Dad_Text_1:
+	.string "Dad: {COLOR BLUE}There, now you and your Pokémon\n"
+	.string "are all rested up!$"

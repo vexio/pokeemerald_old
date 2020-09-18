@@ -4490,6 +4490,36 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/EnclavaTown_House_2/border.bin",
       "blockdata_filepath": "data/layouts/EnclavaTown_House_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ENCLAVA_TOWER",
+      "name": "EnclavaTower_Layout",
+      "width": 17,
+      "height": 18,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EnclavaTower",
+      "border_filepath": "data/layouts/EnclavaTower/border.bin",
+      "blockdata_filepath": "data/layouts/EnclavaTower/map.bin"
+    },
+    {
+      "id": "LAYOUT_ENCLAVA_TOWER_2F",
+      "name": "EnclavaTower_2F_Layout",
+      "width": 17,
+      "height": 18,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EnclavaTower",
+      "border_filepath": "data/layouts/EnclavaTower_2F/border.bin",
+      "blockdata_filepath": "data/layouts/EnclavaTower_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ENCLAVA_TOWER_3F",
+      "name": "EnclavaTower_3F_Layout",
+      "width": 17,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EnclavaTower",
+      "border_filepath": "data/layouts/EnclavaTower_3F/border.bin",
+      "blockdata_filepath": "data/layouts/EnclavaTower_3F/map.bin"
     }
   ]
 }

@@ -101,3 +101,39 @@ Route104_Text_DadPokenavCall: @ 81EE336
 Route104_Text_RegisteredDadInPokenav: @ 81EE463
 	.string "Registered DAD NORMAN\n"
 	.string "in the POKéNAV.$"
+
+EnclavaPass_Trigger_NoPass::
+	lockall
+	applymovement 4, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 16
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	delay 8
+	msgbox EnclavaPass_Trigger_NoPass_Text_0, MSGBOX_AUTOCLOSE
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	releaseall
+	end
+
+
+EnclavaPass_Object_Officer::
+	msgbox EnclavaPass_Trigger_NoPass_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaPass_Trigger_NoPass_Text_0:
+	.string "{COLOR BLUE}Hey there pal!\p"
+	.string "This is the end of the first Beta of\n"
+	.string "{COLOR GREEN}Pokémon Chroma{COLOR BLUE}.\p"
+	.string "If you'd like to use your same save in a\n"
+	.string "future version, please save inside of a\l"
+	.string "{COLOR GREEN}Pokémon Center{COLOR BLUE}.\p"
+	.string "Thank you so much for playing my game!\p"
+	.string "Please feel free to join the {COLOR GREEN}Official\n"
+	.string "Pokémon Chroma Discord{COLOR BLUE} to give\l"
+	.string "feedback on the game.\p"
+	.string "The link can be found on the official\n"
+	.string "{COLOR GREEN}PokéCommunity{COLOR BLUE} thread.\p"
+	.string "Once again, thank you for playing.\p"
+	.string "- vxo, Lead Developer$"

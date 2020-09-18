@@ -200,56 +200,65 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GruntSpaceCenter1[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntMtPyre1[] = {
     {
     .iv = 0,
-    .lvl = 32,
-    .species = SPECIES_ZUBAT,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntMtPyre2[] = {
-    {
-    .iv = 0,
-    .lvl = 32,
-    .species = SPECIES_CARVANHA,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntMtPyre3[] = {
-    {
-    .iv = 0,
-    .lvl = 30,
-    .species = SPECIES_POOCHYENA,
+    .lvl = 16,
+    .species = SPECIES_GASTLY,
     },
     {
     .iv = 0,
-    .lvl = 30,
-    .species = SPECIES_CARVANHA,
+    .lvl = 16,
+    .species = SPECIES_CUBONE,
     }
 };
-
+static const struct TrainerMonNoItemDefaultMoves sParty_GruntMtPyre2[] = {
+    {
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_MACHOP,
+    },
+    {
+    .iv = 0,
+    .lvl = 17,
+    .species = SPECIES_SHUPPET,
+    }
+};
+static const struct TrainerMonNoItemDefaultMoves sParty_GruntMtPyre3[] = {
+    {
+    .iv = 0,
+    .lvl = 15,
+    .species = SPECIES_GASTLY,
+    },
+    {
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_GASTLY,
+    },
+    {
+    .iv = 0,
+    .lvl = 17,
+    .species = SPECIES_HAUNTER,
+    }
+};
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntWeatherInst4[] = {
     {
     .iv = 0,
-    .lvl = 28,
-    .species = SPECIES_CARVANHA,
+    .lvl = 1,
+    .species = SPECIES_PIDGEY,
     }
 };
-
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntAquaHideout5[] = {
     {
     .iv = 0,
-    .lvl = 32,
-    .species = SPECIES_CARVANHA,
+    .lvl = 1,
+    .species = SPECIES_PIDGEY,
     }
 };
-
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntAquaHideout6[] = {
     {
     .iv = 0,
-    .lvl = 32,
-    .species = SPECIES_ZUBAT,
+    .lvl = 1,
+    .species = SPECIES_PIDGEY,
     }
 };
-
 static const struct TrainerMonNoItemDefaultMoves sParty_Fredrick[] = {
     {
     .iv = 100,
@@ -12349,6 +12358,37 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

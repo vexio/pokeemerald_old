@@ -470,7 +470,7 @@ script EnclavaTown_Mapscript_Lars {
 	while (var(VAR_RESULT) != 1) {
 		msgbox(format("{COLOR BLUE}Ah com'on... I'm really busy..."), MSGBOX_YESNO)
 	}
-	msgbox(format("Lars: {COLOR BLUE}Alright sweet!\pAll you need to do is get to the top of the tower and tell {COLOR GREEN}Mr. Fijo{COLOR BLUE} that {COLOR GREEN}Cypress{COLOR BLUE} sent you.\pSound good?\nSweet!\pI'll see you on the flip side!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Lars: {COLOR BLUE}Alright sweet!\pAll you need to do is get to the top of the tower and tell {COLOR GREEN}Master Fijo{COLOR BLUE} that {COLOR GREEN}Cypress{COLOR BLUE} sent you.\pSound good?\nSweet!\pI'll see you on the flip side!"), MSGBOX_AUTOCLOSE)
 	delay(5)
 	applymovement(LARS, Common_Movement_WalkInPlaceDown)
 	waitmovement(0)
@@ -576,6 +576,28 @@ script EnclavaTown_Object_BlackBelt {
 }
 
 script EnclavaTown_Object_OldMan {
-    msgbox(format("{COLOR BLUE}Me and {COLOR GREEN}Bruce{COLOR BLUE}, the local Gym Leader, use to be training buddies.\pI stopped about 5 years ago, but {COLOR GREEN}Bruce{COLOR BLUE} kept on training, and now he's the Gym Leader here!"), MSGBOX_NPC)
+    msgbox(format("{COLOR BLUE}Myself and {COLOR GREEN}Bruce{COLOR BLUE}, the local Gym Leader, use to be training buddies.\pI stopped about 5 years ago, but {COLOR GREEN}Bruce{COLOR BLUE} kept on training, and now he's the Gym Leader here!"), MSGBOX_NPC)
     end
+}
+
+// enclavatower entrance
+script EnclavaTown_Trigger_EnclavaTower {
+	specialvar(VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_NORTH) {
+		lock
+		special(SpawnCameraObject)
+		delay(5)
+		applymovement(OBJ_EVENT_ID_CAMERA, EnclavaTown_EnclavaTower_Movement_0)
+		waitmovement(0)
+		delay(20)
+		special(RemoveCameraObject)
+		warp(MAP_ENCLAVA_TOWER, 0, 8, 16)
+		return
+	}
+	release
+	end
+}
+
+movement EnclavaTown_EnclavaTower_Movement_0 {
+	walk_up * 5
 }

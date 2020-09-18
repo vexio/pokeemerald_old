@@ -839,6 +839,24 @@ DavnridgeTown_Sign_Mines::
 	end
 
 
+DavnridgeTown_Trainer_Test1::
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_4, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
+	msgbox DavnridgeTown_Trainer_Test1_Text_2, MSGBOX_NPC
+	end
+
+
+DavnridgeTown_Trainer_Test2::
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_5, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
+	msgbox DavnridgeTown_Trainer_Test1_Text_2, MSGBOX_NPC
+	end
+
+
+DavnridgeTown_Trainer_Test3::
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_6, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
+	msgbox DavnridgeTown_Trainer_Test1_Text_2, MSGBOX_NPC
+	end
+
+
 DavnridgeTown_Object_Black_Belt_Text_0:
 	.string "{COLOR BLUE}I'm trying to train my partner's and I\n"
 	.string "for the Gym Leader, {COLOR GREEN}Lilith{COLOR BLUE}!$"
@@ -877,3 +895,12 @@ DavnridgeTown_Sign_GymSign_Text_0:
 
 DavnridgeTown_Sign_Mines_Text_0:
 	.string "{COLOR LIGHT_GREEN}Davnridge Mines$"
+
+DavnridgeTown_Trainer_Test1_Text_0:
+	.string "intro$"
+
+DavnridgeTown_Trainer_Test1_Text_1:
+	.string "lose$"
+
+DavnridgeTown_Trainer_Test1_Text_2:
+	.string "fuck!$"

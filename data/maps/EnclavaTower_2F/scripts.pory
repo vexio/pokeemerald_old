@@ -1,0 +1,19 @@
+mapscripts EnclavaTower_2F_MapScripts {}
+
+script EnclavaTower_2F_Trainer_ExpertM {
+    trainerbattle_single(TRAINER_EXPERT_TOBIAS, format("{COLOR BLUE}You don't look like a strong trainer...\pShow me your strength!"), format("Very strong indeed!"))
+    msgbox(format("{COLOR BLUE}Your strength definitely shows now that I can see the relationship you have with your Pokémon."), MSGBOX_NPC)
+    end
+}
+
+script EnclavaTower_2F_Trainer_ExpertF {
+    trainerbattle_single(TRAINER_EXPERT_YASMIN, format("{COLOR RED}I can sense the bond you and your Pokémon have...\pShow me that bond!"), format("The strength of your bond is immense!"))
+    msgbox(format("{COLOR RED}The bond you and your partner's have is strong...\l I can sense it..."), MSGBOX_NPC)
+    end
+}
+
+script EnclavaTower_2F_Trainer_HexManiac {
+    trainerbattle_single(TRAINER_HEXMANIAC_DEJA, format("{COLOR RED}Eek!\nBehind you!"), format("I thought I saw a ghost..."))
+    msgbox(format("{COLOR RED}I see things that others don't..."), MSGBOX_NPC)
+    end
+}
