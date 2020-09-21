@@ -592,7 +592,7 @@ PlayersHouse_Mapscript_GetPokemon_5:
 	goto PlayersHouse_Mapscript_GetPokemon_3
 
 PlayersHouse_Mapscript_GetPokemon_6:
-	setvar VAR_STARTER_MON, 3
+	setvar VAR_STARTER_MON, 2
 	playse MUS_FANFA4
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_7
 	waitse

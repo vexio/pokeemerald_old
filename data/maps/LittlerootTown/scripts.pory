@@ -1241,6 +1241,9 @@ script CanvasTown_Trigger_RivalBattle {
 		waitmovement(0)
 		special(RemoveCameraObject)
 		closemessage
+		cleartrainerflag(TRAINER_SKIP_GRASS_1)
+		cleartrainerflag(TRAINER_SKIP_FIRE_1)
+		cleartrainerflag(TRAINER_SKIP_WATER_1)
 		msgbox(format("Skip: {COLOR BLUE}Trying to get ahead of me?\pSince we're both new trainers, and essentially rivals, why don't we see who the stronger trainer is?"), MSGBOX_AUTOCLOSE)
 		if (var(VAR_STARTER_MON) == 0) { // player choose rowlet as starter
 			trainerbattle_no_intro(TRAINER_SKIP_FIRE_1, format("Hmph…"))
@@ -1277,6 +1280,7 @@ script CanvasTown_Trigger_RivalBattle {
 		msgbox(format("{COLOR GREEN}Skip{COLOR DARK_GREY} seems to have dropped something…"), MSGBOX_AUTOCLOSE)
 		giveitem(ITEM_POKE_BALL, 10)
 		setvar(VAR_CANVASTOWN_RIVALBATTLE, 1)
+		clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 		release
 		end
 	}

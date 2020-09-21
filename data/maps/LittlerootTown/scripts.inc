@@ -1255,6 +1255,9 @@ CanvasTown_Trigger_RivalBattle_3:
 	waitmovement 0
 	special RemoveCameraObject
 	closemessage
+	cleartrainerflag TRAINER_SKIP_GRASS_1
+	cleartrainerflag TRAINER_SKIP_FIRE_1
+	cleartrainerflag TRAINER_SKIP_WATER_1
 	msgbox CanvasTown_Trigger_RivalBattle_Text_1, MSGBOX_AUTOCLOSE
 	compare VAR_STARTER_MON, 0
 	goto_if_eq CanvasTown_Trigger_RivalBattle_11
@@ -1288,6 +1291,7 @@ CanvasTown_Trigger_RivalBattle_17:
 	msgbox CanvasTown_Trigger_RivalBattle_Text_7, MSGBOX_AUTOCLOSE
 	giveitem ITEM_POKE_BALL, 10
 	setvar VAR_CANVASTOWN_RIVALBATTLE, 1
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	release
 	end
 

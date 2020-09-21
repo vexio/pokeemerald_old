@@ -516,7 +516,7 @@ script PlayersHouse_Mapscript_GetPokemon {
 			waitse
 			closemessage
 		} elif (var(VAR_STARTER_MON) == 2) { //player chose froakie, rival is rowlet
-			setvar(VAR_STARTER_MON, 3)
+			setvar(VAR_STARTER_MON, 2)
 			playse(MUS_FANFA4)
 			msgbox(format("Skip received a {COLOR GREEN}Rowlet"))
 			waitse
