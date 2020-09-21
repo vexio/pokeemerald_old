@@ -158,7 +158,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_MINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_ENGINEER,
         .trainerName = _("Clark"),
         .items = {},
         .doubleBattle = FALSE,
@@ -172,7 +172,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_MINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_ENGINEER,
         .trainerName = _("Luis"),
         .items = {},
         .doubleBattle = FALSE,
@@ -11970,6 +11970,10 @@ const struct Trainer gTrainers[] = {
     },
 
 };
+
+
+
+
 
 
 

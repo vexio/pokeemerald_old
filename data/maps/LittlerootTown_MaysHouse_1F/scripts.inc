@@ -11,8 +11,6 @@ LittlerootTown_MaysHouse_1F_OnLoad: @ 81F88B5
 	end
 
 LittlerootTown_MaysHouse_1F_EventScript_SetMovingBoxes:: @ 81F88CA
-	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, 1
-	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, 1
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual:: @ 81F88DD
@@ -22,7 +20,6 @@ LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual:: @ 81F88DD
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual:: @ 81F88EA
-	setmetatile 6, 7, METATILE_BrendansMaysHouse_BookOnTable, 1
 	return
 
 LittlerootTown_MaysHouse_1F_OnTransition: @ 81F88F4
@@ -416,3 +413,55 @@ RivalsHouse_1F_Text_DoYouHavePokemon: @ 81F9262
 	.string "Hi, neighbor!\p"
 	.string "Do you already have your\n"
 	.string "own POKéMON?$"
+
+SkipsHouse_Object_Woman::
+	compare VAR_CANVASTOWN_RIVALBATTLE, 0
+	goto_if_eq SkipsHouse_Object_Woman_1
+	goto_if_unset FLAG_RECIEVED_TOWN_MAP, SkipsHouse_Object_Woman_2
+	msgbox SkipsHouse_Object_Woman_Text_3, MSGBOX_NPC
+	end
+
+SkipsHouse_Object_Woman_1:
+	msgbox SkipsHouse_Object_Woman_Text_0, MSGBOX_NPC
+	end
+
+SkipsHouse_Object_Woman_2:
+	lock
+	faceplayer
+	msgbox SkipsHouse_Object_Woman_Text_1, MSGBOX_AUTOCLOSE
+	giveitem ITEM_TOWN_MAP, 1
+	msgbox SkipsHouse_Object_Woman_Text_2, MSGBOX_AUTOCLOSE
+	setflag FLAG_RECIEVED_TOWN_MAP
+	release
+	end
+
+
+SkipsHouse_Object_Woman_Text_0:
+	.string "{COLOR RED}Hey {PLAYER}!\n"
+	.string "How have you been?\p"
+	.string "{COLOR GREEN}Skip{COLOR RED} is up in his room right now.\p"
+	.string "He said he was going to be busy, but I'm\n"
+	.string "sure you two will catch up outside.$"
+
+SkipsHouse_Object_Woman_Text_1:
+	.string "{COLOR RED}Hey {PLAYER}!\n"
+	.string "How have you been doing?\p"
+	.string "Oh, I haven't heard from {COLOR GREEN}Skip{COLOR RED} in a while\n"
+	.string "now...\p"
+	.string "I meant to give this to him...\n"
+	.string "but you can have it instead!$"
+
+SkipsHouse_Object_Woman_Text_2:
+	.string "{COLOR RED}That map will allow you to see where you\n"
+	.string "are at all times!\p"
+	.string "So if you ever get lost, you can refer\n"
+	.string "to that!$"
+
+SkipsHouse_Object_Woman_Text_3:
+	.string "{COLOR RED}Hey {PLAYER}!\n"
+	.string "How have you been doing?\p"
+	.string "Have you seen {COLOR GREEN}Skip{COLOR RED} recently?\p"
+	.string "I get worried for him, he's quite\n"
+	.string "reckless -- just like me when I was a\l"
+	.string "trainer...\p"
+	.string "But I'm sure he's fine...$"

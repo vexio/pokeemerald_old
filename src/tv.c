@@ -870,13 +870,13 @@ void SetTVMetatilesOnMap(int width, int height, u16 tileId)
 
 void TurnOffTVScreen(void)
 {
-    SetTVMetatilesOnMap(gBackupMapLayout.width, gBackupMapLayout.height, 0x0002);
+    SetTVMetatilesOnMap(gBackupMapLayout.width, gBackupMapLayout.height, 0x004E);
     DrawWholeMapView();
 }
 
 void TurnOnTVScreen(void)
 {
-    SetTVMetatilesOnMap(gBackupMapLayout.width, gBackupMapLayout.height, 0x0003);
+    SetTVMetatilesOnMap(gBackupMapLayout.width, gBackupMapLayout.height, 0x004E);
     DrawWholeMapView();
 }
 

@@ -12,8 +12,6 @@ LittlerootTown_MaysHouse_1F_OnLoad: @ 81F88B5
 	end
 
 LittlerootTown_MaysHouse_1F_EventScript_SetMovingBoxes:: @ 81F88CA
-	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, 1
-	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, 1
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual:: @ 81F88DD
@@ -23,7 +21,6 @@ LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual:: @ 81F88DD
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual:: @ 81F88EA
-	setmetatile 6, 7, METATILE_BrendansMaysHouse_BookOnTable, 1
 	return
 
 LittlerootTown_MaysHouse_1F_OnTransition: @ 81F88F4
@@ -418,3 +415,23 @@ RivalsHouse_1F_Text_DoYouHavePokemon: @ 81F9262
 	.string "Do you already have your\n"
 	.string "own POKéMON?$"
 `
+
+script SkipsHouse_Object_Woman {
+	if (var(VAR_CANVASTOWN_RIVALBATTLE) == 0) {
+		msgbox(format("{COLOR RED}Hey {PLAYER}!\nHow have you been?\p{COLOR GREEN}Skip{COLOR RED} is up in his room right now.\pHe said he was going to be busy, but I'm sure you two will catch up outside."), MSGBOX_NPC)
+		end
+	} elif (flag(FLAG_RECIEVED_TOWN_MAP) == false) {
+		lock
+		faceplayer
+		msgbox(format("{COLOR RED}Hey {PLAYER}!\nHow have you been doing?\pOh, I haven't heard from {COLOR GREEN}Skip{COLOR RED} in a while now...\pI meant to give this to him...\nbut you can have it instead!"), MSGBOX_AUTOCLOSE)
+		giveitem(ITEM_TOWN_MAP, 1)
+		msgbox(format("{COLOR RED}That map will allow you to see where you are at all times!\pSo if you ever get lost, you can refer to that!"), MSGBOX_AUTOCLOSE)
+		setflag(FLAG_RECIEVED_TOWN_MAP)
+		release
+		end
+	} else {
+		msgbox(format("{COLOR RED}Hey {PLAYER}!\nHow have you been doing?\pHave you seen {COLOR GREEN}Skip{COLOR RED} recently?\pI get worried for him, he's quite reckless -- just like me when I was a trainer...\pBut I'm sure he's fine..."), MSGBOX_NPC)
+		end
+	}
+	
+}

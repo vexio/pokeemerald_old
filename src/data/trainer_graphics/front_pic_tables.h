@@ -93,6 +93,12 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_LEAF] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_RS_BRENDAN] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_RS_MAY] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_ENGINEER] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_SCIENTIST] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_PROTO_ADMIN_CERES] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_PROTO_ADMIN_HAUMEA] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_PROTO_ADMIN_ERIS] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_PROTO_LEADER_APOLLO] = {.size = 8, .y_offset = 1},
 };
 
 const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
@@ -293,4 +299,10 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(LEAF, gTrainerPalette_Leaf),
     TRAINER_PAL(RS_BRENDAN, gTrainerPalette_RubySapphireBrendan),
     TRAINER_PAL(RS_MAY, gTrainerPalette_RubySapphireMay),
+    TRAINER_PAL(ENGINEER, gTrainerPalette_Engineer),
+    TRAINER_PAL(SCIENTIST, gTrainerPalette_Scientist),
+    TRAINER_PAL(PROTO_LEADER_APOLLO, gTrainerPalette_ProtoLeaderApollo),
+    TRAINER_PAL(PROTO_ADMIN_ERIS, gTrainerPalette_ProtoAdminEris),
+    TRAINER_PAL(PROTO_ADMIN_CERES, gTrainerPalette_ProtoAdminCeres),
+    TRAINER_PAL(PROTO_ADMIN_HAUMEA, gTrainerPalette_ProtoAdminHaumea),
 };

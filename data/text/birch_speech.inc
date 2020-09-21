@@ -4,8 +4,6 @@ gText_Birch_Welcome:: @ 82C897B
 	.string "My name is {COLOR GREEN}Professor Cypress{COLOR DARK_GREY}.\p"
 	.string "I'm the {COLOR GREEN}Ryoko{COLOR DARK_GREY} region's Pokémon\n"
 	.string "Professor.\p"
-	.string "I'm also your Mother, but we will\n"
-	.string "get into that later.\p"
 	.string "$"
 
 gText_Birch_Pokemon:: @ 82C89FB

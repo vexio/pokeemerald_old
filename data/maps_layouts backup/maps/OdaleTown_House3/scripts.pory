@@ -1,7 +1,0 @@
-raw `OdaleTown_House3_MapScripts::
-	.byte 0
-`
-
-script OldaleHouse3_ {
-    
-}

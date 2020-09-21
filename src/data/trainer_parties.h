@@ -12586,3 +12586,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
 
 
 
+
+
+
+

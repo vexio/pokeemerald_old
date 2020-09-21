@@ -442,7 +442,7 @@ script AlnerwickCity_Object_Youngster {
 }
 
 script AlnerwickCity_Object_Maniac {
-	msgbox(format("{COLOR BLUE}There are people inside this house...\pBut I don't see an enterance..."), MSGBOX_NPC)
+	msgbox(format("{COLOR BLUE}There are people inside this house...\pBut I don't see an entrance..."), MSGBOX_NPC)
 	end
 }
 

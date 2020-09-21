@@ -657,3 +657,11 @@ MagmaHideout_4F_EventScript_MaxRevive:: @ 829151F
 MagmaHideout_3F_3R_EventScript_ItemEscapeRope:: @ 829152C
 	finditem ITEM_ESCAPE_ROPE
 	end
+
+DavnridgeMines_EventScript_SuperPotion::
+	finditem ITEM_SUPER_POTION
+	end
+
+DavnridgeMines_EventScript_Nugget::
+	finditem ITEM_NUGGET
+	end

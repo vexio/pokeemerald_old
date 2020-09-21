@@ -1,3 +1,4 @@
+raw `
 LittlerootTown_MaysHouse_2F_MapScripts:: @ 81F9296
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_MaysHouse_2F_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_MaysHouse_2F_OnWarp
@@ -416,19 +417,15 @@ RivalsHouse_2F_Text_BrendanWhereShouldIGoNext: @ 81F9BE7
 	.string "Hey, {PLAYER}, if I see you while I'm out\n"
 	.string "catching POKéMON, I can pitch you a\l"
 	.string "battle if you'd like.$"
+`
 
-SkipsHouse_Object_Skip::
-	lock
-	msgbox SkipsHouse_Object_Skip_Text_0, MSGBOX_AUTOCLOSE
-	release
-	end
-
-
-SkipsHouse_Mapscript_Locations::
-	setobjectxyperm 1, 0, 3
-	return
-
-
-SkipsHouse_Object_Skip_Text_0:
-	.string "Skip seems to be too pre-occupied on\n"
-	.string "his computer to notice you...$"
+script SkipsHouse_Object_Skip {
+    lock
+    msgbox(format("Skip seems to be too pre-occupied on his computer to notice you..."), MSGBOX_AUTOCLOSE)
+    release
+    end
+}
+script SkipsHouse_Mapscript_Locations {
+    setobjectxyperm(1, 0, 3)
+    return
+}

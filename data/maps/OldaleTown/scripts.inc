@@ -573,7 +573,7 @@ AlnerwickCity_Object_Youngster_Text_0:
 
 AlnerwickCity_Object_Maniac_Text_0:
 	.string "{COLOR BLUE}There are people inside this house...\p"
-	.string "But I don't see an enterance...$"
+	.string "But I don't see an entrance...$"
 
 AlnerwickCity_Object_Girl_1_Text_0:
 	.string "{COLOR RED}The library in this city is full of\n"

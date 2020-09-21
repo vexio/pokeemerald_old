@@ -141,21 +141,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "DavnridgeMines_EventScript_Nugget",
+      "flag": "FLAG_ITEM_DAVNRIDGE_MINES_NUGGET"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 28,
-      "y": 31,
+      "x": 27,
+      "y": 32,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "DavnridgeMines_EventScript_SuperPotion",
+      "flag": "FLAG_ITEM_DAVNRIDGE_MINES_SUPER_POTION"
     }
   ],
   "warp_events": [
@@ -294,7 +294,7 @@
       "x": 26,
       "y": 2,
       "elevation": 3,
-      "item": "ITEM_NONE",
+      "item": "ITEM_RAZOR_CLAW",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -302,15 +302,15 @@
       "x": 9,
       "y": 4,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_KINGS_ROCK",
+      "flag": "FLAG_TEMP_2"
     },
     {
       "type": "hidden_item",
       "x": 20,
       "y": 16,
       "elevation": 3,
-      "item": "ITEM_NONE",
+      "item": "ITEM_ULTRA_BALL",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -318,8 +318,8 @@
       "x": 43,
       "y": 37,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_ESCAPE_ROPE",
+      "flag": "FLAG_TEMP_3"
     },
     {
       "type": "sign",
