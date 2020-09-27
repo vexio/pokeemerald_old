@@ -56,3 +56,24 @@ DewfordTown_House2_Text_BrawlySoCool: @ 81FE444
 	.string "He's so cool…\n"
 	.string "Everyone idolizes him.$"
 
+DavnridgeTown_House2_Object_BirdMan::
+	msgbox DavnridgeTown_House2_Object_BirdMan_Text_0, MSGBOX_NPC
+	end
+
+
+DavnridgeTown_House2_Object_Boy::
+	msgbox DavnridgeTown_House2_Object_Boy_Text_0, MSGBOX_NPC
+	end
+
+
+DavnridgeTown_House2_Object_BirdMan_Text_0:
+	.string "{COLOR BLUE}My flying-type Pokémon don't stand a\n"
+	.string "chance against {COLOR GREEN}Lilith{COLOR BLUE}.\p"
+	.string "She always crushes my poor birds!$"
+
+DavnridgeTown_House2_Object_Boy_Text_0:
+	.string "{COLOR BLUE}My friend doesn't realize that\n"
+	.string "flying-type Pokémon are weak to\l"
+	.string "rock-type moves...\p"
+	.string "I don't think these bird keepers know\n"
+	.string "there are other types of Pokémon...$"

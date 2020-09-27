@@ -4,7 +4,7 @@ Route101_MapScripts:: @ 81EBCBA
 	.byte 0
 
 Route101_OnTransition: @ 81EBCC5
-	call ProfBirch_EventScript_UpdateLocation
+@	call ProfBirch_EventScript_UpdateLocation
 	end
 
 Route101_OnFrame: @ 81EBCCB
@@ -12,7 +12,7 @@ Route101_OnFrame: @ 81EBCCB
 	.2byte 0
 
 Route101_EventScript_HideMapNamePopup:: @ 81EBCD5
-	//setflag FLAG_HIDE_MAP_NAME_POPUP
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_ROUTE101_STATE, 1
 	end
 

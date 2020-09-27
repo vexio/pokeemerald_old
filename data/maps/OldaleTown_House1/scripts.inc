@@ -1,15 +1,14 @@
 OldaleTown_House1_MapScripts:: @ 81FBE85
 	.byte 0
 
-OldaleTown_House1_EventScript_Woman:: @ 81FBE86
-	msgbox OldaleTown_House1_Text_LeftPokemonGoesOutFirst, MSGBOX_NPC
+AlnerwickCity_House1_Object_Woman::
+	msgbox AlnerwickCity_House1_Object_Woman_Text_0, MSGBOX_NPC
 	end
 
-OldaleTown_House1_Text_LeftPokemonGoesOutFirst: @ 81FBE8F
-	.string "When a POKéMON battle starts, the one\n"
-	.string "at the left of the list goes out first.\p"
-	.string "So, when you get more POKéMON in your\n"
-	.string "party, try switching around the order\l"
-	.string "of your POKéMON.\p"
-	.string "It could give you an advantage.$"
 
+AlnerwickCity_House1_Object_Woman_Text_0:
+	.string "{COLOR GREEN}Alnerwick City{COLOR RED} is my favorite city in all\n"
+	.string "of Ryoko.\p"
+	.string "It's such a small city that is calming as\n"
+	.string "well, not nearly as chaotic as {COLOR GREEN}Myst\l"
+	.string "City{COLOR RED}.$"

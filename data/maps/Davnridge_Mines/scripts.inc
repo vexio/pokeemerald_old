@@ -258,7 +258,7 @@ DavnridgeMines_Object_Miner_3::
 
 
 DavnridgeMines_Object_Miner_NoPassage::
-	msgbox DavnridgeMines_Trigger_NoPassage_Text_0, MSGBOX_NPC
+	msgbox DavnridgeMines_Object_Miner_NoPassage_Text_0, MSGBOX_NPC
 	end
 
 
@@ -366,3 +366,11 @@ DavnridgeMines_Object_Miner_3_Text_0:
 	.string "today...\l"
 	.string "My daughter wanted to play with them\l"
 	.string "today.$"
+
+DavnridgeMines_Object_Miner_NoPassage_Text_0:
+	.string "{COLOR BLUE}Hey bud!\n"
+	.string "This tunnel over here is off limits right\l"
+	.string "now.\p"
+	.string "We're running some explosion tests, so\n"
+	.string "no one is allowed through.\p"
+	.string "Come back later when we're done.$"

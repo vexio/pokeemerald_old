@@ -44,7 +44,7 @@ DavnridgeGym_Trainer_Lilith_2:
 	delay 10
 	msgbox DavnridgeGym_Trainer_Lilith_Text_0, MSGBOX_AUTOCLOSE
 	trainerbattle_no_intro TRAINER_GYM_LEADER_LILITH, DavnridgeGym_Trainer_Lilith_Text_1
-	setflashradius 2
+	animateflash 2
 	setflag FLAG_BADGE01_GET
 	settrainerflag TRAINER_GYM_HIKER_TYSON
 	settrainerflag TRAINER_GYM_MINER_HEATH
@@ -94,35 +94,39 @@ DavnridgeGym_Object_Man_Text_0:
 	.string "{COLOR BLUE}Hey there champ!\p"
 	.string "I take it that this is your first Gym\n"
 	.string "Challenge, yes?\p"
-	.string "This Gym's puzzel is a simple maze, but\n"
-	.string "your vision is very limited!\p"
-	.string "Find your way to to the top to battle\n"
-	.string "{COLOR GREEN}Lilith{COLOR BLUE}!$"
+	.string "This Gym's puzzle is a simple maze, but\n"
+	.string "your vision is limited!\p"
+	.string "Find your way through the maze and\n"
+	.string "battle {COLOR GREEN}Lilith{COLOR BLUE}!$"
 
 DavnridgeGym_Trainer_Lilith_Text_0:
-	.string "Lilith: {COLOR RED}Glad you made it from the Mines!\p"
-	.string "I will be your first official {COLOR GREEN}Ryoko\n"
-	.string "Pokémon League{COLOR RED} Gym battle!\p"
-	.string "Don't think I'm going to be going easy\n"
-	.string "on you!$"
+	.string "Lilith: {COLOR RED}Glad to see you made it back from\n"
+	.string "the mines!\p"
+	.string "I believe in the sturdiness and defense\n"
+	.string "of Rock-type Pokémon!\p"
+	.string "That's why my team is made up of\n"
+	.string "Rock-type Pokémon.\p"
+	.string "You think I'm gonna go easy on you?\p"
+	.string "Show me what you got!$"
 
 DavnridgeGym_Trainer_Lilith_Text_1:
 	.string "Well played!\p"
 	.string "{PLAYER}...\n"
-	.string "I can tell you're a strong trainer!\p"
+	.string "You outplayed me and my team!\p"
 	.string "Take this badge!$"
 
 DavnridgeGym_Trainer_Lilith_Text_2:
 	.string "{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Gem Badge$"
 
 DavnridgeGym_Trainer_Lilith_Text_3:
-	.string "Lilith: {COLOR RED}The {COLOR GREEN}Gem Badge{COLOR RED} is your official\n"
-	.string "certification of beating me.\p"
-	.string "Take this as well!$"
+	.string "Lilith: {COLOR RED}That's an official {COLOR GREEN}Ryoko Pokémon\n"
+	.string "League Badge{COLOR RED}!\p"
+	.string "The technique {COLOR GREEN}Cut{COLOR RED} can now be used\n"
+	.string "outside of battle!\p"
+	.string "Take this TM as well!$"
 
 DavnridgeGym_Trainer_Lilith_Text_4:
 	.string "Lilith: {COLOR RED}Your next challenge will be in\n"
-	.string "{COLOR GREEN}Enclava Town{COLOR RED}, which can be access\l"
+	.string "{COLOR GREEN}Enclava Town{COLOR RED}, which can be accessed\l"
 	.string "through the {COLOR GREEN}Davnridge Mines{COLOR RED}.\p"
-	.string "I wish you the best of luck on your\n"
-	.string "journey!$"
+	.string "Go further you and your team's skill!$"

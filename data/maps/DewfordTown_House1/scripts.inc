@@ -32,5 +32,27 @@ DewfordTown_House1_Text_LifeGoesSlowlyOnIsland: @ 81FC45B
 	.string "beautiful sea--that's happiness, too.$"
 
 DewfordTown_House1_Text_Zigzagoon: @ 81FC510
-	.string "ZIGZAGOON: Guguuh!$"
+	.string "Guguuh!$"
 
+DavnridgeTown_House1_Object_Engineer::
+	msgbox DavnridgeTown_House1_Object_Engineer_Text_0, MSGBOX_NPC
+	end
+
+
+DavnridgeTown_House1_Object_Woman::
+	msgbox DavnridgeTown_House1_Object_Woman_Text_0, MSGBOX_NPC
+	end
+
+
+DavnridgeTown_House1_Object_Engineer_Text_0:
+	.string "{COLOR BLUE}I've been in the mines all day today,\n"
+	.string "it's nice to come home to my wife and my\l"
+	.string "Zigzagoon.$"
+
+DavnridgeTown_House1_Object_Woman_Text_0:
+	.string "{COLOR RED}A lot of my husband's coworkers make\n"
+	.string "fun of him because he doesn't have a\l"
+	.string "manly Pokémon.\p"
+	.string "He has had his Zigzagoon since he was a\n"
+	.string "child, and he won't capture any other\l"
+	.string "Pokémon.$"

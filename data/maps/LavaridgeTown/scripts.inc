@@ -443,7 +443,7 @@ EnclavaTown_Mapscript_Lars::
 	delay 5
 	msgbox EnclavaTown_Mapscript_Lars_Text_0
 	closemessage
-	delay 20
+	delay 25
 	applymovement 8, Common_Movement_QuestionMark
 	playse SE_PIN
 	waitmovement 0
@@ -501,7 +501,7 @@ EnclavaTown_Lars_Movement_0:
 	walk_in_place_right
 	delay_16
 	walk_in_place_up
-	delay_4
+	delay_8
 	emote_exclamation_mark
 	step_end
 
@@ -616,11 +616,16 @@ EnclavaTown_EnclavaTower_Movement_0:
 	walk_up
 	step_end
 
+EnclavaTown_Sign_HerbShop::
+	msgbox EnclavaTown_Sign_HerbShop_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
 EnclavaTown_Mapscript_Lars_Text_0:
 	.string "???: {COLOR BLUE}Hey there champ!\n"
 	.string "You look like a freshie!\p"
 	.string "{COLOR DARK_GREY}Lars: {COLOR BLUE}Name's {COLOR GREEN}Lars{COLOR BLUE}.\n"
-	.string "What's your's?$"
+	.string "What's yours?$"
 
 EnclavaTown_Mapscript_Lars_Text_1:
 	.string "Lars: {COLOR BLUE}Alright... not much of a talker I\n"
@@ -724,3 +729,7 @@ EnclavaTown_Object_OldMan_Text_0:
 	.string "I stopped about 5 years ago, but {COLOR GREEN}Bruce{COLOR BLUE}\n"
 	.string "kept on training, and now he's the Gym\l"
 	.string "Leader here!$"
+
+EnclavaTown_Sign_HerbShop_Text_0:
+	.string "{COLOR LIGHT_GREEN}Herb Shop\p"
+	.string "{COLOR DARK_GREY}“Enclava's Local All-Natural Medicine”$"

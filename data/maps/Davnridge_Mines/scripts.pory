@@ -193,6 +193,6 @@ script DavnridgeMines_Object_Miner_3 {
     end
 }
 script DavnridgeMines_Object_Miner_NoPassage {
-    msgbox(format("{COLOR BLUE}Hey bud!\nThis are over here is off limits right now.\pWe're running some explosion tests, so no one is allowed through.\pCome back later when we're done."), MSGBOX_NPC)
+    msgbox(format("{COLOR BLUE}Hey bud!\nThis tunnel over here is off limits right now.\pWe're running some explosion tests, so no one is allowed through.\pCome back later when we're done."), MSGBOX_NPC)
     end
 }

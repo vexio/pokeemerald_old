@@ -444,9 +444,9 @@ script EnclavaTown_Mapscript_Lars {
 	applymovement(LARS, EnclavaTown_Lars_Movement_1)
 	waitmovement(0)
 	delay(5)
-	msgbox(format("???: {COLOR BLUE}Hey there champ!\nYou look like a freshie!\p{COLOR DARK_GREY}Lars: {COLOR BLUE}Name's {COLOR GREEN}Lars{COLOR BLUE}.\nWhat's your's?"))
+	msgbox(format("???: {COLOR BLUE}Hey there champ!\nYou look like a freshie!\p{COLOR DARK_GREY}Lars: {COLOR BLUE}Name's {COLOR GREEN}Lars{COLOR BLUE}.\nWhat's yours?"))
 	closemessage
-	delay(20)
+	delay(25)
 	applymovement(LARS, Common_Movement_QuestionMark)
 	playse(SE_PIN)
 	waitmovement(0)
@@ -492,7 +492,7 @@ movement EnclavaTown_Lars_Movement_0 {
 	walk_in_place_right
 	delay_16
 	walk_in_place_up
-	delay_4
+	delay_8
 	emote_exclamation_mark
 }
 movement EnclavaTown_Lars_Movement_1 {
@@ -600,4 +600,9 @@ script EnclavaTown_Trigger_EnclavaTower {
 
 movement EnclavaTown_EnclavaTower_Movement_0 {
 	walk_up * 5
+}
+
+script EnclavaTown_Sign_HerbShop {
+	msgbox(format("{COLOR LIGHT_GREEN}Herb Shop\p{COLOR DARK_GREY}“Enclava's Local All-Natural Medicine”"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
+	end
 }

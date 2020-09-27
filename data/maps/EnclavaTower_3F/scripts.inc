@@ -6,13 +6,16 @@ EnclavaTower_3F_Object_Fijo::
 	compare VAR_ENCLAVATOWER_STATE, 2
 	goto_if_eq EnclavaTower_3F_Object_Fijo_1
 	msgbox EnclavaTower_3F_Object_Fijo_Text_3, MSGBOX_NPC
+	compare VAR_PROTOGRUNTS_ENCLAVAGORGE, 0
+	goto_if_eq EnclavaTower_3F_Object_Fijo_14
+EnclavaTower_3F_Object_Fijo_13:
 	end
 
 EnclavaTower_3F_Object_Fijo_1:
 	lock
 	faceplayer
 	msgbox EnclavaTower_3F_Object_Fijo_Text_0, MSGBOX_AUTOCLOSE
-	delay 20
+	delay 25
 	applymovement 1, Common_Movement_ExclamationMark
 	waitmovement 0
 	playse SE_PIN
@@ -29,36 +32,37 @@ EnclavaTower_3F_Object_Fijo_1:
 	compare VAR_RESULT, DIR_WEST
 	goto_if_eq EnclavaTower_3F_Object_Fijo_8
 EnclavaTower_3F_Object_Fijo_4:
-	delay 10
-	applymovement 1, Common_Movement_WalkInPlaceUp
-	waitmovement 0
-	delay 8
+	delay 16
 	applymovement 1, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	delay 12
-	applymovement 1, EnclavaTower_3F_Fijo_Movement_2
-	waitmovement 0
-	delay 6
 	applymovement 1, Common_Movement_WalkInPlaceUp
-	waitmovement 0
-	delay 10
-	applymovement 1, Common_Movement_WalkInPlaceUp
-	waitmovement 0
-	delay 8
-	applymovement 1, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 16
+	applymovement 1, EnclavaTower_3F_Fijo_Movement_2
+	waitmovement 0
+	delay 8
+	applymovement 1, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	delay 16
+	applymovement 1, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	delay 14
+	applymovement 1, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 20
 	compare VAR_RESULT, DIR_SOUTH
-	goto_if_eq EnclavaTower_3F_Object_Fijo_14
+	goto_if_eq EnclavaTower_3F_Object_Fijo_17
 	applymovement 1, EnclavaTower_3F_Fijo_Movement_3
 	waitmovement 0
-EnclavaTower_3F_Object_Fijo_13:
+EnclavaTower_3F_Object_Fijo_16:
 	faceplayer
 	delay 5
 	msgbox EnclavaTower_3F_Object_Fijo_Text_2, MSGBOX_AUTOCLOSE
 	giveitem ITEM_RUBY, 1
 	msgbox EnclavaTower_3F_Object_Fijo_Text_3, MSGBOX_AUTOCLOSE
 	setvar VAR_ENCLAVATOWER_STATE, 3
+	setvar VAR_PROTOGRUNTS_ENCLAVAGORGE, 1
 	release
 	end
 
@@ -83,9 +87,13 @@ EnclavaTower_3F_Object_Fijo_8:
 	goto EnclavaTower_3F_Object_Fijo_4
 
 EnclavaTower_3F_Object_Fijo_14:
+	setvar VAR_PROTOGRUNTS_ENCLAVAGORGE, 1
+	goto EnclavaTower_3F_Object_Fijo_13
+
+EnclavaTower_3F_Object_Fijo_17:
 	applymovement 1, EnclavaTower_3F_Fijo_Movement_4
 	waitmovement 0
-	goto EnclavaTower_3F_Object_Fijo_13
+	goto EnclavaTower_3F_Object_Fijo_16
 
 
 EnclavaTower_3F_Fijo_Movement_0:
@@ -149,12 +157,12 @@ EnclavaTower_3F_Object_Fijo_Text_0:
 
 EnclavaTower_3F_Object_Fijo_Text_1:
 	.string "Fijo: {COLOR BLUE}Ah, you're the trainer that {COLOR GREEN}Prof.\n"
-	.string "Cypress{COLOR BLUE} sent to get {COLOR GREEN}The Dorimubkku{COLOR BLUE}...\l"
+	.string "Cypress{COLOR BLUE} sent to get {COLOR GREEN}The Dorimtome{COLOR BLUE}...\l"
 	.string "I see...\p"
 	.string "I'll get that for you.$"
 
 EnclavaTower_3F_Object_Fijo_Text_2:
-	.string "Fijo: {COLOR BLUE}This book, {COLOR GREEN}The Dorimubukku{COLOR BLUE}, is an\n"
+	.string "Fijo: {COLOR BLUE}This book, {COLOR GREEN}The Dorimtome{COLOR BLUE}, is an\n"
 	.string "ancient tome from 100 years ago.\p"
 	.string "It contains many scriptures describing\n"
 	.string "the legendary Pokémon {COLOR GREEN}Cresselia{COLOR BLUE}.\p"

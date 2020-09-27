@@ -22,5 +22,24 @@ LavaridgeTown_House_Text_WifeWarmingEggInHotSprings: @ 81FF92E
 	.string "And they discovered that EGG!$"
 
 LavaridgeTown_House_Text_Zigzagoon: @ 81FF9BB
-	.string "ZIGZAGOON: Pshoo!$"
+	.string "Pshoo!$"
 
+EnclavaTown_House1_Object_OldMan::
+	msgbox EnclavaTown_House1_Object_OldMan_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaTown_House1_Object_Girl::
+	msgbox EnclavaTown_House1_Object_Girl_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaTown_House1_Object_OldMan_Text_0:
+	.string "{COLOR BLUE}My granddaughter likes to keep her\n"
+	.string "Zigzagoon out of his Pokéball.\p"
+	.string "It's irresponsible, but it makes her\n"
+	.string "really happy.$"
+
+EnclavaTown_House1_Object_Girl_Text_0:
+	.string "{COLOR RED}I like Zigzagoon!\p"
+	.string "He is so snuggly and nice to me!$"

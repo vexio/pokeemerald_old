@@ -1,1 +1,6 @@
 mapscripts EnclavaTown_House_2_MapScripts {}
+
+script EnclavaTown_House2_Object_Woman {
+    msgbox(format("{COLOR RED}Lots of strong trainers go to {COLOR GREEN}Enclava Tower{COLOR RED} to train their Pokémon and talk to {COLOR GREEN}Master Fijo{COLOR RED}.\pHe's the Pokémon Master!"), MSGBOX_NPC)
+    end
+}

@@ -61,3 +61,36 @@ OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub: @ 81FC1B9
 	.string "the second floor was built recently.\p"
 	.string "I traded POKéMON right away.$"
 
+AlnerwickCity_PC_Object_Girl::
+	msgbox AlnerwickCity_PC_Object_Girl_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_PC_Object_Boy::
+	msgbox AlnerwickCity_PC_Object_Boy_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_PC_Object_RuinManiac::
+	msgbox AlnerwickCity_PC_Object_RuinManiac_Text_0, MSGBOX_NPC
+	end
+
+
+AlnerwickCity_PC_Object_Girl_Text_0:
+	.string "{COLOR RED}They recently added a mart where you\n"
+	.string "can buy an assortment of items into\l"
+	.string "here.\p"
+	.string "Makes it really convenient!$"
+
+AlnerwickCity_PC_Object_Boy_Text_0:
+	.string "{COLOR BLUE}Pokémon Centers are a great place to\n"
+	.string "rest up.\p"
+	.string "If you talk to the nurse at the\n"
+	.string "counter, she will heal your Pokémon for\l"
+	.string "free!$"
+
+AlnerwickCity_PC_Object_RuinManiac_Text_0:
+	.string "{COLOR RED}The second floor of the Pokémon Center\n"
+	.string "is a great place to relax and get away\l"
+	.string "from all the commotion on the first\l"
+	.string "floor.$"

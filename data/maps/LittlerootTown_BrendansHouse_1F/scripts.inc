@@ -468,7 +468,9 @@ PlayersHouse_Mapscript_GetPokemon_1:
 	waitmessage
 	applymovement 3, Common_Movement_ExclamationMark
 	waitmovement 0
+	playse SE_PIN
 	applymovement 3, Common_Movement_JumpInPlaceLeft
+	playse SE_JITE_PYOKO
 	waitmovement 0
 	applymovement 3, Common_Movement_WalkInPlaceUp
 	waitmovement 0
@@ -487,19 +489,6 @@ PlayersHouse_Mapscript_GetPokemon_1:
 	special ChooseStarter
 	waitstate
 	fadeoutbgm 0
-	playbgm MUS_MISHIRO, 0
-	delay 5
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_3
-	waitmessage
-	delay 40
-	closemessage
-	applymovement 3, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_4
-	closemessage
-	applymovement 3, Common_Movement_WalkInPlaceLeft
-	waitmovement 0
-	delay 20
 	compare VAR_STARTER_MON, 0
 	goto_if_eq PlayersHouse_Mapscript_GetPokemon_4
 	compare VAR_STARTER_MON, 1
@@ -507,11 +496,35 @@ PlayersHouse_Mapscript_GetPokemon_1:
 	compare VAR_STARTER_MON, 2
 	goto_if_eq PlayersHouse_Mapscript_GetPokemon_6
 PlayersHouse_Mapscript_GetPokemon_3:
+	playbgm MUS_MISHIRO, 0
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_6, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq PlayersHouse_Mapscript_GetPokemon_11
+PlayersHouse_Mapscript_GetPokemon_10:
+	delay 5
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_7
+	waitmessage
+	delay 40
+	closemessage
+	applymovement 3, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_8
+	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	delay 20
+	compare VAR_STARTER_MON, 0
+	goto_if_eq PlayersHouse_Mapscript_GetPokemon_14
+	compare VAR_STARTER_MON, 1
+	goto_if_eq PlayersHouse_Mapscript_GetPokemon_15
+	compare VAR_STARTER_MON, 2
+	goto_if_eq PlayersHouse_Mapscript_GetPokemon_16
+PlayersHouse_Mapscript_GetPokemon_13:
 	applymovement 3, Common_Movement_JumpInPlaceLeft
 	waitmovement 0
 	applymovement 3, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_8
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_12
 	closemessage
 	delay 10
 	applymovement 3, PlayersHouse_GetPokemon_Movement_0
@@ -523,30 +536,30 @@ PlayersHouse_Mapscript_GetPokemon_3:
 	waitmovement 0
 	delay 10
 	removeobject 4
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_9
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_13
 	closemessage
 	delay 5
 	playfanfare MUS_FANFA4
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_10
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_14
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
 	setflag FLAG_SYS_NATIONAL_DEX
 	special EnableNationalPokedex
 	special SetUnlockedPokedexFlags
 	playfanfare MUS_FANFA4
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_11
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_15
 	waitfanfare
 	delay 10
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_12, MSGBOX_AUTOCLOSE
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_16, MSGBOX_AUTOCLOSE
 	delay 10
 	applymovement 1, Common_Movement_WalkInPlaceRight
 	waitmovement 0
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_13, MSGBOX_AUTOCLOSE
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_17, MSGBOX_AUTOCLOSE
 	delay 5
 	applymovement 1, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	playfanfare MUS_FANFA4
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_14
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_18
 	waitfanfare
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_RECEIVED_RUNNING_SHOES
@@ -556,7 +569,7 @@ PlayersHouse_Mapscript_GetPokemon_3:
 	waitmovement 0
 	playse SE_PIN
 	delay 15
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_15, MSGBOX_AUTOCLOSE
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_19, MSGBOX_AUTOCLOSE
 	delay 5
 	applymovement 2, PlayersHouse_GetPokemon_Movement_1
 	waitmovement 0
@@ -564,7 +577,7 @@ PlayersHouse_Mapscript_GetPokemon_3:
 	delay 10
 	applymovement 1, Common_Movement_WalkInPlaceRight
 	waitmovement 0
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_16, MSGBOX_AUTOCLOSE
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_20, MSGBOX_AUTOCLOSE
 	setflag FLAG_CANVASTOWN_GETPOKEMON
 	setvar VAR_PLAYERSHOUSE_GETPOKEMON, 1
 	setflag FLAG_SYS_POKEMON_GET
@@ -576,28 +589,45 @@ PlayersHouse_Mapscript_GetPokemon_3:
 	end
 
 PlayersHouse_Mapscript_GetPokemon_4:
-	setvar VAR_STARTER_MON, 0
 	playse MUS_FANFA4
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_5
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_3
 	waitse
-	closemessage
 	goto PlayersHouse_Mapscript_GetPokemon_3
 
 PlayersHouse_Mapscript_GetPokemon_5:
-	setvar VAR_STARTER_MON, 1
 	playse MUS_FANFA4
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_6
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_4
 	waitse
-	closemessage
 	goto PlayersHouse_Mapscript_GetPokemon_3
 
 PlayersHouse_Mapscript_GetPokemon_6:
-	setvar VAR_STARTER_MON, 2
 	playse MUS_FANFA4
-	msgbox PlayersHouse_Mapscript_GetPokemon_Text_7
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_5
 	waitse
-	closemessage
 	goto PlayersHouse_Mapscript_GetPokemon_3
+
+PlayersHouse_Mapscript_GetPokemon_11:
+	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMon
+	goto PlayersHouse_Mapscript_GetPokemon_10
+
+PlayersHouse_Mapscript_GetPokemon_14:
+	playse MUS_FANFA4
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_9
+	waitse
+	goto PlayersHouse_Mapscript_GetPokemon_13
+
+PlayersHouse_Mapscript_GetPokemon_15:
+	playse MUS_FANFA4
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_10
+	waitse
+	goto PlayersHouse_Mapscript_GetPokemon_13
+
+PlayersHouse_Mapscript_GetPokemon_16:
+	playse MUS_FANFA4
+	msgbox PlayersHouse_Mapscript_GetPokemon_Text_11
+	waitse
+	goto PlayersHouse_Mapscript_GetPokemon_13
 
 
 PlayersHouse_GetPokemon_Movement_0:
@@ -646,68 +676,80 @@ PlayersHouse_Mapscript_GetPokemon_Text_0:
 
 PlayersHouse_Mapscript_GetPokemon_Text_1:
 	.string "Skip: {COLOR GREEN}{PLAYER}{COLOR BLUE}!\p"
-	.string "I'm so excited to pick our Starter\n"
-	.string "Pokémon!\p"
-	.string "But!\p"
-	.string "I'm going to be a gentleman, and let you\n"
-	.string "choose your's first.$"
+	.string "I'm so excited to finally be picking our\n"
+	.string "starter Pokémon!\p"
+	.string "Go ahead!\n"
+	.string "I'll let you pick yours first.$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_2:
 	.string "Mom: {COLOR RED}Now go ahead {COLOR GREEN}{PLAYER}{COLOR RED}, choose\n"
 	.string "your starter!$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_3:
-	.string "Mom: {COLOR RED}Good choice!\p"
-	.string "Now, {COLOR GREEN}Skip{COLOR RED}, go ahead and choose yours.\p"
-	.string "{COLOR DARK_GREY}Skip: {COLOR BLUE}Hmmmm...$"
+	.string "{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Rowlet$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_4:
-	.string "Skip: {COLOR BLUE}I know who I'm going to choose!$"
+	.string "{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Chimchar$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_5:
-	.string "Skip received a {COLOR GREEN}Chimchar$"
+	.string "{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Froakie$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_6:
-	.string "Skip received a {COLOR GREEN}Froakie$"
+	.string "Mom: {COLOR RED}Would you like to nickname your\n"
+	.string "Pokemon?$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_7:
-	.string "Skip received a {COLOR GREEN}Rowlet$"
+	.string "Mom: {COLOR RED}Now, {COLOR GREEN}Skip{COLOR RED}, go ahead and choose\n"
+	.string "yours.\p"
+	.string "{COLOR DARK_GREY}Skip: {COLOR BLUE}Hmmmm...$"
 
 PlayersHouse_Mapscript_GetPokemon_Text_8:
+	.string "Skip: {COLOR BLUE}I know who I'm going to choose!$"
+
+PlayersHouse_Mapscript_GetPokemon_Text_9:
+	.string "Skip received a {COLOR GREEN}Chimchar$"
+
+PlayersHouse_Mapscript_GetPokemon_Text_10:
+	.string "Skip received a {COLOR GREEN}Froakie$"
+
+PlayersHouse_Mapscript_GetPokemon_Text_11:
+	.string "Skip received a {COLOR GREEN}Rowlet$"
+
+PlayersHouse_Mapscript_GetPokemon_Text_12:
 	.string "Skip: {COLOR BLUE}I can't believe we have our first\n"
 	.string "Pokémon finally!\p"
 	.string "I'm gonna go tell my Mom!$"
 
-PlayersHouse_Mapscript_GetPokemon_Text_9:
+PlayersHouse_Mapscript_GetPokemon_Text_13:
 	.string "Mom: {COLOR RED}Well {COLOR GREEN}Skip{COLOR RED} left in a hurry!\p"
 	.string "{PLAYER}, will you do me a favor and\n"
 	.string "give him these?$"
 
-PlayersHouse_Mapscript_GetPokemon_Text_10:
+PlayersHouse_Mapscript_GetPokemon_Text_14:
 	.string "{PLAYER} received the Pokédex!$"
 
-PlayersHouse_Mapscript_GetPokemon_Text_11:
+PlayersHouse_Mapscript_GetPokemon_Text_15:
 	.string "{PLAYER} received the Trainer Card!$"
 
-PlayersHouse_Mapscript_GetPokemon_Text_12:
+PlayersHouse_Mapscript_GetPokemon_Text_16:
 	.string "Mom: {COLOR RED}The {COLOR GREEN}Trainer Card{COLOR RED} is your official\n"
 	.string "identification for the {COLOR GREEN}Ryoko Pokémon\l"
 	.string "League{COLOR RED}.$"
 
-PlayersHouse_Mapscript_GetPokemon_Text_13:
+PlayersHouse_Mapscript_GetPokemon_Text_17:
 	.string "Dad: {COLOR BLUE}These shoes will also help you get\n"
 	.string "around from place to place faster.$"
 
-PlayersHouse_Mapscript_GetPokemon_Text_14:
+PlayersHouse_Mapscript_GetPokemon_Text_18:
 	.string "{PLAYER} received the Running Shoes!$"
 
-PlayersHouse_Mapscript_GetPokemon_Text_15:
+PlayersHouse_Mapscript_GetPokemon_Text_19:
 	.string "Mom: {COLOR RED}Oh!\n"
 	.string "I must get going!\p"
 	.string "{COLOR GREEN}{PLAYER}{COLOR RED}, please feel free to visit my\n"
 	.string "Pokémon Lab in {COLOR GREEN}Myst City{COLOR RED}!$"
 
-PlayersHouse_Mapscript_GetPokemon_Text_16:
+PlayersHouse_Mapscript_GetPokemon_Text_20:
 	.string "Dad: {COLOR BLUE}Now then!\p"
 	.string "Start your Pokémon journey!\p"
 	.string "If you and your Pokémon need some\n"

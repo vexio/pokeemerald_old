@@ -309,6 +309,11 @@ AlnerwickLibrary_Thief_CMovement_5:
 	walk_down
 	step_end
 
+AlnerwickLibrary_Object_Librarian::
+	msgbox AlnerwickLibrary_Object_Librarian_Text_0, MSGBOX_NPC
+	end
+
+
 AlnerwickLibrary_Object_Boy_Text_0:
 	.string "{COLOR BLUE}The {COLOR GREEN}Alnerwick Library{COLOR BLUE} is full of lots of\n"
 	.string "information!\p"
@@ -368,3 +373,11 @@ AlnerwickLibrary_Trigger_Thief_Text_4:
 	.string "loss cause.\p"
 	.string "Don't worry, he'll be fined when I get\n"
 	.string "that book back.$"
+
+AlnerwickLibrary_Object_Librarian_Text_0:
+	.string "Librarian: {COLOR RED}I'm not too worried about\n"
+	.string "that thug taking that old book.\p"
+	.string "The book is written in runes, which have\n"
+	.string "yet to be translated.\p"
+	.string "Unless he can translate, that book is\n"
+	.string "worthless.$"

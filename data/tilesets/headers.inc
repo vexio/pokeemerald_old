@@ -951,3 +951,25 @@ gTileset_EnclavaTower::
 	.4byte gMetatiles_EnclavaTower
 	.4byte gMetatileAttributes_EnclavaTower
 	.4byte NULL
+
+	.align 2
+gTileset_Route::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Route
+	.4byte gTilesetPalettes_Route
+	.4byte gMetatiles_Route
+	.4byte gMetatileAttributes_Route
+	.4byte NULL
+
+	.align 2
+gTileset_SnowRoute::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_SnowRoute
+	.4byte gTilesetPalettes_SnowRoute
+	.4byte gMetatiles_SnowRoute
+	.4byte gMetatileAttributes_SnowRoute
+	.4byte NULL

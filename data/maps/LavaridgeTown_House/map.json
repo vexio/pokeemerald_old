@@ -24,7 +24,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LavaridgeTown_House_EventScript_OldMan",
+      "script": "EnclavaTown_House1_Object_OldMan",
       "flag": "0"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LavaridgeTown_House_EventScript_MimicTutor",
+      "script": "EnclavaTown_House1_Object_Girl",
       "flag": "0"
     }
   ],

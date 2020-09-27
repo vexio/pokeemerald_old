@@ -123,3 +123,136 @@ script EnclavaPass_Object_Officer {
     msgbox(format("{COLOR BLUE}Hey there pal!\pThis is the end of the first Beta of {COLOR GREEN}Pokémon Chroma{COLOR BLUE}.\pIf you'd like to use your same save in a future version, please save inside of a {COLOR GREEN}Pokémon Center{COLOR BLUE}.\pThank you so much for playing my game!\pPlease feel free to join the {COLOR GREEN}Official Pokémon Chroma Discord{COLOR BLUE} to give feedback on the game.\pThe link can be found on the official {COLOR GREEN}PokéCommunity{COLOR BLUE} thread.\pOnce again, thank you for playing.\p - vxo, Lead Developer"), MSGBOX_NPC)
     end
 }
+
+const GRUNT_1 = 3
+const GRUNT_2 = 4
+const GRUNT_3 = 5
+const CAMERA = OBJ_EVENT_ID_CAMERA
+
+script EnclavaPass_Trigger_Grunts_0 { // if player hasn't completed enclava tower quest
+	lock
+	delay(10)
+	applymovement(GRUNT_1, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	delay(10)
+	msgbox(format("Grunt 1: {COLOR BLUE}...then we need to-"), MSGBOX_AUTOCLOSE)
+	applymovement(GRUNT_1, Common_Movement_WalkInPlaceUp)
+	applymovement(GRUNT_2, Common_Movement_WalkInPlaceUp)
+	applymovement(GRUNT_3, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	applymovement(GRUNT_1, Common_Movement_ExclamationMark)
+	applymovement(GRUNT_2, Common_Movement_ExclamationMark)
+	applymovement(GRUNT_3, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	delay(15)
+	msgbox(format("Grunt 3: {COLOR RED}Hey kid!\nNothing going on here.\pNow leave before I give you a reason to!"), MSGBOX_AUTOCLOSE)
+	applymovement(GRUNT_1, Common_Movement_WalkInPlaceDown)
+	applymovement(GRUNT_2, Common_Movement_WalkInPlaceRight)
+	applymovement(GRUNT_3, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	delay(5)
+	applymovement(OBJ_EVENT_ID_PLAYER, EnclavaPass_Grunts_Movement_0)
+	waitmovement(0)
+	release
+	end
+}
+movement EnclavaPass_Grunts_Movement_0 {
+	walk_up
+}
+
+
+script EnclavaPass_Trigger_Grunts_1 { // player has completed enclava tower quest
+	lock
+	delay(5)
+	special(SpawnCameraObject)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 12) {
+		applymovement(CAMERA, EnclavaPass_Grunts_CMovement_0_2)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 13) {
+		applymovement(CAMERA, EnclavaPass_Grunts_CMovement_0_1)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 14) {
+		applymovement(CAMERA, EnclavaPass_Grunts_CMovement_0_3)
+		waitmovement(0)
+	}
+	delay(10)
+	applymovement(GRUNT_1, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	delay(10)
+	msgbox(format("Grunt 1: {COLOR BLUE}Why are you still carrying around that dusty old book?"))
+	applymovement(GRUNT_2, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	delay(10)
+	msgbox(format("Grunt 2: {COLOR BLUE}Boss sent me t' get tha book!\pI was jus' followin' orders!"))
+	applymovement(GRUNT_3, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	delay(10)
+	msgbox(format("Grunt 3: {COLOR RED}Will you two shut up?\pWe need to focus on the task at hand!"))
+	applymovement(GRUNT_1, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	delay(10)
+	msgbox(format("Grunt 1: {COLOR BLUE}If I may ask...\nWhat even is our task?"))
+	applymovement(GRUNT_3, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	delay(10)
+	msgbox(format("Grunt 3: {COLOR RED}We need to meetup with {COLOR GREEN}Haumea{COLOR RED}, where he will give us more information on what we need to do."))
+	applymovement(GRUNT_2, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	msgbox(format("Grunt 2: {COLOR GREEN}Haumea{COLOR BLUE}!\nHe won' show up for a while!"))
+	applymovement(GRUNT_3, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	msgbox(format("Grunt 3: {COLOR RED}Just be patient...\pI think we can head further into {COLOR GREEN}Triad Gorge{COLOR RED} and see if we can meet with him faster."))
+	applymovement(GRUNT_2, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	msgbox(format("Grunt 2: {COLOR BLUE}Soun's good t' me!\nLet's go!"), MSGBOX_AUTOCLOSE)
+	delay(5)
+	applymovement(GRUNT_1, EnclavaPass_Grunts_Movement_1)
+	applymovement(GRUNT_2, EnclavaPass_Grunts_Movement_1)
+	applymovement(GRUNT_3, EnclavaPass_Grunts_Movement_1)
+	waitmovement(0)
+	removeobject(GRUNT_1)
+	removeobject(GRUNT_2)
+	removeobject(GRUNT_3)
+	if (var(VAR_TEMP_0) == 12) {
+		applymovement(CAMERA, EnclavaPass_Grunts_CMovement_1_2)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 13) {
+		applymovement(CAMERA, EnclavaPass_Grunts_CMovement_1_1)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 14) {
+		applymovement(CAMERA, EnclavaPass_Grunts_CMovement_1_3)
+		waitmovement(0)
+	}
+	delay(5)
+	special(RemoveCameraObject)
+	setvar(VAR_PROTOGRUNTS_ENCLAVAGORGE, 2)
+	release
+	end
+}
+movement EnclavaPass_Grunts_CMovement_0_1 {
+	walk_down * 3
+}
+movement EnclavaPass_Grunts_CMovement_0_2 {
+	walk_right
+	walk_down * 3
+}
+movement EnclavaPass_Grunts_CMovement_0_3 {
+	walk_left
+	walk_down * 3
+}
+movement EnclavaPass_Grunts_Movement_1 {
+	walk_down * 7
+}
+movement EnclavaPass_Grunts_CMovement_1_1 {
+	walk_up * 3
+}
+movement EnclavaPass_Grunts_CMovement_1_2 {
+	walk_up * 3
+	walk_left
+}
+movement EnclavaPass_Grunts_CMovement_1_3 {
+	walk_up * 3
+	walk_right
+}

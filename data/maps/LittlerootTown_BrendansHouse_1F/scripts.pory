@@ -471,12 +471,14 @@ script PlayersHouse_Mapscript_GetPokemon {
 		waitmessage
 		applymovement(SKIP_ID, Common_Movement_ExclamationMark)
 		waitmovement(0)
+		playse(SE_PIN)
 		applymovement(SKIP_ID, Common_Movement_JumpInPlaceLeft)
+		playse(SE_JITE_PYOKO)
 		waitmovement(0)
 		applymovement(SKIP_ID, Common_Movement_WalkInPlaceUp)
 		waitmovement(0)
 		delay(10)
-		msgbox(format("Skip: {COLOR GREEN}{PLAYER}{COLOR BLUE}!\pI'm so excited to pick our Starter Pokémon!\pBut!\pI'm going to be a gentleman, and let you choose your's first."))
+		msgbox(format("Skip: {COLOR GREEN}{PLAYER}{COLOR BLUE}!\pI'm so excited to finally be picking our starter Pokémon!\pGo ahead!\nI'll let you pick yours first."))
 		waitmessage
 		applymovement(SKIP_ID, Common_Movement_WalkInPlaceLeft)
 		waitmovement(0)
@@ -490,9 +492,27 @@ script PlayersHouse_Mapscript_GetPokemon {
 		special(ChooseStarter)
 		waitstate
 		fadeoutbgm(0)
+		if (var(VAR_STARTER_MON) == 0) {
+			playse(MUS_FANFA4)
+			msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Rowlet"))
+			waitse
+		} elif (var(VAR_STARTER_MON) == 1) {
+			playse(MUS_FANFA4)
+			msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Chimchar"))
+			waitse
+		} elif (var(VAR_STARTER_MON) == 2) {
+			playse(MUS_FANFA4)
+			msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Froakie"))
+			waitse
+		}
 		playbgm(MUS_MISHIRO, 0)
+		msgbox(format("Mom: {COLOR RED}Would you like to nickname your Pokemon?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			setvar(VAR_0x8004, 0)
+			call(Common_EventScript_NameReceivedPartyMon)
+		}
 		delay(5)
-		msgbox(format("Mom: {COLOR RED}Good choice!\pNow, {COLOR GREEN}Skip{COLOR RED}, go ahead and choose yours.\p{COLOR DARK_GREY}Skip: {COLOR BLUE}Hmmmm..."))
+		msgbox(format("Mom: {COLOR RED}Now, {COLOR GREEN}Skip{COLOR RED}, go ahead and choose yours.\p{COLOR DARK_GREY}Skip: {COLOR BLUE}Hmmmm..."))
 		waitmessage
 		delay(40)
 		closemessage
@@ -504,23 +524,17 @@ script PlayersHouse_Mapscript_GetPokemon {
 		waitmovement(0)
 		delay(20)
 		if (var(VAR_STARTER_MON) == 0) { //player chose rowlet, rival is chimchar
-			setvar(VAR_STARTER_MON, 0)
 			playse(MUS_FANFA4)
 			msgbox(format("Skip received a {COLOR GREEN}Chimchar"))
 			waitse
-			closemessage
 		} elif (var(VAR_STARTER_MON) == 1) { //player chose chimchar, rival is froakie
-			setvar(VAR_STARTER_MON, 1)
 			playse(MUS_FANFA4)
 			msgbox(format("Skip received a {COLOR GREEN}Froakie"))
 			waitse
-			closemessage
 		} elif (var(VAR_STARTER_MON) == 2) { //player chose froakie, rival is rowlet
-			setvar(VAR_STARTER_MON, 2)
 			playse(MUS_FANFA4)
 			msgbox(format("Skip received a {COLOR GREEN}Rowlet"))
 			waitse
-			closemessage
 		}
 		applymovement(SKIP_ID, Common_Movement_JumpInPlaceLeft)
 		waitmovement(0)

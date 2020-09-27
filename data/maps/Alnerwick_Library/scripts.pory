@@ -213,3 +213,8 @@ movement AlnerwickLibrary_Thief_CMovement_4 {
 movement AlnerwickLibrary_Thief_CMovement_5 {
     walk_down
 }
+
+script AlnerwickLibrary_Object_Librarian {
+    msgbox(format("Librarian: {COLOR RED}I'm not too worried about that thug taking that old book.\pThe book is written in runes, which have yet to be translated.\pUnless he can translate, that book is worthless."), MSGBOX_NPC)
+    end
+}

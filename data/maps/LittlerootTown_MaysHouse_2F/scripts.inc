@@ -4,8 +4,7 @@ LittlerootTown_MaysHouse_2F_MapScripts:: @ 81F9296
 	.byte 0
 
 LittlerootTown_MaysHouse_2F_OnTransition: @ 81F92A1
-    compare VAR_CANVASTOWN_RIVALBATTLE, 1
-    call_if_eq SkipsHouse_Mapscript_Locations
+    call_if_set FLAG_CANVASTOWN_RIVALBATTLE, SkipsHouse_Mapscript_Locations
 	compare VAR_LITTLEROOT_RIVAL_STATE, 2
 	call_if_lt LittlerootTown_MaysHouse_2F_EventScript_CheckSetReadyToMeetMay
 	compare VAR_LITTLEROOT_RIVAL_STATE, 3

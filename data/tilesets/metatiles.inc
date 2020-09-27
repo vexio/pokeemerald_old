@@ -635,3 +635,25 @@ gMetatiles_EnclavaTower::
 	.align 1
 gMetatileAttributes_EnclavaTower::
 	.incbin "data/tilesets/secondary/enclavatower/metatile_attributes.bin"
+	.align 1
+gMetatiles_TriadGorge::
+	.incbin "data/tilesets/primary/triadgorge/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_TriadGorge::
+	.incbin "data/tilesets/primary/triadgorge/metatile_attributes.bin"
+	.align 1
+	
+gMetatiles_Route::
+	.incbin "data/tilesets/secondary/route/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Route::
+	.incbin "data/tilesets/secondary/route/metatile_attributes.bin"
+	.align 1
+gMetatiles_SnowRoute::
+	.incbin "data/tilesets/secondary/snowroute/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_SnowRoute::
+	.incbin "data/tilesets/secondary/snowroute/metatile_attributes.bin"

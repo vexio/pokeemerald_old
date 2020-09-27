@@ -7,12 +7,12 @@ script EnclavaTower_3F_Object_Fijo {
         lock
         faceplayer
         msgbox(format("Fijo: {COLOR BLUE}Hello child.\nWhat brings you here?"), MSGBOX_AUTOCLOSE)
-        delay(20)
+        delay(25)
         applymovement(FIJO, Common_Movement_ExclamationMark)
         waitmovement(0)
         playse(SE_PIN)
         delay(16)
-        msgbox(format("Fijo: {COLOR BLUE}Ah, you're the trainer that {COLOR GREEN}Prof. Cypress{COLOR BLUE} sent to get {COLOR GREEN}The Dorimubkku{COLOR BLUE}...\lI see...\pI'll get that for you."), MSGBOX_AUTOCLOSE)
+        msgbox(format("Fijo: {COLOR BLUE}Ah, you're the trainer that {COLOR GREEN}Prof. Cypress{COLOR BLUE} sent to get {COLOR GREEN}The Dorimtome{COLOR BLUE}...\lI see...\pI'll get that for you."), MSGBOX_AUTOCLOSE)
         delay(10)
         specialvar(VAR_RESULT, GetPlayerFacingDirection)
         if (var(VAR_RESULT) == DIR_NORTH) {
@@ -28,25 +28,25 @@ script EnclavaTower_3F_Object_Fijo {
             applymovement(FIJO, EnclavaTower_3F_Fijo_Movement_1)
             waitmovement(0)
         }
-        delay(10)
-        applymovement(FIJO, Common_Movement_WalkInPlaceUp)
-        waitmovement(0)
-        delay(8)
+        delay(16)
         applymovement(FIJO, Common_Movement_WalkInPlaceUp)
         waitmovement(0)
         delay(12)
-        applymovement(FIJO, EnclavaTower_3F_Fijo_Movement_2)
-        waitmovement(0)
-        delay(6)
         applymovement(FIJO, Common_Movement_WalkInPlaceUp)
-        waitmovement(0)
-        delay(10)
-        applymovement(FIJO, Common_Movement_WalkInPlaceUp)
-        waitmovement(0)
-        delay(8)
-        applymovement(FIJO, Common_Movement_ExclamationMark)
         waitmovement(0)
         delay(16)
+        applymovement(FIJO, EnclavaTower_3F_Fijo_Movement_2)
+        waitmovement(0)
+        delay(8)
+        applymovement(FIJO, Common_Movement_WalkInPlaceUp)
+        waitmovement(0)
+        delay(16)
+        applymovement(FIJO, Common_Movement_WalkInPlaceUp)
+        waitmovement(0)
+        delay(14)
+        applymovement(FIJO, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        delay(20)
         if (var(VAR_RESULT) == DIR_SOUTH) {
             applymovement(FIJO, EnclavaTower_3F_Fijo_Movement_4)
             waitmovement(0)
@@ -56,14 +56,18 @@ script EnclavaTower_3F_Object_Fijo {
         }
         faceplayer
         delay(5)
-        msgbox(format("Fijo: {COLOR BLUE}This book, {COLOR GREEN}The Dorimubukku{COLOR BLUE}, is an ancient tome from 100 years ago.\pIt contains many scriptures describing the legendary Pokémon {COLOR GREEN}Cresselia{COLOR BLUE}.\pThe author of this book claims that {COLOR GREEN}Cresselia{COLOR BLUE} has psychic-powers that can put anyone to sleep instantly, and bring them happy dreams.\pThese dreams bring the slumbered recovery and good health.\p{COLOR GREEN}Cresselia{COLOR BLUE}, however, has never been discovered or recorded using modern technology, so she remains a myth.\pI don't know what {COLOR GREEN}Prof. Cypress{COLOR BLUE} wants to do with this book, but I respect her needs."), MSGBOX_AUTOCLOSE)
+        msgbox(format("Fijo: {COLOR BLUE}This book, {COLOR GREEN}The Dorimtome{COLOR BLUE}, is an ancient tome from 100 years ago.\pIt contains many scriptures describing the legendary Pokémon {COLOR GREEN}Cresselia{COLOR BLUE}.\pThe author of this book claims that {COLOR GREEN}Cresselia{COLOR BLUE} has psychic-powers that can put anyone to sleep instantly, and bring them happy dreams.\pThese dreams bring the slumbered recovery and good health.\p{COLOR GREEN}Cresselia{COLOR BLUE}, however, has never been discovered or recorded using modern technology, so she remains a myth.\pI don't know what {COLOR GREEN}Prof. Cypress{COLOR BLUE} wants to do with this book, but I respect her needs."), MSGBOX_AUTOCLOSE)
         giveitem(ITEM_RUBY, 1)
         msgbox(format("Fijo: {COLOR BLUE}Please be careful with that book.\pThat book contains a lot of secret techniques that only wise individuals know how to utilize.\pMake good choices until you deliver that book to {COLOR GREEN}Prof. Cypress{COLOR BLUE} in {COLOR GREEN}Myst City{COLOR BLUE}."), MSGBOX_AUTOCLOSE)
         setvar(VAR_ENCLAVATOWER_STATE, 3)
+        setvar(VAR_PROTOGRUNTS_ENCLAVAGORGE, 1)
         release
         end  
     } else {
         msgbox(format("Fijo: {COLOR BLUE}Please be careful with that book.\pThat book contains a lot of secret techniques that only wise individuals know how to utilize.\pMake good choices until you deliver that book to {COLOR GREEN}Prof. Cypress{COLOR BLUE} in {COLOR GREEN}Myst City{COLOR BLUE}."), MSGBOX_NPC)
+        if (var(VAR_PROTOGRUNTS_ENCLAVAGORGE) == 0) {
+            setvar(VAR_PROTOGRUNTS_ENCLAVAGORGE, 1)
+        }
         end
     }
 }

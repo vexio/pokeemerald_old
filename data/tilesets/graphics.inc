@@ -1949,3 +1949,63 @@ gTilesetPalettes_EnclavaTower::
 	.align 2
 gTilesetTiles_EnclavaTower::
 	.incbin "data/tilesets/secondary/enclavatower/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_TriadGorge::
+	.incbin "data/tilesets/primary/triadgorge/palettes/00.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/01.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/02.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/03.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/04.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/05.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/06.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/07.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/08.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/09.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/10.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/11.gbapal"
+	.incbin "data/tilesets/primary/triadgorge/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_TriadGorge::
+	.incbin "data/tilesets/primary/triadgorge/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Route::
+	.incbin "data/tilesets/secondary/route/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/route/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Route::
+	.incbin "data/tilesets/secondary/route/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_SnowRoute::
+	.incbin "data/tilesets/secondary/snowroute/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/snowroute/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_SnowRoute::
+	.incbin "data/tilesets/secondary/snowroute/tiles.4bpp.lz"

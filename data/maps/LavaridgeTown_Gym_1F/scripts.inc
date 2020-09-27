@@ -579,7 +579,7 @@ EnclavaGym_Trainer_Pokefan_Text_2:
 EnclavaGym_Trainer_Leader_Bruce_Text_0:
 	.string "Bruce: {COLOR BLUE}Hello challenger.\p"
 	.string "My name is Bruce, and I am the master of\n"
-	.string "the Normal typed Pokémon.\p"
+	.string "the Normal-type Pokémon.\p"
 	.string "You may have defeated my adversaries,\n"
 	.string "but you don't stand a chance against\l"
 	.string "me!$"
@@ -595,13 +595,13 @@ EnclavaGym_Trainer_Leader_Bruce_Text_3:
 	.string "Bruce: {COLOR BLUE}This badge will prove your\n"
 	.string "strength, and allow you to enter\l"
 	.string "{COLOR GREEN}Enclava Tower{COLOR BLUE}.\p"
-	.string "As well, this TM.$"
+	.string "As well, take this TM.$"
 
 EnclavaGym_Trainer_Leader_Bruce_Text_4:
-	.string "Bruce: {COLOR BLUE}That TM is a special one.\p"
-	.string "It's power relies on the environment\n"
-	.string "you are battling in, and can be\l"
-	.string "extremely powerful if used correctly!\p"
+	.string "Bruce: {COLOR BLUE}That TM has a unique power.\p"
+	.string "Its power relies on the environment you\n"
+	.string "are battling in, and can be extremely\l"
+	.string "powerful if used correctly.\p"
 	.string "Your next Gym Challenge will be in\n"
 	.string "{COLOR GREEN}Pinefrost City{COLOR BLUE}, which is north from the\l"
 	.string "{COLOR GREEN}Triad Gorge{COLOR BLUE}.$"

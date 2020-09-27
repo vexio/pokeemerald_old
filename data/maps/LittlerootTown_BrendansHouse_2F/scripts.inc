@@ -309,7 +309,7 @@ PlayersHouse_2F_Text_Notebook: @ 81F877F
 
 Common_Text_LookCloserAtMap: @ 81F8820
 	.string "{PLAYER} took a closer look at the\n"
-	.string "{COLOR GREEN}Ryoko{COLOR DARK_GREY} region map.$"
+	.string "HOENN region map.$"
 
 PlayersHouse_2F_Text_ItsAGameCube: @ 81F884F
 	.string "It's a Nintendo GameCube.\p"
@@ -390,6 +390,7 @@ PlayersHouse_Script_PlayerEmail::
 	delay 10
 	playse SE_PC_ON
 	setmetatile 0, 2, 639, 1
+	special DrawWholeMapView
 	msgbox PlayersHouse_Script_PlayerEmail_Text_1
 	compare VAR_PLAYERSHOUSE_HASPLAYEREMAILED, 0
 	goto_if_eq PlayersHouse_Script_PlayerEmail_1
@@ -414,6 +415,7 @@ PlayersHouse_Script_PlayerEmail_1:
 	closemessage
 	playse SE_PC_OFF
 	setmetatile 0, 2, 602, 1
+	special DrawWholeMapView
 	releaseall
 	end
 
@@ -423,6 +425,7 @@ PlayersHouse_Script_PlayerEmail_4:
 	closemessage
 	playse SE_PC_OFF
 	setmetatile 0, 2, 602, 1
+	special DrawWholeMapView
 	releaseall
 	end
 

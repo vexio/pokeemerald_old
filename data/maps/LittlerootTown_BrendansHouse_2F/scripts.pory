@@ -386,6 +386,7 @@ script PlayersHouse_Script_PlayerEmail {
 	delay(10)
 	playse(SE_PC_ON)
 	setmetatile(0, 2, 639, 1)
+	special(DrawWholeMapView)
 	msgbox(format("WELCOME {PLAYER}!"))
 	if (var(VAR_PLAYERSHOUSE_HASPLAYEREMAILED) == 0) {
 		msgbox(format("EMAIL {COLOR GREEN}SKIP{COLOR DARK_GREY}?"), MSGBOX_YESNO)
@@ -396,6 +397,7 @@ script PlayersHouse_Script_PlayerEmail {
 			closemessage
 			playse(SE_PC_OFF)
 			setmetatile(0, 2, 602, 1)
+			special(DrawWholeMapView)
 			releaseall
 			end
 		} else{
@@ -412,6 +414,7 @@ script PlayersHouse_Script_PlayerEmail {
 			closemessage
 			playse(SE_PC_OFF)
 			setmetatile(0, 2, 602, 1)
+			special(DrawWholeMapView)
 			releaseall
 			end
 		}

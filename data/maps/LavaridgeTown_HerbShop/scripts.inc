@@ -43,7 +43,7 @@ LavaridgeTown_HerbShop_EventScript_ExplainCharcoal:: @ 81FE534
 	end
 
 LavaridgeTown_HerbShop_Text_WelcomeToHerbShop: @ 81FE53E
-	.string "Welcome to the HERB SHOP, home of\n"
+	.string "{COLOR RED}Welcome to the {COLOR GREEN}Herb Shop{COLOR RED}, home of\n"
 	.string "effective and inexpensive medicine!$"
 
 LavaridgeTown_HerbShop_Text_YouveComeToLookAtHerbalMedicine: @ 81FE584
@@ -65,3 +65,22 @@ LavaridgeTown_HerbShop_Text_HerbalMedicineWorksButMonWillDislike: @ 81FE685
 	.string "But your POKéMON will dislike you for it.\l"
 	.string "It must be horribly bitter!$"
 
+EnclavaTown_HerbShop_Object_Expert::
+	msgbox EnclavaTown_HerbShop_Object_Expert_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaTown_HerbShop_Object_OldMan::
+	msgbox EnclavaTown_HerbShop_Object_OldMan_Text_0, MSGBOX_NPC
+	end
+
+
+EnclavaTown_HerbShop_Object_Expert_Text_0:
+	.string "{COLOR BLUE}Herbs are a very powerful items that\n"
+	.string "can be used on your Pokémon to help\l"
+	.string "give you an advantage in battle.$"
+
+EnclavaTown_HerbShop_Object_OldMan_Text_0:
+	.string "{COLOR BLUE}Herbs may be an affordable way to heal\n"
+	.string "your Pokémon, but they don't like the\l"
+	.string "bitter taste of them.$"

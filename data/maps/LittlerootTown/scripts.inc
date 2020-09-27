@@ -1292,6 +1292,7 @@ CanvasTown_Trigger_RivalBattle_17:
 	giveitem ITEM_POKE_BALL, 10
 	setvar VAR_CANVASTOWN_RIVALBATTLE, 1
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setflag FLAG_CANVASTOWN_RIVALBATTLE
 	release
 	end
 

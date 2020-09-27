@@ -122,6 +122,180 @@ EnclavaPass_Object_Officer::
 	end
 
 
+EnclavaPass_Trigger_Grunts_0::
+	lock
+	delay 10
+	applymovement 3, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	delay 10
+	msgbox EnclavaPass_Trigger_Grunts_0_Text_0, MSGBOX_AUTOCLOSE
+	applymovement 3, Common_Movement_WalkInPlaceUp
+	applymovement 4, Common_Movement_WalkInPlaceUp
+	applymovement 5, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	applymovement 3, Common_Movement_ExclamationMark
+	applymovement 4, Common_Movement_ExclamationMark
+	applymovement 5, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 15
+	msgbox EnclavaPass_Trigger_Grunts_0_Text_1, MSGBOX_AUTOCLOSE
+	applymovement 3, Common_Movement_WalkInPlaceDown
+	applymovement 4, Common_Movement_WalkInPlaceRight
+	applymovement 5, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	delay 5
+	applymovement OBJ_EVENT_ID_PLAYER, EnclavaPass_Grunts_Movement_0
+	waitmovement 0
+	release
+	end
+
+
+EnclavaPass_Grunts_Movement_0:
+	walk_up
+	step_end
+
+EnclavaPass_Trigger_Grunts_1::
+	lock
+	delay 5
+	special SpawnCameraObject
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 12
+	goto_if_eq EnclavaPass_Trigger_Grunts_1_2
+	compare VAR_TEMP_0, 13
+	goto_if_eq EnclavaPass_Trigger_Grunts_1_3
+	compare VAR_TEMP_0, 14
+	goto_if_eq EnclavaPass_Trigger_Grunts_1_4
+EnclavaPass_Trigger_Grunts_1_1:
+	delay 10
+	applymovement 3, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	delay 10
+	msgbox EnclavaPass_Trigger_Grunts_1_Text_0
+	applymovement 4, Common_Movement_WalkInPlaceRight
+	waitmovement 0
+	delay 10
+	msgbox EnclavaPass_Trigger_Grunts_1_Text_1
+	applymovement 5, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	delay 10
+	msgbox EnclavaPass_Trigger_Grunts_1_Text_2
+	applymovement 3, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	delay 10
+	msgbox EnclavaPass_Trigger_Grunts_1_Text_3
+	applymovement 5, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	delay 10
+	msgbox EnclavaPass_Trigger_Grunts_1_Text_4
+	applymovement 4, Common_Movement_ExclamationMark
+	playse SE_PIN
+	waitmovement 0
+	msgbox EnclavaPass_Trigger_Grunts_1_Text_5
+	applymovement 5, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	msgbox EnclavaPass_Trigger_Grunts_1_Text_6
+	applymovement 4, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	msgbox EnclavaPass_Trigger_Grunts_1_Text_7, MSGBOX_AUTOCLOSE
+	delay 5
+	applymovement 3, EnclavaPass_Grunts_Movement_1
+	applymovement 4, EnclavaPass_Grunts_Movement_1
+	applymovement 5, EnclavaPass_Grunts_Movement_1
+	waitmovement 0
+	compare VAR_TEMP_0, 12
+	goto_if_eq EnclavaPass_Trigger_Grunts_1_9
+	compare VAR_TEMP_0, 13
+	goto_if_eq EnclavaPass_Trigger_Grunts_1_10
+	compare VAR_TEMP_0, 14
+	goto_if_eq EnclavaPass_Trigger_Grunts_1_11
+EnclavaPass_Trigger_Grunts_1_8:
+	delay 5
+	special RemoveCameraObject
+	setvar VAR_PROTOGRUNTS_ENCLAVAGORGE, 2
+	release
+	end
+
+EnclavaPass_Trigger_Grunts_1_2:
+	applymovement OBJ_EVENT_ID_CAMERA, EnclavaPass_Grunts_CMovement_0_2
+	waitmovement 0
+	goto EnclavaPass_Trigger_Grunts_1_1
+
+EnclavaPass_Trigger_Grunts_1_3:
+	applymovement OBJ_EVENT_ID_CAMERA, EnclavaPass_Grunts_CMovement_0_1
+	waitmovement 0
+	goto EnclavaPass_Trigger_Grunts_1_1
+
+EnclavaPass_Trigger_Grunts_1_4:
+	applymovement OBJ_EVENT_ID_CAMERA, EnclavaPass_Grunts_CMovement_0_3
+	waitmovement 0
+	goto EnclavaPass_Trigger_Grunts_1_1
+
+EnclavaPass_Trigger_Grunts_1_9:
+	applymovement OBJ_EVENT_ID_CAMERA, EnclavaPass_Grunts_CMovement_1_2
+	waitmovement 0
+	goto EnclavaPass_Trigger_Grunts_1_8
+
+EnclavaPass_Trigger_Grunts_1_10:
+	applymovement OBJ_EVENT_ID_CAMERA, EnclavaPass_Grunts_CMovement_1_1
+	waitmovement 0
+	goto EnclavaPass_Trigger_Grunts_1_8
+
+EnclavaPass_Trigger_Grunts_1_11:
+	applymovement OBJ_EVENT_ID_CAMERA, EnclavaPass_Grunts_CMovement_1_3
+	waitmovement 0
+	goto EnclavaPass_Trigger_Grunts_1_8
+
+
+EnclavaPass_Grunts_CMovement_0_1:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+EnclavaPass_Grunts_CMovement_0_2:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+EnclavaPass_Grunts_CMovement_0_3:
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+EnclavaPass_Grunts_Movement_1:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+EnclavaPass_Grunts_CMovement_1_1:
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+EnclavaPass_Grunts_CMovement_1_2:
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	step_end
+
+EnclavaPass_Grunts_CMovement_1_3:
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	step_end
+
 EnclavaPass_Trigger_NoPass_Text_0:
 	.string "{COLOR BLUE}Hey there pal!\p"
 	.string "This is the end of the first Beta of\n"
@@ -137,3 +311,46 @@ EnclavaPass_Trigger_NoPass_Text_0:
 	.string "{COLOR GREEN}PokéCommunity{COLOR BLUE} thread.\p"
 	.string "Once again, thank you for playing.\p"
 	.string "- vxo, Lead Developer$"
+
+EnclavaPass_Trigger_Grunts_0_Text_0:
+	.string "Grunt 1: {COLOR BLUE}...then we need to-$"
+
+EnclavaPass_Trigger_Grunts_0_Text_1:
+	.string "Grunt 3: {COLOR RED}Hey kid!\n"
+	.string "Nothing going on here.\p"
+	.string "Now leave before I give you a reason to!$"
+
+EnclavaPass_Trigger_Grunts_1_Text_0:
+	.string "Grunt 1: {COLOR BLUE}Why are you still carrying\n"
+	.string "around that dusty old book?$"
+
+EnclavaPass_Trigger_Grunts_1_Text_1:
+	.string "Grunt 2: {COLOR BLUE}Boss sent me t' get tha book!\p"
+	.string "I was jus' followin' orders!$"
+
+EnclavaPass_Trigger_Grunts_1_Text_2:
+	.string "Grunt 3: {COLOR RED}Will you two shut up?\p"
+	.string "We need to focus on the task at hand!$"
+
+EnclavaPass_Trigger_Grunts_1_Text_3:
+	.string "Grunt 1: {COLOR BLUE}If I may ask...\n"
+	.string "What even is our task?$"
+
+EnclavaPass_Trigger_Grunts_1_Text_4:
+	.string "Grunt 3: {COLOR RED}We need to meetup with {COLOR GREEN}Haumea{COLOR RED},\n"
+	.string "where he will give us more information\l"
+	.string "on what we need to do.$"
+
+EnclavaPass_Trigger_Grunts_1_Text_5:
+	.string "Grunt 2: {COLOR GREEN}Haumea{COLOR BLUE}!\n"
+	.string "He won' show up for a while!$"
+
+EnclavaPass_Trigger_Grunts_1_Text_6:
+	.string "Grunt 3: {COLOR RED}Just be patient...\p"
+	.string "I think we can head further into {COLOR GREEN}Triad\n"
+	.string "Gorge{COLOR RED} and see if we can meet with him\l"
+	.string "faster.$"
+
+EnclavaPass_Trigger_Grunts_1_Text_7:
+	.string "Grunt 2: {COLOR BLUE}Soun's good t' me!\n"
+	.string "Let's go!$"
