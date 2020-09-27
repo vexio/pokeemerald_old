@@ -1,0 +1,9 @@
+raw `
+OldaleTown_House1_MapScripts:: @ 81FBE85
+	.byte 0
+`
+
+script AlnerwickCity_House1_Object_Woman {
+    msgbox(format("{COLOR GREEN}Alnerwick City{COLOR RED} is my favorite city in all of Ryoko.\pIt's such a small city that is calming as well, not nearly as chaotic as {COLOR GREEN}Myst City{COLOR RED}."), MSGBOX_NPC)
+    end
+}

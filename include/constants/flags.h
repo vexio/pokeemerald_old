@@ -660,7 +660,7 @@
 #define FLAG_DAVNRIDGEMINES_LILITH  0x26A // DavnridgeMines_Trigger_Lilith
 #define FLAG_ENCLAVATOWN_TOWERMAN  0x26B // EnclavaTower Tower man
 #define FLAG_RECIEVED_TOWN_MAP  0x26C // Recieved Town Map
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
+#define FLAG_CANVASTOWN_RIVALBATTLE  0x26D // rivalbattle
 #define FLAG_UNUSED_0x26E  0x26E // Unused Flag
 #define FLAG_UNUSED_0x26F  0x26F // Unused Flag
 #define FLAG_UNUSED_0x270  0x270 // Unused Flag

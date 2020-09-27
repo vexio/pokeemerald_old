@@ -1403,7 +1403,7 @@ const s8 gNatureStatTable[][NUM_EV_STATS] =
     {    0,  0, -1,    +1,     0}, // Quiet
     {    0,  0,  0,     0,     0}, // Bashful
     {    0,  0,  0,    +1,    -1}, // Rash
-    {   -1,  0,  0,     0,    +1}, // Calm
+    {   -1,  0,  0,     0,    +1}, // Calm 
     {    0, -1,  0,     0,    +1}, // Gentle
     {    0,  0, -1,     0,    +1}, // Sassy
     {    0,  0,  0,    -1,    +1}, // Careful

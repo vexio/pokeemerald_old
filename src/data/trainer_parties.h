@@ -3346,8 +3346,8 @@ static const struct TrainerMonNoItemCustomMoves sParty_Brawly1[] = {
     {
     .iv = 100,
     .lvl = 18,
-    .species = SPECIES_URSARING,
-    .moves = {MOVE_STOMP, MOVE_CUT, MOVE_REST, MOVE_FAKE_TEARS}
+    .species = SPECIES_LOPUNNY,
+    .moves = {MOVE_QUICK_ATTACK, MOVE_BOUNCE, MOVE_BABY_DOLL_EYES, MOVE_DOUBLE_KICK}
     }
 };
 static const struct TrainerMonItemCustomMoves sParty_Wattson1[] = {
@@ -12358,6 +12358,8 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+
 
 
 
