@@ -661,7 +661,7 @@
 #define FLAG_ENCLAVATOWN_TOWERMAN  0x26B // EnclavaTower Tower man
 #define FLAG_RECIEVED_TOWN_MAP  0x26C // Recieved Town Map
 #define FLAG_CANVASTOWN_RIVALBATTLE  0x26D // rivalbattle
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
+#define FLAG_ENCLAVAPASS_GRUNTS  0x26E // EnclavaPass Grunts
 #define FLAG_UNUSED_0x26F  0x26F // Unused Flag
 #define FLAG_UNUSED_0x270  0x270 // Unused Flag
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag

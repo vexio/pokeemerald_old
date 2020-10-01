@@ -27,10 +27,10 @@
 #define TRAINER_EXPERT_TOBIAS              23
 #define TRAINER_EXPERT_YASMIN              24
 #define TRAINER_HEXMANIAC_DEJA              25
-#define TRAINER_GRUNT_WEATHER_INST_4         26
-#define TRAINER_GRUNT_AQUA_HIDEOUT_5         27
-#define TRAINER_GRUNT_AQUA_HIDEOUT_6         28
-#define TRAINER_FREDRICK                     29
+#define TRAINER_GRUNT_TRIAD_GORGE_1         26
+#define TRAINER_GRUNT_TRIAD_GORGE_2         27
+#define TRAINER_GRUNT_TRIAD_GORGE_3         28
+#define TRAINER_ADMIN_HAUMEA_1                     29
 #define TRAINER_MATT                         30
 #define TRAINER_ZANDER                       31
 #define TRAINER_SHELLY_WEATHER_INSTITUTE     32

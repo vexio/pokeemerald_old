@@ -840,19 +840,19 @@ DavnridgeTown_Sign_Mines::
 
 
 DavnridgeTown_Trainer_Test1::
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_4, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
+	trainerbattle_single TRAINER_GRUNT_TRIAD_GORGE_1, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
 	msgbox DavnridgeTown_Trainer_Test1_Text_2, MSGBOX_NPC
 	end
 
 
 DavnridgeTown_Trainer_Test2::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_5, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
+	trainerbattle_single TRAINER_GRUNT_TRIAD_GORGE_2, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
 	msgbox DavnridgeTown_Trainer_Test1_Text_2, MSGBOX_NPC
 	end
 
 
 DavnridgeTown_Trainer_Test3::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_6, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
+	trainerbattle_single TRAINER_GRUNT_TRIAD_GORGE_3, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
 	msgbox DavnridgeTown_Trainer_Test1_Text_2, MSGBOX_NPC
 	end
 

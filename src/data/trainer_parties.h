@@ -241,37 +241,31 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GruntMtPyre3[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntWeatherInst4[] = {
     {
     .iv = 0,
-    .lvl = 1,
-    .species = SPECIES_PIDGEY,
+    .lvl = 14,
+    .species = SPECIES_GOLBAT,
     }
 };
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntAquaHideout5[] = {
     {
     .iv = 0,
-    .lvl = 1,
-    .species = SPECIES_PIDGEY,
+    .lvl = 14,
+    .species = SPECIES_GOLBAT,
     }
 };
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntAquaHideout6[] = {
     {
     .iv = 0,
-    .lvl = 1,
-    .species = SPECIES_PIDGEY,
+    .lvl = 14,
+    .species = SPECIES_GRIMER,
     }
 };
 static const struct TrainerMonNoItemDefaultMoves sParty_Fredrick[] = {
     {
-    .iv = 100,
-    .lvl = 30,
-    .species = SPECIES_MAKUHITA,
-    },
-    {
-    .iv = 100,
-    .lvl = 30,
-    .species = SPECIES_MACHOKE,
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_WEEZING,
     }
 };
-
 static const struct TrainerMonNoItemDefaultMoves sParty_Matt[] = {
     {
     .iv = 50,
@@ -12358,6 +12352,16 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+
+
+
+
+
+
+
+
+
 
 
 

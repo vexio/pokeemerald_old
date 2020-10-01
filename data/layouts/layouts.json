@@ -224,8 +224,8 @@
     {
       "id": "LAYOUT_ROUTE107",
       "name": "Route107_Layout",
-      "width": 36,
-      "height": 48,
+      "width": 38,
+      "height": 56,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_SnowRoute",
       "border_filepath": "data/layouts/Route107/border.bin",

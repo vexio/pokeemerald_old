@@ -14,8 +14,8 @@ Route105_OnLoad: @ 81EE1EB
 	end
 
 Route105_CloseRegiEntrance:: @ 81EE20B
-	setmetatile 9, 19, METATILE_General_RockWall_RockBase, 1
-	setmetatile 9, 20, METATILE_General_RockWall_SandBase, 1
+	@setmetatile 9, 19, METATILE_General_RockWall_RockBase, 1
+	@setmetatile 9, 20, METATILE_General_RockWall_SandBase, 1
 	return
 
 Route105_OnTransition: @ 81EE21E
@@ -103,6 +103,17 @@ Route104_Text_RegisteredDadInPokenav: @ 81EE463
 	.string "Registered DAD NORMAN\n"
 	.string "in the POKéNAV.$"
 `
+
+script EnclavaPass_Object_Youngster {
+	if (var(VAR_PROTOGRUNTS_ENCLAVAGORGE) == 0) {
+		msgbox(format("{COLOR BLUE}I wonder what those thugs are doing down there..."), MSGBOX_NPC)
+		end
+	} else {
+		msgbox(format("{COLOR BLUE}Looks like they finally opened up the path!\pNow you can go through {COLOR GREEN}Triad Gorge{COLOR BLUE}!"), MSGBOX_NPC)
+		end
+	}
+	
+}
 
 script EnclavaPass_Trigger_NoPass {
     lockall
@@ -228,6 +239,7 @@ script EnclavaPass_Trigger_Grunts_1 { // player has completed enclava tower ques
 	delay(5)
 	special(RemoveCameraObject)
 	setvar(VAR_PROTOGRUNTS_ENCLAVAGORGE, 2)
+	setflag(FLAG_ENCLAVAPASS_GRUNTS)
 	release
 	end
 }

@@ -835,17 +835,17 @@ script DavnridgeTown_Sign_Mines {
 }
 
 script DavnridgeTown_Trainer_Test1 {
-	trainerbattle_single(TRAINER_GRUNT_WEATHER_INST_4, format("intro"), format("lose"))
+	trainerbattle_single(TRAINER_GRUNT_TRIAD_GORGE_1, format("intro"), format("lose"))
 	msgbox(format("fuck!"), MSGBOX_NPC)
 	end
 }
 script DavnridgeTown_Trainer_Test2 {
-	trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_5, format("intro"), format("lose"))
+	trainerbattle_single(TRAINER_GRUNT_TRIAD_GORGE_2, format("intro"), format("lose"))
 	msgbox(format("fuck!"), MSGBOX_NPC)
 	end
 }
 script DavnridgeTown_Trainer_Test3 {
-	trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_6, format("intro"), format("lose"))
+	trainerbattle_single(TRAINER_GRUNT_TRIAD_GORGE_3, format("intro"), format("lose"))
 	msgbox(format("fuck!"), MSGBOX_NPC)
 	end
 }

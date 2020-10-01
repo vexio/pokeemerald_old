@@ -13,8 +13,8 @@ Route105_OnLoad: @ 81EE1EB
 	end
 
 Route105_CloseRegiEntrance:: @ 81EE20B
-	setmetatile 9, 19, METATILE_General_RockWall_RockBase, 1
-	setmetatile 9, 20, METATILE_General_RockWall_SandBase, 1
+	@setmetatile 9, 19, METATILE_General_RockWall_RockBase, 1
+	@setmetatile 9, 20, METATILE_General_RockWall_SandBase, 1
 	return
 
 Route105_OnTransition: @ 81EE21E
@@ -101,6 +101,17 @@ Route104_Text_DadPokenavCall: @ 81EE336
 Route104_Text_RegisteredDadInPokenav: @ 81EE463
 	.string "Registered DAD NORMAN\n"
 	.string "in the POKéNAV.$"
+
+EnclavaPass_Object_Youngster::
+	compare VAR_PROTOGRUNTS_ENCLAVAGORGE, 0
+	goto_if_eq EnclavaPass_Object_Youngster_1
+	msgbox EnclavaPass_Object_Youngster_Text_1, MSGBOX_NPC
+	end
+
+EnclavaPass_Object_Youngster_1:
+	msgbox EnclavaPass_Object_Youngster_Text_0, MSGBOX_NPC
+	end
+
 
 EnclavaPass_Trigger_NoPass::
 	lockall
@@ -194,7 +205,7 @@ EnclavaPass_Trigger_Grunts_1_1:
 	applymovement 5, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	msgbox EnclavaPass_Trigger_Grunts_1_Text_6
-	applymovement 4, Common_Movement_WalkInPlaceLeft
+	applymovement 4, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox EnclavaPass_Trigger_Grunts_1_Text_7, MSGBOX_AUTOCLOSE
 	delay 5
@@ -202,6 +213,9 @@ EnclavaPass_Trigger_Grunts_1_1:
 	applymovement 4, EnclavaPass_Grunts_Movement_1
 	applymovement 5, EnclavaPass_Grunts_Movement_1
 	waitmovement 0
+	removeobject 3
+	removeobject 4
+	removeobject 5
 	compare VAR_TEMP_0, 12
 	goto_if_eq EnclavaPass_Trigger_Grunts_1_9
 	compare VAR_TEMP_0, 13
@@ -212,6 +226,7 @@ EnclavaPass_Trigger_Grunts_1_8:
 	delay 5
 	special RemoveCameraObject
 	setvar VAR_PROTOGRUNTS_ENCLAVAGORGE, 2
+	setflag FLAG_ENCLAVAPASS_GRUNTS
 	release
 	end
 
@@ -295,6 +310,15 @@ EnclavaPass_Grunts_CMovement_1_3:
 	walk_up
 	walk_right
 	step_end
+
+EnclavaPass_Object_Youngster_Text_0:
+	.string "{COLOR BLUE}I wonder what those thugs are doing\n"
+	.string "down there...$"
+
+EnclavaPass_Object_Youngster_Text_1:
+	.string "{COLOR BLUE}Looks like they finally opened up the\n"
+	.string "path!\p"
+	.string "Now you can go through {COLOR GREEN}Triad Gorge{COLOR BLUE}!$"
 
 EnclavaPass_Trigger_NoPass_Text_0:
 	.string "{COLOR BLUE}Hey there pal!\p"

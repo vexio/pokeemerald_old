@@ -1,3 +1,4 @@
+raw `
 Route106_MapScripts:: @ 81EE489
 	.byte 0
 
@@ -47,64 +48,53 @@ Route106_Text_TrainerTips: @ 81EE53A
 	.string "Advice on catching POKéMON with a ROD:\n"
 	.string "Press the A Button if you get a bite.$"
 
-TriadGorge_Trigger_ProtoGrunts::
-	lockall
-	fadescreen FADE_TO_BLACK
-	cleartrainerflag TRAINER_GRUNT_TRIAD_GORGE_1
-	cleartrainerflag TRAINER_GRUNT_TRIAD_GORGE_2
-	cleartrainerflag TRAINER_GRUNT_TRIAD_GORGE_3
-	cleartrainerflag TRAINER_ADMIN_HAUMEA_1
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	compare VAR_TEMP_1, 20
-	goto_if_eq TriadGorge_Trigger_ProtoGrunts_2
-	compare VAR_TEMP_1, 22
-	goto_if_eq TriadGorge_Trigger_ProtoGrunts_3
-	compare VAR_TEMP_1, 23
-	goto_if_eq TriadGorge_Trigger_ProtoGrunts_4
-TriadGorge_Trigger_ProtoGrunts_1:
-	delay 5
-	special SpawnCameraObject
-	applymovement OBJ_EVENT_ID_CAMERA, TriadGorge_ProtoGrunts_CMovement_0
-	waitmovement 0
-	fadescreen FADE_FROM_BLACK
+
+`
+
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const GRUNT_1 = 5
+const GRUNT_2 = 4
+const GRUNT_3 = 3
+const HAUMEA = 2
+const CAMERA = OBJ_EVENT_ID_CAMERA
+
+script TriadGorge_Trigger_ProtoGrunts {
+    lockall
+    fadescreen(FADE_TO_BLACK)
+    cleartrainerflag(TRAINER_GRUNT_TRIAD_GORGE_1)
+    cleartrainerflag(TRAINER_GRUNT_TRIAD_GORGE_2)
+    cleartrainerflag(TRAINER_GRUNT_TRIAD_GORGE_3)
+    cleartrainerflag(TRAINER_ADMIN_HAUMEA_1)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if (var(VAR_TEMP_1) == 20) {
+        applymovement(PLAYER, TriadGorge_ProtoGrunts_Movement_0_0)
+        waitmovement(0)
+    } elif(var(VAR_TEMP_1) == 22) {
+		applymovement(PLAYER, TriadGorge_ProtoGrunts_Movement_0_1)
+        waitmovement(0)
+	} elif(var(VAR_TEMP_1) == 23) {
+		applymovement(PLAYER, TriadGorge_ProtoGrunts_Movement_0_2)
+        waitmovement(0)
+	}
+	delay(5)
+	special(SpawnCameraObject)
+	applymovement(CAMERA, TriadGorge_ProtoGrunts_CMovement_0)
+	waitmovement(0)
+	fadescreen(FADE_FROM_BLACK)
 	end
-
-TriadGorge_Trigger_ProtoGrunts_2:
-	applymovement OBJ_EVENT_ID_PLAYER, TriadGorge_ProtoGrunts_Movement_0_0
-	waitmovement 0
-	goto TriadGorge_Trigger_ProtoGrunts_1
-
-TriadGorge_Trigger_ProtoGrunts_3:
-	applymovement OBJ_EVENT_ID_PLAYER, TriadGorge_ProtoGrunts_Movement_0_1
-	waitmovement 0
-	goto TriadGorge_Trigger_ProtoGrunts_1
-
-TriadGorge_Trigger_ProtoGrunts_4:
-	applymovement OBJ_EVENT_ID_PLAYER, TriadGorge_ProtoGrunts_Movement_0_2
-	waitmovement 0
-	goto TriadGorge_Trigger_ProtoGrunts_1
-
-
-TriadGorge_ProtoGrunts_Movement_0_0:
-	walk_fastest_down
-	walk_in_place_fastest_right
-	step_end
-
-TriadGorge_ProtoGrunts_Movement_0_1:
-	walk_fastest_up
-	walk_in_place_fastest_right
-	step_end
-
-TriadGorge_ProtoGrunts_Movement_0_2:
-	walk_fastest_up
-	walk_fastest_up
-	walk_in_place_fastest_right
-	step_end
-
-TriadGorge_ProtoGrunts_CMovement_0:
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	walk_fastest_right
-	step_end
+}
+movement TriadGorge_ProtoGrunts_Movement_0_0 {
+    walk_fastest_down
+    walk_in_place_fastest_right
+}
+movement TriadGorge_ProtoGrunts_Movement_0_1 {
+    walk_fastest_up
+    walk_in_place_fastest_right
+}
+movement TriadGorge_ProtoGrunts_Movement_0_2 {
+    walk_fastest_up * 2
+    walk_in_place_fastest_right
+}
+movement TriadGorge_ProtoGrunts_CMovement_0 {
+	walk_fastest_right * 5
+}
