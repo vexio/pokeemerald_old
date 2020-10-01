@@ -1,3 +1,4 @@
+raw `
 LavaridgeTown_PokemonCenter_1F_MapScripts:: @ 81FFAFA
 	map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_PokemonCenter_1F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
@@ -47,20 +48,21 @@ LavaridgeTown_PokemonCenter_1F_Text_TrainersShouldRestToo: @ 81FFC21
 	.string "If POKéMON are getting rest, so too\n"
 	.string "should their TRAINERS.$"
 
-EnclavaTown_PC_Object_HexManiac::
-	checkpartymon SPECIES_MANKEY
-	compare VAR_RESULT, 6
-	goto_if_ne EnclavaTown_PC_Object_HexManiac_1
-	msgbox EnclavaTown_PC_Object_HexManiac_Text_1, MSGBOX_NPC
-	end
+`
 
-EnclavaTown_PC_Object_HexManiac_1:
-	msgbox EnclavaTown_PC_Object_HexManiac_Text_0, MSGBOX_NPC
-	end
-
-
-EnclavaTown_PC_Object_HexManiac_Text_0:
-	.string "monkey$"
-
-EnclavaTown_PC_Object_HexManiac_Text_1:
-	.string "no monkey$"
+script EnclavaTown_PC_Object_HexManiac {
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}..."))
+    checkpartymon(SPECIES_GASTLY)
+    if (var(VAR_RESULT) != 6) {
+        applymovement(6, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        delay(16)
+        msgbox(format("{COLOR RED}Is that a Gastly?\pGastly is a "))
+        end
+    } else {
+        msgbox("no monkey", MSGBOX_NPC)
+        end
+    }
+}

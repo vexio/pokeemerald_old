@@ -1559,6 +1559,12 @@
 	.2byte \quantity
 	.endm
 
+	@ Checks to see if the player has a Pokemon in their party. Returns a true or false value; best way to check is if VAR_RESULT != 6, then it's TRUE, else makes it FALSE.
+	.macro checkpartymon species:req
+	.byte 0xe3
+	.2byte \species
+	.endm
+
 
 @ Supplementary
 

@@ -49,6 +49,7 @@
 #include "tv.h"
 #include "window.h"
 #include "constants/event_objects.h"
+#include "constants/pokemon.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(void);
@@ -1721,6 +1722,32 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;
             break;
+        }
+    }
+    return FALSE;
+}
+
+bool8 ScrCmd_checkpartymon(struct ScriptContext *ctx)
+{
+    u16 speciesLook = VarGet(ScriptReadHalfword(ctx));
+    u8 i;
+    
+
+    gSpecialVar_Result = PARTY_SIZE;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            u16 speciesFor = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+            if (!speciesFor)
+                break;
+            if (speciesFor == speciesLook)
+            {
+                gSpecialVar_Result = i;
+                break;
+            }
+        
         }
     }
     return FALSE;

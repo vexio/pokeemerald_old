@@ -118,8 +118,8 @@
 #define OBJ_EVENT_GFX_CABLE_CAR                   114
 #define OBJ_EVENT_GFX_SCIENTIST_2                 115
 #define OBJ_EVENT_GFX_DEVON_EMPLOYEE              116
-#define OBJ_EVENT_GFX_AQUA_MEMBER_M               117
-#define OBJ_EVENT_GFX_AQUA_MEMBER_F               118
+#define OBJ_EVENT_GFX_PROTO_GRUNT_M               117
+#define OBJ_EVENT_GFX_PROTO_GRUNT_F               118
 #define OBJ_EVENT_GFX_ENGINEER                    119
 #define OBJ_EVENT_GFX_OFFICER                     120
 #define OBJ_EVENT_GFX_SIDNEY                      121
