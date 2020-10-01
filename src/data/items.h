@@ -1424,6 +1424,18 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
+    [ITEM_LINK_CABLE] =
+    {
+        .name = _("Link Cable"),
+        .itemId = ITEM_LINK_CABLE,
+        .price = 2100,
+        .description = sLinkCableDesc,
+        .pocket = POCKET_ITEMS,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .secondaryId = 0,
+    },
+
 // Valuable items
 
     [ITEM_RED_APRICORN] =

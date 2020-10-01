@@ -59,9 +59,10 @@ bool8 gTrainerApproachedPlayer;
 EWRAM_DATA u8 gApproachingTrainerId = 0;
 
 // const rom data
-static const u8 sEmotion_ExclamationMarkGfx[] = INCBIN_U8("graphics/misc/emotion_exclamation.4bpp");
-static const u8 sEmotion_QuestionMarkGfx[] = INCBIN_U8("graphics/misc/emotion_question.4bpp");
-static const u8 sEmotion_HeartGfx[] = INCBIN_U8("graphics/misc/emotion_heart.4bpp");
+static const u32 sEmotion_ExclamationMarkGfx[] = INCBIN_U32("graphics/misc/emotion_exclamation.4bpp");
+static const u32 sEmotion_QuestionMarkGfx[] = INCBIN_U32("graphics/misc/emotion_question.4bpp");
+static const u32 sEmotion_HeartGfx[] = INCBIN_U32("graphics/misc/emotion_heart.4bpp"); 
+static const u16 sEmotion_Palette[] = INCBIN_U16("graphics/misc/emotions.gbapal");
 
 static u8 (*const sDirectionalApproachDistanceFuncs[])(struct ObjectEvent *trainerObj, s16 range, s16 x, s16 y) =
 {
@@ -153,7 +154,7 @@ static const union AnimCmd *const sSpriteAnimTable_Icons[] =
 static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 {
     .tileTag = 0xffff,
-    .paletteTag = 0xffff,
+    .paletteTag = 0x1006,
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_ExclamationQuestionMark,
@@ -164,7 +165,7 @@ static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 static const struct SpriteTemplate sSpriteTemplate_HeartIcon =
 {
     .tileTag = 0xffff,
-    .paletteTag = 0x1004,
+    .paletteTag = 0x1006,
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_HeartIcon,

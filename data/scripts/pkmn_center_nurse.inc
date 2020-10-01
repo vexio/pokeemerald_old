@@ -70,8 +70,9 @@ EventScript_PkmnCenterNurse_ReturnPkmn:: @ 82719E2
     applymovement VAR_0x800B, EventScript_PkmnCenterNurse_Bow
     waitmovement 0
     message gText_WeHopeToSeeYouAgain
-    @applymovement OBJ_EVENT_ID_PLAYER, EventScript_PlayerTurnAround
-    @waitmovement 0
+    waitmessage
+    waitbuttonpress
+    goto EventScript_PkmnCenterNurse_PlayerTurn
     return
 
 EventScript_PkmnCenterNurse_ReturnPkmn2:: @ 8271A03
@@ -80,9 +81,17 @@ EventScript_PkmnCenterNurse_ReturnPkmn2:: @ 8271A03
     applymovement VAR_0x800B, EventScript_PkmnCenterNurse_Bow
     waitmovement 0
     message gText_WeHopeToSeeYouAgain2
-    @applymovement OBJ_EVENT_ID_PLAYER, EventScript_PlayerTurnAround
-    @waitmovement 0
+    waitmessage
+    waitbuttonpress
+    goto EventScript_PkmnCenterNurse_PlayerTurn
     return
+
+EventScript_PkmnCenterNurse_PlayerTurn::
+    closemessage
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown
+    waitmovement 0
+    release
+    end
 
 EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom:: @ 8271A19
     goto_if_set FLAG_NURSE_UNION_ROOM_REMINDER, EventScript_PkmnCenterNurse_ReturnPkmn

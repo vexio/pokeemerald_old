@@ -1733,7 +1733,7 @@ bool8 ScrCmd_checkpartymon(struct ScriptContext *ctx)
     u8 i;
     
 
-    gSpecialVar_Result = PARTY_SIZE;
+    gSpecialVar_Result = FALSE;
     for (i = 0; i < PARTY_SIZE; i++)
     {
         struct Pokemon *pokemon = &gPlayerParty[i];
@@ -1744,7 +1744,7 @@ bool8 ScrCmd_checkpartymon(struct ScriptContext *ctx)
                 break;
             if (speciesFor == speciesLook)
             {
-                gSpecialVar_Result = i;
+                gSpecialVar_Result = TRUE;
                 break;
             }
         

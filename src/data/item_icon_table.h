@@ -589,4 +589,5 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_ROCK_MEMORY] = {gItemIcon_RockMemory, gItemIconPalette_RockMemory},
     [ITEM_STEEL_MEMORY] = {gItemIcon_SteelMemory, gItemIconPalette_SteelMemory},
     [ITEM_WATER_MEMORY] = {gItemIcon_WaterMemory, gItemIconPalette_WaterMemory},
+    [ITEM_LINK_CABLE] = {gItemIcon_IceStone, gItemIconPalette_IceStone},
 };

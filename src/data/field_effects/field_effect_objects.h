@@ -2,6 +2,8 @@ const struct SpritePalette gFieldEffectObjectPaletteInfo0 = {gFieldEffectObjectP
 
 const struct SpritePalette gFieldEffectObjectPaletteInfo1 = {gFieldEffectObjectPalette1, 0x1005};
 
+const struct SpritePalette gFieldEffectObjectPaletteInfo11 = {gFieldEffectObjectPalette11, 0x1006};
+
 const union AnimCmd gFieldEffectObjectImageAnim_850C9D0[] =
 {
     ANIMCMD_FRAME(0, 1),

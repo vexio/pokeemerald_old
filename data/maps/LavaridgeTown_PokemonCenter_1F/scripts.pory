@@ -54,15 +54,60 @@ script EnclavaTown_PC_Object_HexManiac {
     lock
     faceplayer
     msgbox(format("{COLOR RED}..."))
-    checkpartymon(SPECIES_GASTLY)
-    if (var(VAR_RESULT) != 6) {
-        applymovement(6, Common_Movement_ExclamationMark)
+    if (flag(FLAG_ITEM_ENCLAVA_PC_LINK_CABLE) == TRUE) {
+        applymovement(6, Common_Movement_WalkInPlaceUp)
         waitmovement(0)
-        delay(16)
-        msgbox(format("{COLOR RED}Is that a Gastly?\pGastly is a "))
+        closemessage
+        release
         end
     } else {
-        msgbox("no monkey", MSGBOX_NPC)
-        end
+        checkpartymon(SPECIES_HAUNTER)
+        if (var(VAR_RESULT) == TRUE) {
+            applymovement(6, Common_Movement_ExclamationMark)
+            waitmovement(0)
+            delay(16)
+            msgbox(format("{COLOR RED}Is that a Haunter?\pHaunter is a unique Pokémon, as it can only evolve through the usage of a {COLOR GREEN}Link Cable{COLOR RED}.\pHere, take one."))
+            giveitem(ITEM_LINK_CABLE, 1)
+            msgbox(format("{COLOR RED}That can be used on more than Haunter, some other Pokémon can only evolve through the {COLOR GREEN}Link Cable{COLOR RED}."), MSGBOX_AUTOCLOSE)
+            applymovement(6, Common_Movement_WalkInPlaceUp)
+            waitmovement(0)
+            setflag(FLAG_ITEM_ENCLAVA_PC_LINK_CABLE)
+            release
+            end
+        } else {
+            applymovement(6, Common_Movement_WalkInPlaceUp)
+            waitmovement(0)
+            closemessage
+            release
+            end
+        }
     }
+    
+}
+
+script EnclavaTown_PC_Object_Woman {
+    msgbox(format("{COLOR RED}I think Pokémon get closer to their trainers if they spend time together.\pThe longer, the better!"), MSGBOX_NPC)
+    end
+}
+script EnclavaTown_PC_Object_RuinManiac {
+    msgbox(format("{COLOR BLUE}Ohoho!\nIt feels nice to finally sit down after hiking!"), MSGBOX_NPC)
+    end
+}
+script EnclavaTown_PC_Object_Youngster {
+    msgbox(format("{COLOR BLUE}Look!\nIt's the region map!\pYou can find out where you are in relation to other landmarks and cities!"), MSGBOX_NPC)
+    end
+}
+script EmoteTest {
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    delay(16)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark)
+    waitmovement(0)
+    delay(16)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_HeartEmote)
+    waitmovement(0)
+    delay(16)
+    release
+    end
 }

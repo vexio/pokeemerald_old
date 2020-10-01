@@ -74,7 +74,8 @@ gFieldEffectScriptPointers:: @ 82DB9D4
 	.4byte gFieldEffectScript_MoveDeoxysRock
 
 gFieldEffectScript_ExclamationMarkIcon1:: @ 82DBAE0
-	field_eff_callnative FldEff_ExclamationMarkIcon
+	//field_eff_callnative FldEff_ExclamationMarkIcon
+	field_eff_loadfadedpal_callnative gFieldEffectObjectPaletteInfo11, FldEff_ExclamationMarkIcon
 	field_eff_end
 
 gFieldEffectScript_UseCutOnTallGrass:: @ 82DBAE6
@@ -207,7 +208,8 @@ gFieldEffectScript_FlyIn:: @ 82DBBE9
 	field_eff_end
 
 gFieldEffectScript_QuestionMarkIcon:: @ 82DBBEF
-	field_eff_callnative FldEff_QuestionMarkIcon
+	//field_eff_callnative FldEff_QuestionMarkIcon
+	field_eff_loadfadedpal_callnative gFieldEffectObjectPaletteInfo11, FldEff_QuestionMarkIcon
 	field_eff_end
 
 gFieldEffectScript_FeetInFlowingWater:: @ 82DBBF5
@@ -260,7 +262,7 @@ gFieldEffectScript_Pokeball:: @ 82DBC4B
 	field_eff_end
 
 gFieldEffectScript_HeartIcon:: @ 82DBC56
-	field_eff_loadfadedpal_callnative gFieldEffectObjectPaletteInfo0, FldEff_HeartIcon
+	field_eff_loadfadedpal_callnative gFieldEffectObjectPaletteInfo11, FldEff_HeartIcon
 	field_eff_end
 
 gFieldEffectScript_Unknown47:: @ 82DBC60
