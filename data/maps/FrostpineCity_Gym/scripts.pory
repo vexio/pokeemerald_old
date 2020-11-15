@@ -1,0 +1,172 @@
+mapscripts FrostpineCity_Gym_MapScripts {}
+
+script FrostpineGym_Trigger_Button_1 {
+    lockall
+    delay(5)
+    playse(SE_TOY_DANGO)
+    setmetatile(11, 20, METATILE_FrostpineGym_StoneBridge_Top, 0)
+    setmetatile(11, 21, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0)
+    setmetatile(11, 22, METATILE_FrostpineGym_StoneBridge_Bottom, 0)
+
+    setmetatile(12, 20, METATILE_FrostpineGym_StoneBridge_Top, 0)
+    setmetatile(12, 21, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0)
+    setmetatile(12, 22, METATILE_FrostpineGym_StoneBridge_Bottom, 0)
+
+    setmetatile(13, 20, METATILE_FrostpineGym_StoneBridge_Top, 0)
+    setmetatile(13, 21, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0)
+    setmetatile(13, 22, METATILE_FrostpineGym_StoneBridge_Bottom, 0)
+
+    setmetatile(14, 20, METATILE_FrostpineGym_StoneBridge_Top, 0)
+    setmetatile(14, 21, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0)
+    setmetatile(14, 22, METATILE_FrostpineGym_StoneBridge_Bottom, 0)
+
+    setmetatile(10, 18, METATILE_FrostpineGym_ButtonActivated, 0)
+    special(DrawWholeMapView)
+    setvar(VAR_TEMP_F, 1)
+    releaseall
+    end
+}
+script FrostpineGym_Trigger_Button_2 {
+    lockall
+    delay(5)
+    playse(SE_TOY_DANGO)
+    setmetatile(5, 20, METATILE_FrostpineGym_StoneBridge_Top, 0)
+    setmetatile(5, 21, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0)
+    setmetatile(5, 22, METATILE_FrostpineGym_StoneBridge_Bottom, 0)
+
+    setmetatile(4, 20, METATILE_FrostpineGym_StoneBridge_Top, 0)
+    setmetatile(4, 21, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0)
+    setmetatile(4, 22, METATILE_FrostpineGym_StoneBridge_Bottom, 0)
+
+    setmetatile(3, 20, METATILE_FrostpineGym_StoneBridge_Top, 0)
+    setmetatile(3, 21, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0)
+    setmetatile(3, 22, METATILE_FrostpineGym_StoneBridge_Bottom, 0)
+
+    setmetatile(16, 13, METATILE_FrostpineGym_ButtonActivated, 0)
+    special(DrawWholeMapView)
+    setvar(VAR_TEMP_E, 1)
+    releaseall
+    end
+}
+script FrostpineGym_Trigger_Button_3 {
+    lockall
+    delay(5)
+    playse(SE_TOY_DANGO)
+    setmetatile(0, 16, METATILE_FrostpineGym_StoneBridge_Left, 0)
+    setmetatile(1, 16, METATILE_FrostpineGym_StoneBridge_Horizontal_Middle, 0)
+    setmetatile(2, 16, METATILE_FrostpineGym_StoneBridge_Right, 0)
+
+    setmetatile(0, 15, METATILE_FrostpineGym_StoneBridge_Left, 0)
+    setmetatile(1, 15, METATILE_FrostpineGym_StoneBridge_Horizontal_Middle, 0)
+    setmetatile(2, 15, METATILE_FrostpineGym_StoneBridge_Right, 0)
+
+    setmetatile(0, 25, METATILE_FrostpineGym_ButtonActivated_Dark, 0)
+    special(DrawWholeMapView)
+    setvar(VAR_TEMP_D, 1)
+    releaseall
+    end
+}
+script FrostpineGym_Trigger_Button_4 {
+    lockall
+    delay(5)
+    playse(SE_TOY_DANGO)
+    setmetatile(3, 12, METATILE_FrostpineGym_StoneBridge_Top, 0)
+    setmetatile(3, 13, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0)
+    setmetatile(3, 14, METATILE_FrostpineGym_StoneBridge_Bottom, 0)
+
+    setmetatile(4, 12, METATILE_FrostpineGym_StoneBridge_Top, 0)
+    setmetatile(4, 13, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0)
+    setmetatile(4, 14, METATILE_FrostpineGym_StoneBridge_Bottom, 0)
+
+    setmetatile(5, 12, METATILE_FrostpineGym_StoneBridge_Top, 0)
+    setmetatile(5, 13, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0)
+    setmetatile(5, 14, METATILE_FrostpineGym_StoneBridge_Bottom, 0)
+
+    setmetatile(1, 13, METATILE_FrostpineGym_ButtonActivated, 0)
+    special(DrawWholeMapView)
+    setvar(VAR_TEMP_C, 1)
+    releaseall
+    end
+}
+script FrostpineGym_Trigger_Button_5 {
+    lockall
+    delay(5)
+    playse(SE_TOY_DANGO)
+    setmetatile(7, 10, METATILE_FrostpineGym_StoneBridge_Left, 0)
+    setmetatile(8, 10, METATILE_FrostpineGym_StoneBridge_Horizontal_Middle, 0)
+    setmetatile(9, 10, METATILE_FrostpineGym_StoneBridge_Right, 0)
+
+    setmetatile(7, 9, METATILE_FrostpineGym_StoneBridge_Left, 0)
+    setmetatile(8, 9, METATILE_FrostpineGym_StoneBridge_Horizontal_Middle, 0)
+    setmetatile(9, 9, METATILE_FrostpineGym_StoneBridge_Right, 0)
+
+    setmetatile(7, 8, METATILE_FrostpineGym_StoneBridge_Left, 0)
+    setmetatile(8, 8, METATILE_FrostpineGym_StoneBridge_Horizontal_Middle, 0)
+    setmetatile(9, 8, METATILE_FrostpineGym_StoneBridge_Right, 0)
+
+    setmetatile(11, 14, METATILE_FrostpineGym_ButtonActivated, 0)
+    special(DrawWholeMapView)
+    setvar(VAR_TEMP_B, 1)
+    releaseall
+    end
+}
+
+script FrostpineGym_Sign_GymSign {
+    if (flag(FLAG_BADGE03_GET) == true) {
+        msgbox(format("{COLOR RED}Frostpine Pokémon Gym\p{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Fire\n{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bernie\p{COLOR DARK_GREY}Winning Trainers: {COLOR LIGHT_GREEN}Skip, {PLAYER}"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    } else {
+        msgbox(format("{COLOR RED}Frostpine Pokémon Gym\p{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Fire\n{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bernie\p{COLOR DARK_GREY}Winning Trainers: {COLOR LIGHT_GREEN}Skip"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    }
+    end
+}
+
+script FrostpineGym_Object_Man {
+    msgbox(format("{COLOR BLUE}Hey there Champ!\pThis gym is making me sweat, and not because I'm working out!\pThis gym's challenge puzzle consists of bridges and buttons.\pUse the buttons to activate the bridges, and work your way towards {COLOR GREEN}Bernie{COLOR BLUE}, the Gym Leader!"), MSGBOX_NPC)
+    end
+}
+
+script FrostpineGym_Trainer_Kindler_1 {
+    trainerbattle_single(TRAINER_GYM_KINDLER_ISAI, format("{COLOR BLUE}Stuck on an island surrounded by lava, eh?"), format("Sizzling!"))
+    msgbox(format("{COLOR BLUE}These buttons on each island will activate it's corresponding bridge."), MSGBOX_NPC)
+    end
+}
+script FrostpineGym_Trainer_Maniac {
+    trainerbattle_single(TRAINER_GYM_MANIAC_COREY, format("{COLOR BLUE}Fire-type Pokémon are the best!"), format("Gah!\nFizzled out..."))
+    msgbox(format("{COLOR BLUE}Fire-type Pokémon are weak to Water-type Pokémon and Ground-type Pokémon."), MSGBOX_NPC)
+    end
+}
+script FrostpineGym_Trainer_Ranger_F {
+    trainerbattle_single(TRAINER_GYM_RANGER_F_AMARI, format("{COLOR RED}I've been training my Fire-type Pokémon to eventually be a Pokémon Gym Trainer!\pPrepare to lose!"), format("Wow, you have some strong Pokémon!"))
+    msgbox(format("{COLOR RED}Fire-type Pokémon may be the best, but their weaknesses are really powerful against them."), MSGBOX_NPC)
+    end
+}
+script FrostpineGym_Trainer_Kindler_2 {
+    trainerbattle_single(TRAINER_GYM_KINDLER_FRANCO, format("{COLOR BLUE}I'm the last trainer between you and {COLOR GREEN}Bernie{COLOR BLUE}!"), format("Ouch!"))
+    msgbox(format("{COLOR GREEN}Bernie{COLOR BLUE} is way better than me!\pGood luck against him!"), MSGBOX_NPC)
+    end
+}
+script FrostpineGym_Trainer_Bernie {
+    lock
+    faceplayer
+    if (flag(FLAG_BADGE03_GET) == false) {
+        msgbox(format("Bernie: {COLOR BLUE}Hello fellow trainer!\pEr... uh..."))
+        applymovement(1, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        delay(16)
+        msgbox(format("Bernie: {COLOR BLUE}Right right!\nWe need to battle!\pI hope you have some Burn Heals on you, prepare to feel the burn!"), MSGBOX_AUTOCLOSE)
+        trainerbattle_no_intro(TRAINER_GYM_LEADER_BERNIE, format("I lost again to you blasted young trainers!"))
+        setflag(FLAG_BADGE03_GET)
+        playfanfare(MUS_ME_BACHI)
+		msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Fiery Badge"))
+        waitfanfare
+        msgbox(format("Bernie: {COLOR BLUE}You youngings have gotten a lot better at battling, but I won't give up on improving!\pThis badge will allow you to use {COLOR GREEN}Rock Smash{COLOR BLUE} outside of battle.\pAs well, take this TM!"))
+		giveitem(ITEM_TM35_FLAMETHROWER, 1)
+        settrainerflag(TRAINER_GYM_KINDLER_ISAI)
+        settrainerflag(TRAINER_GYM_MANIAC_COREY)
+        settrainerflag(TRAINER_GYM_RANGER_F_AMARI)
+        settrainerflag(TRAINER_GYM_KINDLER_FRANCO)
+    }
+    msgbox(format("Bernie: {COLOR BLUE}Now, your next Gym Challenge is in {COLOR GREEN}Bayport City{COLOR BLUE}, which is south of {COLOR GREEN}Myst City{COLOR BLUE}.\pI wish you the best of luck on your future Gym Challenges!"), MSGBOX_AUTOCLOSE)
+    release
+    end
+}

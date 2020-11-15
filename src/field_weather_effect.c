@@ -20,6 +20,7 @@ EWRAM_DATA static u16 gUnusedWeatherRelated = 0;
 // CONST
 const u16 gCloudsWeatherPalette[] = INCBIN_U16("graphics/weather/cloud.gbapal");
 const u16 gSandstormWeatherPalette[] = INCBIN_U16("graphics/weather/sandstorm.gbapal");
+const u16 gSnowWeatherPalette[] = INCBIN_U16("graphics/weather/snow.gbapal");
 const u8 gWeatherFogDiagonalTiles[] = INCBIN_U8("graphics/weather/fog_diagonal.4bpp");
 const u8 gWeatherFogHorizontalTiles[] = INCBIN_U8("graphics/weather/fog_horizontal.4bpp");
 const u8 gWeatherCloudTiles[] = INCBIN_U8("graphics/weather/cloud.4bpp");
@@ -771,7 +772,7 @@ void Snow_InitVars(void)
     gWeatherPtr->weatherGfxLoaded = FALSE;
     gWeatherPtr->gammaTargetIndex = 3;
     gWeatherPtr->gammaStepDelay = 20;
-    gWeatherPtr->targetSnowflakeSpriteCount = 20;
+    gWeatherPtr->targetSnowflakeSpriteCount = 16;
     gWeatherPtr->snowflakeVisibleCounter = 0;
 }
 
@@ -848,7 +849,7 @@ static const struct OamData sSnowflakeSpriteOamData =
     .size = SPRITE_SIZE(8x8),
     .tileNum = 0,
     .priority = 1,
-    .paletteNum = 0,
+    .paletteNum = 6,
     .affineParam = 0,
 };
 

@@ -113,7 +113,7 @@
       "dest_warp_id": 1
     },
     {
-      "x": 16,
+      "x": 18,
       "y": 23,
       "elevation": 0,
       "dest_map": "MAP_ALNERWICK_LOWLANDS_GROTTO",
@@ -139,6 +139,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "AlnerwickLowlands_Sign_RouteSign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 41,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_PARALYZE_HEAL",
+      "flag": "FLAG_HIDDEN_ITEM_ALNERWICK_LOWLANDS_PARALYZE_HEAL"
     }
   ],
   "allow_bike": "",

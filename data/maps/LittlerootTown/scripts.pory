@@ -1317,3 +1317,9 @@ movement CanvasTown_RivalBattle_CMovement_0 {
 movement CanvasTown_RivalBattle_CMovement_1 {
 	walk_up * 2
 }
+
+// temp
+
+script CanvasTown_Sign_EZPokemon {
+	givemon(SPECIES_NOIVERN, 100, ITEM_DRAGON_FANG)
+}

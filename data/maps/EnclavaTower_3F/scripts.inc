@@ -5,7 +5,7 @@ EnclavaTower_3F_MapScripts::
 EnclavaTower_3F_Object_Fijo::
 	compare VAR_ENCLAVATOWER_STATE, 2
 	goto_if_eq EnclavaTower_3F_Object_Fijo_1
-	msgbox EnclavaTower_3F_Object_Fijo_Text_3, MSGBOX_NPC
+	msgbox EnclavaTower_3F_Object_Fijo_Text_4, MSGBOX_NPC
 	compare VAR_PROTOGRUNTS_ENCLAVAGORGE, 0
 	goto_if_eq EnclavaTower_3F_Object_Fijo_14
 EnclavaTower_3F_Object_Fijo_13:
@@ -48,9 +48,8 @@ EnclavaTower_3F_Object_Fijo_4:
 	applymovement 1, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	delay 14
-	applymovement 1, Common_Movement_ExclamationMark
-	waitmovement 0
-	delay 20
+	msgbox EnclavaTower_3F_Object_Fijo_Text_2, MSGBOX_AUTOCLOSE
+	delay 15
 	compare VAR_RESULT, DIR_SOUTH
 	goto_if_eq EnclavaTower_3F_Object_Fijo_17
 	applymovement 1, EnclavaTower_3F_Fijo_Movement_3
@@ -58,9 +57,9 @@ EnclavaTower_3F_Object_Fijo_4:
 EnclavaTower_3F_Object_Fijo_16:
 	faceplayer
 	delay 5
-	msgbox EnclavaTower_3F_Object_Fijo_Text_2, MSGBOX_AUTOCLOSE
-	giveitem ITEM_RUBY, 1
 	msgbox EnclavaTower_3F_Object_Fijo_Text_3, MSGBOX_AUTOCLOSE
+	giveitem ITEM_RUBY, 1
+	msgbox EnclavaTower_3F_Object_Fijo_Text_4, MSGBOX_AUTOCLOSE
 	setvar VAR_ENCLAVATOWER_STATE, 3
 	setvar VAR_PROTOGRUNTS_ENCLAVAGORGE, 1
 	release
@@ -162,6 +161,9 @@ EnclavaTower_3F_Object_Fijo_Text_1:
 	.string "I'll get that for you.$"
 
 EnclavaTower_3F_Object_Fijo_Text_2:
+	.string "Fijo: {COLOR BLUE}Ah yes!$"
+
+EnclavaTower_3F_Object_Fijo_Text_3:
 	.string "Fijo: {COLOR BLUE}This book, {COLOR GREEN}The Dorimtome{COLOR BLUE}, is an\n"
 	.string "ancient tome from 100 years ago.\p"
 	.string "It contains many scriptures describing\n"
@@ -169,17 +171,18 @@ EnclavaTower_3F_Object_Fijo_Text_2:
 	.string "The author of this book claims that\n"
 	.string "{COLOR GREEN}Cresselia{COLOR BLUE} has psychic-powers that can\l"
 	.string "put anyone to sleep instantly, and\l"
-	.string "bring them happy dreams.\p"
+	.string "bring them pure happiness.\p"
 	.string "These dreams bring the slumbered\n"
 	.string "recovery and good health.\p"
 	.string "{COLOR GREEN}Cresselia{COLOR BLUE}, however, has never been\n"
 	.string "discovered or recorded using modern\l"
-	.string "technology, so she remains a myth.\p"
+	.string "technology, so she remains as a legend\l"
+	.string "by the books.\p"
 	.string "I don't know what {COLOR GREEN}Prof. Cypress{COLOR BLUE} wants\n"
 	.string "to do with this book, but I respect her\l"
 	.string "needs.$"
 
-EnclavaTower_3F_Object_Fijo_Text_3:
+EnclavaTower_3F_Object_Fijo_Text_4:
 	.string "Fijo: {COLOR BLUE}Please be careful with that book.\p"
 	.string "That book contains a lot of secret\n"
 	.string "techniques that only wise individuals\l"

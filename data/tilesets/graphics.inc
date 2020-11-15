@@ -2009,3 +2009,103 @@ gTilesetPalettes_SnowRoute::
 	.align 2
 gTilesetTiles_SnowRoute::
 	.incbin "data/tilesets/secondary/snowroute/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_MystCity::
+	.incbin "data/tilesets/secondary/mystcity/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/mystcity/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_MystCity::
+	.incbin "data/tilesets/secondary/mystcity/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_LogCabin::
+	.incbin "data/tilesets/secondary/logcabin/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/logcabin/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_LogCabin::
+	.incbin "data/tilesets/secondary/logcabin/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_FrostpineGym::
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/frostpinegym/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_FrostpineGym::
+	.incbin "data/tilesets/secondary/frostpinegym/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_BayportCity::
+	.incbin "data/tilesets/secondary/bayportcity/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/bayportcity/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_BayportCity::
+	.incbin "data/tilesets/secondary/bayportcity/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_WispForest::
+	.incbin "data/tilesets/secondary/wispforest/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/wispforest/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_WispForest::
+	.incbin "data/tilesets/secondary/wispforest/tiles.4bpp.lz"

@@ -43,6 +43,7 @@ static void TilesetAnim_MauvilleGym(u16);
 static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
+static void TilesetAnim_FrostpineGym(u16);
 static void QueueAnimTiles_General_Red_Flower(u16);
 static void QueueAnimTiles_General_Blue_Flower(u16);
 static void QueueAnimTiles_General_Red_Flower_2(u16);
@@ -79,6 +80,7 @@ static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
+static void QueueAnimTiles_FrostpineGym_Lava(u16);
 
 // red flower anim
 const u16 gTilesetAnims_General_Red_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/red_flower/red_flower_anim_0.4bpp");
@@ -405,6 +407,22 @@ const u16 *const gTilesetAnims_Rustboro_Fountain[] = {
     gTilesetAnims_Rustboro_Fountain_Frame0,
     gTilesetAnims_Rustboro_Fountain_Frame1
 }; */
+
+const u16 gTilesetAnims_FrostpineGym_Lava_Frame0[] = INCBIN_U16("data/tilesets/secondary/frostpinegym/anim/lava/0.4bpp");
+const u16 gTilesetAnims_FrostpineGym_Lava_Frame1[] = INCBIN_U16("data/tilesets/secondary/frostpinegym/anim/lava/1.4bpp");
+const u16 gTilesetAnims_FrostpineGym_Lava_Frame2[] = INCBIN_U16("data/tilesets/secondary/frostpinegym/anim/lava/2.4bpp");
+const u16 gTilesetAnims_FrostpineGym_Lava_Frame3[] = INCBIN_U16("data/tilesets/secondary/frostpinegym/anim/lava/3.4bpp");
+const u16 gTilesetAnims_FrostpineGym_Lava_Frame4[] = INCBIN_U16("data/tilesets/secondary/frostpinegym/anim/lava/4.4bpp");
+const u16 gTilesetAnims_FrostpineGym_Lava_Frame5[] = INCBIN_U16("data/tilesets/secondary/frostpinegym/anim/lava/5.4bpp");
+const u16 gTilesetAnims_FrostpineGym_Lava_Frame6[] = INCBIN_U16("data/tilesets/secondary/frostpinegym/anim/lava/6.4bpp");
+const u16 gTilesetAnims_FrostpineGym_Lava_Frame7[] = INCBIN_U16("data/tilesets/secondary/frostpinegym/anim/lava/7.4bpp");
+
+const u16 *const gTilesetAnims_FrostpineGym_Lava[] = {
+    gTilesetAnims_FrostpineGym_Lava_Frame0,
+    gTilesetAnims_FrostpineGym_Lava_Frame1,
+    gTilesetAnims_FrostpineGym_Lava_Frame2,
+    gTilesetAnims_FrostpineGym_Lava_Frame3
+};
 
 const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame0[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/0.4bpp");
 const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame1[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/1.4bpp");
@@ -743,6 +761,12 @@ static void TilesetAnim_Building(u16 timer)
         QueueAnimTiles_Building_TVTurnedOn(timer >> 3);
 }
 
+static void TilesetAnim_FrostpineGym(u16 timer)
+{
+    if (timer % 16 == 1)
+        QueueAnimTiles_FrostpineGym_Lava(timer >> 4);
+}
+
 static void QueueAnimTiles_General_Red_Flower(u16 timer)
 {
     u16 i = timer % 4; 
@@ -808,6 +832,12 @@ static void QueueAnimTiles_General_Waterfall(u16 timer)
 {
     u16 i = timer % 4;
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Waterfall[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(496)), 0xc0);
+}
+
+static void QueueAnimTiles_FrostpineGym_Lava(u16 timer)
+{
+    u16 i = timer % 4;
+    AppendTilesetAnimToBuffer(gTilesetAnims_FrostpineGym_Lava[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(588)), 0x80);
 }
 
 void InitTilesetAnim_Petalburg(void)
@@ -969,6 +999,13 @@ void InitTilesetAnim_BattleDome(void)
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
     sSecondaryTilesetAnimCallback = TilesetAnim_BattleDome;
+}
+
+void InitTilesetAnim_FrostpineGym(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_FrostpineGym;
 }
 
 /*static void TilesetAnim_Rustboro(u16 timer)

@@ -109,3 +109,44 @@ Route102_Text_RouteSignOldale: @ 81EC35B
 Route102_Text_RouteSignPetalburg: @ 81EC373
 	.string "ROUTE 102\n"
 	.string "{LEFT_ARROW} PETALBURG CITY$"
+
+CanvasBeach_Object_Artist::
+	msgbox CanvasBeach_Object_Artist_Text_0, MSGBOX_NPC
+	end
+
+
+CanvasBeach_Object_Fisherman::
+	msgbox CanvasBeach_Object_Fisherman_Text_0, MSGBOX_NPC
+	end
+
+
+CanvasBeach_Object_LittleBoy::
+	msgbox CanvasBeach_Object_LittleBoy_Text_0, MSGBOX_NPC
+	end
+
+
+CanvasBeach_Sign_RouteSign::
+	msgbox CanvasBeach_Sign_RouteSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
+CanvasBeach_Object_Artist_Text_0:
+	.string "{COLOR RED}I come here to get inspiration for my\n"
+	.string "artworks, which are showcased in\l"
+	.string "{COLOR GREEN}Bayport City{COLOR RED}.$"
+
+CanvasBeach_Object_Fisherman_Text_0:
+	.string "{COLOR BLUE}This here is my favorite spot to fish!\p"
+	.string "You can get a handful of unique\n"
+	.string "Pokémon here that you normally can't\l"
+	.string "find elsewhere.$"
+
+CanvasBeach_Object_LittleBoy_Text_0:
+	.string "{COLOR BLUE}I wanna grow up to be a Pokémon\n"
+	.string "Trainer!\p"
+	.string "You're so lucky!$"
+
+CanvasBeach_Sign_RouteSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Canvas Beach\p"
+	.string "{COLOR DARK_GREY}{UP_ARROW} {COLOR LIGHT_GREEN}Canvas Town\n"
+	.string "{COLOR DARK_GREY}{RIGHT_ARROW} {COLOR LIGHT_GREEN}Ryoko Bay$"

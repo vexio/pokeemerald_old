@@ -80,6 +80,9 @@
 #define MAP_OLDALE_TOWN_POKEMON_CENTER_1F (2 | (2 << 8))
 #define MAP_OLDALE_TOWN_POKEMON_CENTER_2F (3 | (2 << 8))
 #define MAP_OLDALE_TOWN_MART              (4 | (2 << 8))
+#define MAP_TRIAD_GORGE_GATEHOUSE         (5 | (2 << 8))
+#define MAP_COBALT_SEA_GATEHOUSE          (6 | (2 << 8))
+#define MAP_FROSTPINE_CITY_GATE           (7 | (2 << 8))
 
 // Map Group 3
 #define MAP_DEWFORD_TOWN_HOUSE1            (0 | (3 << 8))
@@ -119,6 +122,10 @@
 #define MAP_VERDANTURF_TOWN_WANDAS_HOUSE            (6 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_FRIENDSHIP_RATERS_HOUSE (7 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_HOUSE                   (8 | (6 << 8))
+#define MAP_FROSTPINE_CITY_HOUSE_1                  (9 | (6 << 8))
+#define MAP_FROSTPINE_CITY_HOUSE_2                  (10 | (6 << 8))
+#define MAP_FROSTPINE_CITY_HOUSE_3                  (11 | (6 << 8))
+#define MAP_FROSTPINE_CITY_GYM                      (12 | (6 << 8))
 
 // Map Group 7
 #define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F (0 | (7 << 8))
@@ -406,6 +413,9 @@
 #define MAP_METEOR_FALLS_STEVENS_CAVE                (107 | (24 << 8))
 #define MAP_ENCLAVA_TOWER                            (108 | (24 << 8))
 #define MAP_ENCLAVA_TOWER_2F                         (109 | (24 << 8))
+#define MAP_DAVNRIDGE_MINES_B1                       (110 | (24 << 8))
+#define MAP_NEW_MAP1                                 (111 | (24 << 8))
+#define MAP_WISP_FOREST                              (112 | (24 << 8))
 
 // Map Group 25
 #define MAP_SECRET_BASE_RED_CAVE1           (0 | (25 << 8))

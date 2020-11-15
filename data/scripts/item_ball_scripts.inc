@@ -665,3 +665,11 @@ DavnridgeMines_EventScript_SuperPotion::
 DavnridgeMines_EventScript_Nugget::
 	finditem ITEM_NUGGET
 	end
+
+FrostpineClimb_EventScript_IceStone::
+	finditem ITEM_ICE_STONE
+	end
+
+FrostpineClimb_EventScript_TMIceBeam::
+	finditem ITEM_TM13_ICE_BEAM
+	end

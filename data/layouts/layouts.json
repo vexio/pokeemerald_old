@@ -14,10 +14,10 @@
     {
       "id": "LAYOUT_SLATEPORT_CITY",
       "name": "SlateportCity_Layout",
-      "width": 40,
-      "height": 60,
+      "width": 60,
+      "height": 38,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "secondary_tileset": "gTileset_BayportCity",
       "border_filepath": "data/layouts/SlateportCity/border.bin",
       "blockdata_filepath": "data/layouts/SlateportCity/map.bin"
     },
@@ -54,10 +54,10 @@
     {
       "id": "LAYOUT_LILYCOVE_CITY",
       "name": "LilycoveCity_Layout",
-      "width": 80,
-      "height": 40,
+      "width": 48,
+      "height": 54,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Lilycove",
+      "secondary_tileset": "gTileset_MystCity",
       "border_filepath": "data/layouts/LilycoveCity/border.bin",
       "blockdata_filepath": "data/layouts/LilycoveCity/map.bin"
     },
@@ -144,8 +144,8 @@
     {
       "id": "LAYOUT_VERDANTURF_TOWN",
       "name": "VerdanturfTown_Layout",
-      "width": 48,
-      "height": 42,
+      "width": 52,
+      "height": 46,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_SnowRoute",
       "border_filepath": "data/layouts/VerdanturfTown/border.bin",
@@ -194,7 +194,7 @@
     {
       "id": "LAYOUT_ROUTE104",
       "name": "Route104_Layout",
-      "width": 26,
+      "width": 46,
       "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
@@ -234,20 +234,20 @@
     {
       "id": "LAYOUT_ROUTE108",
       "name": "Route108_Layout",
-      "width": 60,
-      "height": 20,
+      "width": 80,
+      "height": 37,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "secondary_tileset": "gTileset_BayportCity",
       "border_filepath": "data/layouts/Route108/border.bin",
       "blockdata_filepath": "data/layouts/Route108/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE109",
       "name": "Route109_Layout",
-      "width": 40,
-      "height": 63,
+      "width": 113,
+      "height": 32,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "secondary_tileset": "gTileset_BayportCity",
       "border_filepath": "data/layouts/Route109/border.bin",
       "blockdata_filepath": "data/layouts/Route109/map.bin"
     },
@@ -734,8 +734,8 @@
     {
       "id": "LAYOUT_LILYCOVE_CITY_HOUSE2",
       "name": "LilycoveCity_House2_Layout",
-      "width": 8,
-      "height": 8,
+      "width": 11,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/LilycoveCity_House2/border.bin",
@@ -754,8 +754,8 @@
     {
       "id": "LAYOUT_VERDANTURF_TOWN_WANDAS_HOUSE",
       "name": "VerdanturfTown_WandasHouse_Layout",
-      "width": 17,
-      "height": 8,
+      "width": 10,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/VerdanturfTown_WandasHouse/border.bin",
@@ -1064,7 +1064,7 @@
     {
       "id": "LAYOUT_LILYCOVE_CITY_POKEMON_TRAINER_FAN_CLUB",
       "name": "LilycoveCity_PokemonTrainerFanClub_Layout",
-      "width": 12,
+      "width": 11,
       "height": 14,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
@@ -4520,6 +4520,106 @@
       "secondary_tileset": "gTileset_EnclavaTower",
       "border_filepath": "data/layouts/EnclavaTower_3F/border.bin",
       "blockdata_filepath": "data/layouts/EnclavaTower_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TRIAD_GORGE_GATEHOUSE",
+      "name": "TriadGorge_Gatehouse_Layout",
+      "width": 12,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Gatehouse",
+      "border_filepath": "data/layouts/TriadGorge_Gatehouse/border.bin",
+      "blockdata_filepath": "data/layouts/TriadGorge_Gatehouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_FROSTPINE_CITY_HOUSE_1",
+      "name": "FrostpineCity_House_1_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_LogCabin",
+      "border_filepath": "data/layouts/FrostpineCity_House_1/border.bin",
+      "blockdata_filepath": "data/layouts/FrostpineCity_House_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_FROSTPINE_CITY_HOUSE_2",
+      "name": "FrostpineCity_House_2_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/FrostpineCity_House_2/border.bin",
+      "blockdata_filepath": "data/layouts/FrostpineCity_House_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_FROSTPINE_CITY_HOUSE_3",
+      "name": "FrostpineCity_House_3_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/FrostpineCity_House_3/border.bin",
+      "blockdata_filepath": "data/layouts/FrostpineCity_House_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_FROSTPINE_CITY_GYM",
+      "name": "FrostpineCity_Gym_Layout",
+      "width": 17,
+      "height": 32,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_FrostpineGym",
+      "border_filepath": "data/layouts/FrostpineCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/FrostpineCity_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAVNRIDGE_MINES_B1",
+      "name": "Davnridge_Mines_B1_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_DavnridgeMines",
+      "border_filepath": "data/layouts/Davnridge_Mines_B1/border.bin",
+      "blockdata_filepath": "data/layouts/Davnridge_Mines_B1/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAP1",
+      "name": "NewMap1_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/NewMap1/border.bin",
+      "blockdata_filepath": "data/layouts/NewMap1/map.bin"
+    },
+    {
+      "id": "LAYOUT_WISP_FOREST",
+      "name": "WispForest_Layout",
+      "width": 50,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_WispForest",
+      "border_filepath": "data/layouts/WispForest/border.bin",
+      "blockdata_filepath": "data/layouts/WispForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_COBALT_SEA_GATEHOUSE",
+      "name": "CobaltSea_Gatehouse_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Gatehouse",
+      "border_filepath": "data/layouts/CobaltSea_Gatehouse/border.bin",
+      "blockdata_filepath": "data/layouts/CobaltSea_Gatehouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_FROSTPINE_CITY_GATE",
+      "name": "FrostpineCity_Gate_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/FrostpineCity_Gate/border.bin",
+      "blockdata_filepath": "data/layouts/FrostpineCity_Gate/map.bin"
     }
   ]
 }

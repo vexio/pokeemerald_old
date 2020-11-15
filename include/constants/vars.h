@@ -116,7 +116,7 @@
 #define VAR_ENCLAVATOWER_STATE               0x4061 // 1 = Event with Lars outside Gym, 2 = Post-Lars convo, 3 = Enclava Tower storyline completed
 #define VAR_PROTOGRUNTS_ENCLAVAGORGE         0x4062 // 0 = Enclava Tower storyline not done, 1 = Enclava Tower storyline done, 2 = Battles in Triad Gorge are not done, 3 = Battles in Triad Gorge are done
 #define VAR_ROUTE104_STATE                   0x4063
-#define VAR_ROUTE105_STATE                   0x4064 // Unused Var
+#define VAR_FROSTPINE_CITY_RIVAL_EVENT       0x4064 // frostpine rival battle
 #define VAR_ROUTE106_STATE                   0x4065 // Unused Var
 #define VAR_ROUTE107_STATE                   0x4066 // Unused Var
 #define VAR_ROUTE108_STATE                   0x4067 // Unused Var

@@ -1081,3 +1081,23 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/EnclavaTower_2F/scripts.inc"
 
 	.include "data/maps/EnclavaTower_3F/scripts.inc"
+
+	.include "data/maps/TriadGorge_Gatehouse/scripts.inc"
+
+	.include "data/maps/FrostpineCity_House_1/scripts.inc"
+
+	.include "data/maps/FrostpineCity_House_2/scripts.inc"
+
+	.include "data/maps/FrostpineCity_House_3/scripts.inc"
+
+	.include "data/maps/FrostpineCity_Gym/scripts.inc"
+
+	.include "data/maps/Davnridge_Mines_B1/scripts.inc"
+
+	.include "data/maps/NewMap1/scripts.inc"
+
+	.include "data/maps/WispForest/scripts.inc"
+
+	.include "data/maps/CobaltSea_Gatehouse/scripts.inc"
+
+	.include "data/maps/FrostpineCity_Gate/scripts.inc"

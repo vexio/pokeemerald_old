@@ -171,6 +171,14 @@
       "elevation": 3,
       "item": "ITEM_BIG_PEARL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 17,
+      "y": 17,
+      "elevation": 3,
+      "item": "ITEM_FULL_HEAL",
+      "flag": "FLAG_HIDDEN_ITEM_ENCLAVA_PASS_FULL_HEAL"
     }
   ],
   "allow_bike": "",

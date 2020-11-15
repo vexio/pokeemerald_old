@@ -55,6 +55,9 @@ EnclavaTown_PC_Object_HexManiac::
 	checkpartymon SPECIES_HAUNTER
 	compare VAR_RESULT, TRUE
 	goto_if_eq EnclavaTown_PC_Object_HexManiac_4
+	checkpartymon SPECIES_GASTLY
+	compare VAR_RESULT, TRUE
+	goto_if_eq EnclavaTown_PC_Object_HexManiac_7
 	applymovement 6, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	closemessage
@@ -78,6 +81,16 @@ EnclavaTown_PC_Object_HexManiac_4:
 	applymovement 6, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	setflag FLAG_ITEM_ENCLAVA_PC_LINK_CABLE
+	release
+	end
+
+EnclavaTown_PC_Object_HexManiac_7:
+	applymovement 6, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 16
+	msgbox EnclavaTown_PC_Object_HexManiac_Text_3, MSGBOX_AUTOCLOSE
+	applymovement 6, Common_Movement_WalkInPlaceUp
+	waitmovement 0
 	release
 	end
 
@@ -126,6 +139,10 @@ EnclavaTown_PC_Object_HexManiac_Text_2:
 	.string "{COLOR RED}That can be used on more than Haunter,\n"
 	.string "some other Pokémon can only evolve\l"
 	.string "through the {COLOR GREEN}Link Cable{COLOR RED}.$"
+
+EnclavaTown_PC_Object_HexManiac_Text_3:
+	.string "{COLOR RED}Oh...\p"
+	.string "That's a Gastly...$"
 
 EnclavaTown_PC_Object_Woman_Text_0:
 	.string "{COLOR RED}I think Pokémon get closer to their\n"

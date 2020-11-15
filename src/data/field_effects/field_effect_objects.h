@@ -115,6 +115,7 @@ const union AnimCmd *const gFieldEffectObjectImageAnimTable_Ash[] =
     gFieldEffectObjectImageAnim_850CB48,
 };
 
+
 const struct SpriteTemplate gFieldEffectObjectTemplate_Ash = {0xFFFF, 0x1005, &gObjectEventBaseOam_16x16, gFieldEffectObjectImageAnimTable_Ash, gFieldEffectObjectPicTable_Ash, gDummySpriteAffineAnimTable, UpdateAshFieldEffect};
 
 const struct SpriteFrameImage gFieldEffectObjectPicTable_SurfBlob[] = {
@@ -255,6 +256,11 @@ const struct SpriteFrameImage gFieldEffectObjectPicTable_SandFootprints[] = {
     overworld_frame(gFieldEffectObjectPic_SandFootprints, 2, 2, 1),
 };
 
+const struct SpriteFrameImage gFieldEffectObjectPicTable_SnowFootprints[] = {
+    overworld_frame(gFieldEffectObjectPic_SnowFootprints, 2, 2, 0),
+    overworld_frame(gFieldEffectObjectPic_SnowFootprints, 2, 2, 1),
+};
+
 const union AnimCmd gFieldEffectObjectImageAnim_850CD18[] =
 {
     ANIMCMD_FRAME(0, 1, .vFlip = TRUE),
@@ -288,7 +294,18 @@ const union AnimCmd *const gFieldEffectObjectImageAnimTable_SandFootprints[] =
     gFieldEffectObjectImageAnim_850CD30,
 };
 
+const union AnimCmd *const gFieldEffectObjectImageAnimTable_SnowFootprints[] =
+{
+    gFieldEffectObjectImageAnim_850CD18,
+    gFieldEffectObjectImageAnim_850CD18,
+    gFieldEffectObjectImageAnim_850CD20,
+    gFieldEffectObjectImageAnim_850CD28,
+    gFieldEffectObjectImageAnim_850CD30,
+};
+
 const struct SpriteTemplate gFieldEffectObjectTemplate_SandFootprints = {0xFFFF, 0x1004, &gObjectEventBaseOam_16x16, gFieldEffectObjectImageAnimTable_SandFootprints, gFieldEffectObjectPicTable_SandFootprints, gDummySpriteAffineAnimTable, UpdateFootprintsTireTracksFieldEffect};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_SnowFootprints = {0xFFFF, 0x1004, &gObjectEventBaseOam_16x16, gFieldEffectObjectImageAnimTable_SnowFootprints, gFieldEffectObjectPicTable_SnowFootprints, gDummySpriteAffineAnimTable, UpdateFootprintsTireTracksFieldEffect};
 
 const struct SpriteFrameImage gFieldEffectObjectPicTable_DeepSandFootprints[] = {
     overworld_frame(gFieldEffectObjectPic_DeepSandFootprints, 2, 2, 0),

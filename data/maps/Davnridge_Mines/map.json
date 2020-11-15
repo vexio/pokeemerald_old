@@ -212,7 +212,7 @@
       "x": 12,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_DAVNRIDGE_MINES",
+      "dest_map": "MAP_DAVNRIDGE_MINES_B1",
       "dest_warp_id": 0
     },
     {
@@ -295,23 +295,23 @@
       "y": 2,
       "elevation": 3,
       "item": "ITEM_RAZOR_CLAW",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_HIDDEN_ITEM_DAVNRIDGE_MINES_RAZOR_CLAW"
     },
     {
       "type": "hidden_item",
       "x": 9,
       "y": 4,
       "elevation": 3,
-      "item": "ITEM_KINGS_ROCK",
-      "flag": "FLAG_TEMP_2"
+      "item": "ITEM_WATER_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_DAVNRIDGE_MINES_WATER_STONE"
     },
     {
       "type": "hidden_item",
       "x": 20,
       "y": 16,
       "elevation": 3,
-      "item": "ITEM_ULTRA_BALL",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_HYPER_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_DAVNRIDGE_MINES_HYPER_POTION"
     },
     {
       "type": "hidden_item",
@@ -319,7 +319,7 @@
       "y": 37,
       "elevation": 3,
       "item": "ITEM_ESCAPE_ROPE",
-      "flag": "FLAG_TEMP_3"
+      "flag": "FLAG_HIDDEN_ITEM_DAVNRIDGE_MINES_ESCAPE_ROPE"
     },
     {
       "type": "sign",

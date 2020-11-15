@@ -662,10 +662,10 @@
 #define FLAG_RECIEVED_TOWN_MAP  0x26C // Recieved Town Map
 #define FLAG_CANVASTOWN_RIVALBATTLE  0x26D // rivalbattle
 #define FLAG_ENCLAVAPASS_GRUNTS  0x26E // EnclavaPass Grunts
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
+#define FLAG_TRIAD_GORGE_GRUNTS  0x26F // TriadGorge Grunts 
+#define FLAG_FROSTPINE_RIVAL_EVENT  0x270 // Frostpine City
+#define FLAG_TRIADGORGE_ROCKSMASH  0x271 // Triad Gorge Rock Smash Hiker event
+#define FLAG_FROSTPINECITY_TM_RETURN  0x272 // Friendship Rater giving Return to max friendship
 #define FLAG_UNUSED_0x273  0x273 // Unused Flag
 #define FLAG_UNUSED_0x274  0x274 // Unused Flag
 #define FLAG_UNUSED_0x275  0x275 // Unused Flag
@@ -1235,20 +1235,20 @@
 #define FLAG_ITEM_DAVNRIDGE_MINES_NUGGET                            0x494
 #define FLAG_ITEM_DAVNRIDGE_PC_KINGS_ROCK                           0x495
 #define FLAG_ITEM_ENCLAVA_PC_LINK_CABLE                             0x496
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ALNERWICK_GROTTO_REVIVAL_HERB              0x497
+#define FLAG_HIDDEN_ITEM_DAVNRIDGE_MINES_WATER_STONE                0x498
+#define FLAG_HIDDEN_ITEM_DAVNRIDGE_MINES_RAZOR_CLAW                 0x499
+#define FLAG_HIDDEN_ITEM_DAVNRIDGE_MINES_HYPER_POTION               0x49A
+#define FLAG_HIDDEN_ITEM_DAVNRIDGE_MINES_ESCAPE_ROPE                0x49B
+#define FLAG_HIDDEN_ITEM_TRIAD_GORGE_HYPER_POTION                   0x49C
+#define FLAG_HIDDEN_ITEM_TRIAD_GORGE_TINY_MUSHROOM                  0x49D
+#define FLAG_HIDDEN_ITEM_TRIAD_GORGE_ULTRA_BALL                     0x49E
+#define FLAG_HIDDEN_ITEM_FROSTPINE_CLIMB_BIG_ROOT                   0x49F
+#define FLAG_ITEM_FROSTPINE_CLIMB_ICE_STONE                         0x4A0
+#define FLAG_ITEM_FROSTPINE_CLIMB_TM_ICE_BEAM                       0x4A1
+#define FLAG_HIDDEN_ITEM_ALNERWICK_LOWLANDS_PARALYZE_HEAL           0x4A2
+#define FLAG_HIDDEN_ITEM_ENCLAVA_PASS_FULL_HEAL                     0x4A3
+#define FLAG_HIDDEN_ITEM_FROSTPINE_CITY_BURN_ITEM                   0x4A4
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag

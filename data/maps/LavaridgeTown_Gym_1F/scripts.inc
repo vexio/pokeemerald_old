@@ -487,6 +487,7 @@ EnclavaGym_Trainer_Pokefan::
 
 EnclavaGym_Trainer_Leader_Bruce::
 	lockall
+	faceplayer
 	goto_if_unset FLAG_BADGE02_GET, EnclavaGym_Trainer_Leader_Bruce_2
 EnclavaGym_Trainer_Leader_Bruce_1:
 	msgbox EnclavaGym_Trainer_Leader_Bruce_Text_4, MSGBOX_AUTOCLOSE
@@ -593,8 +594,8 @@ EnclavaGym_Trainer_Leader_Bruce_Text_2:
 
 EnclavaGym_Trainer_Leader_Bruce_Text_3:
 	.string "Bruce: {COLOR BLUE}This badge will prove your\n"
-	.string "strength, and allow you to enter\l"
-	.string "{COLOR GREEN}Enclava Tower{COLOR BLUE}.\p"
+	.string "strength, and grant your Pokémon to\l"
+	.string "use {COLOR GREEN}Flash{COLOR BLUE} outside of battle.\p"
 	.string "As well, take this TM.$"
 
 EnclavaGym_Trainer_Leader_Bruce_Text_4:
@@ -603,5 +604,5 @@ EnclavaGym_Trainer_Leader_Bruce_Text_4:
 	.string "are battling in, and can be extremely\l"
 	.string "powerful if used correctly.\p"
 	.string "Your next Gym Challenge will be in\n"
-	.string "{COLOR GREEN}Pinefrost City{COLOR BLUE}, which is north from the\l"
+	.string "{COLOR GREEN}Frostpine City{COLOR BLUE}, which is north from the\l"
 	.string "{COLOR GREEN}Triad Gorge{COLOR BLUE}.$"

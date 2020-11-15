@@ -23,7 +23,7 @@ AquaHideout_B2F_EventScript_MattNoticePlayer:: @ 8233DE5
 	end
 
 AquaHideout_B2F_EventScript_Matt:: @ 8233E09
-	trainerbattle_single TRAINER_MATT, AquaHideout_B2F_Text_MattIntro, AquaHideout_B2F_Text_MattDefeat, AquaHideout_B2F_EventScript_SubmarineEscape
+	trainerbattle_single TRAINER_BIRDKEEP_KEITH, AquaHideout_B2F_Text_MattIntro, AquaHideout_B2F_Text_MattDefeat, AquaHideout_B2F_EventScript_SubmarineEscape
 	msgbox AquaHideout_B2F_Text_MattPostBattle, MSGBOX_DEFAULT
 	release
 	end

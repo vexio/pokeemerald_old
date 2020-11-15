@@ -199,16 +199,28 @@
 #define METATILE_Fortree_WoodBridge1_Bottom                0x29F
 #define METATILE_Fortree_WoodBridge1_Top                   0x297
 
+// gTileset_FrostpineGym
+#define METATILE_FrostpineGym_Button                         0x210
+#define METATILE_FrostpineGym_ButtonActivated                0x218
+#define METATILE_FrostpineGym_ButtonActivated_Dark           0x21F
+#define METATILE_FrostpineGym_Button_Dark                    0x217
+#define METATILE_FrostpineGym_StoneBridge_Bottom             0x219
+#define METATILE_FrostpineGym_StoneBridge_Horizontal_Middle  0x221
+#define METATILE_FrostpineGym_StoneBridge_Left               0x220
+#define METATILE_FrostpineGym_StoneBridge_Right              0x222
+#define METATILE_FrostpineGym_StoneBridge_Top                0x209
+#define METATILE_FrostpineGym_StoneBridge_Vertical_Middle    0x211
+
 // gTileset_General
 #define METATILE_General_BlueCaveIndent        0x1B0
 #define METATILE_General_BlueCaveOpen          0x1B1
 #define METATILE_General_CalmWater             0x170
 #define METATILE_General_CaveEntrance_Bottom   0x0A7
 #define METATILE_General_CaveEntrance_Top      0x09F
-#define METATILE_General_Door                  0x021
+#define METATILE_General_Door                  0x06B
 #define METATILE_General_Door_Contest          0x1DB
-#define METATILE_General_Door_Gym              0x1CD
-#define METATILE_General_Door_PokeCenter       0x061
+#define METATILE_General_Door_Gym              0x0EF
+#define METATILE_General_Door_PokeCenter       0x13A
 #define METATILE_General_Door_PokeMart         0x041
 #define METATILE_General_Grass                 0x001
 #define METATILE_General_Grass_TreeLeft        0x1CE
@@ -718,6 +730,11 @@
 // gTileset_Slateport
 #define METATILE_Slateport_Door             0x2DC
 #define METATILE_Slateport_Door_BattleTent  0x393
+
+// gTileset_SnowRoute
+#define METATILE_SnowRoute_AshField     0x20A
+#define METATILE_SnowRoute_AshGrass     0x200
+#define METATILE_SnowRoute_NormalGrass  0x25A
 
 // gTileset_SootopolisGym
 #define METATILE_SootopolisGym_Ice_Broken   0x206

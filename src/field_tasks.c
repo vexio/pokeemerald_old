@@ -621,8 +621,8 @@ static void AshGrassPerStepCallback(u8 taskId)
         data[2] = y;
         if (MetatileBehavior_IsAshGrass(MapGridGetMetatileBehaviorAt(x, y)))
         {
-            if (MapGridGetMetatileIdAt(x, y) == METATILE_ID(Fallarbor, AshGrass))
-                StartAshFieldEffect(x, y, METATILE_ID(Fallarbor, NormalGrass), 4);
+            if (MapGridGetMetatileIdAt(x, y) == METATILE_ID(SnowRoute, AshGrass))
+                StartAshFieldEffect(x, y, METATILE_ID(SnowRoute, NormalGrass), 4);
             else
                 StartAshFieldEffect(x, y, METATILE_ID(Lavaridge, NormalGrass), 4);
 

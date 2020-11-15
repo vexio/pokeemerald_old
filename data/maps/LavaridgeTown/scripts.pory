@@ -513,7 +513,7 @@ script EnclavaTown_Sign_EnclavaTower {
 }
 
 script EnclavaTown_Sign_GymSign {
-    msgbox(format("{COLOR RED}Enclava Pokémon Gym\p{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bruce\n{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Normal"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    msgbox(format("{COLOR RED}Enclava Pokémon Gym\p{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bruce\n{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Normal-Type"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
     end
 }
 

@@ -114,7 +114,10 @@
     "OldaleTown_House2",
     "OldaleTown_PokemonCenter_1F",
     "OldaleTown_PokemonCenter_2F",
-    "OldaleTown_Mart"
+    "OldaleTown_Mart",
+    "TriadGorge_Gatehouse",
+    "CobaltSea_Gatehouse",
+    "FrostpineCity_Gate"
   ],
   "gMapGroup3": [
     "DewfordTown_House1",
@@ -153,7 +156,11 @@
     "VerdanturfTown_PokemonCenter_2F",
     "VerdanturfTown_WandasHouse",
     "VerdanturfTown_FriendshipRatersHouse",
-    "VerdanturfTown_House"
+    "VerdanturfTown_House",
+    "FrostpineCity_House_1",
+    "FrostpineCity_House_2",
+    "FrostpineCity_House_3",
+    "FrostpineCity_Gym"
   ],
   "gMapGroup7": [
     "PacifidlogTown_PokemonCenter_1F",
@@ -440,7 +447,10 @@
     "AlteringCave",
     "MeteorFalls_StevensCave",
     "EnclavaTower",
-    "EnclavaTower_2F"
+    "EnclavaTower_2F",
+    "Davnridge_Mines_B1",
+    "NewMap1",
+    "WispForest"
   ],
   "gMapGroup25": [
     "SecretBase_RedCave1",

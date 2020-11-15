@@ -75,11 +75,24 @@ script EnclavaTown_PC_Object_HexManiac {
             release
             end
         } else {
-            applymovement(6, Common_Movement_WalkInPlaceUp)
-            waitmovement(0)
-            closemessage
-            release
-            end
+            checkpartymon(SPECIES_GASTLY)
+            if (var(VAR_RESULT) == TRUE) {
+                applymovement(6, Common_Movement_ExclamationMark)
+                waitmovement(0)
+                delay(16)
+                msgbox(format("{COLOR RED}Oh...\pThat's a Gastly..."), MSGBOX_AUTOCLOSE)
+                applymovement(6, Common_Movement_WalkInPlaceUp)
+                waitmovement(0)
+                release
+                end
+            } else {
+                applymovement(6, Common_Movement_WalkInPlaceUp)
+                waitmovement(0)
+                closemessage
+                release
+                end
+            }
+            
         }
     }
     

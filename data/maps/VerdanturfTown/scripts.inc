@@ -123,3 +123,277 @@ VerdanturfTown_Text_RusturfTunnelSign: @ 81EBA59
 	.string "“The tunnel project has been\n"
 	.string "canceled.”$"
 
+FrostpineCity_Sign_FriendshipRater::
+	msgbox FrostpineCity_Sign_FriendshipRater_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
+FrostpineCity_Sign_CitySign::
+	msgbox FrostpineCity_Sign_CitySign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+FrostpineCity_Sign_GymSign::
+	msgbox FrostpineCity_Sign_GymSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+FrostpineCity_Sign_IronwoodForest::
+	msgbox FrostpineCity_Sign_IronwoodForest_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
+FrostpineCity_Object_IronwoodForestTrees::
+	msgbox FrostpineCity_Object_IronwoodForestTrees_Text_0, MSGBOX_SIGN
+	end
+
+
+FrostpineCity_Object_Ranger::
+	msgbox FrostpineCity_Object_Ranger_Text_0, MSGBOX_NPC
+	end
+
+
+FrostpineCity_Object_Kindler::
+	msgbox FrostpineCity_Object_Kindler_Text_0, MSGBOX_NPC
+	end
+
+
+FrostpineCity_Object_LittleGirl::
+	msgbox FrostpineCity_Object_LittleGirl_Text_0, MSGBOX_NPC
+	end
+
+
+FrostpineCity_Object_Boy::
+	msgbox FrostpineCity_Object_Boy_Text_0, MSGBOX_NPC
+	end
+
+
+FrostpineCity_Trigger_RivalEvent::
+	lockall
+	delay 15
+	opendoor 40, 28
+	waitdooranim
+	applymovement 9, FrostpineCity_RivalEvent_Movement_0
+	waitmovement 0
+	closedoor 40, 28
+	applymovement 9, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	delay 10
+	applymovement 9, Common_Movement_ExclamationMark
+	waitmovement 0
+	playse SE_PIN
+	delay 16
+	playbgm MUS_RG_RIVAL1, 0
+	msgbox FrostpineCity_Trigger_RivalEvent_Text_0, MSGBOX_AUTOCLOSE
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_1, 29
+	goto_if_eq FrostpineCity_Trigger_RivalEvent_2
+	compare VAR_TEMP_1, 30
+	goto_if_eq FrostpineCity_Trigger_RivalEvent_3
+	compare VAR_TEMP_1, 30
+	goto_if_eq FrostpineCity_Trigger_RivalEvent_4
+FrostpineCity_Trigger_RivalEvent_1:
+	delay 20
+	msgbox FrostpineCity_Trigger_RivalEvent_Text_1, MSGBOX_AUTOCLOSE
+	compare VAR_STARTER_MON, 0
+	goto_if_eq FrostpineCity_Trigger_RivalEvent_9
+	compare VAR_STARTER_MON, 1
+	goto_if_eq FrostpineCity_Trigger_RivalEvent_10
+	compare VAR_STARTER_MON, 2
+	goto_if_eq FrostpineCity_Trigger_RivalEvent_11
+FrostpineCity_Trigger_RivalEvent_8:
+	playbgm MUS_RG_RIVAL2, 0
+	delay 5
+	msgbox FrostpineCity_Trigger_RivalEvent_Text_3, MSGBOX_AUTOCLOSE
+	compare VAR_TEMP_1, 29
+	goto_if_eq FrostpineCity_Trigger_RivalEvent_16
+	compare VAR_TEMP_1, 30
+	goto_if_eq FrostpineCity_Trigger_RivalEvent_17
+	compare VAR_TEMP_1, 30
+	goto_if_eq FrostpineCity_Trigger_RivalEvent_18
+FrostpineCity_Trigger_RivalEvent_15:
+	removeobject 9
+	setflag FLAG_FROSTPINE_RIVAL_EVENT
+	setvar VAR_FROSTPINE_CITY_RIVAL_EVENT, 1
+	fadenewbgm MUS_RG_OKURIMONO
+	releaseall
+	end
+
+FrostpineCity_Trigger_RivalEvent_2:
+	applymovement 9, FrostpineCity_RivalEvent_Movement_1_0
+	waitmovement 0
+	goto FrostpineCity_Trigger_RivalEvent_1
+
+FrostpineCity_Trigger_RivalEvent_3:
+	applymovement 9, FrostpineCity_RivalEvent_Movement_1_1
+	waitmovement 0
+	goto FrostpineCity_Trigger_RivalEvent_1
+
+FrostpineCity_Trigger_RivalEvent_4:
+	applymovement 9, FrostpineCity_RivalEvent_Movement_1_2
+	waitmovement 0
+	goto FrostpineCity_Trigger_RivalEvent_1
+
+FrostpineCity_Trigger_RivalEvent_9:
+	trainerbattle_no_intro TRAINER_SKIP_FIRE_2, FrostpineCity_Trigger_RivalEvent_Text_2
+	goto FrostpineCity_Trigger_RivalEvent_8
+
+FrostpineCity_Trigger_RivalEvent_10:
+	trainerbattle_no_intro TRAINER_SKIP_WATER_2, FrostpineCity_Trigger_RivalEvent_Text_2
+	goto FrostpineCity_Trigger_RivalEvent_8
+
+FrostpineCity_Trigger_RivalEvent_11:
+	trainerbattle_no_intro TRAINER_SKIP_GRASS_2, FrostpineCity_Trigger_RivalEvent_Text_2
+	goto FrostpineCity_Trigger_RivalEvent_8
+
+FrostpineCity_Trigger_RivalEvent_16:
+	applymovement 9, FrostpineCity_RivalEvent_Movement_2_0
+	waitmovement 0
+	goto FrostpineCity_Trigger_RivalEvent_15
+
+FrostpineCity_Trigger_RivalEvent_17:
+	applymovement 9, FrostpineCity_RivalEvent_Movement_2_1
+	waitmovement 0
+	goto FrostpineCity_Trigger_RivalEvent_15
+
+FrostpineCity_Trigger_RivalEvent_18:
+	applymovement 9, FrostpineCity_RivalEvent_Movement_2_2
+	waitmovement 0
+	goto FrostpineCity_Trigger_RivalEvent_15
+
+
+FrostpineCity_RivalEvent_Movement_0:
+	walk_down
+	walk_down
+	step_end
+
+FrostpineCity_RivalEvent_Movement_1_0:
+	walk_left
+	step_end
+
+FrostpineCity_RivalEvent_Movement_1_1:
+	walk_down
+	walk_left
+	step_end
+
+FrostpineCity_RivalEvent_Movement_1_2:
+	walk_down
+	walk_down
+	walk_left
+	step_end
+
+FrostpineCity_RivalEvent_Movement_2_0:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+FrostpineCity_RivalEvent_Movement_2_1:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+FrostpineCity_RivalEvent_Movement_2_2:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+FrostpineCity_Sign_Gate::
+	msgbox FrostpineCity_Sign_Gate_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	return
+
+
+FrostpineCity_Sign_FriendshipRater_Text_0:
+	.string "{COLOR LIGHT_GREEN}The Friendship Rater\n"
+	.string "{COLOR DARK_GREY}“Test your partner's friendliness!”$"
+
+FrostpineCity_Sign_CitySign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Frostpine City\p"
+	.string "{COLOR DARK_GREY}“The White Forest of the East”$"
+
+FrostpineCity_Sign_GymSign_Text_0:
+	.string "{COLOR RED}Frostpine Pokémon Gym\p"
+	.string "{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bernie\n"
+	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Fire-Type$"
+
+FrostpineCity_Sign_IronwoodForest_Text_0:
+	.string "{COLOR LIGHT_GREEN}Ironwood Forest$"
+
+FrostpineCity_Object_IronwoodForestTrees_Text_0:
+	.string "This tree seems sturdier than others...\p"
+	.string "Looks like this tree isn't cuttable\n"
+	.string "using {COLOR GREEN}Cut{COLOR DARK_GREY}.$"
+
+FrostpineCity_Object_Ranger_Text_0:
+	.string "{COLOR BLUE}It's really cold up here!\p"
+	.string "I bet it's even colder at the peak of {COLOR GREEN}Mt.\n"
+	.string "Hood{COLOR BLUE}!$"
+
+FrostpineCity_Object_Kindler_Text_0:
+	.string "{COLOR BLUE}My Fire-type Pokémon keep me nice and\n"
+	.string "warm in this freezing weather.$"
+
+FrostpineCity_Object_LittleGirl_Text_0:
+	.string "{COLOR RED}I like to play in the ice pond!\p"
+	.string "It's fun sliding around on the ice!$"
+
+FrostpineCity_Object_Boy_Text_0:
+	.string "{COLOR BLUE}The forest up ahead is {COLOR GREEN}Ironwood Forest{COLOR BLUE},\n"
+	.string "which connects to {COLOR GREEN}Ironwood Town{COLOR BLUE}.\p"
+	.string "But I can't seem to get past these\n"
+	.string "trees...\p"
+	.string "They look just like the other cuttable\n"
+	.string "trees, but they are sturdier.\p"
+	.string "If you wanted to cut those down, you\n"
+	.string "would need a stronger cut move.$"
+
+FrostpineCity_Trigger_RivalEvent_Text_0:
+	.string "Skip: {COLOR BLUE} What's up Slowpoke!$"
+
+FrostpineCity_Trigger_RivalEvent_Text_1:
+	.string "Skip: {COLOR BLUE}Are you shivering?\p"
+	.string "I don't blame you...\p"
+	.string "But I'm all warmed up from my Gym Battle\n"
+	.string "against {COLOR GREEN}Bernie{COLOR BLUE}!\p"
+	.string "He wasn't too difficult, but I've been\n"
+	.string "training quickly!\p"
+	.string "I still got some steam left from that\n"
+	.string "battle, let be burn the rest of it off\l"
+	.string "with you!$"
+
+FrostpineCity_Trigger_RivalEvent_Text_2:
+	.string "I barely even broke a sweat!$"
+
+FrostpineCity_Trigger_RivalEvent_Text_3:
+	.string "Skip: {COLOR BLUE}Well I'm on my way to {COLOR GREEN}Bayport City{COLOR BLUE},\n"
+	.string "which is where the next Gym Leader is\l"
+	.string "at!\p"
+	.string "Don't worry, I'll say hi to your Mom in\n"
+	.string "{COLOR GREEN}Myst City{COLOR BLUE} on the way!$"
+
+FrostpineCity_Sign_Gate_Text_0:
+	.string "{COLOR LIGHT_GREEN}Frostpine City Gate$"

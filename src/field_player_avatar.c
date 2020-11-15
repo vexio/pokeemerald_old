@@ -2288,4 +2288,3 @@ u8 GetLeftSideStairsDirection(u8 direction)
         return direction;
     }
 }
-

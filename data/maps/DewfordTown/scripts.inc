@@ -889,9 +889,9 @@ DavnridgeTown_Sign_TownSign_Text_0:
 	.string "{COLOR DARK_GREY}“The Resource Capital of Ryoko”$"
 
 DavnridgeTown_Sign_GymSign_Text_0:
-	.string "{COLOR RED}Davnridge Gym\p"
+	.string "{COLOR RED}Davnridge Pokémon Gym\p"
 	.string "{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Lilith\n"
-	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Rock Type$"
+	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Rock-Type$"
 
 DavnridgeTown_Sign_Mines_Text_0:
 	.string "{COLOR LIGHT_GREEN}Davnridge Mines$"

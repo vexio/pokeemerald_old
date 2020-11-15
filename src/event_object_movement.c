@@ -417,7 +417,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_5              0x1111
 #define OBJ_EVENT_PAL_TAG_6              0x1112
 #define OBJ_EVENT_PAL_TAG_7              0x1113
-#define OBJ_EVENT_PAL_TAG_1              0x1114
+#define OBJ_EVENT_PAL_TAG_8              0x1114
 #define OBJ_EVENT_PAL_TAG_FAN            0x1115
 #define OBJ_EVENT_PAL_TAG_RT_F_M         0x1116
 #define OBJ_EVENT_PAL_TAG_ICKER_CAMPER   0x1117
@@ -478,6 +478,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_ERIS           0x114E
 #define OBJ_EVENT_PAL_TAG_HAUMEA         0x114F
 #define OBJ_EVENT_PAL_TAG_CUTTABLETREE   0x1150
+#define OBJ_EVENT_PAL_TAG_ITEMBALL       0x1151
 #define OBJ_EVENT_PAL_TAG_NONE           0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -567,6 +568,7 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Noland, OBJ_EVENT_PAL_TAG_ERIS},
     {gObjectEventPalette_Lucy, OBJ_EVENT_PAL_TAG_HAUMEA},
     {gObjectEventPalette_CuttableTree, OBJ_EVENT_PAL_TAG_CUTTABLETREE},
+    {gObjectEventPalette_ItemBall, OBJ_EVENT_PAL_TAG_ITEMBALL},
     {NULL,                                 0x0000},
 };
 
@@ -7893,6 +7895,10 @@ static void GetGroundEffectFlags_Tracks(struct ObjectEvent *objEvent, u32 *flags
     {
         *flags |= GROUND_EFFECT_FLAG_SAND;
     }
+    else if (MetatileBehavior_IsSnow(objEvent->previousMetatileBehavior))
+    {
+        *flags |= GROUND_EFFECT_FLAG_SNOW;
+    }
 }
 
 static void GetGroundEffectFlags_SandHeap(struct ObjectEvent *objEvent, u32 *flags)
@@ -8309,9 +8315,10 @@ static void DoTracksGroundEffect_None(struct ObjectEvent *objEvent, struct Sprit
 static void DoTracksGroundEffect_Footprints(struct ObjectEvent *objEvent, struct Sprite *sprite, u8 a)
 {
     // First half-word is a Field Effect script id. (gFieldEffectScriptPointers)
-    u16 sandFootprints_FieldEffectData[2] = {
+    u16 sandFootprints_FieldEffectData[3] = {
         FLDEFF_SAND_FOOTPRINTS,
-        FLDEFF_DEEP_SAND_FOOTPRINTS
+        FLDEFF_DEEP_SAND_FOOTPRINTS,
+        FLDEFF_SNOW_FOOTPRINTS
     };
 
     gFieldEffectArguments[0] = objEvent->previousCoords.x;

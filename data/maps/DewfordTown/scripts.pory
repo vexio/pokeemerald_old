@@ -826,7 +826,7 @@ script DavnridgeTown_Sign_TownSign {
     end
 }
 script DavnridgeTown_Sign_GymSign {
-    msgbox(format("{COLOR RED}Davnridge Gym\p{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Lilith\n{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Rock Type"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    msgbox(format("{COLOR RED}Davnridge Pokémon Gym\p{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Lilith\n{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Rock-Type"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
     end
 }
 script DavnridgeTown_Sign_Mines {

@@ -1959,7 +1959,8 @@ static const u8 sPowderJarDesc[] = _(
 
 static const u8 sRubyDesc[] = _(
     "An ancient book\n"
-    "about Cresselia.");
+    "about Cresselia.\n"
+    "It's really dusty.");
 
 static const u8 sSapphireDesc[] = _(
     "A brilliant blue gem\n"

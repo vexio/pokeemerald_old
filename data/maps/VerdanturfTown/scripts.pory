@@ -1,0 +1,262 @@
+raw `
+VerdanturfTown_MapScripts:: @ 81EB566
+	map_script MAP_SCRIPT_ON_TRANSITION, VerdanturfTown_OnTransition
+	.byte 0
+
+VerdanturfTown_OnTransition: @ 81EB56C
+	setflag FLAG_VISITED_VERDANTURF_TOWN
+	setvar VAR_CONTEST_HALL_STATE, 0
+	end
+
+VerdanturfTown_EventScript_Twin:: @ 81EB575
+	lock
+	faceplayer
+	goto_if_set FLAG_RUSTURF_TUNNEL_OPENED, VerdanturfTown_EventScript_TwinTunnelOpen
+	msgbox VerdanturfTown_Text_ManTryingToDigTunnel, MSGBOX_DEFAULT
+	applymovement 2, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+VerdanturfTown_EventScript_TwinTunnelOpen:: @ 81EB594
+	msgbox VerdanturfTown_Text_ManDugTunnelForLove, MSGBOX_DEFAULT
+	applymovement 2, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+VerdanturfTown_EventScript_Man:: @ 81EB5A8
+	msgbox VerdanturfTown_Text_AirCleanHere, MSGBOX_NPC
+	end
+
+VerdanturfTown_EventScript_Camper:: @ 81EB5B1
+	msgbox VerdanturfTown_Text_MakeBattleTentDebut, MSGBOX_NPC
+	end
+
+VerdanturfTown_EventScript_Boy:: @ 81EB5BA
+	lock
+	faceplayer
+	goto_if_set FLAG_RUSTURF_TUNNEL_OPENED, VerdanturfTown_EventScript_BoyTunnelOpen
+	msgbox VerdanturfTown_Text_GuyTryingToBustThroughCave, MSGBOX_DEFAULT
+	release
+	end
+
+VerdanturfTown_EventScript_BoyTunnelOpen:: @ 81EB5CF
+	msgbox VerdanturfTown_Text_EasyToGetToRustboroNow, MSGBOX_DEFAULT
+	release
+	end
+
+VerdanturfTown_EventScript_TownSign:: @ 81EB5D9
+	msgbox VerdanturfTown_Text_TownSign, MSGBOX_SIGN
+	end
+
+VerdanturfTown_EventScript_WandasHouseSign:: @ 81EB5E2
+	msgbox VerdanturfTown_Text_WandasHouse, MSGBOX_SIGN
+	end
+
+VerdanturfTown_EventScript_BattleTentSign:: @ 81EB5EB
+	msgbox VerdanturfTown_Text_BattleTentSign, MSGBOX_SIGN
+	end
+
+VerdanturfTown_EventScript_RusturfTunnelSign:: @ 81EB5F4
+	msgbox VerdanturfTown_Text_RusturfTunnelSign, MSGBOX_SIGN
+	end
+
+VerdanturfTown_Text_ManTryingToDigTunnel: @ 81EB5FD
+	.string "My papa told me.\p"
+	.string "He says this tunnel is full of\n"
+	.string "timid POKéMON.\p"
+	.string "They get all scared of loud noise and\n"
+	.string "make a big uproar.\p"
+	.string "So they had to stop the big tunnel\n"
+	.string "project.\p"
+	.string "But there's one man. He's trying to dig\n"
+	.string "the tunnel by himself!$"
+
+VerdanturfTown_Text_ManDugTunnelForLove: @ 81EB6E0
+	.string "There was a man who dug a tunnel for\n"
+	.string "a lady he loved.\p"
+	.string "I don't really get it, but hey!$"
+
+VerdanturfTown_Text_AirCleanHere: @ 81EB736
+	.string "The way the winds blow, volcanic ash\n"
+	.string "is never blown in this direction.\p"
+	.string "The air is clean and delicious here.\n"
+	.string "Living here should do wonders for even\l"
+	.string "frail and sickly people.$"
+
+VerdanturfTown_Text_MakeBattleTentDebut: @ 81EB7E2
+	.string "My POKéMON and I, we've been riding\n"
+	.string "a hot winning streak.\p"
+	.string "So I decided to make my BATTLE TENT\n"
+	.string "debut in this town.$"
+
+VerdanturfTown_Text_GuyTryingToBustThroughCave: @ 81EB854
+	.string "Did you see the cave next to the\n"
+	.string "POKéMON MART?\p"
+	.string "There's a guy in there who's trying to\n"
+	.string "bust up boulders so he can bust out\l"
+	.string "through to the other side.\p"
+	.string "It'd be great if we could go through…\n"
+	.string "It'll make it easy to visit RUSTBORO.$"
+
+VerdanturfTown_Text_EasyToGetToRustboroNow: @ 81EB935
+	.string "That cave next to the POKéMON MART\n"
+	.string "is now a tunnel to the other side.\p"
+	.string "It's great--it's easy to go shop for\n"
+	.string "new DEVON products in RUSTBORO now.$"
+
+VerdanturfTown_Text_TownSign: @ 81EB9C4
+	.string "VERDANTURF TOWN\p"
+	.string "“The windswept highlands with the\n"
+	.string "sweet fragrance of grass.”$"
+
+VerdanturfTown_Text_WandasHouse: @ 81EBA11
+	.string "WANDA'S HOUSE$"
+
+VerdanturfTown_Text_BattleTentSign: @ 81EBA1F
+	.string "BATTLE TENT VERDANTURF SITE\n"
+	.string "“Feast Your Eyes on Battles!”$"
+
+VerdanturfTown_Text_RusturfTunnelSign: @ 81EBA59
+	.string "RUSTURF TUNNEL\n"
+	.string "“Linking RUSTBORO and VERDANTURF\p"
+	.string "“The tunnel project has been\n"
+	.string "canceled.”$"
+
+`
+
+script FrostpineCity_Sign_FriendshipRater {
+    msgbox(format("{COLOR LIGHT_GREEN}The Friendship Rater\n{COLOR DARK_GREY}“Test your partner's friendliness!”"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
+    end
+}
+script FrostpineCity_Sign_CitySign {
+    msgbox(format("{COLOR LIGHT_GREEN}Frostpine City\p{COLOR DARK_GREY}“The White Forest of the East”"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    end
+}
+script FrostpineCity_Sign_GymSign {
+    msgbox(format("{COLOR RED}Frostpine Pokémon Gym\p{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bernie\n{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Fire-Type"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    end
+}
+script FrostpineCity_Sign_IronwoodForest {
+    msgbox(format("{COLOR LIGHT_GREEN}Ironwood Forest"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
+    end
+}
+
+script FrostpineCity_Object_IronwoodForestTrees {
+    msgbox(format("This tree seems sturdier than others...\pLooks like this tree isn't cuttable using {COLOR GREEN}Cut{COLOR DARK_GREY}."), MSGBOX_SIGN)
+    end
+}
+script FrostpineCity_Object_Ranger {
+    msgbox(format("{COLOR BLUE}It's really cold up here!\pI bet it's even colder at the peak of {COLOR GREEN}Mt. Hood{COLOR BLUE}!"), MSGBOX_NPC)
+    end
+}
+script FrostpineCity_Object_Kindler {
+    msgbox(format("{COLOR BLUE}My Fire-type Pokémon keep me nice and warm in this freezing weather."), MSGBOX_NPC)
+    end
+}
+script FrostpineCity_Object_LittleGirl {
+    msgbox(format("{COLOR RED}I like to play in the ice pond!\pIt's fun sliding around on the ice!"), MSGBOX_NPC)
+    end
+}
+script FrostpineCity_Object_Boy {
+    msgbox(format("{COLOR BLUE}The forest up ahead is {COLOR GREEN}Ironwood Forest{COLOR BLUE}, which connects to {COLOR GREEN}Ironwood Town{COLOR BLUE}.\pBut I can't seem to get past these trees...\pThey look just like the other cuttable trees, but they are sturdier.\pIf you wanted to cut those down, you would need a stronger cut move."), MSGBOX_NPC)
+    end
+}
+
+const SKIP = 9
+const PLAYER = OBJ_EVENT_ID_PLAYER
+
+script FrostpineCity_Trigger_RivalEvent {
+	lockall
+	delay(15)
+	opendoor(40, 28)
+	waitdooranim()
+	applymovement(SKIP, FrostpineCity_RivalEvent_Movement_0)
+	waitmovement(0)
+	closedoor(40, 28)
+	applymovement(SKIP, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	delay(10)
+	applymovement(SKIP, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	playse(SE_PIN)
+	delay(16)
+	playbgm(MUS_RG_RIVAL1, 0)
+	msgbox(format("Skip: {COLOR BLUE} What's up Slowpoke!"), MSGBOX_AUTOCLOSE)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 29) {
+		applymovement(SKIP, FrostpineCity_RivalEvent_Movement_1_0)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 30) {
+		applymovement(SKIP, FrostpineCity_RivalEvent_Movement_1_1)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 30) {
+		applymovement(SKIP, FrostpineCity_RivalEvent_Movement_1_2)
+		waitmovement(0)
+	}
+	delay(20)
+	msgbox(format("Skip: {COLOR BLUE}Are you shivering?\pI don't blame you...\pBut I'm all warmed up from my Gym Battle against {COLOR GREEN}Bernie{COLOR BLUE}!\pHe wasn't too difficult, but I've been training quickly!\pI still got some steam left from that battle, let be burn the rest of it off with you!"), MSGBOX_AUTOCLOSE)
+	if (var(VAR_STARTER_MON) == 0) { // player chose Rowlet
+		trainerbattle_no_intro(TRAINER_SKIP_FIRE_2, format("I barely even broke a sweat!"))
+	} elif (var(VAR_STARTER_MON) == 1) { // player chose Chimchar
+		trainerbattle_no_intro(TRAINER_SKIP_WATER_2, format("I barely even broke a sweat!"))
+	} elif (var(VAR_STARTER_MON) == 2) { // player chose Froakie
+		trainerbattle_no_intro(TRAINER_SKIP_GRASS_2, format("I barely even broke a sweat!"))
+	}
+	playbgm(MUS_RG_RIVAL2, 0)
+	delay(5)
+	msgbox(format("Skip: {COLOR BLUE}Well I'm on my way to {COLOR GREEN}Bayport City{COLOR BLUE}, which is where the next Gym Leader is at!\pDon't worry, I'll say hi to your Mom in {COLOR GREEN}Myst City{COLOR BLUE} on the way!"), MSGBOX_AUTOCLOSE)
+	if (var(VAR_TEMP_1) == 29) {
+		applymovement(SKIP, FrostpineCity_RivalEvent_Movement_2_0)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 30) {
+		applymovement(SKIP, FrostpineCity_RivalEvent_Movement_2_1)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 30) {
+		applymovement(SKIP, FrostpineCity_RivalEvent_Movement_2_2)
+		waitmovement(0)
+	}
+	removeobject(SKIP)
+	setflag(FLAG_FROSTPINE_RIVAL_EVENT)
+	setvar(VAR_FROSTPINE_CITY_RIVAL_EVENT, 1)
+	fadenewbgm(MUS_RG_OKURIMONO)
+	releaseall
+	end	
+}
+
+movement FrostpineCity_RivalEvent_Movement_0 {
+	walk_down * 2
+}
+
+movement FrostpineCity_RivalEvent_Movement_1_0 {
+	walk_left
+}
+movement FrostpineCity_RivalEvent_Movement_1_1 {
+	walk_down
+	walk_left
+}
+movement FrostpineCity_RivalEvent_Movement_1_2 {
+	walk_down * 2
+	walk_left
+}
+
+movement FrostpineCity_RivalEvent_Movement_2_0 {
+	walk_down
+	walk_left * 3
+	walk_down * 6
+}
+movement FrostpineCity_RivalEvent_Movement_2_1 {
+	walk_down
+	walk_left * 3
+	walk_down * 6
+}
+movement FrostpineCity_RivalEvent_Movement_2_2 {
+	walk_up
+	walk_left * 3
+	walk_down * 7
+}
+
+script FrostpineCity_Sign_Gate {
+	msgbox(format("{COLOR LIGHT_GREEN}Frostpine City Gate"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
+}

@@ -37,6 +37,7 @@
 #include "string_util.h"
 #include "task.h"
 #include "text.h"
+#include "field_specials.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/flags.h"
@@ -217,6 +218,21 @@ void ItemUseOutOfBattle_Bike(u8 taskId)
         else
             DisplayDadsAdviceCannotUseItemMessage(taskId, tUsingRegisteredKeyItem);
     }
+}
+
+static void CB2_FieldShowRegionMap_Item(void)
+{
+    FieldInitRegionMap(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+void FieldShowRegionMap_Item(void)
+{
+    SetMainCallback2(CB2_FieldShowRegionMap_Item);
+}
+
+void ItemUseOutOfBattle_TownMap(u8 taskId)
+{
+    FieldShowRegionMap_Item();
 }
 
 static void ItemUseOnFieldCB_Bike(u8 taskId)

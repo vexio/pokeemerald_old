@@ -345,5 +345,6 @@
 #define BATTLE_TERRAIN_CAVE         7
 #define BATTLE_TERRAIN_BUILDING     8
 #define BATTLE_TERRAIN_PLAIN        9
+#define BATTLE_TERRAIN_SNOW        10
 
 #endif // GUARD_CONSTANTS_BATTLE_H

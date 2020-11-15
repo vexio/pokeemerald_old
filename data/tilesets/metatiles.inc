@@ -657,3 +657,38 @@ gMetatiles_SnowRoute::
 	.align 1
 gMetatileAttributes_SnowRoute::
 	.incbin "data/tilesets/secondary/snowroute/metatile_attributes.bin"
+	.align 1
+gMetatiles_MystCity::
+	.incbin "data/tilesets/secondary/mystcity/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_MystCity::
+	.incbin "data/tilesets/secondary/mystcity/metatile_attributes.bin"
+	.align 1
+gMetatiles_LogCabin::
+	.incbin "data/tilesets/secondary/logcabin/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_LogCabin::
+	.incbin "data/tilesets/secondary/logcabin/metatile_attributes.bin"
+	.align 1
+gMetatiles_FrostpineGym::
+	.incbin "data/tilesets/secondary/frostpinegym/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_FrostpineGym::
+	.incbin "data/tilesets/secondary/frostpinegym/metatile_attributes.bin"
+	.align 1
+gMetatiles_BayportCity::
+	.incbin "data/tilesets/secondary/bayportcity/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_BayportCity::
+	.incbin "data/tilesets/secondary/bayportcity/metatile_attributes.bin"
+	.align 1
+gMetatiles_WispForest::
+	.incbin "data/tilesets/secondary/wispforest/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_WispForest::
+	.incbin "data/tilesets/secondary/wispforest/metatile_attributes.bin"

@@ -1427,6 +1427,11 @@ CanvasTown_RivalBattle_CMovement_1:
 	walk_up
 	step_end
 
+CanvasTown_Sign_EZPokemon::
+	givemon SPECIES_NOIVERN, 100, ITEM_DRAGON_FANG
+	return
+
+
 CanvasTown_Sign_TownSign_Text_0:
 	.string "{COLOR LIGHT_GREEN}Canvas Town\p"
 	.string "{COLOR DARK_GREY}“A town of many colors.”$"

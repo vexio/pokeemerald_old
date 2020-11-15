@@ -1,0 +1,58 @@
+raw `
+VerdanturfTown_FriendshipRatersHouse_MapScripts:: @ 8203030
+	.byte 0
+`
+
+script FrostpineCity_Object_FriendshipRater {
+	lock
+	faceplayer
+	msgbox(format("{COLOR RED}Hello.\nI'm the {COLOR GREEN}Friendship Rater{COLOR RED}.\pI can rate your Pokémon's friendliness towards it's trainer.\pWould you like me to see your Pokémon?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == 1) { // yes
+		msgbox(format("{COLOR RED}Will do.\pHm..."), MSGBOX_AUTOCLOSE)
+		specialvar(VAR_RESULT, GetLeadMonFriendshipScore)
+		delay(20)
+		bufferleadmonspeciesname(0)
+		switch (var(VAR_RESULT)) {
+			case 0: // detests (low)
+				msgbox(format("{COLOR RED}Oh my...\pYour {COLOR GREEN}{STR_VAR_1}{COLOR RED} simply detests you!\pDoesn't that make you uncomfortable?"), MSGBOX_AUTOCLOSE)
+			case 1: // wary
+				msgbox(format("{COLOR RED}Your {COLOR GREEN}{STR_VAR_1}{COLOR RED} is very wary.\pIt doesn't like you at all."), MSGBOX_AUTOCLOSE)
+			case 2: // not used to you
+				msgbox(format("{COLOR RED}Your {COLOR GREEN}{STR_VAR_1}{COLOR RED} is not quite used to you yet.\pNeither loves or hates you."), MSGBOX_AUTOCLOSE)
+			case 3: // getting used to you
+				msgbox(format("{COLOR RED}Your {COLOR GREEN}{STR_VAR_1}{COLOR RED} seems to be getting used to you."), MSGBOX_AUTOCLOSE)
+			case 4: // likes you quite alot
+				msgbox(format("{COLOR RED}Your {COLOR GREEN}{STR_VAR_1}{COLOR RED} likes you quite a lot!\pIt wants to be babied a little."), MSGBOX_AUTOCLOSE)
+			case 5: // very happy
+				msgbox(format("{COLOR RED}Your {COLOR GREEN}{STR_VAR_1}{COLOR RED} is very happy!\pIt likes you quite a lot."), MSGBOX_AUTOCLOSE)
+			case 6: // adores (max)
+				applymovement(1, Common_Movement_ExclamationMark)
+				waitmovement(0)
+				playse(SE_PIN)
+				waitse
+				msgbox(format("{COLOR RED}Your {COLOR GREEN}{STR_VAR_1}{COLOR RED} absolutely adores you!\pIt makes me happy seeing them!"))
+				if (flag(FLAG_FROSTPINECITY_TM_RETURN) == FALSE) {
+					msgbox(format("{COLOR RED}This TM will be very useful for {COLOR GREEN}{STR_VAR_1}{COLOR RED}."))
+					giveitem(ITEM_TM27_RETURN, 1)
+					setflag(FLAG_FROSTPINECITY_TM_RETURN)
+				}
+		}
+		closemessage
+		release
+		end
+	} else {
+		msgbox(format("{COLOR RED}Understandable.\pPlease treat your Pokémon well!"), MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+}
+
+script FrostpineCity_Object_Pikachu {
+	lock
+	faceplayer
+	playmoncry(SPECIES_PIKACHU, 0)
+	msgbox("Pika pika!")
+	waitmoncry
+	release
+	end
+}

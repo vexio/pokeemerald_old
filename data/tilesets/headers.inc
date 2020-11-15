@@ -973,3 +973,58 @@ gTileset_SnowRoute::
 	.4byte gMetatiles_SnowRoute
 	.4byte gMetatileAttributes_SnowRoute
 	.4byte NULL
+
+	.align 2
+gTileset_MystCity::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_MystCity
+	.4byte gTilesetPalettes_MystCity
+	.4byte gMetatiles_MystCity
+	.4byte gMetatileAttributes_MystCity
+	.4byte NULL
+
+	.align 2
+gTileset_LogCabin::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_LogCabin
+	.4byte gTilesetPalettes_LogCabin
+	.4byte gMetatiles_LogCabin
+	.4byte gMetatileAttributes_LogCabin
+	.4byte NULL
+
+	.align 2
+gTileset_FrostpineGym::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_FrostpineGym
+	.4byte gTilesetPalettes_FrostpineGym
+	.4byte gMetatiles_FrostpineGym
+	.4byte gMetatileAttributes_FrostpineGym
+	.4byte InitTilesetAnim_FrostpineGym
+
+	.align 2
+gTileset_BayportCity::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_BayportCity
+	.4byte gTilesetPalettes_BayportCity
+	.4byte gMetatiles_BayportCity
+	.4byte gMetatileAttributes_BayportCity
+	.4byte NULL
+
+	.align 2
+gTileset_WispForest::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_WispForest
+	.4byte gTilesetPalettes_WispForest
+	.4byte gMetatiles_WispForest
+	.4byte gMetatileAttributes_WispForest
+	.4byte NULL

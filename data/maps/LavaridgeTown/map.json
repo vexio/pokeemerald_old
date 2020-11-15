@@ -180,7 +180,7 @@
       "x": 23,
       "y": 17,
       "elevation": 0,
-      "var": "VAR_ENCLAVATOWER_STATE",
+      "var": "VAR_ALNERWICKLIBRARY_THIEF",
       "var_value": "2",
       "script": "EnclavaTown_Trigger_EnclavaTower"
     }

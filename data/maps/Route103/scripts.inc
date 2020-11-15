@@ -202,7 +202,7 @@ Route103_EventScript_RouteSign:: @ 81EC5EB
 	end
 
 Route103_EventScript_Daisy:: @ 81EC5F4
-	trainerbattle_single TRAINER_DAISY, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated
+	trainerbattle_single TRAINER_RANGER_ELIJAH, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated
 	msgbox Route103_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
 	end
 

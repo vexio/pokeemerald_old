@@ -105,6 +105,14 @@ Common_Movement_JumpInPlaceLeft:
 	jump_in_place_left
 	step_end
 
+Common_Movement_JumpInPlaceRight:
+	jump_in_place_right
+	step_end
+
+Common_Movement_JumpInPlaceDown:
+	jump_in_place_down
+	step_end
+
 @ Unused
 Common_Movement_WalkUp2:: @ 82725CB
 	walk_up
