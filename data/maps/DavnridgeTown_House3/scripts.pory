@@ -1,0 +1,16 @@
+mapscripts DavnridgeTown_House3_MapScripts {}
+
+script DavnridgeTown_House3_Object_Little_Girl {
+	msgbox(format("{COLOR RED}My daddy let me play with his Pokémon today!\pMy daddy is a hard worker in the mines!"), MSGBOX_NPC)
+	end
+}
+script DavnridgeTown_House3_Object_Skitty {
+	lock
+	faceplayer
+	playmoncry(SPECIES_SKITTY, 0)
+	msgbox(format("Prreow!"))
+	waitmoncry
+	closemessage
+	release
+	end
+}

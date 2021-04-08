@@ -66,6 +66,7 @@
 #define MAP_ALNERWICK_LIBRARY     (61 | (0 << 8))
 #define MAP_ENCLAVA_TOWN_HOUSE_2  (62 | (0 << 8))
 #define MAP_ENCLAVA_TOWER_3F      (63 | (0 << 8))
+#define MAP_MYST_CITY_HOUSE_2     (64 | (0 << 8))
 
 // Map Group 1
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -92,6 +93,11 @@
 #define MAP_DEWFORD_TOWN_HALL              (4 | (3 << 8))
 #define MAP_DEWFORD_TOWN_HOUSE2            (5 | (3 << 8))
 #define MAP_DAVNRIDGE_TOWN_GYM             (6 | (3 << 8))
+#define MAP_DAVNRIDGE_TOWN_HOUSE3          (7 | (3 << 8))
+#define MAP_DAVNRIDGE_TOWN_HOUSE4          (8 | (3 << 8))
+#define MAP_TEAM_PROTO_HIDEOUT_B1F         (9 | (3 << 8))
+#define MAP_TEAM_PROTO_HIDEOUT_B2F         (10 | (3 << 8))
+#define MAP_TEAM_PROTO_HIDEOUT_B3F         (11 | (3 << 8))
 
 // Map Group 4
 #define MAP_LAVARIDGE_TOWN_HERB_SHOP         (0 | (4 << 8))
@@ -160,6 +166,8 @@
 #define MAP_SLATEPORT_CITY_POKEMON_CENTER_1F       (11 | (9 << 8))
 #define MAP_SLATEPORT_CITY_POKEMON_CENTER_2F       (12 | (9 << 8))
 #define MAP_SLATEPORT_CITY_MART                    (13 | (9 << 8))
+#define MAP_BAYPORT_CITY_LARS_HOUSE                (14 | (9 << 8))
+#define MAP_BAYPORT_CITY_GYM                       (15 | (9 << 8))
 
 // Map Group 10
 #define MAP_MAUVILLE_CITY_GYM               (0 | (10 << 8))
@@ -226,6 +234,11 @@
 #define MAP_LILYCOVE_CITY_DEPARTMENT_STORE_5F       (20 | (13 << 8))
 #define MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP  (21 | (13 << 8))
 #define MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR (22 | (13 << 8))
+#define MAP_MYST_CITY_CYPRESS_LAB                   (23 | (13 << 8))
+#define MAP_MYST_CITY_CRAWDAUNT_PUB                 (24 | (13 << 8))
+#define MAP_MYST_CITY_HOUSE_1                       (25 | (13 << 8))
+#define MAP_MYST_CITY_HOUSE_3                       (26 | (13 << 8))
+#define MAP_MYST_CITY_HOUSE_4                       (27 | (13 << 8))
 
 // Map Group 14
 #define MAP_MOSSDEEP_CITY_GYM               (0 | (14 << 8))

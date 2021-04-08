@@ -493,15 +493,15 @@ script PlayersHouse_Mapscript_GetPokemon {
 		waitstate
 		fadeoutbgm(0)
 		if (var(VAR_STARTER_MON) == 0) {
-			playse(MUS_FANFA4)
+			playse(MUS_RG_FAN5)
 			msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Rowlet"))
 			waitse
 		} elif (var(VAR_STARTER_MON) == 1) {
-			playse(MUS_FANFA4)
+			playse(MUS_RG_FAN5)
 			msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Chimchar"))
 			waitse
 		} elif (var(VAR_STARTER_MON) == 2) {
-			playse(MUS_FANFA4)
+			playse(MUS_RG_FAN5)
 			msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Froakie"))
 			waitse
 		}
@@ -524,15 +524,15 @@ script PlayersHouse_Mapscript_GetPokemon {
 		waitmovement(0)
 		delay(20)
 		if (var(VAR_STARTER_MON) == 0) { //player chose rowlet, rival is chimchar
-			playse(MUS_FANFA4)
+			playse(MUS_RG_FAN5)
 			msgbox(format("Skip received a {COLOR GREEN}Chimchar"))
 			waitse
 		} elif (var(VAR_STARTER_MON) == 1) { //player chose chimchar, rival is froakie
-			playse(MUS_FANFA4)
+			playse(MUS_RG_FAN5)
 			msgbox(format("Skip received a {COLOR GREEN}Froakie"))
 			waitse
 		} elif (var(VAR_STARTER_MON) == 2) { //player chose froakie, rival is rowlet
-			playse(MUS_FANFA4)
+			playse(MUS_RG_FAN5)
 			msgbox(format("Skip received a {COLOR GREEN}Rowlet"))
 			waitse
 		}
@@ -559,8 +559,7 @@ script PlayersHouse_Mapscript_GetPokemon {
 		msgbox(format("{PLAYER} received the Pokédex!"))
 		waitfanfare
 		setflag(FLAG_SYS_POKEDEX_GET)
-		setflag(FLAG_SYS_NATIONAL_DEX)
-		special(EnableNationalPokedex)
+		#special(EnableNationalPokedex)
 		special(SetUnlockedPokedexFlags)
 		playfanfare(MUS_FANFA4)
 		msgbox(format("{PLAYER} received the Trainer Card!"))

@@ -170,9 +170,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RooftopSaleWoman =
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Teala = {0xFFFF, OBJ_EVENT_PAL_TAG_0, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 2, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_Teala, gDummySpriteAffineAnimTable};
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreakableRock = {0xFFFF, OBJ_EVENT_PAL_TAG_0, OBJ_EVENT_PAL_TAG_NONE, 128, 16, 16, 2, SHADOW_SIZE_S, TRUE, FALSE, TRACKS_NONE, &gObjectEventBaseOam_16x16, gObjectEventSpriteOamTables_16x16, gObjectEventImageAnimTable_BreakableRock, gObjectEventPicTable_BreakableRock, gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreakableRock = {0xFFFF, OBJ_EVENT_PAL_TAG_BREAKABLEROCK, OBJ_EVENT_PAL_TAG_NONE, 128, 16, 16, 2, SHADOW_SIZE_S, TRUE, FALSE, TRACKS_NONE, &gObjectEventBaseOam_16x16, gObjectEventSpriteOamTables_16x16, gObjectEventImageAnimTable_BreakableRock, gObjectEventPicTable_BreakableRock, gDummySpriteAffineAnimTable};
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PushableBoulder = {0xFFFF, OBJ_EVENT_PAL_TAG_0, OBJ_EVENT_PAL_TAG_NONE, 128, 16, 16, 2, SHADOW_SIZE_S, TRUE, FALSE, TRACKS_NONE, &gObjectEventBaseOam_16x16, gObjectEventSpriteOamTables_16x16, gObjectEventImageAnimTable_Inanimate, gObjectEventPicTable_PushableBoulder, gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PushableBoulder = {0xFFFF, OBJ_EVENT_PAL_TAG_PUSHABLEBOULDER, OBJ_EVENT_PAL_TAG_NONE, 128, 16, 16, 2, SHADOW_SIZE_S, TRUE, FALSE, TRACKS_NONE, &gObjectEventBaseOam_16x16, gObjectEventSpriteOamTables_16x16, gObjectEventImageAnimTable_Inanimate, gObjectEventPicTable_PushableBoulder, gDummySpriteAffineAnimTable};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrBrineysBoat = {0xFFFF, OBJ_EVENT_PAL_TAG_2, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 4, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_NONE, &gObjectEventBaseOam_32x32, gObjectEventSpriteOamTables_32x32, gObjectEventImageAnimTable_Standard, gObjectEventPicTable_MrBrineysBoat, gDummySpriteAffineAnimTable};
 

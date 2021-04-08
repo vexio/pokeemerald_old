@@ -41,7 +41,7 @@
       "flag": "FLAG_CANVASTOWN_GETPOKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "graphics_id": "OBJ_EVENT_GFX_SKIP",
       "x": 5,
       "y": 7,
       "elevation": 3,

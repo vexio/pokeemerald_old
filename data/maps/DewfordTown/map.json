@@ -22,6 +22,11 @@
       "direction": "right",
       "offset": 4,
       "map": "MAP_ROUTE104"
+    },
+    {
+      "direction": "down",
+      "offset": 10,
+      "map": "MAP_ROUTE114"
     }
   ],
   "object_events": [
@@ -40,7 +45,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 18,
+      "x": 28,
       "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
@@ -53,7 +58,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ENGINEER",
-      "x": 20,
+      "x": 30,
       "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -66,7 +71,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ENGINEER",
-      "x": 24,
+      "x": 34,
       "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -79,7 +84,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "x": 11,
+      "x": 12,
       "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
@@ -88,6 +93,19 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "DavnridgeTown_Object_Girl",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 24,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DavnridgeTown_Object_Man",
       "flag": "0"
     }
   ],
@@ -100,15 +118,15 @@
       "dest_warp_id": 0
     },
     {
-      "x": 24,
+      "x": 34,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_DAVNRIDGE_TOWN_GYM",
       "dest_warp_id": 0
     },
     {
-      "x": 27,
-      "y": 27,
+      "x": 20,
+      "y": 24,
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_TOWN_HOUSE1",
       "dest_warp_id": 0
@@ -121,11 +139,32 @@
       "dest_warp_id": 0
     },
     {
-      "x": 22,
+      "x": 32,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_DAVNRIDGE_MINES",
       "dest_warp_id": 1
+    },
+    {
+      "x": 18,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DAVNRIDGE_TOWN_HOUSE4",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 37,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_DEWFORD_TOWN",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 23,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_DAVNRIDGE_TOWN_HOUSE3",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
@@ -134,7 +173,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 8,
+      "x": 24,
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -142,7 +181,7 @@
     },
     {
       "type": "sign",
-      "x": 26,
+      "x": 36,
       "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -150,7 +189,7 @@
     },
     {
       "type": "sign",
-      "x": 19,
+      "x": 29,
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

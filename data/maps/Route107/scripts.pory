@@ -90,5 +90,5 @@ script FrostpineClimb_Trainer_Kindler {
 }
 
 script FrostpineClimb_Sign_Gate {
-	msgbox(format("{COLOR LIGHT_GREEN}Frostpine City Gate"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
+	msgbox(format("{COLOR LIGHT_GREEN}Frostpine Gate"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
 }

@@ -1028,3 +1028,80 @@ gTileset_WispForest::
 	.4byte gMetatiles_WispForest
 	.4byte gMetatileAttributes_WispForest
 	.4byte NULL
+
+	.align 2
+gTileset_TerracotIsland::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_TerracotIsland
+	.4byte gTilesetPalettes_TerracotIsland
+	.4byte gMetatiles_TerracotIsland
+	.4byte gMetatileAttributes_TerracotIsland
+	.4byte NULL
+
+	.align 2
+gTileset_OceareyTown::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_OceareyTown
+	.4byte gTilesetPalettes_OceareyTown
+	.4byte gMetatiles_OceareyTown
+	.4byte gMetatileAttributes_OceareyTown
+	.4byte NULL
+
+	.align 2
+gTileset_CrawdauntPub::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_CrawdauntPub
+	.4byte gTilesetPalettes_CrawdauntPub
+	.4byte gMetatiles_CrawdauntPub
+	.4byte gMetatileAttributes_CrawdauntPub
+	.4byte NULL
+
+	.align 2
+gTileset_AltosCity::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_AltosCity
+	.4byte gTilesetPalettes_AltosCity
+	.4byte gMetatiles_AltosCity
+	.4byte gMetatileAttributes_AltosCity
+	.4byte NULL
+
+	.align 2
+gTileset_Hideout::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Hideout
+	.4byte gTilesetPalettes_Hideout
+	.4byte gMetatiles_Hideout
+	.4byte gMetatileAttributes_Hideout
+	.4byte NULL
+
+	.align 2
+gTileset_CariseaTown::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_CariseaTown
+	.4byte gTilesetPalettes_CariseaTown
+	.4byte gMetatiles_CariseaTown
+	.4byte gMetatileAttributes_CariseaTown
+	.4byte NULL
+
+	.align 2
+gTileset_BayportGym::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_BayportGym
+	.4byte gTilesetPalettes_BayportGym
+	.4byte gMetatiles_BayportGym
+	.4byte gMetatileAttributes_BayportGym
+	.4byte NULL

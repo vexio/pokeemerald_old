@@ -1,0 +1,76 @@
+{
+  "id": "MAP_BAYPORT_CITY_LARS_HOUSE",
+  "name": "BayportCity_LarsHouse",
+  "layout": "LAYOUT_BAYPORT_CITY_LARS_HOUSE",
+  "music": "MUS_FINECITY",
+  "region_map_section": "MAPSEC_SLATEPORT_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LARS",
+      "x": 1,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_BAYPORTCITY_LARSHOUSE_LARSEVENT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 14,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BayportCity_LarsHouse_Object_Woman",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SLATEPORT_CITY",
+      "dest_warp_id": 4
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "2",
+      "script": "BayportCity_LarsHouse_Trigger_LarsEvent"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "2",
+      "script": "BayportCity_LarsHouse_Trigger_LarsEvent"
+    }
+  ],
+  "bg_events": [
+
+  ]
+}

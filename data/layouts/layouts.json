@@ -4,10 +4,10 @@
     {
       "id": "LAYOUT_PETALBURG_CITY",
       "name": "PetalburgCity_Layout",
-      "width": 30,
-      "height": 30,
+      "width": 50,
+      "height": 58,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_AltosCity",
       "border_filepath": "data/layouts/PetalburgCity/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgCity/map.bin"
     },
@@ -24,10 +24,10 @@
     {
       "id": "LAYOUT_MAUVILLE_CITY",
       "name": "MauvilleCity_Layout",
-      "width": 40,
-      "height": 20,
+      "width": 54,
+      "height": 48,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_TerracotIsland",
       "border_filepath": "data/layouts/MauvilleCity/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity/map.bin"
     },
@@ -54,7 +54,7 @@
     {
       "id": "LAYOUT_LILYCOVE_CITY",
       "name": "LilycoveCity_Layout",
-      "width": 48,
+      "width": 50,
       "height": 54,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MystCity",
@@ -64,10 +64,10 @@
     {
       "id": "LAYOUT_MOSSDEEP_CITY",
       "name": "MossdeepCity_Layout",
-      "width": 80,
-      "height": 40,
+      "width": 71,
+      "height": 42,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mossdeep",
+      "secondary_tileset": "gTileset_CariseaTown",
       "border_filepath": "data/layouts/MossdeepCity/border.bin",
       "blockdata_filepath": "data/layouts/MossdeepCity/map.bin"
     },
@@ -114,7 +114,7 @@
     {
       "id": "LAYOUT_DEWFORD_TOWN",
       "name": "DewfordTown_Layout",
-      "width": 36,
+      "width": 46,
       "height": 38,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
@@ -184,7 +184,7 @@
     {
       "id": "LAYOUT_ROUTE103",
       "name": "Route103_Layout",
-      "width": 70,
+      "width": 86,
       "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
@@ -214,7 +214,7 @@
     {
       "id": "LAYOUT_ROUTE106",
       "name": "Route106_Layout",
-      "width": 81,
+      "width": 93,
       "height": 38,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Route",
@@ -244,7 +244,7 @@
     {
       "id": "LAYOUT_ROUTE109",
       "name": "Route109_Layout",
-      "width": 113,
+      "width": 111,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BayportCity",
@@ -254,20 +254,20 @@
     {
       "id": "LAYOUT_ROUTE110",
       "name": "Route110_Layout",
-      "width": 40,
-      "height": 100,
+      "width": 52,
+      "height": 64,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_BayportCity",
       "border_filepath": "data/layouts/Route110/border.bin",
       "blockdata_filepath": "data/layouts/Route110/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE111",
       "name": "Route111_Layout",
-      "width": 40,
-      "height": 140,
+      "width": 80,
+      "height": 40,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_BayportCity",
       "border_filepath": "data/layouts/Route111/border.bin",
       "blockdata_filepath": "data/layouts/Route111/map.bin"
     },
@@ -284,18 +284,18 @@
     {
       "id": "LAYOUT_ROUTE113",
       "name": "Route113_Layout",
-      "width": 100,
-      "height": 20,
+      "width": 32,
+      "height": 48,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fallarbor",
+      "secondary_tileset": "gTileset_TerracotIsland",
       "border_filepath": "data/layouts/Route113/border.bin",
       "blockdata_filepath": "data/layouts/Route113/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE114",
       "name": "Route114_Layout",
-      "width": 40,
-      "height": 80,
+      "width": 44,
+      "height": 86,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/Route114/border.bin",
@@ -304,10 +304,10 @@
     {
       "id": "LAYOUT_ROUTE115",
       "name": "Route115_Layout",
-      "width": 40,
-      "height": 80,
+      "width": 105,
+      "height": 50,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fallarbor",
+      "secondary_tileset": "gTileset_CariseaTown",
       "border_filepath": "data/layouts/Route115/border.bin",
       "blockdata_filepath": "data/layouts/Route115/map.bin"
     },
@@ -794,8 +794,8 @@
     {
       "id": "LAYOUT_HOUSE_WITH_BED",
       "name": "HouseWithBed_Layout",
-      "width": 10,
-      "height": 8,
+      "width": 11,
+      "height": 12,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/HouseWithBed/border.bin",
@@ -845,7 +845,7 @@
       "id": "LAYOUT_SLATEPORT_CITY_POKEMON_FAN_CLUB",
       "name": "SlateportCity_PokemonFanClub_Layout",
       "width": 14,
-      "height": 11,
+      "height": 12,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonFanClub",
       "border_filepath": "data/layouts/SlateportCity_PokemonFanClub/border.bin",
@@ -4614,12 +4614,112 @@
     {
       "id": "LAYOUT_FROSTPINE_CITY_GATE",
       "name": "FrostpineCity_Gate_Layout",
-      "width": 24,
+      "width": 32,
       "height": 20,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/FrostpineCity_Gate/border.bin",
       "blockdata_filepath": "data/layouts/FrostpineCity_Gate/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAVNRIDGE_TOWN_HOUSE3",
+      "name": "DavnridgeTown_House3_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/DavnridgeTown_House3/border.bin",
+      "blockdata_filepath": "data/layouts/DavnridgeTown_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAVNRIDGE_TOWN_HOUSE4",
+      "name": "DavnridgeTown_House4_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/DavnridgeTown_House4/border.bin",
+      "blockdata_filepath": "data/layouts/DavnridgeTown_House4/map.bin"
+    },
+    {
+      "id": "LAYOUT_MYST_CITY_CYPRESS_LAB",
+      "name": "MystCity_CypressLab_Layout",
+      "width": 52,
+      "height": 25,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/MystCity_CypressLab/border.bin",
+      "blockdata_filepath": "data/layouts/MystCity_CypressLab/map.bin"
+    },
+    {
+      "id": "LAYOUT_MYST_CITY_CRAWDAUNT_PUB",
+      "name": "MystCity_CrawdauntPub_Layout",
+      "width": 30,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_CrawdauntPub",
+      "border_filepath": "data/layouts/MystCity_CrawdauntPub/border.bin",
+      "blockdata_filepath": "data/layouts/MystCity_CrawdauntPub/map.bin"
+    },
+    {
+      "id": "LAYOUT_MYST_CITY_HOUSE_1",
+      "name": "MystCity_House_1_Layout",
+      "width": 11,
+      "height": 24,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MystCity_House_1/border.bin",
+      "blockdata_filepath": "data/layouts/MystCity_House_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEAM_PROTO_HIDEOUT_B1F",
+      "name": "TeamProtoHideout_B1F_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Hideout",
+      "border_filepath": "data/layouts/TeamProtoHideout_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/TeamProtoHideout_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_BAYPORT_CITY_LARS_HOUSE",
+      "name": "BayportCity_LarsHouse_Layout",
+      "width": 17,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/BayportCity_LarsHouse/border.bin",
+      "blockdata_filepath": "data/layouts/BayportCity_LarsHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_BAYPORT_CITY_GYM",
+      "name": "BayportCity_Gym_Layout",
+      "width": 20,
+      "height": 32,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BayportGym",
+      "border_filepath": "data/layouts/BayportCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/BayportCity_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEAM_PROTO_HIDEOUT_B2F",
+      "name": "TeamProtoHideout_B2F_Layout",
+      "width": 22,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Hideout",
+      "border_filepath": "data/layouts/TeamProtoHideout_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/TeamProtoHideout_B2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEAM_PROTO_HIDEOUT_B3F",
+      "name": "TeamProtoHideout_B3F_Layout",
+      "width": 21,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Hideout",
+      "border_filepath": "data/layouts/TeamProtoHideout_B3F/border.bin",
+      "blockdata_filepath": "data/layouts/TeamProtoHideout_B3F/map.bin"
     }
   ]
 }

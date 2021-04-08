@@ -2109,3 +2109,143 @@ gTilesetPalettes_WispForest::
 	.align 2
 gTilesetTiles_WispForest::
 	.incbin "data/tilesets/secondary/wispforest/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_TerracotIsland::
+	.incbin "data/tilesets/secondary/terracotisland/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/terracotisland/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_TerracotIsland::
+	.incbin "data/tilesets/secondary/terracotisland/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_OceareyTown::
+	.incbin "data/tilesets/secondary/oceareytown/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/oceareytown/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_OceareyTown::
+	.incbin "data/tilesets/secondary/oceareytown/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_CrawdauntPub::
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/crawdauntpub/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_CrawdauntPub::
+	.incbin "data/tilesets/secondary/crawdauntpub/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_AltosCity::
+	.incbin "data/tilesets/secondary/altoscity/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/altoscity/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_AltosCity::
+	.incbin "data/tilesets/secondary/altoscity/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_Hideout::
+	.incbin "data/tilesets/secondary/hideout/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/hideout/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_Hideout::
+	.incbin "data/tilesets/secondary/hideout/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_CariseaTown::
+	.incbin "data/tilesets/secondary/cariseatown/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/cariseatown/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_CariseaTown::
+	.incbin "data/tilesets/secondary/cariseatown/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_BayportGym::
+	.incbin "data/tilesets/secondary/bayportgym/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/bayportgym/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_BayportGym::
+	.incbin "data/tilesets/secondary/bayportgym/tiles.4bpp.lz"

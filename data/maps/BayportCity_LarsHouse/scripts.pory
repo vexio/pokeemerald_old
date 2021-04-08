@@ -1,0 +1,102 @@
+mapscripts BayportCity_LarsHouse_MapScripts {}
+
+script BayportCity_LarsHouse_Object_Woman {
+	msgbox(format("{COLOR RED}I'm {COLOR GREEN}Lars' Assistant{COLOR RED}.\pI help him keep the Villa clean whenever he stays here…\pHe's naturally not a very clean person and likes to leave all of his research around the villa."), MSGBOX_NPC)
+	end
+}
+
+const LARS = 1
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const CAMERA = OBJ_EVENT_ID_CAMERA
+
+script BayportCity_LarsHouse_Trigger_LarsEvent {
+	lockall
+	getplayerxy(VAR_TEMP_1, VAR_TEMP_0)
+	special(SpawnCameraObject)
+	fadescreen(FADE_TO_BLACK)
+	if (var(VAR_TEMP_0) == 8) { // bottom
+		applymovement(CAMERA, BayportCity_LarsHouse_Movement_0)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 7) { // top
+		applymovement(CAMERA, BayportCity_LarsHouse_Movement_1)
+		waitmovement(0)
+	}
+	fadescreen(FADE_FROM_BLACK)
+	delay(20)
+	msgbox(format("Lars: {COLOR BLUE}……………………\pThese police reports seem to line up with the ritualistic events for summoning {COLOR GREEN}Darkrai{COLOR BLUE} and {COLOR GREEN}Cresselia{COLOR BLUE}…"), MSGBOX_AUTOCLOSE)
+	delay(15)
+	applymovement(LARS, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	applymovement(LARS, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	playse(SE_PIN)
+	waitse
+	msgbox(format("Lars: {COLOR GREEN}{PLAYER}{COLOR BLUE}!\nI'm glad to see you right now!"), MSGBOX_AUTOCLOSE)
+	delay(20)
+	if (var(VAR_TEMP_0) == 8) {
+		applymovement(LARS, BayportCity_LarsHouse_Movement_2)
+		applymovement(CAMERA, BayportCity_LarsHouse_Movement_2_C)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 7) {
+		applymovement(LARS, BayportCity_LarsHouse_Movement_3)
+		applymovement(CAMERA, BayportCity_LarsHouse_Movement_3_C)
+		waitmovement(0)
+	}
+	special(RemoveCameraObject)
+	delay(20)
+	msgbox(format("Lars: {COLOR BLUE}I know you're a busy kid right now, challenging all of the Pokémon Gyms in {COLOR GREEN}Ryoko{COLOR BLUE} -- but I just connected some dots with things going on in the region.\pThere has been a surge in criminal activity throughout {COLOR GREEN}Ryoko{COLOR BLUE}, and coincidentally all crimes commited by a group known as {COLOR GREEN}Team Proto{COLOR BLUE} have been at locations that pertain information on summoning the Legendary Lunar Duo {COLOR GREEN}Darkrai{COLOR BLUE} and {COLOR GREEN}Cresselia{COLOR BLUE}.\p{COLOR DARK_GREY}Lars: {COLOR BLUE}That book you delivered to {COLOR GREEN}Professor Cypress{COLOR BLUE} is even more powerful than I thought.\pThat {COLOR GREEN}Dorimtome{COLOR BLUE} cannot fall in the wrong hands!"), MSGBOX_AUTOCLOSE)
+	delay(15)
+	applymovement(LARS, Common_Movement_QuestionMark)
+	waitmovement(0)
+	playse(SE_PIN)
+	waitse
+	msgbox(format("Lars: {COLOR BLUE}What?!\p{COLOR GREEN}Team Proto{COLOR BLUE} stole the {COLOR GREEN}Dorimtome{COLOR BLUE} from {COLOR GREEN}Professor Cypress{COLOR BLUE}?\pOh no, this can't be good.\pWe need to do something about this.\pI'm going to go talk to the Police to see if I can find further information on {COLOR GREEN}Team Proto's{COLOR BLUE} whereabouts.\pI'll be seeing you soon, {COLOR GREEN}{PLAYER}{COLOR BLUE}!"), MSGBOX_AUTOCLOSE)
+	delay(10)
+	if (var(VAR_TEMP_0) == 8) {
+		applymovement(LARS, BayportCity_LarsHouse_Movement_4)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 7) {
+		applymovement(LARS, BayportCity_LarsHouse_Movement_5)
+		waitmovement(0)
+	}
+	removeobject(LARS)
+	playse(SE_KAIDAN)
+	waitse
+	setflag(FLAG_BAYPORTCITY_LARSHOUSE_LARSEVENT)
+	setflag(FLAG_BAYPORTCITY_WINGULL)
+	setvar(VAR_CYPRESS_PROTO_EVENT_STATE, 3)
+	releaseall
+	end
+}
+
+movement BayportCity_LarsHouse_Movement_0 {
+	walk_fast_left * 4
+}
+movement BayportCity_LarsHouse_Movement_1 {
+	walk_fast_left * 4
+	walk_fastest_down
+}
+movement BayportCity_LarsHouse_Movement_2 {
+	walk_right * 3
+}
+movement BayportCity_LarsHouse_Movement_2_C {
+	walk_right * 4
+}
+movement BayportCity_LarsHouse_Movement_3 {
+	walk_up
+	walk_right * 3
+}
+movement BayportCity_LarsHouse_Movement_3_C {
+	walk_up
+	walk_right * 4
+}
+movement BayportCity_LarsHouse_Movement_4 {
+	walk_up
+	walk_right * 5
+	walk_down * 3
+}
+movement BayportCity_LarsHouse_Movement_5 {
+	walk_down
+	walk_right * 5
+	walk_down * 2
+}

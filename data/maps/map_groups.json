@@ -100,7 +100,8 @@
     "OverworldSprite_Test",
     "Alnerwick_Library",
     "EnclavaTown_House_2",
-    "EnclavaTower_3F"
+    "EnclavaTower_3F",
+    "MystCity_House_2"
   ],
   "gMapGroup1": [
     "LittlerootTown_BrendansHouse_1F",
@@ -126,7 +127,12 @@
     "DewfordTown_Gym",
     "DewfordTown_Hall",
     "DewfordTown_House2",
-    "DavnridgeTown_Gym"
+    "DavnridgeTown_Gym",
+    "DavnridgeTown_House3",
+    "DavnridgeTown_House4",
+    "TeamProtoHideout_B1F",
+    "TeamProtoHideout_B2F",
+    "TeamProtoHideout_B3F"
   ],
   "gMapGroup4": [
     "LavaridgeTown_HerbShop",
@@ -194,7 +200,9 @@
     "SlateportCity_House",
     "SlateportCity_PokemonCenter_1F",
     "SlateportCity_PokemonCenter_2F",
-    "SlateportCity_Mart"
+    "SlateportCity_Mart",
+    "BayportCity_LarsHouse",
+    "BayportCity_Gym"
   ],
   "gMapGroup10": [
     "MauvilleCity_Gym",
@@ -260,7 +268,12 @@
     "LilycoveCity_DepartmentStore_4F",
     "LilycoveCity_DepartmentStore_5F",
     "LilycoveCity_DepartmentStoreRooftop",
-    "LilycoveCity_DepartmentStoreElevator"
+    "LilycoveCity_DepartmentStoreElevator",
+    "MystCity_CypressLab",
+    "MystCity_CrawdauntPub",
+    "MystCity_House_1",
+    "MystCity_House_3",
+    "MystCity_House_4"
   ],
   "gMapGroup14": [
     "MossdeepCity_Gym",

@@ -138,4 +138,4 @@ FrostpineClimb_Trainer_Kindler_Text_2:
 	.string "Ice-type Pokémon!$"
 
 FrostpineClimb_Sign_Gate_Text_0:
-	.string "{COLOR LIGHT_GREEN}Frostpine City Gate$"
+	.string "{COLOR LIGHT_GREEN}Frostpine Gate$"

@@ -21,6 +21,7 @@ EWRAM_DATA static u16 gUnusedWeatherRelated = 0;
 const u16 gCloudsWeatherPalette[] = INCBIN_U16("graphics/weather/cloud.gbapal");
 const u16 gSandstormWeatherPalette[] = INCBIN_U16("graphics/weather/sandstorm.gbapal");
 const u16 gSnowWeatherPalette[] = INCBIN_U16("graphics/weather/snow.gbapal");
+const u16 gFogWeatherPalette[] = INCBIN_U16("graphics/weather/fog.gbapal");
 const u8 gWeatherFogDiagonalTiles[] = INCBIN_U8("graphics/weather/fog_diagonal.4bpp");
 const u8 gWeatherFogHorizontalTiles[] = INCBIN_U8("graphics/weather/fog_horizontal.4bpp");
 const u8 gWeatherCloudTiles[] = INCBIN_U8("graphics/weather/cloud.4bpp");
@@ -880,7 +881,7 @@ static const union AnimCmd *const sSnowflakeAnimCmds[] =
 static const struct SpriteTemplate sSnowflakeSpriteTemplate =
 {
     .tileTag = 0xFFFF,
-    .paletteTag = 0x1200,
+    .paletteTag = 0x1201,
     .oam = &sSnowflakeSpriteOamData,
     .anims = sSnowflakeAnimCmds,
     .images = sSnowflakeSpriteImages,
@@ -907,6 +908,7 @@ static bool8 CreateSnowflakeSprite(void)
     InitSnowflakeSpriteMovement(&gSprites[spriteId]);
     gSprites[spriteId].coordOffsetEnabled = TRUE;
     gWeatherPtr->sprites.s1.snowflakeSprites[gWeatherPtr->snowflakeSpriteCount++] = &gSprites[spriteId];
+    LoadCustomWeatherSpritePalette(gSnowWeatherPalette);
     return TRUE;
 }
 
@@ -1293,7 +1295,7 @@ static void FogHorizontalSpriteCallback(struct Sprite *);
 static const struct SpriteTemplate sFogHorizontalSpriteTemplate =
 {
     .tileTag = 0x1201,
-    .paletteTag = 0x1200,
+    .paletteTag = 0x1201,
     .oam = &gOamData_839AB2C,
     .anims = gSpriteAnimTable_839AB64,
     .images = NULL,
@@ -1309,8 +1311,8 @@ void FogHorizontal_InitVars(void)
 {
     gWeatherPtr->initStep = 0;
     gWeatherPtr->weatherGfxLoaded = FALSE;
-    gWeatherPtr->gammaTargetIndex = 0;
-    gWeatherPtr->gammaStepDelay = 20;
+    gWeatherPtr->gammaTargetIndex = 3;
+    gWeatherPtr->gammaStepDelay = 40;
     if (gWeatherPtr->fogHSpritesCreated == 0)
     {
         gWeatherPtr->fogHScrollCounter = 0;
@@ -1411,6 +1413,7 @@ static void CreateFogHorizontalSprites(void)
             .tag = 0x1201,
         };
         LoadSpriteSheet(&fogHorizontalSpriteSheet);
+        LoadCustomWeatherSpritePalette(gFogWeatherPalette);
         for (i = 0; i < NUM_FOG_HORIZONTAL_SPRITES; i++)
         {
             spriteId = CreateSpriteAtEnd(&sFogHorizontalSpriteTemplate, 0, 0, 0xFF);

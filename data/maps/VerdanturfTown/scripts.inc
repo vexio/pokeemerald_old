@@ -336,9 +336,9 @@ FrostpineCity_Sign_CitySign_Text_0:
 	.string "{COLOR DARK_GREY}“The White Forest of the East”$"
 
 FrostpineCity_Sign_GymSign_Text_0:
-	.string "{COLOR RED}Frostpine Pokémon Gym\p"
+	.string "{COLOR RED}Frostpine City Pokémon Gym\p"
 	.string "{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bernie\n"
-	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Fire-Type$"
+	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Fire$"
 
 FrostpineCity_Sign_IronwoodForest_Text_0:
 	.string "{COLOR LIGHT_GREEN}Ironwood Forest$"
@@ -396,4 +396,4 @@ FrostpineCity_Trigger_RivalEvent_Text_3:
 	.string "{COLOR GREEN}Myst City{COLOR BLUE} on the way!$"
 
 FrostpineCity_Sign_Gate_Text_0:
-	.string "{COLOR LIGHT_GREEN}Frostpine City Gate$"
+	.string "{COLOR LIGHT_GREEN}Frostpine Gate$"

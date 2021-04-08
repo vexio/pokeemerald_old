@@ -543,8 +543,6 @@ PlayersHouse_Mapscript_GetPokemon_13:
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_14
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
-	setflag FLAG_SYS_NATIONAL_DEX
-	special EnableNationalPokedex
 	special SetUnlockedPokedexFlags
 	playfanfare MUS_FANFA4
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_15
@@ -589,19 +587,19 @@ PlayersHouse_Mapscript_GetPokemon_13:
 	end
 
 PlayersHouse_Mapscript_GetPokemon_4:
-	playse MUS_FANFA4
+	playse MUS_RG_FAN5
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_3
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_3
 
 PlayersHouse_Mapscript_GetPokemon_5:
-	playse MUS_FANFA4
+	playse MUS_RG_FAN5
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_4
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_3
 
 PlayersHouse_Mapscript_GetPokemon_6:
-	playse MUS_FANFA4
+	playse MUS_RG_FAN5
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_5
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_3
@@ -612,19 +610,19 @@ PlayersHouse_Mapscript_GetPokemon_11:
 	goto PlayersHouse_Mapscript_GetPokemon_10
 
 PlayersHouse_Mapscript_GetPokemon_14:
-	playse MUS_FANFA4
+	playse MUS_RG_FAN5
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_9
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_13
 
 PlayersHouse_Mapscript_GetPokemon_15:
-	playse MUS_FANFA4
+	playse MUS_RG_FAN5
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_10
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_13
 
 PlayersHouse_Mapscript_GetPokemon_16:
-	playse MUS_FANFA4
+	playse MUS_RG_FAN5
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_11
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_13

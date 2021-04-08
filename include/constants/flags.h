@@ -666,11 +666,11 @@
 #define FLAG_FROSTPINE_RIVAL_EVENT  0x270 // Frostpine City
 #define FLAG_TRIADGORGE_ROCKSMASH  0x271 // Triad Gorge Rock Smash Hiker event
 #define FLAG_FROSTPINECITY_TM_RETURN  0x272 // Friendship Rater giving Return to max friendship
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
+#define FLAG_FROSTPINECITY_SMEARGLE  0x273 // Painter gives player a Smeargle
+#define FLAG_MYSTCITY_POKEMONCENTER_LARSEVENT  0x274 // Lars event in Myst City Pokemon Center
+#define FLAG_MYSTCITY_CYPRESSLAB_PROTO_EVENT  0x275
+#define FLAG_BAYPORTCITY_LARSHOUSE_LARSEVENT  0x276
+#define FLAG_BAYPORTCITY_WINGULL  0x277
 #define FLAG_UNUSED_0x278  0x278 // Unused Flag
 #define FLAG_UNUSED_0x279  0x279 // Unused Flag
 #define FLAG_UNUSED_0x27A  0x27A // Unused Flag
@@ -1249,8 +1249,8 @@
 #define FLAG_HIDDEN_ITEM_ALNERWICK_LOWLANDS_PARALYZE_HEAL           0x4A2
 #define FLAG_HIDDEN_ITEM_ENCLAVA_PASS_FULL_HEAL                     0x4A3
 #define FLAG_HIDDEN_ITEM_FROSTPINE_CITY_BURN_ITEM                   0x4A4
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
+#define FLAG_HIDDEN_ITEM_SEASPREY_BEACH_WATER_STONE                 0x4A5
+#define FLAG_HIDDEN_ITEM_SEASPREY_BEACH_HYPER_POTION                0x4A6
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag

@@ -692,3 +692,52 @@ gMetatiles_WispForest::
 	.align 1
 gMetatileAttributes_WispForest::
 	.incbin "data/tilesets/secondary/wispforest/metatile_attributes.bin"
+	.align 1
+gMetatiles_TerracotIsland::
+	.incbin "data/tilesets/secondary/terracotisland/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_TerracotIsland::
+	.incbin "data/tilesets/secondary/terracotisland/metatile_attributes.bin"
+	.align 1
+gMetatiles_OceareyTown::
+	.incbin "data/tilesets/secondary/oceareytown/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_OceareyTown::
+	.incbin "data/tilesets/secondary/oceareytown/metatile_attributes.bin"
+	.align 1
+gMetatiles_CrawdauntPub::
+	.incbin "data/tilesets/secondary/crawdauntpub/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_CrawdauntPub::
+	.incbin "data/tilesets/secondary/crawdauntpub/metatile_attributes.bin"
+	.align 1
+gMetatiles_AltosCity::
+	.incbin "data/tilesets/secondary/altoscity/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_AltosCity::
+	.incbin "data/tilesets/secondary/altoscity/metatile_attributes.bin"
+	.align 1
+gMetatiles_Hideout::
+	.incbin "data/tilesets/secondary/hideout/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Hideout::
+	.incbin "data/tilesets/secondary/hideout/metatile_attributes.bin"
+	.align 1
+gMetatiles_CariseaTown::
+	.incbin "data/tilesets/secondary/cariseatown/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_CariseaTown::
+	.incbin "data/tilesets/secondary/cariseatown/metatile_attributes.bin"
+	.align 1
+gMetatiles_BayportGym::
+	.incbin "data/tilesets/secondary/bayportgym/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_BayportGym::
+	.incbin "data/tilesets/secondary/bayportgym/metatile_attributes.bin"

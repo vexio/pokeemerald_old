@@ -767,3 +767,231 @@ LilycoveCity_Text_HoneymoonVowToSeeRarePokemon: @ 81E49F4
 	.string "POKéMON as soon as we arrived.\p"
 	.string "I mean, we are totally happy!$"
 
+MystCity_Object_BlackBelt::
+	msgbox MystCity_Object_BlackBelt_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_Officer::
+	msgbox MystCity_Object_Officer_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_PokefanM::
+	msgbox MystCity_Object_PokefanM_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_PokefanF::
+	msgbox MystCity_Object_PokefanF_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_OldWoman::
+	msgbox MystCity_Object_OldWoman_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_OldMan::
+	msgbox MystCity_Object_OldMan_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_SchoolKid::
+	msgbox MystCity_Object_SchoolKid_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_Sailor_1::
+	msgbox MystCity_Object_Sailor_1_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_RichKid::
+	msgbox MystCity_Object_RichKid_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_Woman_1::
+	msgbox MystCity_Object_Woman_1_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_Woman_2::
+	msgbox MystCity_Object_Woman_2_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_Woman_3::
+	msgbox MystCity_Object_Woman_3_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_FatGuy::
+	msgbox MystCity_Object_FatGuy_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_Sailor_2::
+	msgbox MystCity_Object_Sailor_2_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Object_Man::
+	msgbox MystCity_Object_Man_Text_0, MSGBOX_NPC
+	end
+
+
+MystCity_Sign_CitySign::
+	msgbox MystCity_Sign_CitySign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+MystCity_Sign_MoveDeletersSign::
+	msgbox MystCity_Sign_MoveDeletersSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+MystCity_Sign_CrawdauntPubSign::
+	msgbox MystCity_Sign_CrawdauntPubSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+MystCity_Sign_GymSign::
+	msgbox MystCity_Sign_GymSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+MystCity_Sign_GymSignClosed::
+	msgbox MystCity_Sign_GymSignClosed_Text_0, MSGBOX_SIGN
+	end
+
+
+MystCity_Sign_LabSign::
+	msgbox MystCity_Sign_LabSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+MystCity_Object_BlackBelt_Text_0:
+	.string "{COLOR BLUE}I want to battle the {COLOR GREEN}Myst City Gym{COLOR BLUE}, but\n"
+	.string "the leader is supposedly 'on tour' at\l"
+	.string "the moment...\p"
+	.string "I don't know when he will come back.$"
+
+MystCity_Object_Officer_Text_0:
+	.string "{COLOR BLUE}Hey kid.\p"
+	.string "Let me know if you see any sketchy\n"
+	.string "activity in the city.\p"
+	.string "{COLOR GREEN}Myst City{COLOR BLUE} has had a rise in criminal\n"
+	.string "activity, and I'm here to put a stop to\l"
+	.string "it!\p"
+	.string "Or at least attempt to...$"
+
+MystCity_Object_PokefanM_Text_0:
+	.string "{COLOR BLUE}My girlfriend and I are visting the city!\p"
+	.string "We're from {COLOR GREEN}Terracot Island{COLOR BLUE}, and the city\n"
+	.string "is so different from the island life!$"
+
+MystCity_Object_PokefanF_Text_0:
+	.string "{COLOR RED}My boyfriend convinced me to check out\n"
+	.string "{COLOR GREEN}Myst City{COLOR RED}, and it's very different from\l"
+	.string "the island life.\p"
+	.string "I like the quite life on {COLOR GREEN}Terracot Island{COLOR RED}.$"
+
+MystCity_Object_OldWoman_Text_0:
+	.string "{COLOR RED}I like waking up every morning and\n"
+	.string "walking to the park with my husband.$"
+
+MystCity_Object_OldMan_Text_0:
+	.string "{COLOR BLUE}I wake up every morning and walk to the\n"
+	.string "park with my wife.\p"
+	.string "She likes to get her excersise, and I'm\n"
+	.string "not gonna sit at home alone!$"
+
+MystCity_Object_SchoolKid_Text_0:
+	.string "{COLOR BLUE}My school is making me do a project on\n"
+	.string "nature, so I'm doing it on the park\l"
+	.string "here!\p"
+	.string "...\p"
+	.string "I know...\l"
+	.string "It's pretty lame...$"
+
+MystCity_Object_Sailor_1_Text_0:
+	.string "{COLOR BLUE}I come from {COLOR GREEN}Bayport City{COLOR BLUE} whenever I get\n"
+	.string "a break from the ship and come to my\l"
+	.string "favorite resturant in all of {COLOR GREEN}Ryoko{COLOR BLUE}, the\l"
+	.string "{COLOR GREEN}“Crawdaunt Pub”{COLOR BLUE}!$"
+
+MystCity_Object_RichKid_Text_0:
+	.string "{COLOR BLUE}Where are you from?\p"
+	.string "Wait.\n"
+	.string "Let me guess...\p"
+	.string "You're from {COLOR GREEN}Canvas Town{COLOR BLUE}!\p"
+	.string "I can tell by your dirty clothes!$"
+
+MystCity_Object_Woman_1_Text_0:
+	.string "{COLOR RED}Are you new to the city?\p"
+	.string "There is a lot to see in the city!\p"
+	.string "There is {COLOR GREEN}Professor Cypress' Lab{COLOR RED} in the\n"
+	.string "southern side of the city, and in the\l"
+	.string "northern side is the {COLOR GREEN}Myst City Gym{COLOR RED}.\p"
+	.string "If you ever get hungry, you can check\n"
+	.string "out the {COLOR GREEN}“Crawdaunt Pub”{COLOR RED}!$"
+
+MystCity_Object_Woman_2_Text_0:
+	.string "{COLOR RED}I'm looking to start up a flower shop\n"
+	.string "here in {COLOR GREEN}Myst City{COLOR RED}, but there hasn't\l"
+	.string "been new development in the city for a\l"
+	.string "few months now...$"
+
+MystCity_Object_Woman_3_Text_0:
+	.string "{COLOR RED}My favorite part of the city is the\n"
+	.string "park...\p"
+	.string "It's so peaceful and a great\n"
+	.string "distraction from the bustling city.$"
+
+MystCity_Object_FatGuy_Text_0:
+	.string "{COLOR BLUE}Me n' my buddy here are just catchin'\n"
+	.string "up!\p"
+	.string "I stopped workin' at the port a few\n"
+	.string "months back.$"
+
+MystCity_Object_Sailor_2_Text_0:
+	.string "{COLOR BLUE}My buddy here stopped workin' at the\n"
+	.string "port a few months back.\p"
+	.string "Between you and me, he stopped working\n"
+	.string "because they were asking too much\l"
+	.string "from him.$"
+
+MystCity_Object_Man_Text_0:
+	.string "{COLOR BLUE}This city may look clean on the surface,\n"
+	.string "but I'm skeptical that there is more\l"
+	.string "going on underneath the city.\p"
+	.string "I've seen a lot of thugs around here,\n"
+	.string "and the local pub is extremely\l"
+	.string "suspicious.$"
+
+MystCity_Sign_CitySign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Myst City\p"
+	.string "{COLOR DARK_GREY}“The Hub of Ryoko”$"
+
+MystCity_Sign_MoveDeletersSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Move Deleter's House$"
+
+MystCity_Sign_CrawdauntPubSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}The Crawdaunt Pub\l"
+	.string "{COLOR DARK_GREY}“The Heart and Soul of Myst City”$"
+
+MystCity_Sign_GymSign_Text_0:
+	.string "{COLOR RED}Myst City Pokémon Gym\p"
+	.string "{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Braian\n"
+	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Psychic-Type$"
+
+MystCity_Sign_GymSignClosed_Text_0:
+	.string "There is a sign posted on the door.\p"
+	.string "“The Gym is temporarily closed while I\n"
+	.string "am on tour.” - Braian, Myst City Gym\l"
+	.string "Leader$"
+
+MystCity_Sign_LabSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Cypress Laboratory$"

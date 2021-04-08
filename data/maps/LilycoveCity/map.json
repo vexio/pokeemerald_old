@@ -7,9 +7,9 @@
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_CITY",
-  "allow_cycling": false,
+  "allow_cycling": true,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
@@ -32,15 +32,15 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 13,
-      "y": 23,
+      "x": 36,
+      "y": 33,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_Sailor2",
+      "script": "MystCity_Object_Sailor_1",
       "flag": "0"
     },
     {
@@ -53,7 +53,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_Girl",
+      "script": "MystCity_Object_Woman_3",
       "flag": "0"
     },
     {
@@ -66,20 +66,20 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_Man3",
+      "script": "MystCity_Object_Man",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
-      "x": 20,
-      "y": 11,
+      "x": 13,
+      "y": 25,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_RichBoy",
+      "script": "MystCity_Object_RichKid",
       "flag": "0"
     },
     {
@@ -92,7 +92,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_Woman2",
+      "script": "MystCity_Object_Woman_2",
       "flag": "0"
     },
     {
@@ -105,7 +105,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_ExpertM1",
+      "script": "MystCity_Object_OldMan",
       "flag": "0"
     },
     {
@@ -118,7 +118,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_ExpertF",
+      "script": "MystCity_Object_OldWoman",
       "flag": "0"
     },
     {
@@ -170,7 +170,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_BerryGentleman",
+      "script": "MystCity_Object_Woman_1",
       "flag": "0"
     },
     {
@@ -183,7 +183,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_SchoolKidM",
+      "script": "MystCity_Object_SchoolKid",
       "flag": "0"
     },
     {
@@ -196,7 +196,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_Woman1",
+      "script": "MystCity_Object_PokefanF",
       "flag": "0"
     },
     {
@@ -209,7 +209,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_Man1",
+      "script": "MystCity_Object_PokefanM",
       "flag": "0"
     },
     {
@@ -222,7 +222,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_Sailor1",
+      "script": "MystCity_Object_Sailor_2",
       "flag": "0"
     },
     {
@@ -235,25 +235,12 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_FatMan",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
-      "x": 23,
-      "y": 43,
-      "elevation": 5,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_BerryGentleman",
+      "script": "MystCity_Object_FatGuy",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 30,
+      "x": 29,
       "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -262,6 +249,45 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OFFICER",
+      "x": 11,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MystCity_Object_Officer",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
+      "x": 13,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MystCity_Object_BlackBelt",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KISS_CUSHION",
+      "x": 15,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MystCity_Sign_GymSignClosed",
       "flag": "0"
     }
   ],
@@ -277,7 +303,7 @@
       "x": 10,
       "y": 39,
       "elevation": 0,
-      "dest_map": "MAP_LILYCOVE_CITY_HOUSE1",
+      "dest_map": "MAP_MYST_CITY_HOUSE_1",
       "dest_warp_id": 0
     },
     {
@@ -298,21 +324,21 @@
       "x": 31,
       "y": 39,
       "elevation": 0,
-      "dest_map": "MAP_LILYCOVE_CITY_HOUSE2",
+      "dest_map": "MAP_MYST_CITY_HOUSE_2",
       "dest_warp_id": 0
     },
     {
       "x": 32,
       "y": 29,
       "elevation": 0,
-      "dest_map": "MAP_LILYCOVE_CITY_POKEMON_TRAINER_FAN_CLUB",
+      "dest_map": "MAP_MYST_CITY_CRAWDAUNT_PUB",
       "dest_warp_id": 0
     },
     {
       "x": 22,
       "y": 10,
       "elevation": 0,
-      "dest_map": "MAP_LILYCOVE_CITY_HOUSE4",
+      "dest_map": "MAP_MYST_CITY_HOUSE_3",
       "dest_warp_id": 0
     },
     {
@@ -333,14 +359,14 @@
       "x": 21,
       "y": 39,
       "elevation": 0,
-      "dest_map": "MAP_LILYCOVE_CITY",
+      "dest_map": "MAP_MYST_CITY_CYPRESS_LAB",
       "dest_warp_id": 0
     },
     {
       "x": 26,
       "y": 10,
       "elevation": 0,
-      "dest_map": "MAP_LILYCOVE_CITY",
+      "dest_map": "MAP_MYST_CITY_HOUSE_4",
       "dest_warp_id": 0
     },
     {
@@ -361,7 +387,7 @@
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LilycoveCity_EventScript_CitySign"
+      "script": "MystCity_Sign_CitySign"
     },
     {
       "type": "sign",
@@ -369,7 +395,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LilycoveCity_EventScript_MoveDeletersHouseSign"
+      "script": "MystCity_Sign_MoveDeletersSign"
     },
     {
       "type": "hidden_item",
@@ -393,7 +419,7 @@
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "MystCity_Sign_CrawdauntPubSign"
     },
     {
       "type": "sign",
@@ -401,7 +427,7 @@
       "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "MystCity_Sign_LabSign"
     },
     {
       "type": "sign",
@@ -409,7 +435,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LilycoveCity_EventScript_MoveDeletersHouseSign"
+      "script": "MystCity_Sign_GymSign"
     }
   ],
   "allow_bike": "",

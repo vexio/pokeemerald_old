@@ -479,6 +479,8 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_HAUMEA         0x114F
 #define OBJ_EVENT_PAL_TAG_CUTTABLETREE   0x1150
 #define OBJ_EVENT_PAL_TAG_ITEMBALL       0x1151
+#define OBJ_EVENT_PAL_TAG_BREAKABLEROCK  0x1152
+#define OBJ_EVENT_PAL_TAG_PUSHABLEBOULDER 0x1153
 #define OBJ_EVENT_PAL_TAG_NONE           0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -569,6 +571,8 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Lucy, OBJ_EVENT_PAL_TAG_HAUMEA},
     {gObjectEventPalette_CuttableTree, OBJ_EVENT_PAL_TAG_CUTTABLETREE},
     {gObjectEventPalette_ItemBall, OBJ_EVENT_PAL_TAG_ITEMBALL},
+    {gObjectEventPalette_BreakableRock, OBJ_EVENT_PAL_TAG_BREAKABLEROCK},
+    {gObjectEventPalette_PushableBoulder, OBJ_EVENT_PAL_TAG_PUSHABLEBOULDER},
     {NULL,                                 0x0000},
 };
 
@@ -5194,10 +5198,40 @@ bool8 ObjectEventIsHeldMovementActive(struct ObjectEvent *objectEvent)
     return FALSE;
 }
 
+static u8 TryUpdateMovementActionOnStairs(struct ObjectEvent *objectEvent, u8 movementActionId)
+{
+    #if FOLLOW_ME_IMPLEMENTED
+        if (objectEvent->isPlayer || objectEvent->localId == GetFollowerLocalId())
+            return movementActionId;    //handled separately
+    #else
+        if (objectEvent->isPlayer)
+            return movementActionId;    //handled separately
+    #endif
+    
+    if (!ObjectMovingOnRockStairs(objectEvent, objectEvent->movementDirection))
+        return movementActionId;
+    
+    switch (movementActionId)
+    {
+        case MOVEMENT_ACTION_WALK_NORMAL_DOWN:
+            return MOVEMENT_ACTION_WALK_SLOW_DOWN;
+        case MOVEMENT_ACTION_WALK_NORMAL_UP:
+            return MOVEMENT_ACTION_WALK_SLOW_UP;
+        case MOVEMENT_ACTION_WALK_NORMAL_LEFT:
+            return MOVEMENT_ACTION_WALK_SLOW_LEFT;
+        case MOVEMENT_ACTION_WALK_NORMAL_RIGHT:
+            return MOVEMENT_ACTION_WALK_SLOW_RIGHT;
+        default:
+            return movementActionId;
+    }
+}
+
 bool8 ObjectEventSetHeldMovement(struct ObjectEvent *objectEvent, u8 movementActionId)
 {
     if (ObjectEventIsMovementOverridden(objectEvent))
         return TRUE;
+
+    movementActionId = TryUpdateMovementActionOnStairs(objectEvent, movementActionId);
 
     UnfreezeObjectEvent(objectEvent);
     objectEvent->movementActionId = movementActionId;
@@ -5209,6 +5243,7 @@ bool8 ObjectEventSetHeldMovement(struct ObjectEvent *objectEvent, u8 movementAct
 
 void ObjectEventForceSetHeldMovement(struct ObjectEvent *objectEvent, u8 movementActionId)
 {
+    movementActionId = TryUpdateMovementActionOnStairs(objectEvent, movementActionId);
     ObjectEventClearHeldMovementIfActive(objectEvent);
     ObjectEventSetHeldMovement(objectEvent, movementActionId);
 }
@@ -5248,7 +5283,7 @@ u8 ObjectEventClearHeldMovementIfFinished(struct ObjectEvent *objectEvent)
 u8 ObjectEventGetHeldMovementActionId(struct ObjectEvent *objectEvent)
 {
     if (objectEvent->heldMovementActive)
-        return objectEvent->movementActionId;
+        return TryUpdateMovementActionOnStairs(objectEvent, objectEvent->movementActionId);
 
     return 0xFF;
 }
@@ -5353,6 +5388,7 @@ static u32 state_to_direction(u8 a0, u32 a1, u32 a2)
 
 static void ObjectEventExecHeldMovementAction(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
+    objectEvent->movementActionId = TryUpdateMovementActionOnStairs(objectEvent, objectEvent->movementActionId);
     if (gMovementActionFuncs[objectEvent->movementActionId][sprite->data[2]](objectEvent, sprite))
     {
         objectEvent->heldMovementFinished = TRUE;
@@ -5361,6 +5397,7 @@ static void ObjectEventExecHeldMovementAction(struct ObjectEvent *objectEvent, s
 
 static bool8 ObjectEventExecSingleMovementAction(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
+    objectEvent->movementActionId = TryUpdateMovementActionOnStairs(objectEvent, objectEvent->movementActionId);
     if (gMovementActionFuncs[objectEvent->movementActionId][sprite->data[2]](objectEvent, sprite))
     {
         objectEvent->movementActionId = 0xFF;
@@ -5372,7 +5409,7 @@ static bool8 ObjectEventExecSingleMovementAction(struct ObjectEvent *objectEvent
 
 static void ObjectEventSetSingleMovement(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 animId)
 {
-    objectEvent->movementActionId = animId;
+    objectEvent->movementActionId = TryUpdateMovementActionOnStairs(objectEvent, animId);
     sprite->data[2] = 0;
 }
 

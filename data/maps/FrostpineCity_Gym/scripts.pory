@@ -160,7 +160,7 @@ script FrostpineGym_Trainer_Bernie {
 		msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Fiery Badge"))
         waitfanfare
         msgbox(format("Bernie: {COLOR BLUE}You youngings have gotten a lot better at battling, but I won't give up on improving!\pThis badge will allow you to use {COLOR GREEN}Rock Smash{COLOR BLUE} outside of battle.\pAs well, take this TM!"))
-		giveitem(ITEM_TM35_FLAMETHROWER, 1)
+		giveitem(ITEM_TM11_SUNNY_DAY, 1)
         settrainerflag(TRAINER_GYM_KINDLER_ISAI)
         settrainerflag(TRAINER_GYM_MANIAC_COREY)
         settrainerflag(TRAINER_GYM_RANGER_F_AMARI)

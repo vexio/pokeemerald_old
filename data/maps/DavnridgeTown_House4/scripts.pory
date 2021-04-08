@@ -1,0 +1,42 @@
+mapscripts DavnridgeTown_House4_MapScripts {}
+
+script DavnridgeTown_House4_Object_Woman {
+	msgbox(format("{COLOR RED}My husband collects rare items.\pHe scavenges around the {COLOR GREEN}Davnridge Mines{COLOR RED} looking for rare items."), MSGBOX_NPC)
+	end
+}
+script DavnridgeTown_House4_Object_Man {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Hello!\nI'm a collector!\pI collect rare items, and I'll buy them off you!"))
+	switch (var(VAR_DAVNRIDGETOWN_COLLECTOR_STATE)) {
+		case 0:
+			msgbox(format("{COLOR BLUE}I'm currently looking for a {COLOR GREEN}Razor Claw{COLOR BLUE}."))
+			checkitem(ITEM_RAZOR_CLAW, 1)
+			if (var(VAR_RESULT) == TRUE) {
+				applymovement(2, Common_Movement_ExclamationMark)
+				waitmovement(0)
+				playse(SE_PIN)
+				delay(20)
+				msgbox(format("{COLOR BLUE}Is that a {COLOR GREEN}Razor Claw{COLOR BLUE}?\pI'll give you {COLOR GREEN}¥8,000{COLOR BLUE} for that {COLOR GREEN}Razor Claw{COLOR BLUE}!"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == TRUE) {
+					msgbox(format("{COLOR BLUE}Yes!\nI've been looking for this!\pThank you!"), MSGBOX_AUTOCLOSE)
+					removeitem(ITEM_RAZOR_CLAW, 1)
+					addmoney(8000, 0x00)
+					setvar(VAR_DAVNRIDGETOWN_COLLECTOR_STATE, 1)
+				} else {
+					msgbox(format("{COLOR BLUE}Aw... okay.\pIf you ever change your mind, please come talk to me!"), MSGBOX_AUTOCLOSE)
+					release
+					end
+				}
+	
+			} else {
+				msgbox(format("{COLOR BLUE}Hmmm...\nI guess you don't have a {COLOR GREEN}Razor Claw{COLOR BLUE}..."), MSGBOX_AUTOCLOSE)
+				release
+				end
+			}
+		default:
+			msgbox(format("{COLOR BLUE}I'm currently not looking for anything..."), MSGBOX_AUTOCLOSE)
+			release
+			end
+	}
+}

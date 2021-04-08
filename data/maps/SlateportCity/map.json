@@ -17,46 +17,38 @@
       "direction": "up",
       "offset": -6,
       "map": "MAP_ROUTE108"
+    },
+    {
+      "direction": "left",
+      "offset": -1,
+      "map": "MAP_ROUTE111"
     }
   ],
   "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 45,
-      "y": 14,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_EventScript_FatMan",
-      "flag": "0"
-    },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 38,
       "y": 28,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
-      "movement_range_x": 1,
+      "movement_range_x": 2,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_EventScript_Man1",
+      "script": "BayportCity_Object_Man",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 17,
-      "y": 16,
+      "x": 16,
+      "y": 24,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_EventScript_RichBoy",
+      "script": "BayportCity_Object_Sailor2",
       "flag": "0"
     },
     {
@@ -69,20 +61,20 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_EventScript_Woman1",
+      "script": "BayportCity_Object_Woman2",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
-      "x": 21,
-      "y": 12,
+      "x": 8,
+      "y": 19,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_EventScript_OldWoman",
+      "script": "BayportCity_Object_OldWoman",
       "flag": "0"
     },
     {
@@ -90,30 +82,30 @@
       "x": 37,
       "y": 21,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_range_y": 12,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_EventScript_Girl",
+      "script": "BayportCity_Object_Girl",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 24,
-      "y": 6,
+      "x": 26,
+      "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_EventScript_Gabby",
-      "flag": "FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY"
+      "script": "BayportCity_Object_Woman1",
+      "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 35,
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
+      "x": 41,
       "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -121,7 +113,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_EventScript_Sailor1",
+      "script": "BayportCity_Object_FatMan",
       "flag": "0"
     },
     {
@@ -139,16 +131,68 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 32,
-      "y": 19,
+      "x": 16,
+      "y": 14,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_EventScript_PowerTMClerk",
-      "flag": "FLAG_HIDE_SLATEPORT_CITY_TM_SALESMAN"
+      "script": "BayportCity_Object_TMMan",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "x": 10,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BayportCity_Object_Sailor3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "x": 29,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BayportCity_Object_Sailor1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WINGULL",
+      "x": 27,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_BAYPORTCITY_WINGULL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
+      "x": 28,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BayportCity_Object_WingullTrainer",
+      "flag": "FLAG_BAYPORTCITY_WINGULL"
     }
   ],
   "warp_events": [
@@ -174,24 +218,91 @@
       "dest_warp_id": 0
     },
     {
-      "x": 42,
+      "x": 43,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_HOUSE",
       "dest_warp_id": 0
+    },
+    {
+      "x": 20,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_BAYPORT_CITY_LARS_HOUSE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 25,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_BAYPORT_CITY_GYM",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "0",
+      "script": "BayportCity_Trigger_Wingull"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "0",
+      "script": "BayportCity_Trigger_Wingull"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "1",
+      "script": "BayportCity_Trigger_Wingull"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "1",
+      "script": "BayportCity_Trigger_Wingull"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "2",
+      "script": "BayportCity_Trigger_Wingull"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "2",
+      "script": "BayportCity_Trigger_Wingull"
+    }
   ],
   "bg_events": [
     {
       "type": "sign",
-      "x": 22,
-      "y": 14,
+      "x": 12,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_HarborSign"
+      "script": "BayportCity_Sign_HarborSign"
     },
     {
       "type": "sign",
@@ -207,7 +318,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_OceanicMuseumSign"
+      "script": "BayportCity_Sign_Gym"
     },
     {
       "type": "sign",
@@ -215,7 +326,7 @@
       "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_CitySign"
+      "script": "BayportCity_Sign_City"
     },
     {
       "type": "sign",
@@ -223,7 +334,23 @@
       "y": 25,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SlateportCity_EventScript_PokemonFanClubSign"
+      "script": "BayportCity_Sign_PokemonFanClub"
+    },
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BayportCity_Sign_LarsHouse"
+    },
+    {
+      "type": "sign",
+      "x": 37,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BayportCity_Sign_RustedDoor"
     }
   ],
   "allow_bike": "",

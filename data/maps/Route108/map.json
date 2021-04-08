@@ -27,15 +27,15 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 46,
-      "y": 26,
+      "x": 48,
+      "y": 27,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 3,
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route108_EventScript_Jerome",
+      "trainer_sight_or_berry_tree_id": "6",
+      "script": "SeaspreyBeach_Trainer_Sailor2",
       "flag": "0"
     },
     {
@@ -47,8 +47,8 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route108_EventScript_Tara",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "SeaspreyBeach_Trainer_TuberF",
       "flag": "0"
     },
     {
@@ -86,8 +86,8 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "Route108_EventScript_Carolina",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "SeaspreyBeach_Trainer_Woman1",
       "flag": "0"
     },
     {
@@ -95,12 +95,12 @@
       "x": 46,
       "y": 13,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "Route108_EventScript_Cory",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "SeaspreyBeach_Trainer_Sailor1",
       "flag": "0"
     },
     {
@@ -134,35 +134,35 @@
     },
     {
       "type": "sign",
-      "x": 53,
-      "y": 8,
+      "x": 65,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
-    },
-    {
-      "type": "sign",
-      "x": 54,
-      "y": 8,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "SeaspreyBeach_Sign_RouteSign"
     },
     {
       "type": "hidden_item",
       "x": 58,
       "y": 4,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_HYPER_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_SEASPREY_BEACH_HYPER_POTION"
     },
     {
       "type": "hidden_item",
       "x": 23,
       "y": 29,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_WATER_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_SEASPREY_BEACH_WATER_STONE"
+    },
+    {
+      "type": "sign",
+      "x": 39,
+      "y": 28,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SeaspreyBeach_Sign_RouteSign"
     }
   ],
   "allow_bike": "",

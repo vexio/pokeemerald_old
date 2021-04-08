@@ -1,0 +1,281 @@
+mapscripts MystCity_CypressLab_MapScripts {}
+
+script MystCity_CypressLab_Sign_FossilRoom {
+	msgbox(format("Fossil Revival and Reanimation"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+	end
+}
+script MystCity_CypressLab_Sign_ResearchRoom {
+	msgbox(format("Research and Development"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+	end
+}
+script MystCity_CypressLab_Sign_StorageRoom {
+	msgbox(format("Storage"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+	end
+}
+script MystCity_CypressLab_Sign_FossilMachine {
+	msgbox(format("It's a complex looking machine with an input for a fossil."), MSGBOX_SIGN)
+	end
+}
+script MystCity_CypressLab_Sign_PokemonMachine {
+	msgbox(format("It's a container for storing Pokémon."), MSGBOX_SIGN)
+	end
+}
+
+script MystCity_CypressLab_Object_Scientist_1 {
+	msgbox(format("{COLOR BLUE}I'm currently working on an algorithm to calculate how old a fossil is."), MSGBOX_NPC)
+	end
+}
+script MystCity_CypressLab_Object_Man {
+	msgbox(format("{COLOR BLUE}Hello there!\pWelcome to {COLOR GREEN}Professor Cypress' Laboratory{COLOR BLUE}.\pDown the hall to your right is where the observable rooms are located.\pThe first room is our {COLOR GREEN}Fossil Revival and Reanimation{COLOR BLUE} room.\pThe second room is our {COLOR GREEN}Research and Development{COLOR BLUE} room, where {COLOR GREEN}Professor Cypress{COLOR BLUE} herself is located.\pThe last room is our {COLOR GREEN}Storage Room{COLOR BLUE}.\pPlease feel free to visit and talk with our scientists."), MSGBOX_NPC)
+	end
+}
+script MystCity_CypressLab_Object_Woman {
+	msgbox(format("{COLOR RED}I'm an assistant to all of the scientists here.\pI run errands all the time for them, just so they can work harder!"), MSGBOX_NPC)
+	end
+}
+script MystCity_CypressLab_Object_Scientist_2 {
+	msgbox(format("{COLOR BLUE}I'm very busy at the moment.\pNo time to chit-chat."), MSGBOX_NPC)
+	end
+}
+script MystCity_CypressLab_Object_Scientist_3 {
+	msgbox(format("{COLOR BLUE}Us scientists are very important in today's society!\pWe should be treated with the highest respect.\pNow, could you go get me a coffee?"), MSGBOX_NPC)
+	end
+}
+script MystCity_CypressLab_Object_Scientist_4 {
+	msgbox(format("{COLOR BLUE}I love working under {COLOR GREEN}Professor Cypress{COLOR BLUE}.\pShe's a real sweetheart and really loves working with Pokémon!"), MSGBOX_NPC)
+	end
+}
+script MystCity_CypressLab_Object_SchoolKid {
+	msgbox(format("{COLOR BLUE}I just started my internship here.\pThey just have me sit in this room and sort out books and files..."), MSGBOX_NPC)
+	end
+}
+script MystCity_CypressLab_Object_Janitor {
+	msgbox(format("{COLOR BLUE}Aye watch it bub!\pI'm cleaning the floor right here!\pYou can wait until I'm done to go in here…"), MSGBOX_NPC)
+	end
+}
+
+// fossil scientist
+// LEGEND
+// 0 = no fossils
+// 1 = ARMOR FOSSIL
+// 2 = SKULL FOSSIL
+// 3 = HELIX FOSSIL
+// 4 = DOME FOSSIL
+// 5 = ROOT FOSSIL
+// 6 = CLAW FOSSIL
+// 7 = COVER FOSSIL
+// 8 = PLUME FOSSIL
+// 9 = JAW FOSSIL
+// 10 = SAIL FOSSIL
+// 11 = OLD AMBER
+
+script MystCity_CypressLab_Object_FossilScientist {
+	lock
+	faceplayer
+	setvar(VAR_FOSSILREVIVE_FOSSIL_TYPE, 12)
+	msgbox(format("{COLOR BLUE}Hi there!\pI am an important scientist.\nYes, very much so, indeed.\pHere, I can revive fossilized Pokémon and return them to their former glory!"))
+	checkitem(ITEM_ARMOR_FOSSIL, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		setvar(VAR_FOSSILREVIVE_FOSSIL_TYPE, 1)
+	}
+	checkitem(ITEM_SKULL_FOSSIL, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		setvar(VAR_FOSSILREVIVE_FOSSIL_TYPE, 2)
+	}
+	checkitem(ITEM_HELIX_FOSSIL, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		setvar(VAR_FOSSILREVIVE_FOSSIL_TYPE, 3)
+	}
+	checkitem(ITEM_DOME_FOSSIL, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		setvar(VAR_FOSSILREVIVE_FOSSIL_TYPE, 4)
+	}
+	checkitem(ITEM_ROOT_FOSSIL, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		setvar(VAR_FOSSILREVIVE_FOSSIL_TYPE, 5)
+	}
+	checkitem(ITEM_CLAW_FOSSIL, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		setvar(VAR_FOSSILREVIVE_FOSSIL_TYPE, 1)
+	}	
+}
+
+script MystCity_CypressLab_Object_FossilScientist_Temp {
+	msgbox(format("{COLOR BLUE}Hiya!\pI am in important scientist.\nYes, very much so, indeed.\pHowever, I cannot do what I do best, revive Fossil Pokémon.\pMy machine has stopped working, and I need time to fix it."), MSGBOX_NPC)
+	end
+}
+
+const CYPRESS = 9
+const ERIS = 11
+const GRUNT_1 = 12
+const GRUNT_2 = 13
+
+script MystCity_CypressLab_ProfessorCypress {
+	if (flag(FLAG_MYSTCITY_CYPRESSLAB_PROTO_EVENT) == FALSE) {
+		lockall
+		faceplayer
+		applymovement(CYPRESS, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		playse(SE_PIN)
+		waitse
+		msgbox(format("Mom: {COLOR GREEN}{PLAYER}{COLOR RED}!\pI'm glad you were able to make it!\pIs there anything you need from me?\p............\n...........\p{COLOR GREEN}Lars{COLOR RED} sent you to get the {COLOR GREEN}Dorimtome{COLOR RED}?\pThat lazy man...\nHe'll always find a way out of a simple task.\pRegardless, thank you {COLOR GREEN}{PLAYER}{COLOR RED}!"), MSGBOX_AUTOCLOSE)
+		delay(10)
+		setobjectxy(ERIS, 25, 9)
+		playse(SE_KAIDAN)
+		waitse
+		playbgm(MUS_AJITO, 0)
+		applymovement(6, MystCity_CypressLab_Movement_0)
+		playse(SE_PIN)
+		applymovement(7, MystCity_CypressLab_Movement_0)
+		playse(SE_PIN)
+		applymovement(8, MystCity_CypressLab_Movement_0)
+		playse(SE_PIN)
+		applymovement(CYPRESS, MystCity_CypressLab_Movement_0)
+		playse(SE_PIN)
+		applymovement(OBJ_EVENT_ID_PLAYER, MystCity_CypressLab_Movement_0)
+		playse(SE_PIN)
+		waitse
+		getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+		if (var(VAR_TEMP_0) == 24) {
+			if (var(VAR_TEMP_1) == 6) {
+				applymovement(OBJ_EVENT_ID_PLAYER, MystCity_CypressLab_Movement_4)
+				waitmovement(0)
+			} elif (var(VAR_TEMP_1) == 4) {
+				applymovement(OBJ_EVENT_ID_PLAYER, MystCity_CypressLab_Movement_5)
+				waitmovement(0)
+			}
+		}
+		delay(10)
+		applymovement(ERIS, MystCity_CypressLab_Movement_1)
+		waitmovement(0)
+		setobjectxy(GRUNT_1, 25, 9)
+		playse(SE_KAIDAN)
+		applymovement(GRUNT_1, MystCity_CypressLab_Movement_2)
+		delay(10)
+		setobjectxy(GRUNT_2, 25, 9)
+		playse(SE_KAIDAN)
+		applymovement(GRUNT_2, MystCity_CypressLab_Movement_3)
+		waitmovement(0)
+		applymovement(CYPRESS, Common_Movement_WalkInPlaceDown)
+		waitmovement(0)
+		msgbox(format("Mom: {COLOR RED}What is going on here?\nWho are you?"))
+		applymovement(ERIS, Common_Movement_WalkInPlaceUp)
+		waitmovement(0)
+		msgbox(format("Eris: {COLOR RED}My name is {COLOR GREEN}Eris{COLOR RED}, Head Admin for {COLOR GREEN}Team Proto{COLOR RED}.\pI've come to personally obtain the {COLOR GREEN}Dorimtome{COLOR RED} myself, since my peers seem to not be able to do it themselves."))
+		applymovement(CYPRESS, Common_Movement_WalkInPlaceDown)
+		waitmovement(0)
+		msgbox(format("Mom: {COLOR RED}I cannot give this book to you ma'am.\pThis book needs to be in the right hands, and you and your {COLOR GREEN}Team Proto{COLOR RED} don't seem to be the most trustworthy."))
+		applymovement(ERIS, Common_Movement_WalkInPlaceUp)
+		waitmovement(0)
+		msgbox(format("Eris: {COLOR RED}Oh no, {COLOR GREEN}Team Proto{COLOR RED} does not have any ill intentions!\pWe just need to... borrow it for a little."))
+		applymovement(CYPRESS, Common_Movement_WalkInPlaceDown)
+		waitmovement(0)
+		msgbox(format("Mom: {COLOR RED}I'm sorry but you will not be getting this book!"))
+		applymovement(ERIS, Common_Movement_WalkInPlaceUp)
+		waitmovement(0)
+		msgbox(format("Eris: {COLOR RED}I'd hate to get physical here...\lBut I won't take no for an answer.\pGrunts, take care of the kid.\lI'll converse with the Professor."), MSGBOX_AUTOCLOSE)
+		delay(10)
+		applymovement(ERIS, MystCity_CypressLab_Movement_6)
+		waitmovement(0)
+		applymovement(GRUNT_2, MystCity_CypressLab_Movement_7)
+		waitmovement(0)
+		applymovement(GRUNT_2, MystCity_CypressLab_Movement_8)
+		waitmovement(0)
+		applymovement(GRUNT_1, MystCity_CypressLab_Movement_9)
+		waitmovement(0)
+		delay(20)
+		applymovement(GRUNT_2, Common_Movement_WalkInPlaceUp)
+		waitmovement(0)
+		msgbox(format("Grunt: {COLOR BLUE}You think you're stronger than us?\pPathetic!"), MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_GRUNT_CYPRESS_LAB_1, format("That Dorimtome means more to us than you know!"))
+		playbgm(MUS_AJITO, 0)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight)
+		waitmovement(0)
+		applymovement(GRUNT_1, Common_Movement_WalkInPlaceLeft)
+		waitmovement(0)
+		msgbox(format("Grunt: {COLOR BLUE}We're gonna get that book, no matter what happens!"), MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_GRUNT_CYPRESS_LAB_2, format("Haha!\nWe were able to hold you off long enough!"))
+		playbgm(MUS_AJITO, 0)
+		delay(20)
+		applymovement(ERIS, Common_Movement_WalkInPlaceUp)
+		waitmovement(0)
+		msgbox(format("Eris: {COLOR RED}Thank you, {COLOR GREEN}Professor Cypress{COLOR RED}, for your cooperation.\pAlakazam, use Teleport!"), MSGBOX_AUTOCLOSE)
+		playmoncry(SPECIES_ALAKAZAM, 0)
+		waitmoncry
+		fadescreen(FADE_TO_BLACK)
+		playse(SE_TK_WARPOUT)
+		waitse
+		removeobject(ERIS)
+		removeobject(GRUNT_1)
+		removeobject(GRUNT_2)
+		applymovement(6, Common_Movement_WalkInPlaceLeft)
+		applymovement(7, Common_Movement_WalkInPlaceLeft)
+		applymovement(8, Common_Movement_WalkInPlaceRight)
+		waitmovement(0)
+		setflag(FLAG_MYSTCITY_CYPRESSLAB_PROTO_EVENT)
+		delay(10)
+		fadescreen(FADE_FROM_BLACK)
+		delay(15)
+		playbgm(MUS_ODAMAKI, 0)
+		applymovement(CYPRESS, Common_Movement_WalkInPlaceRight)
+		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft)
+		waitmovement(0)
+		msgbox(format("Mom: {COLOR RED}I'm sorry {COLOR GREEN}{PLAYER}{COLOR RED}, {COLOR GREEN}Eris{COLOR RED} had some really strong Pokémon that mine did not stand a chance against.\pHopefully they won't be able to do much with the {COLOR GREEN}Dorimtome{COLOR RED}...\pI need to talk with {COLOR GREEN}Lars{COLOR RED}, he might have an idea on what to do about this situation.\p{COLOR GREEN}{PLAYER}{COLOR RED}.\pWill you do me a favor and visit {COLOR GREEN}Lars' House{COLOR RED} in {COLOR GREEN}Bayport City{COLOR RED}?\pYour next Gym Challenge will also be there, so you may as well visit {COLOR GREEN}Lars{COLOR RED} there.\pI'll also tell the local Police about what just happened here.\pThank you for your help, now go get {COLOR GREEN}Lars{COLOR RED} in {COLOR GREEN}Bayport City{COLOR RED}."), MSGBOX_AUTOCLOSE)
+		applymovement(CYPRESS, Common_Movement_WalkInPlaceLeft)
+		waitmovement(0)
+		setflag(FLAG_MYSTCITY_CYPRESSLAB_PROTO_EVENT)
+		setflag(FLAG_MYSTCITY_POKEMONCENTER_LARSEVENT)
+		setvar(VAR_CYPRESS_PROTO_EVENT_STATE, 2)
+		clearflag(FLAG_BAYPORTCITY_LARSHOUSE_LARSEVENT)
+		releaseall
+		end
+	} else {
+		msgbox(format("Mom: {COLOR RED}Go talk to {COLOR GREEN}Lars{COLOR RED} in {COLOR GREEN}Bayport City{COLOR RED}, he will know what to do."), MSGBOX_NPC)
+		release
+		end
+	}
+	
+}
+movement MystCity_CypressLab_Movement_0 {
+	walk_in_place_down
+	delay_8
+	emote_exclamation_mark
+}
+movement MystCity_CypressLab_Movement_1 {
+	walk_up * 2
+}
+movement MystCity_CypressLab_Movement_2 {
+	walk_up
+	walk_right
+	walk_up
+}
+movement MystCity_CypressLab_Movement_3 {
+	walk_up
+	walk_left
+	walk_up
+}
+movement MystCity_CypressLab_Movement_4 {
+	walk_right
+	walk_up
+	walk_in_place_down
+}
+movement MystCity_CypressLab_Movement_5 {
+	walk_right
+	walk_down
+}
+movement MystCity_CypressLab_Movement_6 {
+	walk_up
+	walk_left
+	walk_in_place_up
+}
+movement MystCity_CypressLab_Movement_7 {
+	walk_right
+	walk_in_place_up
+}
+movement MystCity_CypressLab_Movement_8 {
+	walk_up
+}
+movement MystCity_CypressLab_Movement_9 {
+	walk_up * 2
+	walk_in_place_left
+}

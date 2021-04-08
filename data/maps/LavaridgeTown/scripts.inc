@@ -668,9 +668,9 @@ EnclavaTown_Sign_EnclavaTower_Text_0:
 	.string "{COLOR LIGHT_GREEN}Enclava Tower$"
 
 EnclavaTown_Sign_GymSign_Text_0:
-	.string "{COLOR RED}Enclava Pokémon Gym\p"
+	.string "{COLOR RED}Enclava City Pokémon Gym\p"
 	.string "{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bruce\n"
-	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Normal-Type$"
+	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Normal$"
 
 EnclavaTown_Sign_Rock_Text_0:
 	.string "It's a rock.$"

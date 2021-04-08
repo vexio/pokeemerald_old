@@ -1,1 +1,16 @@
 mapscripts FrostpineCity_House_1_MapScripts {}
+
+script FrostpineCity_House_1_Object_Woman {
+	lock
+	faceplayer
+	msgbox(format("{COLOR RED}Have you heard about the legendary Pokémon that reside here in the {COLOR GREEN}Ryoko{COLOR RED} region?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == 1) { // yes
+		msgbox(format("{COLOR RED}Oh, you already know about {COLOR GREEN}Darkrai{COLOR RED} and {COLOR GREEN}Cresselia{COLOR RED}..."), MSGBOX_AUTOCLOSE)
+		release
+		end
+	} else {
+		msgbox(format("{COLOR RED}There is a duo of legendary Pokémon known as the {COLOR GREEN}Lunar Duo{COLOR RED}.\pThe legendary Pokémon {COLOR GREEN}Darkrai{COLOR RED} is a Pokémon darker than a new moon.\lHe is also known to haunt people's nightmares and put them into a never-ending sleep.\pThe other half of the {COLOR GREEN}Lunar Duo{COLOR RED} is {COLOR GREEN}Cresselia{COLOR RED}.\pShe is as bright as a full moon, and she is known for bringing people happy dreams and dispel nightmares.\lShe, however, hasn't been recorded by a Pokédex yet, but I believe she is real."), MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+}

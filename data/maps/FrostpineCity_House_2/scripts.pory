@@ -1,1 +1,11 @@
 mapscripts FrostpineCity_House_2_MapScripts {}
+
+script FrostpineCity_House_2_Object_Woman {
+	msgbox(format("{COLOR RED}My husband is the one who helped design the {COLOR GREEN}Frostpine Pokémon Gym{COLOR RED} puzzle!"), MSGBOX_NPC)
+	end
+}
+
+script FrostpineCity_House_2_Object_Man {
+	msgbox(format("{COLOR BLUE}What do I do?\nWhy, I'm an engineer!\pI designed the {COLOR GREEN}Frostpine Pokémon Gym{COLOR BLUE}!\pWell, I like to give myself a lot of credit for it but it was {COLOR GREEN}Bernie{COLOR BLUE}'s idea!\pHe is a real scientist too!"), MSGBOX_NPC)
+	end
+}

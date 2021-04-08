@@ -163,7 +163,7 @@ FrostpineGym_Trainer_Bernie_2:
 	msgbox FrostpineGym_Trainer_Bernie_Text_3
 	waitfanfare
 	msgbox FrostpineGym_Trainer_Bernie_Text_4
-	giveitem ITEM_TM35_FLAMETHROWER, 1
+	giveitem ITEM_TM11_SUNNY_DAY, 1
 	settrainerflag TRAINER_GYM_KINDLER_ISAI
 	settrainerflag TRAINER_GYM_MANIAC_COREY
 	settrainerflag TRAINER_GYM_RANGER_F_AMARI

@@ -824,6 +824,11 @@ DavnridgeTown_Object_Engineer_2::
 	end
 
 
+DavnridgeTown_Object_Man::
+	msgbox DavnridgeTown_Object_Man_Text_0, MSGBOX_NPC
+	end
+
+
 DavnridgeTown_Sign_TownSign::
 	msgbox DavnridgeTown_Sign_TownSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
 	end
@@ -839,21 +844,8 @@ DavnridgeTown_Sign_Mines::
 	end
 
 
-DavnridgeTown_Trainer_Test1::
-	trainerbattle_single TRAINER_GRUNT_TRIAD_GORGE_1, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
-	msgbox DavnridgeTown_Trainer_Test1_Text_2, MSGBOX_NPC
-	end
-
-
-DavnridgeTown_Trainer_Test2::
-	trainerbattle_single TRAINER_GRUNT_TRIAD_GORGE_2, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
-	msgbox DavnridgeTown_Trainer_Test1_Text_2, MSGBOX_NPC
-	end
-
-
-DavnridgeTown_Trainer_Test3::
-	trainerbattle_single TRAINER_GRUNT_TRIAD_GORGE_3, DavnridgeTown_Trainer_Test1_Text_0, DavnridgeTown_Trainer_Test1_Text_1
-	msgbox DavnridgeTown_Trainer_Test1_Text_2, MSGBOX_NPC
+Sign_DoorLocked::
+	msgbox Sign_DoorLocked_Text_0, MSGBOX_SIGN
 	end
 
 
@@ -884,23 +876,23 @@ DavnridgeTown_Object_Engineer_2_Text_0:
 	.string "You should talk to her if you want to\n"
 	.string "battle her in the Gym.$"
 
+DavnridgeTown_Object_Man_Text_0:
+	.string "{COLOR BLUE}I use to work in the mines, and boy was\n"
+	.string "it rough!\p"
+	.string "I worked so hard that my Machop\n"
+	.string "evolved into a Machoke!$"
+
 DavnridgeTown_Sign_TownSign_Text_0:
 	.string "{COLOR LIGHT_GREEN}Davnridge Town\p"
 	.string "{COLOR DARK_GREY}“The Resource Capital of Ryoko”$"
 
 DavnridgeTown_Sign_GymSign_Text_0:
-	.string "{COLOR RED}Davnridge Pokémon Gym\p"
+	.string "{COLOR RED}Davnridge Town Pokémon Gym\p"
 	.string "{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Lilith\n"
-	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Rock-Type$"
+	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Rock$"
 
 DavnridgeTown_Sign_Mines_Text_0:
 	.string "{COLOR LIGHT_GREEN}Davnridge Mines$"
 
-DavnridgeTown_Trainer_Test1_Text_0:
-	.string "intro$"
-
-DavnridgeTown_Trainer_Test1_Text_1:
-	.string "lose$"
-
-DavnridgeTown_Trainer_Test1_Text_2:
-	.string "fuck!$"
+Sign_DoorLocked_Text_0:
+	.string "The door seems to be locked.$"

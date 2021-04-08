@@ -17,13 +17,18 @@
       "direction": "up",
       "offset": 0,
       "map": "MAP_LITTLEROOT_TOWN"
+    },
+    {
+      "direction": "right",
+      "offset": 0,
+      "map": "MAP_ROUTE113"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 43,
-      "y": 10,
+      "x": 35,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -35,10 +40,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 35,
-      "y": 17,
+      "x": 49,
+      "y": 10,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -48,8 +53,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 24,
-      "y": 13,
+      "x": 58,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -61,10 +66,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARTIST_F",
-      "x": 23,
-      "y": 9,
+      "x": 24,
+      "y": 18,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 2,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -82,7 +87,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 19,
+      "x": 25,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -90,11 +95,11 @@
     },
     {
       "type": "sign",
-      "x": 18,
-      "y": 5,
+      "x": 24,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "CanvasBeach_Sign_RouteSign"
+      "script": "NULL"
     }
   ],
   "allow_bike": "",

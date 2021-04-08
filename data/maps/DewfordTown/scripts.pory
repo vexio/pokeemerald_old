@@ -821,12 +821,16 @@ script DavnridgeTown_Object_Engineer_2 {
     msgbox(format("{COLOR BLUE}Sorry bub.\n{COLOR GREEN}Lilith{COLOR BLUE} is up north in the Mines.\pYou should talk to her if you want to battle her in the Gym."), MSGBOX_NPC)
     end
 }
+script DavnridgeTown_Object_Man {
+	msgbox(format("{COLOR BLUE}I use to work in the mines, and boy was it rough!\pI worked so hard that my Machop evolved into a Machoke!"), MSGBOX_NPC)
+	end
+}
 script DavnridgeTown_Sign_TownSign {
     msgbox(format("{COLOR LIGHT_GREEN}Davnridge Town\p{COLOR DARK_GREY}“The Resource Capital of Ryoko”"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
     end
 }
 script DavnridgeTown_Sign_GymSign {
-    msgbox(format("{COLOR RED}Davnridge Pokémon Gym\p{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Lilith\n{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Rock-Type"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    msgbox(format("{COLOR RED}Davnridge Town Pokémon Gym\p{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Lilith\n{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Rock"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
     end
 }
 script DavnridgeTown_Sign_Mines {
@@ -834,18 +838,8 @@ script DavnridgeTown_Sign_Mines {
     end
 }
 
-script DavnridgeTown_Trainer_Test1 {
-	trainerbattle_single(TRAINER_GRUNT_TRIAD_GORGE_1, format("intro"), format("lose"))
-	msgbox(format("fuck!"), MSGBOX_NPC)
+script Sign_DoorLocked {
+	msgbox(format("The door seems to be locked."), MSGBOX_SIGN)
 	end
 }
-script DavnridgeTown_Trainer_Test2 {
-	trainerbattle_single(TRAINER_GRUNT_TRIAD_GORGE_2, format("intro"), format("lose"))
-	msgbox(format("fuck!"), MSGBOX_NPC)
-	end
-}
-script DavnridgeTown_Trainer_Test3 {
-	trainerbattle_single(TRAINER_GRUNT_TRIAD_GORGE_3, format("intro"), format("lose"))
-	msgbox(format("fuck!"), MSGBOX_NPC)
-	end
-}
+

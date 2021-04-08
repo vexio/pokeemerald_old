@@ -135,7 +135,7 @@ script FrostpineCity_Sign_CitySign {
     end
 }
 script FrostpineCity_Sign_GymSign {
-    msgbox(format("{COLOR RED}Frostpine Pokémon Gym\p{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bernie\n{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Fire-Type"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    msgbox(format("{COLOR RED}Frostpine City Pokémon Gym\p{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Bernie\n{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Fire"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
     end
 }
 script FrostpineCity_Sign_IronwoodForest {
@@ -258,5 +258,5 @@ movement FrostpineCity_RivalEvent_Movement_2_2 {
 }
 
 script FrostpineCity_Sign_Gate {
-	msgbox(format("{COLOR LIGHT_GREEN}Frostpine City Gate"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
+	msgbox(format("{COLOR LIGHT_GREEN}Frostpine Gate"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
 }

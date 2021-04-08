@@ -1101,3 +1101,29 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/CobaltSea_Gatehouse/scripts.inc"
 
 	.include "data/maps/FrostpineCity_Gate/scripts.inc"
+
+	.include "data/maps/DavnridgeTown_House3/scripts.inc"
+
+	.include "data/maps/DavnridgeTown_House4/scripts.inc"
+
+	.include "data/maps/MystCity_CypressLab/scripts.inc"
+
+	.include "data/maps/MystCity_CrawdauntPub/scripts.inc"
+
+	.include "data/maps/MystCity_House_1/scripts.inc"
+
+	.include "data/maps/MystCity_House_2/scripts.inc"
+
+	.include "data/maps/MystCity_House_3/scripts.inc"
+
+	.include "data/maps/MystCity_House_4/scripts.inc"
+
+	.include "data/maps/TeamProtoHideout_B1F/scripts.inc"
+
+	.include "data/maps/BayportCity_LarsHouse/scripts.inc"
+
+	.include "data/maps/BayportCity_Gym/scripts.inc"
+
+	.include "data/maps/TeamProtoHideout_B2F/scripts.inc"
+
+	.include "data/maps/TeamProtoHideout_B3F/scripts.inc"

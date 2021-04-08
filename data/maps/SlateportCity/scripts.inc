@@ -1375,3 +1375,287 @@ SlateportCity_Text_TakingBattleTentChallenge: @ 81DF28C
 	.string "After all, a tough TRAINER is\n"
 	.string "the perfect fit for the BATTLE TENT!\p"
 	.string "Give it your best effort!$"
+
+BayportCity_Sign_City::
+	msgbox BayportCity_Sign_City_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+BayportCity_Sign_LarsHouse::
+	msgbox BayportCity_Sign_LarsHouse_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+BayportCity_Sign_PokemonFanClub::
+	msgbox BayportCity_Sign_PokemonFanClub_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
+BayportCity_Sign_HarborSign::
+	msgbox BayportCity_Sign_HarborSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+BayportCity_Sign_Gym::
+	msgbox BayportCity_Sign_Gym_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
+	end
+
+
+BayportCity_Object_Sailor1::
+	msgbox BayportCity_Object_Sailor1_Text_0, MSGBOX_NPC
+	end
+
+
+BayportCity_Object_Sailor2::
+	msgbox BayportCity_Object_Sailor2_Text_0, MSGBOX_NPC
+	return
+
+
+BayportCity_Object_Sailor3::
+	msgbox BayportCity_Object_Sailor3_Text_0, MSGBOX_NPC
+	end
+
+
+BayportCity_Sign_RustedDoor::
+	msgbox BayportCity_Sign_RustedDoor_Text_0, MSGBOX_SIGN
+	end
+
+
+BayportCity_Object_FatMan::
+	msgbox BayportCity_Object_FatMan_Text_0, MSGBOX_NPC
+	end
+
+
+BayportCity_Object_Woman1::
+	lock
+	faceplayer
+	compare VAR_CYPRESS_PROTO_EVENT_STATE, 2
+	goto_if_eq BayportCity_Object_Woman1_2
+	msgbox BayportCity_Object_Woman1_Text_1
+BayportCity_Object_Woman1_1:
+	release
+	end
+
+BayportCity_Object_Woman1_2:
+	msgbox BayportCity_Object_Woman1_Text_0
+	goto BayportCity_Object_Woman1_1
+
+
+BayportCity_Object_OldWoman::
+	msgbox BayportCity_Object_OldWoman_Text_0, MSGBOX_NPC
+	end
+
+
+BayportCity_Object_TMMan::
+	lock
+	faceplayer
+	msgbox BayportCity_Object_TMMan_Text_0
+	waitmessage
+	pokemart BayportCity_Pokemart_TMMan
+	msgbox BayportCity_Object_TMMan_Text_1
+	release
+	end
+
+
+BayportCity_Pokemart_TMMan:
+	.2byte ITEM_TM03_WATER_PULSE
+	.2byte ITEM_TM06_TOXIC
+	.2byte ITEM_TM12_TAUNT
+	.2byte ITEM_TM18_RAIN_DANCE
+	.2byte ITEM_TM24_THUNDERBOLT
+	.2byte ITEM_TM40_AERIAL_ACE
+	.2byte ITEM_TM46_THIEF
+	.2byte ITEM_TM50_OVERHEAT
+	.2byte ITEM_NONE
+	release
+	end
+
+BayportCity_Object_Woman2::
+	msgbox BayportCity_Object_Woman2_Text_0, MSGBOX_NPC
+	end
+
+
+BayportCity_Object_Girl::
+	msgbox BayportCity_Object_Girl_Text_0, MSGBOX_NPC
+	end
+
+
+BayportCity_Object_Man::
+	msgbox BayportCity_Object_Man_Text_0, MSGBOX_NPC
+	end
+
+
+BayportCity_Object_WingullTrainer::
+	msgbox BayportCity_Object_WingullTrainer_Text_0, MSGBOX_NPC
+	end
+
+
+BayportCity_Trigger_Wingull::
+	lock
+	getplayerxy VAR_TEMP_1, VAR_TEMP_0
+	compare VAR_TEMP_0, 25
+	goto_if_eq BayportCity_Trigger_Wingull_2
+	compare VAR_TEMP_0, 27
+	goto_if_eq BayportCity_Trigger_Wingull_3
+BayportCity_Trigger_Wingull_1:
+	playmoncry SPECIES_WINGULL, 0
+	waitmoncry
+	applymovement 12, Common_Movement_ExclamationMark
+	waitmovement 0
+	playse SE_PIN
+	waitse
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	playse SE_PIN
+	waitse
+	compare VAR_TEMP_0, 25
+	goto_if_eq BayportCity_Trigger_Wingull_7
+	compare VAR_TEMP_0, 27
+	goto_if_eq BayportCity_Trigger_Wingull_8
+BayportCity_Trigger_Wingull_6:
+	applymovement OBJ_EVENT_ID_PLAYER, BayportCity_Wingull_Movement_2
+	waitmovement 0
+	releaseall
+	end
+
+BayportCity_Trigger_Wingull_2:
+	applymovement 12, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	goto BayportCity_Trigger_Wingull_1
+
+BayportCity_Trigger_Wingull_3:
+	applymovement 12, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	goto BayportCity_Trigger_Wingull_1
+
+BayportCity_Trigger_Wingull_7:
+	applymovement 12, BayportCity_Wingull_Movement_0
+	goto BayportCity_Trigger_Wingull_6
+
+BayportCity_Trigger_Wingull_8:
+	applymovement 12, BayportCity_Wingull_Movement_1
+	goto BayportCity_Trigger_Wingull_6
+
+
+BayportCity_Wingull_Movement_0:
+	jump_up
+	delay_16
+	walk_down
+	step_end
+
+BayportCity_Wingull_Movement_1:
+	jump_down
+	delay_16
+	walk_up
+	step_end
+
+BayportCity_Wingull_Movement_2:
+	jump_right
+	delay_16
+	delay_8
+	step_end
+
+BayportCity_Sign_City_Text_0:
+	.string "{COLOR LIGHT_GREEN}Bayport City\n"
+	.string "{COLOR DARK_GREY}“The Breezy City”$"
+
+BayportCity_Sign_LarsHouse_Text_0:
+	.string "Lars' Villa$"
+
+BayportCity_Sign_PokemonFanClub_Text_0:
+	.string "{COLOR LIGHT_GREEN}The Pokémon Fan Club\n"
+	.string "{COLOR DARK_GREY}All Poké-fans Welcomed!$"
+
+BayportCity_Sign_HarborSign_Text_0:
+	.string "{COLOR LIGHT_GREEN}Bayport Harbour$"
+
+BayportCity_Sign_Gym_Text_0:
+	.string "{COLOR RED}Bayport City Pokémon Gym\p"
+	.string "{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Edgar\n"
+	.string "{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Ghost$"
+
+BayportCity_Object_Sailor1_Text_0:
+	.string "{COLOR BLUE}Oi!\p"
+	.string "I just got off the port for t'day.\p"
+	.string "Working by th' water is a tough job!$"
+
+BayportCity_Object_Sailor2_Text_0:
+	.string "{COLOR BLUE}Have you heard about {COLOR GREEN}Bayport City's{COLOR BLUE}\n"
+	.string "new Gym Leader {COLOR GREEN}Edgar{COLOR BLUE}?\p"
+	.string "He's foreign to the region, {COLOR GREEN}Unova{COLOR BLUE} I\n"
+	.string "think.\p"
+	.string "Our old Gym Leader {COLOR GREEN}Lorraine{COLOR BLUE} relocated\n"
+	.string "to {COLOR GREEN}Carisea Town{COLOR}.$"
+
+BayportCity_Object_Sailor3_Text_0:
+	.string "{COLOR BLUE}No boats are in the port today.$"
+
+BayportCity_Sign_RustedDoor_Text_0:
+	.string "The door is locked shut.\n"
+	.string "The keyhole is rusted.$"
+
+BayportCity_Object_FatMan_Text_0:
+	.string "{COLOR BLUE}The Villa down the street from here has\n"
+	.string "been abandoned for a few years now.\p"
+	.string "I've heard a few rumors, and late at\n"
+	.string "night you can apparently hear\l"
+	.string "footsteps inside!\p"
+	.string "Scary stuff!$"
+
+BayportCity_Object_Woman1_Text_0:
+	.string "{COLOR RED}I'm a gardner for this Villa.\p"
+	.string "The owner isn't home very often, but he\n"
+	.string "has stopped by today.\p"
+	.string "I wonder what brings him here...$"
+
+BayportCity_Object_Woman1_Text_1:
+	.string "{COLOR RED}I'm a gardner for this Villa.\p"
+	.string "The owner isn't home very often, but I\n"
+	.string "make sure to keep it in tip-top shape!$"
+
+BayportCity_Object_OldWoman_Text_0:
+	.string "{COLOR GREEN}Azure Bay{COLOR RED} makes up the southern side\n"
+	.string "of {COLOR GREEN}Ryoko{COLOR RED}.\p"
+	.string "There are only a few ways of accessing\n"
+	.string "{COLOR GREEN}Azure Bay{COLOR RED}:\p"
+	.string "Through {COLOR GREEN}Canvas Beach{COLOR RED}, going through\n"
+	.string "{COLOR GREEN}Davnridge Mines{COLOR RED}, and finally right here\l"
+	.string "in {COLOR GREEN}Bayport City{COLOR RED}.$"
+
+BayportCity_Object_TMMan_Text_0:
+	.string "{COLOR BLUE}Hey there!\p"
+	.string "I'm the TM Man!\p"
+	.string "I sell all sorts of TMs.\p"
+	.string "What can I sell you today?$"
+
+BayportCity_Object_TMMan_Text_1:
+	.string "{COLOR BLUE}I hope to see you again!$"
+
+BayportCity_Object_Woman2_Text_0:
+	.string "{COLOR RED}Our new Gym Leader {COLOR GREEN}Edgar{COLOR RED} is a\n"
+	.string "Ghost-type master.\p"
+	.string "His daughter, {COLOR GREEN}Raven{COLOR RED} recently became\n"
+	.string "one of the Elite 4 members.\p"
+	.string "They must be strong trainers!$"
+
+BayportCity_Object_Girl_Text_0:
+	.string "{COLOR RED}I love living by the ocean!\p"
+	.string "Especially by {COLOR GREEN}Azure Bay{COLOR RED}.\p"
+	.string "It's sooo much nicer than {COLOR GREEN}Cobalt Sea{COLOR RED}.$"
+
+BayportCity_Object_Man_Text_0:
+	.string "{COLOR BLUE}The Pokémon Fan Club is full of the\n"
+	.string "biggest Pokémon fans I know!\p"
+	.string "I'm sure as a trainer you would get\n"
+	.string "along well with them!$"
+
+BayportCity_Object_WingullTrainer_Text_0:
+	.string "{COLOR BLUE}My partner {COLOR GREEN}Wingy{COLOR BLUE} is acting very\n"
+	.string "agressively right now!\p"
+	.string "I was about to challenge the Gym\n"
+	.string "Leader, {COLOR GREEN}Edgar{COLOR BLUE} but {COLOR GREEN}Wingy{COLOR BLUE} is being mean\l"
+	.string "to me and everyone else right now!$"

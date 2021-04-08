@@ -117,9 +117,9 @@
 #define VAR_PROTOGRUNTS_ENCLAVAGORGE         0x4062 // 0 = Enclava Tower storyline not done, 1 = Enclava Tower storyline done, 2 = Battles in Triad Gorge are not done, 3 = Battles in Triad Gorge are done
 #define VAR_ROUTE104_STATE                   0x4063
 #define VAR_FROSTPINE_CITY_RIVAL_EVENT       0x4064 // frostpine rival battle
-#define VAR_ROUTE106_STATE                   0x4065 // Unused Var
-#define VAR_ROUTE107_STATE                   0x4066 // Unused Var
-#define VAR_ROUTE108_STATE                   0x4067 // Unused Var
+#define VAR_DAVNRIDGETOWN_COLLECTOR_STATE    0x4065 // State for Collector item. 0 = RAZOR_CLAW, 1 = BIG_ROOT
+#define VAR_FOSSILREVIVE_FOSSIL_TYPE         0x4066 // Referenced in MystCity_CypressLab_Object_FossilScientist
+#define VAR_CYPRESS_PROTO_EVENT_STATE        0x4067 // 0 = nothing, 1 = lars event in the Pokemon Center, 2 = Cypress x Proto event, 3 = Lars Villa event, 4 = beat 4th gym leader, 5 = crawdaunt bar event
 #define VAR_ROUTE109_STATE                   0x4068 // Unused Var
 #define VAR_ROUTE110_STATE                   0x4069
 #define VAR_ROUTE111_STATE                   0x406A // Unused Var
