@@ -1,1 +1,84 @@
-mapscripts BayportCity_Gym_MapScripts {}
+raw `
+BayportCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, BayportGym_SetHoleWarp
+`
+
+script BayportGym_SetHoleWarp {
+	setholewarp(MAP_BAYPORT_CITY_GYM, 255, 9, 29)
+	end
+}
+
+script BayportGym_Sign_GymSign {
+    if (flag(FLAG_BADGE04_GET) == true) {
+        msgbox(format("{COLOR RED}Bayport Pokémon Gym\p{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Ghost\n{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Edgar\p{COLOR DARK_GREY}Winning Trainers: {COLOR LIGHT_GREEN}Skip, {PLAYER}"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    } else {
+        msgbox(format("{COLOR RED}Bayport Pokémon Gym\p{COLOR DARK_GREY}Type: {COLOR LIGHT_GREEN}Ghost\n{COLOR DARK_GREY}Leader: {COLOR LIGHT_GREEN}Edgar\p{COLOR DARK_GREY}Winning Trainers: {COLOR LIGHT_GREEN}Skip"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+    }
+    end
+}
+
+script BayportGym_Trainer_Lucille {
+	trainerbattle_single(TRAINER_GYM_HEXMANIAC_LUCILLE, format("{COLOR RED}Have you seen the spirits that haunt this city?"), format("The spirits..."))
+	msgbox(format("{COLOR RED}The spirits haunt this city..."), MSGBOX_NPC)
+	end
+}
+script BayportGym_Trainer_Xzavier {
+	trainerbattle_single(TRAINER_GYM_EXPERT_XZAVIER, format("{COLOR BLUE}Who goes there?"), format("A disruption in the spirits, I sense..."))
+	msgbox(format("{COLOR BLUE}The spirits sense you, trainer.\pYou are a welcomed one...\nbut not a trusted one."), MSGBOX_NPC)
+	end
+}
+script BayportGym_Trainer_Mireya {
+	trainerbattle_single(TRAINER_GYM_EXPERT_MIREYA, format("{COLOR RED}You have chosen the wrong path, trainer."), format("You've made a mistake, but you grew from your mistake."))
+	msgbox(format("{COLOR RED}Careful to not choose the wrong path."), MSGBOX_NPC)
+	end
+}
+script BayportGym_Trainer_Haven {
+	trainerbattle_single(TRAINER_GYM_EXPERT_HAVEN, format("{COLOR RED}Watch your step!"), format("You almost got me spooked!"))
+	msgbox(format("{COLOR RED}Watch your step around here!"), MSGBOX_NPC)
+	end
+}
+script BayportGym_Trainer_Amara {
+	trainerbattle_single(TRAINER_GYM_HEXMANIAC_AMARA, format("{COLOR RED}............\n............"), format("............\n............"))
+	msgbox(format("{COLOR RED}............\n............."), MSGBOX_NPC)
+	end
+}
+
+script BayportGym_Trainer_Edgar {
+	lockall
+	if (flag(FLAG_BADGE04_GET) == false) {
+		faceplayer
+		msgbox(format("Edgar: {COLOR BLUE}Nice to meet you, young traveller.\pYou come to my gym for my knowledge, or am I just another check-mark on your list?\pNevertheless, you've come here for a challenge, and I shall provide!"), MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_GYM_LEADER_EDGAR, format("Magnificant!"))
+		setflag(FLAG_BADGE04_GET)
+		settrainerflag(TRAINER_GYM_HEXMANIAC_LUCILLE)
+		settrainerflag(TRAINER_GYM_EXPERT_XZAVIER)
+		settrainerflag(TRAINER_GYM_EXPERT_MIREYA)
+		settrainerflag(TRAINER_GYM_EXPERT_HAVEN)
+		settrainerflag(TRAINER_GYM_HEXMANIAC_AMARA)
+		setvar(VAR_CYPRESS_PROTO_EVENT_STATE, 4)
+		delay(5)
+		playfanfare(MUS_ME_BACHI)
+		msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Shade Badge"))
+        waitfanfare
+		msgbox(format("Edgar: {COLOR BLUE}Might I say, trainer, you have impressive battling skills.\pI've only seen a few trainers battle the way you do, and it's quite a charming way to battle.\pThe {COLOR GREEN}Shade Badge{COLOR BLUE} will grant you the ability to use {COLOR GREEN}Strength{COLOR BLUE} outside of battle.\pAs an additional token of graditude, please take this."))
+		giveitem(ITEM_TM30_SHADOW_BALL)
+	}
+	msgbox(format("Edgar: {COLOR BLUE}Your next gym challenge will be in {COLOR GREEN}Altos City{COLOR BLUE}, east of {COLOR GREEN}Myst City{COLOR BLUE} and through {COLOR GREEN}Shilou Woods{COLOR BLUE}.\pI wish you the best of luck with the rest of your journey."), MSGBOX_AUTOCLOSE)
+	releaseall
+	end
+}
+
+script BayportGym_Trigger_EdgeFall {
+	lockall
+	delay(20)
+	applymovement(OBJ_EVENT_ID_PLAYER, BayportGym_Movement_SetInvis)
+	waitmovement(0)
+	playse(SE_RU_HYUU)
+	delay(60)
+	warpsilent(MAP_BAYPORT_CITY_GYM, 0, 0, 0)
+	releaseall
+	end
+}
+movement BayportGym_Movement_SetInvis {
+	set_invisible
+}

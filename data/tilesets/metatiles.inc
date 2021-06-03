@@ -741,3 +741,10 @@ gMetatiles_BayportGym::
 	.align 1
 gMetatileAttributes_BayportGym::
 	.incbin "data/tilesets/secondary/bayportgym/metatile_attributes.bin"
+	.align 1
+gMetatiles_SailwageTown::
+	.incbin "data/tilesets/secondary/sailwagetown/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_SailwageTown::
+	.incbin "data/tilesets/secondary/sailwagetown/metatile_attributes.bin"

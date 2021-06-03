@@ -195,6 +195,13 @@ FrostpineCity_Trigger_RivalEvent::
 FrostpineCity_Trigger_RivalEvent_1:
 	delay 20
 	msgbox FrostpineCity_Trigger_RivalEvent_Text_1, MSGBOX_AUTOCLOSE
+	fadescreen FADE_TO_BLACK
+	special HealPlayerParty
+	playse MUS_ME_ASA
+	waitse
+	fadescreen FADE_FROM_BLACK
+	delay 16
+	msgbox FrostpineCity_Trigger_RivalEvent_Text_2, MSGBOX_AUTOCLOSE
 	compare VAR_STARTER_MON, 0
 	goto_if_eq FrostpineCity_Trigger_RivalEvent_9
 	compare VAR_STARTER_MON, 1
@@ -204,7 +211,7 @@ FrostpineCity_Trigger_RivalEvent_1:
 FrostpineCity_Trigger_RivalEvent_8:
 	playbgm MUS_RG_RIVAL2, 0
 	delay 5
-	msgbox FrostpineCity_Trigger_RivalEvent_Text_3, MSGBOX_AUTOCLOSE
+	msgbox FrostpineCity_Trigger_RivalEvent_Text_4, MSGBOX_AUTOCLOSE
 	compare VAR_TEMP_1, 29
 	goto_if_eq FrostpineCity_Trigger_RivalEvent_16
 	compare VAR_TEMP_1, 30
@@ -235,15 +242,15 @@ FrostpineCity_Trigger_RivalEvent_4:
 	goto FrostpineCity_Trigger_RivalEvent_1
 
 FrostpineCity_Trigger_RivalEvent_9:
-	trainerbattle_no_intro TRAINER_SKIP_FIRE_2, FrostpineCity_Trigger_RivalEvent_Text_2
+	trainerbattle_no_intro TRAINER_SKIP_FIRE_2, FrostpineCity_Trigger_RivalEvent_Text_3
 	goto FrostpineCity_Trigger_RivalEvent_8
 
 FrostpineCity_Trigger_RivalEvent_10:
-	trainerbattle_no_intro TRAINER_SKIP_WATER_2, FrostpineCity_Trigger_RivalEvent_Text_2
+	trainerbattle_no_intro TRAINER_SKIP_WATER_2, FrostpineCity_Trigger_RivalEvent_Text_3
 	goto FrostpineCity_Trigger_RivalEvent_8
 
 FrostpineCity_Trigger_RivalEvent_11:
-	trainerbattle_no_intro TRAINER_SKIP_GRASS_2, FrostpineCity_Trigger_RivalEvent_Text_2
+	trainerbattle_no_intro TRAINER_SKIP_GRASS_2, FrostpineCity_Trigger_RivalEvent_Text_3
 	goto FrostpineCity_Trigger_RivalEvent_8
 
 FrostpineCity_Trigger_RivalEvent_16:
@@ -375,25 +382,29 @@ FrostpineCity_Trigger_RivalEvent_Text_0:
 	.string "Skip: {COLOR BLUE} What's up Slowpoke!$"
 
 FrostpineCity_Trigger_RivalEvent_Text_1:
-	.string "Skip: {COLOR BLUE}Are you shivering?\p"
-	.string "I don't blame you...\p"
-	.string "But I'm all warmed up from my Gym Battle\n"
-	.string "against {COLOR GREEN}Bernie{COLOR BLUE}!\p"
+	.string "Skip: {COLOR BLUE}Are you shivering?\l"
+	.string "It's freezing up here!\p"
+	.string "You look pretty beat up from that climb,\n"
+	.string "let me heal your Pokémon.$"
+
+FrostpineCity_Trigger_RivalEvent_Text_2:
+	.string "Skip: {COLOR BLUE}I'm all warmed up from my Gym\n"
+	.string "Battle against {COLOR GREEN}Bernie{COLOR BLUE}!\p"
 	.string "He wasn't too difficult, but I've been\n"
 	.string "training quickly!\p"
 	.string "I still got some steam left from that\n"
-	.string "battle, let be burn the rest of it off\l"
+	.string "battle, let me burn the rest of it off\l"
 	.string "with you!$"
 
-FrostpineCity_Trigger_RivalEvent_Text_2:
+FrostpineCity_Trigger_RivalEvent_Text_3:
 	.string "I barely even broke a sweat!$"
 
-FrostpineCity_Trigger_RivalEvent_Text_3:
-	.string "Skip: {COLOR BLUE}Well I'm on my way to {COLOR GREEN}Bayport City{COLOR BLUE},\n"
-	.string "which is where the next Gym Leader is\l"
-	.string "at!\p"
-	.string "Don't worry, I'll say hi to your Mom in\n"
-	.string "{COLOR GREEN}Myst City{COLOR BLUE} on the way!$"
+FrostpineCity_Trigger_RivalEvent_Text_4:
+	.string "Skip: {COLOR BLUE}Hmph.\p"
+	.string "You still managed to win...\p"
+	.string "I'll be on my way to {COLOR GREEN}Bayport City{COLOR BLUE} for our\n"
+	.string "next Gym Challenge, which is just south\l"
+	.string "of {COLOR GREEN}Myst City{COLOR BLUE}.$"
 
 FrostpineCity_Sign_Gate_Text_0:
 	.string "{COLOR LIGHT_GREEN}Frostpine Gate$"

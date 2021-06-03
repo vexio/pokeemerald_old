@@ -24,8 +24,8 @@
     {
       "id": "LAYOUT_MAUVILLE_CITY",
       "name": "MauvilleCity_Layout",
-      "width": 54,
-      "height": 48,
+      "width": 78,
+      "height": 54,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_TerracotIsland",
       "border_filepath": "data/layouts/MauvilleCity/border.bin",
@@ -154,10 +154,10 @@
     {
       "id": "LAYOUT_PACIFIDLOG_TOWN",
       "name": "PacifidlogTown_Layout",
-      "width": 20,
-      "height": 40,
+      "width": 44,
+      "height": 70,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Pacifidlog",
+      "secondary_tileset": "gTileset_SailwageTown",
       "border_filepath": "data/layouts/PacifidlogTown/border.bin",
       "blockdata_filepath": "data/layouts/PacifidlogTown/map.bin"
     },
@@ -297,7 +297,7 @@
       "width": 44,
       "height": 86,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fallarbor",
+      "secondary_tileset": "gTileset_CariseaTown",
       "border_filepath": "data/layouts/Route114/border.bin",
       "blockdata_filepath": "data/layouts/Route114/map.bin"
     },
@@ -4464,8 +4464,8 @@
     {
       "id": "LAYOUT_ALNERWICK_LOWLANDS_GROTTO",
       "name": "AlnerwickLowlands_Grotto_Layout",
-      "width": 11,
-      "height": 9,
+      "width": 13,
+      "height": 11,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_HiddenGrotto",
       "border_filepath": "data/layouts/AlnerwickLowlands_Grotto/border.bin",
@@ -4595,7 +4595,7 @@
       "id": "LAYOUT_WISP_FOREST",
       "name": "WispForest_Layout",
       "width": 50,
-      "height": 36,
+      "height": 38,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_WispForest",
       "border_filepath": "data/layouts/WispForest/border.bin",
@@ -4645,7 +4645,7 @@
       "id": "LAYOUT_MYST_CITY_CYPRESS_LAB",
       "name": "MystCity_CypressLab_Layout",
       "width": 52,
-      "height": 25,
+      "height": 28,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/MystCity_CypressLab/border.bin",
@@ -4720,6 +4720,16 @@
       "secondary_tileset": "gTileset_Hideout",
       "border_filepath": "data/layouts/TeamProtoHideout_B3F/border.bin",
       "blockdata_filepath": "data/layouts/TeamProtoHideout_B3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAVNRIDGE_TOWN_HOUSE5",
+      "name": "DavnridgeTown_House5_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/DavnridgeTown_House5/border.bin",
+      "blockdata_filepath": "data/layouts/DavnridgeTown_House5/map.bin"
     }
   ]
 }

@@ -2249,3 +2249,23 @@ gTilesetPalettes_BayportGym::
 	.align 2
 gTilesetTiles_BayportGym::
 	.incbin "data/tilesets/secondary/bayportgym/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_SailwageTown::
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/sailwagetown/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_SailwageTown::
+	.incbin "data/tilesets/secondary/sailwagetown/tiles.4bpp.lz"

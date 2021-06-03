@@ -129,7 +129,7 @@ MystCity_CypressLab_Object_FossilScientist_Temp::
 
 MystCity_CypressLab_ProfessorCypress::
 	goto_if_unset FLAG_MYSTCITY_CYPRESSLAB_PROTO_EVENT, MystCity_CypressLab_ProfessorCypress_1
-	msgbox MystCity_CypressLab_ProfessorCypress_Text_13, MSGBOX_NPC
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_15, MSGBOX_NPC
 	release
 	end
 
@@ -141,8 +141,11 @@ MystCity_CypressLab_ProfessorCypress_1:
 	playse SE_PIN
 	waitse
 	msgbox MystCity_CypressLab_ProfessorCypress_Text_0, MSGBOX_AUTOCLOSE
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_1, MSGBOX_AUTOCLOSE
 	delay 10
-	setobjectxy 11, 25, 9
+	closemessage
+	delay 10
+	setobjectxy 11, 25, 12
 	playse SE_KAIDAN
 	waitse
 	playbgm MUS_AJITO, 0
@@ -164,32 +167,32 @@ MystCity_CypressLab_ProfessorCypress_4:
 	delay 10
 	applymovement 11, MystCity_CypressLab_Movement_1
 	waitmovement 0
-	setobjectxy 12, 25, 9
+	setobjectxy 12, 25, 12
 	playse SE_KAIDAN
 	applymovement 12, MystCity_CypressLab_Movement_2
 	delay 10
-	setobjectxy 13, 25, 9
+	setobjectxy 13, 25, 12
 	playse SE_KAIDAN
 	applymovement 13, MystCity_CypressLab_Movement_3
 	waitmovement 0
 	applymovement 9, Common_Movement_WalkInPlaceDown
 	waitmovement 0
-	msgbox MystCity_CypressLab_ProfessorCypress_Text_1
-	applymovement 11, Common_Movement_WalkInPlaceUp
-	waitmovement 0
 	msgbox MystCity_CypressLab_ProfessorCypress_Text_2
-	applymovement 9, Common_Movement_WalkInPlaceDown
+	applymovement 11, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox MystCity_CypressLab_ProfessorCypress_Text_3
-	applymovement 11, Common_Movement_WalkInPlaceUp
-	waitmovement 0
-	msgbox MystCity_CypressLab_ProfessorCypress_Text_4
 	applymovement 9, Common_Movement_WalkInPlaceDown
 	waitmovement 0
-	msgbox MystCity_CypressLab_ProfessorCypress_Text_5
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_4
 	applymovement 11, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	msgbox MystCity_CypressLab_ProfessorCypress_Text_6, MSGBOX_AUTOCLOSE
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_5
+	applymovement 9, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_6
+	applymovement 11, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_7, MSGBOX_AUTOCLOSE
 	delay 10
 	applymovement 11, MystCity_CypressLab_Movement_6
 	waitmovement 0
@@ -202,20 +205,23 @@ MystCity_CypressLab_ProfessorCypress_4:
 	delay 20
 	applymovement 13, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	msgbox MystCity_CypressLab_ProfessorCypress_Text_7, MSGBOX_AUTOCLOSE
-	trainerbattle_no_intro TRAINER_GRUNT_CYPRESS_LAB_1, MystCity_CypressLab_ProfessorCypress_Text_8
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_8, MSGBOX_AUTOCLOSE
+	trainerbattle_no_intro TRAINER_GRUNT_CYPRESS_LAB_1, MystCity_CypressLab_ProfessorCypress_Text_9
 	playbgm MUS_AJITO, 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	applymovement 12, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
-	msgbox MystCity_CypressLab_ProfessorCypress_Text_9, MSGBOX_AUTOCLOSE
-	trainerbattle_no_intro TRAINER_GRUNT_CYPRESS_LAB_2, MystCity_CypressLab_ProfessorCypress_Text_10
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_10, MSGBOX_AUTOCLOSE
+	trainerbattle_no_intro TRAINER_GRUNT_CYPRESS_LAB_2, MystCity_CypressLab_ProfessorCypress_Text_11
 	playbgm MUS_AJITO, 0
 	delay 20
 	applymovement 11, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	msgbox MystCity_CypressLab_ProfessorCypress_Text_11, MSGBOX_AUTOCLOSE
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_12, MSGBOX_AUTOCLOSE
+	closemessage
+	delay 10
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_13, MSGBOX_AUTOCLOSE
 	playmoncry SPECIES_ALAKAZAM, 0
 	waitmoncry
 	fadescreen FADE_TO_BLACK
@@ -236,7 +242,7 @@ MystCity_CypressLab_ProfessorCypress_4:
 	applymovement 9, Common_Movement_WalkInPlaceRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
-	msgbox MystCity_CypressLab_ProfessorCypress_Text_12, MSGBOX_AUTOCLOSE
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_14, MSGBOX_AUTOCLOSE
 	applymovement 9, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	setflag FLAG_MYSTCITY_CYPRESSLAB_PROTO_EVENT
@@ -247,9 +253,9 @@ MystCity_CypressLab_ProfessorCypress_4:
 	end
 
 MystCity_CypressLab_ProfessorCypress_5:
-	compare VAR_TEMP_1, 6
+	compare VAR_TEMP_1, 9
 	goto_if_eq MystCity_CypressLab_ProfessorCypress_7
-	compare VAR_TEMP_1, 4
+	compare VAR_TEMP_1, 8
 	goto_if_eq MystCity_CypressLab_ProfessorCypress_8
 	goto MystCity_CypressLab_ProfessorCypress_4
 
@@ -416,62 +422,72 @@ MystCity_CypressLab_ProfessorCypress_Text_0:
 	.string "Regardless, thank you {COLOR GREEN}{PLAYER}{COLOR RED}!$"
 
 MystCity_CypressLab_ProfessorCypress_Text_1:
+	.string "{PLAYER} handed Mom the {COLOR GREEN}Dorimtome{COLOR DARK_GREY}.$"
+
+MystCity_CypressLab_ProfessorCypress_Text_2:
 	.string "Mom: {COLOR RED}What is going on here?\n"
 	.string "Who are you?$"
 
-MystCity_CypressLab_ProfessorCypress_Text_2:
-	.string "Eris: {COLOR RED}My name is {COLOR GREEN}Eris{COLOR RED}, Head Admin for\n"
-	.string "{COLOR GREEN}Team Proto{COLOR RED}.\p"
-	.string "I've come to personally obtain the\n"
-	.string "{COLOR GREEN}Dorimtome{COLOR RED} myself, since my peers seem\l"
-	.string "to not be able to do it themselves.$"
-
 MystCity_CypressLab_ProfessorCypress_Text_3:
-	.string "Mom: {COLOR RED}I cannot give this book to you\n"
-	.string "ma'am.\p"
-	.string "This book needs to be in the right\n"
-	.string "hands, and you and your {COLOR GREEN}Team Proto{COLOR RED}\l"
-	.string "don't seem to be the most trustworthy.$"
+	.string "Eris: {COLOR RED}It's quite a honor to finally meet\n"
+	.string "you, {COLOR GREEN}Professor Cypress{COLOR RED}.\p"
+	.string "My name is {COLOR GREEN}Eris{COLOR RED}, Head Admin for {COLOR GREEN}Team\n"
+	.string "Proto{COLOR RED}.\p"
+	.string "I've come to personally obtain the\n"
+	.string "{COLOR GREEN}Dorimtome{COLOR RED} myself, since my colleagues\l"
+	.string "seem to not be able to do it\l"
+	.string "themselves.$"
 
 MystCity_CypressLab_ProfessorCypress_Text_4:
-	.string "Eris: {COLOR RED}Oh no, {COLOR GREEN}Team Proto{COLOR RED} does not have\n"
-	.string "any ill intentions!\p"
-	.string "We just need to... borrow it for a little.$"
+	.string "Mom: {COLOR RED}What are your intentions for the\n"
+	.string "{COLOR GREEN}Dorimtome{COLOR RED}?\p"
+	.string "I'm not quite familiar your {COLOR GREEN}Team Proto{COLOR RED}\n"
+	.string "organization...$"
 
 MystCity_CypressLab_ProfessorCypress_Text_5:
-	.string "Mom: {COLOR RED}I'm sorry but you will not be\n"
-	.string "getting this book!$"
+	.string "Eris: {COLOR RED}Oh my!\p"
+	.string "{COLOR GREEN}Team Proto{COLOR RED} does not have any ill\n"
+	.string "intentions!\p"
+	.string "Our organization would like to research\n"
+	.string "the tome for our knowledge.$"
 
 MystCity_CypressLab_ProfessorCypress_Text_6:
-	.string "Eris: {COLOR RED}I'd hate to get physical here...\l"
-	.string "But I won't take no for an answer.\p"
-	.string "Grunts, take care of the kid.\l"
-	.string "I'll converse with the Professor.$"
+	.string "Mom: {COLOR RED}I'm sorry, but the {COLOR GREEN}Dorimtome{COLOR RED} needs\n"
+	.string "to be in trusted hands.\p"
+	.string "Your {COLOR GREEN}Team Proto{COLOR RED} does not seem\n"
+	.string "trustworthy...$"
 
 MystCity_CypressLab_ProfessorCypress_Text_7:
-	.string "Grunt: {COLOR BLUE}You think you're stronger than\n"
-	.string "us?\p"
-	.string "Pathetic!$"
+	.string "Eris: {COLOR RED}I'd hate to start drama here...\p"
+	.string "But I won't take no for an answer.\p"
+	.string "Grunts, take care of the kid.\p"
+	.string "I'll converse with the Professor.$"
 
 MystCity_CypressLab_ProfessorCypress_Text_8:
+	.string "Grunt: {COLOR GREEN}Team Proto{COLOR BLUE} never takes no for an\n"
+	.string "answer!$"
+
+MystCity_CypressLab_ProfessorCypress_Text_9:
 	.string "That Dorimtome means more to us than\n"
 	.string "you know!$"
 
-MystCity_CypressLab_ProfessorCypress_Text_9:
+MystCity_CypressLab_ProfessorCypress_Text_10:
 	.string "Grunt: {COLOR BLUE}We're gonna get that book, no\n"
 	.string "matter what happens!$"
 
-MystCity_CypressLab_ProfessorCypress_Text_10:
-	.string "Haha!\n"
-	.string "We were able to hold you off long\l"
-	.string "enough!$"
-
 MystCity_CypressLab_ProfessorCypress_Text_11:
+	.string "Haha!\p"
+	.string "Distraction!$"
+
+MystCity_CypressLab_ProfessorCypress_Text_12:
+	.string "Eris snatches the {COLOR GREEN}Dorimtome{COLOR DARK_GREY} from Mom.$"
+
+MystCity_CypressLab_ProfessorCypress_Text_13:
 	.string "Eris: {COLOR RED}Thank you, {COLOR GREEN}Professor Cypress{COLOR RED}, for\n"
 	.string "your cooperation.\p"
 	.string "Alakazam, use Teleport!$"
 
-MystCity_CypressLab_ProfessorCypress_Text_12:
+MystCity_CypressLab_ProfessorCypress_Text_14:
 	.string "Mom: {COLOR RED}I'm sorry {COLOR GREEN}{PLAYER}{COLOR RED}, {COLOR GREEN}Eris{COLOR RED} had some\n"
 	.string "really strong Pokémon that mine did\l"
 	.string "not stand a chance against.\p"
@@ -491,6 +507,6 @@ MystCity_CypressLab_ProfessorCypress_Text_12:
 	.string "Thank you for your help, now go get {COLOR GREEN}Lars{COLOR RED}\n"
 	.string "in {COLOR GREEN}Bayport City{COLOR RED}.$"
 
-MystCity_CypressLab_ProfessorCypress_Text_13:
+MystCity_CypressLab_ProfessorCypress_Text_15:
 	.string "Mom: {COLOR RED}Go talk to {COLOR GREEN}Lars{COLOR RED} in {COLOR GREEN}Bayport City{COLOR RED}, he\n"
 	.string "will know what to do.$"

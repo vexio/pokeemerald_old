@@ -10,6 +10,8 @@ LilycoveCity_OnTransition: @ 81E2B47
 	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	call Common_EventScript_SetupRivalGfxId
+	compare VAR_CYPRESS_PROTO_EVENT_STATE, 5
+	call_if_eq MystCity_Mapscript_RivalCrawdauntPub
 	end
 
 LilycoveCity_OnLoad: @ 81E2B61
@@ -839,7 +841,7 @@ script MystCity_Sign_MoveDeletersSign {
 	end
 }
 script MystCity_Sign_CrawdauntPubSign {
-	msgbox(format("{COLOR LIGHT_GREEN}The Crawdaunt Pub\l{COLOR DARK_GREY}“The Heart and Soul of Myst City”"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
+	msgbox(format("{COLOR LIGHT_GREEN}The Crawdaunt Pub\n{COLOR DARK_GREY}“The Heart and Soul of Myst City”"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
 	end
 }
 script MystCity_Sign_GymSign {
@@ -853,4 +855,164 @@ script MystCity_Sign_GymSignClosed {
 script MystCity_Sign_LabSign {
     msgbox(format("{COLOR LIGHT_GREEN}Cypress Laboratory"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
     end
+}
+
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const CAMERA = OBJ_EVENT_ID_CAMERA
+const SKIP = 21
+const LARS = 22
+
+script MystCity_Mapscript_RivalCrawdauntPub {
+	setobjectxyperm(SKIP, 15, 42)
+	setobjectxyperm(LARS, 15, 39)
+	return
+}
+
+script MystCity_Trigger_CrawdauntPub {
+	lockall
+	delay(20)
+	applymovement(SKIP, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	delay(10)
+	applymovement(SKIP, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
+	waitmovement(0)
+	waitse
+	playbgm(MUS_RG_RIVAL1, 0)
+	delay(20)
+	msgbox(format("Skip: {COLOR BLUE}Just the person I was looking for!"), MSGBOX_AUTOCLOSE)
+	delay(10)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 14) {
+		applymovement(SKIP, MystCity_CrawdauntPub_Movement_0_0)
+		waitmovement(0)
+		applymovement(PLAYER, Common_Movement_WalkInPlaceRight)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 15) {
+		applymovement(SKIP, MystCity_CrawdauntPub_Movement_0_1)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 16) {
+		applymovement(SKIP, MystCity_CrawdauntPub_Movement_0_2)
+		waitmovement(0)
+		applymovement(PLAYER, Common_Movement_WalkInPlaceLeft)
+		waitmovement(0)
+	}
+	msgbox(format("Skip: {COLOR BLUE}What's up slowpoke!\nStill a few steps behind me?\pHa!\pI've always been faster than you!\pSay... I haven't seen you battle since {COLOR GREEN}Frostpine City{COLOR BLUE}!\pHow about we see who the stronger trainer is?"), MSGBOX_AUTOCLOSE)
+	if (var(VAR_STARTER_MON) == 0) { // player starter = rowlet, rival starter = chimchar
+		trainerbattle_no_intro(TRAINER_SKIP_FIRE_3, format("Agh!\nAgain?"))
+	} elif (var(VAR_STARTER_MON) == 1) { // player starter = chimchar, rival starter = froakie
+		trainerbattle_no_intro(TRAINER_SKIP_WATER_3, format("Agh!\nAgain?"))
+	} elif (var(VAR_STARTER_MON) == 2) { // player starter = froakie, rival starter = rowlet
+		trainerbattle_no_intro(TRAINER_SKIP_GRASS_3, format("Agh!\nAgain?"))
+	}
+	playbgm(MUS_RG_RIVAL1, 0)
+	msgbox(format("Skip: {COLOR BLUE}Agh!\nYou always seem to beat me...\lEven at my best...\pI won't let that loss get to me!\pYou just got lucky!"), MSGBOX_AUTOCLOSE)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 14) {
+		setobjectxy(LARS, 14, 39)
+	} elif (var(VAR_TEMP_0) == 15) {
+		setobjectxy(LARS, 15, 39)
+	} elif (var(VAR_TEMP_0) == 16) {
+		setobjectxy(LARS, 16, 39)
+	}
+	fadenewbgm(MUS_MINAMO)
+	applymovement(LARS, MystCity_CrawdauntPub_Movement_1)
+	waitmovement(0)
+	msgbox(format("Lars: {COLOR BLUE}Ah!"))
+	delay(10)
+	applymovement(PLAYER, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	if (var(VAR_TEMP_0) == 15) {
+		applymovement(SKIP, MystCity_CrawdauntPub_Movement_3)
+		waitmovement(0)
+	} else {
+		applymovement(SKIP, Common_Movement_WalkInPlaceUp)
+		waitmovement(0)
+	}
+	applymovement(LARS, MystCity_CrawdauntPub_Movement_2)
+	waitmovement(0)
+	msgbox(format("Lars: {COLOR BLUE}You made it!"))
+	applymovement(SKIP, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	msgbox(format("Skip: {COLOR BLUE}Who are you?\n{COLOR GREEN}{PLAYER}{COLOR BLUE} do you know this dude?"))
+	applymovement(LARS, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	msgbox(format("Lars: {COLOR BLUE}Ah, I sense a little rivalry between you two.\pName's {COLOR GREEN}Lars{COLOR BLUE}.\nI'm a fellow trainer like yourself."))
+	applymovement(SKIP, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	msgbox(format("Skip: {COLOR BLUE}Hpmh.\nName's {COLOR GREEN}Skip{COLOR BLUE}."))
+	applymovement(LARS, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	msgbox(format("Lars: {COLOR BLUE}Nice to meet you {COLOR GREEN}Skip{COLOR BLUE}!\pNow, {COLOR GREEN}{PLAYER}{COLOR BLUE}, you need to go in {COLOR GREEN}The Crawdaunt Pub{COLOR BLUE} and ask the other customers if they've seen any suspicious people in the pub.\pHopefully they'll talk."))
+	applymovement(SKIP, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	msgbox(format("Skip: {COLOR BLUE}Ha!\n{COLOR GREEN}{PLAYER}{COLOR BLUE} doesn't know how to smooth talk those types of folk!\pI'll do all the talking {COLOR GREEN}{PLAYER}{COLOR BLUE}.\pCatch ya there slowpoke!"), MSGBOX_AUTOCLOSE)
+	delay(10)
+	applymovement(SKIP, MystCity_CrawdauntPub_Movement_4)
+	waitmovement(0)
+	msgbox(format("Lars: {COLOR BLUE}Huh.\nWhat an interesting fella...\pAnyways, it seems like you and {COLOR GREEN}Skip{COLOR BLUE} got this figured out.\pReport back to {COLOR GREEN}Professor Cypress{COLOR BLUE} and myself in her lab.\pGood luck kid!"), MSGBOX_AUTOCLOSE)
+	delay(10)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 14) {
+		applymovement(LARS, MystCity_CrawdauntPub_Movement_5_0)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 15) {
+		applymovement(LARS, MystCity_CrawdauntPub_Movement_5_1)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 16) {
+		applymovement(LARS, MystCity_CrawdauntPub_Movement_5_2)
+		waitmovement(0)	
+	}
+	setflag(FLAG_MYSTCITY_LARSSKIP)
+	removeobject(LARS)
+	removeobject(SKIP)
+	setvar(VAR_CYPRESS_PROTO_EVENT_STATE, 6)
+	releaseall
+	end
+}
+movement MystCity_CrawdauntPub_Movement_0_0 {
+	walk_down * 3
+	walk_in_place_left
+}
+movement MystCity_CrawdauntPub_Movement_0_1 {
+	walk_down * 2
+}
+movement MystCity_CrawdauntPub_Movement_0_2 {
+	walk_down * 3
+	walk_in_place_right
+}
+movement MystCity_CrawdauntPub_Movement_1 {
+	walk_down * 3	
+}
+movement MystCity_CrawdauntPub_Movement_2 {
+	walk_down * 2
+}
+movement MystCity_CrawdauntPub_Movement_3 {
+	walk_left
+	walk_down
+	walk_in_place_up
+}
+movement MystCity_CrawdauntPub_Movement_4 {
+	walk_fast_up * 3
+	walk_fast_right * 9
+	delay_8
+	set_invisible
+}
+movement MystCity_CrawdauntPub_Movement_5_0 {
+	walk_up * 2
+	walk_right * 7
+	walk_up * 3
+	set_invisible
+}
+movement MystCity_CrawdauntPub_Movement_5_1 {
+	walk_up * 2
+	walk_right * 6
+	walk_up * 3
+	set_invisible
+}
+movement MystCity_CrawdauntPub_Movement_5_2 {
+	walk_up * 2
+	walk_right * 5
+	walk_up * 3
+	set_invisible
 }

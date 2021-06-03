@@ -9,6 +9,8 @@ LilycoveCity_OnTransition: @ 81E2B47
 	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	call Common_EventScript_SetupRivalGfxId
+	compare VAR_CYPRESS_PROTO_EVENT_STATE, 5
+	call_if_eq MystCity_Mapscript_RivalCrawdauntPub
 	end
 
 LilycoveCity_OnLoad: @ 81E2B61
@@ -872,6 +874,264 @@ MystCity_Sign_LabSign::
 	end
 
 
+MystCity_Mapscript_RivalCrawdauntPub::
+	setobjectxyperm 21, 15, 42
+	setobjectxyperm 22, 15, 39
+	return
+
+
+MystCity_Trigger_CrawdauntPub::
+	lockall
+	delay 20
+	applymovement 21, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	delay 10
+	applymovement 21, Common_Movement_ExclamationMark
+	playse SE_PIN
+	waitmovement 0
+	waitse
+	playbgm MUS_RG_RIVAL1, 0
+	delay 20
+	msgbox MystCity_Trigger_CrawdauntPub_Text_0, MSGBOX_AUTOCLOSE
+	delay 10
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 14
+	goto_if_eq MystCity_Trigger_CrawdauntPub_2
+	compare VAR_TEMP_0, 15
+	goto_if_eq MystCity_Trigger_CrawdauntPub_3
+	compare VAR_TEMP_0, 16
+	goto_if_eq MystCity_Trigger_CrawdauntPub_4
+MystCity_Trigger_CrawdauntPub_1:
+	msgbox MystCity_Trigger_CrawdauntPub_Text_1, MSGBOX_AUTOCLOSE
+	compare VAR_STARTER_MON, 0
+	goto_if_eq MystCity_Trigger_CrawdauntPub_9
+	compare VAR_STARTER_MON, 1
+	goto_if_eq MystCity_Trigger_CrawdauntPub_10
+	compare VAR_STARTER_MON, 2
+	goto_if_eq MystCity_Trigger_CrawdauntPub_11
+MystCity_Trigger_CrawdauntPub_8:
+	playbgm MUS_RG_RIVAL1, 0
+	msgbox MystCity_Trigger_CrawdauntPub_Text_3, MSGBOX_AUTOCLOSE
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 14
+	goto_if_eq MystCity_Trigger_CrawdauntPub_16
+	compare VAR_TEMP_0, 15
+	goto_if_eq MystCity_Trigger_CrawdauntPub_17
+	compare VAR_TEMP_0, 16
+	goto_if_eq MystCity_Trigger_CrawdauntPub_18
+MystCity_Trigger_CrawdauntPub_15:
+	fadenewbgm MUS_MINAMO
+	applymovement 22, MystCity_CrawdauntPub_Movement_1
+	waitmovement 0
+	msgbox MystCity_Trigger_CrawdauntPub_Text_4
+	delay 10
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	compare VAR_TEMP_0, 15
+	goto_if_eq MystCity_Trigger_CrawdauntPub_23
+	applymovement 21, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+MystCity_Trigger_CrawdauntPub_22:
+	applymovement 22, MystCity_CrawdauntPub_Movement_2
+	waitmovement 0
+	msgbox MystCity_Trigger_CrawdauntPub_Text_5
+	applymovement 21, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox MystCity_Trigger_CrawdauntPub_Text_6
+	applymovement 22, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	msgbox MystCity_Trigger_CrawdauntPub_Text_7
+	applymovement 21, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox MystCity_Trigger_CrawdauntPub_Text_8
+	applymovement 22, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	msgbox MystCity_Trigger_CrawdauntPub_Text_9
+	applymovement 21, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox MystCity_Trigger_CrawdauntPub_Text_10, MSGBOX_AUTOCLOSE
+	delay 10
+	applymovement 21, MystCity_CrawdauntPub_Movement_4
+	waitmovement 0
+	msgbox MystCity_Trigger_CrawdauntPub_Text_11, MSGBOX_AUTOCLOSE
+	delay 10
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_0, 14
+	goto_if_eq MystCity_Trigger_CrawdauntPub_27
+	compare VAR_TEMP_0, 15
+	goto_if_eq MystCity_Trigger_CrawdauntPub_28
+	compare VAR_TEMP_0, 16
+	goto_if_eq MystCity_Trigger_CrawdauntPub_29
+MystCity_Trigger_CrawdauntPub_26:
+	setflag FLAG_MYSTCITY_LARSSKIP
+	removeobject 22
+	removeobject 21
+	setvar VAR_CYPRESS_PROTO_EVENT_STATE, 6
+	releaseall
+	end
+
+MystCity_Trigger_CrawdauntPub_2:
+	applymovement 21, MystCity_CrawdauntPub_Movement_0_0
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight
+	waitmovement 0
+	goto MystCity_Trigger_CrawdauntPub_1
+
+MystCity_Trigger_CrawdauntPub_3:
+	applymovement 21, MystCity_CrawdauntPub_Movement_0_1
+	waitmovement 0
+	goto MystCity_Trigger_CrawdauntPub_1
+
+MystCity_Trigger_CrawdauntPub_4:
+	applymovement 21, MystCity_CrawdauntPub_Movement_0_2
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	goto MystCity_Trigger_CrawdauntPub_1
+
+MystCity_Trigger_CrawdauntPub_9:
+	trainerbattle_no_intro TRAINER_SKIP_FIRE_3, MystCity_Trigger_CrawdauntPub_Text_2
+	goto MystCity_Trigger_CrawdauntPub_8
+
+MystCity_Trigger_CrawdauntPub_10:
+	trainerbattle_no_intro TRAINER_SKIP_WATER_3, MystCity_Trigger_CrawdauntPub_Text_2
+	goto MystCity_Trigger_CrawdauntPub_8
+
+MystCity_Trigger_CrawdauntPub_11:
+	trainerbattle_no_intro TRAINER_SKIP_GRASS_3, MystCity_Trigger_CrawdauntPub_Text_2
+	goto MystCity_Trigger_CrawdauntPub_8
+
+MystCity_Trigger_CrawdauntPub_16:
+	setobjectxy 22, 14, 39
+	goto MystCity_Trigger_CrawdauntPub_15
+
+MystCity_Trigger_CrawdauntPub_17:
+	setobjectxy 22, 15, 39
+	goto MystCity_Trigger_CrawdauntPub_15
+
+MystCity_Trigger_CrawdauntPub_18:
+	setobjectxy 22, 16, 39
+	goto MystCity_Trigger_CrawdauntPub_15
+
+MystCity_Trigger_CrawdauntPub_23:
+	applymovement 21, MystCity_CrawdauntPub_Movement_3
+	waitmovement 0
+	goto MystCity_Trigger_CrawdauntPub_22
+
+MystCity_Trigger_CrawdauntPub_27:
+	applymovement 22, MystCity_CrawdauntPub_Movement_5_0
+	waitmovement 0
+	goto MystCity_Trigger_CrawdauntPub_26
+
+MystCity_Trigger_CrawdauntPub_28:
+	applymovement 22, MystCity_CrawdauntPub_Movement_5_1
+	waitmovement 0
+	goto MystCity_Trigger_CrawdauntPub_26
+
+MystCity_Trigger_CrawdauntPub_29:
+	applymovement 22, MystCity_CrawdauntPub_Movement_5_2
+	waitmovement 0
+	goto MystCity_Trigger_CrawdauntPub_26
+
+
+MystCity_CrawdauntPub_Movement_0_0:
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_left
+	step_end
+
+MystCity_CrawdauntPub_Movement_0_1:
+	walk_down
+	walk_down
+	step_end
+
+MystCity_CrawdauntPub_Movement_0_2:
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_right
+	step_end
+
+MystCity_CrawdauntPub_Movement_1:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+MystCity_CrawdauntPub_Movement_2:
+	walk_down
+	walk_down
+	step_end
+
+MystCity_CrawdauntPub_Movement_3:
+	walk_left
+	walk_down
+	walk_in_place_up
+	step_end
+
+MystCity_CrawdauntPub_Movement_4:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	delay_8
+	set_invisible
+	step_end
+
+MystCity_CrawdauntPub_Movement_5_0:
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+MystCity_CrawdauntPub_Movement_5_1:
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+MystCity_CrawdauntPub_Movement_5_2:
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
 MystCity_Object_BlackBelt_Text_0:
 	.string "{COLOR BLUE}I want to battle the {COLOR GREEN}Myst City Gym{COLOR BLUE}, but\n"
 	.string "the leader is supposedly 'on tour' at\l"
@@ -979,7 +1239,7 @@ MystCity_Sign_MoveDeletersSign_Text_0:
 	.string "{COLOR LIGHT_GREEN}Move Deleter's House$"
 
 MystCity_Sign_CrawdauntPubSign_Text_0:
-	.string "{COLOR LIGHT_GREEN}The Crawdaunt Pub\l"
+	.string "{COLOR LIGHT_GREEN}The Crawdaunt Pub\n"
 	.string "{COLOR DARK_GREY}“The Heart and Soul of Myst City”$"
 
 MystCity_Sign_GymSign_Text_0:
@@ -995,3 +1255,71 @@ MystCity_Sign_GymSignClosed_Text_0:
 
 MystCity_Sign_LabSign_Text_0:
 	.string "{COLOR LIGHT_GREEN}Cypress Laboratory$"
+
+MystCity_Trigger_CrawdauntPub_Text_0:
+	.string "Skip: {COLOR BLUE}Just the person I was looking for!$"
+
+MystCity_Trigger_CrawdauntPub_Text_1:
+	.string "Skip: {COLOR BLUE}What's up slowpoke!\n"
+	.string "Still a few steps behind me?\p"
+	.string "Ha!\p"
+	.string "I've always been faster than you!\p"
+	.string "Say... I haven't seen you battle since\n"
+	.string "{COLOR GREEN}Frostpine City{COLOR BLUE}!\p"
+	.string "How about we see who the stronger\n"
+	.string "trainer is?$"
+
+MystCity_Trigger_CrawdauntPub_Text_2:
+	.string "Agh!\n"
+	.string "Again?$"
+
+MystCity_Trigger_CrawdauntPub_Text_3:
+	.string "Skip: {COLOR BLUE}Agh!\n"
+	.string "You always seem to beat me...\l"
+	.string "Even at my best...\p"
+	.string "I won't let that loss get to me!\p"
+	.string "You just got lucky!$"
+
+MystCity_Trigger_CrawdauntPub_Text_4:
+	.string "Lars: {COLOR BLUE}Ah!$"
+
+MystCity_Trigger_CrawdauntPub_Text_5:
+	.string "Lars: {COLOR BLUE}You made it!$"
+
+MystCity_Trigger_CrawdauntPub_Text_6:
+	.string "Skip: {COLOR BLUE}Who are you?\n"
+	.string "{COLOR GREEN}{PLAYER}{COLOR BLUE} do you know this dude?$"
+
+MystCity_Trigger_CrawdauntPub_Text_7:
+	.string "Lars: {COLOR BLUE}Ah, I sense a little rivalry\n"
+	.string "between you two.\p"
+	.string "Name's {COLOR GREEN}Lars{COLOR BLUE}.\n"
+	.string "I'm a fellow trainer like yourself.$"
+
+MystCity_Trigger_CrawdauntPub_Text_8:
+	.string "Skip: {COLOR BLUE}Hpmh.\n"
+	.string "Name's {COLOR GREEN}Skip{COLOR BLUE}.$"
+
+MystCity_Trigger_CrawdauntPub_Text_9:
+	.string "Lars: {COLOR BLUE}Nice to meet you {COLOR GREEN}Skip{COLOR BLUE}!\p"
+	.string "Now, {COLOR GREEN}{PLAYER}{COLOR BLUE}, you need to go in {COLOR GREEN}The\n"
+	.string "Crawdaunt Pub{COLOR BLUE} and ask the other\l"
+	.string "customers if they've seen any\l"
+	.string "suspicious people in the pub.\p"
+	.string "Hopefully they'll talk.$"
+
+MystCity_Trigger_CrawdauntPub_Text_10:
+	.string "Skip: {COLOR BLUE}Ha!\n"
+	.string "{COLOR GREEN}{PLAYER}{COLOR BLUE} doesn't know how to smooth\l"
+	.string "talk those types of folk!\p"
+	.string "I'll do all the talking {COLOR GREEN}{PLAYER}{COLOR BLUE}.\p"
+	.string "Catch ya there slowpoke!$"
+
+MystCity_Trigger_CrawdauntPub_Text_11:
+	.string "Lars: {COLOR BLUE}Huh.\n"
+	.string "What an interesting fella...\p"
+	.string "Anyways, it seems like you and {COLOR GREEN}Skip{COLOR BLUE} got\n"
+	.string "this figured out.\p"
+	.string "Report back to {COLOR GREEN}Professor Cypress{COLOR BLUE} and\n"
+	.string "myself in her lab.\p"
+	.string "Good luck kid!$"

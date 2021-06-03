@@ -144,7 +144,7 @@
     {
       "type": "hidden_item",
       "x": 9,
-      "y": 22,
+      "y": 14,
       "elevation": 3,
       "item": "ITEM_BIG_ROOT",
       "flag": "FLAG_HIDDEN_ITEM_FROSTPINE_CLIMB_BIG_ROOT"

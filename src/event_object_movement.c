@@ -146,6 +146,11 @@ void (*const gCameraObjectFuncs[])(struct Sprite *) = {
 
 #include "data/object_events/object_event_graphics.h"
 
+u16 GetObjectEventTrainerSightFlagByObjectEventId(u8 objEventId)
+{
+    return GetObjectEventTemplateByLocalIdAndMap(gObjectEvents[objEventId].localId, gObjectEvents[objEventId].mapNum, gObjectEvents[objEventId].mapGroup)->trainerType;
+}
+
 // movement type callbacks
 static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
 {
@@ -481,6 +486,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_ITEMBALL       0x1151
 #define OBJ_EVENT_PAL_TAG_BREAKABLEROCK  0x1152
 #define OBJ_EVENT_PAL_TAG_PUSHABLEBOULDER 0x1153
+#define OBJ_EVENT_PAL_TAG_COOK           0x1154
 #define OBJ_EVENT_PAL_TAG_NONE           0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -573,6 +579,7 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_ItemBall, OBJ_EVENT_PAL_TAG_ITEMBALL},
     {gObjectEventPalette_BreakableRock, OBJ_EVENT_PAL_TAG_BREAKABLEROCK},
     {gObjectEventPalette_PushableBoulder, OBJ_EVENT_PAL_TAG_PUSHABLEBOULDER},
+    {gObjectEventPalette_Cook, OBJ_EVENT_PAL_TAG_COOK},
     {NULL,                                 0x0000},
 };
 

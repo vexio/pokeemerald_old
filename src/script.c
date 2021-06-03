@@ -4,6 +4,7 @@
 #include "mevent.h"
 #include "util.h"
 #include "constants/map_scripts.h"
+#include "trainer_see.h"
 
 #define RAM_SCRIPT_MAGIC 51
 
@@ -20,6 +21,12 @@ static bool8 sScriptContext2Enabled;
 extern ScrCmdFunc gScriptCmdTable[];
 extern ScrCmdFunc gScriptCmdTableEnd[];
 extern void *gNullScriptPtr;
+
+bool8 LoadTrainerObjectScript(void)
+{
+    sScriptContext1.scriptPtr = gApproachingTrainers[gNoOfApproachingTrainers - 1].trainerScriptPtr;
+    return TRUE;
+}
 
 void InitScriptContext(struct ScriptContext *ctx, void *cmdTable, void *cmdTableEnd)
 {

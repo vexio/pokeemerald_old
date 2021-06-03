@@ -1105,3 +1105,14 @@ gTileset_BayportGym::
 	.4byte gMetatiles_BayportGym
 	.4byte gMetatileAttributes_BayportGym
 	.4byte NULL
+
+	.align 2
+gTileset_SailwageTown::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_SailwageTown
+	.4byte gTilesetPalettes_SailwageTown
+	.4byte gMetatiles_SailwageTown
+	.4byte gMetatileAttributes_SailwageTown
+	.4byte NULL

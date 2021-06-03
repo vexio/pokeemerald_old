@@ -1696,6 +1696,10 @@ static const u8 sText_Lilith_LastSwitchIn[] = _("This is my last Pokémon!\nShow
 static const u8 sText_Bruce_LastLowHp[] = _("You are quite the strong trainer...");
 static const u8 sText_Bruce_LastSwitchIn[] = _("There's still more fight in me!");
 
+static const u8 sText_Edgar_FirstDown[] = _("An impressive feat...\pWe're just getting started here!");
+static const u8 sText_Edgar_LastLowHp[] = _("Exhilarating!");
+static const u8 sText_Edgar_LastSwitchIn[] = _("Show me what you got!");
+
 //static const u8 sText_NAME_LastLowHp[] = _("");
 //static const u8 sText_NAME_LastSwitchIn[] = _("");
 //static const u8 sText_NAME_FirstDown[] = _("");
@@ -3636,6 +3640,7 @@ static const struct TrainerSlide sTrainerSlides[] =
     {TRAINER_SKIP_GRASS_1, NULL, sText_Skip_B1_LastLowHp, NULL},
     {TRAINER_GYM_LEADER_LILITH, sText_Lilith_LastSwitchIn, sText_Lilith_LastLowHp, NULL},
     {TRAINER_GYM_LEADER_BRUCE, sText_Bruce_LastSwitchIn, sText_Bruce_LastLowHp, NULL},
+    {TRAINER_GYM_LEADER_EDGAR, sText_Edgar_LastSwitchIn, sText_Edgar_LastLowHp, sText_Edgar_FirstDown},
 };
 
 static u32 GetEnemyMonCount(bool32 onlyAlive)

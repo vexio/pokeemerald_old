@@ -798,7 +798,7 @@ static const struct SpriteTemplate sSpriteTemplate_SplitIcons =
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy
 };
-
+// start of move type icons
 static const struct OamData sOamData_MoveTypes =
 {
     .y = 0,
@@ -981,6 +981,7 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIE
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_SMART] = 15,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_TOUGH] = 13,
 };
+// end of type icon
 static const struct OamData sOamData_MoveSelector =
 {
     .y = 0,
@@ -1184,16 +1185,16 @@ void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, 
     case PSS_MODE_NORMAL:
     case PSS_MODE_BOX:
         sMonSummaryScreen->minPageIndex = 0;
-        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 1;
+        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 2; // previously was -1, removes contest screen in summary screen
         break;
     case PSS_MODE_LOCK_MOVES:
         sMonSummaryScreen->minPageIndex = 0;
-        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 1;
+        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 2; // previously was -1, removes contest screen in summary screen
         sMonSummaryScreen->lockMovesFlag = TRUE;
         break;
     case PSS_MODE_SELECT_MOVE:
         sMonSummaryScreen->minPageIndex = PSS_PAGE_BATTLE_MOVES;
-        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 1;
+        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 2; // previously was -1, removes contest screen in summary screen
         sMonSummaryScreen->lockMonFlag = TRUE;
         break;
     }

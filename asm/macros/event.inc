@@ -1164,7 +1164,7 @@
 	.2byte \effect
 	.endm
 
-	@ Changes the metatile at (x, y) on the current map.
+	@ Changes the metatile at (x, y) on the current map. 1 is collision, 0 is no collision.
 	.macro setmetatile x:req, y:req, metatile_number:req, has_collision:req
 	.byte 0xa2
 	.2byte \x

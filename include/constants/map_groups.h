@@ -98,6 +98,7 @@
 #define MAP_TEAM_PROTO_HIDEOUT_B1F         (9 | (3 << 8))
 #define MAP_TEAM_PROTO_HIDEOUT_B2F         (10 | (3 << 8))
 #define MAP_TEAM_PROTO_HIDEOUT_B3F         (11 | (3 << 8))
+#define MAP_DAVNRIDGE_TOWN_HOUSE5          (12 | (3 << 8))
 
 // Map Group 4
 #define MAP_LAVARIDGE_TOWN_HERB_SHOP         (0 | (4 << 8))

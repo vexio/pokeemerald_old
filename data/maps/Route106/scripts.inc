@@ -567,8 +567,8 @@ TriadGorge_Trigger_ProtoGrunts_Text_25:
 	.string "I'm not gonna take it out on you, since\n"
 	.string "you and your team just took a beating\l"
 	.string "from those {COLOR GREEN}Team Proto{COLOR BLUE} goons.\p"
-	.string "I also just ran into this white haired\n"
-	.string "dude, and he told me to give you this.$"
+	.string "I also found this HM, I don't think I'm\n"
+	.string "going to have any use for it.$"
 
 TriadGorge_Trigger_ProtoGrunts_Text_26:
 	.string "Skip: {COLOR BLUE}Anyways, I'm gonna head up north\n"

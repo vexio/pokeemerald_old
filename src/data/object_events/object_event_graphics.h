@@ -382,6 +382,7 @@ const u16 gObjectEventPalette_Brandon[] = INCBIN_U16("graphics/object_events/pic
 const u16 gObjectEventPalette_Mom[] = INCBIN_U16("graphics/object_events/pics/newpeople/mom.gbapal");
 const u16 gObjectEventPalette_Steven[] = INCBIN_U16("graphics/object_events/pics/newpeople/steven.gbapal");
 const u16 gObjectEventPalette_AquaMember[] = INCBIN_U16("graphics/object_events/pics/newpeople/team_aqua/aqua_member.gbapal");
+const u16 gObjectEventPalette_Cook[] = INCBIN_U16("graphics/object_events/pics/people/cook.gbapal");
 
 // team proto admins + leader
 const u32 gObjectEventPic_Archie[] = INCBIN_U32("graphics/object_events/pics/newpeople/team_proto/apollo.4bpp");

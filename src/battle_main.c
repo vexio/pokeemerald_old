@@ -137,6 +137,20 @@ static void HandleAction_WallyBallThrow(void);
 static void HandleAction_TryFinish(void);
 static void HandleAction_NothingIsFainted(void);
 static void HandleAction_ActionFinished(void);
+static void CreateMoveTypeIcons(void);
+static void SetMoveTypeIcons(void);
+
+#define MOVE_SELECTOR_SPRITES_COUNT 10
+enum
+{
+    SPRITE_ARR_ID_MON,
+    SPRITE_ARR_ID_BALL,
+    SPRITE_ARR_ID_STATUS,
+    SPRITE_ARR_ID_TYPE, // 2 for mon types, 5 for move types(4 moves and 1 to learn), used interchangeably, because mon types and move types aren't shown on the same screen
+    SPRITE_ARR_ID_MOVE_SELECTOR1 = SPRITE_ARR_ID_TYPE + 5, // 10 sprites that make up the selector
+    SPRITE_ARR_ID_MOVE_SELECTOR2 = SPRITE_ARR_ID_MOVE_SELECTOR1 + MOVE_SELECTOR_SPRITES_COUNT,
+    SPRITE_ARR_ID_COUNT = SPRITE_ARR_ID_MOVE_SELECTOR2 + MOVE_SELECTOR_SPRITES_COUNT
+};
 
 // EWRAM vars
 EWRAM_DATA u16 gBattle_BG0_X = 0;
@@ -249,6 +263,24 @@ EWRAM_DATA struct FieldTimer gFieldTimers = {0};
 EWRAM_DATA u8 gBattlerAbility = 0;
 EWRAM_DATA u16 gPartnerSpriteId = 0;
 
+static EWRAM_DATA struct PokemonSummaryScreenData
+{
+    /*0x00*/ union {
+        struct Pokemon *mons;
+        struct BoxPokemon *boxMons;
+    } monList;
+    /*0x04*/ MainCallback callback;
+    /*0x08*/ struct Sprite *markingsSprite;
+    /*0x0C*/ struct Pokemon currentMon;
+    /*0x70*/ struct PokeSummary
+    {
+        u16 moves[MAX_MON_MOVES]; // 0x14
+        u8 pp[MAX_MON_MOVES]; // 0x1C
+    } summary;
+    u8 firstMoveIndex;
+    u8 spriteIds[SPRITE_ARR_ID_COUNT];
+} *sMonSummaryScreen = NULL;
+
 // IWRAM common vars
 void (*gPreBattleCallback1)(void);
 void (*gBattleMainFunc)(void);
@@ -317,6 +349,171 @@ const struct OamData gOamData_831ACB0 =
 
 static const s8 gUnknown_0831ACE0[] ={-32, -16, -16, -32, -32, 0, 0, 0};
 
+// gTypeNames is the text that shows up after "TYPE/" in the FIGHT menu
+// Below is my attempt at adding the typing icons to be displayed after the "TYPE/" text
+// The code below is ported from pokemon_summary_screen.c
+
+#define TAG_MOVE_SELECTOR 30000
+#define TAG_MON_STATUS 30001
+#define TAG_MOVE_TYPES 30002
+#define TAG_MON_MARKINGS 30003
+#define TAG_SPLIT_ICONS 30004
+
+static const union AnimCmd sSpriteAnim_TypeNormal[] = {
+    ANIMCMD_FRAME(TYPE_NORMAL * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeFighting[] = {
+    ANIMCMD_FRAME(TYPE_FIGHTING * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeFlying[] = {
+    ANIMCMD_FRAME(TYPE_FLYING * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypePoison[] = {
+    ANIMCMD_FRAME(TYPE_POISON * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeGround[] = {
+    ANIMCMD_FRAME(TYPE_GROUND * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeRock[] = {
+    ANIMCMD_FRAME(TYPE_ROCK * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeBug[] = {
+    ANIMCMD_FRAME(TYPE_BUG * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeGhost[] = {
+    ANIMCMD_FRAME(TYPE_GHOST * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeSteel[] = {
+    ANIMCMD_FRAME(TYPE_STEEL * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeMystery[] = {
+    ANIMCMD_FRAME(TYPE_MYSTERY * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeFire[] = {
+    ANIMCMD_FRAME(TYPE_FIRE * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeWater[] = {
+    ANIMCMD_FRAME(TYPE_WATER * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeGrass[] = {
+    ANIMCMD_FRAME(TYPE_GRASS * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeElectric[] = {
+    ANIMCMD_FRAME(TYPE_ELECTRIC * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypePsychic[] = {
+    ANIMCMD_FRAME(TYPE_PSYCHIC * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeIce[] = {
+    ANIMCMD_FRAME(TYPE_ICE * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeDragon[] = {
+    ANIMCMD_FRAME(TYPE_DRAGON * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeDark[] = {
+    ANIMCMD_FRAME(TYPE_DARK * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_TypeFairy[] = {
+    ANIMCMD_FRAME(TYPE_FAIRY * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES] = {
+    sSpriteAnim_TypeNormal,
+    sSpriteAnim_TypeFighting,
+    sSpriteAnim_TypeFlying,
+    sSpriteAnim_TypePoison,
+    sSpriteAnim_TypeGround,
+    sSpriteAnim_TypeRock,
+    sSpriteAnim_TypeBug,
+    sSpriteAnim_TypeGhost,
+    sSpriteAnim_TypeSteel,
+    sSpriteAnim_TypeMystery,
+    sSpriteAnim_TypeFire,
+    sSpriteAnim_TypeWater,
+    sSpriteAnim_TypeGrass,
+    sSpriteAnim_TypeElectric,
+    sSpriteAnim_TypePsychic,
+    sSpriteAnim_TypeIce,
+    sSpriteAnim_TypeDragon,
+    sSpriteAnim_TypeDark,
+    sSpriteAnim_TypeFairy,
+};
+
+static const struct OamData sOamData_MoveTypes =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = 0,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(32x16),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(32x16),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_MoveTypes =
+{
+    .data = gMoveTypes_Gfx,
+    .size = (NUMBER_OF_MON_TYPES) * 0x100,
+    .tag = TAG_MOVE_TYPES
+};
+static const struct SpriteTemplate sSpriteTemplate_MoveTypes =
+{
+    .tileTag = TAG_MOVE_TYPES,
+    .paletteTag = TAG_MOVE_TYPES,
+    .oam = &sOamData_MoveTypes,
+    .anims = sSpriteAnimTable_MoveTypes,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
+};
+
+static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES] =
+{
+    [TYPE_NORMAL] = 13,
+    [TYPE_FIGHTING] = 13,
+    [TYPE_FLYING] = 14,
+    [TYPE_POISON] = 14,
+    [TYPE_GROUND] = 13,
+    [TYPE_ROCK] = 13,
+    [TYPE_BUG] = 15,
+    [TYPE_GHOST] = 14,
+    [TYPE_STEEL] = 13,
+    [TYPE_MYSTERY] = 15,
+    [TYPE_FIRE] = 13,
+    [TYPE_WATER] = 14,
+    [TYPE_GRASS] = 15,
+    [TYPE_ELECTRIC] = 13,
+    [TYPE_PSYCHIC] = 14,
+    [TYPE_ICE] = 14,
+    [TYPE_DRAGON] = 15,
+    [TYPE_DARK] = 13,
+    [TYPE_FAIRY] = 14,
+};
+
 const u8 gTypeNames[NUMBER_OF_MON_TYPES][TYPE_NAME_LENGTH + 1] =
 {
     _("Normal"),
@@ -339,6 +536,50 @@ const u8 gTypeNames[NUMBER_OF_MON_TYPES][TYPE_NAME_LENGTH + 1] =
     _("Dark"),
     _("Fairy"),
 };
+
+static void SetSpriteInvisibility(u8 spriteArrayId, bool8 invisible)
+{
+    gSprites[sMonSummaryScreen->spriteIds[spriteArrayId]].invisible = invisible;
+}
+
+static void CreateMoveTypeIcons(void)
+{
+    u8 i;
+
+    for (i = SPRITE_ARR_ID_TYPE; i < SPRITE_ARR_ID_TYPE + 5; i++)
+    {
+        if (sMonSummaryScreen->spriteIds[i] == 0xFF)
+            sMonSummaryScreen->spriteIds[i] = CreateSprite(&sSpriteTemplate_MoveTypes, 0, 0, 2);
+
+        SetSpriteInvisibility(i, TRUE);
+    }
+}
+
+static void SetTypeSpritePosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
+{
+    struct Sprite *sprite = &gSprites[sMonSummaryScreen->spriteIds[spriteArrayId]];
+    StartSpriteAnim(sprite, typeId);
+    sprite->oam.paletteNum = sMoveTypeToOamPaletteNum[typeId];
+    sprite->pos1.x = x + 16;
+    sprite->pos1.y = y + 8;
+    SetSpriteInvisibility(spriteArrayId, FALSE);
+}
+
+static void SetMoveTypeIcons(void)
+{
+    u8 i;
+    struct PokeSummary *summary = &sMonSummaryScreen->summary;
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (summary->moves[i] != MOVE_NONE)
+            SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+        else
+            SetSpriteInvisibility(i + SPRITE_ARR_ID_TYPE, TRUE);
+    }
+}
+
+// end of type icon code
+// also includes lines 
 
 // This is a factor in how much money you get for beating a trainer.
 const struct TrainerMoney gTrainerMoneyTable[] =

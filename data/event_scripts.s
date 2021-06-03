@@ -1127,3 +1127,5 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/TeamProtoHideout_B2F/scripts.inc"
 
 	.include "data/maps/TeamProtoHideout_B3F/scripts.inc"
+
+	.include "data/maps/DavnridgeTown_House5/scripts.inc"

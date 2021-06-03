@@ -119,8 +119,11 @@ script MystCity_CypressLab_ProfessorCypress {
 		playse(SE_PIN)
 		waitse
 		msgbox(format("Mom: {COLOR GREEN}{PLAYER}{COLOR RED}!\pI'm glad you were able to make it!\pIs there anything you need from me?\p............\n...........\p{COLOR GREEN}Lars{COLOR RED} sent you to get the {COLOR GREEN}Dorimtome{COLOR RED}?\pThat lazy man...\nHe'll always find a way out of a simple task.\pRegardless, thank you {COLOR GREEN}{PLAYER}{COLOR RED}!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("{PLAYER} handed Mom the {COLOR GREEN}Dorimtome{COLOR DARK_GREY}."), MSGBOX_AUTOCLOSE)
 		delay(10)
-		setobjectxy(ERIS, 25, 9)
+		closemessage
+		delay(10)
+		setobjectxy(ERIS, 25, 12)
 		playse(SE_KAIDAN)
 		waitse
 		playbgm(MUS_AJITO, 0)
@@ -137,10 +140,10 @@ script MystCity_CypressLab_ProfessorCypress {
 		waitse
 		getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 		if (var(VAR_TEMP_0) == 24) {
-			if (var(VAR_TEMP_1) == 6) {
+			if (var(VAR_TEMP_1) == 9) {
 				applymovement(OBJ_EVENT_ID_PLAYER, MystCity_CypressLab_Movement_4)
 				waitmovement(0)
-			} elif (var(VAR_TEMP_1) == 4) {
+			} elif (var(VAR_TEMP_1) == 8) {
 				applymovement(OBJ_EVENT_ID_PLAYER, MystCity_CypressLab_Movement_5)
 				waitmovement(0)
 			}
@@ -148,11 +151,11 @@ script MystCity_CypressLab_ProfessorCypress {
 		delay(10)
 		applymovement(ERIS, MystCity_CypressLab_Movement_1)
 		waitmovement(0)
-		setobjectxy(GRUNT_1, 25, 9)
+		setobjectxy(GRUNT_1, 25, 12)
 		playse(SE_KAIDAN)
 		applymovement(GRUNT_1, MystCity_CypressLab_Movement_2)
 		delay(10)
-		setobjectxy(GRUNT_2, 25, 9)
+		setobjectxy(GRUNT_2, 25, 12)
 		playse(SE_KAIDAN)
 		applymovement(GRUNT_2, MystCity_CypressLab_Movement_3)
 		waitmovement(0)
@@ -161,19 +164,19 @@ script MystCity_CypressLab_ProfessorCypress {
 		msgbox(format("Mom: {COLOR RED}What is going on here?\nWho are you?"))
 		applymovement(ERIS, Common_Movement_WalkInPlaceUp)
 		waitmovement(0)
-		msgbox(format("Eris: {COLOR RED}My name is {COLOR GREEN}Eris{COLOR RED}, Head Admin for {COLOR GREEN}Team Proto{COLOR RED}.\pI've come to personally obtain the {COLOR GREEN}Dorimtome{COLOR RED} myself, since my peers seem to not be able to do it themselves."))
+		msgbox(format("Eris: {COLOR RED}It's quite a honor to finally meet you, {COLOR GREEN}Professor Cypress{COLOR RED}.\pMy name is {COLOR GREEN}Eris{COLOR RED}, Head Admin for {COLOR GREEN}Team Proto{COLOR RED}.\pI've come to personally obtain the {COLOR GREEN}Dorimtome{COLOR RED} myself, since my colleagues seem to not be able to do it themselves."))
 		applymovement(CYPRESS, Common_Movement_WalkInPlaceDown)
 		waitmovement(0)
-		msgbox(format("Mom: {COLOR RED}I cannot give this book to you ma'am.\pThis book needs to be in the right hands, and you and your {COLOR GREEN}Team Proto{COLOR RED} don't seem to be the most trustworthy."))
+		msgbox(format("Mom: {COLOR RED}What are your intentions for the {COLOR GREEN}Dorimtome{COLOR RED}?\pI'm not quite familiar your {COLOR GREEN}Team Proto{COLOR RED} organization..."))
 		applymovement(ERIS, Common_Movement_WalkInPlaceUp)
 		waitmovement(0)
-		msgbox(format("Eris: {COLOR RED}Oh no, {COLOR GREEN}Team Proto{COLOR RED} does not have any ill intentions!\pWe just need to... borrow it for a little."))
+		msgbox(format("Eris: {COLOR RED}Oh my!\p{COLOR GREEN}Team Proto{COLOR RED} does not have any ill intentions!\pOur organization would like to research the tome for our knowledge."))
 		applymovement(CYPRESS, Common_Movement_WalkInPlaceDown)
 		waitmovement(0)
-		msgbox(format("Mom: {COLOR RED}I'm sorry but you will not be getting this book!"))
+		msgbox(format("Mom: {COLOR RED}I'm sorry, but the {COLOR GREEN}Dorimtome{COLOR RED} needs to be in trusted hands.\pYour {COLOR GREEN}Team Proto{COLOR RED} does not seem trustworthy..."))
 		applymovement(ERIS, Common_Movement_WalkInPlaceUp)
 		waitmovement(0)
-		msgbox(format("Eris: {COLOR RED}I'd hate to get physical here...\lBut I won't take no for an answer.\pGrunts, take care of the kid.\lI'll converse with the Professor."), MSGBOX_AUTOCLOSE)
+		msgbox(format("Eris: {COLOR RED}I'd hate to start drama here...\pBut I won't take no for an answer.\pGrunts, take care of the kid.\pI'll converse with the Professor."), MSGBOX_AUTOCLOSE)
 		delay(10)
 		applymovement(ERIS, MystCity_CypressLab_Movement_6)
 		waitmovement(0)
@@ -186,7 +189,7 @@ script MystCity_CypressLab_ProfessorCypress {
 		delay(20)
 		applymovement(GRUNT_2, Common_Movement_WalkInPlaceUp)
 		waitmovement(0)
-		msgbox(format("Grunt: {COLOR BLUE}You think you're stronger than us?\pPathetic!"), MSGBOX_AUTOCLOSE)
+		msgbox(format("Grunt: {COLOR GREEN}Team Proto{COLOR BLUE} never takes no for an answer!"), MSGBOX_AUTOCLOSE)
 		trainerbattle_no_intro(TRAINER_GRUNT_CYPRESS_LAB_1, format("That Dorimtome means more to us than you know!"))
 		playbgm(MUS_AJITO, 0)
 		applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight)
@@ -194,11 +197,14 @@ script MystCity_CypressLab_ProfessorCypress {
 		applymovement(GRUNT_1, Common_Movement_WalkInPlaceLeft)
 		waitmovement(0)
 		msgbox(format("Grunt: {COLOR BLUE}We're gonna get that book, no matter what happens!"), MSGBOX_AUTOCLOSE)
-		trainerbattle_no_intro(TRAINER_GRUNT_CYPRESS_LAB_2, format("Haha!\nWe were able to hold you off long enough!"))
+		trainerbattle_no_intro(TRAINER_GRUNT_CYPRESS_LAB_2, format("Haha!\pDistraction!"))
 		playbgm(MUS_AJITO, 0)
 		delay(20)
 		applymovement(ERIS, Common_Movement_WalkInPlaceUp)
 		waitmovement(0)
+		msgbox(format("Eris snatches the {COLOR GREEN}Dorimtome{COLOR DARK_GREY} from Mom."), MSGBOX_AUTOCLOSE)
+		closemessage
+		delay(10)
 		msgbox(format("Eris: {COLOR RED}Thank you, {COLOR GREEN}Professor Cypress{COLOR RED}, for your cooperation.\pAlakazam, use Teleport!"), MSGBOX_AUTOCLOSE)
 		playmoncry(SPECIES_ALAKAZAM, 0)
 		waitmoncry

@@ -10,6 +10,8 @@ SlateportCity_OnTransition: @ 81DCC6C
 	call_if_eq SlateportCity_EventScript_MovePeopleForSternInterview
 	compare VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1
 	call_if_eq SlateportCity_EventScript_SetReadyForScottScene
+	compare VAR_CYPRESS_PROTO_EVENT_STATE, 4
+	call_if_eq BayportCity_Mapscript_LarsPoliceObjs
 	end
 
 SlateportCity_EventScript_EnterSlateport:: @ 81DCC8D
@@ -1559,6 +1561,165 @@ BayportCity_Wingull_Movement_2:
 	delay_8
 	step_end
 
+BayportCity_Mapscript_LarsPoliceObjs::
+	setobjectxyperm 15, 34, 26
+	setobjectxyperm 16, 35, 26
+	setobjectxyperm 14, 35, 27
+	return
+
+
+BayportCity_Trigger_LarsPolice::
+	lockall
+	fadescreen FADE_TO_BLACK
+	special SpawnCameraObject
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	compare VAR_TEMP_1, 25
+	goto_if_eq BayportCity_Trigger_LarsPolice_2
+	compare VAR_TEMP_1, 26
+	goto_if_eq BayportCity_Trigger_LarsPolice_3
+	compare VAR_TEMP_1, 27
+	goto_if_eq BayportCity_Trigger_LarsPolice_4
+BayportCity_Trigger_LarsPolice_1:
+	fadescreen FADE_FROM_BLACK
+	delay 20
+	applymovement 14, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox BayportCity_Trigger_LarsPolice_Text_0, MSGBOX_AUTOCLOSE
+	delay 20
+	applymovement 15, BayportCity_LarsPolice_Movement_0
+	applymovement 16, BayportCity_LarsPolice_Movement_0
+	waitmovement 0
+	delay 10
+	applymovement 14, BayportCity_LarsPolice_Movement_1
+	waitmovement 0
+	playse SE_PIN
+	waitse
+	msgbox BayportCity_Trigger_LarsPolice_Text_1
+	delay 20
+	closemessage
+	compare VAR_TEMP_1, 25
+	goto_if_eq BayportCity_Trigger_LarsPolice_9
+	compare VAR_TEMP_1, 26
+	goto_if_eq BayportCity_Trigger_LarsPolice_10
+	compare VAR_TEMP_1, 27
+	goto_if_eq BayportCity_Trigger_LarsPolice_11
+BayportCity_Trigger_LarsPolice_8:
+	msgbox BayportCity_Trigger_LarsPolice_Text_2, MSGBOX_AUTOCLOSE
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 10
+	removeobject 14
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+	setvar VAR_CYPRESS_PROTO_EVENT_STATE, 5
+	removeobject 15
+	removeobject 16
+	applymovement OBJ_EVENT_ID_CAMERA, BayportCity_LarsPolice_CMovement_1
+	waitmovement 0
+	special RemoveCameraObject
+	setflag FLAG_BAYPORTCITY_LARSPOLICE
+	releaseall
+	end
+
+BayportCity_Trigger_LarsPolice_2:
+	applymovement OBJ_EVENT_ID_CAMERA, BayportCity_LarsPolice_CMovement_0_0
+	waitmovement 0
+	goto BayportCity_Trigger_LarsPolice_1
+
+BayportCity_Trigger_LarsPolice_3:
+	applymovement OBJ_EVENT_ID_CAMERA, BayportCity_LarsPolice_CMovement_0_1
+	waitmovement 0
+	goto BayportCity_Trigger_LarsPolice_1
+
+BayportCity_Trigger_LarsPolice_4:
+	applymovement OBJ_EVENT_ID_CAMERA, BayportCity_LarsPolice_CMovement_0_2
+	waitmovement 0
+	goto BayportCity_Trigger_LarsPolice_1
+
+BayportCity_Trigger_LarsPolice_9:
+	applymovement OBJ_EVENT_ID_PLAYER, BayportCity_LarsPolice_Movement_2_0
+	waitmovement 0
+	goto BayportCity_Trigger_LarsPolice_8
+
+BayportCity_Trigger_LarsPolice_10:
+	applymovement OBJ_EVENT_ID_PLAYER, BayportCity_LarsPolice_Movement_2_1
+	waitmovement 0
+	goto BayportCity_Trigger_LarsPolice_8
+
+BayportCity_Trigger_LarsPolice_11:
+	applymovement OBJ_EVENT_ID_PLAYER, BayportCity_LarsPolice_Movement_2_2
+	waitmovement 0
+	goto BayportCity_Trigger_LarsPolice_8
+
+
+BayportCity_LarsPolice_CMovement_0_0:
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_down
+	walk_fastest_down
+	step_end
+
+BayportCity_LarsPolice_CMovement_0_1:
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_down
+	step_end
+
+BayportCity_LarsPolice_CMovement_0_2:
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	step_end
+
+BayportCity_LarsPolice_Movement_0:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	delay_8
+	set_invisible
+	step_end
+
+BayportCity_LarsPolice_Movement_1:
+	walk_in_place_left
+	delay_16
+	emote_exclamation_mark
+	step_end
+
+BayportCity_LarsPolice_Movement_2_0:
+	walk_down
+	walk_slow_diag_southeast
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+BayportCity_LarsPolice_Movement_2_1:
+	walk_slow_diag_southeast
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+BayportCity_LarsPolice_Movement_2_2:
+	walk_up
+	walk_slow_diag_southeast
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+BayportCity_LarsPolice_CMovement_1:
+	walk_slow_left
+	step_end
+
 BayportCity_Sign_City_Text_0:
 	.string "{COLOR LIGHT_GREEN}Bayport City\n"
 	.string "{COLOR DARK_GREY}“The Breezy City”$"
@@ -1659,3 +1820,31 @@ BayportCity_Object_WingullTrainer_Text_0:
 	.string "I was about to challenge the Gym\n"
 	.string "Leader, {COLOR GREEN}Edgar{COLOR BLUE} but {COLOR GREEN}Wingy{COLOR BLUE} is being mean\l"
 	.string "to me and everyone else right now!$"
+
+BayportCity_Trigger_LarsPolice_Text_0:
+	.string "Lars: {COLOR BLUE}Thank you for your time, officers.\p"
+	.string "If I find any further information on\n"
+	.string "{COLOR GREEN}Team Proto{COLOR BLUE}, I'll let you know.$"
+
+BayportCity_Trigger_LarsPolice_Text_1:
+	.string "Lars: {COLOR GREEN}{PLAYER}{COLOR BLUE}!$"
+
+BayportCity_Trigger_LarsPolice_Text_2:
+	.string "Lars: {COLOR BLUE}I got great news about {COLOR GREEN}Team\n"
+	.string "Proto{COLOR BLUE}!\p"
+	.string "Well...\p"
+	.string "Not really 'great' news, but news\n"
+	.string "nonetheless.\p"
+	.string "From my research and what the police\n"
+	.string "have told me, {COLOR GREEN}Team Proto{COLOR BLUE} has been\l"
+	.string "running some underground operations\l"
+	.string "throughout the region.\p"
+	.string "Their leader is unknown, but three of\n"
+	.string "his disciples are active in the area.\p"
+	.string "The police told me that {COLOR GREEN}The Crawdaunt\n"
+	.string "Pub{COLOR BLUE} in {COLOR GREEN}Myst City{COLOR BLUE} has been filled with\l"
+	.string "members of {COLOR GREEN}Team Proto{COLOR BLUE}, so hopefully\l"
+	.string "that is a place to start.\p"
+	.string "I can't be seen in {COLOR GREEN}The Crawdaunt Pub{COLOR BLUE}, so\n"
+	.string "you'll have to go in alone.\p"
+	.string "I'll meet you at {COLOR GREEN}Myst City{COLOR BLUE}!$"

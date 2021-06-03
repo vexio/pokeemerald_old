@@ -11,6 +11,8 @@ SlateportCity_OnTransition: @ 81DCC6C
 	call_if_eq SlateportCity_EventScript_MovePeopleForSternInterview
 	compare VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1
 	call_if_eq SlateportCity_EventScript_SetReadyForScottScene
+	compare VAR_CYPRESS_PROTO_EVENT_STATE, 4
+	call_if_eq BayportCity_Mapscript_LarsPoliceObjs
 	end
 
 SlateportCity_EventScript_EnterSlateport:: @ 81DCC8D
@@ -1521,4 +1523,113 @@ movement BayportCity_Wingull_Movement_2 {
 	jump_right
 	delay_16
 	delay_8
+}
+
+const OFFICER_1 = 15
+const OFFICER_2 = 16
+const LARS = 14
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const CAMERA = OBJ_EVENT_ID_CAMERA
+
+script BayportCity_Mapscript_LarsPoliceObjs {
+	setobjectxyperm(OFFICER_1, 34, 26)
+	setobjectxyperm(OFFICER_2, 35, 26)
+	setobjectxyperm(LARS, 35, 27)
+	return
+}
+
+script BayportCity_Trigger_LarsPolice {
+	lockall
+	fadescreen(FADE_TO_BLACK)
+	special(SpawnCameraObject)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 25) {
+		applymovement(CAMERA, BayportCity_LarsPolice_CMovement_0_0)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 26) {
+		applymovement(CAMERA, BayportCity_LarsPolice_CMovement_0_1)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 27) {
+		applymovement(CAMERA, BayportCity_LarsPolice_CMovement_0_2)
+		waitmovement(0)
+	}
+	fadescreen(FADE_FROM_BLACK)
+	delay(20)
+	applymovement(LARS, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	msgbox(format("Lars: {COLOR BLUE}Thank you for your time, officers.\pIf I find any further information on {COLOR GREEN}Team Proto{COLOR BLUE}, I'll let you know."), MSGBOX_AUTOCLOSE)
+	delay(20)
+	applymovement(OFFICER_1, BayportCity_LarsPolice_Movement_0)
+	applymovement(OFFICER_2, BayportCity_LarsPolice_Movement_0)
+	waitmovement(0)
+	delay(10)
+	applymovement(LARS, BayportCity_LarsPolice_Movement_1)
+	waitmovement(0)
+	playse(SE_PIN)
+	waitse
+	msgbox(format("Lars: {COLOR GREEN}{PLAYER}{COLOR BLUE}!"))
+	delay(20)
+	closemessage
+	if (var(VAR_TEMP_1) == 25) {
+		applymovement(PLAYER, BayportCity_LarsPolice_Movement_2_0)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 26) {
+		applymovement(PLAYER, BayportCity_LarsPolice_Movement_2_1)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_1) == 27) {
+		applymovement(PLAYER, BayportCity_LarsPolice_Movement_2_2)
+		waitmovement(0)
+	}
+	msgbox(format("Lars: {COLOR BLUE}I got great news about {COLOR GREEN}Team Proto{COLOR BLUE}!\pWell...\pNot really 'great' news, but news nonetheless.\pFrom my research and what the police have told me, {COLOR GREEN}Team Proto{COLOR BLUE} has been running some underground operations throughout the region.\pTheir leader is unknown, but three of his disciples are active in the area.\pThe police told me that {COLOR GREEN}The Crawdaunt Pub{COLOR BLUE} in {COLOR GREEN}Myst City{COLOR BLUE} has been filled with members of {COLOR GREEN}Team Proto{COLOR BLUE}, so hopefully that is a place to start.\pI can't be seen in {COLOR GREEN}The Crawdaunt Pub{COLOR BLUE}, so you'll have to go in alone.\pI'll meet you at {COLOR GREEN}Myst City{COLOR BLUE}!"), MSGBOX_AUTOCLOSE)
+	dofieldeffect(FLDEFF_NPCFLY_OUT)
+	delay(10)
+	removeobject(LARS)
+	waitfieldeffect(FLDEFF_NPCFLY_OUT)
+	setvar(VAR_CYPRESS_PROTO_EVENT_STATE, 5)
+	removeobject(OFFICER_1)
+	removeobject(OFFICER_2)
+	applymovement(CAMERA, BayportCity_LarsPolice_CMovement_1)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	setflag(FLAG_BAYPORTCITY_LARSPOLICE)
+	releaseall
+	end
+}
+movement BayportCity_LarsPolice_CMovement_0_0 {
+	walk_fastest_right * 5
+	walk_fastest_down * 2
+}
+movement BayportCity_LarsPolice_CMovement_0_1 {
+	walk_fastest_right * 5
+	walk_fastest_down
+}
+movement BayportCity_LarsPolice_CMovement_0_2 {
+	walk_fastest_right * 5
+}
+movement BayportCity_LarsPolice_Movement_0 {
+	walk_up * 5
+	delay_8
+	set_invisible
+}
+movement BayportCity_LarsPolice_Movement_1 {
+	walk_in_place_left
+	delay_16
+	emote_exclamation_mark
+}
+movement BayportCity_LarsPolice_Movement_2_0 {
+	walk_down
+	walk_slow_diag_southeast
+	walk_right * 3
+}
+movement BayportCity_LarsPolice_Movement_2_1 {
+	walk_slow_diag_southeast
+	walk_right * 3
+}
+movement BayportCity_LarsPolice_Movement_2_2 {
+	walk_up
+	walk_slow_diag_southeast
+	walk_right * 3
+}
+movement BayportCity_LarsPolice_CMovement_1 {
+	walk_slow_left
 }

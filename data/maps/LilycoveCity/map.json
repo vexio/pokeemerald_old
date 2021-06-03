@@ -278,7 +278,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_KISS_CUSHION",
+      "graphics_id": "OBJ_EVENT_GFX_DITTO_DOLL",
       "x": 15,
       "y": 10,
       "elevation": 3,
@@ -289,6 +289,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MystCity_Sign_GymSignClosed",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SKIP",
+      "x": 10,
+      "y": 37,
+      "elevation": 5,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_MYSTCITY_LARSSKIP"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LARS",
+      "x": 11,
+      "y": 37,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_MYSTCITY_LARSSKIP"
     }
   ],
   "warp_events": [
@@ -350,7 +376,7 @@
     },
     {
       "x": 15,
-      "y": 10,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_LILYCOVE_CITY",
       "dest_warp_id": 0
@@ -378,7 +404,33 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "5",
+      "script": "MystCity_Trigger_CrawdauntPub"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "5",
+      "script": "MystCity_Trigger_CrawdauntPub"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "5",
+      "script": "MystCity_Trigger_CrawdauntPub"
+    }
   ],
   "bg_events": [
     {

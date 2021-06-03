@@ -193,6 +193,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BayportCity_Object_WingullTrainer",
       "flag": "FLAG_BAYPORTCITY_WINGULL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LARS",
+      "x": 31,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_BAYPORTCITY_LARSPOLICE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OFFICER",
+      "x": 32,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_BAYPORTCITY_LARSPOLICE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OFFICER",
+      "x": 33,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_BAYPORTCITY_LARSPOLICE"
     }
   ],
   "warp_events": [
@@ -293,6 +332,33 @@
       "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
       "var_value": "2",
       "script": "BayportCity_Trigger_Wingull"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "4",
+      "script": "BayportCity_Trigger_LarsPolice"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "4",
+      "script": "BayportCity_Trigger_LarsPolice"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_CYPRESS_PROTO_EVENT_STATE",
+      "var_value": "4",
+      "script": "BayportCity_Trigger_LarsPolice"
     }
   ],
   "bg_events": [

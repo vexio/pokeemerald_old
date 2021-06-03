@@ -17,11 +17,6 @@
       "direction": "left",
       "offset": 0,
       "map": "MAP_ROUTE133"
-    },
-    {
-      "direction": "right",
-      "offset": 0,
-      "map": "MAP_PACIFIDLOG_TOWN"
     }
   ],
   "object_events": [

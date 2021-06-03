@@ -329,14 +329,6 @@
     },
     {
       "type": "sign",
-      "x": 18,
-      "y": 8,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TriadGorge_Sign_RouteSignLeft"
-    },
-    {
-      "type": "sign",
       "x": 50,
       "y": 9,
       "elevation": 0,
@@ -345,24 +337,8 @@
     },
     {
       "type": "sign",
-      "x": 50,
-      "y": 8,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TriadGorge_Sign_RouteSignMiddle"
-    },
-    {
-      "type": "sign",
       "x": 87,
       "y": 17,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TriadGorge_Sign_RouteSignRight"
-    },
-    {
-      "type": "sign",
-      "x": 87,
-      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "TriadGorge_Sign_RouteSignRight"
