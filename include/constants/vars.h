@@ -120,7 +120,7 @@
 #define VAR_DAVNRIDGETOWN_COLLECTOR_STATE    0x4065 // State for Collector item. 0 = RAZOR_CLAW, 1 = BIG_ROOT
 #define VAR_FOSSILREVIVE_FOSSIL_TYPE         0x4066 // Referenced in MystCity_CypressLab_Object_FossilScientist
 #define VAR_CYPRESS_PROTO_EVENT_STATE        0x4067 // 0 = nothing, 1 = lars event in the Pokemon Center, 2 = Cypress x Proto event, 3 = Lars Villa event, 4 = beat 4th gym leader, 5 = crawdaunt bar event, 6 = rival battle and lars talk at south edge of town, 7 = talked with skip in crawdaunt pub, 8 = talked with bartender
-#define VAR_ROUTE109_STATE                   0x4068 // Unused Var
+#define VAR_PROTO_HIDEOUT                    0x4068 // 0 = nothing, 1 = player has entered proto hideout
 #define VAR_ROUTE110_STATE                   0x4069
 #define VAR_ROUTE111_STATE                   0x406A // Unused Var
 #define VAR_ROUTE112_STATE                   0x406B // Unused Var

@@ -18,10 +18,10 @@
 #include "constants/event_object_movement.h"
 #include "constants/field_effects.h"
 #include "constants/trainer_types.h"
-#include "include/event_scripts.h"
+#include "event_scripts.h"
 
 // this file's functions
-static u8 G(u8 objectEventId);
+static u8 CheckTrainer(u8 objectEventId);
 static u8 GetTrainerApproachDistance(struct ObjectEvent *trainerObj);
 static u8 CheckPathBetweenTrainerAndPlayer(struct ObjectEvent *trainerObj, u8 approachDistance, u8 direction);
 static void TrainerApproachPlayer(struct ObjectEvent *trainerObj, u8 range);

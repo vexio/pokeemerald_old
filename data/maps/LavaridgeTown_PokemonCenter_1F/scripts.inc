@@ -74,6 +74,8 @@ EnclavaTown_PC_Object_HexManiac_1:
 EnclavaTown_PC_Object_HexManiac_4:
 	applymovement 6, Common_Movement_ExclamationMark
 	waitmovement 0
+	playse SE_PIN
+	waitse
 	delay 16
 	msgbox EnclavaTown_PC_Object_HexManiac_Text_1
 	giveitem ITEM_LINK_CABLE, 1
@@ -87,6 +89,8 @@ EnclavaTown_PC_Object_HexManiac_4:
 EnclavaTown_PC_Object_HexManiac_7:
 	applymovement 6, Common_Movement_ExclamationMark
 	waitmovement 0
+	playse SE_PIN
+	waitse
 	delay 16
 	msgbox EnclavaTown_PC_Object_HexManiac_Text_3, MSGBOX_AUTOCLOSE
 	applymovement 6, Common_Movement_WalkInPlaceUp
@@ -121,6 +125,17 @@ EmoteTest::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_HeartEmote
 	waitmovement 0
 	delay 16
+	release
+	end
+
+
+HaunterEvolutionTest_Script::
+	lock
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	givemon SPECIES_HAUNTER, 30, ITEM_POTION
+	giveitem ITEM_LINK_CABLE
+	playse SE_PIN
 	release
 	end
 

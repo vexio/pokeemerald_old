@@ -675,7 +675,7 @@
 #define FLAG_MYSTCITY_LARSSKIP  0x279
 #define FLAG_CRAWDAUNTPUB_SODA_POP_DUDE  0x27A // Soda pop dude in Crawdaunt Pub
 #define FLAG_CRAWDAUNTPUB_BARTENDER  0x27B
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
+#define FLAG_PROTO_HIDEOUT_B1F_OBJ  0x27C // Skip and Bartender flags
 #define FLAG_UNUSED_0x27D  0x27D // Unused Flag
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag
 #define FLAG_UNUSED_0x27F  0x27F // Unused Flag

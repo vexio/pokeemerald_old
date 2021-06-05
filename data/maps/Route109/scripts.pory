@@ -444,7 +444,7 @@ Route109_EventScript_Austina:: @ 81EEB5D
 	end
 
 Route109_EventScript_Gwen:: @ 81EEB74
-	trainerbattle_single TRAINER_GWEN, Route109_Text_GwenIntro, Route109_Text_GwenDefeated
+	trainerbattle_single TRAINER_GRUNT_HIDEOUT_1, Route109_Text_GwenIntro, Route109_Text_GwenDefeated
 	msgbox Route109_Text_GwenPostBattle, MSGBOX_AUTOCLOSE
 	end
 

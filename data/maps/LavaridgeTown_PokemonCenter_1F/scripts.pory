@@ -65,6 +65,8 @@ script EnclavaTown_PC_Object_HexManiac {
         if (var(VAR_RESULT) == TRUE) {
             applymovement(6, Common_Movement_ExclamationMark)
             waitmovement(0)
+            playse(SE_PIN)
+            waitse
             delay(16)
             msgbox(format("{COLOR RED}Is that a Haunter?\pHaunter is a unique Pokémon, as it can only evolve through the usage of a {COLOR GREEN}Link Cable{COLOR RED}.\pHere, take one."))
             giveitem(ITEM_LINK_CABLE, 1)
@@ -79,6 +81,8 @@ script EnclavaTown_PC_Object_HexManiac {
             if (var(VAR_RESULT) == TRUE) {
                 applymovement(6, Common_Movement_ExclamationMark)
                 waitmovement(0)
+                playse(SE_PIN)
+                waitse
                 delay(16)
                 msgbox(format("{COLOR RED}Oh...\pThat's a Gastly..."), MSGBOX_AUTOCLOSE)
                 applymovement(6, Common_Movement_WalkInPlaceUp)
@@ -121,6 +125,16 @@ script EmoteTest {
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_HeartEmote)
     waitmovement(0)
     delay(16)
+    release
+    end
+}
+script HaunterEvolutionTest_Script {
+    lock
+    setflag(FLAG_SYS_NATIONAL_DEX)
+    special(EnableNationalPokedex)
+    givemon(SPECIES_HAUNTER, 30, ITEM_POTION)
+    giveitem(ITEM_LINK_CABLE)
+    playse(SE_PIN)
     release
     end
 }

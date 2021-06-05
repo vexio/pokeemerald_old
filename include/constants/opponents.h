@@ -60,11 +60,11 @@
 #define TRAINER_SKIP_GRASS_3               56
 #define TRAINER_SKIP_FIRE_3                       57
 #define TRAINER_SKIP_WATER_3                      58
-#define TRAINER_GWEN                         59
-#define TRAINER_LOLA_2                       60
-#define TRAINER_LOLA_3                       61
-#define TRAINER_LOLA_4                       62
-#define TRAINER_LOLA_5                       63
+#define TRAINER_GRUNT_HIDEOUT_1                         59
+#define TRAINER_GRUNT_HIDEOUT_2                       60
+#define TRAINER_SCIENTIST_HIDEOUT_1                       61
+#define TRAINER_SCIENTIST_HIDEOUT_2                       62
+#define TRAINER_SCIENTIST_HIDEOUT_3                       63
 #define TRAINER_RICKY_1                      64
 #define TRAINER_SIMON                        65
 #define TRAINER_CHARLIE                      66

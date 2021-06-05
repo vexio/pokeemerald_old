@@ -249,6 +249,7 @@ MystCity_CypressLab_ProfessorCypress_4:
 	setflag FLAG_MYSTCITY_POKEMONCENTER_LARSEVENT
 	setvar VAR_CYPRESS_PROTO_EVENT_STATE, 2
 	clearflag FLAG_BAYPORTCITY_LARSHOUSE_LARSEVENT
+	removeitem ITEM_RUBY, 1
 	releaseall
 	end
 

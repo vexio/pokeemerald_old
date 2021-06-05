@@ -129,3 +129,8 @@ script CanvasBeach_Sign_RouteSign {
     msgbox(format("{COLOR LIGHT_GREEN}Canvas Beach\p{COLOR DARK_GREY}{UP_ARROW} {COLOR LIGHT_GREEN}Canvas Town\n{COLOR DARK_GREY}{RIGHT_ARROW} {COLOR LIGHT_GREEN}Ryoko Bay"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
     end
 }
+script CanvasBeach_Sign_Totem {
+	msgbox(format("It looks like some sort of ritualistic totem."), MSGBOX_SIGN)
+	release
+	end
+}

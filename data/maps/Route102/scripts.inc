@@ -130,6 +130,12 @@ CanvasBeach_Sign_RouteSign::
 	end
 
 
+CanvasBeach_Sign_Totem::
+	msgbox CanvasBeach_Sign_Totem_Text_0, MSGBOX_SIGN
+	release
+	end
+
+
 CanvasBeach_Object_Artist_Text_0:
 	.string "{COLOR RED}I come here to get inspiration for my\n"
 	.string "artworks, which are showcased in\l"
@@ -150,3 +156,7 @@ CanvasBeach_Sign_RouteSign_Text_0:
 	.string "{COLOR LIGHT_GREEN}Canvas Beach\p"
 	.string "{COLOR DARK_GREY}{UP_ARROW} {COLOR LIGHT_GREEN}Canvas Town\n"
 	.string "{COLOR DARK_GREY}{RIGHT_ARROW} {COLOR LIGHT_GREEN}Ryoko Bay$"
+
+CanvasBeach_Sign_Totem_Text_0:
+	.string "It looks like some sort of ritualistic\n"
+	.string "totem.$"

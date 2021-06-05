@@ -1,1 +1,78 @@
-mapscripts TeamProtoHideout_B1F_MapScripts {}
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const CAMERA = OBJ_EVENT_ID_CAMERA
+const BARTENDER = 4
+const SKIP = 8
+
+mapscripts TeamProtoHideout_B1F_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_PROTO_HIDEOUT) == 1) {
+			setobjectxyperm(BARTENDER, 16, 7)
+			setobjectxyperm(SKIP, 17, 7)
+		}
+	}
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_PROTO_HIDEOUT, 0: ProtoHideoutB1F_Object_FrontDoorGrunt
+	]
+}
+
+script ProtoHideoutB1F_Object_FrontDoorGrunt {
+	lockall
+	applymovement(BARTENDER, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	playse(SE_PIN)
+	waitse
+	msgbox(format("Bartender: {COLOR BLUE}Y-You followed!"), MSGBOX_AUTOCLOSE)
+	delay(10)
+	applymovement(BARTENDER, ProtoHideoutB1F_Movement_0)
+	waitmovement(0)
+	removeobject(BARTENDER)
+	applymovement(SKIP, Common_Movement_WalkInPlaceDown)
+	applymovement(PLAYER, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	msgbox(format("Skip: {COLOR BLUE}What is this place?\pThis seems like some sort of hideout for {COLOR GREEN}Team Proto{COLOR BLUE}...\pTime to show these proto losers whose the better trainer!"), MSGBOX_AUTOCLOSE)
+	applymovement(SKIP, ProtoHideoutB1F_Movement_1)
+	waitmovement(0)
+	removeobject(SKIP)
+	setflag(FLAG_PROTO_HIDEOUT_B1F_OBJ)
+	setvar(VAR_PROTO_HIDEOUT, 1)
+	releaseall
+	end
+}
+movement ProtoHideoutB1F_Movement_0 {
+	walk_fast_left * 2
+	walk_fast_down * 7
+	set_invisible
+}
+movement ProtoHideoutB1F_Movement_1 {
+	walk_left * 3
+	walk_down
+	walk_left * 2
+	walk_down * 7
+	set_invisible
+}
+// trainers
+script ProtoHideoutB1F_Trainer_Grunt1 {
+	trainerbattle_single(TRAINER_GRUNT_HIDEOUT_1, format("{COLOR BLUE}Hey!\nYou're not suppose to be here!"), format("Gah!"))
+	msgbox(format("{COLOR BLUE}How did a kid like you find yourself down here?\p"), MSGBOX_NPC)
+	end
+}
+script ProtoHideoutB1F_Trainer_Grunt2 {
+	trainerbattle_single(TRAINER_GRUNT_HIDEOUT_2, format("{COLOR RED}Trying to sneak in?"), format("Sneaky, sneaky..."))
+	msgbox(format("{COLOR RED}Scram!\nThis is our operation!"), MSGBOX_NPC)
+	end
+}
+script ProtoHideoutB1F_Trainer_Scientist1 {
+	trainerbattle_single(TRAINER_SCIENTIST_HIDEOUT_1, format("{COLOR BLUE}I can't get this machine to work...\pHow about a quick battle?"), format("Well executed!"))
+	msgbox(format("{COLOR BLUE}I-I don't actually work for {COLOR GREEN}Team Proto{COLOR BLUE}, I'm just a contracted hire to research whatever they give me."), MSGBOX_NPC)
+	end
+}
+script ProtoHideoutB1F_Trainer_Scientist2 {
+	trainerbattle_single(TRAINER_SCIENTIST_HIDEOUT_2, format("{COLOR BLUE}Don't interrupt my work!"), format("Now, let me get back to work!"))
+	msgbox(format("{COLOR BLUE}I'm trying to work, leave me be!"), MSGBOX_NPC)
+	end
+}
+script ProtoHideoutB1F_Trainer_Scientist3 {
+	trainerbattle_single(TRAINER_SCIENTIST_HIDEOUT_3, format("{COLOR BLUE}According to my findings, {COLOR GREEN}Team Proto{COLOR BLUE} shall be successful!"), format("Team Proto will rise!"))
+	msgbox(format("{COLOR GREEN}Team Proto{COLOR BLUE} will use the powers of the mythical {COLOR GREEN}Darkrai{COLOR BLUE} and {COLOR GREEN}Cresselia{COLOR BLUE}!"), MSGBOX_NPC)
+	end
+}
