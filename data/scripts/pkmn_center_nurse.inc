@@ -67,7 +67,7 @@ EventScript_PkmnCenterNurse_ReturnPkmn:: @ 82719E2
     goto_if_eq EventScript_PkmnCenterNurse_ReturnPkmn2
     message gText_RestoredPkmnToFullHealth
     waitmessage
-    applymovement VAR_0x800B, EventScript_PkmnCenterNurse_Bow
+    applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
     waitmovement 0
     message gText_WeHopeToSeeYouAgain
     waitmessage
@@ -78,7 +78,7 @@ EventScript_PkmnCenterNurse_ReturnPkmn:: @ 82719E2
 EventScript_PkmnCenterNurse_ReturnPkmn2:: @ 8271A03
     message gText_ThankYouForWaiting
     waitmessage
-    applymovement VAR_0x800B, EventScript_PkmnCenterNurse_Bow
+    applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
     waitmovement 0
     message gText_WeHopeToSeeYouAgain2
     waitmessage
@@ -99,7 +99,7 @@ EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom:: @ 8271A19
     setflag FLAG_NURSE_UNION_ROOM_REMINDER
     message CableClub_Text_PlayerIsWaiting
     waitmessage
-    applymovement VAR_0x800B, EventScript_PkmnCenterNurse_Bow
+    applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
     waitmovement 0
     message gText_WeHopeToSeeYouAgain
     @applymovement OBJ_EVENT_ID_PLAYER, EventScript_PlayerTurnAround
@@ -150,7 +150,7 @@ EventScript_PkmnCenterNurse_GoldCardHealPkmn:: @ 8271AC5
     goto EventScript_PkmnCenterNurse_HealPkmn
     end
 
-EventScript_PkmnCenterNurse_Bow: @ 8271AD0
+Movement_PkmnCenterNurse_Bow: @ 8271AD0
     nurse_joy_bow
     delay_4
     step_end

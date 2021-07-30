@@ -34,7 +34,7 @@ Std_MsgboxYesNo: @ 8271332
 Std_MsgboxGetPoints: @ 827133C
 	setmessagebox 0x1 0x2
     message 0x0
-	playfanfare MUS_ME_POINTGET
+	playfanfare MUS_OBTAIN_B_POINTS
 	waitfanfare
 	waitmessage
 	return

@@ -2,9 +2,6 @@
 #define GUARD_EVENT_DATA_H
 #define NUM_SOFT_CAPS 8
 
-#include "constants/flags.h"
-#include "constants/vars.h"
-
 void InitEventData(void);
 void ClearTempFieldEventData(void);
 void ClearDailyFlags(void);

@@ -2050,10 +2050,10 @@
           }
         },
         {
-          "map": "MAP_LILYCOVE_CITY",
-          "base_label": "gLilycoveCity",
-          "fishing_mons": {
-            "encounter_rate": 10,
+          "map": "MAP_UNDERWATER_ROUTE126",
+          "base_label": "gUnderwater_Route126",
+          "water_mons": {
+            "encounter_rate": 4,
             "mons": [
               {
                 "min_level": 5,
@@ -2104,36 +2104,6 @@
                 "min_level": 40,
                 "max_level": 45,
                 "species": "SPECIES_WAILMER"
-              }
-            ]
-          },
-          "water_mons": {
-            "encounter_rate": 4,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 35,
-                "species": "SPECIES_TENTACOOL"
-              },
-              {
-                "min_level": 10,
-                "max_level": 30,
-                "species": "SPECIES_WINGULL"
-              },
-              {
-                "min_level": 15,
-                "max_level": 25,
-                "species": "SPECIES_WINGULL"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PELIPPER"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_PELIPPER"
               }
             ]
           }
@@ -8647,7 +8617,11 @@
                 "species": "SPECIES_WAILMER"
               }
             ]
-          },
+          }
+        },
+        {
+          "map": "MAP_UNDERWATER_ROUTE124",
+          "base_label": "gUnderwater_Route124",
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
