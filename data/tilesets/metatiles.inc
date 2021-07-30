@@ -748,3 +748,41 @@ gMetatiles_SailwageTown::
 	.align 1
 gMetatileAttributes_SailwageTown::
 	.incbin "data/tilesets/secondary/sailwagetown/metatile_attributes.bin"
+
+	.align 1
+
+	.align 1
+gMetatiles_DavnridgeMines2::
+	.incbin "data/tilesets/secondary/davnridgemines2/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_DavnridgeMines2::
+	.incbin "data/tilesets/secondary/davnridgemines2/metatile_attributes.bin"
+	.align 1
+gMetatiles_VictoryCanyon::
+	.incbin "data/tilesets/secondary/victorycanyon/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_VictoryCanyon::
+	.incbin "data/tilesets/secondary/victorycanyon/metatile_attributes.bin"
+	.align 1
+gMetatiles_VictoryRoad::
+	.incbin "data/tilesets/secondary/victoryroad/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_VictoryRoad::
+	.incbin "data/tilesets/secondary/victoryroad/metatile_attributes.bin"
+	.align 1
+gMetatiles_Catacombs::
+	.incbin "data/tilesets/secondary/catacombs/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Catacombs::
+	.incbin "data/tilesets/secondary/catacombs/metatile_attributes.bin"
+	.align 1
+gMetatiles_IronwoodTown::
+	.incbin "data/tilesets/secondary/ironwoodtown/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_IronwoodTown::
+	.incbin "data/tilesets/secondary/ironwoodtown/metatile_attributes.bin"

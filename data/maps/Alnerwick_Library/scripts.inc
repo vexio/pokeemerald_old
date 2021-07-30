@@ -56,6 +56,7 @@ AlnerwickLibrary_Trigger_Thief::
 
 AlnerwickLibrary_Trigger_Thief_1:
 	lockall
+	fadenewbgm MUS_AJITO
 	special SpawnCameraObject
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_1, 5
@@ -75,6 +76,8 @@ AlnerwickLibrary_Trigger_Thief_3:
 	msgbox AlnerwickLibrary_Trigger_Thief_Text_1, MSGBOX_AUTOCLOSE
 	delay 10
 	applymovement 1, AlnerwickLibrary_Thief_Movement_1
+	playse SE_PIN
+	waitse
 	waitmovement 0
 	msgbox AlnerwickLibrary_Trigger_Thief_Text_2, MSGBOX_AUTOCLOSE
 	applymovement 1, AlnerwickLibrary_Thief_Movement_0
@@ -87,6 +90,7 @@ AlnerwickLibrary_Trigger_Thief_3:
 	removeobject 1
 	playse SE_KAIDAN
 AlnerwickLibrary_Trigger_Thief_10:
+	fadenewbgm MUS_BIJYUTU
 	compare VAR_TEMP_1, 5
 	goto_if_eq AlnerwickLibrary_Trigger_Thief_15
 	compare VAR_TEMP_1, 6
@@ -96,6 +100,7 @@ AlnerwickLibrary_Trigger_Thief_10:
 AlnerwickLibrary_Trigger_Thief_14:
 	applymovement 2, AlnerwickLibrary_Thief_Movement_2
 	playse SE_PIN
+	waitse
 	waitmovement 0
 	special RemoveCameraObject
 	delay 15
@@ -109,7 +114,7 @@ AlnerwickLibrary_Trigger_Thief_21:
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 10
-	msgbox AlnerwickLibrary_Trigger_Thief_Text_4
+	msgbox AlnerwickLibrary_Trigger_Thief_Text_4, MSGBOX_AUTOCLOSE
 	compare VAR_TEMP_1, 5
 	goto_if_eq AlnerwickLibrary_Trigger_Thief_29
 	compare VAR_TEMP_1, 6
@@ -347,8 +352,9 @@ AlnerwickLibrary_Trigger_Thief_Text_0:
 	.string "ol' dusty book?$"
 
 AlnerwickLibrary_Trigger_Thief_Text_1:
-	.string "Librarian: {COLOR RED}I'm sorry sir, but this book\n"
-	.string "isn't able to be checked out.$"
+	.string "Librarian: {COLOR RED}I'm sorry sir, but the\n"
+	.string "{COLOR GREEN}Akumutome{COLOR RED} cannot be checked out from\l"
+	.string "the library.$"
 
 AlnerwickLibrary_Trigger_Thief_Text_2:
 	.string "???: {COLOR BLUE}Checked out!\p"

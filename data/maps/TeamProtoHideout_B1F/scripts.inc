@@ -121,8 +121,7 @@ ProtoHideoutB1F_Trainer_Grunt1_Text_1:
 
 ProtoHideoutB1F_Trainer_Grunt1_Text_2:
 	.string "{COLOR BLUE}How did a kid like you find yourself\n"
-	.string "down here?\p"
-	.string "$"
+	.string "down here?$"
 
 ProtoHideoutB1F_Trainer_Grunt2_Text_0:
 	.string "{COLOR RED}Trying to sneak in?$"

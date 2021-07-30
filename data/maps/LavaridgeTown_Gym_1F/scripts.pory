@@ -467,8 +467,8 @@ script EnclavaGym_Trainer_Leader_Bruce {
     lockall
 	faceplayer
 	if (flag(FLAG_BADGE02_GET) == false) {
-		msgbox(format("Bruce: {COLOR BLUE}Hello challenger.\pMy name is Bruce, and I am the master of the Normal-type Pokémon.\pYou may have defeated my adversaries, but you don't stand a chance against me!"), MSGBOX_AUTOCLOSE)
-		trainerbattle_no_intro(TRAINER_GYM_LEADER_BRUCE, format("Well done.\nYou are indeed a talented trainer."))
+		msgbox(format("Bruce: {COLOR BLUE}Challenger.\pI've been watching your battles with the other trainers.\pI can sense you have quite the affinity for battling.\pWould you care to demonstrate against my team?"), MSGBOX_AUTOCLOSE)
+		trainerbattle_no_intro(TRAINER_GYM_LEADER_BRUCE, format("The bond you have with your Pokémon is astounding.\pYou've earned yourself the {COLOR GREEN}Plain Badge"))
 		setflag(FLAG_BADGE02_GET)
 		setvar(VAR_ENCLAVATOWER_STATE, 1)
 		playfanfare(MUS_ME_BACHI)

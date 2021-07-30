@@ -129,8 +129,13 @@ MystCity_CypressLab_Object_FossilScientist_Temp::
 
 MystCity_CypressLab_ProfessorCypress::
 	goto_if_unset FLAG_MYSTCITY_CYPRESSLAB_PROTO_EVENT, MystCity_CypressLab_ProfessorCypress_1
-	msgbox MystCity_CypressLab_ProfessorCypress_Text_15, MSGBOX_NPC
-	release
+	compare VAR_PROTO_HIDEOUT, 3
+	goto_if_eq MystCity_CypressLab_ProfessorCypress_7
+	compare VAR_CYPRESS_PROTO_EVENT_STATE, 6
+	goto_if_eq MystCity_CypressLab_ProfessorCypress_8
+	compare VAR_CYPRESS_PROTO_EVENT_STATE, 2
+	goto_if_eq MystCity_CypressLab_ProfessorCypress_9
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_18, MSGBOX_NPC
 	end
 
 MystCity_CypressLab_ProfessorCypress_1:
@@ -255,17 +260,29 @@ MystCity_CypressLab_ProfessorCypress_4:
 
 MystCity_CypressLab_ProfessorCypress_5:
 	compare VAR_TEMP_1, 9
-	goto_if_eq MystCity_CypressLab_ProfessorCypress_7
+	goto_if_eq MystCity_CypressLab_ProfessorCypress_14
 	compare VAR_TEMP_1, 8
-	goto_if_eq MystCity_CypressLab_ProfessorCypress_8
+	goto_if_eq MystCity_CypressLab_ProfessorCypress_15
 	goto MystCity_CypressLab_ProfessorCypress_4
 
 MystCity_CypressLab_ProfessorCypress_7:
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_15, MSGBOX_NPC
+	end
+
+MystCity_CypressLab_ProfessorCypress_8:
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_16, MSGBOX_NPC
+	end
+
+MystCity_CypressLab_ProfessorCypress_9:
+	msgbox MystCity_CypressLab_ProfessorCypress_Text_17, MSGBOX_NPC
+	end
+
+MystCity_CypressLab_ProfessorCypress_14:
 	applymovement OBJ_EVENT_ID_PLAYER, MystCity_CypressLab_Movement_4
 	waitmovement 0
 	goto MystCity_CypressLab_ProfessorCypress_4
 
-MystCity_CypressLab_ProfessorCypress_8:
+MystCity_CypressLab_ProfessorCypress_15:
 	applymovement OBJ_EVENT_ID_PLAYER, MystCity_CypressLab_Movement_5
 	waitmovement 0
 	goto MystCity_CypressLab_ProfessorCypress_4
@@ -509,5 +526,23 @@ MystCity_CypressLab_ProfessorCypress_Text_14:
 	.string "in {COLOR GREEN}Bayport City{COLOR RED}.$"
 
 MystCity_CypressLab_ProfessorCypress_Text_15:
+	.string "Mom: {COLOR RED}Lars said he would be waiting for\n"
+	.string "you in {COLOR GREEN}Sunflora Town{COLOR BLUE}.$"
+
+MystCity_CypressLab_ProfessorCypress_Text_16:
+	.string "Mom: {COLOR RED}Lars told me that you and {COLOR GREEN}Skip{COLOR RED} are\n"
+	.string "doing an investigation for him at the\l"
+	.string "{COLOR GREEN}Crawdaunt Pub{COLOR RED}.\p"
+	.string "Be safe!$"
+
+MystCity_CypressLab_ProfessorCypress_Text_17:
 	.string "Mom: {COLOR RED}Go talk to {COLOR GREEN}Lars{COLOR RED} in {COLOR GREEN}Bayport City{COLOR RED}, he\n"
 	.string "will know what to do.$"
+
+MystCity_CypressLab_ProfessorCypress_Text_18:
+	.string "Mom: {COLOR RED}Hey honey!\p"
+	.string "Just doing some research.\p"
+	.string "I hope you're keeping up with the\n"
+	.string "Pokémon League Gym Challenges, I'd\l"
+	.string "love to see you compete at the Ryoko\l"
+	.string "League!$"

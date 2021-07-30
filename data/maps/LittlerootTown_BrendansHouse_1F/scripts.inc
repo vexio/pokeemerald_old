@@ -469,8 +469,9 @@ PlayersHouse_Mapscript_GetPokemon_1:
 	applymovement 3, Common_Movement_ExclamationMark
 	waitmovement 0
 	playse SE_PIN
-	applymovement 3, Common_Movement_JumpInPlaceLeft
+	waitse
 	playse SE_JITE_PYOKO
+	applymovement 3, Common_Movement_JumpInPlaceLeft
 	waitmovement 0
 	applymovement 3, Common_Movement_WalkInPlaceUp
 	waitmovement 0
@@ -508,6 +509,8 @@ PlayersHouse_Mapscript_GetPokemon_10:
 	closemessage
 	applymovement 3, Common_Movement_ExclamationMark
 	waitmovement 0
+	playse SE_PIN
+	waitse
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_8
 	closemessage
 	applymovement 3, Common_Movement_WalkInPlaceLeft

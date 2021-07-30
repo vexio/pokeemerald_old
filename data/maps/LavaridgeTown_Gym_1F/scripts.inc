@@ -578,16 +578,18 @@ EnclavaGym_Trainer_Pokefan_Text_2:
 	.string "this maze.$"
 
 EnclavaGym_Trainer_Leader_Bruce_Text_0:
-	.string "Bruce: {COLOR BLUE}Hello challenger.\p"
-	.string "My name is Bruce, and I am the master of\n"
-	.string "the Normal-type Pokémon.\p"
-	.string "You may have defeated my adversaries,\n"
-	.string "but you don't stand a chance against\l"
-	.string "me!$"
+	.string "Bruce: {COLOR BLUE}Challenger.\p"
+	.string "I've been watching your battles with\n"
+	.string "the other trainers.\p"
+	.string "I can sense you have quite the affinity\n"
+	.string "for battling.\p"
+	.string "Would you care to demonstrate against\n"
+	.string "my team?$"
 
 EnclavaGym_Trainer_Leader_Bruce_Text_1:
-	.string "Well done.\n"
-	.string "You are indeed a talented trainer.$"
+	.string "The bond you have with your Pokémon is\n"
+	.string "astounding.\p"
+	.string "You've earned yourself the {COLOR GREEN}Plain Badge$"
 
 EnclavaGym_Trainer_Leader_Bruce_Text_2:
 	.string "{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Plain Badge$"

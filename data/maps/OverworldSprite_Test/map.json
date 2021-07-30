@@ -171,7 +171,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BRAWLY",
+      "graphics_id": "OBJ_EVENT_GFX_BRUCE",
       "x": 16,
       "y": 4,
       "elevation": 3,
@@ -353,7 +353,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_FLANNERY",
+      "graphics_id": "OBJ_EVENT_GFX_EDGAR",
       "x": 14,
       "y": 6,
       "elevation": 3,
@@ -548,7 +548,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LIZA",
+      "graphics_id": "OBJ_EVENT_GFX_JULES",
       "x": 13,
       "y": 8,
       "elevation": 3,
@@ -756,7 +756,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
+      "graphics_id": "OBJ_EVENT_GFX_LORRAINE",
       "x": 13,
       "y": 10,
       "elevation": 3,
@@ -925,7 +925,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ROXANNE",
+      "graphics_id": "OBJ_EVENT_GFX_LILITH",
       "x": 10,
       "y": 12,
       "elevation": 3,
@@ -1185,7 +1185,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WATTSON",
+      "graphics_id": "OBJ_EVENT_GFX_BERNIE",
       "x": 14,
       "y": 14,
       "elevation": 3,
@@ -1198,7 +1198,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WINONA",
+      "graphics_id": "OBJ_EVENT_GFX_AIREN",
       "x": 15,
       "y": 14,
       "elevation": 3,

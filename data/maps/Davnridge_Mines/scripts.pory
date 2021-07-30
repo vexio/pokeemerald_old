@@ -9,40 +9,29 @@ script DavnridgeMines_Sign_LocationName {
     end
 }
 
-const GUARD = 5
+const GUARD = 1
 const PLAYER = OBJ_EVENT_ID_PLAYER
 const CAMERA = OBJ_EVENT_ID_CAMERA
 
 script DavnridgeMines_Trigger_NoPassage {
     lock
-    applymovement(GUARD, Common_Movement_WalkInPlaceDown)
+    applymovement(GUARD, Common_Movement_WalkInPlaceLeft)
     waitmovement(0)
     applymovement(GUARD, Common_Movement_ExclamationMark)
     waitmovement(0)
-    delay(15)
-    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-    if (var(VAR_TEMP_1) == 29) {
-        applymovement(GUARD, DavnridgeMines_Movement_NoPassage_0)
-        waitmovement(0)
-    }
-    applymovement(PLAYER, Common_Movement_WalkInPlaceUp)
+    playse(SE_PIN)
+    waitse
+    msgbox(format("{COLOR BLUE}Whoa whoa!"))
+    applymovement(PLAYER, Common_Movement_WalkInPlaceRight)
     waitmovement(0)
-    msgbox(format("{COLOR BLUE}Hey bud!\nThis are over here is off limits right now.\pWe're running some explosion tests, so no one is allowed through.\pCome back later when we're done."), MSGBOX_AUTOCLOSE)
-    delay(5)
-    applymovement(PLAYER, DavnridgeMines_Movement_NoPassage_1)
+    msgbox(format("{COLOR BLUE}This area is off limits!\pWe're running some explosive tests in the mine up ahead.\pCome back later."), MSGBOX_AUTOCLOSE)
+    applymovement(PLAYER, DavnridgeMines_Movement_NoPassage_0)
     waitmovement(0)
-    if (var(VAR_TEMP_1) == 29) {
-        applymovement(GUARD, DavnridgeMines_Movement_NoPassage_2)
-        waitmovement(0)
-    }
     release
     end
 }
 movement DavnridgeMines_Movement_NoPassage_0 {
     walk_down
-}
-movement DavnridgeMines_Movement_NoPassage_1 {
-    walk_left
 }
 movement DavnridgeMines_Movement_NoPassage_2 {
     walk_up
@@ -51,109 +40,124 @@ movement DavnridgeMines_Movement_NoPassage_2 {
 }
 
 //
-const LILITH = 9
+const LILITH = 7
 
 script DavnridgeMines_Trigger_Lilith {
-    lock
+    lockall
     special(SpawnCameraObject)
     getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-    if (var(VAR_TEMP_0) == 27) {
-        applymovement(CAMERA, DavnridgeMines_Lilith_CMovement_1)
-        waitmovement(0)
-    } elif (var(VAR_TEMP_0) == 28) {
+    if (var(VAR_TEMP_1) == 55) {
         applymovement(CAMERA, DavnridgeMines_Lilith_CMovement_0)
         waitmovement(0)
-    } elif (var(VAR_TEMP_0) == 29) {
+    } elif (var(VAR_TEMP_1) == 56) {
+        applymovement(CAMERA, DavnridgeMines_Lilith_CMovement_1)
+        waitmovement(0)
+    } elif (var(VAR_TEMP_1) == 57) {
         applymovement(CAMERA, DavnridgeMines_Lilith_CMovement_2)
         waitmovement(0)
     }
+    delay(16)
+    msgbox(format("???: {COLOR RED}Cranidos, use Rock Tomb!"), MSGBOX_AUTOCLOSE)
+    playmoncry(SPECIES_CRANIDOS, 0)
+    waitmoncry
+    delay(5)
+    setvar(VAR_0x8004, 0) // vertical pan
+    setvar(VAR_0x8005, 4) // horizontal pan
+    setvar(VAR_0x8006, 2) // num of shakes
+    setvar(VAR_0x8007, 1) // shake delay
+    special(ShakeCamera)
+    waitstate
     delay(10)
-    applymovement(LILITH, Common_Movement_WalkInPlaceDown)
+    msgbox(format("???: {COLOR RED}Great job Cranidos!\nReturn!"), MSGBOX_AUTOCLOSE)
+    delay(15)
+    applymovement(LILITH, Common_Movement_WalkInPlaceRight)
     waitmovement(0)
-    msgbox(format("???: {COLOR RED}Good job Sudowoodo!\nNow, we should head back to the Gym."), MSGBOX_AUTOCLOSE)
-    delay(10)
-    applymovement(LILITH, Common_Movement_WalkInPlaceUp)
+    applymovement(LILITH, Common_Movement_QuestionMark)
     waitmovement(0)
+    playse(SE_PIN)
+    waitse
+    msgbox(format("???: {COLOR RED}You don't look like one of my miners..."))
     applymovement(LILITH, Common_Movement_ExclamationMark)
     waitmovement(0)
-    delay(10)
-    msgbox(format("???: {COLOR RED}What are you doing in these parts?"), MSGBOX_AUTOCLOSE)
-    delay(5)
-    if (var(VAR_TEMP_0) == 27) {
+    playse(SE_PIN)
+    waitse
+    msgbox(format("???: {COLOR RED}Oh!\pYou're a trainer!"))
+    if (var(VAR_TEMP_1) == 55) {
         applymovement(LILITH, DavnridgeMines_Lilith_Movement_1)
-        applymovement(CAMERA, DavnridgeMines_Lilith_CMovement_4)
-        waitmovement(0)
-        applymovement(PLAYER, Common_Movement_WalkInPlaceRight)
-        waitmovement(0)
-    } elif (var(VAR_TEMP_0) == 28) {
-        applymovement(LILITH, DavnridgeMines_Lilith_Movement_0)
         applymovement(CAMERA, DavnridgeMines_Lilith_CMovement_3)
         waitmovement(0)
-    } elif (var(VAR_TEMP_0) == 29) {
+        applymovement(PLAYER, Common_Movement_WalkInPlaceDown)
+        waitmovement(0)
+    } elif (var(VAR_TEMP_1) == 56) {
         applymovement(LILITH, DavnridgeMines_Lilith_Movement_2)
+        applymovement(CAMERA, DavnridgeMines_Lilith_CMovement_4)
+        waitmovement(0)
+    } elif (var(VAR_TEMP_1) == 57) {
+        applymovement(LILITH, DavnridgeMines_Lilith_Movement_3)
         applymovement(CAMERA, DavnridgeMines_Lilith_CMovement_5)
         waitmovement(0)
-        applymovement(PLAYER, Common_Movement_WalkInPlaceLeft)
+        applymovement(PLAYER, Common_Movement_WalkInPlaceUp)
         waitmovement(0)
     }
-    special(RemoveCameraObject)
     delay(10)
-    msgbox(format("???: {COLOR RED}Wait, you don't need to tell me!\pI can tell you're a trainer who wants to challenge me!\p{COLOR DARK_GREY}Lilith: {COLOR RED}Hi, my name is Lilith.\nI'm {COLOR GREEN}Davnridge's Gym Leader{COLOR RED}!\pCome meet me at my Gym and I'll give you a challenge!"), MSGBOX_AUTOCLOSE)
-    if (var(VAR_TEMP_0) == 28) {
-        applymovement(LILITH, DavnridgeMines_Lilith_Movement_3)
+    msgbox(format("???: {COLOR RED}Nice to meet you, trainer!\pMy name is {COLOR GREEN}Lilith{COLOR RED} and I'm the {COLOR GREEN}Davnridge Pokémon Gym Leader{COLOR RED}.\pI assume you came all this way to challenge me, so I'll be waiting at my gym!\p{COLOR DARK_GREY}Lilith:{COLOR RED} I look forward to challenging you, trainer!"), MSGBOX_AUTOCLOSE)
+    if (var(VAR_TEMP_1) == 56) {
+        applymovement(LILITH, DavnridgeMines_Lilith_Movement_4)
         waitmovement(0)
     } else {
-        applymovement(LILITH, DavnridgeMines_Lilith_Movement_4)
+        applymovement(LILITH, DavnridgeMines_Lilith_Movement_5)
         waitmovement(0)
     }
     removeobject(LILITH)
-    playse(SE_KAIDAN)
+    special(RemoveCameraObject)
     setflag(FLAG_DAVNRIDGEMINES_LILITH)
     setvar(VAR_DAVNRIDGEMINES_STATE, 1)
-    release
+    releaseall
     end
 }
 movement DavnridgeMines_Lilith_CMovement_0 {
-    walk_down * 3
+    walk_down * 1
+    walk_left * 3
 }
 movement DavnridgeMines_Lilith_CMovement_1 {
-    walk_right
-    walk_down * 3
+    walk_left * 3
 }
 movement DavnridgeMines_Lilith_CMovement_2 {
-    walk_left
-    walk_down * 3
-}
-movement DavnridgeMines_Lilith_Movement_0 {
-    walk_up * 2
+    walk_up * 1
+    walk_left * 3
 }
 movement DavnridgeMines_Lilith_Movement_1 {
-    walk_up * 3
-    walk_in_place_left
+    walk_right * 3
+    walk_in_place_up
 }
 movement DavnridgeMines_Lilith_Movement_2 {
-    walk_up * 3
-    walk_in_place_right
-}
-movement DavnridgeMines_Lilith_CMovement_3 {
-    walk_up * 3
-}
-movement DavnridgeMines_Lilith_CMovement_4 {
-    walk_up * 3
-    walk_left
-}
-movement DavnridgeMines_Lilith_CMovement_5 {
-    walk_up * 3
-    walk_right
+    walk_right * 2
 }
 movement DavnridgeMines_Lilith_Movement_3 {
-    walk_right
-    walk_up * 4
-    walk_left
+    walk_right * 3
+    walk_in_place_down
+}
+movement DavnridgeMines_Lilith_CMovement_3 {
+    walk_right * 3
+    walk_up
+}
+movement DavnridgeMines_Lilith_CMovement_4 {
+    walk_right * 3
+}
+movement DavnridgeMines_Lilith_CMovement_5 {
+    walk_right * 3
+    walk_down
 }
 movement DavnridgeMines_Lilith_Movement_4 {
-    walk_up * 3
+    walk_up
+    walk_right * 6
+    walk_up * 6
 }
+movement DavnridgeMines_Lilith_Movement_5 {
+    walk_right * 5
+    walk_up * 5
+}
+
 
 // trainers
 script DavnridgeMines_Trainer_Miner_1 {
@@ -178,7 +182,7 @@ script DavnridgeMines_Trainer_Fisherman {
 }
 script DavnridgeMines_Trainer_Maniac {
     trainerbattle_single(TRAINER_MANIAC_IAN, format("{COLOR BLUE}I found a rare Pokémon!\nWant to see it?"), format("No!\nMy rare Pokémon!"))
-    msgbox(format("{COLOR BLUE}There is a very rare chance to find a Gligar in these mines.\pSurprisingly, there aren't any Zubats..."), MSGBOX_NPC)
+    msgbox(format("{COLOR BLUE}There is a very rare chance to find a Gligar in these mines."), MSGBOX_NPC)
     end
 }
 script DavnridgeMines_Trainer_BlackBelt {

@@ -66,7 +66,7 @@ TriadGorge_Trigger_ProtoGrunts_1:
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, TriadGorge_ProtoGrunts_CMovement_0
 	waitmovement 0
-	playbgm MUS_AJITO, 0
+	fadenewbgm MUS_AJITO
 	fadescreen FADE_FROM_BLACK
 	delay 10
 	applymovement 2, Common_Movement_WalkInPlaceLeft

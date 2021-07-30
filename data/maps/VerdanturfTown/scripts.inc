@@ -197,7 +197,7 @@ FrostpineCity_Trigger_RivalEvent_1:
 	msgbox FrostpineCity_Trigger_RivalEvent_Text_1, MSGBOX_AUTOCLOSE
 	fadescreen FADE_TO_BLACK
 	special HealPlayerParty
-	playse MUS_ME_ASA
+	playse SE_KAIFUKU
 	waitse
 	fadescreen FADE_FROM_BLACK
 	delay 16
@@ -382,7 +382,7 @@ FrostpineCity_Trigger_RivalEvent_Text_0:
 	.string "Skip: {COLOR BLUE} What's up Slowpoke!$"
 
 FrostpineCity_Trigger_RivalEvent_Text_1:
-	.string "Skip: {COLOR BLUE}Are you shivering?\l"
+	.string "Skip: {COLOR BLUE}Are you shivering?\n"
 	.string "It's freezing up here!\p"
 	.string "You look pretty beat up from that climb,\n"
 	.string "let me heal your Pokémon.$"

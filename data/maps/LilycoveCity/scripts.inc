@@ -1,21 +1,21 @@
-LilycoveCity_MapScripts:: @ 81E2B3C
-	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_OnTransition
-	map_script MAP_SCRIPT_ON_LOAD, LilycoveCity_OnLoad
-	.byte 0
-
-LilycoveCity_OnTransition: @ 81E2B47
-	setflag FLAG_VISITED_LILYCOVE_CITY
-	setvar VAR_CONTEST_HALL_STATE, 0
-	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
-	call Common_EventScript_SetupRivalGfxId
-	compare VAR_CYPRESS_PROTO_EVENT_STATE, 5
-	call_if_eq MystCity_Mapscript_RivalCrawdauntPub
-	end
-
-LilycoveCity_OnLoad: @ 81E2B61
-	call_if_unset FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, LilycoveCity_EventScript_SetWailmerMetatiles
-	end
+@LilycoveCity_MapScripts:: @ 81E2B3C
+@	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_OnTransition
+@	map_script MAP_SCRIPT_ON_LOAD, LilycoveCity_OnLoad
+@	.byte 0
+@
+@LilycoveCity_OnTransition: @ 81E2B47
+@	setflag FLAG_VISITED_LILYCOVE_CITY
+@	setvar VAR_CONTEST_HALL_STATE, 0
+@	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER
+@	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+@	call Common_EventScript_SetupRivalGfxId
+@	compare VAR_CYPRESS_PROTO_EVENT_STATE, 5
+@	call_if_eq MystCity_Mapscript_RivalCrawdauntPub
+@	end
+@
+@LilycoveCity_OnLoad: @ 81E2B61
+@	call_if_unset FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, LilycoveCity_EventScript_SetWailmerMetatiles
+@	end
 
 LilycoveCity_EventScript_SetWailmerMetatiles:: @ 81E2B6B
 	setmetatile 76, 12, METATILE_Lilycove_Wailmer0, 1
@@ -769,6 +769,35 @@ LilycoveCity_Text_HoneymoonVowToSeeRarePokemon: @ 81E49F4
 	.string "POKéMON as soon as we arrived.\p"
 	.string "I mean, we are totally happy!$"
 
+LilycoveCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, LilycoveCity_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+	.byte 0
+
+LilycoveCity_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_LILYCOVE_CITY
+	compare VAR_PROTO_HIDEOUT, 2
+	goto_if_eq LilycoveCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+LilycoveCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	compare VAR_CYPRESS_PROTO_EVENT_STATE, 5
+	goto_if_eq LilycoveCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	return
+
+LilycoveCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+	setobjectxyperm 23, 32, 32
+	setobjectxyperm 24, 31, 32
+	goto LilycoveCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+LilycoveCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
+	setobjectxyperm 21, 15, 42
+	setobjectxyperm 22, 15, 39
+	return
+
+LilycoveCity_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_PROTO_HIDEOUT, 2, MystCity_Mapscript_ExitProtoHideout
+	.2byte 0
+
+
 MystCity_Object_BlackBelt::
 	msgbox MystCity_Object_BlackBelt_Text_0, MSGBOX_NPC
 	end
@@ -872,12 +901,6 @@ MystCity_Sign_GymSignClosed::
 MystCity_Sign_LabSign::
 	msgbox MystCity_Sign_LabSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_METAL
 	end
-
-
-MystCity_Mapscript_RivalCrawdauntPub::
-	setobjectxyperm 21, 15, 42
-	setobjectxyperm 22, 15, 39
-	return
 
 
 MystCity_Trigger_CrawdauntPub::
@@ -1132,6 +1155,102 @@ MystCity_CrawdauntPub_Movement_5_2:
 	set_invisible
 	step_end
 
+MystCity_Mapscript_ExitProtoHideout::
+	lockall
+	applymovement 24, Common_Movement_WalkInPlaceRight
+	waitmovement 0
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_0
+	applymovement 23, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_1, MSGBOX_AUTOCLOSE
+	delay 20
+	applymovement 24, Common_Movement_WalkInPlaceUp
+	applymovement 23, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	applymovement 24, Common_Movement_ExclamationMark
+	applymovement 23, Common_Movement_ExclamationMark
+	waitmovement 0
+	playse SE_PIN
+	waitse
+	delay 15
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_2
+	waitmessage
+	closemessage
+	applymovement 23, Common_Movement_WalkUp
+	waitmovement 0
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_3
+	delay 10
+	closemessage
+	fadescreen FADE_TO_BLACK
+	delay 120
+	applymovement 24, Common_Movement_WalkUp
+	waitmovement 0
+	fadescreen FADE_FROM_BLACK
+	delay 10
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_4
+	applymovement 24, Common_Movement_WalkInPlaceRight
+	waitmovement 0
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_5
+	applymovement 23, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_6
+	applymovement 24, Common_Movement_FaceUp
+	applymovement 23, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_7
+	applymovement 24, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_8, MSGBOX_AUTOCLOSE
+	delay 5
+	giveitem ITEM_SS_TICKET, 1
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_9
+	applymovement 23, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_10, MSGBOX_AUTOCLOSE
+	applymovement 23, MystCity_ExitProtoHideout_Movement_0
+	waitmovement 0
+	removeobject 23
+	applymovement 24, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox MystCity_Mapscript_ExitProtoHideout_Text_11, MSGBOX_AUTOCLOSE
+	applymovement 24, MystCity_ExitProtoHideout_Movement_1
+	waitmovement 0
+	removeobject 24
+	setflag FLAG_MYSTCITY_EXIT_PROTO_HIDEOUT
+	setvar VAR_PROTO_HIDEOUT, 3
+	releaseall
+	end
+
+
+MystCity_ExitProtoHideout_Movement_0:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+MystCity_ExitProtoHideout_Movement_1:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
 MystCity_Object_BlackBelt_Text_0:
 	.string "{COLOR BLUE}I want to battle the {COLOR GREEN}Myst City Gym{COLOR BLUE}, but\n"
 	.string "the leader is supposedly 'on tour' at\l"
@@ -1323,3 +1442,63 @@ MystCity_Trigger_CrawdauntPub_Text_11:
 	.string "Report back to {COLOR GREEN}Professor Cypress{COLOR BLUE} and\n"
 	.string "myself in her lab.\p"
 	.string "Good luck kid!$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_0:
+	.string "Mom: {COLOR RED}Lars, what is taking them so long?\p"
+	.string "I thought you said this was going to be\n"
+	.string "quick...$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_1:
+	.string "Lars: {COLOR BLUE}They shouldn't be much longer...$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_2:
+	.string "Mom: {COLOR RED}There you are {COLOR GREEN}{PLAYER}{COLOR RED}!$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_3:
+	.string "Lars: {COLOR BLUE}Well, what information did you\n"
+	.string "get?$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_4:
+	.string "Lars: {COLOR BLUE}Wow.\p"
+	.string "That is a lot to unpack.$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_5:
+	.string "Mom: {COLOR RED}Lars, those books they're\n"
+	.string "translating contain some very\l"
+	.string "dangerous information if in the wrong\l"
+	.string "hands.$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_6:
+	.string "Lars: {COLOR BLUE}I know.\n"
+	.string "This isn't good...\p"
+	.string "Of course {COLOR GREEN}Apollo{COLOR BLUE} is behind all of this...$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_7:
+	.string "Lars: {COLOR GREEN}{PLAYER}{COLOR BLUE}.\p"
+	.string "I know I've already sent you on a wild\n"
+	.string "chase for {COLOR GREEN}Team Proto{COLOR BLUE}, but I need you to\l"
+	.string "get to {COLOR GREEN}Sunflora Town{COLOR BLUE}, which is south of\l"
+	.string "{COLOR GREEN}Altos City{COLOR BLUE}.\p"
+	.string "{COLOR DARK_GREY}Lars:{COLOR BLUE} Underneath the town lies the\n"
+	.string "{COLOR GREEN}Ryoko Catacombs{COLOR BLUE}.\p"
+	.string "I suspect {COLOR GREEN}Team Proto{COLOR BLUE} might be hiding\n"
+	.string "out in there to further their agenda.$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_8:
+	.string "Mom: {COLOR RED}You're going to need this to cross\n"
+	.string "{COLOR GREEN}Cobalt Sea{COLOR RED}.$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_9:
+	.string "Mom: {COLOR RED}If you haven't been to {COLOR GREEN}Cobalt Sea{COLOR RED}\n"
+	.string "yet, it's to the east of here.$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_10:
+	.string "Lars: {COLOR BLUE}Now, make your way over to\n"
+	.string "{COLOR GREEN}Sunflora Town{COLOR BLUE}.\p"
+	.string "I'll be there waiting for you.$"
+
+MystCity_Mapscript_ExitProtoHideout_Text_11:
+	.string "Mom: {COLOR RED}Please stay safe, and keep\n"
+	.string "training your Pokémon!\p"
+	.string "If you have any questions for me, I'll\n"
+	.string "be in my Lab.$"

@@ -147,15 +147,6 @@ const u32 gObjectEventPic_Sidney[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Phoebe[] = INCBIN_U32("graphics/object_events/pics/people/elite_four/phoebe.4bpp");
 const u32 gObjectEventPic_Glacia[] = INCBIN_U32("graphics/object_events/pics/people/elite_four/glacia.4bpp");
 const u32 gObjectEventPic_Drake[] = INCBIN_U32("graphics/object_events/pics/people/elite_four/drake.4bpp");
-const u32 gObjectEventPic_Roxanne[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/roxanne.4bpp");
-const u32 gObjectEventPic_Brawly[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/brawly.4bpp");
-const u32 gObjectEventPic_Wattson[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/wattson.4bpp");
-const u32 gObjectEventPic_Flannery[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/flannery.4bpp");
-const u32 gObjectEventPic_Norman[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/norman.4bpp");
-const u32 gObjectEventPic_Winona[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/winona.4bpp");
-const u32 gObjectEventPic_Liza[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/liza.4bpp");
-const u32 gObjectEventPic_Tate[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/tate.4bpp");
-const u32 gObjectEventPic_Wallace[] = INCBIN_U32("graphics/object_events/pics/people/wallace.4bpp");
 const u32 gObjectEventPic_Steven[] = INCBIN_U32("graphics/object_events/pics/newpeople/steven.4bpp");
 const u32 gObjectEventPic_Wally[] = INCBIN_U32("graphics/object_events/pics/newpeople/wally.4bpp");
 const u32 gObjectEventPic_RubySapphireLittleBoy[] = INCBIN_U32("graphics/object_events/pics/people/rs_little_boy.4bpp");
@@ -394,3 +385,30 @@ const u32 gObjectEventPic_Noland[] = INCBIN_U32("graphics/object_events/pics/new
 const u16 gObjectEventPalette_Noland[] = INCBIN_U16("graphics/object_events/pics/newpeople/team_proto/eris.gbapal");
 const u32 gObjectEventPic_Lucy[] = INCBIN_U32("graphics/object_events/pics/newpeople/team_proto/haumea.4bpp");
 const u16 gObjectEventPalette_Lucy[] = INCBIN_U16("graphics/object_events/pics/newpeople/team_proto/haumea.gbapal");
+
+// gym leaders
+const u32 gObjectEventPic_Roxanne[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/lilith.4bpp");
+const u16 gObjectEventPalette_Roxanne[] = INCBIN_U16("graphics/object_events/pics/people/gym_leaders/lilith.gbapal");
+
+const u32 gObjectEventPic_Brawly[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/bruce.4bpp");
+const u16 gObjectEventPalette_Brawly[] = INCBIN_U16("graphics/object_events/pics/people/gym_leaders/bruce.gbapal");
+
+const u32 gObjectEventPic_Wattson[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/bernie.4bpp");
+const u16 gObjectEventPalette_Wattson[] = INCBIN_U16("graphics/object_events/pics/people/gym_leaders/bernie.gbapal");
+
+const u32 gObjectEventPic_Flannery[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/edgar.4bpp");
+const u16 gObjectEventPalette_Flannery[] = INCBIN_U16("graphics/object_events/pics/people/gym_leaders/edgar.gbapal");
+
+const u32 gObjectEventPic_Norman[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/lorraine.4bpp");
+const u16 gObjectEventPalette_Norman[] = INCBIN_U16("graphics/object_events/pics/people/gym_leaders/lorraine.gbapal");
+
+const u32 gObjectEventPic_Winona[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/airen.4bpp");
+const u16 gObjectEventPalette_Winona[] = INCBIN_U16("graphics/object_events/pics/people/gym_leaders/airen.gbapal");
+
+const u32 gObjectEventPic_Liza[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/jules.4bpp");
+const u16 gObjectEventPalette_Liza[] = INCBIN_U16("graphics/object_events/pics/people/gym_leaders/jules.gbapal");
+
+const u32 gObjectEventPic_Wallace[] = INCBIN_U32("graphics/object_events/pics/people/wallace.4bpp");
+
+const u32 gObjectEventPic_Tate[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/tate.4bpp");
+

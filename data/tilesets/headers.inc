@@ -1116,3 +1116,58 @@ gTileset_SailwageTown::
 	.4byte gMetatiles_SailwageTown
 	.4byte gMetatileAttributes_SailwageTown
 	.4byte NULL
+
+	.align 2
+gTileset_DavnridgeMines2::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_DavnridgeMines2
+	.4byte gTilesetPalettes_DavnridgeMines2
+	.4byte gMetatiles_DavnridgeMines2
+	.4byte gMetatileAttributes_DavnridgeMines2
+	.4byte NULL
+
+	.align 2
+gTileset_VictoryCanyon::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_VictoryCanyon
+	.4byte gTilesetPalettes_VictoryCanyon
+	.4byte gMetatiles_VictoryCanyon
+	.4byte gMetatileAttributes_VictoryCanyon
+	.4byte NULL
+
+	.align 2
+gTileset_VictoryRoad::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_VictoryRoad
+	.4byte gTilesetPalettes_VictoryRoad
+	.4byte gMetatiles_VictoryRoad
+	.4byte gMetatileAttributes_VictoryRoad
+	.4byte NULL
+
+	.align 2
+gTileset_Catacombs::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Catacombs
+	.4byte gTilesetPalettes_Catacombs
+	.4byte gMetatiles_Catacombs
+	.4byte gMetatileAttributes_Catacombs
+	.4byte NULL
+
+	.align 2
+gTileset_IronwoodTown::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_IronwoodTown
+	.4byte gTilesetPalettes_IronwoodTown
+	.4byte gMetatiles_IronwoodTown
+	.4byte gMetatileAttributes_IronwoodTown
+	.4byte NULL

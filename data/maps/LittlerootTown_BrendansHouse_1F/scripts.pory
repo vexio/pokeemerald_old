@@ -472,8 +472,9 @@ script PlayersHouse_Mapscript_GetPokemon {
 		applymovement(SKIP_ID, Common_Movement_ExclamationMark)
 		waitmovement(0)
 		playse(SE_PIN)
-		applymovement(SKIP_ID, Common_Movement_JumpInPlaceLeft)
+		waitse
 		playse(SE_JITE_PYOKO)
+		applymovement(SKIP_ID, Common_Movement_JumpInPlaceLeft)
 		waitmovement(0)
 		applymovement(SKIP_ID, Common_Movement_WalkInPlaceUp)
 		waitmovement(0)
@@ -518,6 +519,8 @@ script PlayersHouse_Mapscript_GetPokemon {
 		closemessage
 		applymovement(SKIP_ID, Common_Movement_ExclamationMark)
 		waitmovement(0)
+		playse(SE_PIN)
+		waitse
 		msgbox(format("Skip: {COLOR BLUE}I know who I'm going to choose!"))
 		closemessage
 		applymovement(SKIP_ID, Common_Movement_WalkInPlaceLeft)

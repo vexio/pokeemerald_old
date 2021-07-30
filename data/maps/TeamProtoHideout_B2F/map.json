@@ -24,8 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ProtoHideoutB2F_Object_Scientist2",
+      "flag": "FLAG_PROTO_HIDEOUT_ALL_OBJS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ProtoHideoutB2F_Object_Scientist1",
+      "flag": "FLAG_PROTO_HIDEOUT_ALL_OBJS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
@@ -49,9 +49,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "ProtoHideoutB2F_Trainer_Scientist6",
+      "flag": "FLAG_PROTO_HIDEOUT_ALL_OBJS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
@@ -63,8 +63,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ProtoHideoutB2F_Trainer_Scientist4",
+      "flag": "FLAG_PROTO_HIDEOUT_ALL_OBJS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
@@ -76,8 +76,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ProtoHideoutB2F_Trainer_Scientist5",
+      "flag": "FLAG_PROTO_HIDEOUT_ALL_OBJS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROTO_GRUNT_F",
@@ -88,9 +88,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "ProtoHideoutB2F_Trainer_Grunt3",
+      "flag": "FLAG_PROTO_HIDEOUT_ALL_OBJS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -102,8 +102,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ProtoHideoutB2F_EventScript_Revive",
+      "flag": "FLAG_ITEM_PROTOHIDEOUT_REVIVE"
     }
   ],
   "warp_events": [
@@ -138,8 +138,8 @@
       "x": 8,
       "y": 18,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_EVERSTONE",
+      "flag": "FLAG_HIDDEN_ITEM_PROTOHIDEOUT_EVERSTONE"
     }
   ]
 }

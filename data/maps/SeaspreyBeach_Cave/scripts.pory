@@ -1,0 +1,12 @@
+mapscripts SeaspreyBeach_Cave_MapScripts {}
+
+script SeaspreyBeachCave_Trainer_Ranger {
+	trainerbattle_single(TRAINER_RANGER_NIKOLAI, format("{COLOR BLUE}A-ha! Caught you red-handed!"), format("After seeing this battle, I can tell you are a good trainer!"))
+	msgbox(format("{COLOR BLUE}If I ever catch a trainer not treating their Pokémon well, I would give them a battle of their lives!"), MSGBOX_NPC)
+	end
+}
+script SeaspreyBeachCave_Trainer_Hiker {
+	trainerbattle_single(TRAINER_HIKER_RODRIGO, format("{COLOR BLUE}Ho ho!\pI battle you'd like, I presume!"), format("Ho ho!\nGreat battle!"))
+	msgbox(format("{COLOR BLUE}Ho ho!\pI love me a good battle once in a while."), MSGBOX_NPC)
+	end
+}

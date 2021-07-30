@@ -1111,9 +1111,10 @@ script CanvasTown_Mapscript_MomArrives {
 		applymovement(4, CanvasTown_MomArrives_Movement_0)
 		waitmovement(0)
 		playse(SE_PIN)
+		waitse
 		msgbox(format("Dad:{COLOR BLUE} {PLAYER}!"))
 		applymovement(4, CanvasTown_MomArrives_Movement_1)
-		delay(10)
+		delay(16)
 		playse(SE_JITE_PYOKO)
 		waitmovement(0)
 		msgbox(format("Dad:{COLOR BLUE} She's flying in right now!\pQuick, come here!"))
@@ -1259,6 +1260,7 @@ script CanvasTown_Trigger_RivalBattle {
 		closemessage
 		delay(10)
 		applymovement(7, Common_Movement_QuestionMark)
+		playse(SE_PIN)
 		waitmovement(0)
 		msgbox(format("Skip: {COLOR BLUE}Is that an extra {COLOR GREEN}Pokédex{COLOR BLUE}?\pI think I'll be needing one of those!"))
 		msgbox(format("{COLOR GREEN}Skip{COLOR DARK_GREY} snatches a {COLOR GREEN}Pokédex{COLOR DARK_GREY} from {COLOR GREEN}{PLAYER}"))

@@ -1129,3 +1129,13 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/TeamProtoHideout_B3F/scripts.inc"
 
 	.include "data/maps/DavnridgeTown_House5/scripts.inc"
+
+	.include "data/maps/SeaspreyBeach_Cave/scripts.inc"
+
+	.include "data/maps/VictoryRoad_Outside/scripts.inc"
+
+	.include "data/maps/Ryoko_Catacombs/scripts.inc"
+
+	.include "data/maps/EnclavaTown_House1/scripts.inc"
+
+	.include "data/maps/ShilouWoods_Deep/scripts.inc"

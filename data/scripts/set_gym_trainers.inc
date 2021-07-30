@@ -45,11 +45,11 @@ LavaridgeTown_Gym_SetGymTrainers:: @ 8271FCE
 	return
 
 PetalburgCity_Gym_SetGymTrainers:: @ 8271FE7
-	settrainerflag TRAINER_RANDALL
-	settrainerflag TRAINER_PARKER
-	settrainerflag TRAINER_GEORGE
-	settrainerflag TRAINER_BERKE
-	settrainerflag TRAINER_MARY
+	settrainerflag TRAINER_HIKER_RODRIGO
+	settrainerflag TRAINER_RICH_BOY_PARKER
+	settrainerflag TRAINER_BLACK_BELT_GEORGE
+	settrainerflag TRAINER_LEADER_APOLLO_1
+	settrainerflag TRAINER_BUG_MANIAC_DARIO
 	settrainerflag TRAINER_ALEXIA
 	settrainerflag TRAINER_JODY
 	return

@@ -2,7 +2,7 @@
   "id": "MAP_WISP_FOREST",
   "name": "WispForest",
   "layout": "LAYOUT_WISP_FOREST",
-  "music": "MUS_RG_T_MORI",
+  "music": "MUS_RG_P_TOWER",
   "region_map_section": "MAPSEC_ROUTE_3",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "NULL",
+      "script": "ShilouWoods_Trainer_BugManiac_1",
       "flag": "0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "NULL",
+      "script": "ShilouWoods_Trainer_BugManiac_2",
       "flag": "0"
     },
     {
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
       "x": 22,
       "y": 5,
       "elevation": 3,
@@ -63,21 +63,47 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "NULL",
+      "script": "ShilouWoods_Trainer_PsychicM",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
-      "x": 31,
-      "y": 21,
+      "x": 29,
+      "y": 5,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ShilouWoods_Object_LittleGirl",
+      "flag": "FLAG_SHILOUWOODS_GHOST_BOY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 14,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ShilouWoods_Trainer_BugCatcher",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 30,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_1"
     }
   ],
   "warp_events": [
@@ -113,14 +139,21 @@
       "x": 44,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_WISP_FOREST",
+      "dest_map": "MAP_ROUTE110",
       "dest_warp_id": 0
     },
     {
       "x": 45,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_WISP_FOREST",
+      "dest_map": "MAP_ROUTE110",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 30,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SHILOU_WOODS_DEEP",
       "dest_warp_id": 0
     }
   ],
@@ -139,10 +172,34 @@
     {
       "type": "hidden_item",
       "x": 32,
-      "y": 23,
+      "y": 21,
       "elevation": 3,
       "item": "ITEM_NONE",
       "flag": "FLAG_TEMP_1"
+    },
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ShilouWoods_Sign_DeeperWoodsWarp"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ShilouWoods_Sign_DeeperWoodsWarp"
     }
   ]
 }

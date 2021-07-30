@@ -1,1 +1,44 @@
 mapscripts TeamProtoHideout_B2F_MapScripts {}
+
+// trainers 
+script ProtoHideoutB2F_Trainer_Grunt3 {
+	trainerbattle_single(TRAINER_GRUNT_HIDEOUT_3, format("{COLOR RED}You!\nYou're the intruder!"), format("Blasted!"))
+	msgbox(format("{COLOR RED}You are quite the strong trainer, but you wouldn't stand a chance against {COLOR GREEN}Apollo{COLOR RED}!"), MSGBOX_NPC)
+	end
+}
+script ProtoHideoutB2F_Trainer_Scientist4 {
+	trainerbattle_single(TRAINER_SCIENTIST_HIDEOUT_4, format("{COLOR BLUE}According to my calculations, you're not going to win this battle!"), format("I guess my numbers were slightly off..."))
+	msgbox(format("{COLOR BLUE}My margin of error was very minimal, but alas it caused my downfall."), MSGBOX_NPC)
+	end
+}
+script ProtoHideoutB2F_Trainer_Scientist5 {
+	trainerbattle_single(TRAINER_SCIENTIST_HIDEOUT_5, format("{COLOR BLUE}Your lack of IQ will not be able to beat my 200 IQ battle-strategy!"), format("What?\nHave I been out-smarted?"))
+	msgbox(format("{COLOR BLUE}No one has out-smarted me in a Pokémon battle..."), MSGBOX_NPC)
+	end
+}
+script ProtoHideoutB2F_Trainer_Scientist6 {
+	trainerbattle_single(TRAINER_SCIENTIST_HIDEOUT_6, format("{COLOR BLUE}I caught you in the corner of my eye!\pNow scram!"), format("What a drag!"))
+	msgbox(format("{COLOR BLUE}I wasn't blocking you from anything crazy important, just a simple revive I use to bait the other grunts into a quick battle!"), MSGBOX_NPC)
+	end
+}
+
+// objects
+script ProtoHideoutB2F_Object_Scientist1 {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}Hm?\nOh no, I don't own any Pokémon.\pI just enjoy researching them.\pNow please, let me get back to work."), MSGBOX_AUTOCLOSE)
+	applymovement(2, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	release
+	end
+}
+
+script ProtoHideoutB2F_Object_Scientist2 {
+	lock
+	faceplayer
+	msgbox(format("{COLOR BLUE}These formulas tend to get more and more complex...\pOh, I doubt you know anything about them."), MSGBOX_AUTOCLOSE)
+	applymovement(2, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	release
+	end
+}

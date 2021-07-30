@@ -343,7 +343,7 @@ const u16 sLevelCapFlags[NUM_SOFT_CAPS] =
     FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET,
 };
 
-const u16 sLevelCaps[NUM_SOFT_CAPS] = { 16, 20, 24, 28, 34, 40, 48, 52 };
+const u16 sLevelCaps[NUM_SOFT_CAPS] = { 18, 22, 26, 30, 36, 42, 50, 54 };
 const double sLevelCapReduction[7] = { .5, .33, .25, .20, .15, .10, .05 };
 const double sRelativePartyScaling[27] =
 {

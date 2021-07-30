@@ -8,44 +8,24 @@ DavnridgeMines_Sign_LocationName::
 
 DavnridgeMines_Trigger_NoPassage::
 	lock
-	applymovement 5, Common_Movement_WalkInPlaceDown
+	applymovement 1, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
-	applymovement 5, Common_Movement_ExclamationMark
+	applymovement 1, Common_Movement_ExclamationMark
 	waitmovement 0
-	delay 15
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	compare VAR_TEMP_1, 29
-	goto_if_eq DavnridgeMines_Trigger_NoPassage_2
-DavnridgeMines_Trigger_NoPassage_1:
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceUp
+	playse SE_PIN
+	waitse
+	msgbox DavnridgeMines_Trigger_NoPassage_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight
 	waitmovement 0
-	msgbox DavnridgeMines_Trigger_NoPassage_Text_0, MSGBOX_AUTOCLOSE
-	delay 5
-	applymovement OBJ_EVENT_ID_PLAYER, DavnridgeMines_Movement_NoPassage_1
+	msgbox DavnridgeMines_Trigger_NoPassage_Text_1, MSGBOX_AUTOCLOSE
+	applymovement OBJ_EVENT_ID_PLAYER, DavnridgeMines_Movement_NoPassage_0
 	waitmovement 0
-	compare VAR_TEMP_1, 29
-	goto_if_eq DavnridgeMines_Trigger_NoPassage_5
-DavnridgeMines_Trigger_NoPassage_4:
 	release
 	end
-
-DavnridgeMines_Trigger_NoPassage_2:
-	applymovement 5, DavnridgeMines_Movement_NoPassage_0
-	waitmovement 0
-	goto DavnridgeMines_Trigger_NoPassage_1
-
-DavnridgeMines_Trigger_NoPassage_5:
-	applymovement 5, DavnridgeMines_Movement_NoPassage_2
-	waitmovement 0
-	goto DavnridgeMines_Trigger_NoPassage_4
 
 
 DavnridgeMines_Movement_NoPassage_0:
 	walk_down
-	step_end
-
-DavnridgeMines_Movement_NoPassage_1:
-	walk_left
 	step_end
 
 DavnridgeMines_Movement_NoPassage_2:
@@ -55,57 +35,70 @@ DavnridgeMines_Movement_NoPassage_2:
 	step_end
 
 DavnridgeMines_Trigger_Lilith::
-	lock
+	lockall
 	special SpawnCameraObject
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	compare VAR_TEMP_0, 27
+	compare VAR_TEMP_1, 55
 	goto_if_eq DavnridgeMines_Trigger_Lilith_2
-	compare VAR_TEMP_0, 28
+	compare VAR_TEMP_1, 56
 	goto_if_eq DavnridgeMines_Trigger_Lilith_3
-	compare VAR_TEMP_0, 29
+	compare VAR_TEMP_1, 57
 	goto_if_eq DavnridgeMines_Trigger_Lilith_4
 DavnridgeMines_Trigger_Lilith_1:
-	delay 10
-	applymovement 9, Common_Movement_WalkInPlaceDown
-	waitmovement 0
+	delay 16
 	msgbox DavnridgeMines_Trigger_Lilith_Text_0, MSGBOX_AUTOCLOSE
-	delay 10
-	applymovement 9, Common_Movement_WalkInPlaceUp
-	waitmovement 0
-	applymovement 9, Common_Movement_ExclamationMark
-	waitmovement 0
+	playmoncry SPECIES_CRANIDOS, 0
+	waitmoncry
+	delay 5
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 4
+	setvar VAR_0x8006, 2
+	setvar VAR_0x8007, 1
+	special ShakeCamera
+	waitstate
 	delay 10
 	msgbox DavnridgeMines_Trigger_Lilith_Text_1, MSGBOX_AUTOCLOSE
-	delay 5
-	compare VAR_TEMP_0, 27
+	delay 15
+	applymovement 7, Common_Movement_WalkInPlaceRight
+	waitmovement 0
+	applymovement 7, Common_Movement_QuestionMark
+	waitmovement 0
+	playse SE_PIN
+	waitse
+	msgbox DavnridgeMines_Trigger_Lilith_Text_2
+	applymovement 7, Common_Movement_ExclamationMark
+	waitmovement 0
+	playse SE_PIN
+	waitse
+	msgbox DavnridgeMines_Trigger_Lilith_Text_3
+	compare VAR_TEMP_1, 55
 	goto_if_eq DavnridgeMines_Trigger_Lilith_9
-	compare VAR_TEMP_0, 28
+	compare VAR_TEMP_1, 56
 	goto_if_eq DavnridgeMines_Trigger_Lilith_10
-	compare VAR_TEMP_0, 29
+	compare VAR_TEMP_1, 57
 	goto_if_eq DavnridgeMines_Trigger_Lilith_11
 DavnridgeMines_Trigger_Lilith_8:
-	special RemoveCameraObject
 	delay 10
-	msgbox DavnridgeMines_Trigger_Lilith_Text_2, MSGBOX_AUTOCLOSE
-	compare VAR_TEMP_0, 28
+	msgbox DavnridgeMines_Trigger_Lilith_Text_4, MSGBOX_AUTOCLOSE
+	compare VAR_TEMP_1, 56
 	goto_if_eq DavnridgeMines_Trigger_Lilith_16
-	applymovement 9, DavnridgeMines_Lilith_Movement_4
+	applymovement 7, DavnridgeMines_Lilith_Movement_5
 	waitmovement 0
 DavnridgeMines_Trigger_Lilith_15:
-	removeobject 9
-	playse SE_KAIDAN
+	removeobject 7
+	special RemoveCameraObject
 	setflag FLAG_DAVNRIDGEMINES_LILITH
 	setvar VAR_DAVNRIDGEMINES_STATE, 1
-	release
+	releaseall
 	end
 
 DavnridgeMines_Trigger_Lilith_2:
-	applymovement OBJ_EVENT_ID_CAMERA, DavnridgeMines_Lilith_CMovement_1
+	applymovement OBJ_EVENT_ID_CAMERA, DavnridgeMines_Lilith_CMovement_0
 	waitmovement 0
 	goto DavnridgeMines_Trigger_Lilith_1
 
 DavnridgeMines_Trigger_Lilith_3:
-	applymovement OBJ_EVENT_ID_CAMERA, DavnridgeMines_Lilith_CMovement_0
+	applymovement OBJ_EVENT_ID_CAMERA, DavnridgeMines_Lilith_CMovement_1
 	waitmovement 0
 	goto DavnridgeMines_Trigger_Lilith_1
 
@@ -115,102 +108,116 @@ DavnridgeMines_Trigger_Lilith_4:
 	goto DavnridgeMines_Trigger_Lilith_1
 
 DavnridgeMines_Trigger_Lilith_9:
-	applymovement 9, DavnridgeMines_Lilith_Movement_1
-	applymovement OBJ_EVENT_ID_CAMERA, DavnridgeMines_Lilith_CMovement_4
+	applymovement 7, DavnridgeMines_Lilith_Movement_1
+	applymovement OBJ_EVENT_ID_CAMERA, DavnridgeMines_Lilith_CMovement_3
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	goto DavnridgeMines_Trigger_Lilith_8
 
 DavnridgeMines_Trigger_Lilith_10:
-	applymovement 9, DavnridgeMines_Lilith_Movement_0
-	applymovement OBJ_EVENT_ID_CAMERA, DavnridgeMines_Lilith_CMovement_3
+	applymovement 7, DavnridgeMines_Lilith_Movement_2
+	applymovement OBJ_EVENT_ID_CAMERA, DavnridgeMines_Lilith_CMovement_4
 	waitmovement 0
 	goto DavnridgeMines_Trigger_Lilith_8
 
 DavnridgeMines_Trigger_Lilith_11:
-	applymovement 9, DavnridgeMines_Lilith_Movement_2
+	applymovement 7, DavnridgeMines_Lilith_Movement_3
 	applymovement OBJ_EVENT_ID_CAMERA, DavnridgeMines_Lilith_CMovement_5
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	goto DavnridgeMines_Trigger_Lilith_8
 
 DavnridgeMines_Trigger_Lilith_16:
-	applymovement 9, DavnridgeMines_Lilith_Movement_3
+	applymovement 7, DavnridgeMines_Lilith_Movement_4
 	waitmovement 0
 	goto DavnridgeMines_Trigger_Lilith_15
 
 
 DavnridgeMines_Lilith_CMovement_0:
 	walk_down
-	walk_down
-	walk_down
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 DavnridgeMines_Lilith_CMovement_1:
-	walk_right
-	walk_down
-	walk_down
-	walk_down
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 DavnridgeMines_Lilith_CMovement_2:
+	walk_up
 	walk_left
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-DavnridgeMines_Lilith_Movement_0:
-	walk_up
-	walk_up
+	walk_left
+	walk_left
 	step_end
 
 DavnridgeMines_Lilith_Movement_1:
-	walk_up
-	walk_up
-	walk_up
-	walk_in_place_left
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_up
 	step_end
 
 DavnridgeMines_Lilith_Movement_2:
-	walk_up
-	walk_up
-	walk_up
-	walk_in_place_right
-	step_end
-
-DavnridgeMines_Lilith_CMovement_3:
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-DavnridgeMines_Lilith_CMovement_4:
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	step_end
-
-DavnridgeMines_Lilith_CMovement_5:
-	walk_up
-	walk_up
-	walk_up
+	walk_right
 	walk_right
 	step_end
 
 DavnridgeMines_Lilith_Movement_3:
 	walk_right
+	walk_right
+	walk_right
+	walk_in_place_down
+	step_end
+
+DavnridgeMines_Lilith_CMovement_3:
+	walk_right
+	walk_right
+	walk_right
 	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
+	step_end
+
+DavnridgeMines_Lilith_CMovement_4:
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+DavnridgeMines_Lilith_CMovement_5:
+	walk_right
+	walk_right
+	walk_right
+	walk_down
 	step_end
 
 DavnridgeMines_Lilith_Movement_4:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+DavnridgeMines_Lilith_Movement_5:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
 	walk_up
 	walk_up
 	walk_up
@@ -268,28 +275,38 @@ DavnridgeMines_Sign_LocationName_Text_0:
 	.string "the sign...$"
 
 DavnridgeMines_Trigger_NoPassage_Text_0:
-	.string "{COLOR BLUE}Hey bud!\n"
-	.string "This are over here is off limits right\l"
-	.string "now.\p"
-	.string "We're running some explosion tests, so\n"
-	.string "no one is allowed through.\p"
-	.string "Come back later when we're done.$"
+	.string "{COLOR BLUE}Whoa whoa!$"
+
+DavnridgeMines_Trigger_NoPassage_Text_1:
+	.string "{COLOR BLUE}This area is off limits!\p"
+	.string "We're running some explosive tests in\n"
+	.string "the mine up ahead.\p"
+	.string "Come back later.$"
 
 DavnridgeMines_Trigger_Lilith_Text_0:
-	.string "???: {COLOR RED}Good job Sudowoodo!\n"
-	.string "Now, we should head back to the Gym.$"
+	.string "???: {COLOR RED}Cranidos, use Rock Tomb!$"
 
 DavnridgeMines_Trigger_Lilith_Text_1:
-	.string "???: {COLOR RED}What are you doing in these parts?$"
+	.string "???: {COLOR RED}Great job Cranidos!\n"
+	.string "Return!$"
 
 DavnridgeMines_Trigger_Lilith_Text_2:
-	.string "???: {COLOR RED}Wait, you don't need to tell me!\p"
-	.string "I can tell you're a trainer who wants to\n"
-	.string "challenge me!\p"
-	.string "{COLOR DARK_GREY}Lilith: {COLOR RED}Hi, my name is Lilith.\n"
-	.string "I'm {COLOR GREEN}Davnridge's Gym Leader{COLOR RED}!\p"
-	.string "Come meet me at my Gym and I'll give you\n"
-	.string "a challenge!$"
+	.string "???: {COLOR RED}You don't look like one of my\n"
+	.string "miners...$"
+
+DavnridgeMines_Trigger_Lilith_Text_3:
+	.string "???: {COLOR RED}Oh!\p"
+	.string "You're a trainer!$"
+
+DavnridgeMines_Trigger_Lilith_Text_4:
+	.string "???: {COLOR RED}Nice to meet you, trainer!\p"
+	.string "My name is {COLOR GREEN}Lilith{COLOR RED} and I'm the {COLOR GREEN}Davnridge\n"
+	.string "Pokémon Gym Leader{COLOR RED}.\p"
+	.string "I assume you came all this way to\n"
+	.string "challenge me, so I'll be waiting at my\l"
+	.string "gym!\p"
+	.string "{COLOR DARK_GREY}Lilith:{COLOR RED} I look forward to challenging\n"
+	.string "you, trainer!$"
 
 DavnridgeMines_Trainer_Miner_1_Text_0:
 	.string "{COLOR BLUE}Wha' brings you to th' mines?$"
@@ -348,8 +365,7 @@ DavnridgeMines_Trainer_Maniac_Text_1:
 
 DavnridgeMines_Trainer_Maniac_Text_2:
 	.string "{COLOR BLUE}There is a very rare chance to find a\n"
-	.string "Gligar in these mines.\p"
-	.string "Surprisingly, there aren't any Zubats...$"
+	.string "Gligar in these mines.$"
 
 DavnridgeMines_Trainer_BlackBelt_Text_0:
 	.string "{COLOR BLUE}Hai-ya!$"

@@ -101,6 +101,15 @@ Common_Movement_WalkUp: @ 82725C9
 	walk_up
 	step_end
 
+Common_Movement_WalkDown:
+	walk_down
+	step_end
+
+Common_Movement_WalkDown2:
+	walk_down
+	walk_down
+	step_end
+
 Common_Movement_JumpInPlaceLeft:
 	jump_in_place_left
 	step_end
@@ -117,4 +126,8 @@ Common_Movement_JumpInPlaceDown:
 Common_Movement_WalkUp2:: @ 82725CB
 	walk_up
 	walk_up
+	step_end
+
+Common_Movement_WalkLeft:
+	walk_left
 	step_end

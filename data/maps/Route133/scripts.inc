@@ -17,7 +17,7 @@ Route133_EventScript_Linda:: @ 81F75D1
 	end
 
 Route133_EventScript_Warren:: @ 81F75E8
-	trainerbattle_single TRAINER_WARREN, Route133_Text_WarrenIntro, Route133_Text_WarrenDefeat
+	trainerbattle_single TRAINER_PSYCHIC_CALE, Route133_Text_WarrenIntro, Route133_Text_WarrenDefeat
 	msgbox Route133_Text_WarrenPostBattle, MSGBOX_AUTOCLOSE
 	end
 

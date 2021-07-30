@@ -3773,7 +3773,7 @@ const struct Item gItems[] =
 
     [ITEM_SS_TICKET] =
     {
-        .name = _("S.S. Ticket"),
+        .name = _("Cobalt Ticket"),
         .itemId = ITEM_SS_TICKET,
         .price = 0,
         .description = sSSTicketDesc,
@@ -5249,7 +5249,7 @@ const struct Item gItems[] =
 
     [ITEM_SAPPHIRE] =
     {
-        .name = _("Sapphire"),
+        .name = _("Akumutome"),
         .itemId = ITEM_SAPPHIRE,
         .price = 0,
         .description = sSapphireDesc,

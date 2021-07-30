@@ -487,6 +487,13 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_BREAKABLEROCK  0x1152
 #define OBJ_EVENT_PAL_TAG_PUSHABLEBOULDER 0x1153
 #define OBJ_EVENT_PAL_TAG_COOK           0x1154
+#define OBJ_EVENT_PAL_TAG_LILITH         0x1155
+#define OBJ_EVENT_PAL_TAG_BRUCE          0x1156
+#define OBJ_EVENT_PAL_TAG_BERNIE         0x1157
+#define OBJ_EVENT_PAL_TAG_EDGAR          0x1158
+#define OBJ_EVENT_PAL_TAG_LORRAINE       0x1159
+#define OBJ_EVENT_PAL_TAG_AIREN          0x115A
+#define OBJ_EVENT_PAL_TAG_JULES          0x115B
 #define OBJ_EVENT_PAL_TAG_NONE           0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -580,6 +587,13 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_BreakableRock, OBJ_EVENT_PAL_TAG_BREAKABLEROCK},
     {gObjectEventPalette_PushableBoulder, OBJ_EVENT_PAL_TAG_PUSHABLEBOULDER},
     {gObjectEventPalette_Cook, OBJ_EVENT_PAL_TAG_COOK},
+    {gObjectEventPalette_Roxanne, OBJ_EVENT_PAL_TAG_LILITH},
+    {gObjectEventPalette_Brawly, OBJ_EVENT_PAL_TAG_BRUCE},
+    {gObjectEventPalette_Wattson, OBJ_EVENT_PAL_TAG_BERNIE},
+    {gObjectEventPalette_Flannery, OBJ_EVENT_PAL_TAG_EDGAR},
+    {gObjectEventPalette_Norman, OBJ_EVENT_PAL_TAG_LORRAINE},
+    {gObjectEventPalette_Winona, OBJ_EVENT_PAL_TAG_AIREN},
+    {gObjectEventPalette_Liza, OBJ_EVENT_PAL_TAG_JULES},
     {NULL,                                 0x0000},
 };
 

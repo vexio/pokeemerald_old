@@ -1111,9 +1111,10 @@ CanvasTown_Mapscript_MomArrives_1:
 	applymovement 4, CanvasTown_MomArrives_Movement_0
 	waitmovement 0
 	playse SE_PIN
+	waitse
 	msgbox CanvasTown_Mapscript_MomArrives_Text_0
 	applymovement 4, CanvasTown_MomArrives_Movement_1
-	delay 10
+	delay 16
 	playse SE_JITE_PYOKO
 	waitmovement 0
 	msgbox CanvasTown_Mapscript_MomArrives_Text_1
@@ -1273,6 +1274,7 @@ CanvasTown_Trigger_RivalBattle_10:
 	closemessage
 	delay 10
 	applymovement 7, Common_Movement_QuestionMark
+	playse SE_PIN
 	waitmovement 0
 	msgbox CanvasTown_Trigger_RivalBattle_Text_4
 	msgbox CanvasTown_Trigger_RivalBattle_Text_5

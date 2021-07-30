@@ -1,22 +1,22 @@
 raw `
-LilycoveCity_MapScripts:: @ 81E2B3C
-	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_OnTransition
-	map_script MAP_SCRIPT_ON_LOAD, LilycoveCity_OnLoad
-	.byte 0
-
-LilycoveCity_OnTransition: @ 81E2B47
-	setflag FLAG_VISITED_LILYCOVE_CITY
-	setvar VAR_CONTEST_HALL_STATE, 0
-	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
-	call Common_EventScript_SetupRivalGfxId
-	compare VAR_CYPRESS_PROTO_EVENT_STATE, 5
-	call_if_eq MystCity_Mapscript_RivalCrawdauntPub
-	end
-
-LilycoveCity_OnLoad: @ 81E2B61
-	call_if_unset FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, LilycoveCity_EventScript_SetWailmerMetatiles
-	end
+@LilycoveCity_MapScripts:: @ 81E2B3C
+@	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_OnTransition
+@	map_script MAP_SCRIPT_ON_LOAD, LilycoveCity_OnLoad
+@	.byte 0
+@
+@LilycoveCity_OnTransition: @ 81E2B47
+@	setflag FLAG_VISITED_LILYCOVE_CITY
+@	setvar VAR_CONTEST_HALL_STATE, 0
+@	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER
+@	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+@	call Common_EventScript_SetupRivalGfxId
+@	compare VAR_CYPRESS_PROTO_EVENT_STATE, 5
+@	call_if_eq MystCity_Mapscript_RivalCrawdauntPub
+@	end
+@
+@LilycoveCity_OnLoad: @ 81E2B61
+@	call_if_unset FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, LilycoveCity_EventScript_SetWailmerMetatiles
+@	end
 
 LilycoveCity_EventScript_SetWailmerMetatiles:: @ 81E2B6B
 	setmetatile 76, 12, METATILE_Lilycove_Wailmer0, 1
@@ -771,6 +771,30 @@ LilycoveCity_Text_HoneymoonVowToSeeRarePokemon: @ 81E49F4
 	.string "I mean, we are totally happy!$"
 `
 
+const LARS_2 = 23
+const MOM = 24
+const PLAYER = OBJ_EVENT_ID_PLAYER
+const CAMERA = OBJ_EVENT_ID_CAMERA
+const SKIP = 21
+const LARS = 22
+
+mapscripts LilycoveCity_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		setflag(FLAG_VISITED_LILYCOVE_CITY)
+		if (var(VAR_PROTO_HIDEOUT) == 2) {
+			setobjectxyperm(LARS_2, 32, 32)
+			setobjectxyperm(MOM, 31, 32)
+		}
+		if (var(VAR_CYPRESS_PROTO_EVENT_STATE) == 5) {
+			setobjectxyperm(SKIP, 15, 42)
+			setobjectxyperm(LARS, 15, 39)
+		}
+	}
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_PROTO_HIDEOUT, 2: MystCity_Mapscript_ExitProtoHideout
+	]
+}
+
 script MystCity_Object_BlackBelt {
 	msgbox(format("{COLOR BLUE}I want to battle the {COLOR GREEN}Myst City Gym{COLOR BLUE}, but the leader is supposedly 'on tour' at the moment...\pI don't know when he will come back."), MSGBOX_NPC)
 	end
@@ -855,17 +879,6 @@ script MystCity_Sign_GymSignClosed {
 script MystCity_Sign_LabSign {
     msgbox(format("{COLOR LIGHT_GREEN}Cypress Laboratory"), MSGBOX_SIGN, MSGBOX_SUB_METAL)
     end
-}
-
-const PLAYER = OBJ_EVENT_ID_PLAYER
-const CAMERA = OBJ_EVENT_ID_CAMERA
-const SKIP = 21
-const LARS = 22
-
-script MystCity_Mapscript_RivalCrawdauntPub {
-	setobjectxyperm(SKIP, 15, 42)
-	setobjectxyperm(LARS, 15, 39)
-	return
 }
 
 script MystCity_Trigger_CrawdauntPub {
@@ -1015,4 +1028,82 @@ movement MystCity_CrawdauntPub_Movement_5_2 {
 	walk_right * 5
 	walk_up * 3
 	set_invisible
+}
+
+script MystCity_Mapscript_ExitProtoHideout {
+	lockall
+	applymovement(MOM, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	msgbox(format("Mom: {COLOR RED}Lars, what is taking them so long?\pI thought you said this was going to be quick..."))
+	applymovement(LARS_2, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	msgbox(format("Lars: {COLOR BLUE}They shouldn't be much longer..."), MSGBOX_AUTOCLOSE)
+	delay(20)
+	applymovement(MOM, Common_Movement_WalkInPlaceUp)
+	applymovement(LARS_2, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	applymovement(MOM, Common_Movement_ExclamationMark)
+	applymovement(LARS_2, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	playse(SE_PIN)
+	waitse
+	delay(15)
+	msgbox(format("Mom: {COLOR RED}There you are {COLOR GREEN}{PLAYER}{COLOR RED}!"))
+	waitmessage
+	closemessage
+	applymovement(LARS_2, Common_Movement_WalkUp)
+	waitmovement(0)
+	msgbox(format("Lars: {COLOR BLUE}Well, what information did you get?"))
+	delay(10)
+	closemessage
+	fadescreen(FADE_TO_BLACK)
+	delay(120)
+	applymovement(MOM, Common_Movement_WalkUp)
+	waitmovement(0)
+	fadescreen(FADE_FROM_BLACK)
+	delay(10)
+	msgbox(format("Lars: {COLOR BLUE}Wow.\pThat is a lot to unpack."))
+	applymovement(MOM, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	msgbox(format("Mom: {COLOR RED}Lars, those books they're translating contain some very dangerous information if in the wrong hands."))
+	applymovement(LARS_2, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	msgbox(format("Lars: {COLOR BLUE}I know.\nThis isn't good...\pOf course {COLOR GREEN}Apollo{COLOR BLUE} is behind all of this..."))
+	applymovement(MOM, Common_Movement_FaceUp)
+	applymovement(LARS_2, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	msgbox(format("Lars: {COLOR GREEN}{PLAYER}{COLOR BLUE}.\pI know I've already sent you on a wild chase for {COLOR GREEN}Team Proto{COLOR BLUE}, but I need you to get to {COLOR GREEN}Sunflora Town{COLOR BLUE}, which is south of {COLOR GREEN}Altos City{COLOR BLUE}.\p{COLOR DARK_GREY}Lars:{COLOR BLUE} Underneath the town lies the {COLOR GREEN}Ryoko Catacombs{COLOR BLUE}.\pI suspect {COLOR GREEN}Team Proto{COLOR BLUE} might be hiding out in there to further their agenda."))
+	applymovement(MOM, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	msgbox(format("Mom: {COLOR RED}You're going to need this to cross {COLOR GREEN}Cobalt Sea{COLOR RED}."), MSGBOX_AUTOCLOSE)
+	delay(5)
+	giveitem(ITEM_SS_TICKET, 1)
+	msgbox(format("Mom: {COLOR RED}If you haven't been to {COLOR GREEN}Cobalt Sea{COLOR RED} yet, it's to the east of here."))
+	applymovement(LARS_2, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	msgbox(format("Lars: {COLOR BLUE}Now, make your way over to {COLOR GREEN}Sunflora Town{COLOR BLUE}.\pI'll be there waiting for you."), MSGBOX_AUTOCLOSE)
+	applymovement(LARS_2, MystCity_ExitProtoHideout_Movement_0)
+	waitmovement(0)
+	removeobject(LARS_2)
+	applymovement(MOM, Common_Movement_WalkInPlaceUp)
+	waitmovement(0)
+	msgbox(format("Mom: {COLOR RED}Please stay safe, and keep training your Pokémon!\pIf you have any questions for me, I'll be in my Lab."), MSGBOX_AUTOCLOSE)
+	applymovement(MOM, MystCity_ExitProtoHideout_Movement_1)
+	waitmovement(0)
+	removeobject(MOM)
+	setflag(FLAG_MYSTCITY_EXIT_PROTO_HIDEOUT)
+	setvar(VAR_PROTO_HIDEOUT, 3)
+	releaseall
+	end
+
+
+}
+movement MystCity_ExitProtoHideout_Movement_0 {
+	walk_down
+	walk_left * 5
+	walk_up * 8
+}
+movement MystCity_ExitProtoHideout_Movement_1 {
+	walk_left * 4
+	walk_down * 5
 }

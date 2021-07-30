@@ -676,9 +676,9 @@
 #define FLAG_CRAWDAUNTPUB_SODA_POP_DUDE  0x27A // Soda pop dude in Crawdaunt Pub
 #define FLAG_CRAWDAUNTPUB_BARTENDER  0x27B
 #define FLAG_PROTO_HIDEOUT_B1F_OBJ  0x27C // Skip and Bartender flags
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
+#define FLAG_PROTO_HIDEOUT_ALL_OBJS  0x27D // All grunts and scientists
+#define FLAG_MYSTCITY_EXIT_PROTO_HIDEOUT  0x27E
+#define FLAG_SHILOUWOODS_GHOST_BOY  0x27F
 #define FLAG_UNUSED_0x280  0x280 // Unused Flag
 #define FLAG_UNUSED_0x281  0x281 // Unused Flag
 #define FLAG_UNUSED_0x282  0x282 // Unused Flag
@@ -1251,17 +1251,17 @@
 #define FLAG_HIDDEN_ITEM_FROSTPINE_CITY_BURN_ITEM                   0x4A4
 #define FLAG_HIDDEN_ITEM_SEASPREY_BEACH_WATER_STONE                 0x4A5
 #define FLAG_HIDDEN_ITEM_SEASPREY_BEACH_HYPER_POTION                0x4A6
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
+#define FLAG_ITEM_ALNERWICK_LOWLANDS_SUPER_POTION                   0x4A7
+#define FLAG_ITEM_DAVNRIDGE_ALCOVE_ENERGY_ROOT                      0x4A8
+#define FLAG_ITEM_MYST_CITY_HYPER_POTION                            0x4A9
+#define FLAG_ITEM_PROTOHIDEOUT_HYPER_POTION                         0x4AA
+#define FLAG_HIDDEN_ITEM_PROTOHIDEOUT_ULTRA_BALL                    0x4AB
+#define FLAG_HIDDEN_ITEM_PROTOHIDEOUT_EVERSTONE                     0x4AC
+#define FLAG_ITEM_PROTOHIDEOUT_REVIVE                               0x4AD
+#define FLAG_HIDDEN_ITEM_PROTOHIDEOUT_ABILITY_CAPSULE               0x4AE
+#define FLAG_ITEM_PROTOHIDEOUT_BASEMENT_KEY                         0x4AF
+#define FLAG_ITEM_FROSTPINE_CITY_LUCKY_EGG                          0x4B0
+#define FLAG_HIDDEN_ITEM_PROTOHIDEOUT_FULL_RESTORE                  0x4B1
 #define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
 #define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
 #define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag

@@ -27,7 +27,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 36,
+      "x": 66,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -40,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 29,
+      "x": 59,
       "y": 53,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -50,39 +50,104 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route104_EventScript_ItemPokeBall",
       "flag": "FLAG_ITEM_ROUTE_104_POKE_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 25,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 26,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 28,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 41,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "x": 63,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 17,
-      "y": 4,
+      "x": 18,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_DAVNRIDGE_MINES",
       "dest_warp_id": 0
     },
     {
-      "x": 10,
+      "x": 40,
       "y": 38,
       "elevation": 3,
       "dest_map": "MAP_PETALBURG_WOODS",
       "dest_warp_id": 2
     },
     {
-      "x": 11,
+      "x": 41,
       "y": 38,
       "elevation": 3,
       "dest_map": "MAP_PETALBURG_WOODS",
       "dest_warp_id": 3
     },
     {
-      "x": 32,
+      "x": 62,
       "y": 42,
       "elevation": 3,
       "dest_map": "MAP_PETALBURG_WOODS",
       "dest_warp_id": 4
     },
     {
-      "x": 33,
+      "x": 63,
       "y": 42,
       "elevation": 3,
       "dest_map": "MAP_PETALBURG_WOODS",
@@ -92,7 +157,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 17,
+      "x": 47,
       "y": 51,
       "elevation": 3,
       "var": "VAR_ROUTE104_STATE",
@@ -103,7 +168,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 20,
+      "x": 50,
       "y": 50,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -111,7 +176,7 @@
     },
     {
       "type": "sign",
-      "x": 27,
+      "x": 57,
       "y": 66,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -119,7 +184,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 17,
+      "x": 47,
       "y": 8,
       "elevation": 3,
       "item": "ITEM_AWAKENING",
@@ -127,7 +192,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 26,
+      "x": 56,
       "y": 15,
       "elevation": 3,
       "item": "ITEM_ENERGY_ROOT",
@@ -135,7 +200,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 14,
+      "x": 44,
       "y": 55,
       "elevation": 3,
       "item": "ITEM_POTION",
@@ -143,7 +208,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 16,
+      "x": 46,
       "y": 72,
       "elevation": 3,
       "item": "ITEM_ANTIDOTE",
@@ -151,7 +216,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 16,
+      "x": 46,
       "y": 64,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
@@ -159,8 +224,8 @@
     },
     {
       "type": "sign",
-      "x": 15,
-      "y": 5,
+      "x": 20,
+      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "DavnridgeAlcove_Sign_CaveSign"

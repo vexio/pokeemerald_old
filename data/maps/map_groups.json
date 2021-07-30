@@ -101,7 +101,8 @@
     "Alnerwick_Library",
     "EnclavaTown_House_2",
     "EnclavaTower_3F",
-    "MystCity_House_2"
+    "MystCity_House_2",
+    "VictoryRoad_Outside"
   ],
   "gMapGroup1": [
     "LittlerootTown_BrendansHouse_1F",
@@ -142,7 +143,8 @@
     "LavaridgeTown_House",
     "LavaridgeTown_Mart",
     "LavaridgeTown_PokemonCenter_1F",
-    "LavaridgeTown_PokemonCenter_2F"
+    "LavaridgeTown_PokemonCenter_2F",
+    "EnclavaTown_House1"
   ],
   "gMapGroup5": [
     "FallarborTown_Mart",
@@ -464,7 +466,10 @@
     "EnclavaTower_2F",
     "Davnridge_Mines_B1",
     "NewMap1",
-    "WispForest"
+    "WispForest",
+    "SeaspreyBeach_Cave",
+    "Ryoko_Catacombs",
+    "ShilouWoods_Deep"
   ],
   "gMapGroup25": [
     "SecretBase_RedCave1",

@@ -53,7 +53,7 @@ movement ProtoHideoutB1F_Movement_1 {
 // trainers
 script ProtoHideoutB1F_Trainer_Grunt1 {
 	trainerbattle_single(TRAINER_GRUNT_HIDEOUT_1, format("{COLOR BLUE}Hey!\nYou're not suppose to be here!"), format("Gah!"))
-	msgbox(format("{COLOR BLUE}How did a kid like you find yourself down here?\p"), MSGBOX_NPC)
+	msgbox(format("{COLOR BLUE}How did a kid like you find yourself down here?"), MSGBOX_NPC)
 	end
 }
 script ProtoHideoutB1F_Trainer_Grunt2 {

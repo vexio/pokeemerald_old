@@ -129,17 +129,6 @@ EmoteTest::
 	end
 
 
-HaunterEvolutionTest_Script::
-	lock
-	setflag FLAG_SYS_NATIONAL_DEX
-	special EnableNationalPokedex
-	givemon SPECIES_HAUNTER, 30, ITEM_POTION
-	giveitem ITEM_LINK_CABLE
-	playse SE_PIN
-	release
-	end
-
-
 EnclavaTown_PC_Object_HexManiac_Text_0:
 	.string "{COLOR RED}...$"
 

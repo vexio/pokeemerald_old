@@ -118,7 +118,20 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 38,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_SEASPREY_BEACH_CAVE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 20,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_SEASPREY_BEACH_CAVE",
+      "dest_warp_id": 1
+    }
   ],
   "coord_events": [
 
@@ -126,8 +139,8 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 35,
-      "y": 18,
+      "x": 33,
+      "y": 8,
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_108_RARE_CANDY"

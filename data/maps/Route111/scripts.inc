@@ -505,7 +505,7 @@ Route111_EventScript_Daisuke:: @ 81F12F0
 	end
 
 Route111_EventScript_Wilton:: @ 81F1307
-	trainerbattle_single TRAINER_WILTON_1, Route111_Text_WiltonIntro, Route111_Text_WiltonDefeat, Route111_EventScript_RegisterWilton
+	trainerbattle_single TRAINER_SKIP2_GRASS, Route111_Text_WiltonIntro, Route111_Text_WiltonDefeat, Route111_EventScript_RegisterWilton
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route111_EventScript_RematchWilton
@@ -517,12 +517,12 @@ Route111_EventScript_RegisterWilton:: @ 81F1333
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route111_Text_WiltonRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_WILTON_1
+	register_matchcall TRAINER_SKIP2_GRASS
 	release
 	end
 
 Route111_EventScript_RematchWilton:: @ 81F1352
-	trainerbattle_rematch TRAINER_WILTON_1, Route111_Text_WiltonRematchIntro, Route111_Text_WiltonRematchDefeat
+	trainerbattle_rematch TRAINER_SKIP2_GRASS, Route111_Text_WiltonRematchIntro, Route111_Text_WiltonRematchDefeat
 	msgbox Route111_Text_WiltonPostRematch, MSGBOX_AUTOCLOSE
 	end
 

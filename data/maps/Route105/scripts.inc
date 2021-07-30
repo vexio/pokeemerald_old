@@ -147,6 +147,7 @@ EnclavaPass_Trigger_Grunts_0::
 	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 4, Common_Movement_ExclamationMark
 	applymovement 5, Common_Movement_ExclamationMark
+	playse SE_PIN
 	waitmovement 0
 	delay 15
 	msgbox EnclavaPass_Trigger_Grunts_0_Text_1, MSGBOX_AUTOCLOSE
@@ -178,6 +179,7 @@ EnclavaPass_Trigger_Grunts_1::
 	goto_if_eq EnclavaPass_Trigger_Grunts_1_4
 EnclavaPass_Trigger_Grunts_1_1:
 	delay 10
+	playbgm MUS_AJITO, 0
 	applymovement 3, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	delay 10
@@ -223,6 +225,7 @@ EnclavaPass_Trigger_Grunts_1_1:
 	compare VAR_TEMP_0, 14
 	goto_if_eq EnclavaPass_Trigger_Grunts_1_11
 EnclavaPass_Trigger_Grunts_1_8:
+	fadenewbgm MUS_NEXTROAD
 	delay 5
 	special RemoveCameraObject
 	setvar VAR_PROTOGRUNTS_ENCLAVAGORGE, 2

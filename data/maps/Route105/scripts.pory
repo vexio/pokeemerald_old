@@ -154,6 +154,7 @@ script EnclavaPass_Trigger_Grunts_0 { // if player hasn't completed enclava towe
 	applymovement(GRUNT_1, Common_Movement_ExclamationMark)
 	applymovement(GRUNT_2, Common_Movement_ExclamationMark)
 	applymovement(GRUNT_3, Common_Movement_ExclamationMark)
+	playse(SE_PIN)
 	waitmovement(0)
 	delay(15)
 	msgbox(format("Grunt 3: {COLOR RED}Hey kid!\nNothing going on here.\pNow leave before I give you a reason to!"), MSGBOX_AUTOCLOSE)
@@ -188,6 +189,7 @@ script EnclavaPass_Trigger_Grunts_1 { // player has completed enclava tower ques
 		waitmovement(0)
 	}
 	delay(10)
+	playbgm(MUS_AJITO, 0)
 	applymovement(GRUNT_1, Common_Movement_WalkInPlaceDown)
 	waitmovement(0)
 	delay(10)
@@ -236,6 +238,7 @@ script EnclavaPass_Trigger_Grunts_1 { // player has completed enclava tower ques
 		applymovement(CAMERA, EnclavaPass_Grunts_CMovement_1_3)
 		waitmovement(0)
 	}
+	fadenewbgm(MUS_NEXTROAD)
 	delay(5)
 	special(RemoveCameraObject)
 	setvar(VAR_PROTOGRUNTS_ENCLAVAGORGE, 2)

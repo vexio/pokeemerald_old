@@ -1,1 +1,76 @@
-mapscripts WispForest_MapScripts {}
+mapscripts WispForest_MapScripts {
+
+}
+
+script ShilouWoods_Sign_DirectionSign {
+	msgbox(format("{COLOR LIGHT_GREEN}Shilou Woods\p{COLOR DARK_GREY}{RIGHT_ARROW} {COLOR LIGHT_GREEN}Altos Heights\n{COLOR DARK_GREY}{DOWN_ARROW} {COLOR LIGHT_GREEN}Sunflora Town"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
+	end
+}
+script ShilouWoods_Sign_DeeperWoodsWarp {
+	lock
+	msgbox(format("It's a dark and narrow passage.\nWill you follow it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == 1) { // yes
+		warp(MAP_SHILOU_WOODS_DEEP, 0, 0, 0)
+		release
+		end
+	} else { // no
+		release
+		end
+	}
+}
+
+// little girl and lost brother mini-quest
+
+script ShilouWoods_Object_LittleGirl {
+	lock
+	if (var(VAR_SHILOUWOODS_GHOST_BOY) == 0) {
+		delay(20)
+		faceplayer
+		applymovement(VAR_LAST_TALKED, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		playse(SE_PIN)
+		waitse
+		msgbox(format("{COLOR RED}Oh!\nYou scared me!\pI was just here with my brother... but I don't know where he went.\pCould you help me find my brother?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == 1) { // yes
+			msgbox(format("{COLOR RED}Thanks stranger!\pMe and my brother were playing out in the deeper woods, but then we got split and he got lost...\pI'm too scared to go back in!"), MSGBOX_AUTOCLOSE)
+			setvar(VAR_SHILOUWOODS_GHOST_BOY, 1)
+			release
+			end
+		} else { // no
+			msgbox(format("{COLOR RED}Oh{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20} Okay{PAUSE 20}.{PAUSE 20}.{PAUSE 20}."), MSGBOX_AUTOCLOSE)
+			applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+			waitmovement(0)
+			release
+			end
+		}
+	} else {
+		faceplayer
+		msgbox(format("{COLOR RED}Me and my brother were playing out in the deeper woods...\pBut then he got lost and I couldn't find him.\pIt's too scary to go back in!"), MSGBOX_AUTOCLOSE)
+		release
+		end
+	}
+
+}
+
+// trainers
+
+script ShilouWoods_Trainer_BugCatcher {
+	trainerbattle_single(TRAINER_BUG_CATCHER_MITCH, format("{COLOR BLUE}These woods scare me!"), format("My bugs!"))
+	msgbox(format("{COLOR BLUE}Hopefully my bugs can protect me from the ghosts..."), MSGBOX_NPC)
+	end
+}
+script ShilouWoods_Trainer_BugManiac_1 {
+	trainerbattle_single(TRAINER_BUG_MANIAC_GARY, format("{COLOR BLUE}You don't seem well equipped to catch bugs!"), format("Bugs are surperior!"))
+	msgbox(format("{COLOR BLUE}Bug-type Pokémon are super-effective against Psychic, Dark and Grass-typed Pokémon."), MSGBOX_NPC)
+	end
+}
+script ShilouWoods_Trainer_PsychicM {
+	trainerbattle_single(TRAINER_PSYCHIC_CALE, format("{COLOR BLUE}The spirits here...\nThey sense your strength..."), format("Alas!\nThe strength they sensed!"))
+	msgbox(format("{COLOR BLUE}The Pokémon that roam these woods have a strong connection with the trainers that travel through.\pSometimes, the ghosts might attach themselves to a trainer."), MSGBOX_NPC)
+	end
+}
+script ShilouWoods_Trainer_BugManiac_2 {
+	trainerbattle_single(TRAINER_BUG_MANIAC_DARIO, format("{COLOR BLUE}Buzz buzz!"), format("Buzz buzz..."))
+	msgbox(format("{COLOR BLUE}I love the noises that bugs make!\pBuzz buzz!"), MSGBOX_NPC)
+	end
+}

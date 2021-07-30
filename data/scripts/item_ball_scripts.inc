@@ -673,3 +673,27 @@ FrostpineClimb_EventScript_IceStone::
 FrostpineClimb_EventScript_TMIceBeam::
 	finditem ITEM_TM13_ICE_BEAM
 	end
+
+AlnerwickLowlands_EventScript_SuperPotion::
+	finditem ITEM_SUPER_POTION
+	end
+
+MystCity_EventScript_HyperPotion::
+	finditem ITEM_HYPER_POTION
+	end
+
+ProtoHideoutB1F_EventScript_HyperPotion::
+	finditem ITEM_HYPER_POTION
+	end
+
+ProtoHideoutB2F_EventScript_Revive::
+	finditem ITEM_REVIVE
+	end
+
+ProtoHideoutB3F_EventScript_BasementKey::
+	finditem ITEM_BASEMENT_KEY
+	end
+
+FrostpineCity_EventScript_LuckyEgg::
+	finditem ITEM_LUCKY_EGG
+	end

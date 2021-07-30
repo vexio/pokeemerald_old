@@ -1,6 +1,3 @@
-Route109_MapScripts:: @ 81EE75F
-	.byte 0
-
 Route109_EventScript_StartDepartForDewford:: @ 81EE760
 	call EventScript_BackupMrBrineyLocation
 	setobjectpriority 2, MAP_ROUTE109, 0
@@ -394,7 +391,7 @@ Route109_EventScript_Edmond:: @ 81EEA82
 	end
 
 Route109_EventScript_Ricky:: @ 81EEA99
-	trainerbattle_single TRAINER_RICKY_1, Route109_Text_RickyIntro, Route109_Text_RickyDefeated, Route109_EventScript_RickyRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_GRUNT_HIDEOUT_3, Route109_Text_RickyIntro, Route109_Text_RickyDefeated, Route109_EventScript_RickyRegisterMatchCallAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route109_EventScript_RickyRematch
@@ -406,12 +403,12 @@ Route109_EventScript_RickyRegisterMatchCallAfterBattle:: @ 81EEAC5
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route109_Text_RickyRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_RICKY_1
+	register_matchcall TRAINER_GRUNT_HIDEOUT_3
 	release
 	end
 
 Route109_EventScript_RickyRematch:: @ 81EEAE4
-	trainerbattle_rematch TRAINER_RICKY_1, Route109_Text_RickyRematchIntro, Route109_Text_RickyRematchDefeated
+	trainerbattle_rematch TRAINER_GRUNT_HIDEOUT_3, Route109_Text_RickyRematchIntro, Route109_Text_RickyRematchDefeated
 	msgbox Route109_Text_RickyRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -564,8 +561,392 @@ Route109_Text_TrainerTipsSign: @ 81EF1D5
 	.string "POKéMON raised by TRAINERS are said\n"
 	.string "to grow stronger than wild POKéMON.$"
 
+Route109_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route109_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	.byte 0
+
+Route109_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	compare VAR_SS_COBALT_SIDE, 1
+	goto_if_eq Route109_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+Route109_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setobjectxyperm 1, 102, 14
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm 5, 102, 15
+	return
+
+
 CobaltSea_Sign_RouteSign::
 	msgbox CobaltSea_Sign_RouteSign_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
+CobaltSea_Sign_ShilouWoods::
+	msgbox CobaltSea_Sign_ShilouWoods_Text_0, MSGBOX_SIGN, MSGBOX_SUB_WOOD
+	end
+
+
+CobaltSea_Object_Beauty::
+	lock
+	faceplayer
+	msgbox CobaltSea_Object_Beauty_Text_0, MSGBOX_AUTOCLOSE
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+
+CobaltSea_Object_Captain::
+	lock
+	faceplayer
+	msgbox CobaltSea_Object_Captain_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 1
+	goto_if_eq CobaltSea_Object_Captain_2
+	msgbox CobaltSea_Object_Captain_Text_7, MSGBOX_AUTOCLOSE
+	release
+	end
+
+CobaltSea_Object_Captain_2:
+	checkitem ITEM_SS_TICKET, 1
+	compare VAR_RESULT, 1
+	goto_if_eq CobaltSea_Object_Captain_5
+	msgbox CobaltSea_Object_Captain_Text_4
+	msgbox CobaltSea_Object_Captain_Text_5
+	msgbox CobaltSea_Object_Captain_Text_6, MSGBOX_AUTOCLOSE
+	release
+	end
+
+CobaltSea_Object_Captain_5:
+	msgbox CobaltSea_Object_Captain_Text_1
+	msgbox CobaltSea_Object_Captain_Text_2, MSGBOX_AUTOCLOSE
+	delay 10
+	applymovement 5, Common_Movement_WalkUp
+	waitmovement 0
+	hideobjectat 5, MAP_ROUTE109
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq CobaltSea_Object_Captain_9
+	compare VAR_RESULT, DIR_WEST
+	goto_if_eq CobaltSea_Object_Captain_10
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_eq CobaltSea_Object_Captain_11
+CobaltSea_Object_Captain_8:
+	playse SE_RG_KITEKI
+	waitse
+	playbgm MUS_M_BOAT, 0
+	compare VAR_SS_COBALT_SIDE, 0
+	goto_if_eq CobaltSea_Object_Captain_16
+	compare VAR_SS_COBALT_SIDE, 1
+	goto_if_eq CobaltSea_Object_Captain_17
+CobaltSea_Object_Captain_15:
+	playse SE_RG_KITEKI
+	waitse
+	delay 10
+	playbgm MUS_NEXTROAD, 0
+	showobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE109
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown2
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	showobjectat 5, MAP_ROUTE109
+	applymovement 5, Common_Movement_WalkDown
+	waitmovement 0
+	msgbox CobaltSea_Object_Captain_Text_3, MSGBOX_AUTOCLOSE
+	release
+	end
+
+CobaltSea_Object_Captain_9:
+	applymovement OBJ_EVENT_ID_PLAYER, CobaltSea_WalkInBoat_Movement_East
+	waitmovement 0
+	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE109
+	goto CobaltSea_Object_Captain_8
+
+CobaltSea_Object_Captain_10:
+	applymovement OBJ_EVENT_ID_PLAYER, CobaltSea_WalkInBoat_Movement_West
+	waitmovement 0
+	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE109
+	goto CobaltSea_Object_Captain_8
+
+CobaltSea_Object_Captain_11:
+	applymovement OBJ_EVENT_ID_PLAYER, CobaltSea_WalkInBoat_Movement_North
+	waitmovement 0
+	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE109
+	goto CobaltSea_Object_Captain_8
+
+CobaltSea_Object_Captain_16:
+	applymovement 1, CobaltSea_BoatPath_Movement_East
+	applymovement OBJ_EVENT_ID_PLAYER, CobaltSea_BoatPath_Movement_East
+	applymovement 5, CobaltSea_BoatPath_Movement_East
+	waitmovement 0
+	setvar VAR_SS_COBALT_SIDE, 1
+	goto CobaltSea_Object_Captain_15
+
+CobaltSea_Object_Captain_17:
+	applymovement 1, CobaltSea_BoatPath_Movement_West
+	applymovement OBJ_EVENT_ID_PLAYER, CobaltSea_BoatPath_Movement_West
+	applymovement 5, CobaltSea_BoatPath_Movement_West
+	waitmovement 0
+	setvar VAR_SS_COBALT_SIDE, 0
+	goto CobaltSea_Object_Captain_15
+
+
+CobaltSea_WalkInBoat_Movement_East:
+	walk_right
+	walk_slow_up
+	step_end
+
+CobaltSea_WalkInBoat_Movement_West:
+	walk_left
+	walk_slow_up
+	step_end
+
+CobaltSea_WalkInBoat_Movement_North:
+	walk_up
+	walk_slow_up
+	step_end
+
+CobaltSea_BoatPath_Movement_East:
+	walk_right
+	walk_right
+	walk_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_right
+	walk_right
+	walk_right
+	delay_8
+	step_end
+
+CobaltSea_BoatPath_Movement_West:
+	walk_left
+	walk_left
+	walk_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_left
+	walk_left
+	walk_left
+	delay_8
+	step_end
+
+CobaltSea_Trainer_TuberM_1::
+	trainerbattle_single TRAINER_TUBER_M_CADE, CobaltSea_Trainer_TuberM_1_Text_0, CobaltSea_Trainer_TuberM_1_Text_1
+	msgbox CobaltSea_Trainer_TuberM_1_Text_2, MSGBOX_NPC
+	end
+
+
+CobaltSea_Trainer_TuberF_1::
+	trainerbattle_single TRAINER_TUBER_F_MIA, CobaltSea_Trainer_TuberF_1_Text_0, CobaltSea_Trainer_TuberF_1_Text_1
+	msgbox CobaltSea_Trainer_TuberF_1_Text_2, MSGBOX_NPC
+	end
+
+
+CobaltSea_Trainer_TuberF_2::
+	trainerbattle_single TRAINER_TUBER_F_NORAH, CobaltSea_Trainer_TuberF_2_Text_0, CobaltSea_Trainer_TuberF_2_Text_1
+	msgbox CobaltSea_Trainer_TuberF_2_Text_2, MSGBOX_NPC
+	end
+
+
+CobaltSea_Trainer_Sailor::
+	trainerbattle_single TRAINER_SAILOR_SETH, CobaltSea_Trainer_Sailor_Text_0, CobaltSea_Trainer_Sailor_Text_1
+	msgbox CobaltSea_Trainer_Sailor_Text_2, MSGBOX_NPC
+	end
+
+
+CobaltSea_Trainer_Fisherman_1::
+	trainerbattle_single TRAINER_FISHERMAN_RANDY, CobaltSea_Trainer_Fisherman_1_Text_0, CobaltSea_Trainer_Fisherman_1_Text_1
+	msgbox CobaltSea_Trainer_Fisherman_1_Text_2, MSGBOX_NPC
+	end
+
+
+CobaltSea_Trainer_TuberF_3::
+	trainerbattle_single TRAINER_TUBER_F_CARLY, CobaltSea_Trainer_TuberF_3_Text_0, CobaltSea_Trainer_TuberF_3_Text_1
+	msgbox CobaltSea_Trainer_TuberF_3_Text_2, MSGBOX_NPC
+	end
+
+
+CobaltSea_Trainer_Fisherman_2::
+	trainerbattle_single TRAINER_FISHERMAN_TODD, CobaltSea_Trainer_Fisherman_2_Text_0, CobaltSea_Trainer_Fisherman_2_Text_1
+	msgbox CobaltSea_Trainer_Fisherman_2_Text_2, MSGBOX_NPC
 	end
 
 
@@ -573,3 +954,119 @@ CobaltSea_Sign_RouteSign_Text_0:
 	.string "{COLOR LIGHT_GREEN}Cobalt Sea\p"
 	.string "{COLOR DARK_GREY}{LEFT_ARROW} {COLOR LIGHT_GREEN}Myst City\n"
 	.string "{COLOR DARK_GREY}{RIGHT_ARROW} {COLOR LIGHT_GREEN}Shilou Woods$"
+
+CobaltSea_Sign_ShilouWoods_Text_0:
+	.string "{COLOR LIGHT_GREEN}Shilou Woods$"
+
+CobaltSea_Object_Beauty_Text_0:
+	.string "{COLOR RED}Excuse me, I'm trying to tan!$"
+
+CobaltSea_Object_Captain_Text_0:
+	.string "Captain: {COLOR BLUE}This here is the {COLOR GREEN}S.S. Cobalt{COLOR BLUE},\n"
+	.string "used to cross the {COLOR GREEN}Cobalt Sea{COLOR BLUE}!\p"
+	.string "Would ye like a ride on the {COLOR GREEN}S.S. Cobalt{COLOR BLUE}?$"
+
+CobaltSea_Object_Captain_Text_1:
+	.string "{PLAYER} flashed their ticket to the\n"
+	.string "Captain.$"
+
+CobaltSea_Object_Captain_Text_2:
+	.string "Captain: {COLOR BLUE}Hoho!\n"
+	.string "A ticket!\p"
+	.string "Alright, smooth sailing ahead!$"
+
+CobaltSea_Object_Captain_Text_3:
+	.string "Captain: {COLOR BLUE}Land ho!\p"
+	.string "If ye need a ride back across {COLOR GREEN}Cobalt\n"
+	.string "Sea{COLOR BLUE}, come talk to me!$"
+
+CobaltSea_Object_Captain_Text_4:
+	.string "Captain: {COLOR BLUE}May I see yer ticket?$"
+
+CobaltSea_Object_Captain_Text_5:
+	.string "Captain: {COLOR BLUE}{PAUSE 10}.{PAUSE 10}.{PAUSE 10}.{PAUSE 10}.{PAUSE 10}.$"
+
+CobaltSea_Object_Captain_Text_6:
+	.string "Captain: {COLOR BLUE}Oh, ye don't have one?\p"
+	.string "Sorry kid, you're gonna need a ticket.$"
+
+CobaltSea_Object_Captain_Text_7:
+	.string "Captain: {COLOR BLUE}Gahah!\p"
+	.string "Come back whenever you'd like to cross!$"
+
+CobaltSea_Trainer_TuberM_1_Text_0:
+	.string "{COLOR BLUE}I'm better at battling than my sissy!$"
+
+CobaltSea_Trainer_TuberM_1_Text_1:
+	.string "Waaaahh!$"
+
+CobaltSea_Trainer_TuberM_1_Text_2:
+	.string "{COLOR BLUE}Mommy always told me I was better at\n"
+	.string "Pokémon battling than sissy.$"
+
+CobaltSea_Trainer_TuberF_1_Text_0:
+	.string "{COLOR RED}My brother sucks at battling!$"
+
+CobaltSea_Trainer_TuberF_1_Text_1:
+	.string "Sniffle...\n"
+	.string "You meanie!$"
+
+CobaltSea_Trainer_TuberF_1_Text_2:
+	.string "{COLOR RED}Well... at least I can beat my brother in\n"
+	.string "a battle!$"
+
+CobaltSea_Trainer_TuberF_2_Text_0:
+	.string "{COLOR RED}I found a sand castle!\n"
+	.string "Do you want to see it?$"
+
+CobaltSea_Trainer_TuberF_2_Text_1:
+	.string "You destroyed my sand castle!$"
+
+CobaltSea_Trainer_TuberF_2_Text_2:
+	.string "{COLOR RED}I love making sand castles on the\n"
+	.string "beach!$"
+
+CobaltSea_Trainer_Sailor_Text_0:
+	.string "{COLOR BLUE}Aye, can't a tough guy get a break?$"
+
+CobaltSea_Trainer_Sailor_Text_1:
+	.string "Tough battle!$"
+
+CobaltSea_Trainer_Sailor_Text_2:
+	.string "{COLOR BLUE}Can't a sailor just relax for a moment?$"
+
+CobaltSea_Trainer_Fisherman_1_Text_0:
+	.string "{COLOR BLUE}I've got some big catches today!\p"
+	.string "Would you like to see them?$"
+
+CobaltSea_Trainer_Fisherman_1_Text_1:
+	.string "I got more fish to catch!$"
+
+CobaltSea_Trainer_Fisherman_1_Text_2:
+	.string "{COLOR BLUE}I've always loved fishing.\p"
+	.string "I fish all day, every day.\p"
+	.string "My wife isn't the biggest fan of me\n"
+	.string "fishing all day, but I loved fish before\l"
+	.string "I loved her!$"
+
+CobaltSea_Trainer_TuberF_3_Text_0:
+	.string "{COLOR RED}I swam all the way over here without my\n"
+	.string "mommy or daddy!$"
+
+CobaltSea_Trainer_TuberF_3_Text_1:
+	.string "Waaaaahhh!\n"
+	.string "Mommy!$"
+
+CobaltSea_Trainer_TuberF_3_Text_2:
+	.string "{COLOR RED}Now I need to swim all the way back to\n"
+	.string "the other beach...$"
+
+CobaltSea_Trainer_Fisherman_2_Text_0:
+	.string "{COLOR BLUE}Plenty of fish to be caught!$"
+
+CobaltSea_Trainer_Fisherman_2_Text_1:
+	.string "Now I need more bait...$"
+
+CobaltSea_Trainer_Fisherman_2_Text_2:
+	.string "{COLOR BLUE}This is my favorite fishing spot.\p"
+	.string "Golly, I just love it here!$"

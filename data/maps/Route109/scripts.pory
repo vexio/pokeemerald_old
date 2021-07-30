@@ -1,7 +1,4 @@
 raw `
-Route109_MapScripts:: @ 81EE75F
-	.byte 0
-
 Route109_EventScript_StartDepartForDewford:: @ 81EE760
 	call EventScript_BackupMrBrineyLocation
 	setobjectpriority 2, MAP_ROUTE109, 0
@@ -395,7 +392,7 @@ Route109_EventScript_Edmond:: @ 81EEA82
 	end
 
 Route109_EventScript_Ricky:: @ 81EEA99
-	trainerbattle_single TRAINER_RICKY_1, Route109_Text_RickyIntro, Route109_Text_RickyDefeated, Route109_EventScript_RickyRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_GRUNT_HIDEOUT_3, Route109_Text_RickyIntro, Route109_Text_RickyDefeated, Route109_EventScript_RickyRegisterMatchCallAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route109_EventScript_RickyRematch
@@ -407,12 +404,12 @@ Route109_EventScript_RickyRegisterMatchCallAfterBattle:: @ 81EEAC5
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route109_Text_RickyRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_RICKY_1
+	register_matchcall TRAINER_GRUNT_HIDEOUT_3
 	release
 	end
 
 Route109_EventScript_RickyRematch:: @ 81EEAE4
-	trainerbattle_rematch TRAINER_RICKY_1, Route109_Text_RickyRematchIntro, Route109_Text_RickyRematchDefeated
+	trainerbattle_rematch TRAINER_GRUNT_HIDEOUT_3, Route109_Text_RickyRematchIntro, Route109_Text_RickyRematchDefeated
 	msgbox Route109_Text_RickyRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -567,7 +564,181 @@ Route109_Text_TrainerTipsSign: @ 81EF1D5
 
 `
 
+mapscripts Route109_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_SS_COBALT_SIDE) == 1) {
+			setobjectxyperm(1, 102, 14)
+			setobjectmovementtype(1, MOVEMENT_TYPE_FACE_LEFT)
+			setobjectxyperm(5, 102, 15)
+		}
+	}
+}
+
 script CobaltSea_Sign_RouteSign {
 	msgbox(format("{COLOR LIGHT_GREEN}Cobalt Sea\p{COLOR DARK_GREY}{LEFT_ARROW} {COLOR LIGHT_GREEN}Myst City\n{COLOR DARK_GREY}{RIGHT_ARROW} {COLOR LIGHT_GREEN}Shilou Woods"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
+	end
+}
+script CobaltSea_Sign_ShilouWoods {
+	msgbox(format("{COLOR LIGHT_GREEN}Shilou Woods"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
+	end
+}
+script CobaltSea_Object_Beauty {
+	lock
+	faceplayer
+	msgbox(format("{COLOR RED}Excuse me, I'm trying to tan!"), MSGBOX_AUTOCLOSE)
+	applymovement(VAR_LAST_TALKED, Common_Movement_FaceDown)
+	waitmovement(0)
+	release
+	end
+}
+
+const CAPTAIN = 5
+const BOAT = 1
+const PLAYER = OBJ_EVENT_ID_PLAYER
+
+script CobaltSea_Object_Captain {
+	lock
+	faceplayer
+	msgbox(format("Captain: {COLOR BLUE}This here is the {COLOR GREEN}S.S. Cobalt{COLOR BLUE}, used to cross the {COLOR GREEN}Cobalt Sea{COLOR BLUE}!\pWould ye like a ride on the {COLOR GREEN}S.S. Cobalt{COLOR BLUE}?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == 1) { // yes
+		checkitem(ITEM_SS_TICKET, 1)
+		if (var(VAR_RESULT) == 1) {
+			msgbox(format("{PLAYER} flashed their ticket to the Captain."))
+			msgbox(format("Captain: {COLOR BLUE}Hoho!\nA ticket!\pAlright, smooth sailing ahead!"), MSGBOX_AUTOCLOSE)
+			delay(10)
+			applymovement(CAPTAIN, Common_Movement_WalkUp)
+			waitmovement(0)
+			hideobjectat(CAPTAIN, MAP_ROUTE109)
+			specialvar(VAR_RESULT, GetPlayerFacingDirection)
+			if (var(VAR_RESULT) == DIR_EAST) {
+				applymovement(PLAYER, CobaltSea_WalkInBoat_Movement_East)
+				waitmovement(0)
+				hideobjectat(PLAYER, MAP_ROUTE109)
+			} elif (var(VAR_RESULT) == DIR_WEST) {
+				applymovement(PLAYER, CobaltSea_WalkInBoat_Movement_West)
+				waitmovement(0)
+				hideobjectat(PLAYER, MAP_ROUTE109)
+			} elif (var(VAR_RESULT) == DIR_NORTH) {
+				applymovement(PLAYER, CobaltSea_WalkInBoat_Movement_North)
+				waitmovement(0)
+				hideobjectat(PLAYER, MAP_ROUTE109)
+			}
+			playse(SE_RG_KITEKI)
+			waitse
+			playbgm(MUS_M_BOAT, 0)
+			if (var(VAR_SS_COBALT_SIDE) == 0) { // east beach (default)
+				applymovement(BOAT, CobaltSea_BoatPath_Movement_East)
+				applymovement(PLAYER, CobaltSea_BoatPath_Movement_East)
+				applymovement(CAPTAIN, CobaltSea_BoatPath_Movement_East)
+				waitmovement(0)
+				setvar(VAR_SS_COBALT_SIDE, 1)
+			} elif (var(VAR_SS_COBALT_SIDE) == 1) { // west beach
+				applymovement(BOAT, CobaltSea_BoatPath_Movement_West)
+				applymovement(PLAYER, CobaltSea_BoatPath_Movement_West)
+				applymovement(CAPTAIN, CobaltSea_BoatPath_Movement_West)
+				waitmovement(0)
+				setvar(VAR_SS_COBALT_SIDE, 0)
+			}
+			playse(SE_RG_KITEKI)
+			waitse
+			delay(10)
+			playbgm(MUS_NEXTROAD, 0)
+			showobjectat(PLAYER, MAP_ROUTE109)
+			applymovement(PLAYER, Common_Movement_WalkDown2)
+			waitmovement(0)
+			applymovement(PLAYER, Common_Movement_WalkInPlaceUp)
+			waitmovement(0)
+			showobjectat(CAPTAIN, MAP_ROUTE109)
+			applymovement(CAPTAIN, Common_Movement_WalkDown)
+			waitmovement(0)
+			msgbox(format("Captain: {COLOR BLUE}Land ho!\pIf ye need a ride back across {COLOR GREEN}Cobalt Sea{COLOR BLUE}, come talk to me!"), MSGBOX_AUTOCLOSE)
+			release
+			end
+		} else {
+			msgbox(format("Captain: {COLOR BLUE}May I see yer ticket?"))
+			msgbox(format("Captain: {COLOR BLUE}{PAUSE 10}.{PAUSE 10}.{PAUSE 10}.{PAUSE 10}.{PAUSE 10}."))
+			msgbox(format("Captain: {COLOR BLUE}Oh, ye don't have one?\pSorry kid, you're gonna need a ticket."), MSGBOX_AUTOCLOSE)
+			release
+			end
+		}
+	} else { // no
+		msgbox(format("Captain: {COLOR BLUE}Gahah!\pCome back whenever you'd like to cross!"), MSGBOX_AUTOCLOSE)
+	}
+	release
+	end
+}
+
+movement CobaltSea_WalkInBoat_Movement_East {
+	walk_right
+	walk_slow_up
+}
+movement CobaltSea_WalkInBoat_Movement_West {
+	walk_left
+	walk_slow_up
+}
+movement CobaltSea_WalkInBoat_Movement_North {
+	walk_up
+	walk_slow_up
+}
+movement CobaltSea_BoatPath_Movement_East {
+	walk_right * 3
+	walk_fast_right * 5
+	walk_fast_up * 3
+	walk_fast_right * 20
+	walk_fast_down * 10
+	walk_fast_right * 45
+	walk_fast_up * 5
+	walk_fast_right * 3
+	walk_right * 3
+	delay_8
+}
+movement CobaltSea_BoatPath_Movement_West {
+	walk_left * 3
+	walk_fast_left * 3
+	walk_fast_down * 5
+	walk_fast_left * 45
+	walk_fast_up * 10
+	walk_fast_left * 21
+	walk_fast_down * 3
+	walk_fast_left * 4
+	walk_left * 3
+	delay_8
+}
+
+// trainers
+
+script CobaltSea_Trainer_TuberM_1 {
+	trainerbattle_single(TRAINER_TUBER_M_CADE, format("{COLOR BLUE}I'm better at battling than my sissy!"), format("Waaaahh!"))
+	msgbox(format("{COLOR BLUE}Mommy always told me I was better at Pokémon battling than sissy."), MSGBOX_NPC)
+	end
+}
+script CobaltSea_Trainer_TuberF_1 {
+	trainerbattle_single(TRAINER_TUBER_F_MIA, format("{COLOR RED}My brother sucks at battling!"), format("Sniffle...\nYou meanie!"))
+	msgbox(format("{COLOR RED}Well... at least I can beat my brother in a battle!"), MSGBOX_NPC)
+	end
+}
+script CobaltSea_Trainer_TuberF_2 {
+	trainerbattle_single(TRAINER_TUBER_F_NORAH, format("{COLOR RED}I found a sand castle!\nDo you want to see it?"), format("You destroyed my sand castle!"))
+	msgbox(format("{COLOR RED}I love making sand castles on the beach!"), MSGBOX_NPC)
+	end
+}
+script CobaltSea_Trainer_Sailor {
+	trainerbattle_single(TRAINER_SAILOR_SETH, format("{COLOR BLUE}Aye, can't a tough guy get a break?"), format("Tough battle!"))
+	msgbox(format("{COLOR BLUE}Can't a sailor just relax for a moment?"), MSGBOX_NPC)
+	end
+}
+script CobaltSea_Trainer_Fisherman_1 {
+	trainerbattle_single(TRAINER_FISHERMAN_RANDY, format("{COLOR BLUE}I've got some big catches today!\pWould you like to see them?"), format("I got more fish to catch!"))
+	msgbox(format("{COLOR BLUE}I've always loved fishing.\pI fish all day, every day.\pMy wife isn't the biggest fan of me fishing all day, but I loved fish before I loved her!"), MSGBOX_NPC)
+	end
+}
+script CobaltSea_Trainer_TuberF_3 {
+	trainerbattle_single(TRAINER_TUBER_F_CARLY, format("{COLOR RED}I swam all the way over here without my mommy or daddy!"), format("Waaaaahhh!\nMommy!"))
+	msgbox(format("{COLOR RED}Now I need to swim all the way back to the other beach..."), MSGBOX_NPC)
+	end
+}
+script CobaltSea_Trainer_Fisherman_2 {
+	trainerbattle_single(TRAINER_FISHERMAN_TODD, format("{COLOR BLUE}Plenty of fish to be caught!"), format("Now I need more bait..."))
+	msgbox(format("{COLOR BLUE}This is my favorite fishing spot.\pGolly, I just love it here!"), MSGBOX_NPC)
 	end
 }

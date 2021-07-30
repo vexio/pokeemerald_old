@@ -196,10 +196,10 @@ script FrostpineCity_Trigger_RivalEvent {
 		waitmovement(0)
 	}
 	delay(20)
-	msgbox(format("Skip: {COLOR BLUE}Are you shivering?\lIt's freezing up here!\pYou look pretty beat up from that climb, let me heal your Pokémon."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Skip: {COLOR BLUE}Are you shivering?\nIt's freezing up here!\pYou look pretty beat up from that climb, let me heal your Pokémon."), MSGBOX_AUTOCLOSE)
 	fadescreen(FADE_TO_BLACK)
 	special(HealPlayerParty)
-	playse(MUS_ME_ASA)
+	playse(SE_KAIFUKU)
 	waitse
 	fadescreen(FADE_FROM_BLACK)
 	delay(16)

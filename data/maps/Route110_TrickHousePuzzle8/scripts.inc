@@ -14,7 +14,7 @@ Route110_TrickHousePuzzle8_EventScript_FoundScroll:: @ 826E814
 	end
 
 Route110_TrickHousePuzzle8_EventScript_Vincent:: @ 826E81F
-	trainerbattle_single TRAINER_VINCENT, Route110_TrickHousePuzzle8_Text_VincentIntro, Route110_TrickHousePuzzle8_Text_VincentDefeat
+	trainerbattle_single TRAINER_SKIP2_FIRE, Route110_TrickHousePuzzle8_Text_VincentIntro, Route110_TrickHousePuzzle8_Text_VincentDefeat
 	msgbox Route110_TrickHousePuzzle8_Text_VincentPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -24,7 +24,7 @@ Route110_TrickHousePuzzle8_EventScript_Keira:: @ 826E836
 	end
 
 Route110_TrickHousePuzzle8_EventScript_Leroy:: @ 826E84D
-	trainerbattle_single TRAINER_LEROY, Route110_TrickHousePuzzle8_Text_LeroyIntro, Route110_TrickHousePuzzle8_Text_LeroyDefeat
+	trainerbattle_single TRAINER_SKIP2_WATER, Route110_TrickHousePuzzle8_Text_LeroyIntro, Route110_TrickHousePuzzle8_Text_LeroyDefeat
 	msgbox Route110_TrickHousePuzzle8_Text_LeroyPostBattle, MSGBOX_AUTOCLOSE
 	end
 

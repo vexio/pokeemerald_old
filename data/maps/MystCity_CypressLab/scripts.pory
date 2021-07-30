@@ -237,9 +237,20 @@ script MystCity_CypressLab_ProfessorCypress {
 		releaseall
 		end
 	} else {
-		msgbox(format("Mom: {COLOR RED}Go talk to {COLOR GREEN}Lars{COLOR RED} in {COLOR GREEN}Bayport City{COLOR RED}, he will know what to do."), MSGBOX_NPC)
-		release
-		end
+		if (var(VAR_PROTO_HIDEOUT) == 3) {
+			msgbox(format("Mom: {COLOR RED}Lars said he would be waiting for you in {COLOR GREEN}Sunflora Town{COLOR BLUE}."), MSGBOX_NPC)
+			end
+		} elif (var(VAR_CYPRESS_PROTO_EVENT_STATE) == 6) {
+			msgbox(format("Mom: {COLOR RED}Lars told me that you and {COLOR GREEN}Skip{COLOR RED} are doing an investigation for him at the {COLOR GREEN}Crawdaunt Pub{COLOR RED}.\pBe safe!"), MSGBOX_NPC)
+			end
+		} elif (var(VAR_CYPRESS_PROTO_EVENT_STATE) == 2) {
+			msgbox(format("Mom: {COLOR RED}Go talk to {COLOR GREEN}Lars{COLOR RED} in {COLOR GREEN}Bayport City{COLOR RED}, he will know what to do."), MSGBOX_NPC)
+			end
+		} else {
+			msgbox(format("Mom: {COLOR RED}Hey honey!\pJust doing some research.\pI hope you're keeping up with the Pokémon League Gym Challenges, I'd love to see you compete at the Ryoko League!"), MSGBOX_NPC)
+			end
+		}
+		
 	}
 	
 }

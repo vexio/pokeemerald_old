@@ -67,6 +67,7 @@
 #define MAP_ENCLAVA_TOWN_HOUSE_2  (62 | (0 << 8))
 #define MAP_ENCLAVA_TOWER_3F      (63 | (0 << 8))
 #define MAP_MYST_CITY_HOUSE_2     (64 | (0 << 8))
+#define MAP_VICTORY_ROAD_OUTSIDE  (65 | (0 << 8))
 
 // Map Group 1
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -108,6 +109,7 @@
 #define MAP_LAVARIDGE_TOWN_MART              (4 | (4 << 8))
 #define MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F (5 | (4 << 8))
 #define MAP_LAVARIDGE_TOWN_POKEMON_CENTER_2F (6 | (4 << 8))
+#define MAP_ENCLAVA_TOWN_HOUSE1              (7 | (4 << 8))
 
 // Map Group 5
 #define MAP_FALLARBOR_TOWN_MART                    (0 | (5 << 8))
@@ -430,6 +432,9 @@
 #define MAP_DAVNRIDGE_MINES_B1                       (110 | (24 << 8))
 #define MAP_NEW_MAP1                                 (111 | (24 << 8))
 #define MAP_WISP_FOREST                              (112 | (24 << 8))
+#define MAP_SEASPREY_BEACH_CAVE                      (113 | (24 << 8))
+#define MAP_RYOKO_CATACOMBS                          (114 | (24 << 8))
+#define MAP_SHILOU_WOODS_DEEP                        (115 | (24 << 8))
 
 // Map Group 25
 #define MAP_SECRET_BASE_RED_CAVE1           (0 | (25 << 8))
