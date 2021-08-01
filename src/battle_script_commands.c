@@ -6870,7 +6870,7 @@ static void PutLevelAndGenderOnLvlUpBox(void)
     printerTemplate.unk = 0;
     printerTemplate.fgColor = TEXT_COLOR_WHITE;
     printerTemplate.bgColor = TEXT_COLOR_TRANSPARENT;
-    printerTemplate.shadowColor = TEXT_COLOR_DARK_GRAY;
+    printerTemplate.shadowColor = TEXT_COLOR_DARK_GREY;
 
     AddTextPrinter(&printerTemplate, 0xFF, NULL);
 

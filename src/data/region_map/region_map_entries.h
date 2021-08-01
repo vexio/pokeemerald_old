@@ -394,7 +394,6 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_UNDERGROUND_PATH]          = {0, 0, 1, 1, sMapName_UndergroundPath},
     [MAPSEC_UNDERGROUND_PATH_2]        = {0, 0, 1, 1, sMapName_UndergroundPath2},
     [MAPSEC_UNDERWATER_124]            = {20, 3, 4, 3, sMapName_Underwater},
-    [MAPSEC_UNDERWATER_125]            = {20, 6, 3, 3, sMapName_Underwater},
     [MAPSEC_UNDERWATER_126]            = {23, 6, 3, 3, sMapName_Underwater},
     [MAPSEC_UNDERWATER_127]            = {23, 9, 4, 1, sMapName_Underwater},
     [MAPSEC_UNDERWATER_128]            = {24, 9, 1, 1, sMapName_Underwater},

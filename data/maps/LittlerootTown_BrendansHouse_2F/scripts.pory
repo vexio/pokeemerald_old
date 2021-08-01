@@ -74,7 +74,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan:: @ 81F8497
 	applymovement 1, Common_Movement_Delay48
 	waitmovement 0
 	delay 10
-	playbgm MUS_BOY_SUP, 1
+	playbgm MUS_ENCOUNTER_BRENDAN, 1
 	compare VAR_FACING, DIR_NORTH
 	call_if_eq LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanNorth
 	compare VAR_FACING, DIR_SOUTH
@@ -328,7 +328,7 @@ script PlayersHouse_Mapscript_DadEnterRoom {
 		lockall
 		delay(40)
 		setobjectxy(1, 7, 3)
-        playse(SE_KAIDAN)
+        playse(SE_EXIT)
         applymovement(1, PlayersHouse_DadEnterRoom_Movement_0)
         waitmovement(0)
         playse(SE_PIN)
@@ -338,7 +338,7 @@ script PlayersHouse_Mapscript_DadEnterRoom {
         delay(10)
         applymovement(1, PlayersHouse_DadEnterRoom_Movement_1)
         waitmovement(0)
-        playse(SE_KAIDAN)
+        playse(SE_EXIT)
         removeobject(1)
         setflag(FLAG_PLAYERSHOUSE_DADENTERSROOM)
         setvar(VAR_PLAYERSHOUSE_DADENTERSROOM, 1)
@@ -404,7 +404,7 @@ script PlayersHouse_Script_PlayerEmail {
 			//player answers yes
 			closemessage
 			delay(10)
-			playse(SE_SEIKAI)
+			playse(SE_SUCCESS)
 			delay(5)
 			msgbox(format("SENT EMAIL TO {COLOR GREEN}SKIP{COLOR DARK_GREY}."))
 			setvar(VAR_PLAYERSHOUSE_HASPLAYEREMAILED, 1)

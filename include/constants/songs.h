@@ -37,8 +37,8 @@
 #define SE_SUCCESS                  31 // SE_SEIKAI
 #define SE_FAILURE                  32 // SE_HAZURE
 #define SE_EXP                      33 // SE_EXP
-#define SE_BIKE_HOP                 34 // SE_JITE_PYOKO
-#define SE_SWITCH                   35 // SE_MU_PACHI
+#define SE_BIKE_HOP                 34 // SE_BIKE_HOP
+#define SE_SWITCH                   35 // SE_SWITCH
 #define SE_CLICK                    36 // SE_TK_KASYA
 #define SE_FU_ZAKU                  37 // SE_FU_ZAKU (Unknown purpose, unused)
 #define SE_CONTEST_CONDITION_LOSE   38 // SE_FU_ZAKU2
@@ -49,7 +49,7 @@
 #define SE_FALL                     43 // SE_RU_HYUU
 #define SE_UNLOCK                   44 // SE_KI_GASYAN
 #define SE_WARP_IN                  45 // SE_TK_WARPIN
-#define SE_WARP_OUT                 46 // SE_TK_WARPOUT
+#define SE_WARP_OUT                 46 // SE_WARP_OUT
 #define SE_REPEL                    47 // SE_TU_SAA
 #define SE_ROTATING_GATE            48 // SE_HI_TURUN
 #define SE_TRUCK_MOVE               49 // SE_TRACK_MOVE
@@ -81,7 +81,7 @@
 #define SE_BALLOON_BLUE             75 // SE_FUUSEN2
 #define SE_BALLOON_YELLOW           76 // SE_FUUSEN3
 #define SE_BREAKABLE_DOOR           77 // SE_TOY_KABE
-#define SE_MUD_BALL                 78 // SE_TOY_DANGO
+#define SE_MUD_BALL                 78 // SE_MUD_BALL
 #define SE_FIELD_POISON             79 // SE_DOKU
 #define SE_ESCALATOR                80 // SE_ESUKA
 #define SE_THUNDERSTORM             81 // SE_T_AME
@@ -125,7 +125,7 @@
 #define SE_M_THUNDERBOLT            118 // SE_W085
 #define SE_M_THUNDERBOLT2           119 // SE_W085B
 #define SE_M_HARDEN                 120 // SE_W231
-#define SE_M_NIGHTMARE              121 // SE_W171
+#define SE_M_NIGHTMARE              121 // SE_M_NIGHTMARE
 #define SE_M_VITAL_THROW            122 // SE_W233
 #define SE_M_VITAL_THROW2           123 // SE_W233B
 #define SE_M_BUBBLE                 124 // SE_W145
@@ -288,7 +288,7 @@
 #define MUS_GSC_PEWTER              357 // MUS_NIBI
 #define MUS_C_VS_LEGEND_BEAST       358 // MUS_SUIKUN
 #define MUS_ROUTE101                359 // MUS_DOORO1
-#define MUS_ROUTE110                360 // MUS_DOORO_X1
+#define MUS_ROUTE110                360 // MUS_ROUTE110
 #define MUS_ROUTE120                361 // MUS_DOORO_X3
 #define MUS_PETALBURG               362 // MUS_MACHI_S2
 #define MUS_OLDALE                  363 // MUS_MACHI_S4
@@ -297,11 +297,11 @@
 #define MUS_PETALBURG_WOODS         366 // MUS_DAN01
 #define MUS_LEVEL_UP                367 // MUS_FANFA1
 #define MUS_HEAL                    368 // MUS_ME_ASA
-#define MUS_OBTAIN_BADGE            369 // MUS_ME_BACHI
+#define MUS_OBTAIN_BADGE            369 // MUS_OBTAIN_BADGE
 #define MUS_OBTAIN_ITEM             370 // MUS_FANFA4
 #define MUS_EVOLVED                 371 // MUS_FANFA5
 #define MUS_OBTAIN_TMHM             372 // MUS_ME_WAZA
-#define MUS_LILYCOVE_MUSEUM         373 // MUS_BIJYUTU
+#define MUS_LILYCOVE_MUSEUM         373 // MUS_LILYCOVE_MUSEUM
 #define MUS_ROUTE122                374 // MUS_DOORO_X4
 #define MUS_OCEANIC_MUSEUM          375 // MUS_FUNE_KAN
 #define MUS_EVOLUTION_INTRO         376 // MUS_ME_SHINKA
@@ -355,7 +355,7 @@
 #define MUS_VICTORY_AQUA_MAGMA      424 // MUS_KACHI4
 #define MUS_CABLE_CAR               425 // MUS_ROPEWAY
 #define MUS_GAME_CORNER             426 // MUS_CASINO
-#define MUS_DEWFORD                 427 // MUS_HIGHTOWN
+#define MUS_DEWFORD                 427 // MUS_DEWFORD
 #define MUS_SAFARI_ZONE             428 // MUS_SAFARI
 #define MUS_VICTORY_ROAD            429 // MUS_C_ROAD
 #define MUS_AQUA_MAGMA_HIDEOUT      430 // MUS_AJITO
@@ -459,7 +459,7 @@
 #define MUS_RG_ENCOUNTER_RIVAL      527 // MUS_RG_RIVAL1
 #define MUS_RG_RIVAL_EXIT           528 // MUS_RG_RIVAL2
 #define MUS_RG_DEX_RATING           529 // MUS_RG_FAN2
-#define MUS_RG_OBTAIN_KEY_ITEM      530 // MUS_RG_FAN5
+#define MUS_RG_OBTAIN_KEY_ITEM      530 // MUS_RG_OBTAIN_KEY_ITEM
 #define MUS_RG_CAUGHT_INTRO         531 // MUS_RG_FAN6
 #define MUS_RG_PHOTO                532 // MUS_ME_RG_PHOTO
 #define MUS_RG_GAME_FREAK           533 // MUS_RG_TITLEROG
@@ -470,7 +470,7 @@
 #define MUS_RG_POKE_JUMP            538 // MUS_RG_JUMP
 #define MUS_RG_UNION_ROOM           539 // MUS_RG_UNION
 #define MUS_RG_NET_CENTER           540 // MUS_RG_NETWORK
-#define MUS_RG_MYSTERY_GIFT         541 // MUS_RG_OKURIMONO
+#define MUS_RG_MYSTERY_GIFT         541 // MUS_RG_MYSTERY_GIFT
 #define MUS_RG_BERRY_PICK           542 // MUS_RG_KINOMIKUI
 #define MUS_RG_SEVII_CAVE           543 // MUS_RG_NANADUNGEON (Identical to MUS_RG_MT_MOON)
 #define MUS_RG_TEACHY_TV_SHOW       544 // MUS_RG_OSHIE_TV (Identical to MUS_RG_FOLLOW_ME)

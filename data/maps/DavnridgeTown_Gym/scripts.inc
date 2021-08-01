@@ -39,7 +39,7 @@ DavnridgeGym_Trainer_Lilith_1:
 	end
 
 DavnridgeGym_Trainer_Lilith_2:
-	playse SE_MU_PACHI
+	playse SE_SWITCH
 	animateflash 2
 	delay 10
 	msgbox DavnridgeGym_Trainer_Lilith_Text_0, MSGBOX_AUTOCLOSE
@@ -50,7 +50,7 @@ DavnridgeGym_Trainer_Lilith_2:
 	settrainerflag TRAINER_GYM_MINER_HEATH
 	setvar VAR_DAVNRIDGEMINES_STATE, 2
 	delay 5
-	playfanfare MUS_ME_BACHI
+	playfanfare MUS_OBTAIN_BADGE
 	msgbox DavnridgeGym_Trainer_Lilith_Text_2
 	waitfanfare
 	msgbox DavnridgeGym_Trainer_Lilith_Text_3

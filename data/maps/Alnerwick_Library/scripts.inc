@@ -56,7 +56,7 @@ AlnerwickLibrary_Trigger_Thief::
 
 AlnerwickLibrary_Trigger_Thief_1:
 	lockall
-	fadenewbgm MUS_AJITO
+	fadenewbgm MUS_AQUA_MAGMA_HIDEOUT
 	special SpawnCameraObject
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_1, 5
@@ -88,9 +88,9 @@ AlnerwickLibrary_Trigger_Thief_3:
 	applymovement 1, AlnerwickLibrary_Thief_Movement_0_1
 	waitmovement 0
 	removeobject 1
-	playse SE_KAIDAN
+	playse SE_EXIT
 AlnerwickLibrary_Trigger_Thief_10:
-	fadenewbgm MUS_BIJYUTU
+	fadenewbgm MUS_LILYCOVE_MUSEUM
 	compare VAR_TEMP_1, 5
 	goto_if_eq AlnerwickLibrary_Trigger_Thief_15
 	compare VAR_TEMP_1, 6
@@ -149,7 +149,7 @@ AlnerwickLibrary_Trigger_Thief_11:
 	applymovement 1, AlnerwickLibrary_Thief_Movement_0_1
 	waitmovement 0
 	removeobject 1
-	playse SE_KAIDAN
+	playse SE_EXIT
 	goto AlnerwickLibrary_Trigger_Thief_10
 
 AlnerwickLibrary_Trigger_Thief_15:

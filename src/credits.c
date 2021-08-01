@@ -398,7 +398,7 @@ static void PrintCreditsText(const u8 *string, u8 y, bool8 isTitle)
     else
     {
         color[1] = TEXT_COLOR_WHITE;
-        color[2] = TEXT_COLOR_DARK_GRAY;
+        color[2] = TEXT_COLOR_DARK_GREY;
     }
 
     x = GetStringCenterAlignXOffsetWithLetterSpacing(1, string, DISPLAY_WIDTH, 1);

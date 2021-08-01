@@ -76,7 +76,7 @@ gFieldEffectScriptPointers:: @ 82DB9D4
 
 gFieldEffectScript_ExclamationMarkIcon1:: @ 82DBAE0
 	//field_eff_callnative FldEff_ExclamationMarkIcon
-	field_eff_loadfadedpal_callnative gFieldEffectObjectPaletteInfo11, FldEff_ExclamationMarkIcon
+	field_eff_loadfadedpal_callnative gFieldEffectObjectPalette11, FldEff_ExclamationMarkIcon
 	field_eff_end
 
 gFieldEffectScript_UseCutOnTallGrass:: @ 82DBAE6
@@ -210,7 +210,7 @@ gFieldEffectScript_FlyIn:: @ 82DBBE9
 
 gFieldEffectScript_QuestionMarkIcon:: @ 82DBBEF
 	//field_eff_callnative FldEff_QuestionMarkIcon
-	field_eff_loadfadedpal_callnative gFieldEffectObjectPaletteInfo11, FldEff_QuestionMarkIcon
+	field_eff_loadfadedpal_callnative gFieldEffectObjectPalette11, FldEff_QuestionMarkIcon
 	field_eff_end
 
 gFieldEffectScript_FeetInFlowingWater:: @ 82DBBF5
@@ -348,6 +348,6 @@ gFieldEffectScript_MoveDeoxysRock:: @ 82DBCFF
 	field_eff_end
 
 gFieldEffectScript_SnowFootprints:: @ 82DBB42
-	field_eff_loadfadedpal_callnative gFieldEffectObjectPaletteInfo0, FldEff_SnowFootprints
+	field_eff_loadfadedpal_callnative gFieldEffectObjectPalette0, FldEff_SnowFootprints
 	field_eff_end
 

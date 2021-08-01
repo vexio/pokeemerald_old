@@ -56,7 +56,7 @@ script AlnerwickLibrary_Mapscript_Librarian {
 script AlnerwickLibrary_Trigger_Thief {
     if (var(VAR_ALNERWICKLIBRARY_THIEF) == 1) {
         lockall
-        fadenewbgm(MUS_AJITO)
+        fadenewbgm(MUS_AQUA_MAGMA_HIDEOUT)
         special(SpawnCameraObject)
         getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
         if (var(VAR_TEMP_1) == 5) {
@@ -93,15 +93,15 @@ script AlnerwickLibrary_Trigger_Thief {
             applymovement(GRUNT_ID, AlnerwickLibrary_Thief_Movement_0_1)
             waitmovement(0)
             removeobject(GRUNT_ID)
-            playse(SE_KAIDAN)
+            playse(SE_EXIT)
         } else {
             applymovement(GRUNT_ID, AlnerwickLibrary_Thief_Movement_0_1)
             waitmovement(0)
             removeobject(GRUNT_ID)
-            playse(SE_KAIDAN)
+            playse(SE_EXIT)
         }
         // return camera to player's position
-        fadenewbgm(MUS_BIJYUTU)
+        fadenewbgm(MUS_LILYCOVE_MUSEUM)
         if (var(VAR_TEMP_1) == 5) {
             applymovement(OBJ_EVENT_ID_CAMERA, AlnerwickLibrary_Thief_CMovement_4)
             waitmovement(0)

@@ -267,8 +267,7 @@ static u8 CheckTrainer(u8 objectEventId)
     const u8 *scriptPtr;
     u8 numTrainers = 1;
     u8 approachDistance;
-    u16 scriptFlag = GetObjectEventTrainerSightFlagByObjectEventId(objectEventId);
-    
+
     if (InTrainerHill() == TRUE)
         scriptPtr = GetTrainerHillTrainerScript();
     else
@@ -284,7 +283,7 @@ static u8 CheckTrainer(u8 objectEventId)
         if (GetHillTrainerFlag(objectEventId))
             return 0;
     }
-    else if (scriptFlag < TRAINER_TYPE_RUN_SCRIPT)
+    else
     {
         if (GetTrainerFlagFromScriptPointer(scriptPtr))
             return 0;
@@ -294,16 +293,11 @@ static u8 CheckTrainer(u8 objectEventId)
 
     if (approachDistance != 0)
     {
-        if (scriptFlag >= TRAINER_TYPE_RUN_SCRIPT)
+        if (scriptPtr[1] == TRAINER_BATTLE_DOUBLE
+            || scriptPtr[1] == TRAINER_BATTLE_REMATCH_DOUBLE
+            || scriptPtr[1] == TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE)
         {
-            if (!FlagGet(scriptFlag) && scriptPtr != NULL)
-            {
-                // TRAINER_TYPE_RUN_SCRIPT
-                FlagSet(scriptFlag);
-                ret = 0xFF;
-            }
-            else
-            {
+            if (GetMonsStateToDoubles_2() != 0)
                 return 0;
 
             numTrainers = 2;

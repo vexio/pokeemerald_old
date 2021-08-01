@@ -182,7 +182,7 @@ script FrostpineCity_Trigger_RivalEvent {
 	waitmovement(0)
 	playse(SE_PIN)
 	delay(16)
-	playbgm(MUS_RG_RIVAL1, 0)
+	playbgm(MUS_RG_ENCOUNTER_RIVAL, 0)
 	msgbox(format("Skip: {COLOR BLUE} What's up Slowpoke!"), MSGBOX_AUTOCLOSE)
 	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 29) {
@@ -199,7 +199,7 @@ script FrostpineCity_Trigger_RivalEvent {
 	msgbox(format("Skip: {COLOR BLUE}Are you shivering?\nIt's freezing up here!\pYou look pretty beat up from that climb, let me heal your Pokémon."), MSGBOX_AUTOCLOSE)
 	fadescreen(FADE_TO_BLACK)
 	special(HealPlayerParty)
-	playse(SE_KAIFUKU)
+	playse(SE_USE_ITEM)
 	waitse
 	fadescreen(FADE_FROM_BLACK)
 	delay(16)
@@ -211,7 +211,7 @@ script FrostpineCity_Trigger_RivalEvent {
 	} elif (var(VAR_STARTER_MON) == 2) { // player chose Froakie
 		trainerbattle_no_intro(TRAINER_SKIP_GRASS_2, format("I barely even broke a sweat!"))
 	}
-	playbgm(MUS_RG_RIVAL2, 0)
+	playbgm(MUS_RG_RIVAL_EXIT, 0)
 	delay(5)
 	msgbox(format("Skip: {COLOR BLUE}Hmph.\pYou still managed to win...\pI'll be on my way to {COLOR GREEN}Bayport City{COLOR BLUE} for our next Gym Challenge, which is just south of {COLOR GREEN}Myst City{COLOR BLUE}."), MSGBOX_AUTOCLOSE)
 	if (var(VAR_TEMP_1) == 29) {
@@ -227,7 +227,7 @@ script FrostpineCity_Trigger_RivalEvent {
 	removeobject(SKIP)
 	setflag(FLAG_FROSTPINE_RIVAL_EVENT)
 	setvar(VAR_FROSTPINE_CITY_RIVAL_EVENT, 1)
-	fadenewbgm(MUS_RG_OKURIMONO)
+	fadenewbgm(MUS_RG_MYSTERY_GIFT)
 	releaseall
 	end	
 }

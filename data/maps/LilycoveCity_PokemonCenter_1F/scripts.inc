@@ -92,7 +92,7 @@ MystCity_PokemonCenter_LarsEvent_1:
 	goto_if_eq MystCity_PokemonCenter_LarsEvent_8
 MystCity_PokemonCenter_LarsEvent_5:
 	removeobject 4
-	playse SE_KAIDAN
+	playse SE_EXIT
 	waitse
 	delay 10
 	applymovement 5, Common_Movement_WalkInPlaceDown
@@ -102,7 +102,7 @@ MystCity_PokemonCenter_LarsEvent_5:
 	applymovement 5, MystCity_PokemonCenter_LarsEvent_Movement_2
 	waitmovement 0
 	removeobject 5
-	playse SE_KAIDAN
+	playse SE_EXIT
 	waitse
 	setflag FLAG_MYSTCITY_POKEMONCENTER_LARSEVENT
 	setvar VAR_CYPRESS_PROTO_EVENT_STATE, 1

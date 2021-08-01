@@ -201,7 +201,7 @@ gBattleAnims_Moves::
 	.4byte Move_PROTECT
 	.4byte Move_MACH_PUNCH
 	.4byte Move_SCARY_FACE
-	.4byte Move_FAINT_ATTACK
+	.4byte MOVE_FEINT_ATTACK
 	.4byte Move_SWEET_KISS
 	.4byte Move_BELLY_DRUM
 	.4byte Move_SLUDGE_BOMB
@@ -18766,7 +18766,7 @@ SmogCloud:
 	delay 7
 	return
 
-Move_FAINT_ATTACK:
+MOVE_FEINT_ATTACK:
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_ATTACKER
 	fadetobg BG_DARK

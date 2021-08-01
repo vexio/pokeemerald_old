@@ -28,7 +28,7 @@ static const u8 sUnionRoomObjGfxIds[GENDER_COUNT][MAX_UNION_ROOM_PLAYERS + 2] = 
         OBJ_EVENT_GFX_PSYCHIC_M, 
         OBJ_EVENT_GFX_BUG_CATCHER, 
         OBJ_EVENT_GFX_MAN_4, 
-        OBJ_EVENT_GFX_MAN_5
+        OBJ_EVENT_GFX_KINDLER
     },
     [FEMALE] = {
         OBJ_EVENT_GFX_WOMAN_5, 

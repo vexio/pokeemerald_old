@@ -623,9 +623,9 @@ script CobaltSea_Object_Captain {
 				waitmovement(0)
 				hideobjectat(PLAYER, MAP_ROUTE109)
 			}
-			playse(SE_RG_KITEKI)
+			playse(SE_RG_SS_ANNE_HORN)
 			waitse
-			playbgm(MUS_M_BOAT, 0)
+			playbgm(MUS_SAILING, 0)
 			if (var(VAR_SS_COBALT_SIDE) == 0) { // east beach (default)
 				applymovement(BOAT, CobaltSea_BoatPath_Movement_East)
 				applymovement(PLAYER, CobaltSea_BoatPath_Movement_East)
@@ -639,10 +639,10 @@ script CobaltSea_Object_Captain {
 				waitmovement(0)
 				setvar(VAR_SS_COBALT_SIDE, 0)
 			}
-			playse(SE_RG_KITEKI)
+			playse(SE_RG_SS_ANNE_HORN)
 			waitse
 			delay(10)
-			playbgm(MUS_NEXTROAD, 0)
+			playbgm(MUS_ROUTE104, 0)
 			showobjectat(PLAYER, MAP_ROUTE109)
 			applymovement(PLAYER, Common_Movement_WalkDown2)
 			waitmovement(0)

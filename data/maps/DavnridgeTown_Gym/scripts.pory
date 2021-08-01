@@ -27,7 +27,7 @@ script DavnridgeGym_Object_Man {
 script DavnridgeGym_Trainer_Lilith {
     lockall
     if (flag(FLAG_BADGE01_GET) == false) {
-        playse(SE_MU_PACHI)
+        playse(SE_SWITCH)
 	    animateflash(2)
         delay(10)
         msgbox(format("Lilith: {COLOR RED}Glad to see you made it back from the mines!\pI believe in the sturdiness and defense of Rock-type Pokémon!\pThat's why my team is made up of Rock-type Pokémon.\pYou think I'm gonna go easy on you?\pShow me what you got!"), MSGBOX_AUTOCLOSE)
@@ -38,7 +38,7 @@ script DavnridgeGym_Trainer_Lilith {
         settrainerflag(TRAINER_GYM_MINER_HEATH)
         setvar(VAR_DAVNRIDGEMINES_STATE, 2)
         delay(5)
-        playfanfare(MUS_ME_BACHI)
+        playfanfare(MUS_OBTAIN_BADGE)
         msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Gem Badge"))
         waitfanfare
         msgbox(format("Lilith: {COLOR RED}That's an official {COLOR GREEN}Ryoko Pokémon League Badge{COLOR RED}!\pThe technique {COLOR GREEN}Cut{COLOR RED} can now be used outside of battle!\pTake this TM as well!"))

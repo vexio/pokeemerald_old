@@ -422,10 +422,6 @@ bool32 IsObjectEventSpriteInvisible(u8 objectEventId);
 void SetObjectEventSpriteGraphics(u8 objectEventId, u8 graphicsId);
 void SetObjectEventSpriteAnim(u8 objectEventId, u8 animNum);
 bool32 IsObjectEventSpriteAnimating(u8 objectEventId);
-// NEW
-u16 GetMiniStepCount(u8 speed);
-void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame);
-bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
 // run slow
 u8 GetPlayerRunSlowMovementAction(u32);
 //sideways stairs

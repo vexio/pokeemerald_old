@@ -119,7 +119,7 @@ gScriptCmdTable:: @ 81DB67C
 	.4byte ScrCmd_drawboxtext
 	.4byte ScrCmd_showmonpic
 	.4byte ScrCmd_hidemonpic
-	.4byte ScrCmd_showcontestwinner
+	.4byte ScrCmd_showcontestpainting
 	.4byte ScrCmd_braillemessage
 	.4byte ScrCmd_givemon
 	.4byte ScrCmd_giveegg
@@ -205,21 +205,21 @@ gScriptCmdTable:: @ 81DB67C
     .4byte ScrCmd_setmessagebox
     .4byte ScrCmd_nop1
     .4byte ScrCmd_nop1
-    .4byte ScrCmd_setmonobedient
-	.4byte ScrCmd_checkmonobedience
+	.4byte ScrCmd_setmoneventlegal          @ 0xcd
+	.4byte ScrCmd_checkmoneventlegal        @ 0xce
 	.4byte ScrCmd_gotoram
 	.4byte ScrCmd_nop1
-	.4byte ScrCmd_warpD1
+	.4byte ScrCmd_warpspinenter             @ 0xd1
 	.4byte ScrCmd_setmonmetlocation
 	.4byte ScrCmd_moverotatingtileobjects
 	.4byte ScrCmd_turnrotatingtileobjects
 	.4byte ScrCmd_initrotatingtilepuzzle
 	.4byte ScrCmd_freerotatingtilepuzzle
 	.4byte ScrCmd_warpmossdeepgym
-	.4byte ScrCmd_cmdD8
-	.4byte ScrCmd_cmdD9
+	.4byte ScrCmd_selectapproachingtrainer  @ 0xd8
+	.4byte ScrCmd_lockfortrainer            @ 0xd9
 	.4byte ScrCmd_closebraillemessage
-	.4byte ScrCmd_cmdDB
+	.4byte ScrCmd_messageinstant            @ 0xdb
 	.4byte ScrCmd_fadescreenswapbuffers
 	.4byte ScrCmd_buffertrainerclassname
 	.4byte ScrCmd_buffertrainername

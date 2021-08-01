@@ -2,7 +2,7 @@
   "id": "MAP_FROSTPINE_CITY_HOUSE_1",
   "name": "FrostpineCity_House_1",
   "layout": "LAYOUT_FROSTPINE_CITY_HOUSE_1",
-  "music": "MUS_RG_OKURIMONO",
+  "music": "MUS_RG_MYSTERY_GIFT",
   "region_map_section": "MAPSEC_VERDANTURF_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

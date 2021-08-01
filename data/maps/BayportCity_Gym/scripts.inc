@@ -67,7 +67,7 @@ BayportGym_Trainer_Edgar_2:
 	settrainerflag TRAINER_GYM_HEXMANIAC_AMARA
 	setvar VAR_CYPRESS_PROTO_EVENT_STATE, 4
 	delay 5
-	playfanfare MUS_ME_BACHI
+	playfanfare MUS_OBTAIN_BADGE
 	msgbox BayportGym_Trainer_Edgar_Text_2
 	waitfanfare
 	msgbox BayportGym_Trainer_Edgar_Text_3
@@ -80,7 +80,7 @@ BayportGym_Trigger_EdgeFall::
 	delay 20
 	applymovement OBJ_EVENT_ID_PLAYER, BayportGym_Movement_SetInvis
 	waitmovement 0
-	playse SE_RU_HYUU
+	playse SE_FALL
 	delay 60
 	warpsilent MAP_BAYPORT_CITY_GYM, 0, 0, 0
 	releaseall

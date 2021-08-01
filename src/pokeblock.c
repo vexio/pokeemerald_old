@@ -299,7 +299,7 @@ static const struct SpriteTemplate sSpriteTemplate_PokeblockCase =
     .callback = SpriteCallbackDummy
 };
 
-static const u8 sTextColor[3] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
+static const u8 sTextColor[3] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GREY, TEXT_COLOR_LIGHT_GRAY};
 
 static const struct Pokeblock sFavoritePokeblocksTable[FLAVOR_COUNT] =
 {

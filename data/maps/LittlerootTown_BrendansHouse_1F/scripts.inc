@@ -1,7 +1,3 @@
-.set LOCALID_MOM, 1
-.set LOCALID_RIVAL_MOM, 4
-.set LOCALID_RIVAL, 7
-
 LittlerootTown_BrendansHouse_1F_MapScripts:: @ 81F7755
 	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_BrendansHouse_1F_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_1F_OnTransition
@@ -40,18 +36,18 @@ LittlerootTown_BrendansHouse_1F_OnTransition: @ 81F77A4
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs:: @ 81F77C6
-	setobjectxyperm LOCALID_MOM, 8, 4
-	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm 1, 8, 4
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToTV:: @ 81F77D2
-	setobjectxyperm LOCALID_MOM, 4, 5
-	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm 1, 4, 5
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor:: @ 81F77DE
-	setobjectxyperm LOCALID_MOM, 9, 8
-	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm 1, 9, 8
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
 	return
 
 @ Many of the below scripts have no gender check because they assume youre in the correct house
@@ -69,7 +65,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock:: @ 81F7814
 	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
-	applymovement LOCALID_MOM, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
+	applymovement 1, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
 	waitmovement 0
 	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 255, 7, 1
 	waitstate
@@ -82,27 +78,27 @@ LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs: @ 81F783A
 
 LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn:: @ 81F783C
 	lockall
-	setvar VAR_0x8004, LOCALID_MOM
+	setvar VAR_0x8004, 1
 	setvar VAR_0x8005, MALE
 	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_PetalburgGymReport:: @ 81F784D
 	lockall
-	setvar VAR_0x8004, MALE
-	setvar VAR_0x8005, LOCALID_MOM
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 1  @ Object event ID for Mom
 	goto PlayersHouse_1F_EventScript_PetalburgGymReportMale
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor:: @ 81F785E
 	lockall
 	playse SE_PIN
-	applymovement LOCALID_RIVAL_MOM, Common_Movement_ExclamationMark
+	applymovement 4, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_RIVAL_MOM, Common_Movement_Delay48
+	applymovement 4, Common_Movement_Delay48
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
-	applymovement LOCALID_RIVAL_MOM, LittlerootTown_BrendansHouse_1F_Movement_RivalMomApproach
+	applymovement 4, LittlerootTown_BrendansHouse_1F_Movement_RivalMomApproach
 	waitmovement 0
 	special GetRivalSonDaughterString
 	msgbox RivalsHouse_1F_Text_OhYoureTheNewNeighbor, MSGBOX_DEFAULT
@@ -122,7 +118,7 @@ LittlerootTown_BrendansHouse_1F_Movement_RivalMomApproach: @ 81F789C
 
 LittlerootTown_BrendansHouse_1F_EventScript_GoSeeRoom:: @ 81F78A3
 	lockall
-	setvar VAR_0x8004, LOCALID_MOM
+	setvar VAR_0x8004, 1
 	setvar VAR_0x8005, MALE
 	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
@@ -150,16 +146,16 @@ LittlerootTown_BrendansHouse_1F_EventScript_MeetRival2:: @ 81F78D6
 LittlerootTown_BrendansHouse_1F_EventScript_MeetRival:: @ 81F78E2
 	playse SE_EXIT
 	delay 10
-	addobject LOCALID_RIVAL
+	addobject 7
 	delay 30
 	playse SE_PIN
-	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	applymovement 7, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_Delay48
+	applymovement 7, Common_Movement_Delay48
 	waitmovement 0
 	compare VAR_0x8008, 1
 	call_if_ne LittlerootTown_BrendansHouse_1F_EventScript_PlayerFaceBrendan
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_ENCOUNTER_BRENDAN, 1
 	compare VAR_0x8008, 0
 	call_if_eq LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachPlayer0
 	compare VAR_0x8008, 1
@@ -175,7 +171,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MeetRival:: @ 81F78E2
 	compare VAR_0x8008, 2
 	call_if_eq LittlerootTown_BrendansHouse_1F_EventScript_BrendanGoUpstairs2
 	playse SE_EXIT
-	removeobject LOCALID_RIVAL
+	removeobject 7
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_BRENDAN
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
@@ -193,17 +189,17 @@ LittlerootTown_BrendansHouse_1F_EventScript_PlayerFaceBrendan:: @ 81F7981
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachPlayer0:: @ 81F798C
-	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer0
+	applymovement 7, LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer0
 	waitmovement 0
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachPlayer1:: @ 81F7997
-	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer1
+	applymovement 7, LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer1
 	waitmovement 0
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachPlayer2:: @ 81F79A2
-	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer2
+	applymovement 7, LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer2
 	waitmovement 0
 	return
 
@@ -235,19 +231,19 @@ LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer2: @ 81F79B9
 
 LittlerootTown_BrendansHouse_1F_EventScript_BrendanGoUpstairs0:: @ 81F79C1
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PlayerWatchBrendanExit0
-	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs0
+	applymovement 7, LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs0
 	waitmovement 0
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_BrendanGoUpstairs1:: @ 81F79D3
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PlayerWatchBrendanExit1
-	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs1
+	applymovement 7, LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs1
 	waitmovement 0
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_BrendanGoUpstairs2:: @ 81F79E5
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PlayerWatchBrendanExit2
-	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs2
+	applymovement 7, LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs2
 	waitmovement 0
 	return
 
@@ -474,7 +470,7 @@ PlayersHouse_Mapscript_GetPokemon_1:
 	waitmovement 0
 	playse SE_PIN
 	waitse
-	playse SE_JITE_PYOKO
+	playse SE_BIKE_HOP
 	applymovement 3, Common_Movement_JumpInPlaceLeft
 	waitmovement 0
 	applymovement 3, Common_Movement_WalkInPlaceUp
@@ -501,7 +497,7 @@ PlayersHouse_Mapscript_GetPokemon_1:
 	compare VAR_STARTER_MON, 2
 	goto_if_eq PlayersHouse_Mapscript_GetPokemon_6
 PlayersHouse_Mapscript_GetPokemon_3:
-	playbgm MUS_MISHIRO, 0
+	playbgm MUS_LITTLEROOT, 0
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_6, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq PlayersHouse_Mapscript_GetPokemon_11
@@ -536,7 +532,7 @@ PlayersHouse_Mapscript_GetPokemon_13:
 	delay 10
 	applymovement 3, PlayersHouse_GetPokemon_Movement_0
 	waitmovement 0
-	playse SE_KAIDAN
+	playse SE_EXIT
 	removeobject 3
 	delay 10
 	applymovement 2, Common_Movement_WalkInPlaceRight
@@ -546,12 +542,12 @@ PlayersHouse_Mapscript_GetPokemon_13:
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_13
 	closemessage
 	delay 5
-	playfanfare MUS_FANFA4
+	playfanfare MUS_OBTAIN_ITEM
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_14
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
 	special SetUnlockedPokedexFlags
-	playfanfare MUS_FANFA4
+	playfanfare MUS_OBTAIN_ITEM
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_15
 	waitfanfare
 	delay 10
@@ -563,7 +559,7 @@ PlayersHouse_Mapscript_GetPokemon_13:
 	delay 5
 	applymovement 1, Common_Movement_WalkInPlaceRight
 	waitmovement 0
-	playfanfare MUS_FANFA4
+	playfanfare MUS_OBTAIN_ITEM
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_18
 	waitfanfare
 	setflag FLAG_SYS_B_DASH
@@ -594,19 +590,19 @@ PlayersHouse_Mapscript_GetPokemon_13:
 	end
 
 PlayersHouse_Mapscript_GetPokemon_4:
-	playse MUS_RG_FAN5
+	playse MUS_RG_OBTAIN_KEY_ITEM
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_3
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_3
 
 PlayersHouse_Mapscript_GetPokemon_5:
-	playse MUS_RG_FAN5
+	playse MUS_RG_OBTAIN_KEY_ITEM
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_4
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_3
 
 PlayersHouse_Mapscript_GetPokemon_6:
-	playse MUS_RG_FAN5
+	playse MUS_RG_OBTAIN_KEY_ITEM
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_5
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_3
@@ -617,19 +613,19 @@ PlayersHouse_Mapscript_GetPokemon_11:
 	goto PlayersHouse_Mapscript_GetPokemon_10
 
 PlayersHouse_Mapscript_GetPokemon_14:
-	playse MUS_RG_FAN5
+	playse MUS_RG_OBTAIN_KEY_ITEM
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_9
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_13
 
 PlayersHouse_Mapscript_GetPokemon_15:
-	playse MUS_RG_FAN5
+	playse MUS_RG_OBTAIN_KEY_ITEM
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_10
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_13
 
 PlayersHouse_Mapscript_GetPokemon_16:
-	playse MUS_RG_FAN5
+	playse MUS_RG_OBTAIN_KEY_ITEM
 	msgbox PlayersHouse_Mapscript_GetPokemon_Text_11
 	waitse
 	goto PlayersHouse_Mapscript_GetPokemon_13

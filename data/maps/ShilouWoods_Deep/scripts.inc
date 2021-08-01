@@ -11,7 +11,7 @@ ShilouWoodsDeep_Trigger_LittleBoy_Event::
 	lock
 	fadeoutbgm 3
 	delay 150
-	playse SE_W195
+	playse SE_M_PERISH_SONG
 	waitse
 	applymovement 1, ShilouWoodsDeep_LittleBoyEvent_Movement_0
 	waitmovement 0
@@ -26,7 +26,7 @@ ShilouWoodsDeep_Trigger_LittleBoy_Event_1:
 	delay 20
 	fadescreen FADE_TO_BLACK
 	delay 15
-	playse SE_W171
+	playse SE_M_NIGHTMARE
 	waitse
 	delay 15
 	removeobject 1
@@ -34,7 +34,7 @@ ShilouWoodsDeep_Trigger_LittleBoy_Event_1:
 	fadescreen FADE_FROM_BLACK
 	setvar VAR_SHILOUWOODS_GHOST_BOY, 2
 	delay 20
-	fadenewbgm MUS_RG_P_TOWER
+	fadenewbgm MUS_RG_POKE_TOWER
 	release
 	end
 
@@ -55,7 +55,7 @@ ShilouWoodsDeep_Trigger_LittleBoy_Event_3:
 
 ShilouWoodsDeep_Trigger_HaventTalkedToLittleGirl::
 	lock
-	playse SE_W171
+	playse SE_M_NIGHTMARE
 	waitse
 	msgbox ShilouWoodsDeep_Trigger_HaventTalkedToLittleGirl_Text_0, MSGBOX_AUTOCLOSE
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft

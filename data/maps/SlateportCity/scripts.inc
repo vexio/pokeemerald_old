@@ -1,24 +1,3 @@
-.set LOCALID_FAT_MAN, 1
-.set LOCALID_MAN_1, 2
-.set LOCALID_RICH_BOY, 3
-.set LOCALID_GRUNT_1, 5
-.set LOCALID_COOK, 6
-.set LOCALID_OLD_WOMAN, 7
-.set LOCALID_GIRL, 8
-.set LOCALID_TY, 9
-.set LOCALID_GABBY, 10
-.set LOCALID_CAPT_STERN, 11
-.set LOCALID_GRUNT_2, 18
-.set LOCALID_GRUNT_3, 19
-.set LOCALID_GRUNT_4, 26
-.set LOCALID_GRUNT_5, 27
-.set LOCALID_GRUNT_6, 28
-.set LOCALID_GRUNT_7, 29
-.set LOCALID_GRUNT_8, 30
-.set LOCALID_GRUNT_9, 31
-.set LOCALID_GRUNT_11, 33
-.set LOCALID_SCOTT, 35
-
 SlateportCity_MapScripts:: @ 81DCC61
 	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SlateportCity_OnFrame
@@ -42,20 +21,20 @@ SlateportCity_EventScript_EnterSlateport:: @ 81DCC8D
 	return
 
 SlateportCity_EventScript_MovePeopleForSternInterview:: @ 81DCC99
-	setobjectxyperm LOCALID_CAPT_STERN, 28, 13
-	setobjectxyperm LOCALID_OLD_WOMAN, 25, 13
-	setobjectxyperm LOCALID_RICH_BOY, 25, 14
-	setobjectxyperm LOCALID_COOK, 27, 16
-	setobjectxyperm LOCALID_GIRL, 28, 16
-	setobjectxyperm LOCALID_FAT_MAN, 29, 16
-	setobjectxyperm LOCALID_MAN_1, 31, 14
-	setobjectmovementtype LOCALID_CAPT_STERN, MOVEMENT_TYPE_FACE_DOWN
-	setobjectmovementtype LOCALID_OLD_WOMAN, MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT
-	setobjectmovementtype LOCALID_RICH_BOY, MOVEMENT_TYPE_FACE_UP_AND_RIGHT
-	setobjectmovementtype LOCALID_COOK, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype LOCALID_GIRL, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype LOCALID_FAT_MAN, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype LOCALID_MAN_1, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm 11, 28, 13
+	setobjectxyperm 7, 25, 13
+	setobjectxyperm 3, 25, 14
+	setobjectxyperm 6, 27, 16
+	setobjectxyperm 8, 28, 16
+	setobjectxyperm 1, 29, 16
+	setobjectxyperm 2, 31, 14
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype 7, MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT
+	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_UP_AND_RIGHT
+	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype 8, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 SlateportCity_EventScript_SetReadyForScottScene:: @ 81DCCE7
@@ -63,13 +42,13 @@ SlateportCity_EventScript_SetReadyForScottScene:: @ 81DCCE7
 	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8004, 30
 	goto_if_eq SlateportCity_EventScript_MoveScottLeft
-	setobjectxyperm LOCALID_SCOTT, 23, 27
-	setobjectmovementtype LOCALID_SCOTT, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm 35, 23, 27
+	setobjectmovementtype 35, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
 SlateportCity_EventScript_MoveScottLeft:: @ 81DCD06
-	setobjectxyperm LOCALID_SCOTT, 22, 27
-	setobjectmovementtype LOCALID_SCOTT, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm 35, 22, 27
+	setobjectmovementtype 35, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
 SlateportCity_OnFrame: @ 81DCD12
@@ -78,17 +57,17 @@ SlateportCity_OnFrame: @ 81DCD12
 
 SlateportCity_EventScript_ScottScene:: @ 81DCD1C
 	lockall
-	addobject LOCALID_SCOTT
+	addobject 35
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PlayerFaceScott
-	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottApproachPlayer
+	applymovement 35, SlateportCity_Movement_ScottApproachPlayer
 	waitmovement 0
 	msgbox SlateportCity_Text_YouDroveTeamAquaAway, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFastestLeft
+	applymovement 35, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
 	delay 60
 	msgbox SlateportCity_Text_MaybeThisTrainer, MSGBOX_DEFAULT
-	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFastestRight
+	applymovement 35, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
 	msgbox SlateportCity_Text_LetsRegisterEachOther, MSGBOX_DEFAULT
 	closemessage
@@ -101,11 +80,11 @@ SlateportCity_EventScript_ScottScene:: @ 81DCD1C
 	setflag FLAG_ENABLE_SCOTT_MATCH_CALL
 	msgbox SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottExit
+	applymovement 35, SlateportCity_Movement_ScottExit
 	waitmovement 0
-	removeobject LOCALID_SCOTT
-	setobjectxyperm LOCALID_SCOTT, 10, 12
-	setobjectmovementtype LOCALID_SCOTT, MOVEMENT_TYPE_FACE_DOWN
+	removeobject 35
+	setobjectxyperm 35, 10, 12
+	setobjectmovementtype 35, MOVEMENT_TYPE_FACE_DOWN
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 2
 	addvar VAR_SCOTT_STATE, 1
@@ -383,7 +362,7 @@ SlateportCity_EventScript_AquaGrunt1:: @ 81DD009
 	faceplayer
 	msgbox SlateportCity_Text_QuitPushing, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_1, Common_Movement_FaceOriginalDirection
+	applymovement 5, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -393,7 +372,7 @@ SlateportCity_EventScript_AquaGrunt2:: @ 81DD020
 	faceplayer
 	msgbox SlateportCity_Text_AquaHasPolicy, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_2, Common_Movement_FaceOriginalDirection
+	applymovement 18, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -403,7 +382,7 @@ SlateportCity_EventScript_AquaGrunt3:: @ 81DD037
 	faceplayer
 	msgbox SlateportCity_Text_BossIsBrilliant, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_3, Common_Movement_FaceOriginalDirection
+	applymovement 19, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -413,7 +392,7 @@ SlateportCity_EventScript_AquaGrunt4:: @ 81DD04E
 	faceplayer
 	msgbox SlateportCity_Text_WhatsNewSchemeIWonder, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_4, Common_Movement_FaceOriginalDirection
+	applymovement 26, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -423,7 +402,7 @@ SlateportCity_EventScript_AquaGrunt5:: @ 81DD065
 	faceplayer
 	msgbox SlateportCity_Text_ShouldTakeItAll, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_5, Common_Movement_FaceOriginalDirection
+	applymovement 27, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -433,7 +412,7 @@ SlateportCity_EventScript_AquaGrunt6:: @ 81DD07C
 	faceplayer
 	msgbox SlateportCity_Text_DontButtIn, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_6, Common_Movement_FaceOriginalDirection
+	applymovement 28, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -443,7 +422,7 @@ SlateportCity_EventScript_AquaGrunt7:: @ 81DD093
 	faceplayer
 	msgbox SlateportCity_Text_RemindsMeOfLongLineForGames, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_7, Common_Movement_FaceOriginalDirection
+	applymovement 29, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -453,7 +432,7 @@ SlateportCity_EventScript_AquaGrunt8:: @ 81DD0AA
 	faceplayer
 	msgbox SlateportCity_Text_WhyAreWeLiningUp, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_8, Common_Movement_FaceOriginalDirection
+	applymovement 30, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -462,31 +441,31 @@ SlateportCity_EventScript_AquaGrunt9:: @ 81DD0C1
 	lock
 	faceplayer
 	playse SE_PIN
-	applymovement LOCALID_GRUNT_9, Common_Movement_ExclamationMark
+	applymovement 31, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_GRUNT_9, Common_Movement_Delay48
+	applymovement 31, Common_Movement_Delay48
 	waitmovement 0
 	msgbox SlateportCity_Text_WhatDoYouWant, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_9, Common_Movement_FaceOriginalDirection
+	applymovement 31, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	applymovement LOCALID_GRUNT_9, SlateportCity_Movement_DelayAquaGrunt
+	applymovement 31, SlateportCity_Movement_DelayAquaGrunt
 	waitmovement 0
-	applymovement LOCALID_GRUNT_9, Common_Movement_FacePlayer
+	applymovement 31, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox SlateportCity_Text_IllReadSignForYou, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_9, Common_Movement_FaceOriginalDirection
+	applymovement 31, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	applymovement LOCALID_GRUNT_9, SlateportCity_Movement_DelayAquaGrunt
+	applymovement 31, SlateportCity_Movement_DelayAquaGrunt
 	waitmovement 0
 	msgbox SlateportCity_Text_SaysSomethingLikeSeaIsEndless, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_9, Common_Movement_FacePlayer
+	applymovement 31, Common_Movement_FacePlayer
 	waitmovement 0
-	applymovement LOCALID_GRUNT_9, SlateportCity_Movement_DelayAquaGrunt
+	applymovement 31, SlateportCity_Movement_DelayAquaGrunt
 	waitmovement 0
-	applymovement LOCALID_GRUNT_9, Common_Movement_FaceOriginalDirection
+	applymovement 31, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -505,7 +484,7 @@ SlateportCity_EventScript_AquaGrunt11:: @ 81DD153
 	faceplayer
 	msgbox SlateportCity_Text_HotSpringsAfterOperation, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_11, Common_Movement_FaceOriginalDirection
+	applymovement 33, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -588,48 +567,48 @@ SlateportCity_EventScript_CaptStern:: @ 81DD1F8
 	msgbox SlateportCity_Text_SternMoveAheadWithExploration, MSGBOX_DEFAULT
 	msgbox SlateportCity_Text_GabbyWonderfulThanksForInterview, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GABBY, Common_Movement_WalkInPlaceFastestRight
+	applymovement 10, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
 	delay 10
-	applymovement LOCALID_TY, Common_Movement_WalkInPlaceFastestDown
+	applymovement 9, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
 	delay 25
-	applymovement LOCALID_CAPT_STERN, SlateportCity_Movement_SternWatchGabbyAndTyExit
+	applymovement 11, SlateportCity_Movement_SternWatchGabbyAndTyExit
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PlayerFaceStern
-	applymovement LOCALID_GABBY, SlateportCity_Movement_GabbyExit
-	applymovement LOCALID_TY, SlateportCity_Movement_TyExit
+	applymovement 10, SlateportCity_Movement_GabbyExit
+	applymovement 9, SlateportCity_Movement_TyExit
 	waitmovement 0
-	removeobject LOCALID_GABBY
-	removeobject LOCALID_TY
+	removeobject 10
+	removeobject 9
 	msgbox SlateportCity_Text_SternWhewFirstInterview, MSGBOX_DEFAULT
-	applymovement LOCALID_CAPT_STERN, Common_Movement_WalkInPlaceFastestUp
+	applymovement 11, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	msgbox SlateportCity_Text_OhPlayerWeMadeDiscovery, MSGBOX_DEFAULT
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	playbgm MUS_ENCOUNTER_AQUA, 0
 	msgbox SlateportCity_Text_AquaWillAssumeControlOfSubmarine, MSGBOX_DEFAULT
-	applymovement LOCALID_COOK, Common_Movement_WalkInPlaceFastestLeft
-	applymovement LOCALID_FAT_MAN, Common_Movement_WalkInPlaceFastestLeft
-	applymovement LOCALID_OLD_WOMAN, SlateportCity_Movement_OldWomanConcern
-	applymovement LOCALID_RICH_BOY, Common_Movement_QuestionMark
-	applymovement LOCALID_MAN_1, SlateportCity_Movement_ManConcern
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
+	applymovement 1, Common_Movement_WalkInPlaceFastestLeft
+	applymovement 7, SlateportCity_Movement_OldWomanConcern
+	applymovement 3, Common_Movement_QuestionMark
+	applymovement 2, SlateportCity_Movement_ManConcern
 	waitmovement 0
-	applymovement LOCALID_CAPT_STERN, Common_Movement_WalkInPlaceFastestDown
+	applymovement 11, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
 	msgbox SlateportCity_Text_SternWhatWasAllThat, MSGBOX_DEFAULT
 	playse SE_PIN
-	applymovement LOCALID_CAPT_STERN, Common_Movement_ExclamationMark
+	applymovement 11, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_CAPT_STERN, Common_Movement_Delay48
+	applymovement 11, Common_Movement_Delay48
 	waitmovement 0
-	applymovement LOCALID_CAPT_STERN, Common_Movement_WalkInPlaceFastestUp
+	applymovement 11, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	msgbox SlateportCity_Text_FromHarborTryingToTakeSub, MSGBOX_DEFAULT
 	msgbox SlateportCity_Text_PleaseComeWithMe, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_CAPT_STERN, SlateportCity_Movement_SternEnterHarbor
+	applymovement 11, SlateportCity_Movement_SternEnterHarbor
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PlayerEnterHarbor
 	waitmovement 0
-	removeobject LOCALID_CAPT_STERN
+	removeobject 11
 	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_CAPTAIN_STERN
 	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SUBMARINE_SHADOW
 	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_AQUA_GRUNT
@@ -914,18 +893,18 @@ SlateportCity_EventScript_ScottBattleTentScene:: @ 81DD5DC
 	waitmovement 0
 	opendoor 10, 12
 	waitdooranim
-	addobject LOCALID_SCOTT
+	addobject 35
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PushPlayerDown
-	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottExitBattleTent
+	applymovement 35, SlateportCity_Movement_ScottExitBattleTent
 	waitmovement 0
 	closedoor 10, 12
 	waitdooranim
 	msgbox SlateportCity_Text_TakingBattleTentChallenge, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PlayerWatchScottExit
-	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottExitAfterBattleTent
+	applymovement 35, SlateportCity_Movement_ScottExitAfterBattleTent
 	waitmovement 0
-	removeobject LOCALID_SCOTT
+	removeobject 35
 	addvar VAR_SCOTT_STATE, 1
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
 	releaseall

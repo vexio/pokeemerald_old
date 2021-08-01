@@ -50,7 +50,7 @@ BayportCity_LarsHouse_Trigger_LarsEvent_6:
 	goto_if_eq BayportCity_LarsHouse_Trigger_LarsEvent_13
 BayportCity_LarsHouse_Trigger_LarsEvent_11:
 	removeobject 1
-	playse SE_KAIDAN
+	playse SE_EXIT
 	waitse
 	setflag FLAG_BAYPORTCITY_LARSHOUSE_LARSEVENT
 	setflag FLAG_BAYPORTCITY_WINGULL

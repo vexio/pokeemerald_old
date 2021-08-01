@@ -632,18 +632,18 @@ CobaltSea_Object_Captain_5:
 	compare VAR_RESULT, DIR_NORTH
 	goto_if_eq CobaltSea_Object_Captain_11
 CobaltSea_Object_Captain_8:
-	playse SE_RG_KITEKI
+	playse SE_RG_SS_ANNE_HORN
 	waitse
-	playbgm MUS_M_BOAT, 0
+	playbgm MUS_SAILING, 0
 	compare VAR_SS_COBALT_SIDE, 0
 	goto_if_eq CobaltSea_Object_Captain_16
 	compare VAR_SS_COBALT_SIDE, 1
 	goto_if_eq CobaltSea_Object_Captain_17
 CobaltSea_Object_Captain_15:
-	playse SE_RG_KITEKI
+	playse SE_RG_SS_ANNE_HORN
 	waitse
 	delay 10
-	playbgm MUS_NEXTROAD, 0
+	playbgm MUS_ROUTE104, 0
 	showobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE109
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown2
 	waitmovement 0

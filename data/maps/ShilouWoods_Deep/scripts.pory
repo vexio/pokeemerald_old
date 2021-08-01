@@ -11,7 +11,7 @@ script ShilouWoodsDeep_Trigger_LittleBoy_Event {
 	lock
 	fadeoutbgm(3)
 	delay(150)
-	playse(SE_W195)
+	playse(SE_M_PERISH_SONG)
 	waitse
 	applymovement(BOY, ShilouWoodsDeep_LittleBoyEvent_Movement_0)
 	waitmovement(0)
@@ -32,7 +32,7 @@ script ShilouWoodsDeep_Trigger_LittleBoy_Event {
 	delay(20)
 	fadescreen(FADE_TO_BLACK)
 	delay(15)
-	playse(SE_W171)
+	playse(SE_M_NIGHTMARE)
 	waitse
 	delay(15)
 	removeobject(BOY)
@@ -40,13 +40,13 @@ script ShilouWoodsDeep_Trigger_LittleBoy_Event {
 	fadescreen(FADE_FROM_BLACK)
 	setvar(VAR_SHILOUWOODS_GHOST_BOY, 2)
 	delay(20)
-	fadenewbgm(MUS_RG_P_TOWER)
+	fadenewbgm(MUS_RG_POKE_TOWER)
 	release
 	end
 }
 script ShilouWoodsDeep_Trigger_HaventTalkedToLittleGirl {
 	lock
-	playse(SE_W171)
+	playse(SE_M_NIGHTMARE)
 	waitse
 	msgbox(format("A mysterious force prevents you from going further..."), MSGBOX_AUTOCLOSE)
 	applymovement(PLAYER, Common_Movement_WalkLeft)

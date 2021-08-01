@@ -73,7 +73,7 @@
       "y": 6,
       "elevation": 3,
       "item": "ITEM_POTION",
-      "flag": "FLAG_HIDDEN_ITEM_CANVASPATH_1_POTION  "
+      "flag": "FLAG_HIDDEN_ITEM_CANVASPATH_POTION  "
     },
     {
       "type": "sign",

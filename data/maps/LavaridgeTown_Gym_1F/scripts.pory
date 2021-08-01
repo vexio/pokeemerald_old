@@ -33,16 +33,16 @@ LavaridgeTown_Gym_1F_EventScript_EndSetTrainerTempVars:: @ 81FE756
 
 LavaridgeTown_Gym_1F_EventScript_CheckHideTrainers:: @ 81FE757
 	goto_if_defeated TRAINER_COLE, LavaridgeTown_Gym_1F_EventScript_CheckHideGerald
-	setobjectmovementtype 2, MOVEMENT_TYPE_HIDDEN
+	setobjectmovementtype 2, MOVEMENT_TYPE_INVISIBLE
 LavaridgeTown_Gym_1F_EventScript_CheckHideGerald:: @ 81FE764
 	goto_if_defeated TRAINER_GERALD, LavaridgeTown_Gym_1F_EventScript_CheckHideAxle
-	setobjectmovementtype 3, MOVEMENT_TYPE_HIDDEN
+	setobjectmovementtype 3, MOVEMENT_TYPE_INVISIBLE
 LavaridgeTown_Gym_1F_EventScript_CheckHideAxle:: @ 81FE771
 	goto_if_defeated TRAINER_AXLE, LavaridgeTown_Gym_1F_EventScript_CheckHideDanielle
-	setobjectmovementtype 4, MOVEMENT_TYPE_HIDDEN
+	setobjectmovementtype 4, MOVEMENT_TYPE_INVISIBLE
 LavaridgeTown_Gym_1F_EventScript_CheckHideDanielle:: @ 81FE77E
 	goto_if_defeated TRAINER_DANIELLE, LavaridgeTown_Gym_1F_EventScript_EndCheckHideTrainers
-	setobjectmovementtype 5, MOVEMENT_TYPE_HIDDEN
+	setobjectmovementtype 5, MOVEMENT_TYPE_INVISIBLE
 LavaridgeTown_Gym_1F_EventScript_EndCheckHideTrainers:: @ 81FE78B
 	return
 
@@ -74,7 +74,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated:: @ 81FE7C1
 	call LavaridgeTown_Gym_1F_EventScript_GiveOverheat
 	closemessage
 	delay 30
-	playfanfare MUS_ME_TORE_EYE
+	playfanfare MUS_REGISTER_MATCH_CALL
 	msgbox LavaridgeTown_Gym_1F_Text_RegisteredFlannery, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
@@ -471,7 +471,7 @@ script EnclavaGym_Trainer_Leader_Bruce {
 		trainerbattle_no_intro(TRAINER_GYM_LEADER_BRUCE, format("The bond you have with your Pokémon is astounding.\pYou've earned yourself the {COLOR GREEN}Plain Badge"))
 		setflag(FLAG_BADGE02_GET)
 		setvar(VAR_ENCLAVATOWER_STATE, 1)
-		playfanfare(MUS_ME_BACHI)
+		playfanfare(MUS_OBTAIN_BADGE)
 		msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received the {COLOR GREEN}Plain Badge"))
         waitfanfare
 		msgbox(format("Bruce: {COLOR BLUE}This badge will prove your strength, and grant your Pokémon to use {COLOR GREEN}Flash{COLOR BLUE} outside of battle.\pAs well, take this TM."))

@@ -172,7 +172,7 @@ CrawdauntPub_Object_Bartender_1:
 	msgbox CrawdauntPub_Object_Bartender_Text_4, MSGBOX_AUTOCLOSE
 	applymovement 7, CrawdauntPub_Bartender_Movement_2
 	waitmovement 0
-	playse SE_KAIDAN
+	playse SE_EXIT
 	waitse
 	applymovement 12, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -190,7 +190,7 @@ CrawdauntPub_Object_Bartender_1:
 	waitse
 	applymovement 12, CrawdauntPub_Bartender_Movement_4
 	waitmovement 0
-	playse SE_KAIDAN
+	playse SE_EXIT
 	waitse
 	setflag FLAG_CRAWDAUNTPUB_BARTENDER
 	setvar VAR_CYPRESS_PROTO_EVENT_STATE, 8

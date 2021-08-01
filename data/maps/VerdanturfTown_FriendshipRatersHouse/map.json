@@ -2,7 +2,7 @@
   "id": "MAP_VERDANTURF_TOWN_FRIENDSHIP_RATERS_HOUSE",
   "name": "VerdanturfTown_FriendshipRatersHouse",
   "layout": "LAYOUT_HOUSE2",
-  "music": "MUS_RG_OKURIMONO",
+  "music": "MUS_RG_MYSTERY_GIFT",
   "region_map_section": "MAPSEC_VERDANTURF_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

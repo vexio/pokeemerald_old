@@ -60,7 +60,7 @@ script BayportCity_LarsHouse_Trigger_LarsEvent {
 		waitmovement(0)
 	}
 	removeobject(LARS)
-	playse(SE_KAIDAN)
+	playse(SE_EXIT)
 	waitse
 	setflag(FLAG_BAYPORTCITY_LARSHOUSE_LARSEVENT)
 	setflag(FLAG_BAYPORTCITY_WINGULL)

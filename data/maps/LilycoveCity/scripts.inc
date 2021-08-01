@@ -136,13 +136,13 @@ LilycoveCity_EventScript_FatMan:: @ 81E2CD4
 LilycoveCity_EventScript_Man1:: @ 81E2CDD
 	lockall
 	msgbox LilycoveCity_Text_JustArrivedAndSawRarePokemon, MSGBOX_NPC
-	applymovement LOCALID_MAN_1, Common_Movement_FaceOriginalDirection
+	applymovement 20, Common_Movement_FaceOriginalDirection
 	end
 
 LilycoveCity_EventScript_Woman1:: @ 81E2CEE
 	lockall
 	msgbox LilycoveCity_Text_HoneymoonVowToSeeRarePokemon, MSGBOX_NPC
-	applymovement LOCALID_WOMAN_1, Common_Movement_FaceOriginalDirection
+	applymovement 19, Common_Movement_FaceOriginalDirection
 	end
 
 LilycoveCity_EventScript_CitySign:: @ 81E2CFF
@@ -240,7 +240,7 @@ LilycoveCity_EventScript_Rival:: @ 81E2DDE
 	end
 
 LilycoveCity_EventScript_May:: @ 81E2DF8
-	playbgm MUS_ENCOUNTER_MAY, TRUE
+	playbgm MUS_ENCOUNTER_MAY, 1
 	call_if_set FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_MayAskToBattleAgain
 	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_MayAskToBattle
 	compare VAR_RESULT, NO
@@ -269,7 +269,7 @@ LilycoveCity_EventScript_DeclineMayBattle:: @ 81E2E5A
 	end
 
 LilycoveCity_EventScript_Brendan:: @ 81E2E6B
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_ENCOUNTER_BRENDAN, 1
 	call_if_set FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_BrendanAskToBattleAgain
 	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_BrendanAskToBattle
 	compare VAR_RESULT, NO
@@ -913,7 +913,7 @@ MystCity_Trigger_CrawdauntPub::
 	playse SE_PIN
 	waitmovement 0
 	waitse
-	playbgm MUS_RG_RIVAL1, 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	delay 20
 	msgbox MystCity_Trigger_CrawdauntPub_Text_0, MSGBOX_AUTOCLOSE
 	delay 10
@@ -933,7 +933,7 @@ MystCity_Trigger_CrawdauntPub_1:
 	compare VAR_STARTER_MON, 2
 	goto_if_eq MystCity_Trigger_CrawdauntPub_11
 MystCity_Trigger_CrawdauntPub_8:
-	playbgm MUS_RG_RIVAL1, 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	msgbox MystCity_Trigger_CrawdauntPub_Text_3, MSGBOX_AUTOCLOSE
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_0, 14
@@ -943,7 +943,7 @@ MystCity_Trigger_CrawdauntPub_8:
 	compare VAR_TEMP_0, 16
 	goto_if_eq MystCity_Trigger_CrawdauntPub_18
 MystCity_Trigger_CrawdauntPub_15:
-	fadenewbgm MUS_MINAMO
+	fadenewbgm MUS_LILYCOVE
 	applymovement 22, MystCity_CrawdauntPub_Movement_1
 	waitmovement 0
 	msgbox MystCity_Trigger_CrawdauntPub_Text_4

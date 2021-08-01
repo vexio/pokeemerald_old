@@ -1249,7 +1249,7 @@
 #define FLAG_ITEM_PROTOHIDEOUT_BASEMENT_KEY                         0x4AF
 #define FLAG_ITEM_FROSTPINE_CITY_LUCKY_EGG                          0x4B0
 #define FLAG_HIDDEN_ITEM_PROTOHIDEOUT_FULL_RESTORE                  0x4B1
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
+#define FLAG_HIDDEN_ITEM_CANVASPATH_POTION                          0x4B2
 #define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
 #define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
 #define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag

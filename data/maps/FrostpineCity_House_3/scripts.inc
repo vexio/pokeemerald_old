@@ -30,7 +30,7 @@ FrostpineCity_House_3_Object_Painter_4:
 
 FrostpineCity_House_3_Object_Painter_7:
 	givemon SPECIES_SMEARGLE, 10, ITEM_LEFTOVERS
-	playfanfare MUS_RG_FAN5
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
 	msgbox FrostpineCity_House_3_Object_Painter_Text_2
 	waitfanfare
 	msgbox FrostpineCity_House_3_Object_Painter_Text_3, MSGBOX_AUTOCLOSE

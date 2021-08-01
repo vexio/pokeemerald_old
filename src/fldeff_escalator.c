@@ -45,15 +45,15 @@ static const u16 sEscalatorMetatiles_2F_0[ESCALATOR_STAGES] = {
 };
 
 static const u16 sEscalatorMetatiles_2F_1[ESCALATOR_STAGES] = {
-    METATILE_PokemonCenter_Escalator2F_Tile1_Frame0,
-    METATILE_PokemonCenter_Escalator2F_Tile1_Frame1,
-    METATILE_PokemonCenter_Escalator2F_Tile1_Frame2
+    METATILE_PokemonCenter_Escalator2F_Tile0_Frame0,
+    METATILE_PokemonCenter_Escalator2F_Tile0_Frame1,
+    METATILE_PokemonCenter_Escalator2F_Tile0_Frame2
 };
 
 static const u16 sEscalatorMetatiles_2F_2[ESCALATOR_STAGES] = {
-    METATILE_PokemonCenter_Escalator2F_Tile2_Frame0,
-    METATILE_PokemonCenter_Escalator2F_Tile2_Frame1,
-    METATILE_PokemonCenter_Escalator2F_Tile2_Frame2
+    METATILE_PokemonCenter_Escalator2F_Tile0_Frame0,
+    METATILE_PokemonCenter_Escalator2F_Tile0_Frame1,
+    METATILE_PokemonCenter_Escalator2F_Tile0_Frame2
 };
 
 #define tState            data[0]

@@ -5,7 +5,7 @@ FrostpineCity_Gym_MapScripts::
 FrostpineGym_Trigger_Button_1::
 	lockall
 	delay 5
-	playse SE_TOY_DANGO
+	playse SE_MUD_BALL
 	setmetatile 11, 20, METATILE_FrostpineGym_StoneBridge_Top, 0
 	setmetatile 11, 21, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0
 	setmetatile 11, 22, METATILE_FrostpineGym_StoneBridge_Bottom, 0
@@ -28,7 +28,7 @@ FrostpineGym_Trigger_Button_1::
 FrostpineGym_Trigger_Button_2::
 	lockall
 	delay 5
-	playse SE_TOY_DANGO
+	playse SE_MUD_BALL
 	setmetatile 5, 20, METATILE_FrostpineGym_StoneBridge_Top, 0
 	setmetatile 5, 21, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0
 	setmetatile 5, 22, METATILE_FrostpineGym_StoneBridge_Bottom, 0
@@ -48,7 +48,7 @@ FrostpineGym_Trigger_Button_2::
 FrostpineGym_Trigger_Button_3::
 	lockall
 	delay 5
-	playse SE_TOY_DANGO
+	playse SE_MUD_BALL
 	setmetatile 0, 16, METATILE_FrostpineGym_StoneBridge_Left, 0
 	setmetatile 1, 16, METATILE_FrostpineGym_StoneBridge_Horizontal_Middle, 0
 	setmetatile 2, 16, METATILE_FrostpineGym_StoneBridge_Right, 0
@@ -65,7 +65,7 @@ FrostpineGym_Trigger_Button_3::
 FrostpineGym_Trigger_Button_4::
 	lockall
 	delay 5
-	playse SE_TOY_DANGO
+	playse SE_MUD_BALL
 	setmetatile 3, 12, METATILE_FrostpineGym_StoneBridge_Top, 0
 	setmetatile 3, 13, METATILE_FrostpineGym_StoneBridge_Vertical_Middle, 0
 	setmetatile 3, 14, METATILE_FrostpineGym_StoneBridge_Bottom, 0
@@ -85,7 +85,7 @@ FrostpineGym_Trigger_Button_4::
 FrostpineGym_Trigger_Button_5::
 	lockall
 	delay 5
-	playse SE_TOY_DANGO
+	playse SE_MUD_BALL
 	setmetatile 7, 10, METATILE_FrostpineGym_StoneBridge_Left, 0
 	setmetatile 8, 10, METATILE_FrostpineGym_StoneBridge_Horizontal_Middle, 0
 	setmetatile 9, 10, METATILE_FrostpineGym_StoneBridge_Right, 0
@@ -159,7 +159,7 @@ FrostpineGym_Trainer_Bernie_2:
 	msgbox FrostpineGym_Trainer_Bernie_Text_1, MSGBOX_AUTOCLOSE
 	trainerbattle_no_intro TRAINER_GYM_LEADER_BERNIE, FrostpineGym_Trainer_Bernie_Text_2
 	setflag FLAG_BADGE03_GET
-	playfanfare MUS_ME_BACHI
+	playfanfare MUS_OBTAIN_BADGE
 	msgbox FrostpineGym_Trainer_Bernie_Text_3
 	waitfanfare
 	msgbox FrostpineGym_Trainer_Bernie_Text_4

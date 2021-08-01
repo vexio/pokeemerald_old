@@ -1,5 +1,3 @@
-.set LOCALID_TWIN, 2
-
 VerdanturfTown_MapScripts:: @ 81EB566
 	map_script MAP_SCRIPT_ON_TRANSITION, VerdanturfTown_OnTransition
 	.byte 0
@@ -14,14 +12,14 @@ VerdanturfTown_EventScript_Twin:: @ 81EB575
 	faceplayer
 	goto_if_set FLAG_RUSTURF_TUNNEL_OPENED, VerdanturfTown_EventScript_TwinTunnelOpen
 	msgbox VerdanturfTown_Text_ManTryingToDigTunnel, MSGBOX_DEFAULT
-	applymovement LOCALID_TWIN, Common_Movement_FaceOriginalDirection
+	applymovement 2, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
 
 VerdanturfTown_EventScript_TwinTunnelOpen:: @ 81EB594
 	msgbox VerdanturfTown_Text_ManDugTunnelForLove, MSGBOX_DEFAULT
-	applymovement LOCALID_TWIN, Common_Movement_FaceOriginalDirection
+	applymovement 2, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
@@ -185,7 +183,7 @@ FrostpineCity_Trigger_RivalEvent::
 	waitmovement 0
 	playse SE_PIN
 	delay 16
-	playbgm MUS_RG_RIVAL1, 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	msgbox FrostpineCity_Trigger_RivalEvent_Text_0, MSGBOX_AUTOCLOSE
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_1, 29
@@ -199,7 +197,7 @@ FrostpineCity_Trigger_RivalEvent_1:
 	msgbox FrostpineCity_Trigger_RivalEvent_Text_1, MSGBOX_AUTOCLOSE
 	fadescreen FADE_TO_BLACK
 	special HealPlayerParty
-	playse SE_KAIFUKU
+	playse SE_USE_ITEM
 	waitse
 	fadescreen FADE_FROM_BLACK
 	delay 16
@@ -211,7 +209,7 @@ FrostpineCity_Trigger_RivalEvent_1:
 	compare VAR_STARTER_MON, 2
 	goto_if_eq FrostpineCity_Trigger_RivalEvent_11
 FrostpineCity_Trigger_RivalEvent_8:
-	playbgm MUS_RG_RIVAL2, 0
+	playbgm MUS_RG_RIVAL_EXIT, 0
 	delay 5
 	msgbox FrostpineCity_Trigger_RivalEvent_Text_4, MSGBOX_AUTOCLOSE
 	compare VAR_TEMP_1, 29
@@ -224,7 +222,7 @@ FrostpineCity_Trigger_RivalEvent_15:
 	removeobject 9
 	setflag FLAG_FROSTPINE_RIVAL_EVENT
 	setvar VAR_FROSTPINE_CITY_RIVAL_EVENT, 1
-	fadenewbgm MUS_RG_OKURIMONO
+	fadenewbgm MUS_RG_MYSTERY_GIFT
 	releaseall
 	end
 

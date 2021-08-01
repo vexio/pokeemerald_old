@@ -2,7 +2,7 @@
   "id": "MAP_OVERWORLD_SPRITE_TEST",
   "name": "OverworldSprite_Test",
   "layout": "LAYOUT_OVERWORLD_SPRITE_TEST",
-  "music": "MUS_DAN02",
+  "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

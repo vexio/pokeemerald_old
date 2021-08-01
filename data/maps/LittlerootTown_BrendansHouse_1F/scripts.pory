@@ -145,7 +145,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MeetRival2:: @ 81F78D6
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_MeetRival:: @ 81F78E2
-	playse SE_KAIDAN
+	playse SE_EXIT
 	delay 10
 	addobject 7
 	delay 30
@@ -156,7 +156,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MeetRival:: @ 81F78E2
 	waitmovement 0
 	compare VAR_0x8008, 1
 	call_if_ne LittlerootTown_BrendansHouse_1F_EventScript_PlayerFaceBrendan
-	playbgm MUS_BOY_SUP, 1
+	playbgm MUS_ENCOUNTER_BRENDAN, 1
 	compare VAR_0x8008, 0
 	call_if_eq LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachPlayer0
 	compare VAR_0x8008, 1
@@ -171,7 +171,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MeetRival:: @ 81F78E2
 	call_if_eq LittlerootTown_BrendansHouse_1F_EventScript_BrendanGoUpstairs1
 	compare VAR_0x8008, 2
 	call_if_eq LittlerootTown_BrendansHouse_1F_EventScript_BrendanGoUpstairs2
-	playse SE_KAIDAN
+	playse SE_EXIT
 	removeobject 7
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_BRENDAN
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL
@@ -473,7 +473,7 @@ script PlayersHouse_Mapscript_GetPokemon {
 		waitmovement(0)
 		playse(SE_PIN)
 		waitse
-		playse(SE_JITE_PYOKO)
+		playse(SE_BIKE_HOP)
 		applymovement(SKIP_ID, Common_Movement_JumpInPlaceLeft)
 		waitmovement(0)
 		applymovement(SKIP_ID, Common_Movement_WalkInPlaceUp)
@@ -494,19 +494,19 @@ script PlayersHouse_Mapscript_GetPokemon {
 		waitstate
 		fadeoutbgm(0)
 		if (var(VAR_STARTER_MON) == 0) {
-			playse(MUS_RG_FAN5)
+			playse(MUS_RG_OBTAIN_KEY_ITEM)
 			msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Rowlet"))
 			waitse
 		} elif (var(VAR_STARTER_MON) == 1) {
-			playse(MUS_RG_FAN5)
+			playse(MUS_RG_OBTAIN_KEY_ITEM)
 			msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Chimchar"))
 			waitse
 		} elif (var(VAR_STARTER_MON) == 2) {
-			playse(MUS_RG_FAN5)
+			playse(MUS_RG_OBTAIN_KEY_ITEM)
 			msgbox(format("{COLOR GREEN}{PLAYER}{COLOR DARK_GREY} received a {COLOR GREEN}Froakie"))
 			waitse
 		}
-		playbgm(MUS_MISHIRO, 0)
+		playbgm(MUS_LITTLEROOT, 0)
 		msgbox(format("Mom: {COLOR RED}Would you like to nickname your Pokemon?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			setvar(VAR_0x8004, 0)
@@ -527,15 +527,15 @@ script PlayersHouse_Mapscript_GetPokemon {
 		waitmovement(0)
 		delay(20)
 		if (var(VAR_STARTER_MON) == 0) { //player chose rowlet, rival is chimchar
-			playse(MUS_RG_FAN5)
+			playse(MUS_RG_OBTAIN_KEY_ITEM)
 			msgbox(format("Skip received a {COLOR GREEN}Chimchar"))
 			waitse
 		} elif (var(VAR_STARTER_MON) == 1) { //player chose chimchar, rival is froakie
-			playse(MUS_RG_FAN5)
+			playse(MUS_RG_OBTAIN_KEY_ITEM)
 			msgbox(format("Skip received a {COLOR GREEN}Froakie"))
 			waitse
 		} elif (var(VAR_STARTER_MON) == 2) { //player chose froakie, rival is rowlet
-			playse(MUS_RG_FAN5)
+			playse(MUS_RG_OBTAIN_KEY_ITEM)
 			msgbox(format("Skip received a {COLOR GREEN}Rowlet"))
 			waitse
 		}
@@ -548,7 +548,7 @@ script PlayersHouse_Mapscript_GetPokemon {
 		delay(10)
 		applymovement(SKIP_ID, PlayersHouse_GetPokemon_Movement_0)
 		waitmovement(0)
-		playse(SE_KAIDAN)
+		playse(SE_EXIT)
 		removeobject(SKIP_ID)
 		delay(10)
 		applymovement(MOM_ID, Common_Movement_WalkInPlaceRight)
@@ -558,13 +558,13 @@ script PlayersHouse_Mapscript_GetPokemon {
 		msgbox(format("Mom: {COLOR RED}Well {COLOR GREEN}Skip{COLOR RED} left in a hurry!\p{PLAYER}, will you do me a favor and give him these?"))
 		closemessage
 		delay(5)
-		playfanfare(MUS_FANFA4)
+		playfanfare(MUS_OBTAIN_ITEM)
 		msgbox(format("{PLAYER} received the Pokédex!"))
 		waitfanfare
 		setflag(FLAG_SYS_POKEDEX_GET)
 		#special(EnableNationalPokedex)
 		special(SetUnlockedPokedexFlags)
-		playfanfare(MUS_FANFA4)
+		playfanfare(MUS_OBTAIN_ITEM)
 		msgbox(format("{PLAYER} received the Trainer Card!"))
 		waitfanfare
 		delay(10)
@@ -576,7 +576,7 @@ script PlayersHouse_Mapscript_GetPokemon {
 		delay(5)
 		applymovement(DAD_ID, Common_Movement_WalkInPlaceRight)
 		waitmovement(0)
-		playfanfare(MUS_FANFA4)
+		playfanfare(MUS_OBTAIN_ITEM)
 		msgbox(format("{PLAYER} received the Running Shoes!"))
 		waitfanfare
 		setflag(FLAG_SYS_B_DASH)

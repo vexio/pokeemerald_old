@@ -493,7 +493,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_MAN5                    0x1140
 #define OBJ_EVENT_PAL_TAG_TUCKER                  0x1141
 #define OBJ_EVENT_PAL_TAG_MART_EMPLOYEE           0x1142
-#define OBJ_EVENT_PAL_TAG_ARTIST                  0x1143
+#define OBJ_EVENT_PAL_TAG_ARTIST_M                0x1143
 #define OBJ_EVENT_PAL_TAG_MAGMA_MEMBER_M          0x1144
 #define OBJ_EVENT_PAL_TAG_MAGMA_MEMBER_F          0x1145
 #define OBJ_EVENT_PAL_TAG_WALLY                   0x1146
@@ -518,6 +518,16 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_LORRAINE                0x1159
 #define OBJ_EVENT_PAL_TAG_AIREN                   0x115A
 #define OBJ_EVENT_PAL_TAG_JULES                   0x115B
+#define OBJ_EVENT_PAL_TAG_DYSON                   0x115C
+#define OBJ_EVENT_PAL_TAG_DYSON_REFLECTION        0x115D
+#define OBJ_EVENT_PAL_TAG_CLARA                   0x115E
+#define OBJ_EVENT_PAL_TAG_CLARA_REFLECTION        0x115F
+#define OBJ_EVENT_PAL_TAG_POKEFANS                0x1160
+#define OBJ_EVENT_PAL_TAG_EXPERT                  0x1161
+#define OBJ_EVENT_PAL_TAG_RANGER                  0x1162
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER             0x1163
+#define OBJ_EVENT_PAL_TAG_PSYCHIC                 0x1164
+#define OBJ_EVENT_PAL_TAG_ARTIST_F                0x1165
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -584,14 +594,12 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Nurse,            OBJ_EVENT_PAL_TAG_NURSE},
     {gObjectEventPalette_Man4,             OBJ_EVENT_PAL_TAG_MAN4},
     {gObjectEventPalette_Man5,             OBJ_EVENT_PAL_TAG_MAN5},
-    {gObjectEventPalette_Tucker,           OBJ_EVENT_PAL_TAG_TUCKER},
     {gObjectEventPalette_MartEmployee,     OBJ_EVENT_PAL_TAG_MART_EMPLOYEE},
-    {gObjectEventPalette_Artist,           OBJ_EVENT_PAL_TAG_ARTIST},
+    {gObjectEventPalette_ArtistM,           OBJ_EVENT_PAL_TAG_ARTIST_M},
     {gObjectEventPalette_MagmaMemberM,     OBJ_EVENT_PAL_TAG_MAGMA_MEMBER_M},
     {gObjectEventPalette_MagmaMemberF,     OBJ_EVENT_PAL_TAG_MAGMA_MEMBER_F},
     {gObjectEventPalette_Wally,            OBJ_EVENT_PAL_TAG_WALLY},
     {gObjectEventPalette_Brandon,          OBJ_EVENT_PAL_TAG_BRANDON},
-    {gObjectEventPalette_Clara,            OBJ_EVENT_PAL_TAG_CLARA},
     {gObjectEventPalette_Mom, OBJ_EVENT_PAL_TAG_MOM},
     {gObjectEventPalette_Steven, OBJ_EVENT_PAL_TAG_STEVEN},
     {gObjectEventPalette_AquaMember, OBJ_EVENT_PAL_TAG_AQUA_MEMBERS},
@@ -611,6 +619,15 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Norman, OBJ_EVENT_PAL_TAG_LORRAINE},
     {gObjectEventPalette_Winona, OBJ_EVENT_PAL_TAG_AIREN},
     {gObjectEventPalette_Liza, OBJ_EVENT_PAL_TAG_JULES},
+    {gObjectEventPalette_Dyson, OBJ_EVENT_PAL_TAG_DYSON},
+    {gObjectEventPalette_DysonReflection, OBJ_EVENT_PAL_TAG_DYSON_REFLECTION},
+    {gObjectEventPalette_Clara, OBJ_EVENT_PAL_TAG_CLARA},
+    {gObjectEventPalette_ClaraReflection, OBJ_EVENT_PAL_TAG_CLARA_REFLECTION},
+    {gObjectEventPalette_Pokefan, OBJ_EVENT_PAL_TAG_POKEFANS},
+    {gObjectEventPalette_Expert, OBJ_EVENT_PAL_TAG_EXPERT},
+    {gObjectEventPalette_Ranger, OBJ_EVENT_PAL_TAG_RANGER},
+    {gObjectEventPalette_Reporter, OBJ_EVENT_PAL_TAG_ACE_TRAINER},
+    {gObjectEventPalette_Psychic, OBJ_EVENT_PAL_TAG_PSYCHIC},
     {NULL,                                  0x0000},
 };
 
@@ -1554,6 +1571,7 @@ void RemoveAllObjectEventsExceptPlayer(void)
 static u8 TrySetupObjectEventSprite(struct ObjectEventTemplate *objectEventTemplate, struct SpriteTemplate *spriteTemplate, u8 mapNum, u8 mapGroup, s16 cameraX, s16 cameraY)
 {
     u8 spriteId;
+    u8 paletteSlot;
     u8 objectEventId;
     struct Sprite *sprite;
     struct ObjectEvent *objectEvent;
@@ -1565,7 +1583,8 @@ static u8 TrySetupObjectEventSprite(struct ObjectEventTemplate *objectEventTempl
 
     objectEvent = &gObjectEvents[objectEventId];
     graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
-    if (spriteTemplate->paletteTag != 0xffff)
+    paletteSlot = graphicsInfo->paletteSlot;
+    if (paletteSlot == 0)
     {
         LoadPlayerObjectReflectionPalette(graphicsInfo->paletteTag, 0);
     }
@@ -1582,6 +1601,7 @@ static u8 TrySetupObjectEventSprite(struct ObjectEventTemplate *objectEventTempl
     if (objectEvent->movementType == MOVEMENT_TYPE_INVISIBLE)
         objectEvent->invisible = TRUE;
 
+    *(u16 *)&spriteTemplate->paletteTag = 0xFFFF;
     spriteId = CreateSprite(spriteTemplate, 0, 0, 0);
     if (spriteId == MAX_SPRITES)
     {
@@ -1595,6 +1615,7 @@ static u8 TrySetupObjectEventSprite(struct ObjectEventTemplate *objectEventTempl
     sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
     sprite->pos1.x += 8;
     sprite->pos1.y += 16 + sprite->centerToCornerVecY;
+    sprite->oam.paletteNum = paletteSlot;
     sprite->coordOffsetEnabled = TRUE;
     sprite->sObjEventId = objectEventId;
     objectEvent->spriteId = spriteId;
@@ -9358,36 +9379,11 @@ u8 MovementAction_Fly_Finish(struct ObjectEvent *objectEvent, struct Sprite *spr
     return TRUE;
 }
 
-// NEW
-u16 GetMiniStepCount(u8 speed)
-{
-    return (u16)gUnknown_0850E768[speed];
-}
-
-void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame)
-{
-    gUnknown_0850E754[speed][currentFrame](sprite, sprite->data[3]);
-}
-
-bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent)
-{
-    s16 x;
-    s16 y;
-
-    x = objectEvent->currentCoords.x;
-    y = objectEvent->currentCoords.y;
-    MoveCoordsInDirection(DIR_NORTH, &x, &y, 0, 1);
-    if (MetatileBehavior_IsWaterfall(MapGridGetMetatileBehaviorAt(x, y)))
-        return TRUE;
-    
-    return FALSE;
-}
-
 // running slow
 static void StartSlowRunningAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction)
 {
-    sub_8093AF0(objectEvent, sprite, direction);
-    npc_apply_anim_looping(objectEvent, sprite, GetRunningDirectionAnimNum(objectEvent->facingDirection));
+    InitNpcForWalkSlow(objectEvent, sprite, direction);
+    SetStepAnimHandleAlternation(objectEvent, sprite, GetRunningDirectionAnimNum(objectEvent->facingDirection));
 }
 
 #define tDirection data[3]

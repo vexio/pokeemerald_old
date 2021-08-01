@@ -6977,7 +6977,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
             *(txtPtr)++ = CHAR_FEMALE;
             break;
         default:
-            *(txtPtr)++ = TEXT_COLOR_DARK_GRAY;
+            *(txtPtr)++ = TEXT_COLOR_DARK_GREY;
             *(txtPtr)++ = TEXT_COLOR_WHITE;
             *(txtPtr)++ = TEXT_COLOR_LIGHT_GRAY;
             *(txtPtr)++ = CHAR_GENDERLESS;
@@ -6986,7 +6986,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
 
         *(txtPtr++) = EXT_CTRL_CODE_BEGIN;
         *(txtPtr++) = EXT_CTRL_CODE_COLOR_HIGHLIGHT_SHADOW;
-        *(txtPtr++) = TEXT_COLOR_DARK_GRAY;
+        *(txtPtr++) = TEXT_COLOR_DARK_GREY;
         *(txtPtr++) = TEXT_COLOR_WHITE;
         *(txtPtr++) = TEXT_COLOR_LIGHT_GRAY;
         *(txtPtr++) = CHAR_SPACE;

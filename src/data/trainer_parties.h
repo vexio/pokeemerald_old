@@ -292,7 +292,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_Fredrick[] = {
     .iv = 100,
     .lvl = 16,
     .species = SPECIES_MURKROW,
-    .moves = {MOVE_TOXIC, MOVE_WING_ATTACK, MOVE_FAINT_ATTACK, MOVE_ASTONISH}
+    .moves = {MOVE_TOXIC, MOVE_WING_ATTACK, MOVE_FEINT_ATTACK, MOVE_ASTONISH}
     },
     {
     .iv = 100,
@@ -1018,7 +1018,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_Braxton[] = {
     .iv = 100,
     .lvl = 30,
     .species = SPECIES_PAWNIARD,
-    .moves = {MOVE_METAL_CLAW, MOVE_FAINT_ATTACK, MOVE_FURY_CUTTER, MOVE_IRON_DEFENSE}
+    .moves = {MOVE_METAL_CLAW, MOVE_FEINT_ATTACK, MOVE_FURY_CUTTER, MOVE_IRON_DEFENSE}
     },
     {
     .iv = 150,

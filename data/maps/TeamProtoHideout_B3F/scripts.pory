@@ -57,7 +57,7 @@ script ProtoHideoutB3F_Object_Skip {
 		setmetatile(3, 11, 512, 0)
 		setmetatile(3, 12, 512, 0)
 		special(DrawWholeMapView)
-		playse(SE_TOY_KABE)
+		playse(SE_BREAKABLE_DOOR)
 		delay(25)
 		applymovement(SKIP, Common_Movement_WalkInPlaceUp)
 		waitmovement(0)
@@ -107,7 +107,7 @@ script ProtoHideoutB3F_Object_Skip {
 		msgbox(format("???: {COLOR BLUE}Another interruption...\pI'd like to confront these trainers."), MSGBOX_AUTOCLOSE)
 		delay(10)
 		applymovement(SKIP, Common_Movement_JumpInPlaceRight)
-		playse(SE_JITE_PYOKO)
+		playse(SE_BIKE_HOP)
 		waitse
 		waitmovement(0)
 		applymovement(SKIP, Common_Movement_WalkInPlaceRight)
@@ -165,7 +165,7 @@ script ProtoHideoutB3F_Object_Skip {
 		removeobject(HAUMEA)
 		removeobject(CERES)
 		removeobject(ERIS)
-		playse(SE_TK_WARPOUT)
+		playse(SE_WARP_OUT)
 		waitse
 		fadescreen(FADE_FROM_BLACK)
 		delay(10)

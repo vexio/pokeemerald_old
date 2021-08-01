@@ -66,7 +66,7 @@ TriadGorge_Trigger_ProtoGrunts_1:
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, TriadGorge_ProtoGrunts_CMovement_0
 	waitmovement 0
-	fadenewbgm MUS_AJITO
+	fadenewbgm MUS_AQUA_MAGMA_HIDEOUT
 	fadescreen FADE_FROM_BLACK
 	delay 10
 	applymovement 2, Common_Movement_WalkInPlaceLeft
@@ -81,7 +81,7 @@ TriadGorge_Trigger_ProtoGrunts_1:
 	delay 10
 	applymovement 5, Common_Movement_JumpInPlaceRight
 	applymovement 4, Common_Movement_JumpInPlaceRight
-	playse SE_JITE_PYOKO
+	playse SE_BIKE_HOP
 	waitmovement 0
 	applymovement 5, Common_Movement_WalkInPlaceRight
 	applymovement 4, Common_Movement_WalkInPlaceRight
@@ -143,7 +143,7 @@ TriadGorge_Trigger_ProtoGrunts_1:
 	delay 16
 	applymovement 4, Common_Movement_JumpInPlaceLeft
 	waitmovement 0
-	playse SE_JITE_PYOKO
+	playse SE_BIKE_HOP
 	delay 5
 	msgbox TriadGorge_Trigger_ProtoGrunts_Text_13
 	applymovement 2, Common_Movement_WalkInPlaceLeft
@@ -160,7 +160,7 @@ TriadGorge_Trigger_ProtoGrunts_1:
 	waitmovement 0
 	msgbox TriadGorge_Trigger_ProtoGrunts_Text_15
 	trainerbattle_no_intro TRAINER_GRUNT_TRIAD_GORGE_1, TriadGorge_Trigger_ProtoGrunts_Text_16
-	playbgm MUS_AJITO, 0
+	playbgm MUS_AQUA_MAGMA_HIDEOUT, 0
 	delay 5
 	applymovement 4, TriadGorge_ProtoGrunts_Movement_2
 	waitmovement 0
@@ -168,7 +168,7 @@ TriadGorge_Trigger_ProtoGrunts_1:
 	waitmovement 0
 	msgbox TriadGorge_Trigger_ProtoGrunts_Text_17
 	trainerbattle_no_intro TRAINER_GRUNT_TRIAD_GORGE_2, TriadGorge_Trigger_ProtoGrunts_Text_18
-	playbgm MUS_AJITO, 0
+	playbgm MUS_AQUA_MAGMA_HIDEOUT, 0
 	delay 5
 	applymovement 3, TriadGorge_ProtoGrunts_Movement_3
 	waitmovement 0
@@ -176,7 +176,7 @@ TriadGorge_Trigger_ProtoGrunts_1:
 	waitmovement 0
 	msgbox TriadGorge_Trigger_ProtoGrunts_Text_19
 	trainerbattle_no_intro TRAINER_GRUNT_TRIAD_GORGE_3, TriadGorge_Trigger_ProtoGrunts_Text_20
-	playbgm MUS_AJITO, 0
+	playbgm MUS_AQUA_MAGMA_HIDEOUT, 0
 	delay 5
 	applymovement 4, TriadGorge_ProtoGrunts_Movement_4
 	waitmovement 0
@@ -185,7 +185,7 @@ TriadGorge_Trigger_ProtoGrunts_1:
 	waitmovement 0
 	msgbox TriadGorge_Trigger_ProtoGrunts_Text_21
 	trainerbattle_no_intro TRAINER_ADMIN_HAUMEA_1, TriadGorge_Trigger_ProtoGrunts_Text_22
-	playbgm MUS_AJITO, 0
+	playbgm MUS_AQUA_MAGMA_HIDEOUT, 0
 	delay 5
 	applymovement 2, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
@@ -201,7 +201,7 @@ TriadGorge_Trigger_ProtoGrunts_1:
 	removeobject 4
 	removeobject 3
 	removeobject 2
-	playse SE_TK_WARPOUT
+	playse SE_WARP_OUT
 	setobjectxy 15, 36, 21
 	delay 15
 	fadescreen FADE_FROM_BLACK
@@ -212,7 +212,7 @@ TriadGorge_Trigger_ProtoGrunts_1:
 	waitmovement 0
 	playse SE_PIN
 	waitse
-	playbgm MUS_RG_RIVAL1, 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	msgbox TriadGorge_Trigger_ProtoGrunts_Text_24, MSGBOX_AUTOCLOSE
 	applymovement 15, TriadGorge_ProtoGrunts_Movement_7
 	waitmovement 0
@@ -220,7 +220,7 @@ TriadGorge_Trigger_ProtoGrunts_1:
 	giveitem ITEM_HM01_CUT, 1
 	msgbox TriadGorge_Trigger_ProtoGrunts_Text_26, MSGBOX_AUTOCLOSE
 	applymovement 15, TriadGorge_ProtoGrunts_Movement_8
-	playbgm MUS_NEXTROAD, 0
+	playbgm MUS_ROUTE104, 0
 	waitmovement 0
 	removeobject 15
 	setflag FLAG_TRIAD_GORGE_GRUNTS

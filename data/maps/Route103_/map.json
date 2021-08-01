@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE103_",
   "name": "Route103_",
   "layout": "LAYOUT_ROUTE103_",
-  "music": "MUS_DAN02",
+  "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_ROUTE_103",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

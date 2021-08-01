@@ -47,7 +47,7 @@ ProtoHideoutB3F_Object_Skip_4:
 	setmetatile 3, 11, 512, 0
 	setmetatile 3, 12, 512, 0
 	special DrawWholeMapView
-	playse SE_TOY_KABE
+	playse SE_BREAKABLE_DOOR
 	delay 25
 	applymovement 8, Common_Movement_WalkInPlaceUp
 	waitmovement 0
@@ -91,7 +91,7 @@ ProtoHideoutB3F_Object_Skip_11:
 	msgbox ProtoHideoutB3F_Object_Skip_Text_9, MSGBOX_AUTOCLOSE
 	delay 10
 	applymovement 8, Common_Movement_JumpInPlaceRight
-	playse SE_JITE_PYOKO
+	playse SE_BIKE_HOP
 	waitse
 	waitmovement 0
 	applymovement 8, Common_Movement_WalkInPlaceRight
@@ -143,7 +143,7 @@ ProtoHideoutB3F_Object_Skip_22:
 	removeobject 6
 	removeobject 4
 	removeobject 5
-	playse SE_TK_WARPOUT
+	playse SE_WARP_OUT
 	waitse
 	fadescreen FADE_FROM_BLACK
 	delay 10

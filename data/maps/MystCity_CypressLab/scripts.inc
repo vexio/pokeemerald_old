@@ -151,9 +151,9 @@ MystCity_CypressLab_ProfessorCypress_1:
 	closemessage
 	delay 10
 	setobjectxy 11, 25, 12
-	playse SE_KAIDAN
+	playse SE_EXIT
 	waitse
-	playbgm MUS_AJITO, 0
+	playbgm MUS_AQUA_MAGMA_HIDEOUT, 0
 	applymovement 6, MystCity_CypressLab_Movement_0
 	playse SE_PIN
 	applymovement 7, MystCity_CypressLab_Movement_0
@@ -173,11 +173,11 @@ MystCity_CypressLab_ProfessorCypress_4:
 	applymovement 11, MystCity_CypressLab_Movement_1
 	waitmovement 0
 	setobjectxy 12, 25, 12
-	playse SE_KAIDAN
+	playse SE_EXIT
 	applymovement 12, MystCity_CypressLab_Movement_2
 	delay 10
 	setobjectxy 13, 25, 12
-	playse SE_KAIDAN
+	playse SE_EXIT
 	applymovement 13, MystCity_CypressLab_Movement_3
 	waitmovement 0
 	applymovement 9, Common_Movement_WalkInPlaceDown
@@ -212,14 +212,14 @@ MystCity_CypressLab_ProfessorCypress_4:
 	waitmovement 0
 	msgbox MystCity_CypressLab_ProfessorCypress_Text_8, MSGBOX_AUTOCLOSE
 	trainerbattle_no_intro TRAINER_GRUNT_CYPRESS_LAB_1, MystCity_CypressLab_ProfessorCypress_Text_9
-	playbgm MUS_AJITO, 0
+	playbgm MUS_AQUA_MAGMA_HIDEOUT, 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	applymovement 12, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	msgbox MystCity_CypressLab_ProfessorCypress_Text_10, MSGBOX_AUTOCLOSE
 	trainerbattle_no_intro TRAINER_GRUNT_CYPRESS_LAB_2, MystCity_CypressLab_ProfessorCypress_Text_11
-	playbgm MUS_AJITO, 0
+	playbgm MUS_AQUA_MAGMA_HIDEOUT, 0
 	delay 20
 	applymovement 11, Common_Movement_WalkInPlaceUp
 	waitmovement 0
@@ -230,7 +230,7 @@ MystCity_CypressLab_ProfessorCypress_4:
 	playmoncry SPECIES_ALAKAZAM, 0
 	waitmoncry
 	fadescreen FADE_TO_BLACK
-	playse SE_TK_WARPOUT
+	playse SE_WARP_OUT
 	waitse
 	removeobject 11
 	removeobject 12
@@ -243,7 +243,7 @@ MystCity_CypressLab_ProfessorCypress_4:
 	delay 10
 	fadescreen FADE_FROM_BLACK
 	delay 15
-	playbgm MUS_ODAMAKI, 0
+	playbgm MUS_BIRCH_LAB, 0
 	applymovement 9, Common_Movement_WalkInPlaceRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft
 	waitmovement 0

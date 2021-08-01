@@ -3774,7 +3774,7 @@ static void UR_AddTextPrinterParameterized(u8 windowId, u8 fontId, const u8 *str
     case UR_COLOR_DKE_WHT_LTE:
         printerTemplate.letterSpacing = 0;
         printerTemplate.lineSpacing = 0;
-        printerTemplate.fgColor = TEXT_COLOR_DARK_GRAY;
+        printerTemplate.fgColor = TEXT_COLOR_DARK_GREY;
         printerTemplate.bgColor = TEXT_COLOR_WHITE;
         printerTemplate.shadowColor = TEXT_COLOR_LIGHT_GRAY;
         break;
@@ -3803,7 +3803,7 @@ static void UR_AddTextPrinterParameterized(u8 windowId, u8 fontId, const u8 *str
         printerTemplate.letterSpacing = 0;
         printerTemplate.lineSpacing = 0;
         printerTemplate.fgColor = TEXT_COLOR_WHITE;
-        printerTemplate.bgColor = TEXT_COLOR_DARK_GRAY;
+        printerTemplate.bgColor = TEXT_COLOR_DARK_GREY;
         printerTemplate.shadowColor = TEXT_COLOR_LIGHT_GRAY;
         break;
     case UR_COLOR_GRN_DN6_LTB:
