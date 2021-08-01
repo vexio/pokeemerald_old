@@ -185,8 +185,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
-      "x": 17,
-      "y": 4,
+      "x": 4,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -705,8 +705,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
-      "x": 9,
-      "y": 10,
+      "x": 5,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,

@@ -1,19 +1,19 @@
 OBJEVENTGFXDIR := graphics/object_events/pics
 FLDEFFGFXDIR := graphics/field_effects/pics
 
-$(OBJEVENTGFXDIR)/newpeople/dyson/walking.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/dyson/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4 
 
-$(OBJEVENTGFXDIR)/newpeople/dyson/running.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/dyson/running.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/newpeople/dyson/field_move.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/dyson/field_move.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/brendan/surfing.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/newpeople/dyson/mach_bike.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/dyson/mach_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/brendan/acro_bike.4bpp: %.4bpp: %.png
@@ -92,19 +92,19 @@ $(OBJEVENTGFXDIR)/people/gym_leaders/airen.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 
-$(OBJEVENTGFXDIR)/newpeople/clara/walking.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/clara/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/newpeople/clara/running.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/clara/running.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/newpeople/clara/field_move.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/clara/field_move.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/may/surfing.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/newpeople/clara/mach_bike.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/clara/mach_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/may/acro_bike.4bpp: %.4bpp: %.png
