@@ -652,6 +652,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerRunSlow(direction);
         else
             PlayerRun(direction);
+        
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         return;
     }
@@ -2331,3 +2332,4 @@ bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, u8 direction)
         return FALSE;
     #endif
 }
+
