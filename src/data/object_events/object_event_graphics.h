@@ -283,7 +283,7 @@ const u32 gFieldEffectObjectPic_Ash[] = INCBIN_U32("graphics/field_effects/pics/
 const u32 gFieldEffectObjectPic_Arrow[] = INCBIN_U32("graphics/field_effects/pics/arrow.4bpp");
 const u16 gFieldEffectObjectPalette0[] = INCBIN_U16("graphics/field_effects/palettes/general_0.gbapal");
 const u16 gFieldEffectObjectPalette1[] = INCBIN_U16("graphics/field_effects/palettes/general_1.gbapal");
-const u16 gFieldEffectObjectPalette11[] = INCBIN_U16("graphics/field_effects/palettes/11.gbapal");
+const u16 gFieldEffectObjectPalette11[] = INCBIN_U16("graphics/misc/emotions.gbapal");
 const u32 gFieldEffectObjectPic_GroundImpactDust[] = INCBIN_U32("graphics/field_effects/pics/ground_impact_dust.4bpp");
 const u32 gFieldEffectObjectPic_JumpTallGrass[] = INCBIN_U32("graphics/field_effects/pics/jump_tall_grass.4bpp");
 const u32 gUnusedGrass3[] = INCBIN_U32("graphics/field_effects/pics/unused_grass_3.4bpp");
@@ -484,3 +484,5 @@ const u16 gObjectEventPalette_Mom[] = INCBIN_U16("graphics/object_events/pics/ne
 const u16 gObjectEventPalette_Steven[] = INCBIN_U16("graphics/object_events/pics/newpeople/steven.gbapal");
 const u16 gObjectEventPalette_AquaMember[] = INCBIN_U16("graphics/object_events/pics/newpeople/team_aqua/aqua_member.gbapal");
 const u16 gObjectEventPalette_Cook[] = INCBIN_U16("graphics/object_events/pics/people/cook.gbapal");
+
+const u16 gFieldEffectPal_Emotes[] = INCBIN_U16("graphics/misc/emotions.gbapal");

@@ -35,6 +35,7 @@ const u8 gWeatherSandstormTiles[] = INCBIN_U8("graphics/weather/sandstorm.4bpp")
 const struct SpritePalette sFogSpritePalette = {gFogPalette, 0x1201};
 const struct SpritePalette sCloudsSpritePalette = {gCloudsWeatherPalette, 0x1207};
 const struct SpritePalette sSandstormSpritePalette = {gSandstormWeatherPalette, 0x1204};
+const struct SpritePalette sSnowSpritePalette = {gSnowWeatherPalette, 0x1209};
 
 //------------------------------------------------------------------------------
 // WEATHER_SUNNY_CLOUDS
@@ -912,7 +913,7 @@ static bool8 CreateSnowflakeSprite(void)
     InitSnowflakeSpriteMovement(&gSprites[spriteId]);
     gSprites[spriteId].coordOffsetEnabled = TRUE;
     gWeatherPtr->sprites.s1.snowflakeSprites[gWeatherPtr->snowflakeSpriteCount++] = &gSprites[spriteId];
-    LoadCustomWeatherSpritePalette(gSnowWeatherPalette);
+    LoadCustomWeatherSpritePalette(&sSnowSpritePalette);
     return TRUE;
 }
 
@@ -1445,7 +1446,7 @@ static void CreateFogHorizontalSprites(void)
             .tag = GFXTAG_FOG_H,
         };
         LoadSpriteSheet(&fogHorizontalSpriteSheet);
-        LoadCustomWeatherSpritePalette(gFogWeatherPalette);
+        LoadCustomWeatherSpritePalette(&sFogSpritePalette);
         for (i = 0; i < NUM_FOG_HORIZONTAL_SPRITES; i++)
         {
             spriteId = CreateSpriteAtEnd(&sFogHorizontalSpriteTemplate, 0, 0, 0xFF);

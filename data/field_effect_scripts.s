@@ -76,7 +76,7 @@ gFieldEffectScriptPointers:: @ 82DB9D4
 
 gFieldEffectScript_ExclamationMarkIcon1:: @ 82DBAE0
 	//field_eff_callnative FldEff_ExclamationMarkIcon
-	field_eff_loadfadedpal_callnative gFieldEffectObjectPalette11, FldEff_ExclamationMarkIcon
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect11, FldEff_ExclamationMarkIcon
 	field_eff_end
 
 gFieldEffectScript_UseCutOnTallGrass:: @ 82DBAE6
@@ -263,7 +263,7 @@ gFieldEffectScript_Pokeball:: @ 82DBC4B
 	field_eff_end
 
 gFieldEffectScript_HeartIcon:: @ 82DBC56
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_HeartIcon
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect11, FldEff_HeartIcon
 	field_eff_end
 
 gFieldEffectScript_Nop47:: @ 82DBC60
