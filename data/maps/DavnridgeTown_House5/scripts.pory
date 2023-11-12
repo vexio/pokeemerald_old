@@ -1,1 +1,20 @@
 mapscripts DavnridgeTown_House5_MapScripts {}
+
+script DavnridgeTown_House5_Object_BlackBelt {
+    lock
+    faceplayer
+    if (flag(FLAG_DAVNRIDGETOWN_ROCK_SMASH) == true) {
+        msgbox(format("{COLOR BLUE}Hiya!\p{COLOR GREEN}Rock Smash{COLOR BLUE} can be used outside of battle to break rocks!"), MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(format("{COLOR BLUE}Hiya!\pMachop and I love smashing things!\pHere!\nTake this!"))
+        giveitem(ITEM_HM01_CUT, 1)
+        setflag(FLAG_DAVNRIDGETOWN_ROCK_SMASH)
+        msgbox(format("{COLOR BLUE}Hiya!\p{COLOR GREEN}Rock Smash{COLOR BLUE} can be used outside of battle to break rocks!"), MSGBOX_AUTOCLOSE)
+    }
+    release
+    end
+}
+script DavnridgeTown_House5_Object_Woman {
+    msgbox(format("{COLOR RED}My boyfriend loves working out.\pI love how he smashes rocks!\nEeek!"), MSGBOX_NPC)
+    end
+}

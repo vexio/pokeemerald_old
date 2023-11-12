@@ -786,3 +786,10 @@ gMetatiles_IronwoodTown::
 	.align 1
 gMetatileAttributes_IronwoodTown::
 	.incbin "data/tilesets/secondary/ironwoodtown/metatile_attributes.bin"
+	.align 1
+gMetatiles_BayportIndoor::
+	.incbin "data/tilesets/secondary/bayportindoor/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_BayportIndoor::
+	.incbin "data/tilesets/secondary/bayportindoor/metatile_attributes.bin"

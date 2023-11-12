@@ -196,14 +196,14 @@ script FrostpineCity_Trigger_RivalEvent {
 		waitmovement(0)
 	}
 	delay(20)
-	msgbox(format("Skip: {COLOR BLUE}Are you shivering?\nIt's freezing up here!\pYou look pretty beat up from that climb, let me heal your Pokémon."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Skip: {COLOR BLUE}Aren't you shivering?\nIt's freezing up here!\pYou look pretty beat up from that climb, let me heal your Pokémon."), MSGBOX_AUTOCLOSE)
 	fadescreen(FADE_TO_BLACK)
 	special(HealPlayerParty)
 	playse(SE_USE_ITEM)
 	waitse
 	fadescreen(FADE_FROM_BLACK)
 	delay(16)
-	msgbox(format("Skip: {COLOR BLUE}I'm all warmed up from my Gym Battle against {COLOR GREEN}Bernie{COLOR BLUE}!\pHe wasn't too difficult, but I've been training quickly!\pI still got some steam left from that battle, let me burn the rest of it off with you!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Skip: {COLOR BLUE}I'm all fired up from my victory against {COLOR GREEN}Bernie{COLOR BLUE}!\pHe wasn't too hard, old man couldn't handle this!\pI still got some steam left from that battle, let me burn the rest of it off with you!"), MSGBOX_AUTOCLOSE)
 	if (var(VAR_STARTER_MON) == 0) { // player chose Rowlet
 		trainerbattle_no_intro(TRAINER_SKIP_FIRE_2, format("I barely even broke a sweat!"))
 	} elif (var(VAR_STARTER_MON) == 1) { // player chose Chimchar
@@ -213,7 +213,7 @@ script FrostpineCity_Trigger_RivalEvent {
 	}
 	playbgm(MUS_RG_RIVAL_EXIT, 0)
 	delay(5)
-	msgbox(format("Skip: {COLOR BLUE}Hmph.\pYou still managed to win...\pI'll be on my way to {COLOR GREEN}Bayport City{COLOR BLUE} for our next Gym Challenge, which is just south of {COLOR GREEN}Myst City{COLOR BLUE}."), MSGBOX_AUTOCLOSE)
+	msgbox(format("Skip: {COLOR BLUE}Drrgh...\pYou still managed to beat me...\pI'll just have train and get stronger so I can battle you again!\pI'm outta here.\nSee ya later!"), MSGBOX_AUTOCLOSE)
 	if (var(VAR_TEMP_1) == 29) {
 		applymovement(SKIP, FrostpineCity_RivalEvent_Movement_2_0)
 		waitmovement(0)

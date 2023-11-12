@@ -22,7 +22,7 @@
       "y": 80,
       "elevation": 0,
       "dest_map": "MAP_PACIFIDLOG_TOWN",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [

@@ -82,7 +82,7 @@ script AlnerwickLibrary_Trigger_Thief {
         playse(SE_PIN)
         waitse
         waitmovement(0)
-        msgbox(format("???: {COLOR BLUE}Checked out!\pBahaha!\pI'm not checkin' this out!"), MSGBOX_AUTOCLOSE)
+        msgbox(format("???: {COLOR BLUE}Checked out?{PAUSE 10}!\pBahaha!\pI'm not checkin' this out!"), MSGBOX_AUTOCLOSE)
         applymovement(GRUNT_ID, AlnerwickLibrary_Thief_Movement_0)
         applymovement(OBJ_EVENT_ID_CAMERA, AlnerwickLibrary_Thief_CMovement_3)
         waitmovement(0)
@@ -132,7 +132,7 @@ script AlnerwickLibrary_Trigger_Thief {
         applymovement(PLAYER_ID, Common_Movement_FaceLeft)
         waitmovement(0)
         delay(10)
-        msgbox(format("Librarian: {COLOR RED}I'm sorry, about that ruckus. That man just stole one of the oldest books in this library here.\pThat book is an ancient tome that describes the Legendary Pokémon {COLOR GREEN}Darkrai{COLOR RED}.\p{COLOR DARK_GREY}Librarian: {COLOR GREEN}Darkrai{COLOR RED} is an ancient Pokémon who haunts people's dreams, but the tome lacks a full translation.\p{COLOR DARK_GREY}Librarian:{COLOR RED} That thug is probably long gone at this point, and that tome is a loss cause.\pDon't worry, he'll be fined when I get that book back."), MSGBOX_AUTOCLOSE)
+        msgbox(format("Librarian: {COLOR RED}I'm sorry about that ruckus. That man just stole one of the oldest books in this library!\pThat book is an ancient tome that describes the Legendary Pokémon {COLOR GREEN}Darkrai{COLOR RED}.\p{COLOR DARK_GREY}Librarian: {COLOR GREEN}Darkrai{COLOR RED} is an ancient Pokémon who haunts people's dreams, but the tome lacks a full translation.\p{COLOR DARK_GREY}Librarian:{COLOR RED} I'm too old nowadays to be chasing down hooligans.\pDon't worry, he'll be fined when I get that book back."), MSGBOX_AUTOCLOSE)
         if (var(VAR_TEMP_1) == 5) {
             applymovement(WOMAN_ID, AlnerwickLibrary_Thief_Movement_5_0)
             waitmovement(0)

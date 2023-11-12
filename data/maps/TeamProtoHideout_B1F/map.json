@@ -125,14 +125,14 @@
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_MYST_CITY_CRAWDAUNT_PUB",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 18,
       "y": 15,
       "elevation": 0,
       "dest_map": "MAP_TEAM_PROTO_HIDEOUT_B2F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

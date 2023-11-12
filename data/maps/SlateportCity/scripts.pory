@@ -1580,7 +1580,7 @@ script BayportCity_Trigger_LarsPolice {
 		applymovement(PLAYER, BayportCity_LarsPolice_Movement_2_2)
 		waitmovement(0)
 	}
-	msgbox(format("Lars: {COLOR BLUE}I got great news about {COLOR GREEN}Team Proto{COLOR BLUE}!\pWell...\pNot really 'great' news, but news nonetheless.\pFrom my research and what the police have told me, {COLOR GREEN}Team Proto{COLOR BLUE} has been running some underground operations throughout the region.\pTheir leader is unknown, but three of his disciples are active in the area.\pThe police told me that {COLOR GREEN}The Crawdaunt Pub{COLOR BLUE} in {COLOR GREEN}Myst City{COLOR BLUE} has been filled with members of {COLOR GREEN}Team Proto{COLOR BLUE}, so hopefully that is a place to start.\pI can't be seen in {COLOR GREEN}The Crawdaunt Pub{COLOR BLUE}, so you'll have to go in alone.\pI'll meet you at {COLOR GREEN}Myst City{COLOR BLUE}!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Lars: {COLOR BLUE}I got great news about {COLOR GREEN}Team Proto{COLOR BLUE}!\pWell...\pNot really 'great' news, but news nonetheless.\pFrom my research and what the police have told me, {COLOR GREEN}Team Proto{COLOR BLUE} has been running some underground operations throughout the region.\pTheir leader is unknown, but three of his executives have been seen throughout {COLOR GREEN}Ryoko{COLOR BLUE}.\pThe police told me that the old {COLOR GREEN}Crawdaunt Pub{COLOR BLUE} back in {COLOR GREEN}Myst City{COLOR BLUE} is filled with {COLOR GREEN}Team Proto{COLOR BLUE} Grunts, so that should be a good place to start.\pOkay, kid.\nI'll meet you in {COLOR GREEN}Myst City{COLOR BLUE}!"), MSGBOX_AUTOCLOSE)
 	dofieldeffect(FLDEFF_NPCFLY_OUT)
 	delay(10)
 	removeobject(LARS)

@@ -99,21 +99,21 @@
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_ALNERWICK_LIBRARY",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 0,
       "y": 15,
       "elevation": 0,
       "dest_map": "MAP_ALNERWICK_LIBRARY",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 5,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [

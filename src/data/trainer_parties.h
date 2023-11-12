@@ -1274,21 +1274,29 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Mary[] = {
     }
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_Alexia[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Alexia[] = {
     {
-    .iv = 255,
-    .lvl = 26,
-    .species = SPECIES_WIGGLYTUFF,
-    .moves = {MOVE_DEFENSE_CURL, MOVE_DOUBLE_EDGE, MOVE_SHADOW_BALL, MOVE_NONE}
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_STARLY,
+    },
+    {
+    .iv = 0,
+    .lvl = 6,
+    .species = SPECIES_MINCCINO,
     }
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_Jody[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Jody[] = {
     {
-    .iv = 255,
-    .lvl = 26,
-    .species = SPECIES_ZANGOOSE,
-    .moves = {MOVE_SWORDS_DANCE, MOVE_SLASH, MOVE_NONE, MOVE_NONE}
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_MIENFOO,
+    },
+    {
+    .iv = 0,
+    .lvl = 6,
+    .species = SPECIES_CROAGUNK,
     }
 };
 

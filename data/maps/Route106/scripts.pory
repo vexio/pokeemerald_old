@@ -231,8 +231,7 @@ script TriadGorge_Trigger_ProtoGrunts {
 	msgbox(format("Skip: {COLOR BLUE}There you are slowpoke!"), MSGBOX_AUTOCLOSE)
 	applymovement(SKIP, TriadGorge_ProtoGrunts_Movement_7)
 	waitmovement(0)
-	msgbox(format("Skip: {COLOR BLUE}Did you just deal with those robed people?\pThey looked weak, I'm surprised you stood a chance against them!\pI've been training for the {COLOR GREEN}Fiery Badge{COLOR BLUE} up north here on {COLOR GREEN}Frostpine Climb{COLOR BLUE}, and now my team is stronger than ever!\pI'm not gonna take it out on you, since you and your team just took a beating from those {COLOR GREEN}Team Proto{COLOR BLUE} goons.\pI also found this HM, I don't think I'm going to have any use for it."))
-	giveitem(ITEM_HM01_CUT, 1)
+	msgbox(format("Skip: {COLOR BLUE}Did you just deal with those robed people?\pThey looked weak, I'm surprised you stood a chance against them!\pI've been training for the {COLOR GREEN}Fiery Badge{COLOR BLUE} up north here on {COLOR GREEN}Frostpine Climb{COLOR BLUE}, and now my team is stronger than ever!\pI'm not gonna take it out on you, since you and your team just took a beating from those {COLOR GREEN}Team Proto{COLOR BLUE} goons."))
 	msgbox(format("Skip: {COLOR BLUE}Anyways, I'm gonna head up north to get the third badge!\pI'm going to continue training until I become the strongest trainer in all of Ryoko!"), MSGBOX_AUTOCLOSE)
 	applymovement(SKIP, TriadGorge_ProtoGrunts_Movement_8)
 	playbgm(MUS_ROUTE104, 0)
@@ -328,18 +327,18 @@ script TriadGorge_Sign_RouteSignMiddle {
 	msgbox(format("{COLOR LIGHT_GREEN}Triad Gorge\p{COLOR DARK_GREY}{UP_ARROW} {COLOR LIGHT_GREEN}Frostpine Climb\n{COLOR DARK_GREY}{LEFT_ARROW} {COLOR LIGHT_GREEN}Enclava Town\l{COLOR DARK_GREY}{RIGHT_ARROW} {COLOR LIGHT_GREEN}Myst City"), MSGBOX_SIGN, MSGBOX_SUB_WOOD)
 }
 
-script TriadGorge_Object_RockSmashHiker {
+script TriadGorge_Object_CutHiker {
 	lock
 	faceplayer
-	msgbox(format("{COLOR BLUE}These rocks are lookin' like they're blocking the way to {COLOR GREEN}Myst City{COLOR BLUE}.\pIf I had the {COLOR GREEN}Fiery Badge{COLOR BLUE} I could smash these rocks!"))
+	msgbox(format("{COLOR BLUE}These trees are lookin' like they're blocking the way to {COLOR GREEN}Myst City{COLOR BLUE}.\pIf I had the {COLOR GREEN}Fiery Badge{COLOR BLUE} I could slice these trees!"))
 	if (flag(FLAG_BADGE03_GET) == true) {
 		applymovement(14, Common_Movement_ExclamationMark)
 		waitmovement(0)
 		playse(SE_PIN)
 		waitse
 		msgbox(format("{COLOR BLUE}Is that the {COLOR GREEN}Fiery Badge{COLOR BLUE}?\pWowza!\nYou must be a strong trainer!\pHere, take this!"))
-		giveitem(ITEM_HM06_ROCK_SMASH, 1)
-		msgbox(format("{COLOR BLUE}With that HM, you can remove these rocks and similar looking ones without a problem!\pI'm going to go get myself the {COLOR GREEN}Fiery Badge{COLOR BLUE} as well so I can use Rock Smash too!"), MSGBOX_AUTOCLOSE)
+		giveitem(ITEM_HM01_CUT, 1)
+		msgbox(format("{COLOR BLUE}With that HM, you can remove these pesky trees that might be blocking your path!\pI'm going to go get myself the {COLOR GREEN}Fiery Badge{COLOR BLUE} as well so I can use Cut too!"), MSGBOX_AUTOCLOSE)
 		delay(10)
 		getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
 		if (var(VAR_TEMP_0) == 66) {

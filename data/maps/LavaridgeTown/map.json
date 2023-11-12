@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_ROUTE104",
       "offset": 8,
-      "map": "MAP_ROUTE104"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE105",
       "offset": 12,
-      "map": "MAP_ROUTE105"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -136,42 +136,42 @@
       "y": 23,
       "elevation": 0,
       "dest_map": "MAP_LAVARIDGE_TOWN_HERB_SHOP",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 35,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_LAVARIDGE_TOWN_GYM_1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 18,
       "y": 26,
       "elevation": 0,
       "dest_map": "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 12,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_LAVARIDGE_TOWN_HOUSE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 23,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_ENCLAVA_TOWER",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 31,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_ENCLAVA_TOWN_HOUSE1",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

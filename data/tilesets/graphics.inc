@@ -2369,3 +2369,23 @@ gTilesetPalettes_IronwoodTown::
 	.align 2
 gTilesetTiles_IronwoodTown::
 	.incbin "data/tilesets/secondary/ironwoodtown/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_BayportIndoor::
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/bayportindoor/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_BayportIndoor::
+	.incbin "data/tilesets/secondary/bayportindoor/tiles.4bpp.lz"

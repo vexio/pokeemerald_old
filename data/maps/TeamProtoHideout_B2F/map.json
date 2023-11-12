@@ -112,21 +112,21 @@
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_TEAM_PROTO_HIDEOUT_B1F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 16,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_TEAM_PROTO_HIDEOUT_B3F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 3,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_TEAM_PROTO_HIDEOUT_B3F",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

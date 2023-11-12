@@ -1,6 +1,5 @@
 TOOLCHAIN := $(DEVKITARM)
 COMPARE ?= 0
-SCRIPT := tools/poryscript/poryscript$(EXE)
 
 # don't use dkP's base_tools anymore
 # because the redefinition of $(CC) conflicts
@@ -121,6 +120,7 @@ RAMSCRGEN := tools/ramscrgen/ramscrgen$(EXE)
 FIX := tools/gbafix/gbafix$(EXE)
 MAPJSON := tools/mapjson/mapjson$(EXE)
 JSONPROC := tools/jsonproc/jsonproc$(EXE)
+SCRIPT := tools/poryscript/poryscript$(EXE)
 
 TOOLDIRS := $(filter-out tools/agbcc tools/binutils tools/poryscript,$(wildcard tools/*))
 TOOLBASE = $(TOOLDIRS:tools/%=%)
@@ -216,6 +216,7 @@ mostlyclean: tidynonmodern tidymodern
 	rm -f $(patsubst %.pory,%.inc,$(shell find data/ -type f -name '*.pory'))
 	@$(MAKE) clean -C berry_fix
 	@$(MAKE) clean -C libagbsyscall
+	
 
 tidy: tidynonmodern tidymodern
 
@@ -254,7 +255,7 @@ include songs.mk
 $(CRY_SUBDIR)/uncomp_%.bin: $(CRY_SUBDIR)/uncomp_%.aif ; $(AIF) $< $@
 $(CRY_SUBDIR)/%.bin: $(CRY_SUBDIR)/%.aif ; $(AIF) $< $@ --compress
 sound/%.bin: sound/%.aif ; $(AIF) $< $@
-data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@ -fw tools/poryscript/font_widths.json
+data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@ -fc tools/poryscript/font_config.json
 
 
 ifeq ($(MODERN),0)

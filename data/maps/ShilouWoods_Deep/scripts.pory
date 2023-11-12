@@ -10,7 +10,7 @@ const PLAYER = OBJ_EVENT_ID_PLAYER
 script ShilouWoodsDeep_Trigger_LittleBoy_Event {
 	lock
 	fadeoutbgm(3)
-	delay(150)
+	delay(130)
 	playse(SE_M_PERISH_SONG)
 	waitse
 	applymovement(BOY, ShilouWoodsDeep_LittleBoyEvent_Movement_0)
@@ -27,7 +27,7 @@ script ShilouWoodsDeep_Trigger_LittleBoy_Event {
 		applymovement(PLAYER, Common_Movement_WalkInPlaceRight)
 		waitmovement(0)
 	}
-	msgbox(format("{COLOR BLUE}{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.\n{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}.{PAUSE 20}."))
+	msgbox(format("{COLOR BLUE}{PAUSE 10}.{PAUSE 10}.{PAUSE 10}h{PAUSE 10}i{PAUSE 10}.{PAUSE 10}.{PAUSE 10}.{PAUSE 10}.{PAUSE 10}.{PAUSE 10}.{PAUSE 10}.{PAUSE 10}.\n{PAUSE 10}S{PAUSE 10}T{PAUSE 10}R{PAUSE 10}A{PAUSE 10}N{PAUSE 10}G{PAUSE 10}E{PAUSE 10}R{PAUSE 10}.{PAUSE 10}.{PAUSE 10}."))
 	giveitem(ITEM_SPELL_TAG, 1)
 	delay(20)
 	fadescreen(FADE_TO_BLACK)
@@ -40,7 +40,7 @@ script ShilouWoodsDeep_Trigger_LittleBoy_Event {
 	fadescreen(FADE_FROM_BLACK)
 	setvar(VAR_SHILOUWOODS_GHOST_BOY, 2)
 	delay(20)
-	fadenewbgm(MUS_RG_POKE_TOWER)
+	fadeinbgm(MUS_RG_POKE_TOWER)
 	release
 	end
 }

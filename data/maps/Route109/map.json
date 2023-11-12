@@ -14,19 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_LILYCOVE_CITY",
       "offset": -7,
-      "map": "MAP_LILYCOVE_CITY"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE110",
       "offset": -54,
-      "map": "MAP_ROUTE110"
+      "direction": "right"
     },
     {
-      "direction": "right",
+      "map": "MAP_PACIFIDLOG_TOWN",
       "offset": 10,
-      "map": "MAP_PACIFIDLOG_TOWN"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -297,21 +297,21 @@
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_COBALT_SEA_GATEHOUSE",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 119,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_WISP_FOREST",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 120,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_WISP_FOREST",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
@@ -329,7 +329,7 @@
     {
       "type": "hidden_item",
       "x": 11,
-      "y": 6,
+      "y": 7,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1"
@@ -381,6 +381,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CobaltSea_Sign_RouteSign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 108,
+      "y": 21,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1"
     }
   ],
   "allow_bike": "",

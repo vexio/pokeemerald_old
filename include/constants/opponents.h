@@ -91,8 +91,8 @@
 #define TRAINER_BUG_MANIAC_GARY                     87
 #define TRAINER_PSYCHIC_CALE                       88
 #define TRAINER_BUG_MANIAC_DARIO                         89
-#define TRAINER_ALEXIA                       90
-#define TRAINER_JODY                         91
+#define TRAINER_RANGER_JACK                       90
+#define TRAINER_BLACK_BELT_PIERRE                         91
 #define TRAINER_WENDY                        92
 #define TRAINER_KEIRA                        93
 #define TRAINER_BROOKE_1                     94

@@ -34,14 +34,14 @@
       "y": 28,
       "elevation": 0,
       "dest_map": "MAP_WISP_FOREST",
-      "dest_warp_id": 6
+      "dest_warp_id": "6"
     },
     {
       "x": 8,
       "y": 28,
       "elevation": 0,
       "dest_map": "MAP_WISP_FOREST",
-      "dest_warp_id": 6
+      "dest_warp_id": "6"
     }
   ],
   "coord_events": [

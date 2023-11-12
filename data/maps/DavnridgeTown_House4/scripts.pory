@@ -35,7 +35,7 @@ script DavnridgeTown_House4_Object_Man {
 				end
 			}
 		default:
-			msgbox(format("{COLOR BLUE}I'm currently not looking for anything..."), MSGBOX_AUTOCLOSE)
+			msgbox(format("{COLOR BLUE}I'm currently not looking for anything."), MSGBOX_AUTOCLOSE)
 			release
 			end
 	}

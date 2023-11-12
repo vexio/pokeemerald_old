@@ -1171,3 +1171,14 @@ gTileset_IronwoodTown::
 	.4byte gMetatiles_IronwoodTown
 	.4byte gMetatileAttributes_IronwoodTown
 	.4byte NULL
+
+	.align 2
+gTileset_BayportIndoor::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_BayportIndoor
+	.4byte gTilesetPalettes_BayportIndoor
+	.4byte gMetatiles_BayportIndoor
+	.4byte gMetatileAttributes_BayportIndoor
+	.4byte NULL

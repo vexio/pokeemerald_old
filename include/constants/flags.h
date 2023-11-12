@@ -678,7 +678,7 @@
 #define FLAG_PROTO_HIDEOUT_ALL_OBJS  0x27D // All grunts and scientists
 #define FLAG_MYSTCITY_EXIT_PROTO_HIDEOUT  0x27E
 #define FLAG_SHILOUWOODS_GHOST_BOY  0x27F
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
+#define FLAG_DAVNRIDGETOWN_ROCK_SMASH  0x280
 #define FLAG_UNUSED_0x281  0x281 // Unused Flag
 #define FLAG_UNUSED_0x282  0x282 // Unused Flag
 #define FLAG_UNUSED_0x283  0x283 // Unused Flag
@@ -1250,7 +1250,7 @@
 #define FLAG_ITEM_FROSTPINE_CITY_LUCKY_EGG                          0x4B0
 #define FLAG_HIDDEN_ITEM_PROTOHIDEOUT_FULL_RESTORE                  0x4B1
 #define FLAG_HIDDEN_ITEM_CANVASPATH_POTION                          0x4B2
-#define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ALNERWICKLOWLANDS_RARE_CANDY               0x4B3
 #define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
 #define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
 #define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag

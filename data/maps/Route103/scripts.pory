@@ -388,3 +388,13 @@ script AlnerwickLowlands_Trainer_Hiker {
     msgbox(format("{COLOR BLUE}I'm scouting out this area for me and my hiking buddies."), MSGBOX_NPC)
     end
 }
+script AlnerwickLowlands_Trainer_Ranger {
+	trainerbattle_single(TRAINER_RANGER_JACK, format("{COLOR BLUE}Are you taking good care of your Pokémon?"), format("Your Pokémon look happy and healthy!"))
+	msgbox(format("{COLOR BLUE}I always am on the lookout for trainers who don't take proper care of their Pokémon!"). MSGBOX_NPC)
+	end
+}
+script AlnerwickLowlands_Trainer_BlackBelt_2 {
+	trainerbattle_single(TRAINER_BLACK_BELT_PIERRE, format("{COLOR BLUE}The rocky terrain is great for training!"), format("Good warmup!"))
+	msgbox(format("{COLOR BLUE}The rocky terrain is great for training my Fighting type Pokémon!"), MSGBOX_NPC)
+	end
+}

@@ -407,6 +407,7 @@ OldaleTown_Text_CitySign: @ 81E94DA
 `
 
 const OFFICER_ID = 6
+const PLAYER = OBJ_EVENT_ID_PLAYER
 
 script AlnerwickCity_Mapscript_OfficerLocations {
 	if (var(VAR_ALNERWICKLIBRARY_THIEF) >= 1) {
@@ -417,12 +418,12 @@ script AlnerwickCity_Mapscript_OfficerLocations {
 }
 
 script AlnerwickCity_Object_Officer_1 {
-	msgbox(format("Officer: {COLOR BLUE}If you see anything suspicious, please inform an Officer."), MSGBOX_NPC)
+	msgbox(format("Officer: {COLOR BLUE}There have been some reports of a suspicious character around town, if you see anything suspicious please inform an officer."), MSGBOX_NPC)
 	end
 }
 
 script AlnerwickCity_Object_Officer_2 {
-	msgbox(format("Officer: {COLOR BLUE}There's been reports of a suspicious man in the city here.\pNo one is leaving here until he's been reported to an Officer."), MSGBOX_NPC)
+	msgbox(format("Officer: {COLOR BLUE}Hold it kid!\pNo one is leaving town until we track down that thug!\pWhy don't you go check out the local library in the mean time."), MSGBOX_NPC)
 	end
 }
 
@@ -457,41 +458,45 @@ script AlnerwickCity_Object_Girl_2 {
 }
 
 script AlnerwickCity_Trigger_PoliceOfficer {
-    if (var(VAR_ALNERWICKLIBRARY_THIEF) == 0) {
-        lockall
-        applymovement(OFFICER_ID, Common_Movement_WalkInPlaceDown)
-        waitmovement(0)
-        applymovement(OFFICER_ID, Common_Movement_ExclamationMark)
-        waitmovement(0)
-        msgbox(format("Officer: {COLOR BLUE}Hey!"), MSGBOX_AUTOCLOSE)
-        delay(10)
-		getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
-		if (var(VAR_TEMP_0) == 10) {
-			applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_0)
-			waitmovement(0)
-		} elif (var(VAR_TEMP_0) == 11) {
-			applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_1)
-			waitmovement(0)
-		} elif (var(VAR_TEMP_0) == 12) {
-			applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_2)
-			waitmovement(0)
-		}
-        msgbox(format("Officer: {COLOR BLUE}We've been told that there's been some suspicious people around town.\pIf you see anyone, please tell us immediately."), MSGBOX_AUTOCLOSE)
-		if (var(VAR_TEMP_0) == 10) {
-			applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_0_0)
-			waitmovement(0)
-		} elif (var(VAR_TEMP_0) == 11) {
-			applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_1_0)
-			waitmovement(0)
-		} elif (var(VAR_TEMP_0) == 12) {
-			applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_0_0)
-			waitmovement(0)
-		}
-		setvar(VAR_ALNERWICKLIBRARY_THIEF, 1)
-		//setflag(FLAG_ALNERWICKCITY_OFFICER_1)
-		releaseall
-		end
-    }
+    lockall
+    applymovement(OFFICER_ID, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(OFFICER_ID, Common_Movement_ExclamationMark)
+    waitmovement(0)
+	playse(SE_PIN)
+	waitse
+    msgbox(format("Officer: {COLOR BLUE}Hold it!"), MSGBOX_AUTOCLOSE)
+    delay(20)
+	getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+	if (var(VAR_TEMP_0) == 10) {
+		applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_0)
+		waitmovement(0)
+		applymovement(PLAYER, Common_Movement_WalkInPlaceRight)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 11) {
+		applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_1)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 12) {
+		applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_2)
+		waitmovement(0)
+		applymovement(PLAYER, Common_Movement_WalkInPlaceLeft)
+		waitmovement(0)
+	}
+    msgbox(format("Officer: {COLOR BLUE}Ah, a trainer.\nApologies for blocking your way.\p{COLOR DARK_GREY}Officer: {COLOR BLUE}There have been some reports of a suspicious character around town, if you see anything suspicious please inform an officer."), MSGBOX_AUTOCLOSE)
+	if (var(VAR_TEMP_0) == 10) {
+		applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_0_0)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 11) {
+		applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_1_0)
+		waitmovement(0)
+	} elif (var(VAR_TEMP_0) == 12) {
+		applymovement(OFFICER_ID, AlnerwickCity_PoliceOfficer_Movement_0_0)
+		waitmovement(0)
+	}
+	setvar(VAR_ALNERWICKLIBRARY_THIEF, 1)
+	//setflag(FLAG_ALNERWICKCITY_OFFICER_1)
+	releaseall
+	end
 }
 
 movement AlnerwickCity_PoliceOfficer_Movement_0 {

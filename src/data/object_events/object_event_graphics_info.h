@@ -38,7 +38,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanF = {0xFFFF
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man1 = {0xFFFF, OBJ_EVENT_PAL_TAG_NPC_3, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 4, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Man1, gDummySpriteAffineAnimTable};
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman2 = {0xFFFF, OBJ_EVENT_PAL_TAG_NPC_4, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 4, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Woman2, gDummySpriteAffineAnimTable};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman2 = {0xFFFF, OBJ_EVENT_PAL_TAG_NPC_3, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 4, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_Woman2, gDummySpriteAffineAnimTable};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExpertM = {0xFFFF, OBJ_EVENT_PAL_TAG_EXPERT, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 5, SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, sOamTables_16x32, sAnimTable_Standard, sPicTable_ExpertM, gDummySpriteAffineAnimTable};
 
